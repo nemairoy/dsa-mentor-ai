@@ -1,0 +1,908 @@
+{
+  "chapterId": "binary-tree",
+  "title": "Binary Tree",
+  "description": "Binary Tree topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Intermediate",
+  "estimatedHours": 5,
+  "tags": [
+    "tree",
+    "recursion"
+  ],
+  "animationNamespace": "BinaryTree",
+  "aiContext": "Binary Tree chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "binary-tree-introduction",
+      "component": "BinaryTreeIntroductionAnimation",
+      "status": "planned"
+    },
+    "node-structure": {
+      "animationId": "binary-tree-node-structure",
+      "component": "BinaryTreeNodeStructureAnimation",
+      "status": "planned"
+    },
+    "preorder": {
+      "animationId": "binary-tree-preorder",
+      "component": "BinaryTreePreorderAnimation",
+      "status": "planned"
+    },
+    "inorder": {
+      "animationId": "binary-tree-inorder",
+      "component": "BinaryTreeInorderAnimation",
+      "status": "planned"
+    },
+    "postorder": {
+      "animationId": "binary-tree-postorder",
+      "component": "BinaryTreePostorderAnimation",
+      "status": "planned"
+    },
+    "level-order": {
+      "animationId": "binary-tree-level-order",
+      "component": "BinaryTreeLevelOrderAnimation",
+      "status": "planned"
+    },
+    "height-diameter": {
+      "animationId": "binary-tree-height-diameter",
+      "component": "BinaryTreeHeightDiameterAnimation",
+      "status": "planned"
+    },
+    "lowest-common-ancestor": {
+      "animationId": "binary-tree-lowest-common-ancestor",
+      "component": "BinaryTreeLowestCommonAncestorAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "binary-tree-practice",
+      "component": "BinaryTreePracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "binary-tree-interview-questions",
+      "component": "BinaryTreeInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "binary-tree-revision-summary",
+      "component": "BinaryTreeRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "binary-tree.introduction",
+      "chapter": "Binary Tree",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "tree",
+        "recursion",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Binary Tree: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "binary-tree-introduction",
+      "animationComponent": "BinaryTreeIntroductionAnimation",
+      "aiContext": "Binary Tree / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Binary Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Binary Tree: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "binary-tree",
+        "lessonSlug": "introduction",
+        "topic": "Binary Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "binary-tree.introduction",
+        "tags": [
+          "tree",
+          "recursion",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "binary-tree/introduction"
+      ],
+      "futureQuizId": "quiz-binary-tree-introduction",
+      "futureFlashcardId": "flashcards-binary-tree-introduction",
+      "futureProjectId": "project-binary-tree-introduction",
+      "images": [
+        "content/binary-tree/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "binary-tree-introduction.py",
+          "code": "def binary_tree_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(binary_tree_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "node-structure": {
+      "lessonId": "binary-tree.node-structure",
+      "chapter": "Binary Tree",
+      "title": "Node Structure",
+      "summary": "Learn Node Structure in Binary Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "tree",
+        "recursion",
+        "node-structure"
+      ],
+      "learningObjectives": [
+        "Explain Binary Tree: Node Structure clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "binary-tree-node-structure",
+      "animationComponent": "BinaryTreeNodeStructureAnimation",
+      "aiContext": "Binary Tree / Node Structure: Learn Node Structure in Binary Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Node Structure lesson for Binary Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Binary Tree: Node Structure. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "binary-tree",
+        "lessonSlug": "node-structure",
+        "topic": "Binary Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "binary-tree.node-structure",
+        "tags": [
+          "tree",
+          "recursion",
+          "node-structure"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "binary-tree/introduction"
+      ],
+      "futureQuizId": "quiz-binary-tree-node-structure",
+      "futureFlashcardId": "flashcards-binary-tree-node-structure",
+      "futureProjectId": "project-binary-tree-node-structure",
+      "images": [
+        "content/binary-tree/images/node-structure.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Node Structure from scratch.",
+        "Dry-run Node Structure on two edge cases.",
+        "Explain Node Structure complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "binary-tree-node-structure.py",
+          "code": "def binary_tree_node_structure(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(binary_tree_node_structure([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "preorder": {
+      "lessonId": "binary-tree.preorder",
+      "chapter": "Binary Tree",
+      "title": "Preorder",
+      "summary": "Learn Preorder in Binary Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "tree",
+        "recursion",
+        "preorder"
+      ],
+      "learningObjectives": [
+        "Explain Binary Tree: Preorder clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "binary-tree-preorder",
+      "animationComponent": "BinaryTreePreorderAnimation",
+      "aiContext": "Binary Tree / Preorder: Learn Preorder in Binary Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Preorder lesson for Binary Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Binary Tree: Preorder. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "binary-tree",
+        "lessonSlug": "preorder",
+        "topic": "Binary Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "binary-tree.preorder",
+        "tags": [
+          "tree",
+          "recursion",
+          "preorder"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "binary-tree/introduction"
+      ],
+      "futureQuizId": "quiz-binary-tree-preorder",
+      "futureFlashcardId": "flashcards-binary-tree-preorder",
+      "futureProjectId": "project-binary-tree-preorder",
+      "images": [
+        "content/binary-tree/images/preorder.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Preorder from scratch.",
+        "Dry-run Preorder on two edge cases.",
+        "Explain Preorder complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "binary-tree-preorder.py",
+          "code": "def binary_tree_preorder(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(binary_tree_preorder([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "inorder": {
+      "lessonId": "binary-tree.inorder",
+      "chapter": "Binary Tree",
+      "title": "Inorder",
+      "summary": "Learn Inorder in Binary Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "tree",
+        "recursion",
+        "inorder"
+      ],
+      "learningObjectives": [
+        "Explain Binary Tree: Inorder clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "binary-tree-inorder",
+      "animationComponent": "BinaryTreeInorderAnimation",
+      "aiContext": "Binary Tree / Inorder: Learn Inorder in Binary Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Inorder lesson for Binary Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Binary Tree: Inorder. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "binary-tree",
+        "lessonSlug": "inorder",
+        "topic": "Binary Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "binary-tree.inorder",
+        "tags": [
+          "tree",
+          "recursion",
+          "inorder"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "binary-tree/introduction"
+      ],
+      "futureQuizId": "quiz-binary-tree-inorder",
+      "futureFlashcardId": "flashcards-binary-tree-inorder",
+      "futureProjectId": "project-binary-tree-inorder",
+      "images": [
+        "content/binary-tree/images/inorder.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Inorder from scratch.",
+        "Dry-run Inorder on two edge cases.",
+        "Explain Inorder complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "binary-tree-inorder.py",
+          "code": "def binary_tree_inorder(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(binary_tree_inorder([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "postorder": {
+      "lessonId": "binary-tree.postorder",
+      "chapter": "Binary Tree",
+      "title": "Postorder",
+      "summary": "Learn Postorder in Binary Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "tree",
+        "recursion",
+        "postorder"
+      ],
+      "learningObjectives": [
+        "Explain Binary Tree: Postorder clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "binary-tree-postorder",
+      "animationComponent": "BinaryTreePostorderAnimation",
+      "aiContext": "Binary Tree / Postorder: Learn Postorder in Binary Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Postorder lesson for Binary Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Binary Tree: Postorder. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "binary-tree",
+        "lessonSlug": "postorder",
+        "topic": "Binary Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "binary-tree.postorder",
+        "tags": [
+          "tree",
+          "recursion",
+          "postorder"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "binary-tree/introduction"
+      ],
+      "futureQuizId": "quiz-binary-tree-postorder",
+      "futureFlashcardId": "flashcards-binary-tree-postorder",
+      "futureProjectId": "project-binary-tree-postorder",
+      "images": [
+        "content/binary-tree/images/postorder.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Postorder from scratch.",
+        "Dry-run Postorder on two edge cases.",
+        "Explain Postorder complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "binary-tree-postorder.py",
+          "code": "def binary_tree_postorder(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(binary_tree_postorder([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "level-order": {
+      "lessonId": "binary-tree.level-order",
+      "chapter": "Binary Tree",
+      "title": "Level Order",
+      "summary": "Learn Level Order in Binary Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "tree",
+        "recursion",
+        "level-order"
+      ],
+      "learningObjectives": [
+        "Explain Binary Tree: Level Order clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "binary-tree-level-order",
+      "animationComponent": "BinaryTreeLevelOrderAnimation",
+      "aiContext": "Binary Tree / Level Order: Learn Level Order in Binary Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Level Order lesson for Binary Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Binary Tree: Level Order. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "binary-tree",
+        "lessonSlug": "level-order",
+        "topic": "Binary Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "binary-tree.level-order",
+        "tags": [
+          "tree",
+          "recursion",
+          "level-order"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "binary-tree/introduction"
+      ],
+      "futureQuizId": "quiz-binary-tree-level-order",
+      "futureFlashcardId": "flashcards-binary-tree-level-order",
+      "futureProjectId": "project-binary-tree-level-order",
+      "images": [
+        "content/binary-tree/images/level-order.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Level Order from scratch.",
+        "Dry-run Level Order on two edge cases.",
+        "Explain Level Order complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "binary-tree-level-order.py",
+          "code": "def binary_tree_level_order(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(binary_tree_level_order([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "height-diameter": {
+      "lessonId": "binary-tree.height-diameter",
+      "chapter": "Binary Tree",
+      "title": "Height Diameter",
+      "summary": "Learn Height Diameter in Binary Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "tree",
+        "recursion",
+        "height-diameter"
+      ],
+      "learningObjectives": [
+        "Explain Binary Tree: Height Diameter clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "binary-tree-height-diameter",
+      "animationComponent": "BinaryTreeHeightDiameterAnimation",
+      "aiContext": "Binary Tree / Height Diameter: Learn Height Diameter in Binary Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Height Diameter lesson for Binary Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Binary Tree: Height Diameter. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "binary-tree",
+        "lessonSlug": "height-diameter",
+        "topic": "Binary Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "binary-tree.height-diameter",
+        "tags": [
+          "tree",
+          "recursion",
+          "height-diameter"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "binary-tree/introduction"
+      ],
+      "futureQuizId": "quiz-binary-tree-height-diameter",
+      "futureFlashcardId": "flashcards-binary-tree-height-diameter",
+      "futureProjectId": "project-binary-tree-height-diameter",
+      "images": [
+        "content/binary-tree/images/height-diameter.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Height Diameter from scratch.",
+        "Dry-run Height Diameter on two edge cases.",
+        "Explain Height Diameter complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "binary-tree-height-diameter.py",
+          "code": "def binary_tree_height_diameter(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(binary_tree_height_diameter([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "lowest-common-ancestor": {
+      "lessonId": "binary-tree.lowest-common-ancestor",
+      "chapter": "Binary Tree",
+      "title": "Lowest Common Ancestor",
+      "summary": "Learn Lowest Common Ancestor in Binary Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "tree",
+        "recursion",
+        "lowest-common-ancestor"
+      ],
+      "learningObjectives": [
+        "Explain Binary Tree: Lowest Common Ancestor clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "binary-tree-lowest-common-ancestor",
+      "animationComponent": "BinaryTreeLowestCommonAncestorAnimation",
+      "aiContext": "Binary Tree / Lowest Common Ancestor: Learn Lowest Common Ancestor in Binary Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Lowest Common Ancestor lesson for Binary Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Binary Tree: Lowest Common Ancestor. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "binary-tree",
+        "lessonSlug": "lowest-common-ancestor",
+        "topic": "Binary Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "binary-tree.lowest-common-ancestor",
+        "tags": [
+          "tree",
+          "recursion",
+          "lowest-common-ancestor"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "binary-tree/introduction"
+      ],
+      "futureQuizId": "quiz-binary-tree-lowest-common-ancestor",
+      "futureFlashcardId": "flashcards-binary-tree-lowest-common-ancestor",
+      "futureProjectId": "project-binary-tree-lowest-common-ancestor",
+      "images": [
+        "content/binary-tree/images/lowest-common-ancestor.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Lowest Common Ancestor from scratch.",
+        "Dry-run Lowest Common Ancestor on two edge cases.",
+        "Explain Lowest Common Ancestor complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "binary-tree-lowest-common-ancestor.py",
+          "code": "def binary_tree_lowest_common_ancestor(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(binary_tree_lowest_common_ancestor([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "binary-tree.practice",
+      "chapter": "Binary Tree",
+      "title": "Practice",
+      "summary": "Learn Practice in Binary Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "tree",
+        "recursion",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Binary Tree: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "binary-tree-practice",
+      "animationComponent": "BinaryTreePracticeAnimation",
+      "aiContext": "Binary Tree / Practice: Learn Practice in Binary Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Binary Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Binary Tree: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "binary-tree",
+        "lessonSlug": "practice",
+        "topic": "Binary Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "binary-tree.practice",
+        "tags": [
+          "tree",
+          "recursion",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "binary-tree/introduction"
+      ],
+      "futureQuizId": "quiz-binary-tree-practice",
+      "futureFlashcardId": "flashcards-binary-tree-practice",
+      "futureProjectId": "project-binary-tree-practice",
+      "images": [
+        "content/binary-tree/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "binary-tree-practice.py",
+          "code": "def binary_tree_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(binary_tree_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "binary-tree.interview-questions",
+      "chapter": "Binary Tree",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Binary Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "tree",
+        "recursion",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Binary Tree: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "binary-tree-interview-questions",
+      "animationComponent": "BinaryTreeInterviewQuestionsAnimation",
+      "aiContext": "Binary Tree / Interview Questions: Learn Interview Questions in Binary Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Binary Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Binary Tree: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "binary-tree",
+        "lessonSlug": "interview-questions",
+        "topic": "Binary Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "binary-tree.interview-questions",
+        "tags": [
+          "tree",
+          "recursion",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "binary-tree/introduction"
+      ],
+      "futureQuizId": "quiz-binary-tree-interview-questions",
+      "futureFlashcardId": "flashcards-binary-tree-interview-questions",
+      "futureProjectId": "project-binary-tree-interview-questions",
+      "images": [
+        "content/binary-tree/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "binary-tree-interview-questions.py",
+          "code": "def binary_tree_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(binary_tree_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "binary-tree.revision-summary",
+      "chapter": "Binary Tree",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Binary Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "tree",
+        "recursion",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Binary Tree: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "binary-tree-revision-summary",
+      "animationComponent": "BinaryTreeRevisionSummaryAnimation",
+      "aiContext": "Binary Tree / Revision Summary: Learn Revision Summary in Binary Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Binary Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Binary Tree: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "binary-tree",
+        "lessonSlug": "revision-summary",
+        "topic": "Binary Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "binary-tree.revision-summary",
+        "tags": [
+          "tree",
+          "recursion",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "binary-tree/introduction"
+      ],
+      "futureQuizId": "quiz-binary-tree-revision-summary",
+      "futureFlashcardId": "flashcards-binary-tree-revision-summary",
+      "futureProjectId": "project-binary-tree-revision-summary",
+      "images": [
+        "content/binary-tree/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "binary-tree-revision-summary.py",
+          "code": "def binary_tree_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(binary_tree_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

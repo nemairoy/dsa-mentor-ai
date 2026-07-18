@@ -1,0 +1,825 @@
+{
+  "chapterId": "avl-tree",
+  "title": "AVL Tree",
+  "description": "AVL Tree topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Advanced",
+  "estimatedHours": 5,
+  "tags": [
+    "balanced-tree",
+    "rotations"
+  ],
+  "animationNamespace": "AvlTree",
+  "aiContext": "AVL Tree chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "avl-tree-introduction",
+      "component": "AvlTreeIntroductionAnimation",
+      "status": "planned"
+    },
+    "balance-factor": {
+      "animationId": "avl-tree-balance-factor",
+      "component": "AvlTreeBalanceFactorAnimation",
+      "status": "planned"
+    },
+    "rotations": {
+      "animationId": "avl-tree-rotations",
+      "component": "AvlTreeRotationsAnimation",
+      "status": "planned"
+    },
+    "ll-rr-cases": {
+      "animationId": "avl-tree-ll-rr-cases",
+      "component": "AvlTreeLlRrCasesAnimation",
+      "status": "planned"
+    },
+    "lr-rl-cases": {
+      "animationId": "avl-tree-lr-rl-cases",
+      "component": "AvlTreeLrRlCasesAnimation",
+      "status": "planned"
+    },
+    "insertion": {
+      "animationId": "avl-tree-insertion",
+      "component": "AvlTreeInsertionAnimation",
+      "status": "planned"
+    },
+    "deletion": {
+      "animationId": "avl-tree-deletion",
+      "component": "AvlTreeDeletionAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "avl-tree-practice",
+      "component": "AvlTreePracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "avl-tree-interview-questions",
+      "component": "AvlTreeInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "avl-tree-revision-summary",
+      "component": "AvlTreeRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "avl-tree.introduction",
+      "chapter": "AVL Tree",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "balanced-tree",
+        "rotations",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain AVL Tree: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "avl-tree-introduction",
+      "animationComponent": "AvlTreeIntroductionAnimation",
+      "aiContext": "AVL Tree / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for AVL Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching AVL Tree: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "avl-tree",
+        "lessonSlug": "introduction",
+        "topic": "AVL Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "avl-tree.introduction",
+        "tags": [
+          "balanced-tree",
+          "rotations",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "avl-tree/introduction"
+      ],
+      "futureQuizId": "quiz-avl-tree-introduction",
+      "futureFlashcardId": "flashcards-avl-tree-introduction",
+      "futureProjectId": "project-avl-tree-introduction",
+      "images": [
+        "content/avl-tree/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "avl-tree-introduction.py",
+          "code": "def avl_tree_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(avl_tree_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "balance-factor": {
+      "lessonId": "avl-tree.balance-factor",
+      "chapter": "AVL Tree",
+      "title": "Balance Factor",
+      "summary": "Learn Balance Factor in AVL Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "balanced-tree",
+        "rotations",
+        "balance-factor"
+      ],
+      "learningObjectives": [
+        "Explain AVL Tree: Balance Factor clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "avl-tree-balance-factor",
+      "animationComponent": "AvlTreeBalanceFactorAnimation",
+      "aiContext": "AVL Tree / Balance Factor: Learn Balance Factor in AVL Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Balance Factor lesson for AVL Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching AVL Tree: Balance Factor. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "avl-tree",
+        "lessonSlug": "balance-factor",
+        "topic": "AVL Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "avl-tree.balance-factor",
+        "tags": [
+          "balanced-tree",
+          "rotations",
+          "balance-factor"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "avl-tree/introduction"
+      ],
+      "futureQuizId": "quiz-avl-tree-balance-factor",
+      "futureFlashcardId": "flashcards-avl-tree-balance-factor",
+      "futureProjectId": "project-avl-tree-balance-factor",
+      "images": [
+        "content/avl-tree/images/balance-factor.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Balance Factor from scratch.",
+        "Dry-run Balance Factor on two edge cases.",
+        "Explain Balance Factor complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "avl-tree-balance-factor.py",
+          "code": "def avl_tree_balance_factor(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(avl_tree_balance_factor([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "rotations": {
+      "lessonId": "avl-tree.rotations",
+      "chapter": "AVL Tree",
+      "title": "Rotations",
+      "summary": "Learn Rotations in AVL Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "balanced-tree",
+        "rotations"
+      ],
+      "learningObjectives": [
+        "Explain AVL Tree: Rotations clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "avl-tree-rotations",
+      "animationComponent": "AvlTreeRotationsAnimation",
+      "aiContext": "AVL Tree / Rotations: Learn Rotations in AVL Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Rotations lesson for AVL Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching AVL Tree: Rotations. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "avl-tree",
+        "lessonSlug": "rotations",
+        "topic": "AVL Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "avl-tree.rotations",
+        "tags": [
+          "balanced-tree",
+          "rotations"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "avl-tree/introduction"
+      ],
+      "futureQuizId": "quiz-avl-tree-rotations",
+      "futureFlashcardId": "flashcards-avl-tree-rotations",
+      "futureProjectId": "project-avl-tree-rotations",
+      "images": [
+        "content/avl-tree/images/rotations.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Rotations from scratch.",
+        "Dry-run Rotations on two edge cases.",
+        "Explain Rotations complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "avl-tree-rotations.py",
+          "code": "def avl_tree_rotations(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(avl_tree_rotations([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "ll-rr-cases": {
+      "lessonId": "avl-tree.ll-rr-cases",
+      "chapter": "AVL Tree",
+      "title": "Ll Rr Cases",
+      "summary": "Learn Ll Rr Cases in AVL Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "balanced-tree",
+        "rotations",
+        "ll-rr-cases"
+      ],
+      "learningObjectives": [
+        "Explain AVL Tree: Ll Rr Cases clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "avl-tree-ll-rr-cases",
+      "animationComponent": "AvlTreeLlRrCasesAnimation",
+      "aiContext": "AVL Tree / Ll Rr Cases: Learn Ll Rr Cases in AVL Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Ll Rr Cases lesson for AVL Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching AVL Tree: Ll Rr Cases. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "avl-tree",
+        "lessonSlug": "ll-rr-cases",
+        "topic": "AVL Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "avl-tree.ll-rr-cases",
+        "tags": [
+          "balanced-tree",
+          "rotations",
+          "ll-rr-cases"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "avl-tree/introduction"
+      ],
+      "futureQuizId": "quiz-avl-tree-ll-rr-cases",
+      "futureFlashcardId": "flashcards-avl-tree-ll-rr-cases",
+      "futureProjectId": "project-avl-tree-ll-rr-cases",
+      "images": [
+        "content/avl-tree/images/ll-rr-cases.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Ll Rr Cases from scratch.",
+        "Dry-run Ll Rr Cases on two edge cases.",
+        "Explain Ll Rr Cases complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "avl-tree-ll-rr-cases.py",
+          "code": "def avl_tree_ll_rr_cases(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(avl_tree_ll_rr_cases([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "lr-rl-cases": {
+      "lessonId": "avl-tree.lr-rl-cases",
+      "chapter": "AVL Tree",
+      "title": "Lr Rl Cases",
+      "summary": "Learn Lr Rl Cases in AVL Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "balanced-tree",
+        "rotations",
+        "lr-rl-cases"
+      ],
+      "learningObjectives": [
+        "Explain AVL Tree: Lr Rl Cases clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "avl-tree-lr-rl-cases",
+      "animationComponent": "AvlTreeLrRlCasesAnimation",
+      "aiContext": "AVL Tree / Lr Rl Cases: Learn Lr Rl Cases in AVL Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Lr Rl Cases lesson for AVL Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching AVL Tree: Lr Rl Cases. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "avl-tree",
+        "lessonSlug": "lr-rl-cases",
+        "topic": "AVL Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "avl-tree.lr-rl-cases",
+        "tags": [
+          "balanced-tree",
+          "rotations",
+          "lr-rl-cases"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "avl-tree/introduction"
+      ],
+      "futureQuizId": "quiz-avl-tree-lr-rl-cases",
+      "futureFlashcardId": "flashcards-avl-tree-lr-rl-cases",
+      "futureProjectId": "project-avl-tree-lr-rl-cases",
+      "images": [
+        "content/avl-tree/images/lr-rl-cases.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Lr Rl Cases from scratch.",
+        "Dry-run Lr Rl Cases on two edge cases.",
+        "Explain Lr Rl Cases complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "avl-tree-lr-rl-cases.py",
+          "code": "def avl_tree_lr_rl_cases(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(avl_tree_lr_rl_cases([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "insertion": {
+      "lessonId": "avl-tree.insertion",
+      "chapter": "AVL Tree",
+      "title": "Insertion",
+      "summary": "Learn Insertion in AVL Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "balanced-tree",
+        "rotations",
+        "insertion"
+      ],
+      "learningObjectives": [
+        "Explain AVL Tree: Insertion clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "avl-tree-insertion",
+      "animationComponent": "AvlTreeInsertionAnimation",
+      "aiContext": "AVL Tree / Insertion: Learn Insertion in AVL Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Insertion lesson for AVL Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching AVL Tree: Insertion. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "avl-tree",
+        "lessonSlug": "insertion",
+        "topic": "AVL Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "avl-tree.insertion",
+        "tags": [
+          "balanced-tree",
+          "rotations",
+          "insertion"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "avl-tree/introduction"
+      ],
+      "futureQuizId": "quiz-avl-tree-insertion",
+      "futureFlashcardId": "flashcards-avl-tree-insertion",
+      "futureProjectId": "project-avl-tree-insertion",
+      "images": [
+        "content/avl-tree/images/insertion.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Insertion from scratch.",
+        "Dry-run Insertion on two edge cases.",
+        "Explain Insertion complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "avl-tree-insertion.py",
+          "code": "def avl_tree_insertion(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(avl_tree_insertion([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "deletion": {
+      "lessonId": "avl-tree.deletion",
+      "chapter": "AVL Tree",
+      "title": "Deletion",
+      "summary": "Learn Deletion in AVL Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "balanced-tree",
+        "rotations",
+        "deletion"
+      ],
+      "learningObjectives": [
+        "Explain AVL Tree: Deletion clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "avl-tree-deletion",
+      "animationComponent": "AvlTreeDeletionAnimation",
+      "aiContext": "AVL Tree / Deletion: Learn Deletion in AVL Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Deletion lesson for AVL Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching AVL Tree: Deletion. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "avl-tree",
+        "lessonSlug": "deletion",
+        "topic": "AVL Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "avl-tree.deletion",
+        "tags": [
+          "balanced-tree",
+          "rotations",
+          "deletion"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "avl-tree/introduction"
+      ],
+      "futureQuizId": "quiz-avl-tree-deletion",
+      "futureFlashcardId": "flashcards-avl-tree-deletion",
+      "futureProjectId": "project-avl-tree-deletion",
+      "images": [
+        "content/avl-tree/images/deletion.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Deletion from scratch.",
+        "Dry-run Deletion on two edge cases.",
+        "Explain Deletion complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "avl-tree-deletion.py",
+          "code": "def avl_tree_deletion(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(avl_tree_deletion([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "avl-tree.practice",
+      "chapter": "AVL Tree",
+      "title": "Practice",
+      "summary": "Learn Practice in AVL Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "balanced-tree",
+        "rotations",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain AVL Tree: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "avl-tree-practice",
+      "animationComponent": "AvlTreePracticeAnimation",
+      "aiContext": "AVL Tree / Practice: Learn Practice in AVL Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for AVL Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching AVL Tree: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "avl-tree",
+        "lessonSlug": "practice",
+        "topic": "AVL Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "avl-tree.practice",
+        "tags": [
+          "balanced-tree",
+          "rotations",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "avl-tree/introduction"
+      ],
+      "futureQuizId": "quiz-avl-tree-practice",
+      "futureFlashcardId": "flashcards-avl-tree-practice",
+      "futureProjectId": "project-avl-tree-practice",
+      "images": [
+        "content/avl-tree/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "avl-tree-practice.py",
+          "code": "def avl_tree_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(avl_tree_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "avl-tree.interview-questions",
+      "chapter": "AVL Tree",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in AVL Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "balanced-tree",
+        "rotations",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain AVL Tree: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "avl-tree-interview-questions",
+      "animationComponent": "AvlTreeInterviewQuestionsAnimation",
+      "aiContext": "AVL Tree / Interview Questions: Learn Interview Questions in AVL Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for AVL Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching AVL Tree: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "avl-tree",
+        "lessonSlug": "interview-questions",
+        "topic": "AVL Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "avl-tree.interview-questions",
+        "tags": [
+          "balanced-tree",
+          "rotations",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "avl-tree/introduction"
+      ],
+      "futureQuizId": "quiz-avl-tree-interview-questions",
+      "futureFlashcardId": "flashcards-avl-tree-interview-questions",
+      "futureProjectId": "project-avl-tree-interview-questions",
+      "images": [
+        "content/avl-tree/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "avl-tree-interview-questions.py",
+          "code": "def avl_tree_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(avl_tree_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "avl-tree.revision-summary",
+      "chapter": "AVL Tree",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in AVL Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "balanced-tree",
+        "rotations",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain AVL Tree: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "avl-tree-revision-summary",
+      "animationComponent": "AvlTreeRevisionSummaryAnimation",
+      "aiContext": "AVL Tree / Revision Summary: Learn Revision Summary in AVL Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for AVL Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching AVL Tree: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "avl-tree",
+        "lessonSlug": "revision-summary",
+        "topic": "AVL Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "avl-tree.revision-summary",
+        "tags": [
+          "balanced-tree",
+          "rotations",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "avl-tree/introduction"
+      ],
+      "futureQuizId": "quiz-avl-tree-revision-summary",
+      "futureFlashcardId": "flashcards-avl-tree-revision-summary",
+      "futureProjectId": "project-avl-tree-revision-summary",
+      "images": [
+        "content/avl-tree/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "avl-tree-revision-summary.py",
+          "code": "def avl_tree_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(avl_tree_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

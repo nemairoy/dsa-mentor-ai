@@ -1,0 +1,908 @@
+{
+  "chapterId": "strings",
+  "title": "Strings",
+  "description": "Strings topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Beginner",
+  "estimatedHours": 5,
+  "tags": [
+    "linear-data-structure",
+    "text"
+  ],
+  "animationNamespace": "Strings",
+  "aiContext": "Strings chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "strings-introduction",
+      "component": "StringsIntroductionAnimation",
+      "status": "planned"
+    },
+    "character-arrays": {
+      "animationId": "strings-character-arrays",
+      "component": "StringsCharacterArraysAnimation",
+      "status": "planned"
+    },
+    "traversal": {
+      "animationId": "strings-traversal",
+      "component": "StringsTraversalAnimation",
+      "status": "planned"
+    },
+    "frequency-counting": {
+      "animationId": "strings-frequency-counting",
+      "component": "StringsFrequencyCountingAnimation",
+      "status": "planned"
+    },
+    "two-pointer": {
+      "animationId": "strings-two-pointer",
+      "component": "StringsTwoPointerAnimation",
+      "status": "planned"
+    },
+    "sliding-window": {
+      "animationId": "strings-sliding-window",
+      "component": "StringsSlidingWindowAnimation",
+      "status": "planned"
+    },
+    "palindrome": {
+      "animationId": "strings-palindrome",
+      "component": "StringsPalindromeAnimation",
+      "status": "planned"
+    },
+    "pattern-matching": {
+      "animationId": "strings-pattern-matching",
+      "component": "StringsPatternMatchingAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "strings-practice",
+      "component": "StringsPracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "strings-interview-questions",
+      "component": "StringsInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "strings-revision-summary",
+      "component": "StringsRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "strings.introduction",
+      "chapter": "Strings",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "text",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Strings: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "strings-introduction",
+      "animationComponent": "StringsIntroductionAnimation",
+      "aiContext": "Strings / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Strings, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Strings: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "strings",
+        "lessonSlug": "introduction",
+        "topic": "Strings",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "strings.introduction",
+        "tags": [
+          "linear-data-structure",
+          "text",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "strings/introduction"
+      ],
+      "futureQuizId": "quiz-strings-introduction",
+      "futureFlashcardId": "flashcards-strings-introduction",
+      "futureProjectId": "project-strings-introduction",
+      "images": [
+        "content/strings/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "strings-introduction.py",
+          "code": "def strings_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(strings_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "character-arrays": {
+      "lessonId": "strings.character-arrays",
+      "chapter": "Strings",
+      "title": "Character Arrays",
+      "summary": "Learn Character Arrays in Strings with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "text",
+        "character-arrays"
+      ],
+      "learningObjectives": [
+        "Explain Strings: Character Arrays clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "strings-character-arrays",
+      "animationComponent": "StringsCharacterArraysAnimation",
+      "aiContext": "Strings / Character Arrays: Learn Character Arrays in Strings with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Character Arrays lesson for Strings, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Strings: Character Arrays. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "strings",
+        "lessonSlug": "character-arrays",
+        "topic": "Strings",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "strings.character-arrays",
+        "tags": [
+          "linear-data-structure",
+          "text",
+          "character-arrays"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "strings/introduction"
+      ],
+      "futureQuizId": "quiz-strings-character-arrays",
+      "futureFlashcardId": "flashcards-strings-character-arrays",
+      "futureProjectId": "project-strings-character-arrays",
+      "images": [
+        "content/strings/images/character-arrays.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Character Arrays from scratch.",
+        "Dry-run Character Arrays on two edge cases.",
+        "Explain Character Arrays complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "strings-character-arrays.py",
+          "code": "def strings_character_arrays(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(strings_character_arrays([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "traversal": {
+      "lessonId": "strings.traversal",
+      "chapter": "Strings",
+      "title": "Traversal",
+      "summary": "Learn Traversal in Strings with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "text",
+        "traversal"
+      ],
+      "learningObjectives": [
+        "Explain Strings: Traversal clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "strings-traversal",
+      "animationComponent": "StringsTraversalAnimation",
+      "aiContext": "Strings / Traversal: Learn Traversal in Strings with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Traversal lesson for Strings, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Strings: Traversal. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "strings",
+        "lessonSlug": "traversal",
+        "topic": "Strings",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "strings.traversal",
+        "tags": [
+          "linear-data-structure",
+          "text",
+          "traversal"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "strings/introduction"
+      ],
+      "futureQuizId": "quiz-strings-traversal",
+      "futureFlashcardId": "flashcards-strings-traversal",
+      "futureProjectId": "project-strings-traversal",
+      "images": [
+        "content/strings/images/traversal.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Traversal from scratch.",
+        "Dry-run Traversal on two edge cases.",
+        "Explain Traversal complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "strings-traversal.py",
+          "code": "def strings_traversal(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(strings_traversal([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "frequency-counting": {
+      "lessonId": "strings.frequency-counting",
+      "chapter": "Strings",
+      "title": "Frequency Counting",
+      "summary": "Learn Frequency Counting in Strings with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "text",
+        "frequency-counting"
+      ],
+      "learningObjectives": [
+        "Explain Strings: Frequency Counting clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "strings-frequency-counting",
+      "animationComponent": "StringsFrequencyCountingAnimation",
+      "aiContext": "Strings / Frequency Counting: Learn Frequency Counting in Strings with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Frequency Counting lesson for Strings, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Strings: Frequency Counting. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "strings",
+        "lessonSlug": "frequency-counting",
+        "topic": "Strings",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "strings.frequency-counting",
+        "tags": [
+          "linear-data-structure",
+          "text",
+          "frequency-counting"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "strings/introduction"
+      ],
+      "futureQuizId": "quiz-strings-frequency-counting",
+      "futureFlashcardId": "flashcards-strings-frequency-counting",
+      "futureProjectId": "project-strings-frequency-counting",
+      "images": [
+        "content/strings/images/frequency-counting.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Frequency Counting from scratch.",
+        "Dry-run Frequency Counting on two edge cases.",
+        "Explain Frequency Counting complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "strings-frequency-counting.py",
+          "code": "def strings_frequency_counting(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(strings_frequency_counting([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "two-pointer": {
+      "lessonId": "strings.two-pointer",
+      "chapter": "Strings",
+      "title": "Two Pointer",
+      "summary": "Learn Two Pointer in Strings with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "text",
+        "two-pointer"
+      ],
+      "learningObjectives": [
+        "Explain Strings: Two Pointer clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "strings-two-pointer",
+      "animationComponent": "StringsTwoPointerAnimation",
+      "aiContext": "Strings / Two Pointer: Learn Two Pointer in Strings with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Two Pointer lesson for Strings, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Strings: Two Pointer. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "strings",
+        "lessonSlug": "two-pointer",
+        "topic": "Strings",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "strings.two-pointer",
+        "tags": [
+          "linear-data-structure",
+          "text",
+          "two-pointer"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "strings/introduction"
+      ],
+      "futureQuizId": "quiz-strings-two-pointer",
+      "futureFlashcardId": "flashcards-strings-two-pointer",
+      "futureProjectId": "project-strings-two-pointer",
+      "images": [
+        "content/strings/images/two-pointer.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Two Pointer from scratch.",
+        "Dry-run Two Pointer on two edge cases.",
+        "Explain Two Pointer complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "strings-two-pointer.py",
+          "code": "def strings_two_pointer(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(strings_two_pointer([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "sliding-window": {
+      "lessonId": "strings.sliding-window",
+      "chapter": "Strings",
+      "title": "Sliding Window",
+      "summary": "Learn Sliding Window in Strings with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "text",
+        "sliding-window"
+      ],
+      "learningObjectives": [
+        "Explain Strings: Sliding Window clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "strings-sliding-window",
+      "animationComponent": "StringsSlidingWindowAnimation",
+      "aiContext": "Strings / Sliding Window: Learn Sliding Window in Strings with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Sliding Window lesson for Strings, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Strings: Sliding Window. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "strings",
+        "lessonSlug": "sliding-window",
+        "topic": "Strings",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "strings.sliding-window",
+        "tags": [
+          "linear-data-structure",
+          "text",
+          "sliding-window"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "strings/introduction"
+      ],
+      "futureQuizId": "quiz-strings-sliding-window",
+      "futureFlashcardId": "flashcards-strings-sliding-window",
+      "futureProjectId": "project-strings-sliding-window",
+      "images": [
+        "content/strings/images/sliding-window.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Sliding Window from scratch.",
+        "Dry-run Sliding Window on two edge cases.",
+        "Explain Sliding Window complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "strings-sliding-window.py",
+          "code": "def strings_sliding_window(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(strings_sliding_window([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "palindrome": {
+      "lessonId": "strings.palindrome",
+      "chapter": "Strings",
+      "title": "Palindrome",
+      "summary": "Learn Palindrome in Strings with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "text",
+        "palindrome"
+      ],
+      "learningObjectives": [
+        "Explain Strings: Palindrome clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "strings-palindrome",
+      "animationComponent": "StringsPalindromeAnimation",
+      "aiContext": "Strings / Palindrome: Learn Palindrome in Strings with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Palindrome lesson for Strings, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Strings: Palindrome. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "strings",
+        "lessonSlug": "palindrome",
+        "topic": "Strings",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "strings.palindrome",
+        "tags": [
+          "linear-data-structure",
+          "text",
+          "palindrome"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "strings/introduction"
+      ],
+      "futureQuizId": "quiz-strings-palindrome",
+      "futureFlashcardId": "flashcards-strings-palindrome",
+      "futureProjectId": "project-strings-palindrome",
+      "images": [
+        "content/strings/images/palindrome.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Palindrome from scratch.",
+        "Dry-run Palindrome on two edge cases.",
+        "Explain Palindrome complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "strings-palindrome.py",
+          "code": "def strings_palindrome(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(strings_palindrome([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "pattern-matching": {
+      "lessonId": "strings.pattern-matching",
+      "chapter": "Strings",
+      "title": "Pattern Matching",
+      "summary": "Learn Pattern Matching in Strings with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "text",
+        "pattern-matching"
+      ],
+      "learningObjectives": [
+        "Explain Strings: Pattern Matching clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "strings-pattern-matching",
+      "animationComponent": "StringsPatternMatchingAnimation",
+      "aiContext": "Strings / Pattern Matching: Learn Pattern Matching in Strings with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Pattern Matching lesson for Strings, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Strings: Pattern Matching. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "strings",
+        "lessonSlug": "pattern-matching",
+        "topic": "Strings",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "strings.pattern-matching",
+        "tags": [
+          "linear-data-structure",
+          "text",
+          "pattern-matching"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "strings/introduction"
+      ],
+      "futureQuizId": "quiz-strings-pattern-matching",
+      "futureFlashcardId": "flashcards-strings-pattern-matching",
+      "futureProjectId": "project-strings-pattern-matching",
+      "images": [
+        "content/strings/images/pattern-matching.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Pattern Matching from scratch.",
+        "Dry-run Pattern Matching on two edge cases.",
+        "Explain Pattern Matching complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "strings-pattern-matching.py",
+          "code": "def strings_pattern_matching(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(strings_pattern_matching([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "strings.practice",
+      "chapter": "Strings",
+      "title": "Practice",
+      "summary": "Learn Practice in Strings with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "text",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Strings: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "strings-practice",
+      "animationComponent": "StringsPracticeAnimation",
+      "aiContext": "Strings / Practice: Learn Practice in Strings with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Strings, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Strings: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "strings",
+        "lessonSlug": "practice",
+        "topic": "Strings",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "strings.practice",
+        "tags": [
+          "linear-data-structure",
+          "text",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "strings/introduction"
+      ],
+      "futureQuizId": "quiz-strings-practice",
+      "futureFlashcardId": "flashcards-strings-practice",
+      "futureProjectId": "project-strings-practice",
+      "images": [
+        "content/strings/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "strings-practice.py",
+          "code": "def strings_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(strings_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "strings.interview-questions",
+      "chapter": "Strings",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Strings with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "text",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Strings: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "strings-interview-questions",
+      "animationComponent": "StringsInterviewQuestionsAnimation",
+      "aiContext": "Strings / Interview Questions: Learn Interview Questions in Strings with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Strings, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Strings: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "strings",
+        "lessonSlug": "interview-questions",
+        "topic": "Strings",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "strings.interview-questions",
+        "tags": [
+          "linear-data-structure",
+          "text",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "strings/introduction"
+      ],
+      "futureQuizId": "quiz-strings-interview-questions",
+      "futureFlashcardId": "flashcards-strings-interview-questions",
+      "futureProjectId": "project-strings-interview-questions",
+      "images": [
+        "content/strings/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "strings-interview-questions.py",
+          "code": "def strings_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(strings_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "strings.revision-summary",
+      "chapter": "Strings",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Strings with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "text",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Strings: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "strings-revision-summary",
+      "animationComponent": "StringsRevisionSummaryAnimation",
+      "aiContext": "Strings / Revision Summary: Learn Revision Summary in Strings with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Strings, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Strings: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "strings",
+        "lessonSlug": "revision-summary",
+        "topic": "Strings",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "strings.revision-summary",
+        "tags": [
+          "linear-data-structure",
+          "text",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "strings/introduction"
+      ],
+      "futureQuizId": "quiz-strings-revision-summary",
+      "futureFlashcardId": "flashcards-strings-revision-summary",
+      "futureProjectId": "project-strings-revision-summary",
+      "images": [
+        "content/strings/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "strings-revision-summary.py",
+          "code": "def strings_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(strings_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

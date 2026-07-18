@@ -1,0 +1,746 @@
+{
+  "chapterId": "big-o",
+  "title": "Big O",
+  "description": "Big O topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Beginner",
+  "estimatedHours": 4,
+  "tags": [
+    "asymptotic-analysis",
+    "upper-bound"
+  ],
+  "animationNamespace": "BigO",
+  "aiContext": "Big O chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "big-o-introduction",
+      "component": "BigOIntroductionAnimation",
+      "status": "planned"
+    },
+    "definition": {
+      "animationId": "big-o-definition",
+      "component": "BigODefinitionAnimation",
+      "status": "planned"
+    },
+    "drop-constants": {
+      "animationId": "big-o-drop-constants",
+      "component": "BigODropConstantsAnimation",
+      "status": "planned"
+    },
+    "dominant-term": {
+      "animationId": "big-o-dominant-term",
+      "component": "BigODominantTermAnimation",
+      "status": "planned"
+    },
+    "common-classes": {
+      "animationId": "big-o-common-classes",
+      "component": "BigOCommonClassesAnimation",
+      "status": "planned"
+    },
+    "examples": {
+      "animationId": "big-o-examples",
+      "component": "BigOExamplesAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "big-o-practice",
+      "component": "BigOPracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "big-o-interview-questions",
+      "component": "BigOInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "big-o-revision-summary",
+      "component": "BigORevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "big-o.introduction",
+      "chapter": "Big O",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "asymptotic-analysis",
+        "upper-bound",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Big O: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "big-o-introduction",
+      "animationComponent": "BigOIntroductionAnimation",
+      "aiContext": "Big O / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Big O, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Big O: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "big-o",
+        "lessonSlug": "introduction",
+        "topic": "Big O",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "big-o.introduction",
+        "tags": [
+          "asymptotic-analysis",
+          "upper-bound",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "big-o/introduction"
+      ],
+      "futureQuizId": "quiz-big-o-introduction",
+      "futureFlashcardId": "flashcards-big-o-introduction",
+      "futureProjectId": "project-big-o-introduction",
+      "images": [
+        "content/big-o/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "big-o-introduction.py",
+          "code": "def big_o_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(big_o_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "definition": {
+      "lessonId": "big-o.definition",
+      "chapter": "Big O",
+      "title": "Definition",
+      "summary": "Learn Definition in Big O with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "asymptotic-analysis",
+        "upper-bound",
+        "definition"
+      ],
+      "learningObjectives": [
+        "Explain Big O: Definition clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "big-o-definition",
+      "animationComponent": "BigODefinitionAnimation",
+      "aiContext": "Big O / Definition: Learn Definition in Big O with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Definition lesson for Big O, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Big O: Definition. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "big-o",
+        "lessonSlug": "definition",
+        "topic": "Big O",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "big-o.definition",
+        "tags": [
+          "asymptotic-analysis",
+          "upper-bound",
+          "definition"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "big-o/introduction"
+      ],
+      "futureQuizId": "quiz-big-o-definition",
+      "futureFlashcardId": "flashcards-big-o-definition",
+      "futureProjectId": "project-big-o-definition",
+      "images": [
+        "content/big-o/images/definition.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Definition from scratch.",
+        "Dry-run Definition on two edge cases.",
+        "Explain Definition complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "big-o-definition.py",
+          "code": "def big_o_definition(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(big_o_definition([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "drop-constants": {
+      "lessonId": "big-o.drop-constants",
+      "chapter": "Big O",
+      "title": "Drop Constants",
+      "summary": "Learn Drop Constants in Big O with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "asymptotic-analysis",
+        "upper-bound",
+        "drop-constants"
+      ],
+      "learningObjectives": [
+        "Explain Big O: Drop Constants clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "big-o-drop-constants",
+      "animationComponent": "BigODropConstantsAnimation",
+      "aiContext": "Big O / Drop Constants: Learn Drop Constants in Big O with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Drop Constants lesson for Big O, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Big O: Drop Constants. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "big-o",
+        "lessonSlug": "drop-constants",
+        "topic": "Big O",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "big-o.drop-constants",
+        "tags": [
+          "asymptotic-analysis",
+          "upper-bound",
+          "drop-constants"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "big-o/introduction"
+      ],
+      "futureQuizId": "quiz-big-o-drop-constants",
+      "futureFlashcardId": "flashcards-big-o-drop-constants",
+      "futureProjectId": "project-big-o-drop-constants",
+      "images": [
+        "content/big-o/images/drop-constants.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Drop Constants from scratch.",
+        "Dry-run Drop Constants on two edge cases.",
+        "Explain Drop Constants complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "big-o-drop-constants.py",
+          "code": "def big_o_drop_constants(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(big_o_drop_constants([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "dominant-term": {
+      "lessonId": "big-o.dominant-term",
+      "chapter": "Big O",
+      "title": "Dominant Term",
+      "summary": "Learn Dominant Term in Big O with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "asymptotic-analysis",
+        "upper-bound",
+        "dominant-term"
+      ],
+      "learningObjectives": [
+        "Explain Big O: Dominant Term clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "big-o-dominant-term",
+      "animationComponent": "BigODominantTermAnimation",
+      "aiContext": "Big O / Dominant Term: Learn Dominant Term in Big O with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Dominant Term lesson for Big O, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Big O: Dominant Term. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "big-o",
+        "lessonSlug": "dominant-term",
+        "topic": "Big O",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "big-o.dominant-term",
+        "tags": [
+          "asymptotic-analysis",
+          "upper-bound",
+          "dominant-term"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "big-o/introduction"
+      ],
+      "futureQuizId": "quiz-big-o-dominant-term",
+      "futureFlashcardId": "flashcards-big-o-dominant-term",
+      "futureProjectId": "project-big-o-dominant-term",
+      "images": [
+        "content/big-o/images/dominant-term.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Dominant Term from scratch.",
+        "Dry-run Dominant Term on two edge cases.",
+        "Explain Dominant Term complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "big-o-dominant-term.py",
+          "code": "def big_o_dominant_term(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(big_o_dominant_term([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "common-classes": {
+      "lessonId": "big-o.common-classes",
+      "chapter": "Big O",
+      "title": "Common Classes",
+      "summary": "Learn Common Classes in Big O with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "asymptotic-analysis",
+        "upper-bound",
+        "common-classes"
+      ],
+      "learningObjectives": [
+        "Explain Big O: Common Classes clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "big-o-common-classes",
+      "animationComponent": "BigOCommonClassesAnimation",
+      "aiContext": "Big O / Common Classes: Learn Common Classes in Big O with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Common Classes lesson for Big O, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Big O: Common Classes. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "big-o",
+        "lessonSlug": "common-classes",
+        "topic": "Big O",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "big-o.common-classes",
+        "tags": [
+          "asymptotic-analysis",
+          "upper-bound",
+          "common-classes"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "big-o/introduction"
+      ],
+      "futureQuizId": "quiz-big-o-common-classes",
+      "futureFlashcardId": "flashcards-big-o-common-classes",
+      "futureProjectId": "project-big-o-common-classes",
+      "images": [
+        "content/big-o/images/common-classes.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Common Classes from scratch.",
+        "Dry-run Common Classes on two edge cases.",
+        "Explain Common Classes complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "big-o-common-classes.py",
+          "code": "def big_o_common_classes(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(big_o_common_classes([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "examples": {
+      "lessonId": "big-o.examples",
+      "chapter": "Big O",
+      "title": "Examples",
+      "summary": "Learn Examples in Big O with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "asymptotic-analysis",
+        "upper-bound",
+        "examples"
+      ],
+      "learningObjectives": [
+        "Explain Big O: Examples clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "big-o-examples",
+      "animationComponent": "BigOExamplesAnimation",
+      "aiContext": "Big O / Examples: Learn Examples in Big O with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Examples lesson for Big O, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Big O: Examples. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "big-o",
+        "lessonSlug": "examples",
+        "topic": "Big O",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "big-o.examples",
+        "tags": [
+          "asymptotic-analysis",
+          "upper-bound",
+          "examples"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "big-o/introduction"
+      ],
+      "futureQuizId": "quiz-big-o-examples",
+      "futureFlashcardId": "flashcards-big-o-examples",
+      "futureProjectId": "project-big-o-examples",
+      "images": [
+        "content/big-o/images/examples.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Examples from scratch.",
+        "Dry-run Examples on two edge cases.",
+        "Explain Examples complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "big-o-examples.py",
+          "code": "def big_o_examples(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(big_o_examples([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "big-o.practice",
+      "chapter": "Big O",
+      "title": "Practice",
+      "summary": "Learn Practice in Big O with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "asymptotic-analysis",
+        "upper-bound",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Big O: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "big-o-practice",
+      "animationComponent": "BigOPracticeAnimation",
+      "aiContext": "Big O / Practice: Learn Practice in Big O with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Big O, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Big O: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "big-o",
+        "lessonSlug": "practice",
+        "topic": "Big O",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "big-o.practice",
+        "tags": [
+          "asymptotic-analysis",
+          "upper-bound",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "big-o/introduction"
+      ],
+      "futureQuizId": "quiz-big-o-practice",
+      "futureFlashcardId": "flashcards-big-o-practice",
+      "futureProjectId": "project-big-o-practice",
+      "images": [
+        "content/big-o/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "big-o-practice.py",
+          "code": "def big_o_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(big_o_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "big-o.interview-questions",
+      "chapter": "Big O",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Big O with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "asymptotic-analysis",
+        "upper-bound",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Big O: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "big-o-interview-questions",
+      "animationComponent": "BigOInterviewQuestionsAnimation",
+      "aiContext": "Big O / Interview Questions: Learn Interview Questions in Big O with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Big O, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Big O: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "big-o",
+        "lessonSlug": "interview-questions",
+        "topic": "Big O",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "big-o.interview-questions",
+        "tags": [
+          "asymptotic-analysis",
+          "upper-bound",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "big-o/introduction"
+      ],
+      "futureQuizId": "quiz-big-o-interview-questions",
+      "futureFlashcardId": "flashcards-big-o-interview-questions",
+      "futureProjectId": "project-big-o-interview-questions",
+      "images": [
+        "content/big-o/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "big-o-interview-questions.py",
+          "code": "def big_o_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(big_o_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "big-o.revision-summary",
+      "chapter": "Big O",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Big O with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "asymptotic-analysis",
+        "upper-bound",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Big O: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "big-o-revision-summary",
+      "animationComponent": "BigORevisionSummaryAnimation",
+      "aiContext": "Big O / Revision Summary: Learn Revision Summary in Big O with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Big O, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Big O: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "big-o",
+        "lessonSlug": "revision-summary",
+        "topic": "Big O",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "big-o.revision-summary",
+        "tags": [
+          "asymptotic-analysis",
+          "upper-bound",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "big-o/introduction"
+      ],
+      "futureQuizId": "quiz-big-o-revision-summary",
+      "futureFlashcardId": "flashcards-big-o-revision-summary",
+      "futureProjectId": "project-big-o-revision-summary",
+      "images": [
+        "content/big-o/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "big-o-revision-summary.py",
+          "code": "def big_o_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(big_o_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

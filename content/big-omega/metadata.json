@@ -1,0 +1,744 @@
+{
+  "chapterId": "big-omega",
+  "title": "Big Omega",
+  "description": "Big Omega topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Beginner",
+  "estimatedHours": 4,
+  "tags": [
+    "asymptotic-analysis",
+    "lower-bound"
+  ],
+  "animationNamespace": "BigOmega",
+  "aiContext": "Big Omega chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "big-omega-introduction",
+      "component": "BigOmegaIntroductionAnimation",
+      "status": "planned"
+    },
+    "definition": {
+      "animationId": "big-omega-definition",
+      "component": "BigOmegaDefinitionAnimation",
+      "status": "planned"
+    },
+    "lower-bound": {
+      "animationId": "big-omega-lower-bound",
+      "component": "BigOmegaLowerBoundAnimation",
+      "status": "planned"
+    },
+    "best-case-analysis": {
+      "animationId": "big-omega-best-case-analysis",
+      "component": "BigOmegaBestCaseAnalysisAnimation",
+      "status": "planned"
+    },
+    "examples": {
+      "animationId": "big-omega-examples",
+      "component": "BigOmegaExamplesAnimation",
+      "status": "planned"
+    },
+    "big-o-vs-big-omega": {
+      "animationId": "big-omega-big-o-vs-big-omega",
+      "component": "BigOmegaBigOVsBigOmegaAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "big-omega-practice",
+      "component": "BigOmegaPracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "big-omega-interview-questions",
+      "component": "BigOmegaInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "big-omega-revision-summary",
+      "component": "BigOmegaRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "big-omega.introduction",
+      "chapter": "Big Omega",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "asymptotic-analysis",
+        "lower-bound",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Big Omega: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "big-omega-introduction",
+      "animationComponent": "BigOmegaIntroductionAnimation",
+      "aiContext": "Big Omega / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Big Omega, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Big Omega: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "big-omega",
+        "lessonSlug": "introduction",
+        "topic": "Big Omega",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "big-omega.introduction",
+        "tags": [
+          "asymptotic-analysis",
+          "lower-bound",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "big-omega/introduction"
+      ],
+      "futureQuizId": "quiz-big-omega-introduction",
+      "futureFlashcardId": "flashcards-big-omega-introduction",
+      "futureProjectId": "project-big-omega-introduction",
+      "images": [
+        "content/big-omega/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "big-omega-introduction.py",
+          "code": "def big_omega_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(big_omega_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "definition": {
+      "lessonId": "big-omega.definition",
+      "chapter": "Big Omega",
+      "title": "Definition",
+      "summary": "Learn Definition in Big Omega with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "asymptotic-analysis",
+        "lower-bound",
+        "definition"
+      ],
+      "learningObjectives": [
+        "Explain Big Omega: Definition clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "big-omega-definition",
+      "animationComponent": "BigOmegaDefinitionAnimation",
+      "aiContext": "Big Omega / Definition: Learn Definition in Big Omega with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Definition lesson for Big Omega, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Big Omega: Definition. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "big-omega",
+        "lessonSlug": "definition",
+        "topic": "Big Omega",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "big-omega.definition",
+        "tags": [
+          "asymptotic-analysis",
+          "lower-bound",
+          "definition"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "big-omega/introduction"
+      ],
+      "futureQuizId": "quiz-big-omega-definition",
+      "futureFlashcardId": "flashcards-big-omega-definition",
+      "futureProjectId": "project-big-omega-definition",
+      "images": [
+        "content/big-omega/images/definition.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Definition from scratch.",
+        "Dry-run Definition on two edge cases.",
+        "Explain Definition complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "big-omega-definition.py",
+          "code": "def big_omega_definition(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(big_omega_definition([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "lower-bound": {
+      "lessonId": "big-omega.lower-bound",
+      "chapter": "Big Omega",
+      "title": "Lower Bound",
+      "summary": "Learn Lower Bound in Big Omega with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "asymptotic-analysis",
+        "lower-bound"
+      ],
+      "learningObjectives": [
+        "Explain Big Omega: Lower Bound clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "big-omega-lower-bound",
+      "animationComponent": "BigOmegaLowerBoundAnimation",
+      "aiContext": "Big Omega / Lower Bound: Learn Lower Bound in Big Omega with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Lower Bound lesson for Big Omega, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Big Omega: Lower Bound. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "big-omega",
+        "lessonSlug": "lower-bound",
+        "topic": "Big Omega",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "big-omega.lower-bound",
+        "tags": [
+          "asymptotic-analysis",
+          "lower-bound"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "big-omega/introduction"
+      ],
+      "futureQuizId": "quiz-big-omega-lower-bound",
+      "futureFlashcardId": "flashcards-big-omega-lower-bound",
+      "futureProjectId": "project-big-omega-lower-bound",
+      "images": [
+        "content/big-omega/images/lower-bound.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Lower Bound from scratch.",
+        "Dry-run Lower Bound on two edge cases.",
+        "Explain Lower Bound complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "big-omega-lower-bound.py",
+          "code": "def big_omega_lower_bound(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(big_omega_lower_bound([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "best-case-analysis": {
+      "lessonId": "big-omega.best-case-analysis",
+      "chapter": "Big Omega",
+      "title": "Best Case Analysis",
+      "summary": "Learn Best Case Analysis in Big Omega with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "asymptotic-analysis",
+        "lower-bound",
+        "best-case-analysis"
+      ],
+      "learningObjectives": [
+        "Explain Big Omega: Best Case Analysis clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "big-omega-best-case-analysis",
+      "animationComponent": "BigOmegaBestCaseAnalysisAnimation",
+      "aiContext": "Big Omega / Best Case Analysis: Learn Best Case Analysis in Big Omega with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Best Case Analysis lesson for Big Omega, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Big Omega: Best Case Analysis. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "big-omega",
+        "lessonSlug": "best-case-analysis",
+        "topic": "Big Omega",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "big-omega.best-case-analysis",
+        "tags": [
+          "asymptotic-analysis",
+          "lower-bound",
+          "best-case-analysis"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "big-omega/introduction"
+      ],
+      "futureQuizId": "quiz-big-omega-best-case-analysis",
+      "futureFlashcardId": "flashcards-big-omega-best-case-analysis",
+      "futureProjectId": "project-big-omega-best-case-analysis",
+      "images": [
+        "content/big-omega/images/best-case-analysis.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Best Case Analysis from scratch.",
+        "Dry-run Best Case Analysis on two edge cases.",
+        "Explain Best Case Analysis complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "big-omega-best-case-analysis.py",
+          "code": "def big_omega_best_case_analysis(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(big_omega_best_case_analysis([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "examples": {
+      "lessonId": "big-omega.examples",
+      "chapter": "Big Omega",
+      "title": "Examples",
+      "summary": "Learn Examples in Big Omega with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "asymptotic-analysis",
+        "lower-bound",
+        "examples"
+      ],
+      "learningObjectives": [
+        "Explain Big Omega: Examples clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "big-omega-examples",
+      "animationComponent": "BigOmegaExamplesAnimation",
+      "aiContext": "Big Omega / Examples: Learn Examples in Big Omega with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Examples lesson for Big Omega, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Big Omega: Examples. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "big-omega",
+        "lessonSlug": "examples",
+        "topic": "Big Omega",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "big-omega.examples",
+        "tags": [
+          "asymptotic-analysis",
+          "lower-bound",
+          "examples"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "big-omega/introduction"
+      ],
+      "futureQuizId": "quiz-big-omega-examples",
+      "futureFlashcardId": "flashcards-big-omega-examples",
+      "futureProjectId": "project-big-omega-examples",
+      "images": [
+        "content/big-omega/images/examples.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Examples from scratch.",
+        "Dry-run Examples on two edge cases.",
+        "Explain Examples complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "big-omega-examples.py",
+          "code": "def big_omega_examples(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(big_omega_examples([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "big-o-vs-big-omega": {
+      "lessonId": "big-omega.big-o-vs-big-omega",
+      "chapter": "Big Omega",
+      "title": "Big O Vs Big Omega",
+      "summary": "Learn Big O Vs Big Omega in Big Omega with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "asymptotic-analysis",
+        "lower-bound",
+        "big-o-vs-big-omega"
+      ],
+      "learningObjectives": [
+        "Explain Big Omega: Big O Vs Big Omega clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "big-omega-big-o-vs-big-omega",
+      "animationComponent": "BigOmegaBigOVsBigOmegaAnimation",
+      "aiContext": "Big Omega / Big O Vs Big Omega: Learn Big O Vs Big Omega in Big Omega with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Big O Vs Big Omega lesson for Big Omega, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Big Omega: Big O Vs Big Omega. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "big-omega",
+        "lessonSlug": "big-o-vs-big-omega",
+        "topic": "Big Omega",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "big-omega.big-o-vs-big-omega",
+        "tags": [
+          "asymptotic-analysis",
+          "lower-bound",
+          "big-o-vs-big-omega"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "big-omega/introduction"
+      ],
+      "futureQuizId": "quiz-big-omega-big-o-vs-big-omega",
+      "futureFlashcardId": "flashcards-big-omega-big-o-vs-big-omega",
+      "futureProjectId": "project-big-omega-big-o-vs-big-omega",
+      "images": [
+        "content/big-omega/images/big-o-vs-big-omega.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Big O Vs Big Omega from scratch.",
+        "Dry-run Big O Vs Big Omega on two edge cases.",
+        "Explain Big O Vs Big Omega complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "big-omega-big-o-vs-big-omega.py",
+          "code": "def big_omega_big_o_vs_big_omega(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(big_omega_big_o_vs_big_omega([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "big-omega.practice",
+      "chapter": "Big Omega",
+      "title": "Practice",
+      "summary": "Learn Practice in Big Omega with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "asymptotic-analysis",
+        "lower-bound",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Big Omega: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "big-omega-practice",
+      "animationComponent": "BigOmegaPracticeAnimation",
+      "aiContext": "Big Omega / Practice: Learn Practice in Big Omega with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Big Omega, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Big Omega: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "big-omega",
+        "lessonSlug": "practice",
+        "topic": "Big Omega",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "big-omega.practice",
+        "tags": [
+          "asymptotic-analysis",
+          "lower-bound",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "big-omega/introduction"
+      ],
+      "futureQuizId": "quiz-big-omega-practice",
+      "futureFlashcardId": "flashcards-big-omega-practice",
+      "futureProjectId": "project-big-omega-practice",
+      "images": [
+        "content/big-omega/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "big-omega-practice.py",
+          "code": "def big_omega_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(big_omega_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "big-omega.interview-questions",
+      "chapter": "Big Omega",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Big Omega with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "asymptotic-analysis",
+        "lower-bound",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Big Omega: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "big-omega-interview-questions",
+      "animationComponent": "BigOmegaInterviewQuestionsAnimation",
+      "aiContext": "Big Omega / Interview Questions: Learn Interview Questions in Big Omega with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Big Omega, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Big Omega: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "big-omega",
+        "lessonSlug": "interview-questions",
+        "topic": "Big Omega",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "big-omega.interview-questions",
+        "tags": [
+          "asymptotic-analysis",
+          "lower-bound",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "big-omega/introduction"
+      ],
+      "futureQuizId": "quiz-big-omega-interview-questions",
+      "futureFlashcardId": "flashcards-big-omega-interview-questions",
+      "futureProjectId": "project-big-omega-interview-questions",
+      "images": [
+        "content/big-omega/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "big-omega-interview-questions.py",
+          "code": "def big_omega_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(big_omega_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "big-omega.revision-summary",
+      "chapter": "Big Omega",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Big Omega with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "asymptotic-analysis",
+        "lower-bound",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Big Omega: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "big-omega-revision-summary",
+      "animationComponent": "BigOmegaRevisionSummaryAnimation",
+      "aiContext": "Big Omega / Revision Summary: Learn Revision Summary in Big Omega with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Big Omega, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Big Omega: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "big-omega",
+        "lessonSlug": "revision-summary",
+        "topic": "Big Omega",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "big-omega.revision-summary",
+        "tags": [
+          "asymptotic-analysis",
+          "lower-bound",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "big-omega/introduction"
+      ],
+      "futureQuizId": "quiz-big-omega-revision-summary",
+      "futureFlashcardId": "flashcards-big-omega-revision-summary",
+      "futureProjectId": "project-big-omega-revision-summary",
+      "images": [
+        "content/big-omega/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "big-omega-revision-summary.py",
+          "code": "def big_omega_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(big_omega_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

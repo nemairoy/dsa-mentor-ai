@@ -1,0 +1,908 @@
+{
+  "chapterId": "queue",
+  "title": "Queue",
+  "description": "Queue topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Beginner",
+  "estimatedHours": 5,
+  "tags": [
+    "linear-data-structure",
+    "fifo"
+  ],
+  "animationNamespace": "Queue",
+  "aiContext": "Queue chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "queue-introduction",
+      "component": "QueueIntroductionAnimation",
+      "status": "planned"
+    },
+    "fifo-model": {
+      "animationId": "queue-fifo-model",
+      "component": "QueueFifoModelAnimation",
+      "status": "planned"
+    },
+    "enqueue": {
+      "animationId": "queue-enqueue",
+      "component": "QueueEnqueueAnimation",
+      "status": "planned"
+    },
+    "dequeue": {
+      "animationId": "queue-dequeue",
+      "component": "QueueDequeueAnimation",
+      "status": "planned"
+    },
+    "front-rear": {
+      "animationId": "queue-front-rear",
+      "component": "QueueFrontRearAnimation",
+      "status": "planned"
+    },
+    "circular-queue": {
+      "animationId": "queue-circular-queue",
+      "component": "QueueCircularQueueAnimation",
+      "status": "planned"
+    },
+    "implementation-array": {
+      "animationId": "queue-implementation-array",
+      "component": "QueueImplementationArrayAnimation",
+      "status": "planned"
+    },
+    "implementation-linked-list": {
+      "animationId": "queue-implementation-linked-list",
+      "component": "QueueImplementationLinkedListAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "queue-practice",
+      "component": "QueuePracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "queue-interview-questions",
+      "component": "QueueInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "queue-revision-summary",
+      "component": "QueueRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "queue.introduction",
+      "chapter": "Queue",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "fifo",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Queue: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "queue-introduction",
+      "animationComponent": "QueueIntroductionAnimation",
+      "aiContext": "Queue / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Queue, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Queue: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "queue",
+        "lessonSlug": "introduction",
+        "topic": "Queue",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "queue.introduction",
+        "tags": [
+          "linear-data-structure",
+          "fifo",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "queue/introduction"
+      ],
+      "futureQuizId": "quiz-queue-introduction",
+      "futureFlashcardId": "flashcards-queue-introduction",
+      "futureProjectId": "project-queue-introduction",
+      "images": [
+        "content/queue/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "queue-introduction.py",
+          "code": "def queue_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(queue_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "fifo-model": {
+      "lessonId": "queue.fifo-model",
+      "chapter": "Queue",
+      "title": "Fifo Model",
+      "summary": "Learn Fifo Model in Queue with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "fifo",
+        "fifo-model"
+      ],
+      "learningObjectives": [
+        "Explain Queue: Fifo Model clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "queue-fifo-model",
+      "animationComponent": "QueueFifoModelAnimation",
+      "aiContext": "Queue / Fifo Model: Learn Fifo Model in Queue with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Fifo Model lesson for Queue, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Queue: Fifo Model. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "queue",
+        "lessonSlug": "fifo-model",
+        "topic": "Queue",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "queue.fifo-model",
+        "tags": [
+          "linear-data-structure",
+          "fifo",
+          "fifo-model"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "queue/introduction"
+      ],
+      "futureQuizId": "quiz-queue-fifo-model",
+      "futureFlashcardId": "flashcards-queue-fifo-model",
+      "futureProjectId": "project-queue-fifo-model",
+      "images": [
+        "content/queue/images/fifo-model.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Fifo Model from scratch.",
+        "Dry-run Fifo Model on two edge cases.",
+        "Explain Fifo Model complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "queue-fifo-model.py",
+          "code": "def queue_fifo_model(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(queue_fifo_model([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "enqueue": {
+      "lessonId": "queue.enqueue",
+      "chapter": "Queue",
+      "title": "Enqueue",
+      "summary": "Learn Enqueue in Queue with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "fifo",
+        "enqueue"
+      ],
+      "learningObjectives": [
+        "Explain Queue: Enqueue clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "queue-enqueue",
+      "animationComponent": "QueueEnqueueAnimation",
+      "aiContext": "Queue / Enqueue: Learn Enqueue in Queue with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Enqueue lesson for Queue, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Queue: Enqueue. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "queue",
+        "lessonSlug": "enqueue",
+        "topic": "Queue",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "queue.enqueue",
+        "tags": [
+          "linear-data-structure",
+          "fifo",
+          "enqueue"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "queue/introduction"
+      ],
+      "futureQuizId": "quiz-queue-enqueue",
+      "futureFlashcardId": "flashcards-queue-enqueue",
+      "futureProjectId": "project-queue-enqueue",
+      "images": [
+        "content/queue/images/enqueue.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Enqueue from scratch.",
+        "Dry-run Enqueue on two edge cases.",
+        "Explain Enqueue complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "queue-enqueue.py",
+          "code": "def queue_enqueue(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(queue_enqueue([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "dequeue": {
+      "lessonId": "queue.dequeue",
+      "chapter": "Queue",
+      "title": "Dequeue",
+      "summary": "Learn Dequeue in Queue with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "fifo",
+        "dequeue"
+      ],
+      "learningObjectives": [
+        "Explain Queue: Dequeue clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "queue-dequeue",
+      "animationComponent": "QueueDequeueAnimation",
+      "aiContext": "Queue / Dequeue: Learn Dequeue in Queue with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Dequeue lesson for Queue, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Queue: Dequeue. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "queue",
+        "lessonSlug": "dequeue",
+        "topic": "Queue",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "queue.dequeue",
+        "tags": [
+          "linear-data-structure",
+          "fifo",
+          "dequeue"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "queue/introduction"
+      ],
+      "futureQuizId": "quiz-queue-dequeue",
+      "futureFlashcardId": "flashcards-queue-dequeue",
+      "futureProjectId": "project-queue-dequeue",
+      "images": [
+        "content/queue/images/dequeue.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Dequeue from scratch.",
+        "Dry-run Dequeue on two edge cases.",
+        "Explain Dequeue complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "queue-dequeue.py",
+          "code": "def queue_dequeue(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(queue_dequeue([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "front-rear": {
+      "lessonId": "queue.front-rear",
+      "chapter": "Queue",
+      "title": "Front Rear",
+      "summary": "Learn Front Rear in Queue with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "fifo",
+        "front-rear"
+      ],
+      "learningObjectives": [
+        "Explain Queue: Front Rear clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "queue-front-rear",
+      "animationComponent": "QueueFrontRearAnimation",
+      "aiContext": "Queue / Front Rear: Learn Front Rear in Queue with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Front Rear lesson for Queue, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Queue: Front Rear. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "queue",
+        "lessonSlug": "front-rear",
+        "topic": "Queue",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "queue.front-rear",
+        "tags": [
+          "linear-data-structure",
+          "fifo",
+          "front-rear"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "queue/introduction"
+      ],
+      "futureQuizId": "quiz-queue-front-rear",
+      "futureFlashcardId": "flashcards-queue-front-rear",
+      "futureProjectId": "project-queue-front-rear",
+      "images": [
+        "content/queue/images/front-rear.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Front Rear from scratch.",
+        "Dry-run Front Rear on two edge cases.",
+        "Explain Front Rear complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "queue-front-rear.py",
+          "code": "def queue_front_rear(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(queue_front_rear([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "circular-queue": {
+      "lessonId": "queue.circular-queue",
+      "chapter": "Queue",
+      "title": "Circular Queue",
+      "summary": "Learn Circular Queue in Queue with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "fifo",
+        "circular-queue"
+      ],
+      "learningObjectives": [
+        "Explain Queue: Circular Queue clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "queue-circular-queue",
+      "animationComponent": "QueueCircularQueueAnimation",
+      "aiContext": "Queue / Circular Queue: Learn Circular Queue in Queue with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Circular Queue lesson for Queue, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Queue: Circular Queue. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "queue",
+        "lessonSlug": "circular-queue",
+        "topic": "Queue",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "queue.circular-queue",
+        "tags": [
+          "linear-data-structure",
+          "fifo",
+          "circular-queue"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "queue/introduction"
+      ],
+      "futureQuizId": "quiz-queue-circular-queue",
+      "futureFlashcardId": "flashcards-queue-circular-queue",
+      "futureProjectId": "project-queue-circular-queue",
+      "images": [
+        "content/queue/images/circular-queue.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Circular Queue from scratch.",
+        "Dry-run Circular Queue on two edge cases.",
+        "Explain Circular Queue complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "queue-circular-queue.py",
+          "code": "def queue_circular_queue(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(queue_circular_queue([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "implementation-array": {
+      "lessonId": "queue.implementation-array",
+      "chapter": "Queue",
+      "title": "Implementation Array",
+      "summary": "Learn Implementation Array in Queue with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "fifo",
+        "implementation-array"
+      ],
+      "learningObjectives": [
+        "Explain Queue: Implementation Array clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "queue-implementation-array",
+      "animationComponent": "QueueImplementationArrayAnimation",
+      "aiContext": "Queue / Implementation Array: Learn Implementation Array in Queue with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Implementation Array lesson for Queue, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Queue: Implementation Array. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "queue",
+        "lessonSlug": "implementation-array",
+        "topic": "Queue",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "queue.implementation-array",
+        "tags": [
+          "linear-data-structure",
+          "fifo",
+          "implementation-array"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "queue/introduction"
+      ],
+      "futureQuizId": "quiz-queue-implementation-array",
+      "futureFlashcardId": "flashcards-queue-implementation-array",
+      "futureProjectId": "project-queue-implementation-array",
+      "images": [
+        "content/queue/images/implementation-array.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Implementation Array from scratch.",
+        "Dry-run Implementation Array on two edge cases.",
+        "Explain Implementation Array complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "queue-implementation-array.py",
+          "code": "def queue_implementation_array(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(queue_implementation_array([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "implementation-linked-list": {
+      "lessonId": "queue.implementation-linked-list",
+      "chapter": "Queue",
+      "title": "Implementation Linked List",
+      "summary": "Learn Implementation Linked List in Queue with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "fifo",
+        "implementation-linked-list"
+      ],
+      "learningObjectives": [
+        "Explain Queue: Implementation Linked List clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "queue-implementation-linked-list",
+      "animationComponent": "QueueImplementationLinkedListAnimation",
+      "aiContext": "Queue / Implementation Linked List: Learn Implementation Linked List in Queue with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Implementation Linked List lesson for Queue, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Queue: Implementation Linked List. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "queue",
+        "lessonSlug": "implementation-linked-list",
+        "topic": "Queue",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "queue.implementation-linked-list",
+        "tags": [
+          "linear-data-structure",
+          "fifo",
+          "implementation-linked-list"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "queue/introduction"
+      ],
+      "futureQuizId": "quiz-queue-implementation-linked-list",
+      "futureFlashcardId": "flashcards-queue-implementation-linked-list",
+      "futureProjectId": "project-queue-implementation-linked-list",
+      "images": [
+        "content/queue/images/implementation-linked-list.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Implementation Linked List from scratch.",
+        "Dry-run Implementation Linked List on two edge cases.",
+        "Explain Implementation Linked List complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "queue-implementation-linked-list.py",
+          "code": "def queue_implementation_linked_list(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(queue_implementation_linked_list([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "queue.practice",
+      "chapter": "Queue",
+      "title": "Practice",
+      "summary": "Learn Practice in Queue with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "fifo",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Queue: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "queue-practice",
+      "animationComponent": "QueuePracticeAnimation",
+      "aiContext": "Queue / Practice: Learn Practice in Queue with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Queue, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Queue: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "queue",
+        "lessonSlug": "practice",
+        "topic": "Queue",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "queue.practice",
+        "tags": [
+          "linear-data-structure",
+          "fifo",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "queue/introduction"
+      ],
+      "futureQuizId": "quiz-queue-practice",
+      "futureFlashcardId": "flashcards-queue-practice",
+      "futureProjectId": "project-queue-practice",
+      "images": [
+        "content/queue/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "queue-practice.py",
+          "code": "def queue_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(queue_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "queue.interview-questions",
+      "chapter": "Queue",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Queue with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "fifo",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Queue: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "queue-interview-questions",
+      "animationComponent": "QueueInterviewQuestionsAnimation",
+      "aiContext": "Queue / Interview Questions: Learn Interview Questions in Queue with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Queue, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Queue: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "queue",
+        "lessonSlug": "interview-questions",
+        "topic": "Queue",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "queue.interview-questions",
+        "tags": [
+          "linear-data-structure",
+          "fifo",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "queue/introduction"
+      ],
+      "futureQuizId": "quiz-queue-interview-questions",
+      "futureFlashcardId": "flashcards-queue-interview-questions",
+      "futureProjectId": "project-queue-interview-questions",
+      "images": [
+        "content/queue/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "queue-interview-questions.py",
+          "code": "def queue_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(queue_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "queue.revision-summary",
+      "chapter": "Queue",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Queue with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "fifo",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Queue: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "queue-revision-summary",
+      "animationComponent": "QueueRevisionSummaryAnimation",
+      "aiContext": "Queue / Revision Summary: Learn Revision Summary in Queue with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Queue, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Queue: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "queue",
+        "lessonSlug": "revision-summary",
+        "topic": "Queue",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "queue.revision-summary",
+        "tags": [
+          "linear-data-structure",
+          "fifo",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "queue/introduction"
+      ],
+      "futureQuizId": "quiz-queue-revision-summary",
+      "futureFlashcardId": "flashcards-queue-revision-summary",
+      "futureProjectId": "project-queue-revision-summary",
+      "images": [
+        "content/queue/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "queue-revision-summary.py",
+          "code": "def queue_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(queue_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

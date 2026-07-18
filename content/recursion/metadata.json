@@ -1,0 +1,825 @@
+{
+  "chapterId": "recursion",
+  "title": "Recursion",
+  "description": "Recursion topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Beginner",
+  "estimatedHours": 5,
+  "tags": [
+    "recursion",
+    "call-stack"
+  ],
+  "animationNamespace": "Recursion",
+  "aiContext": "Recursion chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "recursion-introduction",
+      "component": "RecursionIntroductionAnimation",
+      "status": "planned"
+    },
+    "call-stack": {
+      "animationId": "recursion-call-stack",
+      "component": "RecursionCallStackAnimation",
+      "status": "planned"
+    },
+    "base-case": {
+      "animationId": "recursion-base-case",
+      "component": "RecursionBaseCaseAnimation",
+      "status": "planned"
+    },
+    "recursive-case": {
+      "animationId": "recursion-recursive-case",
+      "component": "RecursionRecursiveCaseAnimation",
+      "status": "planned"
+    },
+    "tree-recursion": {
+      "animationId": "recursion-tree-recursion",
+      "component": "RecursionTreeRecursionAnimation",
+      "status": "planned"
+    },
+    "tail-recursion": {
+      "animationId": "recursion-tail-recursion",
+      "component": "RecursionTailRecursionAnimation",
+      "status": "planned"
+    },
+    "recursion-vs-iteration": {
+      "animationId": "recursion-recursion-vs-iteration",
+      "component": "RecursionRecursionVsIterationAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "recursion-practice",
+      "component": "RecursionPracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "recursion-interview-questions",
+      "component": "RecursionInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "recursion-revision-summary",
+      "component": "RecursionRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "recursion.introduction",
+      "chapter": "Recursion",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "recursion",
+        "call-stack",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Recursion: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "recursion-introduction",
+      "animationComponent": "RecursionIntroductionAnimation",
+      "aiContext": "Recursion / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Recursion, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Recursion: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "recursion",
+        "lessonSlug": "introduction",
+        "topic": "Recursion",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "recursion.introduction",
+        "tags": [
+          "recursion",
+          "call-stack",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "recursion/introduction"
+      ],
+      "futureQuizId": "quiz-recursion-introduction",
+      "futureFlashcardId": "flashcards-recursion-introduction",
+      "futureProjectId": "project-recursion-introduction",
+      "images": [
+        "content/recursion/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "recursion-introduction.py",
+          "code": "def recursion_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(recursion_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "call-stack": {
+      "lessonId": "recursion.call-stack",
+      "chapter": "Recursion",
+      "title": "Call Stack",
+      "summary": "Learn Call Stack in Recursion with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "recursion",
+        "call-stack"
+      ],
+      "learningObjectives": [
+        "Explain Recursion: Call Stack clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "recursion-call-stack",
+      "animationComponent": "RecursionCallStackAnimation",
+      "aiContext": "Recursion / Call Stack: Learn Call Stack in Recursion with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Call Stack lesson for Recursion, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Recursion: Call Stack. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "recursion",
+        "lessonSlug": "call-stack",
+        "topic": "Recursion",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "recursion.call-stack",
+        "tags": [
+          "recursion",
+          "call-stack"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "recursion/introduction"
+      ],
+      "futureQuizId": "quiz-recursion-call-stack",
+      "futureFlashcardId": "flashcards-recursion-call-stack",
+      "futureProjectId": "project-recursion-call-stack",
+      "images": [
+        "content/recursion/images/call-stack.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Call Stack from scratch.",
+        "Dry-run Call Stack on two edge cases.",
+        "Explain Call Stack complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "recursion-call-stack.py",
+          "code": "def recursion_call_stack(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(recursion_call_stack([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "base-case": {
+      "lessonId": "recursion.base-case",
+      "chapter": "Recursion",
+      "title": "Base Case",
+      "summary": "Learn Base Case in Recursion with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "recursion",
+        "call-stack",
+        "base-case"
+      ],
+      "learningObjectives": [
+        "Explain Recursion: Base Case clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "recursion-base-case",
+      "animationComponent": "RecursionBaseCaseAnimation",
+      "aiContext": "Recursion / Base Case: Learn Base Case in Recursion with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Base Case lesson for Recursion, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Recursion: Base Case. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "recursion",
+        "lessonSlug": "base-case",
+        "topic": "Recursion",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "recursion.base-case",
+        "tags": [
+          "recursion",
+          "call-stack",
+          "base-case"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "recursion/introduction"
+      ],
+      "futureQuizId": "quiz-recursion-base-case",
+      "futureFlashcardId": "flashcards-recursion-base-case",
+      "futureProjectId": "project-recursion-base-case",
+      "images": [
+        "content/recursion/images/base-case.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Base Case from scratch.",
+        "Dry-run Base Case on two edge cases.",
+        "Explain Base Case complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "recursion-base-case.py",
+          "code": "def recursion_base_case(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(recursion_base_case([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "recursive-case": {
+      "lessonId": "recursion.recursive-case",
+      "chapter": "Recursion",
+      "title": "Recursive Case",
+      "summary": "Learn Recursive Case in Recursion with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "recursion",
+        "call-stack",
+        "recursive-case"
+      ],
+      "learningObjectives": [
+        "Explain Recursion: Recursive Case clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "recursion-recursive-case",
+      "animationComponent": "RecursionRecursiveCaseAnimation",
+      "aiContext": "Recursion / Recursive Case: Learn Recursive Case in Recursion with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Recursive Case lesson for Recursion, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Recursion: Recursive Case. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "recursion",
+        "lessonSlug": "recursive-case",
+        "topic": "Recursion",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "recursion.recursive-case",
+        "tags": [
+          "recursion",
+          "call-stack",
+          "recursive-case"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "recursion/introduction"
+      ],
+      "futureQuizId": "quiz-recursion-recursive-case",
+      "futureFlashcardId": "flashcards-recursion-recursive-case",
+      "futureProjectId": "project-recursion-recursive-case",
+      "images": [
+        "content/recursion/images/recursive-case.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Recursive Case from scratch.",
+        "Dry-run Recursive Case on two edge cases.",
+        "Explain Recursive Case complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "recursion-recursive-case.py",
+          "code": "def recursion_recursive_case(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(recursion_recursive_case([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "tree-recursion": {
+      "lessonId": "recursion.tree-recursion",
+      "chapter": "Recursion",
+      "title": "Tree Recursion",
+      "summary": "Learn Tree Recursion in Recursion with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "recursion",
+        "call-stack",
+        "tree-recursion"
+      ],
+      "learningObjectives": [
+        "Explain Recursion: Tree Recursion clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "recursion-tree-recursion",
+      "animationComponent": "RecursionTreeRecursionAnimation",
+      "aiContext": "Recursion / Tree Recursion: Learn Tree Recursion in Recursion with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Tree Recursion lesson for Recursion, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Recursion: Tree Recursion. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "recursion",
+        "lessonSlug": "tree-recursion",
+        "topic": "Recursion",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "recursion.tree-recursion",
+        "tags": [
+          "recursion",
+          "call-stack",
+          "tree-recursion"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "recursion/introduction"
+      ],
+      "futureQuizId": "quiz-recursion-tree-recursion",
+      "futureFlashcardId": "flashcards-recursion-tree-recursion",
+      "futureProjectId": "project-recursion-tree-recursion",
+      "images": [
+        "content/recursion/images/tree-recursion.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Tree Recursion from scratch.",
+        "Dry-run Tree Recursion on two edge cases.",
+        "Explain Tree Recursion complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "recursion-tree-recursion.py",
+          "code": "def recursion_tree_recursion(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(recursion_tree_recursion([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "tail-recursion": {
+      "lessonId": "recursion.tail-recursion",
+      "chapter": "Recursion",
+      "title": "Tail Recursion",
+      "summary": "Learn Tail Recursion in Recursion with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "recursion",
+        "call-stack",
+        "tail-recursion"
+      ],
+      "learningObjectives": [
+        "Explain Recursion: Tail Recursion clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "recursion-tail-recursion",
+      "animationComponent": "RecursionTailRecursionAnimation",
+      "aiContext": "Recursion / Tail Recursion: Learn Tail Recursion in Recursion with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Tail Recursion lesson for Recursion, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Recursion: Tail Recursion. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "recursion",
+        "lessonSlug": "tail-recursion",
+        "topic": "Recursion",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "recursion.tail-recursion",
+        "tags": [
+          "recursion",
+          "call-stack",
+          "tail-recursion"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "recursion/introduction"
+      ],
+      "futureQuizId": "quiz-recursion-tail-recursion",
+      "futureFlashcardId": "flashcards-recursion-tail-recursion",
+      "futureProjectId": "project-recursion-tail-recursion",
+      "images": [
+        "content/recursion/images/tail-recursion.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Tail Recursion from scratch.",
+        "Dry-run Tail Recursion on two edge cases.",
+        "Explain Tail Recursion complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "recursion-tail-recursion.py",
+          "code": "def recursion_tail_recursion(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(recursion_tail_recursion([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "recursion-vs-iteration": {
+      "lessonId": "recursion.recursion-vs-iteration",
+      "chapter": "Recursion",
+      "title": "Recursion Vs Iteration",
+      "summary": "Learn Recursion Vs Iteration in Recursion with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "recursion",
+        "call-stack",
+        "recursion-vs-iteration"
+      ],
+      "learningObjectives": [
+        "Explain Recursion: Recursion Vs Iteration clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "recursion-recursion-vs-iteration",
+      "animationComponent": "RecursionRecursionVsIterationAnimation",
+      "aiContext": "Recursion / Recursion Vs Iteration: Learn Recursion Vs Iteration in Recursion with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Recursion Vs Iteration lesson for Recursion, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Recursion: Recursion Vs Iteration. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "recursion",
+        "lessonSlug": "recursion-vs-iteration",
+        "topic": "Recursion",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "recursion.recursion-vs-iteration",
+        "tags": [
+          "recursion",
+          "call-stack",
+          "recursion-vs-iteration"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "recursion/introduction"
+      ],
+      "futureQuizId": "quiz-recursion-recursion-vs-iteration",
+      "futureFlashcardId": "flashcards-recursion-recursion-vs-iteration",
+      "futureProjectId": "project-recursion-recursion-vs-iteration",
+      "images": [
+        "content/recursion/images/recursion-vs-iteration.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Recursion Vs Iteration from scratch.",
+        "Dry-run Recursion Vs Iteration on two edge cases.",
+        "Explain Recursion Vs Iteration complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "recursion-recursion-vs-iteration.py",
+          "code": "def recursion_recursion_vs_iteration(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(recursion_recursion_vs_iteration([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "recursion.practice",
+      "chapter": "Recursion",
+      "title": "Practice",
+      "summary": "Learn Practice in Recursion with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "recursion",
+        "call-stack",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Recursion: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "recursion-practice",
+      "animationComponent": "RecursionPracticeAnimation",
+      "aiContext": "Recursion / Practice: Learn Practice in Recursion with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Recursion, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Recursion: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "recursion",
+        "lessonSlug": "practice",
+        "topic": "Recursion",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "recursion.practice",
+        "tags": [
+          "recursion",
+          "call-stack",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "recursion/introduction"
+      ],
+      "futureQuizId": "quiz-recursion-practice",
+      "futureFlashcardId": "flashcards-recursion-practice",
+      "futureProjectId": "project-recursion-practice",
+      "images": [
+        "content/recursion/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "recursion-practice.py",
+          "code": "def recursion_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(recursion_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "recursion.interview-questions",
+      "chapter": "Recursion",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Recursion with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "recursion",
+        "call-stack",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Recursion: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "recursion-interview-questions",
+      "animationComponent": "RecursionInterviewQuestionsAnimation",
+      "aiContext": "Recursion / Interview Questions: Learn Interview Questions in Recursion with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Recursion, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Recursion: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "recursion",
+        "lessonSlug": "interview-questions",
+        "topic": "Recursion",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "recursion.interview-questions",
+        "tags": [
+          "recursion",
+          "call-stack",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "recursion/introduction"
+      ],
+      "futureQuizId": "quiz-recursion-interview-questions",
+      "futureFlashcardId": "flashcards-recursion-interview-questions",
+      "futureProjectId": "project-recursion-interview-questions",
+      "images": [
+        "content/recursion/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "recursion-interview-questions.py",
+          "code": "def recursion_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(recursion_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "recursion.revision-summary",
+      "chapter": "Recursion",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Recursion with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "recursion",
+        "call-stack",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Recursion: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "recursion-revision-summary",
+      "animationComponent": "RecursionRevisionSummaryAnimation",
+      "aiContext": "Recursion / Revision Summary: Learn Revision Summary in Recursion with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Recursion, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Recursion: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "recursion",
+        "lessonSlug": "revision-summary",
+        "topic": "Recursion",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "recursion.revision-summary",
+        "tags": [
+          "recursion",
+          "call-stack",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "recursion/introduction"
+      ],
+      "futureQuizId": "quiz-recursion-revision-summary",
+      "futureFlashcardId": "flashcards-recursion-revision-summary",
+      "futureProjectId": "project-recursion-revision-summary",
+      "images": [
+        "content/recursion/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "recursion-revision-summary.py",
+          "code": "def recursion_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(recursion_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

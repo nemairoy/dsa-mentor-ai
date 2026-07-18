@@ -1,0 +1,31 @@
+{
+  "name": "dsa-mentor-ai",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/web"
+  ],
+  "scripts": {
+    "dev:web": "npm --workspace apps/web run dev",
+    "start:web": "npm --workspace apps/web run start",
+    "build:web": "npm --workspace apps/web run build",
+    "lint:web": "npm --workspace apps/web run lint",
+    "dev:api": "python -m uvicorn app.main:app --reload --app-dir apps/api",
+    "start:api": "python -m uvicorn app.main:app --app-dir apps/api --host 0.0.0.0 --port 8000",
+    "env:bootstrap": "powershell -ExecutionPolicy Bypass -File scripts/bootstrap-env.ps1",
+    "content:generate": "node scripts/generate-dsa-knowledge-base.mjs",
+    "content:index": "node scripts/generate-search-index.mjs",
+    "practice:seed": "node scripts/seed-practice-problems.mjs",
+    "validate:content": "node scripts/validate-content.mjs",
+    "validate:production": "node scripts/validate-production-readiness.mjs"
+  },
+  "dependencies": {
+    "framer-motion": "^12.42.2",
+    "react-markdown": "^10.1.0",
+    "react-syntax-highlighter": "^16.1.1",
+    "remark-gfm": "^4.0.1"
+  },
+  "devDependencies": {
+    "@types/react-syntax-highlighter": "^15.5.13"
+  }
+}

@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+.venv/
+__pycache__/
+.pytest_cache/
+
+# Build output
+.next/
+dist/
+build/
+
+# Environment and credentials
+.env
+.env.*
+!.env.example
+!.env.production.example
+apps/web/.env*
+!apps/web/.env.example
+apps/api/.env
+!apps/api/.env.example
+GoogleAuth.txt
+client_secret*.json
+
+# Logs
+*.log
+
+# Local generated vector indexes
+data/chroma/
+apps/api/data/chroma/
+
+# User-uploaded local files
+apps/web/public/uploads/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

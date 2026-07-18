@@ -1,0 +1,827 @@
+{
+  "chapterId": "time-complexity",
+  "title": "Time Complexity",
+  "description": "Time Complexity topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Beginner",
+  "estimatedHours": 5,
+  "tags": [
+    "complexity",
+    "runtime"
+  ],
+  "animationNamespace": "TimeComplexity",
+  "aiContext": "Time Complexity chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "time-complexity-introduction",
+      "component": "TimeComplexityIntroductionAnimation",
+      "status": "planned"
+    },
+    "constant-time": {
+      "animationId": "time-complexity-constant-time",
+      "component": "TimeComplexityConstantTimeAnimation",
+      "status": "planned"
+    },
+    "linear-time": {
+      "animationId": "time-complexity-linear-time",
+      "component": "TimeComplexityLinearTimeAnimation",
+      "status": "planned"
+    },
+    "logarithmic-time": {
+      "animationId": "time-complexity-logarithmic-time",
+      "component": "TimeComplexityLogarithmicTimeAnimation",
+      "status": "planned"
+    },
+    "quadratic-time": {
+      "animationId": "time-complexity-quadratic-time",
+      "component": "TimeComplexityQuadraticTimeAnimation",
+      "status": "planned"
+    },
+    "n-log-n-time": {
+      "animationId": "time-complexity-n-log-n-time",
+      "component": "TimeComplexityNLogNTimeAnimation",
+      "status": "planned"
+    },
+    "amortized-time": {
+      "animationId": "time-complexity-amortized-time",
+      "component": "TimeComplexityAmortizedTimeAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "time-complexity-practice",
+      "component": "TimeComplexityPracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "time-complexity-interview-questions",
+      "component": "TimeComplexityInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "time-complexity-revision-summary",
+      "component": "TimeComplexityRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "time-complexity.introduction",
+      "chapter": "Time Complexity",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "complexity",
+        "runtime",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Time Complexity: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "time-complexity-introduction",
+      "animationComponent": "TimeComplexityIntroductionAnimation",
+      "aiContext": "Time Complexity / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Time Complexity, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Time Complexity: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "time-complexity",
+        "lessonSlug": "introduction",
+        "topic": "Time Complexity",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "time-complexity.introduction",
+        "tags": [
+          "complexity",
+          "runtime",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "time-complexity/introduction"
+      ],
+      "futureQuizId": "quiz-time-complexity-introduction",
+      "futureFlashcardId": "flashcards-time-complexity-introduction",
+      "futureProjectId": "project-time-complexity-introduction",
+      "images": [
+        "content/time-complexity/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "time-complexity-introduction.py",
+          "code": "def time_complexity_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(time_complexity_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "constant-time": {
+      "lessonId": "time-complexity.constant-time",
+      "chapter": "Time Complexity",
+      "title": "Constant Time",
+      "summary": "Learn Constant Time in Time Complexity with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "complexity",
+        "runtime",
+        "constant-time"
+      ],
+      "learningObjectives": [
+        "Explain Time Complexity: Constant Time clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "time-complexity-constant-time",
+      "animationComponent": "TimeComplexityConstantTimeAnimation",
+      "aiContext": "Time Complexity / Constant Time: Learn Constant Time in Time Complexity with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Constant Time lesson for Time Complexity, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Time Complexity: Constant Time. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "time-complexity",
+        "lessonSlug": "constant-time",
+        "topic": "Time Complexity",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "time-complexity.constant-time",
+        "tags": [
+          "complexity",
+          "runtime",
+          "constant-time"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "time-complexity/introduction"
+      ],
+      "futureQuizId": "quiz-time-complexity-constant-time",
+      "futureFlashcardId": "flashcards-time-complexity-constant-time",
+      "futureProjectId": "project-time-complexity-constant-time",
+      "images": [
+        "content/time-complexity/images/constant-time.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Constant Time from scratch.",
+        "Dry-run Constant Time on two edge cases.",
+        "Explain Constant Time complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "time-complexity-constant-time.py",
+          "code": "def time_complexity_constant_time(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(time_complexity_constant_time([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "linear-time": {
+      "lessonId": "time-complexity.linear-time",
+      "chapter": "Time Complexity",
+      "title": "Linear Time",
+      "summary": "Learn Linear Time in Time Complexity with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "complexity",
+        "runtime",
+        "linear-time"
+      ],
+      "learningObjectives": [
+        "Explain Time Complexity: Linear Time clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "time-complexity-linear-time",
+      "animationComponent": "TimeComplexityLinearTimeAnimation",
+      "aiContext": "Time Complexity / Linear Time: Learn Linear Time in Time Complexity with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Linear Time lesson for Time Complexity, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Time Complexity: Linear Time. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "time-complexity",
+        "lessonSlug": "linear-time",
+        "topic": "Time Complexity",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "time-complexity.linear-time",
+        "tags": [
+          "complexity",
+          "runtime",
+          "linear-time"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "time-complexity/introduction"
+      ],
+      "futureQuizId": "quiz-time-complexity-linear-time",
+      "futureFlashcardId": "flashcards-time-complexity-linear-time",
+      "futureProjectId": "project-time-complexity-linear-time",
+      "images": [
+        "content/time-complexity/images/linear-time.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Linear Time from scratch.",
+        "Dry-run Linear Time on two edge cases.",
+        "Explain Linear Time complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "time-complexity-linear-time.py",
+          "code": "def time_complexity_linear_time(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(time_complexity_linear_time([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "logarithmic-time": {
+      "lessonId": "time-complexity.logarithmic-time",
+      "chapter": "Time Complexity",
+      "title": "Logarithmic Time",
+      "summary": "Learn Logarithmic Time in Time Complexity with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "complexity",
+        "runtime",
+        "logarithmic-time"
+      ],
+      "learningObjectives": [
+        "Explain Time Complexity: Logarithmic Time clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "time-complexity-logarithmic-time",
+      "animationComponent": "TimeComplexityLogarithmicTimeAnimation",
+      "aiContext": "Time Complexity / Logarithmic Time: Learn Logarithmic Time in Time Complexity with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Logarithmic Time lesson for Time Complexity, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Time Complexity: Logarithmic Time. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "time-complexity",
+        "lessonSlug": "logarithmic-time",
+        "topic": "Time Complexity",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "time-complexity.logarithmic-time",
+        "tags": [
+          "complexity",
+          "runtime",
+          "logarithmic-time"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "time-complexity/introduction"
+      ],
+      "futureQuizId": "quiz-time-complexity-logarithmic-time",
+      "futureFlashcardId": "flashcards-time-complexity-logarithmic-time",
+      "futureProjectId": "project-time-complexity-logarithmic-time",
+      "images": [
+        "content/time-complexity/images/logarithmic-time.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Logarithmic Time from scratch.",
+        "Dry-run Logarithmic Time on two edge cases.",
+        "Explain Logarithmic Time complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "time-complexity-logarithmic-time.py",
+          "code": "def time_complexity_logarithmic_time(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(time_complexity_logarithmic_time([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "quadratic-time": {
+      "lessonId": "time-complexity.quadratic-time",
+      "chapter": "Time Complexity",
+      "title": "Quadratic Time",
+      "summary": "Learn Quadratic Time in Time Complexity with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "complexity",
+        "runtime",
+        "quadratic-time"
+      ],
+      "learningObjectives": [
+        "Explain Time Complexity: Quadratic Time clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "time-complexity-quadratic-time",
+      "animationComponent": "TimeComplexityQuadraticTimeAnimation",
+      "aiContext": "Time Complexity / Quadratic Time: Learn Quadratic Time in Time Complexity with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Quadratic Time lesson for Time Complexity, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Time Complexity: Quadratic Time. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "time-complexity",
+        "lessonSlug": "quadratic-time",
+        "topic": "Time Complexity",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "time-complexity.quadratic-time",
+        "tags": [
+          "complexity",
+          "runtime",
+          "quadratic-time"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "time-complexity/introduction"
+      ],
+      "futureQuizId": "quiz-time-complexity-quadratic-time",
+      "futureFlashcardId": "flashcards-time-complexity-quadratic-time",
+      "futureProjectId": "project-time-complexity-quadratic-time",
+      "images": [
+        "content/time-complexity/images/quadratic-time.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Quadratic Time from scratch.",
+        "Dry-run Quadratic Time on two edge cases.",
+        "Explain Quadratic Time complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "time-complexity-quadratic-time.py",
+          "code": "def time_complexity_quadratic_time(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(time_complexity_quadratic_time([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "n-log-n-time": {
+      "lessonId": "time-complexity.n-log-n-time",
+      "chapter": "Time Complexity",
+      "title": "N Log N Time",
+      "summary": "Learn N Log N Time in Time Complexity with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "complexity",
+        "runtime",
+        "n-log-n-time"
+      ],
+      "learningObjectives": [
+        "Explain Time Complexity: N Log N Time clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "time-complexity-n-log-n-time",
+      "animationComponent": "TimeComplexityNLogNTimeAnimation",
+      "aiContext": "Time Complexity / N Log N Time: Learn N Log N Time in Time Complexity with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "N Log N Time lesson for Time Complexity, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Time Complexity: N Log N Time. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "time-complexity",
+        "lessonSlug": "n-log-n-time",
+        "topic": "Time Complexity",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "time-complexity.n-log-n-time",
+        "tags": [
+          "complexity",
+          "runtime",
+          "n-log-n-time"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "time-complexity/introduction"
+      ],
+      "futureQuizId": "quiz-time-complexity-n-log-n-time",
+      "futureFlashcardId": "flashcards-time-complexity-n-log-n-time",
+      "futureProjectId": "project-time-complexity-n-log-n-time",
+      "images": [
+        "content/time-complexity/images/n-log-n-time.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement N Log N Time from scratch.",
+        "Dry-run N Log N Time on two edge cases.",
+        "Explain N Log N Time complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "time-complexity-n-log-n-time.py",
+          "code": "def time_complexity_n_log_n_time(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(time_complexity_n_log_n_time([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "amortized-time": {
+      "lessonId": "time-complexity.amortized-time",
+      "chapter": "Time Complexity",
+      "title": "Amortized Time",
+      "summary": "Learn Amortized Time in Time Complexity with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "complexity",
+        "runtime",
+        "amortized-time"
+      ],
+      "learningObjectives": [
+        "Explain Time Complexity: Amortized Time clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "time-complexity-amortized-time",
+      "animationComponent": "TimeComplexityAmortizedTimeAnimation",
+      "aiContext": "Time Complexity / Amortized Time: Learn Amortized Time in Time Complexity with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Amortized Time lesson for Time Complexity, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Time Complexity: Amortized Time. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "time-complexity",
+        "lessonSlug": "amortized-time",
+        "topic": "Time Complexity",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "time-complexity.amortized-time",
+        "tags": [
+          "complexity",
+          "runtime",
+          "amortized-time"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "time-complexity/introduction"
+      ],
+      "futureQuizId": "quiz-time-complexity-amortized-time",
+      "futureFlashcardId": "flashcards-time-complexity-amortized-time",
+      "futureProjectId": "project-time-complexity-amortized-time",
+      "images": [
+        "content/time-complexity/images/amortized-time.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Amortized Time from scratch.",
+        "Dry-run Amortized Time on two edge cases.",
+        "Explain Amortized Time complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "time-complexity-amortized-time.py",
+          "code": "def time_complexity_amortized_time(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(time_complexity_amortized_time([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "time-complexity.practice",
+      "chapter": "Time Complexity",
+      "title": "Practice",
+      "summary": "Learn Practice in Time Complexity with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "complexity",
+        "runtime",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Time Complexity: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "time-complexity-practice",
+      "animationComponent": "TimeComplexityPracticeAnimation",
+      "aiContext": "Time Complexity / Practice: Learn Practice in Time Complexity with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Time Complexity, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Time Complexity: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "time-complexity",
+        "lessonSlug": "practice",
+        "topic": "Time Complexity",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "time-complexity.practice",
+        "tags": [
+          "complexity",
+          "runtime",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "time-complexity/introduction"
+      ],
+      "futureQuizId": "quiz-time-complexity-practice",
+      "futureFlashcardId": "flashcards-time-complexity-practice",
+      "futureProjectId": "project-time-complexity-practice",
+      "images": [
+        "content/time-complexity/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "time-complexity-practice.py",
+          "code": "def time_complexity_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(time_complexity_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "time-complexity.interview-questions",
+      "chapter": "Time Complexity",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Time Complexity with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "complexity",
+        "runtime",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Time Complexity: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "time-complexity-interview-questions",
+      "animationComponent": "TimeComplexityInterviewQuestionsAnimation",
+      "aiContext": "Time Complexity / Interview Questions: Learn Interview Questions in Time Complexity with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Time Complexity, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Time Complexity: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "time-complexity",
+        "lessonSlug": "interview-questions",
+        "topic": "Time Complexity",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "time-complexity.interview-questions",
+        "tags": [
+          "complexity",
+          "runtime",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "time-complexity/introduction"
+      ],
+      "futureQuizId": "quiz-time-complexity-interview-questions",
+      "futureFlashcardId": "flashcards-time-complexity-interview-questions",
+      "futureProjectId": "project-time-complexity-interview-questions",
+      "images": [
+        "content/time-complexity/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "time-complexity-interview-questions.py",
+          "code": "def time_complexity_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(time_complexity_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "time-complexity.revision-summary",
+      "chapter": "Time Complexity",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Time Complexity with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "complexity",
+        "runtime",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Time Complexity: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "time-complexity-revision-summary",
+      "animationComponent": "TimeComplexityRevisionSummaryAnimation",
+      "aiContext": "Time Complexity / Revision Summary: Learn Revision Summary in Time Complexity with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Time Complexity, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Time Complexity: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "time-complexity",
+        "lessonSlug": "revision-summary",
+        "topic": "Time Complexity",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "time-complexity.revision-summary",
+        "tags": [
+          "complexity",
+          "runtime",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "time-complexity/introduction"
+      ],
+      "futureQuizId": "quiz-time-complexity-revision-summary",
+      "futureFlashcardId": "flashcards-time-complexity-revision-summary",
+      "futureProjectId": "project-time-complexity-revision-summary",
+      "images": [
+        "content/time-complexity/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "time-complexity-revision-summary.py",
+          "code": "def time_complexity_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(time_complexity_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,746 @@
+{
+  "chapterId": "introduction",
+  "title": "Introduction",
+  "description": "Introduction topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Beginner",
+  "estimatedHours": 4,
+  "tags": [
+    "foundation",
+    "learning-path"
+  ],
+  "animationNamespace": "Introduction",
+  "aiContext": "Introduction chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "introduction-introduction",
+      "component": "IntroductionIntroductionAnimation",
+      "status": "planned"
+    },
+    "what-is-dsa": {
+      "animationId": "introduction-what-is-dsa",
+      "component": "IntroductionWhatIsDsaAnimation",
+      "status": "planned"
+    },
+    "problem-solving-process": {
+      "animationId": "introduction-problem-solving-process",
+      "component": "IntroductionProblemSolvingProcessAnimation",
+      "status": "planned"
+    },
+    "pseudocode": {
+      "animationId": "introduction-pseudocode",
+      "component": "IntroductionPseudocodeAnimation",
+      "status": "planned"
+    },
+    "dry-run": {
+      "animationId": "introduction-dry-run",
+      "component": "IntroductionDryRunAnimation",
+      "status": "planned"
+    },
+    "complexity-preview": {
+      "animationId": "introduction-complexity-preview",
+      "component": "IntroductionComplexityPreviewAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "introduction-practice",
+      "component": "IntroductionPracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "introduction-interview-questions",
+      "component": "IntroductionInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "introduction-revision-summary",
+      "component": "IntroductionRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "introduction.introduction",
+      "chapter": "Introduction",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "foundation",
+        "learning-path",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Introduction: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "introduction-introduction",
+      "animationComponent": "IntroductionIntroductionAnimation",
+      "aiContext": "Introduction / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Introduction, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Introduction: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "introduction",
+        "lessonSlug": "introduction",
+        "topic": "Introduction",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "introduction.introduction",
+        "tags": [
+          "foundation",
+          "learning-path",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "introduction/introduction"
+      ],
+      "futureQuizId": "quiz-introduction-introduction",
+      "futureFlashcardId": "flashcards-introduction-introduction",
+      "futureProjectId": "project-introduction-introduction",
+      "images": [
+        "content/introduction/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "introduction-introduction.py",
+          "code": "def introduction_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(introduction_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "what-is-dsa": {
+      "lessonId": "introduction.what-is-dsa",
+      "chapter": "Introduction",
+      "title": "What Is Dsa",
+      "summary": "Learn What Is Dsa in Introduction with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "foundation",
+        "learning-path",
+        "what-is-dsa"
+      ],
+      "learningObjectives": [
+        "Explain Introduction: What Is Dsa clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "introduction-what-is-dsa",
+      "animationComponent": "IntroductionWhatIsDsaAnimation",
+      "aiContext": "Introduction / What Is Dsa: Learn What Is Dsa in Introduction with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "What Is Dsa lesson for Introduction, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Introduction: What Is Dsa. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "introduction",
+        "lessonSlug": "what-is-dsa",
+        "topic": "Introduction",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "introduction.what-is-dsa",
+        "tags": [
+          "foundation",
+          "learning-path",
+          "what-is-dsa"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "introduction/introduction"
+      ],
+      "futureQuizId": "quiz-introduction-what-is-dsa",
+      "futureFlashcardId": "flashcards-introduction-what-is-dsa",
+      "futureProjectId": "project-introduction-what-is-dsa",
+      "images": [
+        "content/introduction/images/what-is-dsa.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement What Is Dsa from scratch.",
+        "Dry-run What Is Dsa on two edge cases.",
+        "Explain What Is Dsa complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "introduction-what-is-dsa.py",
+          "code": "def introduction_what_is_dsa(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(introduction_what_is_dsa([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "problem-solving-process": {
+      "lessonId": "introduction.problem-solving-process",
+      "chapter": "Introduction",
+      "title": "Problem Solving Process",
+      "summary": "Learn Problem Solving Process in Introduction with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "foundation",
+        "learning-path",
+        "problem-solving-process"
+      ],
+      "learningObjectives": [
+        "Explain Introduction: Problem Solving Process clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "introduction-problem-solving-process",
+      "animationComponent": "IntroductionProblemSolvingProcessAnimation",
+      "aiContext": "Introduction / Problem Solving Process: Learn Problem Solving Process in Introduction with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Problem Solving Process lesson for Introduction, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Introduction: Problem Solving Process. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "introduction",
+        "lessonSlug": "problem-solving-process",
+        "topic": "Introduction",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "introduction.problem-solving-process",
+        "tags": [
+          "foundation",
+          "learning-path",
+          "problem-solving-process"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "introduction/introduction"
+      ],
+      "futureQuizId": "quiz-introduction-problem-solving-process",
+      "futureFlashcardId": "flashcards-introduction-problem-solving-process",
+      "futureProjectId": "project-introduction-problem-solving-process",
+      "images": [
+        "content/introduction/images/problem-solving-process.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Problem Solving Process from scratch.",
+        "Dry-run Problem Solving Process on two edge cases.",
+        "Explain Problem Solving Process complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "introduction-problem-solving-process.py",
+          "code": "def introduction_problem_solving_process(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(introduction_problem_solving_process([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "pseudocode": {
+      "lessonId": "introduction.pseudocode",
+      "chapter": "Introduction",
+      "title": "Pseudocode",
+      "summary": "Learn Pseudocode in Introduction with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "foundation",
+        "learning-path",
+        "pseudocode"
+      ],
+      "learningObjectives": [
+        "Explain Introduction: Pseudocode clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "introduction-pseudocode",
+      "animationComponent": "IntroductionPseudocodeAnimation",
+      "aiContext": "Introduction / Pseudocode: Learn Pseudocode in Introduction with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Pseudocode lesson for Introduction, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Introduction: Pseudocode. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "introduction",
+        "lessonSlug": "pseudocode",
+        "topic": "Introduction",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "introduction.pseudocode",
+        "tags": [
+          "foundation",
+          "learning-path",
+          "pseudocode"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "introduction/introduction"
+      ],
+      "futureQuizId": "quiz-introduction-pseudocode",
+      "futureFlashcardId": "flashcards-introduction-pseudocode",
+      "futureProjectId": "project-introduction-pseudocode",
+      "images": [
+        "content/introduction/images/pseudocode.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Pseudocode from scratch.",
+        "Dry-run Pseudocode on two edge cases.",
+        "Explain Pseudocode complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "introduction-pseudocode.py",
+          "code": "def introduction_pseudocode(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(introduction_pseudocode([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "dry-run": {
+      "lessonId": "introduction.dry-run",
+      "chapter": "Introduction",
+      "title": "Dry Run",
+      "summary": "Learn Dry Run in Introduction with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "foundation",
+        "learning-path",
+        "dry-run"
+      ],
+      "learningObjectives": [
+        "Explain Introduction: Dry Run clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "introduction-dry-run",
+      "animationComponent": "IntroductionDryRunAnimation",
+      "aiContext": "Introduction / Dry Run: Learn Dry Run in Introduction with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Dry Run lesson for Introduction, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Introduction: Dry Run. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "introduction",
+        "lessonSlug": "dry-run",
+        "topic": "Introduction",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "introduction.dry-run",
+        "tags": [
+          "foundation",
+          "learning-path",
+          "dry-run"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "introduction/introduction"
+      ],
+      "futureQuizId": "quiz-introduction-dry-run",
+      "futureFlashcardId": "flashcards-introduction-dry-run",
+      "futureProjectId": "project-introduction-dry-run",
+      "images": [
+        "content/introduction/images/dry-run.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Dry Run from scratch.",
+        "Dry-run Dry Run on two edge cases.",
+        "Explain Dry Run complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "introduction-dry-run.py",
+          "code": "def introduction_dry_run(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(introduction_dry_run([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "complexity-preview": {
+      "lessonId": "introduction.complexity-preview",
+      "chapter": "Introduction",
+      "title": "Complexity Preview",
+      "summary": "Learn Complexity Preview in Introduction with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "foundation",
+        "learning-path",
+        "complexity-preview"
+      ],
+      "learningObjectives": [
+        "Explain Introduction: Complexity Preview clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "introduction-complexity-preview",
+      "animationComponent": "IntroductionComplexityPreviewAnimation",
+      "aiContext": "Introduction / Complexity Preview: Learn Complexity Preview in Introduction with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Complexity Preview lesson for Introduction, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Introduction: Complexity Preview. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "introduction",
+        "lessonSlug": "complexity-preview",
+        "topic": "Introduction",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "introduction.complexity-preview",
+        "tags": [
+          "foundation",
+          "learning-path",
+          "complexity-preview"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "introduction/introduction"
+      ],
+      "futureQuizId": "quiz-introduction-complexity-preview",
+      "futureFlashcardId": "flashcards-introduction-complexity-preview",
+      "futureProjectId": "project-introduction-complexity-preview",
+      "images": [
+        "content/introduction/images/complexity-preview.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Complexity Preview from scratch.",
+        "Dry-run Complexity Preview on two edge cases.",
+        "Explain Complexity Preview complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "introduction-complexity-preview.py",
+          "code": "def introduction_complexity_preview(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(introduction_complexity_preview([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "introduction.practice",
+      "chapter": "Introduction",
+      "title": "Practice",
+      "summary": "Learn Practice in Introduction with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "foundation",
+        "learning-path",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Introduction: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "introduction-practice",
+      "animationComponent": "IntroductionPracticeAnimation",
+      "aiContext": "Introduction / Practice: Learn Practice in Introduction with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Introduction, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Introduction: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "introduction",
+        "lessonSlug": "practice",
+        "topic": "Introduction",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "introduction.practice",
+        "tags": [
+          "foundation",
+          "learning-path",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "introduction/introduction"
+      ],
+      "futureQuizId": "quiz-introduction-practice",
+      "futureFlashcardId": "flashcards-introduction-practice",
+      "futureProjectId": "project-introduction-practice",
+      "images": [
+        "content/introduction/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "introduction-practice.py",
+          "code": "def introduction_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(introduction_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "introduction.interview-questions",
+      "chapter": "Introduction",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Introduction with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "foundation",
+        "learning-path",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Introduction: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "introduction-interview-questions",
+      "animationComponent": "IntroductionInterviewQuestionsAnimation",
+      "aiContext": "Introduction / Interview Questions: Learn Interview Questions in Introduction with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Introduction, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Introduction: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "introduction",
+        "lessonSlug": "interview-questions",
+        "topic": "Introduction",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "introduction.interview-questions",
+        "tags": [
+          "foundation",
+          "learning-path",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "introduction/introduction"
+      ],
+      "futureQuizId": "quiz-introduction-interview-questions",
+      "futureFlashcardId": "flashcards-introduction-interview-questions",
+      "futureProjectId": "project-introduction-interview-questions",
+      "images": [
+        "content/introduction/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "introduction-interview-questions.py",
+          "code": "def introduction_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(introduction_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "introduction.revision-summary",
+      "chapter": "Introduction",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Introduction with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "foundation",
+        "learning-path",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Introduction: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "introduction-revision-summary",
+      "animationComponent": "IntroductionRevisionSummaryAnimation",
+      "aiContext": "Introduction / Revision Summary: Learn Revision Summary in Introduction with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Introduction, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Introduction: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "introduction",
+        "lessonSlug": "revision-summary",
+        "topic": "Introduction",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "introduction.revision-summary",
+        "tags": [
+          "foundation",
+          "learning-path",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "introduction/introduction"
+      ],
+      "futureQuizId": "quiz-introduction-revision-summary",
+      "futureFlashcardId": "flashcards-introduction-revision-summary",
+      "futureProjectId": "project-introduction-revision-summary",
+      "images": [
+        "content/introduction/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "introduction-revision-summary.py",
+          "code": "def introduction_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(introduction_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

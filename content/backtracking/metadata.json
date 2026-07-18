@@ -1,0 +1,908 @@
+{
+  "chapterId": "backtracking",
+  "title": "Backtracking",
+  "description": "Backtracking topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Intermediate",
+  "estimatedHours": 5,
+  "tags": [
+    "recursion",
+    "state-space"
+  ],
+  "animationNamespace": "Backtracking",
+  "aiContext": "Backtracking chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "backtracking-introduction",
+      "component": "BacktrackingIntroductionAnimation",
+      "status": "planned"
+    },
+    "choice-constraint-goal": {
+      "animationId": "backtracking-choice-constraint-goal",
+      "component": "BacktrackingChoiceConstraintGoalAnimation",
+      "status": "planned"
+    },
+    "subsets": {
+      "animationId": "backtracking-subsets",
+      "component": "BacktrackingSubsetsAnimation",
+      "status": "planned"
+    },
+    "permutations": {
+      "animationId": "backtracking-permutations",
+      "component": "BacktrackingPermutationsAnimation",
+      "status": "planned"
+    },
+    "combination-sum": {
+      "animationId": "backtracking-combination-sum",
+      "component": "BacktrackingCombinationSumAnimation",
+      "status": "planned"
+    },
+    "n-queens": {
+      "animationId": "backtracking-n-queens",
+      "component": "BacktrackingNQueensAnimation",
+      "status": "planned"
+    },
+    "sudoku-solver": {
+      "animationId": "backtracking-sudoku-solver",
+      "component": "BacktrackingSudokuSolverAnimation",
+      "status": "planned"
+    },
+    "pruning": {
+      "animationId": "backtracking-pruning",
+      "component": "BacktrackingPruningAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "backtracking-practice",
+      "component": "BacktrackingPracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "backtracking-interview-questions",
+      "component": "BacktrackingInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "backtracking-revision-summary",
+      "component": "BacktrackingRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "backtracking.introduction",
+      "chapter": "Backtracking",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "recursion",
+        "state-space",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Backtracking: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "backtracking-introduction",
+      "animationComponent": "BacktrackingIntroductionAnimation",
+      "aiContext": "Backtracking / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Backtracking, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Backtracking: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "backtracking",
+        "lessonSlug": "introduction",
+        "topic": "Backtracking",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "backtracking.introduction",
+        "tags": [
+          "recursion",
+          "state-space",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "backtracking/introduction"
+      ],
+      "futureQuizId": "quiz-backtracking-introduction",
+      "futureFlashcardId": "flashcards-backtracking-introduction",
+      "futureProjectId": "project-backtracking-introduction",
+      "images": [
+        "content/backtracking/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "backtracking-introduction.py",
+          "code": "def backtracking_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(backtracking_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "choice-constraint-goal": {
+      "lessonId": "backtracking.choice-constraint-goal",
+      "chapter": "Backtracking",
+      "title": "Choice Constraint Goal",
+      "summary": "Learn Choice Constraint Goal in Backtracking with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "recursion",
+        "state-space",
+        "choice-constraint-goal"
+      ],
+      "learningObjectives": [
+        "Explain Backtracking: Choice Constraint Goal clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "backtracking-choice-constraint-goal",
+      "animationComponent": "BacktrackingChoiceConstraintGoalAnimation",
+      "aiContext": "Backtracking / Choice Constraint Goal: Learn Choice Constraint Goal in Backtracking with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Choice Constraint Goal lesson for Backtracking, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Backtracking: Choice Constraint Goal. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "backtracking",
+        "lessonSlug": "choice-constraint-goal",
+        "topic": "Backtracking",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "backtracking.choice-constraint-goal",
+        "tags": [
+          "recursion",
+          "state-space",
+          "choice-constraint-goal"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "backtracking/introduction"
+      ],
+      "futureQuizId": "quiz-backtracking-choice-constraint-goal",
+      "futureFlashcardId": "flashcards-backtracking-choice-constraint-goal",
+      "futureProjectId": "project-backtracking-choice-constraint-goal",
+      "images": [
+        "content/backtracking/images/choice-constraint-goal.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Choice Constraint Goal from scratch.",
+        "Dry-run Choice Constraint Goal on two edge cases.",
+        "Explain Choice Constraint Goal complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "backtracking-choice-constraint-goal.py",
+          "code": "def backtracking_choice_constraint_goal(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(backtracking_choice_constraint_goal([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "subsets": {
+      "lessonId": "backtracking.subsets",
+      "chapter": "Backtracking",
+      "title": "Subsets",
+      "summary": "Learn Subsets in Backtracking with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "recursion",
+        "state-space",
+        "subsets"
+      ],
+      "learningObjectives": [
+        "Explain Backtracking: Subsets clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "backtracking-subsets",
+      "animationComponent": "BacktrackingSubsetsAnimation",
+      "aiContext": "Backtracking / Subsets: Learn Subsets in Backtracking with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Subsets lesson for Backtracking, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Backtracking: Subsets. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "backtracking",
+        "lessonSlug": "subsets",
+        "topic": "Backtracking",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "backtracking.subsets",
+        "tags": [
+          "recursion",
+          "state-space",
+          "subsets"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "backtracking/introduction"
+      ],
+      "futureQuizId": "quiz-backtracking-subsets",
+      "futureFlashcardId": "flashcards-backtracking-subsets",
+      "futureProjectId": "project-backtracking-subsets",
+      "images": [
+        "content/backtracking/images/subsets.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Subsets from scratch.",
+        "Dry-run Subsets on two edge cases.",
+        "Explain Subsets complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "backtracking-subsets.py",
+          "code": "def backtracking_subsets(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(backtracking_subsets([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "permutations": {
+      "lessonId": "backtracking.permutations",
+      "chapter": "Backtracking",
+      "title": "Permutations",
+      "summary": "Learn Permutations in Backtracking with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "recursion",
+        "state-space",
+        "permutations"
+      ],
+      "learningObjectives": [
+        "Explain Backtracking: Permutations clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "backtracking-permutations",
+      "animationComponent": "BacktrackingPermutationsAnimation",
+      "aiContext": "Backtracking / Permutations: Learn Permutations in Backtracking with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Permutations lesson for Backtracking, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Backtracking: Permutations. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "backtracking",
+        "lessonSlug": "permutations",
+        "topic": "Backtracking",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "backtracking.permutations",
+        "tags": [
+          "recursion",
+          "state-space",
+          "permutations"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "backtracking/introduction"
+      ],
+      "futureQuizId": "quiz-backtracking-permutations",
+      "futureFlashcardId": "flashcards-backtracking-permutations",
+      "futureProjectId": "project-backtracking-permutations",
+      "images": [
+        "content/backtracking/images/permutations.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Permutations from scratch.",
+        "Dry-run Permutations on two edge cases.",
+        "Explain Permutations complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "backtracking-permutations.py",
+          "code": "def backtracking_permutations(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(backtracking_permutations([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "combination-sum": {
+      "lessonId": "backtracking.combination-sum",
+      "chapter": "Backtracking",
+      "title": "Combination Sum",
+      "summary": "Learn Combination Sum in Backtracking with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "recursion",
+        "state-space",
+        "combination-sum"
+      ],
+      "learningObjectives": [
+        "Explain Backtracking: Combination Sum clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "backtracking-combination-sum",
+      "animationComponent": "BacktrackingCombinationSumAnimation",
+      "aiContext": "Backtracking / Combination Sum: Learn Combination Sum in Backtracking with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Combination Sum lesson for Backtracking, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Backtracking: Combination Sum. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "backtracking",
+        "lessonSlug": "combination-sum",
+        "topic": "Backtracking",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "backtracking.combination-sum",
+        "tags": [
+          "recursion",
+          "state-space",
+          "combination-sum"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "backtracking/introduction"
+      ],
+      "futureQuizId": "quiz-backtracking-combination-sum",
+      "futureFlashcardId": "flashcards-backtracking-combination-sum",
+      "futureProjectId": "project-backtracking-combination-sum",
+      "images": [
+        "content/backtracking/images/combination-sum.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Combination Sum from scratch.",
+        "Dry-run Combination Sum on two edge cases.",
+        "Explain Combination Sum complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "backtracking-combination-sum.py",
+          "code": "def backtracking_combination_sum(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(backtracking_combination_sum([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "n-queens": {
+      "lessonId": "backtracking.n-queens",
+      "chapter": "Backtracking",
+      "title": "N Queens",
+      "summary": "Learn N Queens in Backtracking with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "recursion",
+        "state-space",
+        "n-queens"
+      ],
+      "learningObjectives": [
+        "Explain Backtracking: N Queens clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "backtracking-n-queens",
+      "animationComponent": "BacktrackingNQueensAnimation",
+      "aiContext": "Backtracking / N Queens: Learn N Queens in Backtracking with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "N Queens lesson for Backtracking, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Backtracking: N Queens. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "backtracking",
+        "lessonSlug": "n-queens",
+        "topic": "Backtracking",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "backtracking.n-queens",
+        "tags": [
+          "recursion",
+          "state-space",
+          "n-queens"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "backtracking/introduction"
+      ],
+      "futureQuizId": "quiz-backtracking-n-queens",
+      "futureFlashcardId": "flashcards-backtracking-n-queens",
+      "futureProjectId": "project-backtracking-n-queens",
+      "images": [
+        "content/backtracking/images/n-queens.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement N Queens from scratch.",
+        "Dry-run N Queens on two edge cases.",
+        "Explain N Queens complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "backtracking-n-queens.py",
+          "code": "def backtracking_n_queens(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(backtracking_n_queens([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "sudoku-solver": {
+      "lessonId": "backtracking.sudoku-solver",
+      "chapter": "Backtracking",
+      "title": "Sudoku Solver",
+      "summary": "Learn Sudoku Solver in Backtracking with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "recursion",
+        "state-space",
+        "sudoku-solver"
+      ],
+      "learningObjectives": [
+        "Explain Backtracking: Sudoku Solver clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "backtracking-sudoku-solver",
+      "animationComponent": "BacktrackingSudokuSolverAnimation",
+      "aiContext": "Backtracking / Sudoku Solver: Learn Sudoku Solver in Backtracking with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Sudoku Solver lesson for Backtracking, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Backtracking: Sudoku Solver. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "backtracking",
+        "lessonSlug": "sudoku-solver",
+        "topic": "Backtracking",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "backtracking.sudoku-solver",
+        "tags": [
+          "recursion",
+          "state-space",
+          "sudoku-solver"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "backtracking/introduction"
+      ],
+      "futureQuizId": "quiz-backtracking-sudoku-solver",
+      "futureFlashcardId": "flashcards-backtracking-sudoku-solver",
+      "futureProjectId": "project-backtracking-sudoku-solver",
+      "images": [
+        "content/backtracking/images/sudoku-solver.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Sudoku Solver from scratch.",
+        "Dry-run Sudoku Solver on two edge cases.",
+        "Explain Sudoku Solver complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "backtracking-sudoku-solver.py",
+          "code": "def backtracking_sudoku_solver(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(backtracking_sudoku_solver([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "pruning": {
+      "lessonId": "backtracking.pruning",
+      "chapter": "Backtracking",
+      "title": "Pruning",
+      "summary": "Learn Pruning in Backtracking with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "recursion",
+        "state-space",
+        "pruning"
+      ],
+      "learningObjectives": [
+        "Explain Backtracking: Pruning clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "backtracking-pruning",
+      "animationComponent": "BacktrackingPruningAnimation",
+      "aiContext": "Backtracking / Pruning: Learn Pruning in Backtracking with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Pruning lesson for Backtracking, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Backtracking: Pruning. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "backtracking",
+        "lessonSlug": "pruning",
+        "topic": "Backtracking",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "backtracking.pruning",
+        "tags": [
+          "recursion",
+          "state-space",
+          "pruning"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "backtracking/introduction"
+      ],
+      "futureQuizId": "quiz-backtracking-pruning",
+      "futureFlashcardId": "flashcards-backtracking-pruning",
+      "futureProjectId": "project-backtracking-pruning",
+      "images": [
+        "content/backtracking/images/pruning.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Pruning from scratch.",
+        "Dry-run Pruning on two edge cases.",
+        "Explain Pruning complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "backtracking-pruning.py",
+          "code": "def backtracking_pruning(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(backtracking_pruning([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "backtracking.practice",
+      "chapter": "Backtracking",
+      "title": "Practice",
+      "summary": "Learn Practice in Backtracking with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "recursion",
+        "state-space",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Backtracking: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "backtracking-practice",
+      "animationComponent": "BacktrackingPracticeAnimation",
+      "aiContext": "Backtracking / Practice: Learn Practice in Backtracking with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Backtracking, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Backtracking: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "backtracking",
+        "lessonSlug": "practice",
+        "topic": "Backtracking",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "backtracking.practice",
+        "tags": [
+          "recursion",
+          "state-space",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "backtracking/introduction"
+      ],
+      "futureQuizId": "quiz-backtracking-practice",
+      "futureFlashcardId": "flashcards-backtracking-practice",
+      "futureProjectId": "project-backtracking-practice",
+      "images": [
+        "content/backtracking/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "backtracking-practice.py",
+          "code": "def backtracking_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(backtracking_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "backtracking.interview-questions",
+      "chapter": "Backtracking",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Backtracking with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "recursion",
+        "state-space",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Backtracking: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "backtracking-interview-questions",
+      "animationComponent": "BacktrackingInterviewQuestionsAnimation",
+      "aiContext": "Backtracking / Interview Questions: Learn Interview Questions in Backtracking with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Backtracking, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Backtracking: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "backtracking",
+        "lessonSlug": "interview-questions",
+        "topic": "Backtracking",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "backtracking.interview-questions",
+        "tags": [
+          "recursion",
+          "state-space",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "backtracking/introduction"
+      ],
+      "futureQuizId": "quiz-backtracking-interview-questions",
+      "futureFlashcardId": "flashcards-backtracking-interview-questions",
+      "futureProjectId": "project-backtracking-interview-questions",
+      "images": [
+        "content/backtracking/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "backtracking-interview-questions.py",
+          "code": "def backtracking_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(backtracking_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "backtracking.revision-summary",
+      "chapter": "Backtracking",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Backtracking with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "recursion",
+        "state-space",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Backtracking: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "backtracking-revision-summary",
+      "animationComponent": "BacktrackingRevisionSummaryAnimation",
+      "aiContext": "Backtracking / Revision Summary: Learn Revision Summary in Backtracking with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Backtracking, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Backtracking: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "backtracking",
+        "lessonSlug": "revision-summary",
+        "topic": "Backtracking",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "backtracking.revision-summary",
+        "tags": [
+          "recursion",
+          "state-space",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "backtracking/introduction"
+      ],
+      "futureQuizId": "quiz-backtracking-revision-summary",
+      "futureFlashcardId": "flashcards-backtracking-revision-summary",
+      "futureProjectId": "project-backtracking-revision-summary",
+      "images": [
+        "content/backtracking/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "backtracking-revision-summary.py",
+          "code": "def backtracking_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(backtracking_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,827 @@
+{
+  "chapterId": "advanced-graph-algorithms",
+  "title": "Advanced Graph Algorithms",
+  "description": "Advanced Graph Algorithms topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Advanced",
+  "estimatedHours": 5,
+  "tags": [
+    "graph",
+    "shortest-path"
+  ],
+  "animationNamespace": "AdvancedGraphAlgorithms",
+  "aiContext": "Advanced Graph Algorithms chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "advanced-graph-algorithms-introduction",
+      "component": "AdvancedGraphAlgorithmsIntroductionAnimation",
+      "status": "planned"
+    },
+    "dijkstra": {
+      "animationId": "advanced-graph-algorithms-dijkstra",
+      "component": "AdvancedGraphAlgorithmsDijkstraAnimation",
+      "status": "planned"
+    },
+    "bellman-ford": {
+      "animationId": "advanced-graph-algorithms-bellman-ford",
+      "component": "AdvancedGraphAlgorithmsBellmanFordAnimation",
+      "status": "planned"
+    },
+    "floyd-warshall": {
+      "animationId": "advanced-graph-algorithms-floyd-warshall",
+      "component": "AdvancedGraphAlgorithmsFloydWarshallAnimation",
+      "status": "planned"
+    },
+    "minimum-spanning-tree": {
+      "animationId": "advanced-graph-algorithms-minimum-spanning-tree",
+      "component": "AdvancedGraphAlgorithmsMinimumSpanningTreeAnimation",
+      "status": "planned"
+    },
+    "strongly-connected-components": {
+      "animationId": "advanced-graph-algorithms-strongly-connected-components",
+      "component": "AdvancedGraphAlgorithmsStronglyConnectedComponentsAnimation",
+      "status": "planned"
+    },
+    "bridges-and-articulation-points": {
+      "animationId": "advanced-graph-algorithms-bridges-and-articulation-points",
+      "component": "AdvancedGraphAlgorithmsBridgesAndArticulationPointsAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "advanced-graph-algorithms-practice",
+      "component": "AdvancedGraphAlgorithmsPracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "advanced-graph-algorithms-interview-questions",
+      "component": "AdvancedGraphAlgorithmsInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "advanced-graph-algorithms-revision-summary",
+      "component": "AdvancedGraphAlgorithmsRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "advanced-graph-algorithms.introduction",
+      "chapter": "Advanced Graph Algorithms",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "graph",
+        "shortest-path",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Advanced Graph Algorithms: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "advanced-graph-algorithms-introduction",
+      "animationComponent": "AdvancedGraphAlgorithmsIntroductionAnimation",
+      "aiContext": "Advanced Graph Algorithms / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Advanced Graph Algorithms, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Advanced Graph Algorithms: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "advanced-graph-algorithms",
+        "lessonSlug": "introduction",
+        "topic": "Advanced Graph Algorithms",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "advanced-graph-algorithms.introduction",
+        "tags": [
+          "graph",
+          "shortest-path",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "advanced-graph-algorithms/introduction"
+      ],
+      "futureQuizId": "quiz-advanced-graph-algorithms-introduction",
+      "futureFlashcardId": "flashcards-advanced-graph-algorithms-introduction",
+      "futureProjectId": "project-advanced-graph-algorithms-introduction",
+      "images": [
+        "content/advanced-graph-algorithms/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "advanced-graph-algorithms-introduction.py",
+          "code": "def advanced_graph_algorithms_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(advanced_graph_algorithms_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "dijkstra": {
+      "lessonId": "advanced-graph-algorithms.dijkstra",
+      "chapter": "Advanced Graph Algorithms",
+      "title": "Dijkstra",
+      "summary": "Learn Dijkstra in Advanced Graph Algorithms with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "graph",
+        "shortest-path",
+        "dijkstra"
+      ],
+      "learningObjectives": [
+        "Explain Advanced Graph Algorithms: Dijkstra clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "advanced-graph-algorithms-dijkstra",
+      "animationComponent": "AdvancedGraphAlgorithmsDijkstraAnimation",
+      "aiContext": "Advanced Graph Algorithms / Dijkstra: Learn Dijkstra in Advanced Graph Algorithms with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Dijkstra lesson for Advanced Graph Algorithms, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Advanced Graph Algorithms: Dijkstra. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "advanced-graph-algorithms",
+        "lessonSlug": "dijkstra",
+        "topic": "Advanced Graph Algorithms",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "advanced-graph-algorithms.dijkstra",
+        "tags": [
+          "graph",
+          "shortest-path",
+          "dijkstra"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "advanced-graph-algorithms/introduction"
+      ],
+      "futureQuizId": "quiz-advanced-graph-algorithms-dijkstra",
+      "futureFlashcardId": "flashcards-advanced-graph-algorithms-dijkstra",
+      "futureProjectId": "project-advanced-graph-algorithms-dijkstra",
+      "images": [
+        "content/advanced-graph-algorithms/images/dijkstra.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Dijkstra from scratch.",
+        "Dry-run Dijkstra on two edge cases.",
+        "Explain Dijkstra complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "advanced-graph-algorithms-dijkstra.py",
+          "code": "def advanced_graph_algorithms_dijkstra(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(advanced_graph_algorithms_dijkstra([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "bellman-ford": {
+      "lessonId": "advanced-graph-algorithms.bellman-ford",
+      "chapter": "Advanced Graph Algorithms",
+      "title": "Bellman Ford",
+      "summary": "Learn Bellman Ford in Advanced Graph Algorithms with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "graph",
+        "shortest-path",
+        "bellman-ford"
+      ],
+      "learningObjectives": [
+        "Explain Advanced Graph Algorithms: Bellman Ford clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "advanced-graph-algorithms-bellman-ford",
+      "animationComponent": "AdvancedGraphAlgorithmsBellmanFordAnimation",
+      "aiContext": "Advanced Graph Algorithms / Bellman Ford: Learn Bellman Ford in Advanced Graph Algorithms with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Bellman Ford lesson for Advanced Graph Algorithms, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Advanced Graph Algorithms: Bellman Ford. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "advanced-graph-algorithms",
+        "lessonSlug": "bellman-ford",
+        "topic": "Advanced Graph Algorithms",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "advanced-graph-algorithms.bellman-ford",
+        "tags": [
+          "graph",
+          "shortest-path",
+          "bellman-ford"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "advanced-graph-algorithms/introduction"
+      ],
+      "futureQuizId": "quiz-advanced-graph-algorithms-bellman-ford",
+      "futureFlashcardId": "flashcards-advanced-graph-algorithms-bellman-ford",
+      "futureProjectId": "project-advanced-graph-algorithms-bellman-ford",
+      "images": [
+        "content/advanced-graph-algorithms/images/bellman-ford.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Bellman Ford from scratch.",
+        "Dry-run Bellman Ford on two edge cases.",
+        "Explain Bellman Ford complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "advanced-graph-algorithms-bellman-ford.py",
+          "code": "def advanced_graph_algorithms_bellman_ford(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(advanced_graph_algorithms_bellman_ford([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "floyd-warshall": {
+      "lessonId": "advanced-graph-algorithms.floyd-warshall",
+      "chapter": "Advanced Graph Algorithms",
+      "title": "Floyd Warshall",
+      "summary": "Learn Floyd Warshall in Advanced Graph Algorithms with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "graph",
+        "shortest-path",
+        "floyd-warshall"
+      ],
+      "learningObjectives": [
+        "Explain Advanced Graph Algorithms: Floyd Warshall clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "advanced-graph-algorithms-floyd-warshall",
+      "animationComponent": "AdvancedGraphAlgorithmsFloydWarshallAnimation",
+      "aiContext": "Advanced Graph Algorithms / Floyd Warshall: Learn Floyd Warshall in Advanced Graph Algorithms with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Floyd Warshall lesson for Advanced Graph Algorithms, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Advanced Graph Algorithms: Floyd Warshall. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "advanced-graph-algorithms",
+        "lessonSlug": "floyd-warshall",
+        "topic": "Advanced Graph Algorithms",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "advanced-graph-algorithms.floyd-warshall",
+        "tags": [
+          "graph",
+          "shortest-path",
+          "floyd-warshall"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "advanced-graph-algorithms/introduction"
+      ],
+      "futureQuizId": "quiz-advanced-graph-algorithms-floyd-warshall",
+      "futureFlashcardId": "flashcards-advanced-graph-algorithms-floyd-warshall",
+      "futureProjectId": "project-advanced-graph-algorithms-floyd-warshall",
+      "images": [
+        "content/advanced-graph-algorithms/images/floyd-warshall.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Floyd Warshall from scratch.",
+        "Dry-run Floyd Warshall on two edge cases.",
+        "Explain Floyd Warshall complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "advanced-graph-algorithms-floyd-warshall.py",
+          "code": "def advanced_graph_algorithms_floyd_warshall(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(advanced_graph_algorithms_floyd_warshall([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "minimum-spanning-tree": {
+      "lessonId": "advanced-graph-algorithms.minimum-spanning-tree",
+      "chapter": "Advanced Graph Algorithms",
+      "title": "Minimum Spanning Tree",
+      "summary": "Learn Minimum Spanning Tree in Advanced Graph Algorithms with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "graph",
+        "shortest-path",
+        "minimum-spanning-tree"
+      ],
+      "learningObjectives": [
+        "Explain Advanced Graph Algorithms: Minimum Spanning Tree clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "advanced-graph-algorithms-minimum-spanning-tree",
+      "animationComponent": "AdvancedGraphAlgorithmsMinimumSpanningTreeAnimation",
+      "aiContext": "Advanced Graph Algorithms / Minimum Spanning Tree: Learn Minimum Spanning Tree in Advanced Graph Algorithms with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Minimum Spanning Tree lesson for Advanced Graph Algorithms, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Advanced Graph Algorithms: Minimum Spanning Tree. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "advanced-graph-algorithms",
+        "lessonSlug": "minimum-spanning-tree",
+        "topic": "Advanced Graph Algorithms",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "advanced-graph-algorithms.minimum-spanning-tree",
+        "tags": [
+          "graph",
+          "shortest-path",
+          "minimum-spanning-tree"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "advanced-graph-algorithms/introduction"
+      ],
+      "futureQuizId": "quiz-advanced-graph-algorithms-minimum-spanning-tree",
+      "futureFlashcardId": "flashcards-advanced-graph-algorithms-minimum-spanning-tree",
+      "futureProjectId": "project-advanced-graph-algorithms-minimum-spanning-tree",
+      "images": [
+        "content/advanced-graph-algorithms/images/minimum-spanning-tree.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Minimum Spanning Tree from scratch.",
+        "Dry-run Minimum Spanning Tree on two edge cases.",
+        "Explain Minimum Spanning Tree complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "advanced-graph-algorithms-minimum-spanning-tree.py",
+          "code": "def advanced_graph_algorithms_minimum_spanning_tree(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(advanced_graph_algorithms_minimum_spanning_tree([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "strongly-connected-components": {
+      "lessonId": "advanced-graph-algorithms.strongly-connected-components",
+      "chapter": "Advanced Graph Algorithms",
+      "title": "Strongly Connected Components",
+      "summary": "Learn Strongly Connected Components in Advanced Graph Algorithms with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "graph",
+        "shortest-path",
+        "strongly-connected-components"
+      ],
+      "learningObjectives": [
+        "Explain Advanced Graph Algorithms: Strongly Connected Components clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "advanced-graph-algorithms-strongly-connected-components",
+      "animationComponent": "AdvancedGraphAlgorithmsStronglyConnectedComponentsAnimation",
+      "aiContext": "Advanced Graph Algorithms / Strongly Connected Components: Learn Strongly Connected Components in Advanced Graph Algorithms with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Strongly Connected Components lesson for Advanced Graph Algorithms, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Advanced Graph Algorithms: Strongly Connected Components. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "advanced-graph-algorithms",
+        "lessonSlug": "strongly-connected-components",
+        "topic": "Advanced Graph Algorithms",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "advanced-graph-algorithms.strongly-connected-components",
+        "tags": [
+          "graph",
+          "shortest-path",
+          "strongly-connected-components"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "advanced-graph-algorithms/introduction"
+      ],
+      "futureQuizId": "quiz-advanced-graph-algorithms-strongly-connected-components",
+      "futureFlashcardId": "flashcards-advanced-graph-algorithms-strongly-connected-components",
+      "futureProjectId": "project-advanced-graph-algorithms-strongly-connected-components",
+      "images": [
+        "content/advanced-graph-algorithms/images/strongly-connected-components.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Strongly Connected Components from scratch.",
+        "Dry-run Strongly Connected Components on two edge cases.",
+        "Explain Strongly Connected Components complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "advanced-graph-algorithms-strongly-connected-components.py",
+          "code": "def advanced_graph_algorithms_strongly_connected_components(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(advanced_graph_algorithms_strongly_connected_components([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "bridges-and-articulation-points": {
+      "lessonId": "advanced-graph-algorithms.bridges-and-articulation-points",
+      "chapter": "Advanced Graph Algorithms",
+      "title": "Bridges And Articulation Points",
+      "summary": "Learn Bridges And Articulation Points in Advanced Graph Algorithms with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "graph",
+        "shortest-path",
+        "bridges-and-articulation-points"
+      ],
+      "learningObjectives": [
+        "Explain Advanced Graph Algorithms: Bridges And Articulation Points clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "advanced-graph-algorithms-bridges-and-articulation-points",
+      "animationComponent": "AdvancedGraphAlgorithmsBridgesAndArticulationPointsAnimation",
+      "aiContext": "Advanced Graph Algorithms / Bridges And Articulation Points: Learn Bridges And Articulation Points in Advanced Graph Algorithms with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Bridges And Articulation Points lesson for Advanced Graph Algorithms, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Advanced Graph Algorithms: Bridges And Articulation Points. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "advanced-graph-algorithms",
+        "lessonSlug": "bridges-and-articulation-points",
+        "topic": "Advanced Graph Algorithms",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "advanced-graph-algorithms.bridges-and-articulation-points",
+        "tags": [
+          "graph",
+          "shortest-path",
+          "bridges-and-articulation-points"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "advanced-graph-algorithms/introduction"
+      ],
+      "futureQuizId": "quiz-advanced-graph-algorithms-bridges-and-articulation-points",
+      "futureFlashcardId": "flashcards-advanced-graph-algorithms-bridges-and-articulation-points",
+      "futureProjectId": "project-advanced-graph-algorithms-bridges-and-articulation-points",
+      "images": [
+        "content/advanced-graph-algorithms/images/bridges-and-articulation-points.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Bridges And Articulation Points from scratch.",
+        "Dry-run Bridges And Articulation Points on two edge cases.",
+        "Explain Bridges And Articulation Points complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "advanced-graph-algorithms-bridges-and-articulation-points.py",
+          "code": "def advanced_graph_algorithms_bridges_and_articulation_points(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(advanced_graph_algorithms_bridges_and_articulation_points([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "advanced-graph-algorithms.practice",
+      "chapter": "Advanced Graph Algorithms",
+      "title": "Practice",
+      "summary": "Learn Practice in Advanced Graph Algorithms with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "graph",
+        "shortest-path",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Advanced Graph Algorithms: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "advanced-graph-algorithms-practice",
+      "animationComponent": "AdvancedGraphAlgorithmsPracticeAnimation",
+      "aiContext": "Advanced Graph Algorithms / Practice: Learn Practice in Advanced Graph Algorithms with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Advanced Graph Algorithms, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Advanced Graph Algorithms: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "advanced-graph-algorithms",
+        "lessonSlug": "practice",
+        "topic": "Advanced Graph Algorithms",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "advanced-graph-algorithms.practice",
+        "tags": [
+          "graph",
+          "shortest-path",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "advanced-graph-algorithms/introduction"
+      ],
+      "futureQuizId": "quiz-advanced-graph-algorithms-practice",
+      "futureFlashcardId": "flashcards-advanced-graph-algorithms-practice",
+      "futureProjectId": "project-advanced-graph-algorithms-practice",
+      "images": [
+        "content/advanced-graph-algorithms/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "advanced-graph-algorithms-practice.py",
+          "code": "def advanced_graph_algorithms_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(advanced_graph_algorithms_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "advanced-graph-algorithms.interview-questions",
+      "chapter": "Advanced Graph Algorithms",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Advanced Graph Algorithms with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "graph",
+        "shortest-path",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Advanced Graph Algorithms: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "advanced-graph-algorithms-interview-questions",
+      "animationComponent": "AdvancedGraphAlgorithmsInterviewQuestionsAnimation",
+      "aiContext": "Advanced Graph Algorithms / Interview Questions: Learn Interview Questions in Advanced Graph Algorithms with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Advanced Graph Algorithms, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Advanced Graph Algorithms: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "advanced-graph-algorithms",
+        "lessonSlug": "interview-questions",
+        "topic": "Advanced Graph Algorithms",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "advanced-graph-algorithms.interview-questions",
+        "tags": [
+          "graph",
+          "shortest-path",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "advanced-graph-algorithms/introduction"
+      ],
+      "futureQuizId": "quiz-advanced-graph-algorithms-interview-questions",
+      "futureFlashcardId": "flashcards-advanced-graph-algorithms-interview-questions",
+      "futureProjectId": "project-advanced-graph-algorithms-interview-questions",
+      "images": [
+        "content/advanced-graph-algorithms/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "advanced-graph-algorithms-interview-questions.py",
+          "code": "def advanced_graph_algorithms_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(advanced_graph_algorithms_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "advanced-graph-algorithms.revision-summary",
+      "chapter": "Advanced Graph Algorithms",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Advanced Graph Algorithms with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "graph",
+        "shortest-path",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Advanced Graph Algorithms: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "advanced-graph-algorithms-revision-summary",
+      "animationComponent": "AdvancedGraphAlgorithmsRevisionSummaryAnimation",
+      "aiContext": "Advanced Graph Algorithms / Revision Summary: Learn Revision Summary in Advanced Graph Algorithms with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Advanced Graph Algorithms, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Advanced Graph Algorithms: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "advanced-graph-algorithms",
+        "lessonSlug": "revision-summary",
+        "topic": "Advanced Graph Algorithms",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "advanced-graph-algorithms.revision-summary",
+        "tags": [
+          "graph",
+          "shortest-path",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "advanced-graph-algorithms/introduction"
+      ],
+      "futureQuizId": "quiz-advanced-graph-algorithms-revision-summary",
+      "futureFlashcardId": "flashcards-advanced-graph-algorithms-revision-summary",
+      "futureProjectId": "project-advanced-graph-algorithms-revision-summary",
+      "images": [
+        "content/advanced-graph-algorithms/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "advanced-graph-algorithms-revision-summary.py",
+          "code": "def advanced_graph_algorithms_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(advanced_graph_algorithms_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

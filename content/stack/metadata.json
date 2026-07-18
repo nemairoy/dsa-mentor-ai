@@ -1,0 +1,989 @@
+{
+  "chapterId": "stack",
+  "title": "Stack",
+  "description": "Stack topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Beginner",
+  "estimatedHours": 5,
+  "tags": [
+    "linear-data-structure",
+    "lifo"
+  ],
+  "animationNamespace": "Stack",
+  "aiContext": "Stack chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "stack-introduction",
+      "component": "StackIntroductionAnimation",
+      "status": "planned"
+    },
+    "lifo-model": {
+      "animationId": "stack-lifo-model",
+      "component": "StackLifoModelAnimation",
+      "status": "planned"
+    },
+    "push": {
+      "animationId": "stack-push",
+      "component": "StackPushAnimation",
+      "status": "planned"
+    },
+    "pop": {
+      "animationId": "stack-pop",
+      "component": "StackPopAnimation",
+      "status": "planned"
+    },
+    "peek": {
+      "animationId": "stack-peek",
+      "component": "StackPeekAnimation",
+      "status": "planned"
+    },
+    "is-empty": {
+      "animationId": "stack-is-empty",
+      "component": "StackIsEmptyAnimation",
+      "status": "planned"
+    },
+    "implementation-array": {
+      "animationId": "stack-implementation-array",
+      "component": "StackImplementationArrayAnimation",
+      "status": "planned"
+    },
+    "implementation-linked-list": {
+      "animationId": "stack-implementation-linked-list",
+      "component": "StackImplementationLinkedListAnimation",
+      "status": "planned"
+    },
+    "monotonic-stack": {
+      "animationId": "stack-monotonic-stack",
+      "component": "StackMonotonicStackAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "stack-practice",
+      "component": "StackPracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "stack-interview-questions",
+      "component": "StackInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "stack-revision-summary",
+      "component": "StackRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "stack.introduction",
+      "chapter": "Stack",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "lifo",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Stack: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "stack-introduction",
+      "animationComponent": "StackIntroductionAnimation",
+      "aiContext": "Stack / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Stack, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Stack: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "stack",
+        "lessonSlug": "introduction",
+        "topic": "Stack",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "stack.introduction",
+        "tags": [
+          "linear-data-structure",
+          "lifo",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "O(1) for push, pop, peek, and is-empty.",
+      "spaceComplexity": "O(n) for n stored items.",
+      "relatedLessons": [
+        "stack/introduction"
+      ],
+      "futureQuizId": "quiz-stack-introduction",
+      "futureFlashcardId": "flashcards-stack-introduction",
+      "futureProjectId": "project-stack-introduction",
+      "images": [
+        "content/stack/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "stack-introduction.py",
+          "code": "def stack_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(stack_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "lifo-model": {
+      "lessonId": "stack.lifo-model",
+      "chapter": "Stack",
+      "title": "Lifo Model",
+      "summary": "Learn Lifo Model in Stack with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "lifo",
+        "lifo-model"
+      ],
+      "learningObjectives": [
+        "Explain Stack: Lifo Model clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "stack-lifo-model",
+      "animationComponent": "StackLifoModelAnimation",
+      "aiContext": "Stack / Lifo Model: Learn Lifo Model in Stack with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Lifo Model lesson for Stack, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Stack: Lifo Model. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "stack",
+        "lessonSlug": "lifo-model",
+        "topic": "Stack",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "stack.lifo-model",
+        "tags": [
+          "linear-data-structure",
+          "lifo",
+          "lifo-model"
+        ]
+      },
+      "timeComplexity": "O(1) for push, pop, peek, and is-empty.",
+      "spaceComplexity": "O(n) for n stored items.",
+      "relatedLessons": [
+        "stack/introduction"
+      ],
+      "futureQuizId": "quiz-stack-lifo-model",
+      "futureFlashcardId": "flashcards-stack-lifo-model",
+      "futureProjectId": "project-stack-lifo-model",
+      "images": [
+        "content/stack/images/lifo-model.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Lifo Model from scratch.",
+        "Dry-run Lifo Model on two edge cases.",
+        "Explain Lifo Model complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "stack-lifo-model.py",
+          "code": "def stack_lifo_model(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(stack_lifo_model([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "push": {
+      "lessonId": "stack.push",
+      "chapter": "Stack",
+      "title": "Push",
+      "summary": "Learn Push in Stack with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "lifo",
+        "push"
+      ],
+      "learningObjectives": [
+        "Explain Stack: Push clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "stack-push",
+      "animationComponent": "StackPushAnimation",
+      "aiContext": "Stack / Push: Learn Push in Stack with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Push lesson for Stack, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Stack: Push. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "stack",
+        "lessonSlug": "push",
+        "topic": "Stack",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "stack.push",
+        "tags": [
+          "linear-data-structure",
+          "lifo",
+          "push"
+        ]
+      },
+      "timeComplexity": "O(1) for push, pop, peek, and is-empty.",
+      "spaceComplexity": "O(n) for n stored items.",
+      "relatedLessons": [
+        "stack/introduction"
+      ],
+      "futureQuizId": "quiz-stack-push",
+      "futureFlashcardId": "flashcards-stack-push",
+      "futureProjectId": "project-stack-push",
+      "images": [
+        "content/stack/images/push.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Push from scratch.",
+        "Dry-run Push on two edge cases.",
+        "Explain Push complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "stack-push.py",
+          "code": "class Stack:\n    def __init__(self):\n        self.items = []\n\n    def push(self, value):\n        self.items.append(value)\n\nstack = Stack()\nstack.push(10)\nstack.push(20)\nprint(stack.items)"
+        }
+      ]
+    },
+    "pop": {
+      "lessonId": "stack.pop",
+      "chapter": "Stack",
+      "title": "Pop",
+      "summary": "Learn Pop in Stack with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "lifo",
+        "pop"
+      ],
+      "learningObjectives": [
+        "Explain Stack: Pop clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "stack-pop",
+      "animationComponent": "StackPopAnimation",
+      "aiContext": "Stack / Pop: Learn Pop in Stack with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Pop lesson for Stack, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Stack: Pop. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "stack",
+        "lessonSlug": "pop",
+        "topic": "Stack",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "stack.pop",
+        "tags": [
+          "linear-data-structure",
+          "lifo",
+          "pop"
+        ]
+      },
+      "timeComplexity": "O(1) for push, pop, peek, and is-empty.",
+      "spaceComplexity": "O(n) for n stored items.",
+      "relatedLessons": [
+        "stack/introduction"
+      ],
+      "futureQuizId": "quiz-stack-pop",
+      "futureFlashcardId": "flashcards-stack-pop",
+      "futureProjectId": "project-stack-pop",
+      "images": [
+        "content/stack/images/pop.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Pop from scratch.",
+        "Dry-run Pop on two edge cases.",
+        "Explain Pop complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "stack-pop.py",
+          "code": "class Stack:\n    def __init__(self):\n        self.items = []\n\n    def pop(self):\n        if not self.items:\n            raise IndexError(\"pop from empty stack\")\n        return self.items.pop()\n\nstack = Stack()\nstack.items = [10, 20, 30]\nprint(stack.pop())"
+        }
+      ]
+    },
+    "peek": {
+      "lessonId": "stack.peek",
+      "chapter": "Stack",
+      "title": "Peek",
+      "summary": "Learn Peek in Stack with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "lifo",
+        "peek"
+      ],
+      "learningObjectives": [
+        "Explain Stack: Peek clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "stack-peek",
+      "animationComponent": "StackPeekAnimation",
+      "aiContext": "Stack / Peek: Learn Peek in Stack with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Peek lesson for Stack, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Stack: Peek. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "stack",
+        "lessonSlug": "peek",
+        "topic": "Stack",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "stack.peek",
+        "tags": [
+          "linear-data-structure",
+          "lifo",
+          "peek"
+        ]
+      },
+      "timeComplexity": "O(1) for push, pop, peek, and is-empty.",
+      "spaceComplexity": "O(n) for n stored items.",
+      "relatedLessons": [
+        "stack/introduction"
+      ],
+      "futureQuizId": "quiz-stack-peek",
+      "futureFlashcardId": "flashcards-stack-peek",
+      "futureProjectId": "project-stack-peek",
+      "images": [
+        "content/stack/images/peek.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Peek from scratch.",
+        "Dry-run Peek on two edge cases.",
+        "Explain Peek complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "stack-peek.py",
+          "code": "def stack_peek(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(stack_peek([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "is-empty": {
+      "lessonId": "stack.is-empty",
+      "chapter": "Stack",
+      "title": "Is Empty",
+      "summary": "Learn Is Empty in Stack with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "lifo",
+        "is-empty"
+      ],
+      "learningObjectives": [
+        "Explain Stack: Is Empty clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "stack-is-empty",
+      "animationComponent": "StackIsEmptyAnimation",
+      "aiContext": "Stack / Is Empty: Learn Is Empty in Stack with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Is Empty lesson for Stack, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Stack: Is Empty. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "stack",
+        "lessonSlug": "is-empty",
+        "topic": "Stack",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "stack.is-empty",
+        "tags": [
+          "linear-data-structure",
+          "lifo",
+          "is-empty"
+        ]
+      },
+      "timeComplexity": "O(1) for push, pop, peek, and is-empty.",
+      "spaceComplexity": "O(n) for n stored items.",
+      "relatedLessons": [
+        "stack/introduction"
+      ],
+      "futureQuizId": "quiz-stack-is-empty",
+      "futureFlashcardId": "flashcards-stack-is-empty",
+      "futureProjectId": "project-stack-is-empty",
+      "images": [
+        "content/stack/images/is-empty.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Is Empty from scratch.",
+        "Dry-run Is Empty on two edge cases.",
+        "Explain Is Empty complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "stack-is-empty.py",
+          "code": "def stack_is_empty(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(stack_is_empty([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "implementation-array": {
+      "lessonId": "stack.implementation-array",
+      "chapter": "Stack",
+      "title": "Implementation Array",
+      "summary": "Learn Implementation Array in Stack with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "lifo",
+        "implementation-array"
+      ],
+      "learningObjectives": [
+        "Explain Stack: Implementation Array clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "stack-implementation-array",
+      "animationComponent": "StackImplementationArrayAnimation",
+      "aiContext": "Stack / Implementation Array: Learn Implementation Array in Stack with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Implementation Array lesson for Stack, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Stack: Implementation Array. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "stack",
+        "lessonSlug": "implementation-array",
+        "topic": "Stack",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "stack.implementation-array",
+        "tags": [
+          "linear-data-structure",
+          "lifo",
+          "implementation-array"
+        ]
+      },
+      "timeComplexity": "O(1) for push, pop, peek, and is-empty.",
+      "spaceComplexity": "O(n) for n stored items.",
+      "relatedLessons": [
+        "stack/introduction"
+      ],
+      "futureQuizId": "quiz-stack-implementation-array",
+      "futureFlashcardId": "flashcards-stack-implementation-array",
+      "futureProjectId": "project-stack-implementation-array",
+      "images": [
+        "content/stack/images/implementation-array.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Implementation Array from scratch.",
+        "Dry-run Implementation Array on two edge cases.",
+        "Explain Implementation Array complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "stack-implementation-array.py",
+          "code": "def stack_implementation_array(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(stack_implementation_array([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "implementation-linked-list": {
+      "lessonId": "stack.implementation-linked-list",
+      "chapter": "Stack",
+      "title": "Implementation Linked List",
+      "summary": "Learn Implementation Linked List in Stack with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "lifo",
+        "implementation-linked-list"
+      ],
+      "learningObjectives": [
+        "Explain Stack: Implementation Linked List clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "stack-implementation-linked-list",
+      "animationComponent": "StackImplementationLinkedListAnimation",
+      "aiContext": "Stack / Implementation Linked List: Learn Implementation Linked List in Stack with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Implementation Linked List lesson for Stack, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Stack: Implementation Linked List. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "stack",
+        "lessonSlug": "implementation-linked-list",
+        "topic": "Stack",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "stack.implementation-linked-list",
+        "tags": [
+          "linear-data-structure",
+          "lifo",
+          "implementation-linked-list"
+        ]
+      },
+      "timeComplexity": "O(1) for push, pop, peek, and is-empty.",
+      "spaceComplexity": "O(n) for n stored items.",
+      "relatedLessons": [
+        "stack/introduction"
+      ],
+      "futureQuizId": "quiz-stack-implementation-linked-list",
+      "futureFlashcardId": "flashcards-stack-implementation-linked-list",
+      "futureProjectId": "project-stack-implementation-linked-list",
+      "images": [
+        "content/stack/images/implementation-linked-list.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Implementation Linked List from scratch.",
+        "Dry-run Implementation Linked List on two edge cases.",
+        "Explain Implementation Linked List complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "stack-implementation-linked-list.py",
+          "code": "def stack_implementation_linked_list(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(stack_implementation_linked_list([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "monotonic-stack": {
+      "lessonId": "stack.monotonic-stack",
+      "chapter": "Stack",
+      "title": "Monotonic Stack",
+      "summary": "Learn Monotonic Stack in Stack with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "lifo",
+        "monotonic-stack"
+      ],
+      "learningObjectives": [
+        "Explain Stack: Monotonic Stack clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "stack-monotonic-stack",
+      "animationComponent": "StackMonotonicStackAnimation",
+      "aiContext": "Stack / Monotonic Stack: Learn Monotonic Stack in Stack with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Monotonic Stack lesson for Stack, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Stack: Monotonic Stack. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "stack",
+        "lessonSlug": "monotonic-stack",
+        "topic": "Stack",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "stack.monotonic-stack",
+        "tags": [
+          "linear-data-structure",
+          "lifo",
+          "monotonic-stack"
+        ]
+      },
+      "timeComplexity": "O(1) for push, pop, peek, and is-empty.",
+      "spaceComplexity": "O(n) for n stored items.",
+      "relatedLessons": [
+        "stack/introduction"
+      ],
+      "futureQuizId": "quiz-stack-monotonic-stack",
+      "futureFlashcardId": "flashcards-stack-monotonic-stack",
+      "futureProjectId": "project-stack-monotonic-stack",
+      "images": [
+        "content/stack/images/monotonic-stack.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Monotonic Stack from scratch.",
+        "Dry-run Monotonic Stack on two edge cases.",
+        "Explain Monotonic Stack complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "stack-monotonic-stack.py",
+          "code": "def stack_monotonic_stack(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(stack_monotonic_stack([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "stack.practice",
+      "chapter": "Stack",
+      "title": "Practice",
+      "summary": "Learn Practice in Stack with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "lifo",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Stack: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "stack-practice",
+      "animationComponent": "StackPracticeAnimation",
+      "aiContext": "Stack / Practice: Learn Practice in Stack with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Stack, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Stack: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "stack",
+        "lessonSlug": "practice",
+        "topic": "Stack",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "stack.practice",
+        "tags": [
+          "linear-data-structure",
+          "lifo",
+          "practice"
+        ]
+      },
+      "timeComplexity": "O(1) for push, pop, peek, and is-empty.",
+      "spaceComplexity": "O(n) for n stored items.",
+      "relatedLessons": [
+        "stack/introduction"
+      ],
+      "futureQuizId": "quiz-stack-practice",
+      "futureFlashcardId": "flashcards-stack-practice",
+      "futureProjectId": "project-stack-practice",
+      "images": [
+        "content/stack/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "stack-practice.py",
+          "code": "def stack_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(stack_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "stack.interview-questions",
+      "chapter": "Stack",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Stack with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "lifo",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Stack: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "stack-interview-questions",
+      "animationComponent": "StackInterviewQuestionsAnimation",
+      "aiContext": "Stack / Interview Questions: Learn Interview Questions in Stack with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Stack, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Stack: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "stack",
+        "lessonSlug": "interview-questions",
+        "topic": "Stack",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "stack.interview-questions",
+        "tags": [
+          "linear-data-structure",
+          "lifo",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "O(1) for push, pop, peek, and is-empty.",
+      "spaceComplexity": "O(n) for n stored items.",
+      "relatedLessons": [
+        "stack/introduction"
+      ],
+      "futureQuizId": "quiz-stack-interview-questions",
+      "futureFlashcardId": "flashcards-stack-interview-questions",
+      "futureProjectId": "project-stack-interview-questions",
+      "images": [
+        "content/stack/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "stack-interview-questions.py",
+          "code": "def stack_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(stack_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "stack.revision-summary",
+      "chapter": "Stack",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Stack with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "lifo",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Stack: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "stack-revision-summary",
+      "animationComponent": "StackRevisionSummaryAnimation",
+      "aiContext": "Stack / Revision Summary: Learn Revision Summary in Stack with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Stack, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Stack: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "stack",
+        "lessonSlug": "revision-summary",
+        "topic": "Stack",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "stack.revision-summary",
+        "tags": [
+          "linear-data-structure",
+          "lifo",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "O(1) for push, pop, peek, and is-empty.",
+      "spaceComplexity": "O(n) for n stored items.",
+      "relatedLessons": [
+        "stack/introduction"
+      ],
+      "futureQuizId": "quiz-stack-revision-summary",
+      "futureFlashcardId": "flashcards-stack-revision-summary",
+      "futureProjectId": "project-stack-revision-summary",
+      "images": [
+        "content/stack/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "stack-revision-summary.py",
+          "code": "def stack_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(stack_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

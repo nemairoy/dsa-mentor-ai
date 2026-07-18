@@ -1,0 +1,746 @@
+{
+  "chapterId": "algorithm-analysis",
+  "title": "Algorithm Analysis",
+  "description": "Algorithm Analysis topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Beginner",
+  "estimatedHours": 4,
+  "tags": [
+    "analysis",
+    "complexity"
+  ],
+  "animationNamespace": "AlgorithmAnalysis",
+  "aiContext": "Algorithm Analysis chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "algorithm-analysis-introduction",
+      "component": "AlgorithmAnalysisIntroductionAnimation",
+      "status": "planned"
+    },
+    "input-size": {
+      "animationId": "algorithm-analysis-input-size",
+      "component": "AlgorithmAnalysisInputSizeAnimation",
+      "status": "planned"
+    },
+    "operation-counting": {
+      "animationId": "algorithm-analysis-operation-counting",
+      "component": "AlgorithmAnalysisOperationCountingAnimation",
+      "status": "planned"
+    },
+    "best-average-worst-case": {
+      "animationId": "algorithm-analysis-best-average-worst-case",
+      "component": "AlgorithmAnalysisBestAverageWorstCaseAnimation",
+      "status": "planned"
+    },
+    "asymptotic-notation": {
+      "animationId": "algorithm-analysis-asymptotic-notation",
+      "component": "AlgorithmAnalysisAsymptoticNotationAnimation",
+      "status": "planned"
+    },
+    "recurrence-basics": {
+      "animationId": "algorithm-analysis-recurrence-basics",
+      "component": "AlgorithmAnalysisRecurrenceBasicsAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "algorithm-analysis-practice",
+      "component": "AlgorithmAnalysisPracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "algorithm-analysis-interview-questions",
+      "component": "AlgorithmAnalysisInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "algorithm-analysis-revision-summary",
+      "component": "AlgorithmAnalysisRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "algorithm-analysis.introduction",
+      "chapter": "Algorithm Analysis",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "analysis",
+        "complexity",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Algorithm Analysis: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "algorithm-analysis-introduction",
+      "animationComponent": "AlgorithmAnalysisIntroductionAnimation",
+      "aiContext": "Algorithm Analysis / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Algorithm Analysis, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Algorithm Analysis: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "algorithm-analysis",
+        "lessonSlug": "introduction",
+        "topic": "Algorithm Analysis",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "algorithm-analysis.introduction",
+        "tags": [
+          "analysis",
+          "complexity",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "algorithm-analysis/introduction"
+      ],
+      "futureQuizId": "quiz-algorithm-analysis-introduction",
+      "futureFlashcardId": "flashcards-algorithm-analysis-introduction",
+      "futureProjectId": "project-algorithm-analysis-introduction",
+      "images": [
+        "content/algorithm-analysis/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "algorithm-analysis-introduction.py",
+          "code": "def algorithm_analysis_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(algorithm_analysis_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "input-size": {
+      "lessonId": "algorithm-analysis.input-size",
+      "chapter": "Algorithm Analysis",
+      "title": "Input Size",
+      "summary": "Learn Input Size in Algorithm Analysis with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "analysis",
+        "complexity",
+        "input-size"
+      ],
+      "learningObjectives": [
+        "Explain Algorithm Analysis: Input Size clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "algorithm-analysis-input-size",
+      "animationComponent": "AlgorithmAnalysisInputSizeAnimation",
+      "aiContext": "Algorithm Analysis / Input Size: Learn Input Size in Algorithm Analysis with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Input Size lesson for Algorithm Analysis, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Algorithm Analysis: Input Size. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "algorithm-analysis",
+        "lessonSlug": "input-size",
+        "topic": "Algorithm Analysis",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "algorithm-analysis.input-size",
+        "tags": [
+          "analysis",
+          "complexity",
+          "input-size"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "algorithm-analysis/introduction"
+      ],
+      "futureQuizId": "quiz-algorithm-analysis-input-size",
+      "futureFlashcardId": "flashcards-algorithm-analysis-input-size",
+      "futureProjectId": "project-algorithm-analysis-input-size",
+      "images": [
+        "content/algorithm-analysis/images/input-size.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Input Size from scratch.",
+        "Dry-run Input Size on two edge cases.",
+        "Explain Input Size complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "algorithm-analysis-input-size.py",
+          "code": "def algorithm_analysis_input_size(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(algorithm_analysis_input_size([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "operation-counting": {
+      "lessonId": "algorithm-analysis.operation-counting",
+      "chapter": "Algorithm Analysis",
+      "title": "Operation Counting",
+      "summary": "Learn Operation Counting in Algorithm Analysis with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "analysis",
+        "complexity",
+        "operation-counting"
+      ],
+      "learningObjectives": [
+        "Explain Algorithm Analysis: Operation Counting clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "algorithm-analysis-operation-counting",
+      "animationComponent": "AlgorithmAnalysisOperationCountingAnimation",
+      "aiContext": "Algorithm Analysis / Operation Counting: Learn Operation Counting in Algorithm Analysis with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Operation Counting lesson for Algorithm Analysis, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Algorithm Analysis: Operation Counting. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "algorithm-analysis",
+        "lessonSlug": "operation-counting",
+        "topic": "Algorithm Analysis",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "algorithm-analysis.operation-counting",
+        "tags": [
+          "analysis",
+          "complexity",
+          "operation-counting"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "algorithm-analysis/introduction"
+      ],
+      "futureQuizId": "quiz-algorithm-analysis-operation-counting",
+      "futureFlashcardId": "flashcards-algorithm-analysis-operation-counting",
+      "futureProjectId": "project-algorithm-analysis-operation-counting",
+      "images": [
+        "content/algorithm-analysis/images/operation-counting.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Operation Counting from scratch.",
+        "Dry-run Operation Counting on two edge cases.",
+        "Explain Operation Counting complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "algorithm-analysis-operation-counting.py",
+          "code": "def algorithm_analysis_operation_counting(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(algorithm_analysis_operation_counting([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "best-average-worst-case": {
+      "lessonId": "algorithm-analysis.best-average-worst-case",
+      "chapter": "Algorithm Analysis",
+      "title": "Best Average Worst Case",
+      "summary": "Learn Best Average Worst Case in Algorithm Analysis with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "analysis",
+        "complexity",
+        "best-average-worst-case"
+      ],
+      "learningObjectives": [
+        "Explain Algorithm Analysis: Best Average Worst Case clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "algorithm-analysis-best-average-worst-case",
+      "animationComponent": "AlgorithmAnalysisBestAverageWorstCaseAnimation",
+      "aiContext": "Algorithm Analysis / Best Average Worst Case: Learn Best Average Worst Case in Algorithm Analysis with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Best Average Worst Case lesson for Algorithm Analysis, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Algorithm Analysis: Best Average Worst Case. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "algorithm-analysis",
+        "lessonSlug": "best-average-worst-case",
+        "topic": "Algorithm Analysis",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "algorithm-analysis.best-average-worst-case",
+        "tags": [
+          "analysis",
+          "complexity",
+          "best-average-worst-case"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "algorithm-analysis/introduction"
+      ],
+      "futureQuizId": "quiz-algorithm-analysis-best-average-worst-case",
+      "futureFlashcardId": "flashcards-algorithm-analysis-best-average-worst-case",
+      "futureProjectId": "project-algorithm-analysis-best-average-worst-case",
+      "images": [
+        "content/algorithm-analysis/images/best-average-worst-case.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Best Average Worst Case from scratch.",
+        "Dry-run Best Average Worst Case on two edge cases.",
+        "Explain Best Average Worst Case complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "algorithm-analysis-best-average-worst-case.py",
+          "code": "def algorithm_analysis_best_average_worst_case(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(algorithm_analysis_best_average_worst_case([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "asymptotic-notation": {
+      "lessonId": "algorithm-analysis.asymptotic-notation",
+      "chapter": "Algorithm Analysis",
+      "title": "Asymptotic Notation",
+      "summary": "Learn Asymptotic Notation in Algorithm Analysis with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "analysis",
+        "complexity",
+        "asymptotic-notation"
+      ],
+      "learningObjectives": [
+        "Explain Algorithm Analysis: Asymptotic Notation clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "algorithm-analysis-asymptotic-notation",
+      "animationComponent": "AlgorithmAnalysisAsymptoticNotationAnimation",
+      "aiContext": "Algorithm Analysis / Asymptotic Notation: Learn Asymptotic Notation in Algorithm Analysis with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Asymptotic Notation lesson for Algorithm Analysis, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Algorithm Analysis: Asymptotic Notation. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "algorithm-analysis",
+        "lessonSlug": "asymptotic-notation",
+        "topic": "Algorithm Analysis",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "algorithm-analysis.asymptotic-notation",
+        "tags": [
+          "analysis",
+          "complexity",
+          "asymptotic-notation"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "algorithm-analysis/introduction"
+      ],
+      "futureQuizId": "quiz-algorithm-analysis-asymptotic-notation",
+      "futureFlashcardId": "flashcards-algorithm-analysis-asymptotic-notation",
+      "futureProjectId": "project-algorithm-analysis-asymptotic-notation",
+      "images": [
+        "content/algorithm-analysis/images/asymptotic-notation.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Asymptotic Notation from scratch.",
+        "Dry-run Asymptotic Notation on two edge cases.",
+        "Explain Asymptotic Notation complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "algorithm-analysis-asymptotic-notation.py",
+          "code": "def algorithm_analysis_asymptotic_notation(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(algorithm_analysis_asymptotic_notation([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "recurrence-basics": {
+      "lessonId": "algorithm-analysis.recurrence-basics",
+      "chapter": "Algorithm Analysis",
+      "title": "Recurrence Basics",
+      "summary": "Learn Recurrence Basics in Algorithm Analysis with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "analysis",
+        "complexity",
+        "recurrence-basics"
+      ],
+      "learningObjectives": [
+        "Explain Algorithm Analysis: Recurrence Basics clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "algorithm-analysis-recurrence-basics",
+      "animationComponent": "AlgorithmAnalysisRecurrenceBasicsAnimation",
+      "aiContext": "Algorithm Analysis / Recurrence Basics: Learn Recurrence Basics in Algorithm Analysis with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Recurrence Basics lesson for Algorithm Analysis, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Algorithm Analysis: Recurrence Basics. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "algorithm-analysis",
+        "lessonSlug": "recurrence-basics",
+        "topic": "Algorithm Analysis",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "algorithm-analysis.recurrence-basics",
+        "tags": [
+          "analysis",
+          "complexity",
+          "recurrence-basics"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "algorithm-analysis/introduction"
+      ],
+      "futureQuizId": "quiz-algorithm-analysis-recurrence-basics",
+      "futureFlashcardId": "flashcards-algorithm-analysis-recurrence-basics",
+      "futureProjectId": "project-algorithm-analysis-recurrence-basics",
+      "images": [
+        "content/algorithm-analysis/images/recurrence-basics.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Recurrence Basics from scratch.",
+        "Dry-run Recurrence Basics on two edge cases.",
+        "Explain Recurrence Basics complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "algorithm-analysis-recurrence-basics.py",
+          "code": "def algorithm_analysis_recurrence_basics(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(algorithm_analysis_recurrence_basics([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "algorithm-analysis.practice",
+      "chapter": "Algorithm Analysis",
+      "title": "Practice",
+      "summary": "Learn Practice in Algorithm Analysis with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "analysis",
+        "complexity",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Algorithm Analysis: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "algorithm-analysis-practice",
+      "animationComponent": "AlgorithmAnalysisPracticeAnimation",
+      "aiContext": "Algorithm Analysis / Practice: Learn Practice in Algorithm Analysis with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Algorithm Analysis, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Algorithm Analysis: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "algorithm-analysis",
+        "lessonSlug": "practice",
+        "topic": "Algorithm Analysis",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "algorithm-analysis.practice",
+        "tags": [
+          "analysis",
+          "complexity",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "algorithm-analysis/introduction"
+      ],
+      "futureQuizId": "quiz-algorithm-analysis-practice",
+      "futureFlashcardId": "flashcards-algorithm-analysis-practice",
+      "futureProjectId": "project-algorithm-analysis-practice",
+      "images": [
+        "content/algorithm-analysis/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "algorithm-analysis-practice.py",
+          "code": "def algorithm_analysis_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(algorithm_analysis_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "algorithm-analysis.interview-questions",
+      "chapter": "Algorithm Analysis",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Algorithm Analysis with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "analysis",
+        "complexity",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Algorithm Analysis: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "algorithm-analysis-interview-questions",
+      "animationComponent": "AlgorithmAnalysisInterviewQuestionsAnimation",
+      "aiContext": "Algorithm Analysis / Interview Questions: Learn Interview Questions in Algorithm Analysis with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Algorithm Analysis, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Algorithm Analysis: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "algorithm-analysis",
+        "lessonSlug": "interview-questions",
+        "topic": "Algorithm Analysis",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "algorithm-analysis.interview-questions",
+        "tags": [
+          "analysis",
+          "complexity",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "algorithm-analysis/introduction"
+      ],
+      "futureQuizId": "quiz-algorithm-analysis-interview-questions",
+      "futureFlashcardId": "flashcards-algorithm-analysis-interview-questions",
+      "futureProjectId": "project-algorithm-analysis-interview-questions",
+      "images": [
+        "content/algorithm-analysis/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "algorithm-analysis-interview-questions.py",
+          "code": "def algorithm_analysis_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(algorithm_analysis_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "algorithm-analysis.revision-summary",
+      "chapter": "Algorithm Analysis",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Algorithm Analysis with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "analysis",
+        "complexity",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Algorithm Analysis: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "algorithm-analysis-revision-summary",
+      "animationComponent": "AlgorithmAnalysisRevisionSummaryAnimation",
+      "aiContext": "Algorithm Analysis / Revision Summary: Learn Revision Summary in Algorithm Analysis with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Algorithm Analysis, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Algorithm Analysis: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "algorithm-analysis",
+        "lessonSlug": "revision-summary",
+        "topic": "Algorithm Analysis",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "algorithm-analysis.revision-summary",
+        "tags": [
+          "analysis",
+          "complexity",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "algorithm-analysis/introduction"
+      ],
+      "futureQuizId": "quiz-algorithm-analysis-revision-summary",
+      "futureFlashcardId": "flashcards-algorithm-analysis-revision-summary",
+      "futureProjectId": "project-algorithm-analysis-revision-summary",
+      "images": [
+        "content/algorithm-analysis/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "algorithm-analysis-revision-summary.py",
+          "code": "def algorithm_analysis_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(algorithm_analysis_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

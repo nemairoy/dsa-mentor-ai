@@ -1,0 +1,825 @@
+{
+  "chapterId": "segment-tree",
+  "title": "Segment Tree",
+  "description": "Segment Tree topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Advanced",
+  "estimatedHours": 5,
+  "tags": [
+    "range-query",
+    "tree"
+  ],
+  "animationNamespace": "SegmentTree",
+  "aiContext": "Segment Tree chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "segment-tree-introduction",
+      "component": "SegmentTreeIntroductionAnimation",
+      "status": "planned"
+    },
+    "range-query-model": {
+      "animationId": "segment-tree-range-query-model",
+      "component": "SegmentTreeRangeQueryModelAnimation",
+      "status": "planned"
+    },
+    "build": {
+      "animationId": "segment-tree-build",
+      "component": "SegmentTreeBuildAnimation",
+      "status": "planned"
+    },
+    "range-query": {
+      "animationId": "segment-tree-range-query",
+      "component": "SegmentTreeRangeQueryAnimation",
+      "status": "planned"
+    },
+    "point-update": {
+      "animationId": "segment-tree-point-update",
+      "component": "SegmentTreePointUpdateAnimation",
+      "status": "planned"
+    },
+    "lazy-propagation": {
+      "animationId": "segment-tree-lazy-propagation",
+      "component": "SegmentTreeLazyPropagationAnimation",
+      "status": "planned"
+    },
+    "min-max-sum-queries": {
+      "animationId": "segment-tree-min-max-sum-queries",
+      "component": "SegmentTreeMinMaxSumQueriesAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "segment-tree-practice",
+      "component": "SegmentTreePracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "segment-tree-interview-questions",
+      "component": "SegmentTreeInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "segment-tree-revision-summary",
+      "component": "SegmentTreeRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "segment-tree.introduction",
+      "chapter": "Segment Tree",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "range-query",
+        "tree",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Segment Tree: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "segment-tree-introduction",
+      "animationComponent": "SegmentTreeIntroductionAnimation",
+      "aiContext": "Segment Tree / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Segment Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Segment Tree: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "segment-tree",
+        "lessonSlug": "introduction",
+        "topic": "Segment Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "segment-tree.introduction",
+        "tags": [
+          "range-query",
+          "tree",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "segment-tree/introduction"
+      ],
+      "futureQuizId": "quiz-segment-tree-introduction",
+      "futureFlashcardId": "flashcards-segment-tree-introduction",
+      "futureProjectId": "project-segment-tree-introduction",
+      "images": [
+        "content/segment-tree/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "segment-tree-introduction.py",
+          "code": "def segment_tree_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(segment_tree_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "range-query-model": {
+      "lessonId": "segment-tree.range-query-model",
+      "chapter": "Segment Tree",
+      "title": "Range Query Model",
+      "summary": "Learn Range Query Model in Segment Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "range-query",
+        "tree",
+        "range-query-model"
+      ],
+      "learningObjectives": [
+        "Explain Segment Tree: Range Query Model clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "segment-tree-range-query-model",
+      "animationComponent": "SegmentTreeRangeQueryModelAnimation",
+      "aiContext": "Segment Tree / Range Query Model: Learn Range Query Model in Segment Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Range Query Model lesson for Segment Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Segment Tree: Range Query Model. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "segment-tree",
+        "lessonSlug": "range-query-model",
+        "topic": "Segment Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "segment-tree.range-query-model",
+        "tags": [
+          "range-query",
+          "tree",
+          "range-query-model"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "segment-tree/introduction"
+      ],
+      "futureQuizId": "quiz-segment-tree-range-query-model",
+      "futureFlashcardId": "flashcards-segment-tree-range-query-model",
+      "futureProjectId": "project-segment-tree-range-query-model",
+      "images": [
+        "content/segment-tree/images/range-query-model.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Range Query Model from scratch.",
+        "Dry-run Range Query Model on two edge cases.",
+        "Explain Range Query Model complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "segment-tree-range-query-model.py",
+          "code": "def segment_tree_range_query_model(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(segment_tree_range_query_model([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "build": {
+      "lessonId": "segment-tree.build",
+      "chapter": "Segment Tree",
+      "title": "Build",
+      "summary": "Learn Build in Segment Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "range-query",
+        "tree",
+        "build"
+      ],
+      "learningObjectives": [
+        "Explain Segment Tree: Build clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "segment-tree-build",
+      "animationComponent": "SegmentTreeBuildAnimation",
+      "aiContext": "Segment Tree / Build: Learn Build in Segment Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Build lesson for Segment Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Segment Tree: Build. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "segment-tree",
+        "lessonSlug": "build",
+        "topic": "Segment Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "segment-tree.build",
+        "tags": [
+          "range-query",
+          "tree",
+          "build"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "segment-tree/introduction"
+      ],
+      "futureQuizId": "quiz-segment-tree-build",
+      "futureFlashcardId": "flashcards-segment-tree-build",
+      "futureProjectId": "project-segment-tree-build",
+      "images": [
+        "content/segment-tree/images/build.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Build from scratch.",
+        "Dry-run Build on two edge cases.",
+        "Explain Build complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "segment-tree-build.py",
+          "code": "def segment_tree_build(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(segment_tree_build([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "range-query": {
+      "lessonId": "segment-tree.range-query",
+      "chapter": "Segment Tree",
+      "title": "Range Query",
+      "summary": "Learn Range Query in Segment Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "range-query",
+        "tree"
+      ],
+      "learningObjectives": [
+        "Explain Segment Tree: Range Query clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "segment-tree-range-query",
+      "animationComponent": "SegmentTreeRangeQueryAnimation",
+      "aiContext": "Segment Tree / Range Query: Learn Range Query in Segment Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Range Query lesson for Segment Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Segment Tree: Range Query. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "segment-tree",
+        "lessonSlug": "range-query",
+        "topic": "Segment Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "segment-tree.range-query",
+        "tags": [
+          "range-query",
+          "tree"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "segment-tree/introduction"
+      ],
+      "futureQuizId": "quiz-segment-tree-range-query",
+      "futureFlashcardId": "flashcards-segment-tree-range-query",
+      "futureProjectId": "project-segment-tree-range-query",
+      "images": [
+        "content/segment-tree/images/range-query.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Range Query from scratch.",
+        "Dry-run Range Query on two edge cases.",
+        "Explain Range Query complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "segment-tree-range-query.py",
+          "code": "def segment_tree_range_query(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(segment_tree_range_query([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "point-update": {
+      "lessonId": "segment-tree.point-update",
+      "chapter": "Segment Tree",
+      "title": "Point Update",
+      "summary": "Learn Point Update in Segment Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "range-query",
+        "tree",
+        "point-update"
+      ],
+      "learningObjectives": [
+        "Explain Segment Tree: Point Update clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "segment-tree-point-update",
+      "animationComponent": "SegmentTreePointUpdateAnimation",
+      "aiContext": "Segment Tree / Point Update: Learn Point Update in Segment Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Point Update lesson for Segment Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Segment Tree: Point Update. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "segment-tree",
+        "lessonSlug": "point-update",
+        "topic": "Segment Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "segment-tree.point-update",
+        "tags": [
+          "range-query",
+          "tree",
+          "point-update"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "segment-tree/introduction"
+      ],
+      "futureQuizId": "quiz-segment-tree-point-update",
+      "futureFlashcardId": "flashcards-segment-tree-point-update",
+      "futureProjectId": "project-segment-tree-point-update",
+      "images": [
+        "content/segment-tree/images/point-update.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Point Update from scratch.",
+        "Dry-run Point Update on two edge cases.",
+        "Explain Point Update complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "segment-tree-point-update.py",
+          "code": "def segment_tree_point_update(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(segment_tree_point_update([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "lazy-propagation": {
+      "lessonId": "segment-tree.lazy-propagation",
+      "chapter": "Segment Tree",
+      "title": "Lazy Propagation",
+      "summary": "Learn Lazy Propagation in Segment Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "range-query",
+        "tree",
+        "lazy-propagation"
+      ],
+      "learningObjectives": [
+        "Explain Segment Tree: Lazy Propagation clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "segment-tree-lazy-propagation",
+      "animationComponent": "SegmentTreeLazyPropagationAnimation",
+      "aiContext": "Segment Tree / Lazy Propagation: Learn Lazy Propagation in Segment Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Lazy Propagation lesson for Segment Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Segment Tree: Lazy Propagation. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "segment-tree",
+        "lessonSlug": "lazy-propagation",
+        "topic": "Segment Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "segment-tree.lazy-propagation",
+        "tags": [
+          "range-query",
+          "tree",
+          "lazy-propagation"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "segment-tree/introduction"
+      ],
+      "futureQuizId": "quiz-segment-tree-lazy-propagation",
+      "futureFlashcardId": "flashcards-segment-tree-lazy-propagation",
+      "futureProjectId": "project-segment-tree-lazy-propagation",
+      "images": [
+        "content/segment-tree/images/lazy-propagation.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Lazy Propagation from scratch.",
+        "Dry-run Lazy Propagation on two edge cases.",
+        "Explain Lazy Propagation complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "segment-tree-lazy-propagation.py",
+          "code": "def segment_tree_lazy_propagation(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(segment_tree_lazy_propagation([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "min-max-sum-queries": {
+      "lessonId": "segment-tree.min-max-sum-queries",
+      "chapter": "Segment Tree",
+      "title": "Min Max Sum Queries",
+      "summary": "Learn Min Max Sum Queries in Segment Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "range-query",
+        "tree",
+        "min-max-sum-queries"
+      ],
+      "learningObjectives": [
+        "Explain Segment Tree: Min Max Sum Queries clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "segment-tree-min-max-sum-queries",
+      "animationComponent": "SegmentTreeMinMaxSumQueriesAnimation",
+      "aiContext": "Segment Tree / Min Max Sum Queries: Learn Min Max Sum Queries in Segment Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Min Max Sum Queries lesson for Segment Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Segment Tree: Min Max Sum Queries. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "segment-tree",
+        "lessonSlug": "min-max-sum-queries",
+        "topic": "Segment Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "segment-tree.min-max-sum-queries",
+        "tags": [
+          "range-query",
+          "tree",
+          "min-max-sum-queries"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "segment-tree/introduction"
+      ],
+      "futureQuizId": "quiz-segment-tree-min-max-sum-queries",
+      "futureFlashcardId": "flashcards-segment-tree-min-max-sum-queries",
+      "futureProjectId": "project-segment-tree-min-max-sum-queries",
+      "images": [
+        "content/segment-tree/images/min-max-sum-queries.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Min Max Sum Queries from scratch.",
+        "Dry-run Min Max Sum Queries on two edge cases.",
+        "Explain Min Max Sum Queries complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "segment-tree-min-max-sum-queries.py",
+          "code": "def segment_tree_min_max_sum_queries(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(segment_tree_min_max_sum_queries([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "segment-tree.practice",
+      "chapter": "Segment Tree",
+      "title": "Practice",
+      "summary": "Learn Practice in Segment Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "range-query",
+        "tree",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Segment Tree: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "segment-tree-practice",
+      "animationComponent": "SegmentTreePracticeAnimation",
+      "aiContext": "Segment Tree / Practice: Learn Practice in Segment Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Segment Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Segment Tree: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "segment-tree",
+        "lessonSlug": "practice",
+        "topic": "Segment Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "segment-tree.practice",
+        "tags": [
+          "range-query",
+          "tree",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "segment-tree/introduction"
+      ],
+      "futureQuizId": "quiz-segment-tree-practice",
+      "futureFlashcardId": "flashcards-segment-tree-practice",
+      "futureProjectId": "project-segment-tree-practice",
+      "images": [
+        "content/segment-tree/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "segment-tree-practice.py",
+          "code": "def segment_tree_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(segment_tree_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "segment-tree.interview-questions",
+      "chapter": "Segment Tree",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Segment Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "range-query",
+        "tree",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Segment Tree: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "segment-tree-interview-questions",
+      "animationComponent": "SegmentTreeInterviewQuestionsAnimation",
+      "aiContext": "Segment Tree / Interview Questions: Learn Interview Questions in Segment Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Segment Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Segment Tree: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "segment-tree",
+        "lessonSlug": "interview-questions",
+        "topic": "Segment Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "segment-tree.interview-questions",
+        "tags": [
+          "range-query",
+          "tree",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "segment-tree/introduction"
+      ],
+      "futureQuizId": "quiz-segment-tree-interview-questions",
+      "futureFlashcardId": "flashcards-segment-tree-interview-questions",
+      "futureProjectId": "project-segment-tree-interview-questions",
+      "images": [
+        "content/segment-tree/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "segment-tree-interview-questions.py",
+          "code": "def segment_tree_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(segment_tree_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "segment-tree.revision-summary",
+      "chapter": "Segment Tree",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Segment Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "range-query",
+        "tree",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Segment Tree: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "segment-tree-revision-summary",
+      "animationComponent": "SegmentTreeRevisionSummaryAnimation",
+      "aiContext": "Segment Tree / Revision Summary: Learn Revision Summary in Segment Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Segment Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Segment Tree: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "segment-tree",
+        "lessonSlug": "revision-summary",
+        "topic": "Segment Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "segment-tree.revision-summary",
+        "tags": [
+          "range-query",
+          "tree",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "segment-tree/introduction"
+      ],
+      "futureQuizId": "quiz-segment-tree-revision-summary",
+      "futureFlashcardId": "flashcards-segment-tree-revision-summary",
+      "futureProjectId": "project-segment-tree-revision-summary",
+      "images": [
+        "content/segment-tree/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "segment-tree-revision-summary.py",
+          "code": "def segment_tree_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(segment_tree_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

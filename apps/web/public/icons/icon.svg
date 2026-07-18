@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="DSA Mentor AI">
+  <defs>
+    <linearGradient id="frame" x1="18" y1="18" x2="110" y2="110" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#14b8a6"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="42" y1="82" x2="86" y2="82" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6ee7b7"/>
+      <stop offset="1" stop-color="#67e8f9"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="32" fill="#020617"/>
+  <rect x="12" y="12" width="104" height="104" rx="28" fill="url(#frame)"/>
+  <rect x="19" y="19" width="90" height="90" rx="23" fill="#020617" fill-opacity=".94"/>
+  <text x="64" y="65" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900" text-anchor="middle">DSA</text>
+  <rect x="42" y="78" width="44" height="7" rx="3.5" fill="url(#bar)"/>
+</svg>

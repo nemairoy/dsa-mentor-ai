@@ -1,0 +1,827 @@
+{
+  "chapterId": "bit-manipulation",
+  "title": "Bit Manipulation",
+  "description": "Bit Manipulation topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Intermediate",
+  "estimatedHours": 5,
+  "tags": [
+    "bits",
+    "operators"
+  ],
+  "animationNamespace": "BitManipulation",
+  "aiContext": "Bit Manipulation chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "bit-manipulation-introduction",
+      "component": "BitManipulationIntroductionAnimation",
+      "status": "planned"
+    },
+    "binary-representation": {
+      "animationId": "bit-manipulation-binary-representation",
+      "component": "BitManipulationBinaryRepresentationAnimation",
+      "status": "planned"
+    },
+    "and-or-xor": {
+      "animationId": "bit-manipulation-and-or-xor",
+      "component": "BitManipulationAndOrXorAnimation",
+      "status": "planned"
+    },
+    "shifts": {
+      "animationId": "bit-manipulation-shifts",
+      "component": "BitManipulationShiftsAnimation",
+      "status": "planned"
+    },
+    "set-clear-toggle-bit": {
+      "animationId": "bit-manipulation-set-clear-toggle-bit",
+      "component": "BitManipulationSetClearToggleBitAnimation",
+      "status": "planned"
+    },
+    "check-power-of-two": {
+      "animationId": "bit-manipulation-check-power-of-two",
+      "component": "BitManipulationCheckPowerOfTwoAnimation",
+      "status": "planned"
+    },
+    "bitmasking": {
+      "animationId": "bit-manipulation-bitmasking",
+      "component": "BitManipulationBitmaskingAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "bit-manipulation-practice",
+      "component": "BitManipulationPracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "bit-manipulation-interview-questions",
+      "component": "BitManipulationInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "bit-manipulation-revision-summary",
+      "component": "BitManipulationRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "bit-manipulation.introduction",
+      "chapter": "Bit Manipulation",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "bits",
+        "operators",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Bit Manipulation: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "bit-manipulation-introduction",
+      "animationComponent": "BitManipulationIntroductionAnimation",
+      "aiContext": "Bit Manipulation / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Bit Manipulation, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Bit Manipulation: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "bit-manipulation",
+        "lessonSlug": "introduction",
+        "topic": "Bit Manipulation",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "bit-manipulation.introduction",
+        "tags": [
+          "bits",
+          "operators",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "bit-manipulation/introduction"
+      ],
+      "futureQuizId": "quiz-bit-manipulation-introduction",
+      "futureFlashcardId": "flashcards-bit-manipulation-introduction",
+      "futureProjectId": "project-bit-manipulation-introduction",
+      "images": [
+        "content/bit-manipulation/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "bit-manipulation-introduction.py",
+          "code": "def bit_manipulation_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(bit_manipulation_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "binary-representation": {
+      "lessonId": "bit-manipulation.binary-representation",
+      "chapter": "Bit Manipulation",
+      "title": "Binary Representation",
+      "summary": "Learn Binary Representation in Bit Manipulation with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "bits",
+        "operators",
+        "binary-representation"
+      ],
+      "learningObjectives": [
+        "Explain Bit Manipulation: Binary Representation clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "bit-manipulation-binary-representation",
+      "animationComponent": "BitManipulationBinaryRepresentationAnimation",
+      "aiContext": "Bit Manipulation / Binary Representation: Learn Binary Representation in Bit Manipulation with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Binary Representation lesson for Bit Manipulation, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Bit Manipulation: Binary Representation. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "bit-manipulation",
+        "lessonSlug": "binary-representation",
+        "topic": "Bit Manipulation",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "bit-manipulation.binary-representation",
+        "tags": [
+          "bits",
+          "operators",
+          "binary-representation"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "bit-manipulation/introduction"
+      ],
+      "futureQuizId": "quiz-bit-manipulation-binary-representation",
+      "futureFlashcardId": "flashcards-bit-manipulation-binary-representation",
+      "futureProjectId": "project-bit-manipulation-binary-representation",
+      "images": [
+        "content/bit-manipulation/images/binary-representation.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Binary Representation from scratch.",
+        "Dry-run Binary Representation on two edge cases.",
+        "Explain Binary Representation complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "bit-manipulation-binary-representation.py",
+          "code": "def bit_manipulation_binary_representation(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(bit_manipulation_binary_representation([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "and-or-xor": {
+      "lessonId": "bit-manipulation.and-or-xor",
+      "chapter": "Bit Manipulation",
+      "title": "And Or Xor",
+      "summary": "Learn And Or Xor in Bit Manipulation with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "bits",
+        "operators",
+        "and-or-xor"
+      ],
+      "learningObjectives": [
+        "Explain Bit Manipulation: And Or Xor clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "bit-manipulation-and-or-xor",
+      "animationComponent": "BitManipulationAndOrXorAnimation",
+      "aiContext": "Bit Manipulation / And Or Xor: Learn And Or Xor in Bit Manipulation with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "And Or Xor lesson for Bit Manipulation, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Bit Manipulation: And Or Xor. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "bit-manipulation",
+        "lessonSlug": "and-or-xor",
+        "topic": "Bit Manipulation",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "bit-manipulation.and-or-xor",
+        "tags": [
+          "bits",
+          "operators",
+          "and-or-xor"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "bit-manipulation/introduction"
+      ],
+      "futureQuizId": "quiz-bit-manipulation-and-or-xor",
+      "futureFlashcardId": "flashcards-bit-manipulation-and-or-xor",
+      "futureProjectId": "project-bit-manipulation-and-or-xor",
+      "images": [
+        "content/bit-manipulation/images/and-or-xor.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement And Or Xor from scratch.",
+        "Dry-run And Or Xor on two edge cases.",
+        "Explain And Or Xor complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "bit-manipulation-and-or-xor.py",
+          "code": "def bit_manipulation_and_or_xor(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(bit_manipulation_and_or_xor([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "shifts": {
+      "lessonId": "bit-manipulation.shifts",
+      "chapter": "Bit Manipulation",
+      "title": "Shifts",
+      "summary": "Learn Shifts in Bit Manipulation with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "bits",
+        "operators",
+        "shifts"
+      ],
+      "learningObjectives": [
+        "Explain Bit Manipulation: Shifts clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "bit-manipulation-shifts",
+      "animationComponent": "BitManipulationShiftsAnimation",
+      "aiContext": "Bit Manipulation / Shifts: Learn Shifts in Bit Manipulation with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Shifts lesson for Bit Manipulation, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Bit Manipulation: Shifts. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "bit-manipulation",
+        "lessonSlug": "shifts",
+        "topic": "Bit Manipulation",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "bit-manipulation.shifts",
+        "tags": [
+          "bits",
+          "operators",
+          "shifts"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "bit-manipulation/introduction"
+      ],
+      "futureQuizId": "quiz-bit-manipulation-shifts",
+      "futureFlashcardId": "flashcards-bit-manipulation-shifts",
+      "futureProjectId": "project-bit-manipulation-shifts",
+      "images": [
+        "content/bit-manipulation/images/shifts.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Shifts from scratch.",
+        "Dry-run Shifts on two edge cases.",
+        "Explain Shifts complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "bit-manipulation-shifts.py",
+          "code": "def bit_manipulation_shifts(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(bit_manipulation_shifts([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "set-clear-toggle-bit": {
+      "lessonId": "bit-manipulation.set-clear-toggle-bit",
+      "chapter": "Bit Manipulation",
+      "title": "Set Clear Toggle Bit",
+      "summary": "Learn Set Clear Toggle Bit in Bit Manipulation with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "bits",
+        "operators",
+        "set-clear-toggle-bit"
+      ],
+      "learningObjectives": [
+        "Explain Bit Manipulation: Set Clear Toggle Bit clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "bit-manipulation-set-clear-toggle-bit",
+      "animationComponent": "BitManipulationSetClearToggleBitAnimation",
+      "aiContext": "Bit Manipulation / Set Clear Toggle Bit: Learn Set Clear Toggle Bit in Bit Manipulation with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Set Clear Toggle Bit lesson for Bit Manipulation, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Bit Manipulation: Set Clear Toggle Bit. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "bit-manipulation",
+        "lessonSlug": "set-clear-toggle-bit",
+        "topic": "Bit Manipulation",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "bit-manipulation.set-clear-toggle-bit",
+        "tags": [
+          "bits",
+          "operators",
+          "set-clear-toggle-bit"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "bit-manipulation/introduction"
+      ],
+      "futureQuizId": "quiz-bit-manipulation-set-clear-toggle-bit",
+      "futureFlashcardId": "flashcards-bit-manipulation-set-clear-toggle-bit",
+      "futureProjectId": "project-bit-manipulation-set-clear-toggle-bit",
+      "images": [
+        "content/bit-manipulation/images/set-clear-toggle-bit.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Set Clear Toggle Bit from scratch.",
+        "Dry-run Set Clear Toggle Bit on two edge cases.",
+        "Explain Set Clear Toggle Bit complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "bit-manipulation-set-clear-toggle-bit.py",
+          "code": "def bit_manipulation_set_clear_toggle_bit(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(bit_manipulation_set_clear_toggle_bit([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "check-power-of-two": {
+      "lessonId": "bit-manipulation.check-power-of-two",
+      "chapter": "Bit Manipulation",
+      "title": "Check Power Of Two",
+      "summary": "Learn Check Power Of Two in Bit Manipulation with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "bits",
+        "operators",
+        "check-power-of-two"
+      ],
+      "learningObjectives": [
+        "Explain Bit Manipulation: Check Power Of Two clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "bit-manipulation-check-power-of-two",
+      "animationComponent": "BitManipulationCheckPowerOfTwoAnimation",
+      "aiContext": "Bit Manipulation / Check Power Of Two: Learn Check Power Of Two in Bit Manipulation with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Check Power Of Two lesson for Bit Manipulation, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Bit Manipulation: Check Power Of Two. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "bit-manipulation",
+        "lessonSlug": "check-power-of-two",
+        "topic": "Bit Manipulation",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "bit-manipulation.check-power-of-two",
+        "tags": [
+          "bits",
+          "operators",
+          "check-power-of-two"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "bit-manipulation/introduction"
+      ],
+      "futureQuizId": "quiz-bit-manipulation-check-power-of-two",
+      "futureFlashcardId": "flashcards-bit-manipulation-check-power-of-two",
+      "futureProjectId": "project-bit-manipulation-check-power-of-two",
+      "images": [
+        "content/bit-manipulation/images/check-power-of-two.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Check Power Of Two from scratch.",
+        "Dry-run Check Power Of Two on two edge cases.",
+        "Explain Check Power Of Two complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "bit-manipulation-check-power-of-two.py",
+          "code": "def bit_manipulation_check_power_of_two(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(bit_manipulation_check_power_of_two([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "bitmasking": {
+      "lessonId": "bit-manipulation.bitmasking",
+      "chapter": "Bit Manipulation",
+      "title": "Bitmasking",
+      "summary": "Learn Bitmasking in Bit Manipulation with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "bits",
+        "operators",
+        "bitmasking"
+      ],
+      "learningObjectives": [
+        "Explain Bit Manipulation: Bitmasking clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "bit-manipulation-bitmasking",
+      "animationComponent": "BitManipulationBitmaskingAnimation",
+      "aiContext": "Bit Manipulation / Bitmasking: Learn Bitmasking in Bit Manipulation with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Bitmasking lesson for Bit Manipulation, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Bit Manipulation: Bitmasking. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "bit-manipulation",
+        "lessonSlug": "bitmasking",
+        "topic": "Bit Manipulation",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "bit-manipulation.bitmasking",
+        "tags": [
+          "bits",
+          "operators",
+          "bitmasking"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "bit-manipulation/introduction"
+      ],
+      "futureQuizId": "quiz-bit-manipulation-bitmasking",
+      "futureFlashcardId": "flashcards-bit-manipulation-bitmasking",
+      "futureProjectId": "project-bit-manipulation-bitmasking",
+      "images": [
+        "content/bit-manipulation/images/bitmasking.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Bitmasking from scratch.",
+        "Dry-run Bitmasking on two edge cases.",
+        "Explain Bitmasking complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "bit-manipulation-bitmasking.py",
+          "code": "def bit_manipulation_bitmasking(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(bit_manipulation_bitmasking([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "bit-manipulation.practice",
+      "chapter": "Bit Manipulation",
+      "title": "Practice",
+      "summary": "Learn Practice in Bit Manipulation with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "bits",
+        "operators",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Bit Manipulation: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "bit-manipulation-practice",
+      "animationComponent": "BitManipulationPracticeAnimation",
+      "aiContext": "Bit Manipulation / Practice: Learn Practice in Bit Manipulation with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Bit Manipulation, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Bit Manipulation: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "bit-manipulation",
+        "lessonSlug": "practice",
+        "topic": "Bit Manipulation",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "bit-manipulation.practice",
+        "tags": [
+          "bits",
+          "operators",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "bit-manipulation/introduction"
+      ],
+      "futureQuizId": "quiz-bit-manipulation-practice",
+      "futureFlashcardId": "flashcards-bit-manipulation-practice",
+      "futureProjectId": "project-bit-manipulation-practice",
+      "images": [
+        "content/bit-manipulation/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "bit-manipulation-practice.py",
+          "code": "def bit_manipulation_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(bit_manipulation_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "bit-manipulation.interview-questions",
+      "chapter": "Bit Manipulation",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Bit Manipulation with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "bits",
+        "operators",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Bit Manipulation: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "bit-manipulation-interview-questions",
+      "animationComponent": "BitManipulationInterviewQuestionsAnimation",
+      "aiContext": "Bit Manipulation / Interview Questions: Learn Interview Questions in Bit Manipulation with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Bit Manipulation, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Bit Manipulation: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "bit-manipulation",
+        "lessonSlug": "interview-questions",
+        "topic": "Bit Manipulation",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "bit-manipulation.interview-questions",
+        "tags": [
+          "bits",
+          "operators",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "bit-manipulation/introduction"
+      ],
+      "futureQuizId": "quiz-bit-manipulation-interview-questions",
+      "futureFlashcardId": "flashcards-bit-manipulation-interview-questions",
+      "futureProjectId": "project-bit-manipulation-interview-questions",
+      "images": [
+        "content/bit-manipulation/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "bit-manipulation-interview-questions.py",
+          "code": "def bit_manipulation_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(bit_manipulation_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "bit-manipulation.revision-summary",
+      "chapter": "Bit Manipulation",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Bit Manipulation with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "bits",
+        "operators",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Bit Manipulation: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "bit-manipulation-revision-summary",
+      "animationComponent": "BitManipulationRevisionSummaryAnimation",
+      "aiContext": "Bit Manipulation / Revision Summary: Learn Revision Summary in Bit Manipulation with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Bit Manipulation, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Bit Manipulation: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "bit-manipulation",
+        "lessonSlug": "revision-summary",
+        "topic": "Bit Manipulation",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "bit-manipulation.revision-summary",
+        "tags": [
+          "bits",
+          "operators",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "bit-manipulation/introduction"
+      ],
+      "futureQuizId": "quiz-bit-manipulation-revision-summary",
+      "futureFlashcardId": "flashcards-bit-manipulation-revision-summary",
+      "futureProjectId": "project-bit-manipulation-revision-summary",
+      "images": [
+        "content/bit-manipulation/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "bit-manipulation-revision-summary.py",
+          "code": "def bit_manipulation_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(bit_manipulation_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

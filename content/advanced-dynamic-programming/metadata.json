@@ -1,0 +1,827 @@
+{
+  "chapterId": "advanced-dynamic-programming",
+  "title": "Advanced Dynamic Programming",
+  "description": "Advanced Dynamic Programming topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Advanced",
+  "estimatedHours": 5,
+  "tags": [
+    "dp",
+    "advanced-patterns"
+  ],
+  "animationNamespace": "AdvancedDynamicProgramming",
+  "aiContext": "Advanced Dynamic Programming chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "advanced-dynamic-programming-introduction",
+      "component": "AdvancedDynamicProgrammingIntroductionAnimation",
+      "status": "planned"
+    },
+    "state-design": {
+      "animationId": "advanced-dynamic-programming-state-design",
+      "component": "AdvancedDynamicProgrammingStateDesignAnimation",
+      "status": "planned"
+    },
+    "transition-design": {
+      "animationId": "advanced-dynamic-programming-transition-design",
+      "component": "AdvancedDynamicProgrammingTransitionDesignAnimation",
+      "status": "planned"
+    },
+    "space-optimization": {
+      "animationId": "advanced-dynamic-programming-space-optimization",
+      "component": "AdvancedDynamicProgrammingSpaceOptimizationAnimation",
+      "status": "planned"
+    },
+    "dp-on-trees": {
+      "animationId": "advanced-dynamic-programming-dp-on-trees",
+      "component": "AdvancedDynamicProgrammingDPOnTreesAnimation",
+      "status": "planned"
+    },
+    "dp-on-bitmasks": {
+      "animationId": "advanced-dynamic-programming-dp-on-bitmasks",
+      "component": "AdvancedDynamicProgrammingDPOnBitmasksAnimation",
+      "status": "planned"
+    },
+    "digit-dp": {
+      "animationId": "advanced-dynamic-programming-digit-dp",
+      "component": "AdvancedDynamicProgrammingDigitDPAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "advanced-dynamic-programming-practice",
+      "component": "AdvancedDynamicProgrammingPracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "advanced-dynamic-programming-interview-questions",
+      "component": "AdvancedDynamicProgrammingInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "advanced-dynamic-programming-revision-summary",
+      "component": "AdvancedDynamicProgrammingRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "advanced-dynamic-programming.introduction",
+      "chapter": "Advanced Dynamic Programming",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "dp",
+        "advanced-patterns",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Advanced Dynamic Programming: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "advanced-dynamic-programming-introduction",
+      "animationComponent": "AdvancedDynamicProgrammingIntroductionAnimation",
+      "aiContext": "Advanced Dynamic Programming / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Advanced Dynamic Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Advanced Dynamic Programming: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "advanced-dynamic-programming",
+        "lessonSlug": "introduction",
+        "topic": "Advanced Dynamic Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "advanced-dynamic-programming.introduction",
+        "tags": [
+          "dp",
+          "advanced-patterns",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "advanced-dynamic-programming/introduction"
+      ],
+      "futureQuizId": "quiz-advanced-dynamic-programming-introduction",
+      "futureFlashcardId": "flashcards-advanced-dynamic-programming-introduction",
+      "futureProjectId": "project-advanced-dynamic-programming-introduction",
+      "images": [
+        "content/advanced-dynamic-programming/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "advanced-dynamic-programming-introduction.py",
+          "code": "def advanced_dynamic_programming_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(advanced_dynamic_programming_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "state-design": {
+      "lessonId": "advanced-dynamic-programming.state-design",
+      "chapter": "Advanced Dynamic Programming",
+      "title": "State Design",
+      "summary": "Learn State Design in Advanced Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "dp",
+        "advanced-patterns",
+        "state-design"
+      ],
+      "learningObjectives": [
+        "Explain Advanced Dynamic Programming: State Design clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "advanced-dynamic-programming-state-design",
+      "animationComponent": "AdvancedDynamicProgrammingStateDesignAnimation",
+      "aiContext": "Advanced Dynamic Programming / State Design: Learn State Design in Advanced Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "State Design lesson for Advanced Dynamic Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Advanced Dynamic Programming: State Design. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "advanced-dynamic-programming",
+        "lessonSlug": "state-design",
+        "topic": "Advanced Dynamic Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "advanced-dynamic-programming.state-design",
+        "tags": [
+          "dp",
+          "advanced-patterns",
+          "state-design"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "advanced-dynamic-programming/introduction"
+      ],
+      "futureQuizId": "quiz-advanced-dynamic-programming-state-design",
+      "futureFlashcardId": "flashcards-advanced-dynamic-programming-state-design",
+      "futureProjectId": "project-advanced-dynamic-programming-state-design",
+      "images": [
+        "content/advanced-dynamic-programming/images/state-design.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement State Design from scratch.",
+        "Dry-run State Design on two edge cases.",
+        "Explain State Design complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "advanced-dynamic-programming-state-design.py",
+          "code": "def advanced_dynamic_programming_state_design(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(advanced_dynamic_programming_state_design([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "transition-design": {
+      "lessonId": "advanced-dynamic-programming.transition-design",
+      "chapter": "Advanced Dynamic Programming",
+      "title": "Transition Design",
+      "summary": "Learn Transition Design in Advanced Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "dp",
+        "advanced-patterns",
+        "transition-design"
+      ],
+      "learningObjectives": [
+        "Explain Advanced Dynamic Programming: Transition Design clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "advanced-dynamic-programming-transition-design",
+      "animationComponent": "AdvancedDynamicProgrammingTransitionDesignAnimation",
+      "aiContext": "Advanced Dynamic Programming / Transition Design: Learn Transition Design in Advanced Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Transition Design lesson for Advanced Dynamic Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Advanced Dynamic Programming: Transition Design. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "advanced-dynamic-programming",
+        "lessonSlug": "transition-design",
+        "topic": "Advanced Dynamic Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "advanced-dynamic-programming.transition-design",
+        "tags": [
+          "dp",
+          "advanced-patterns",
+          "transition-design"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "advanced-dynamic-programming/introduction"
+      ],
+      "futureQuizId": "quiz-advanced-dynamic-programming-transition-design",
+      "futureFlashcardId": "flashcards-advanced-dynamic-programming-transition-design",
+      "futureProjectId": "project-advanced-dynamic-programming-transition-design",
+      "images": [
+        "content/advanced-dynamic-programming/images/transition-design.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Transition Design from scratch.",
+        "Dry-run Transition Design on two edge cases.",
+        "Explain Transition Design complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "advanced-dynamic-programming-transition-design.py",
+          "code": "def advanced_dynamic_programming_transition_design(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(advanced_dynamic_programming_transition_design([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "space-optimization": {
+      "lessonId": "advanced-dynamic-programming.space-optimization",
+      "chapter": "Advanced Dynamic Programming",
+      "title": "Space Optimization",
+      "summary": "Learn Space Optimization in Advanced Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "dp",
+        "advanced-patterns",
+        "space-optimization"
+      ],
+      "learningObjectives": [
+        "Explain Advanced Dynamic Programming: Space Optimization clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "advanced-dynamic-programming-space-optimization",
+      "animationComponent": "AdvancedDynamicProgrammingSpaceOptimizationAnimation",
+      "aiContext": "Advanced Dynamic Programming / Space Optimization: Learn Space Optimization in Advanced Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Space Optimization lesson for Advanced Dynamic Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Advanced Dynamic Programming: Space Optimization. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "advanced-dynamic-programming",
+        "lessonSlug": "space-optimization",
+        "topic": "Advanced Dynamic Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "advanced-dynamic-programming.space-optimization",
+        "tags": [
+          "dp",
+          "advanced-patterns",
+          "space-optimization"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "advanced-dynamic-programming/introduction"
+      ],
+      "futureQuizId": "quiz-advanced-dynamic-programming-space-optimization",
+      "futureFlashcardId": "flashcards-advanced-dynamic-programming-space-optimization",
+      "futureProjectId": "project-advanced-dynamic-programming-space-optimization",
+      "images": [
+        "content/advanced-dynamic-programming/images/space-optimization.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Space Optimization from scratch.",
+        "Dry-run Space Optimization on two edge cases.",
+        "Explain Space Optimization complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "advanced-dynamic-programming-space-optimization.py",
+          "code": "def advanced_dynamic_programming_space_optimization(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(advanced_dynamic_programming_space_optimization([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "dp-on-trees": {
+      "lessonId": "advanced-dynamic-programming.dp-on-trees",
+      "chapter": "Advanced Dynamic Programming",
+      "title": "DP On Trees",
+      "summary": "Learn DP On Trees in Advanced Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "dp",
+        "advanced-patterns",
+        "dp-on-trees"
+      ],
+      "learningObjectives": [
+        "Explain Advanced Dynamic Programming: DP On Trees clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "advanced-dynamic-programming-dp-on-trees",
+      "animationComponent": "AdvancedDynamicProgrammingDPOnTreesAnimation",
+      "aiContext": "Advanced Dynamic Programming / DP On Trees: Learn DP On Trees in Advanced Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "DP On Trees lesson for Advanced Dynamic Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Advanced Dynamic Programming: DP On Trees. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "advanced-dynamic-programming",
+        "lessonSlug": "dp-on-trees",
+        "topic": "Advanced Dynamic Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "advanced-dynamic-programming.dp-on-trees",
+        "tags": [
+          "dp",
+          "advanced-patterns",
+          "dp-on-trees"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "advanced-dynamic-programming/introduction"
+      ],
+      "futureQuizId": "quiz-advanced-dynamic-programming-dp-on-trees",
+      "futureFlashcardId": "flashcards-advanced-dynamic-programming-dp-on-trees",
+      "futureProjectId": "project-advanced-dynamic-programming-dp-on-trees",
+      "images": [
+        "content/advanced-dynamic-programming/images/dp-on-trees.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement DP On Trees from scratch.",
+        "Dry-run DP On Trees on two edge cases.",
+        "Explain DP On Trees complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "advanced-dynamic-programming-dp-on-trees.py",
+          "code": "def advanced_dynamic_programming_dp_on_trees(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(advanced_dynamic_programming_dp_on_trees([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "dp-on-bitmasks": {
+      "lessonId": "advanced-dynamic-programming.dp-on-bitmasks",
+      "chapter": "Advanced Dynamic Programming",
+      "title": "DP On Bitmasks",
+      "summary": "Learn DP On Bitmasks in Advanced Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "dp",
+        "advanced-patterns",
+        "dp-on-bitmasks"
+      ],
+      "learningObjectives": [
+        "Explain Advanced Dynamic Programming: DP On Bitmasks clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "advanced-dynamic-programming-dp-on-bitmasks",
+      "animationComponent": "AdvancedDynamicProgrammingDPOnBitmasksAnimation",
+      "aiContext": "Advanced Dynamic Programming / DP On Bitmasks: Learn DP On Bitmasks in Advanced Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "DP On Bitmasks lesson for Advanced Dynamic Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Advanced Dynamic Programming: DP On Bitmasks. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "advanced-dynamic-programming",
+        "lessonSlug": "dp-on-bitmasks",
+        "topic": "Advanced Dynamic Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "advanced-dynamic-programming.dp-on-bitmasks",
+        "tags": [
+          "dp",
+          "advanced-patterns",
+          "dp-on-bitmasks"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "advanced-dynamic-programming/introduction"
+      ],
+      "futureQuizId": "quiz-advanced-dynamic-programming-dp-on-bitmasks",
+      "futureFlashcardId": "flashcards-advanced-dynamic-programming-dp-on-bitmasks",
+      "futureProjectId": "project-advanced-dynamic-programming-dp-on-bitmasks",
+      "images": [
+        "content/advanced-dynamic-programming/images/dp-on-bitmasks.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement DP On Bitmasks from scratch.",
+        "Dry-run DP On Bitmasks on two edge cases.",
+        "Explain DP On Bitmasks complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "advanced-dynamic-programming-dp-on-bitmasks.py",
+          "code": "def advanced_dynamic_programming_dp_on_bitmasks(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(advanced_dynamic_programming_dp_on_bitmasks([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "digit-dp": {
+      "lessonId": "advanced-dynamic-programming.digit-dp",
+      "chapter": "Advanced Dynamic Programming",
+      "title": "Digit DP",
+      "summary": "Learn Digit DP in Advanced Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "dp",
+        "advanced-patterns",
+        "digit-dp"
+      ],
+      "learningObjectives": [
+        "Explain Advanced Dynamic Programming: Digit DP clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "advanced-dynamic-programming-digit-dp",
+      "animationComponent": "AdvancedDynamicProgrammingDigitDPAnimation",
+      "aiContext": "Advanced Dynamic Programming / Digit DP: Learn Digit DP in Advanced Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Digit DP lesson for Advanced Dynamic Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Advanced Dynamic Programming: Digit DP. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "advanced-dynamic-programming",
+        "lessonSlug": "digit-dp",
+        "topic": "Advanced Dynamic Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "advanced-dynamic-programming.digit-dp",
+        "tags": [
+          "dp",
+          "advanced-patterns",
+          "digit-dp"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "advanced-dynamic-programming/introduction"
+      ],
+      "futureQuizId": "quiz-advanced-dynamic-programming-digit-dp",
+      "futureFlashcardId": "flashcards-advanced-dynamic-programming-digit-dp",
+      "futureProjectId": "project-advanced-dynamic-programming-digit-dp",
+      "images": [
+        "content/advanced-dynamic-programming/images/digit-dp.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Digit DP from scratch.",
+        "Dry-run Digit DP on two edge cases.",
+        "Explain Digit DP complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "advanced-dynamic-programming-digit-dp.py",
+          "code": "def advanced_dynamic_programming_digit_dp(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(advanced_dynamic_programming_digit_dp([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "advanced-dynamic-programming.practice",
+      "chapter": "Advanced Dynamic Programming",
+      "title": "Practice",
+      "summary": "Learn Practice in Advanced Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "dp",
+        "advanced-patterns",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Advanced Dynamic Programming: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "advanced-dynamic-programming-practice",
+      "animationComponent": "AdvancedDynamicProgrammingPracticeAnimation",
+      "aiContext": "Advanced Dynamic Programming / Practice: Learn Practice in Advanced Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Advanced Dynamic Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Advanced Dynamic Programming: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "advanced-dynamic-programming",
+        "lessonSlug": "practice",
+        "topic": "Advanced Dynamic Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "advanced-dynamic-programming.practice",
+        "tags": [
+          "dp",
+          "advanced-patterns",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "advanced-dynamic-programming/introduction"
+      ],
+      "futureQuizId": "quiz-advanced-dynamic-programming-practice",
+      "futureFlashcardId": "flashcards-advanced-dynamic-programming-practice",
+      "futureProjectId": "project-advanced-dynamic-programming-practice",
+      "images": [
+        "content/advanced-dynamic-programming/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "advanced-dynamic-programming-practice.py",
+          "code": "def advanced_dynamic_programming_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(advanced_dynamic_programming_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "advanced-dynamic-programming.interview-questions",
+      "chapter": "Advanced Dynamic Programming",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Advanced Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "dp",
+        "advanced-patterns",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Advanced Dynamic Programming: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "advanced-dynamic-programming-interview-questions",
+      "animationComponent": "AdvancedDynamicProgrammingInterviewQuestionsAnimation",
+      "aiContext": "Advanced Dynamic Programming / Interview Questions: Learn Interview Questions in Advanced Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Advanced Dynamic Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Advanced Dynamic Programming: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "advanced-dynamic-programming",
+        "lessonSlug": "interview-questions",
+        "topic": "Advanced Dynamic Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "advanced-dynamic-programming.interview-questions",
+        "tags": [
+          "dp",
+          "advanced-patterns",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "advanced-dynamic-programming/introduction"
+      ],
+      "futureQuizId": "quiz-advanced-dynamic-programming-interview-questions",
+      "futureFlashcardId": "flashcards-advanced-dynamic-programming-interview-questions",
+      "futureProjectId": "project-advanced-dynamic-programming-interview-questions",
+      "images": [
+        "content/advanced-dynamic-programming/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "advanced-dynamic-programming-interview-questions.py",
+          "code": "def advanced_dynamic_programming_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(advanced_dynamic_programming_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "advanced-dynamic-programming.revision-summary",
+      "chapter": "Advanced Dynamic Programming",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Advanced Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "dp",
+        "advanced-patterns",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Advanced Dynamic Programming: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "advanced-dynamic-programming-revision-summary",
+      "animationComponent": "AdvancedDynamicProgrammingRevisionSummaryAnimation",
+      "aiContext": "Advanced Dynamic Programming / Revision Summary: Learn Revision Summary in Advanced Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Advanced Dynamic Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Advanced Dynamic Programming: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "advanced-dynamic-programming",
+        "lessonSlug": "revision-summary",
+        "topic": "Advanced Dynamic Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "advanced-dynamic-programming.revision-summary",
+        "tags": [
+          "dp",
+          "advanced-patterns",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "advanced-dynamic-programming/introduction"
+      ],
+      "futureQuizId": "quiz-advanced-dynamic-programming-revision-summary",
+      "futureFlashcardId": "flashcards-advanced-dynamic-programming-revision-summary",
+      "futureProjectId": "project-advanced-dynamic-programming-revision-summary",
+      "images": [
+        "content/advanced-dynamic-programming/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "advanced-dynamic-programming-revision-summary.py",
+          "code": "def advanced_dynamic_programming_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(advanced_dynamic_programming_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

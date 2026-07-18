@@ -1,0 +1,827 @@
+{
+  "chapterId": "mathematics",
+  "title": "Mathematics",
+  "description": "Mathematics topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Beginner",
+  "estimatedHours": 5,
+  "tags": [
+    "math",
+    "problem-solving"
+  ],
+  "animationNamespace": "Mathematics",
+  "aiContext": "Mathematics chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "mathematics-introduction",
+      "component": "MathematicsIntroductionAnimation",
+      "status": "planned"
+    },
+    "gcd-lcm": {
+      "animationId": "mathematics-gcd-lcm",
+      "component": "MathematicsGcdLcmAnimation",
+      "status": "planned"
+    },
+    "modular-arithmetic": {
+      "animationId": "mathematics-modular-arithmetic",
+      "component": "MathematicsModularArithmeticAnimation",
+      "status": "planned"
+    },
+    "prime-checking": {
+      "animationId": "mathematics-prime-checking",
+      "component": "MathematicsPrimeCheckingAnimation",
+      "status": "planned"
+    },
+    "sieve-of-eratosthenes": {
+      "animationId": "mathematics-sieve-of-eratosthenes",
+      "component": "MathematicsSieveOfEratosthenesAnimation",
+      "status": "planned"
+    },
+    "combinatorics": {
+      "animationId": "mathematics-combinatorics",
+      "component": "MathematicsCombinatoricsAnimation",
+      "status": "planned"
+    },
+    "fast-exponentiation": {
+      "animationId": "mathematics-fast-exponentiation",
+      "component": "MathematicsFastExponentiationAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "mathematics-practice",
+      "component": "MathematicsPracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "mathematics-interview-questions",
+      "component": "MathematicsInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "mathematics-revision-summary",
+      "component": "MathematicsRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "mathematics.introduction",
+      "chapter": "Mathematics",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "math",
+        "problem-solving",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Mathematics: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "mathematics-introduction",
+      "animationComponent": "MathematicsIntroductionAnimation",
+      "aiContext": "Mathematics / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Mathematics, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Mathematics: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "mathematics",
+        "lessonSlug": "introduction",
+        "topic": "Mathematics",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "mathematics.introduction",
+        "tags": [
+          "math",
+          "problem-solving",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "mathematics/introduction"
+      ],
+      "futureQuizId": "quiz-mathematics-introduction",
+      "futureFlashcardId": "flashcards-mathematics-introduction",
+      "futureProjectId": "project-mathematics-introduction",
+      "images": [
+        "content/mathematics/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "mathematics-introduction.py",
+          "code": "def mathematics_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(mathematics_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "gcd-lcm": {
+      "lessonId": "mathematics.gcd-lcm",
+      "chapter": "Mathematics",
+      "title": "Gcd Lcm",
+      "summary": "Learn Gcd Lcm in Mathematics with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "math",
+        "problem-solving",
+        "gcd-lcm"
+      ],
+      "learningObjectives": [
+        "Explain Mathematics: Gcd Lcm clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "mathematics-gcd-lcm",
+      "animationComponent": "MathematicsGcdLcmAnimation",
+      "aiContext": "Mathematics / Gcd Lcm: Learn Gcd Lcm in Mathematics with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Gcd Lcm lesson for Mathematics, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Mathematics: Gcd Lcm. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "mathematics",
+        "lessonSlug": "gcd-lcm",
+        "topic": "Mathematics",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "mathematics.gcd-lcm",
+        "tags": [
+          "math",
+          "problem-solving",
+          "gcd-lcm"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "mathematics/introduction"
+      ],
+      "futureQuizId": "quiz-mathematics-gcd-lcm",
+      "futureFlashcardId": "flashcards-mathematics-gcd-lcm",
+      "futureProjectId": "project-mathematics-gcd-lcm",
+      "images": [
+        "content/mathematics/images/gcd-lcm.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Gcd Lcm from scratch.",
+        "Dry-run Gcd Lcm on two edge cases.",
+        "Explain Gcd Lcm complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "mathematics-gcd-lcm.py",
+          "code": "def mathematics_gcd_lcm(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(mathematics_gcd_lcm([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "modular-arithmetic": {
+      "lessonId": "mathematics.modular-arithmetic",
+      "chapter": "Mathematics",
+      "title": "Modular Arithmetic",
+      "summary": "Learn Modular Arithmetic in Mathematics with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "math",
+        "problem-solving",
+        "modular-arithmetic"
+      ],
+      "learningObjectives": [
+        "Explain Mathematics: Modular Arithmetic clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "mathematics-modular-arithmetic",
+      "animationComponent": "MathematicsModularArithmeticAnimation",
+      "aiContext": "Mathematics / Modular Arithmetic: Learn Modular Arithmetic in Mathematics with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Modular Arithmetic lesson for Mathematics, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Mathematics: Modular Arithmetic. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "mathematics",
+        "lessonSlug": "modular-arithmetic",
+        "topic": "Mathematics",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "mathematics.modular-arithmetic",
+        "tags": [
+          "math",
+          "problem-solving",
+          "modular-arithmetic"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "mathematics/introduction"
+      ],
+      "futureQuizId": "quiz-mathematics-modular-arithmetic",
+      "futureFlashcardId": "flashcards-mathematics-modular-arithmetic",
+      "futureProjectId": "project-mathematics-modular-arithmetic",
+      "images": [
+        "content/mathematics/images/modular-arithmetic.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Modular Arithmetic from scratch.",
+        "Dry-run Modular Arithmetic on two edge cases.",
+        "Explain Modular Arithmetic complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "mathematics-modular-arithmetic.py",
+          "code": "def mathematics_modular_arithmetic(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(mathematics_modular_arithmetic([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "prime-checking": {
+      "lessonId": "mathematics.prime-checking",
+      "chapter": "Mathematics",
+      "title": "Prime Checking",
+      "summary": "Learn Prime Checking in Mathematics with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "math",
+        "problem-solving",
+        "prime-checking"
+      ],
+      "learningObjectives": [
+        "Explain Mathematics: Prime Checking clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "mathematics-prime-checking",
+      "animationComponent": "MathematicsPrimeCheckingAnimation",
+      "aiContext": "Mathematics / Prime Checking: Learn Prime Checking in Mathematics with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Prime Checking lesson for Mathematics, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Mathematics: Prime Checking. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "mathematics",
+        "lessonSlug": "prime-checking",
+        "topic": "Mathematics",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "mathematics.prime-checking",
+        "tags": [
+          "math",
+          "problem-solving",
+          "prime-checking"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "mathematics/introduction"
+      ],
+      "futureQuizId": "quiz-mathematics-prime-checking",
+      "futureFlashcardId": "flashcards-mathematics-prime-checking",
+      "futureProjectId": "project-mathematics-prime-checking",
+      "images": [
+        "content/mathematics/images/prime-checking.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Prime Checking from scratch.",
+        "Dry-run Prime Checking on two edge cases.",
+        "Explain Prime Checking complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "mathematics-prime-checking.py",
+          "code": "def mathematics_prime_checking(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(mathematics_prime_checking([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "sieve-of-eratosthenes": {
+      "lessonId": "mathematics.sieve-of-eratosthenes",
+      "chapter": "Mathematics",
+      "title": "Sieve Of Eratosthenes",
+      "summary": "Learn Sieve Of Eratosthenes in Mathematics with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "math",
+        "problem-solving",
+        "sieve-of-eratosthenes"
+      ],
+      "learningObjectives": [
+        "Explain Mathematics: Sieve Of Eratosthenes clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "mathematics-sieve-of-eratosthenes",
+      "animationComponent": "MathematicsSieveOfEratosthenesAnimation",
+      "aiContext": "Mathematics / Sieve Of Eratosthenes: Learn Sieve Of Eratosthenes in Mathematics with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Sieve Of Eratosthenes lesson for Mathematics, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Mathematics: Sieve Of Eratosthenes. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "mathematics",
+        "lessonSlug": "sieve-of-eratosthenes",
+        "topic": "Mathematics",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "mathematics.sieve-of-eratosthenes",
+        "tags": [
+          "math",
+          "problem-solving",
+          "sieve-of-eratosthenes"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "mathematics/introduction"
+      ],
+      "futureQuizId": "quiz-mathematics-sieve-of-eratosthenes",
+      "futureFlashcardId": "flashcards-mathematics-sieve-of-eratosthenes",
+      "futureProjectId": "project-mathematics-sieve-of-eratosthenes",
+      "images": [
+        "content/mathematics/images/sieve-of-eratosthenes.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Sieve Of Eratosthenes from scratch.",
+        "Dry-run Sieve Of Eratosthenes on two edge cases.",
+        "Explain Sieve Of Eratosthenes complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "mathematics-sieve-of-eratosthenes.py",
+          "code": "def mathematics_sieve_of_eratosthenes(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(mathematics_sieve_of_eratosthenes([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "combinatorics": {
+      "lessonId": "mathematics.combinatorics",
+      "chapter": "Mathematics",
+      "title": "Combinatorics",
+      "summary": "Learn Combinatorics in Mathematics with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "math",
+        "problem-solving",
+        "combinatorics"
+      ],
+      "learningObjectives": [
+        "Explain Mathematics: Combinatorics clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "mathematics-combinatorics",
+      "animationComponent": "MathematicsCombinatoricsAnimation",
+      "aiContext": "Mathematics / Combinatorics: Learn Combinatorics in Mathematics with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Combinatorics lesson for Mathematics, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Mathematics: Combinatorics. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "mathematics",
+        "lessonSlug": "combinatorics",
+        "topic": "Mathematics",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "mathematics.combinatorics",
+        "tags": [
+          "math",
+          "problem-solving",
+          "combinatorics"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "mathematics/introduction"
+      ],
+      "futureQuizId": "quiz-mathematics-combinatorics",
+      "futureFlashcardId": "flashcards-mathematics-combinatorics",
+      "futureProjectId": "project-mathematics-combinatorics",
+      "images": [
+        "content/mathematics/images/combinatorics.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Combinatorics from scratch.",
+        "Dry-run Combinatorics on two edge cases.",
+        "Explain Combinatorics complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "mathematics-combinatorics.py",
+          "code": "def mathematics_combinatorics(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(mathematics_combinatorics([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "fast-exponentiation": {
+      "lessonId": "mathematics.fast-exponentiation",
+      "chapter": "Mathematics",
+      "title": "Fast Exponentiation",
+      "summary": "Learn Fast Exponentiation in Mathematics with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "math",
+        "problem-solving",
+        "fast-exponentiation"
+      ],
+      "learningObjectives": [
+        "Explain Mathematics: Fast Exponentiation clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "mathematics-fast-exponentiation",
+      "animationComponent": "MathematicsFastExponentiationAnimation",
+      "aiContext": "Mathematics / Fast Exponentiation: Learn Fast Exponentiation in Mathematics with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Fast Exponentiation lesson for Mathematics, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Mathematics: Fast Exponentiation. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "mathematics",
+        "lessonSlug": "fast-exponentiation",
+        "topic": "Mathematics",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "mathematics.fast-exponentiation",
+        "tags": [
+          "math",
+          "problem-solving",
+          "fast-exponentiation"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "mathematics/introduction"
+      ],
+      "futureQuizId": "quiz-mathematics-fast-exponentiation",
+      "futureFlashcardId": "flashcards-mathematics-fast-exponentiation",
+      "futureProjectId": "project-mathematics-fast-exponentiation",
+      "images": [
+        "content/mathematics/images/fast-exponentiation.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Fast Exponentiation from scratch.",
+        "Dry-run Fast Exponentiation on two edge cases.",
+        "Explain Fast Exponentiation complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "mathematics-fast-exponentiation.py",
+          "code": "def mathematics_fast_exponentiation(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(mathematics_fast_exponentiation([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "mathematics.practice",
+      "chapter": "Mathematics",
+      "title": "Practice",
+      "summary": "Learn Practice in Mathematics with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "math",
+        "problem-solving",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Mathematics: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "mathematics-practice",
+      "animationComponent": "MathematicsPracticeAnimation",
+      "aiContext": "Mathematics / Practice: Learn Practice in Mathematics with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Mathematics, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Mathematics: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "mathematics",
+        "lessonSlug": "practice",
+        "topic": "Mathematics",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "mathematics.practice",
+        "tags": [
+          "math",
+          "problem-solving",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "mathematics/introduction"
+      ],
+      "futureQuizId": "quiz-mathematics-practice",
+      "futureFlashcardId": "flashcards-mathematics-practice",
+      "futureProjectId": "project-mathematics-practice",
+      "images": [
+        "content/mathematics/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "mathematics-practice.py",
+          "code": "def mathematics_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(mathematics_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "mathematics.interview-questions",
+      "chapter": "Mathematics",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Mathematics with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "math",
+        "problem-solving",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Mathematics: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "mathematics-interview-questions",
+      "animationComponent": "MathematicsInterviewQuestionsAnimation",
+      "aiContext": "Mathematics / Interview Questions: Learn Interview Questions in Mathematics with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Mathematics, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Mathematics: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "mathematics",
+        "lessonSlug": "interview-questions",
+        "topic": "Mathematics",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "mathematics.interview-questions",
+        "tags": [
+          "math",
+          "problem-solving",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "mathematics/introduction"
+      ],
+      "futureQuizId": "quiz-mathematics-interview-questions",
+      "futureFlashcardId": "flashcards-mathematics-interview-questions",
+      "futureProjectId": "project-mathematics-interview-questions",
+      "images": [
+        "content/mathematics/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "mathematics-interview-questions.py",
+          "code": "def mathematics_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(mathematics_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "mathematics.revision-summary",
+      "chapter": "Mathematics",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Mathematics with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "math",
+        "problem-solving",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Mathematics: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "mathematics-revision-summary",
+      "animationComponent": "MathematicsRevisionSummaryAnimation",
+      "aiContext": "Mathematics / Revision Summary: Learn Revision Summary in Mathematics with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Mathematics, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Mathematics: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "mathematics",
+        "lessonSlug": "revision-summary",
+        "topic": "Mathematics",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "mathematics.revision-summary",
+        "tags": [
+          "math",
+          "problem-solving",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "mathematics/introduction"
+      ],
+      "futureQuizId": "quiz-mathematics-revision-summary",
+      "futureFlashcardId": "flashcards-mathematics-revision-summary",
+      "futureProjectId": "project-mathematics-revision-summary",
+      "images": [
+        "content/mathematics/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "mathematics-revision-summary.py",
+          "code": "def mathematics_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(mathematics_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

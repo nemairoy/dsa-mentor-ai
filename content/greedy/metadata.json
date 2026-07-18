@@ -1,0 +1,827 @@
+{
+  "chapterId": "greedy",
+  "title": "Greedy",
+  "description": "Greedy topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Intermediate",
+  "estimatedHours": 5,
+  "tags": [
+    "optimization",
+    "strategy"
+  ],
+  "animationNamespace": "Greedy",
+  "aiContext": "Greedy chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "greedy-introduction",
+      "component": "GreedyIntroductionAnimation",
+      "status": "planned"
+    },
+    "greedy-choice-property": {
+      "animationId": "greedy-greedy-choice-property",
+      "component": "GreedyGreedyChoicePropertyAnimation",
+      "status": "planned"
+    },
+    "activity-selection": {
+      "animationId": "greedy-activity-selection",
+      "component": "GreedyActivitySelectionAnimation",
+      "status": "planned"
+    },
+    "fractional-knapsack": {
+      "animationId": "greedy-fractional-knapsack",
+      "component": "GreedyFractionalKnapsackAnimation",
+      "status": "planned"
+    },
+    "interval-scheduling": {
+      "animationId": "greedy-interval-scheduling",
+      "component": "GreedyIntervalSchedulingAnimation",
+      "status": "planned"
+    },
+    "huffman-coding": {
+      "animationId": "greedy-huffman-coding",
+      "component": "GreedyHuffmanCodingAnimation",
+      "status": "planned"
+    },
+    "proof-strategy": {
+      "animationId": "greedy-proof-strategy",
+      "component": "GreedyProofStrategyAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "greedy-practice",
+      "component": "GreedyPracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "greedy-interview-questions",
+      "component": "GreedyInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "greedy-revision-summary",
+      "component": "GreedyRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "greedy.introduction",
+      "chapter": "Greedy",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "optimization",
+        "strategy",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Greedy: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "greedy-introduction",
+      "animationComponent": "GreedyIntroductionAnimation",
+      "aiContext": "Greedy / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Greedy, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Greedy: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "greedy",
+        "lessonSlug": "introduction",
+        "topic": "Greedy",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "greedy.introduction",
+        "tags": [
+          "optimization",
+          "strategy",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "greedy/introduction"
+      ],
+      "futureQuizId": "quiz-greedy-introduction",
+      "futureFlashcardId": "flashcards-greedy-introduction",
+      "futureProjectId": "project-greedy-introduction",
+      "images": [
+        "content/greedy/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "greedy-introduction.py",
+          "code": "def greedy_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(greedy_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "greedy-choice-property": {
+      "lessonId": "greedy.greedy-choice-property",
+      "chapter": "Greedy",
+      "title": "Greedy Choice Property",
+      "summary": "Learn Greedy Choice Property in Greedy with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "optimization",
+        "strategy",
+        "greedy-choice-property"
+      ],
+      "learningObjectives": [
+        "Explain Greedy: Greedy Choice Property clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "greedy-greedy-choice-property",
+      "animationComponent": "GreedyGreedyChoicePropertyAnimation",
+      "aiContext": "Greedy / Greedy Choice Property: Learn Greedy Choice Property in Greedy with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Greedy Choice Property lesson for Greedy, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Greedy: Greedy Choice Property. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "greedy",
+        "lessonSlug": "greedy-choice-property",
+        "topic": "Greedy",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "greedy.greedy-choice-property",
+        "tags": [
+          "optimization",
+          "strategy",
+          "greedy-choice-property"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "greedy/introduction"
+      ],
+      "futureQuizId": "quiz-greedy-greedy-choice-property",
+      "futureFlashcardId": "flashcards-greedy-greedy-choice-property",
+      "futureProjectId": "project-greedy-greedy-choice-property",
+      "images": [
+        "content/greedy/images/greedy-choice-property.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Greedy Choice Property from scratch.",
+        "Dry-run Greedy Choice Property on two edge cases.",
+        "Explain Greedy Choice Property complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "greedy-greedy-choice-property.py",
+          "code": "def greedy_greedy_choice_property(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(greedy_greedy_choice_property([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "activity-selection": {
+      "lessonId": "greedy.activity-selection",
+      "chapter": "Greedy",
+      "title": "Activity Selection",
+      "summary": "Learn Activity Selection in Greedy with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "optimization",
+        "strategy",
+        "activity-selection"
+      ],
+      "learningObjectives": [
+        "Explain Greedy: Activity Selection clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "greedy-activity-selection",
+      "animationComponent": "GreedyActivitySelectionAnimation",
+      "aiContext": "Greedy / Activity Selection: Learn Activity Selection in Greedy with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Activity Selection lesson for Greedy, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Greedy: Activity Selection. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "greedy",
+        "lessonSlug": "activity-selection",
+        "topic": "Greedy",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "greedy.activity-selection",
+        "tags": [
+          "optimization",
+          "strategy",
+          "activity-selection"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "greedy/introduction"
+      ],
+      "futureQuizId": "quiz-greedy-activity-selection",
+      "futureFlashcardId": "flashcards-greedy-activity-selection",
+      "futureProjectId": "project-greedy-activity-selection",
+      "images": [
+        "content/greedy/images/activity-selection.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Activity Selection from scratch.",
+        "Dry-run Activity Selection on two edge cases.",
+        "Explain Activity Selection complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "greedy-activity-selection.py",
+          "code": "def greedy_activity_selection(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(greedy_activity_selection([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "fractional-knapsack": {
+      "lessonId": "greedy.fractional-knapsack",
+      "chapter": "Greedy",
+      "title": "Fractional Knapsack",
+      "summary": "Learn Fractional Knapsack in Greedy with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "optimization",
+        "strategy",
+        "fractional-knapsack"
+      ],
+      "learningObjectives": [
+        "Explain Greedy: Fractional Knapsack clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "greedy-fractional-knapsack",
+      "animationComponent": "GreedyFractionalKnapsackAnimation",
+      "aiContext": "Greedy / Fractional Knapsack: Learn Fractional Knapsack in Greedy with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Fractional Knapsack lesson for Greedy, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Greedy: Fractional Knapsack. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "greedy",
+        "lessonSlug": "fractional-knapsack",
+        "topic": "Greedy",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "greedy.fractional-knapsack",
+        "tags": [
+          "optimization",
+          "strategy",
+          "fractional-knapsack"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "greedy/introduction"
+      ],
+      "futureQuizId": "quiz-greedy-fractional-knapsack",
+      "futureFlashcardId": "flashcards-greedy-fractional-knapsack",
+      "futureProjectId": "project-greedy-fractional-knapsack",
+      "images": [
+        "content/greedy/images/fractional-knapsack.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Fractional Knapsack from scratch.",
+        "Dry-run Fractional Knapsack on two edge cases.",
+        "Explain Fractional Knapsack complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "greedy-fractional-knapsack.py",
+          "code": "def greedy_fractional_knapsack(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(greedy_fractional_knapsack([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interval-scheduling": {
+      "lessonId": "greedy.interval-scheduling",
+      "chapter": "Greedy",
+      "title": "Interval Scheduling",
+      "summary": "Learn Interval Scheduling in Greedy with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "optimization",
+        "strategy",
+        "interval-scheduling"
+      ],
+      "learningObjectives": [
+        "Explain Greedy: Interval Scheduling clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "greedy-interval-scheduling",
+      "animationComponent": "GreedyIntervalSchedulingAnimation",
+      "aiContext": "Greedy / Interval Scheduling: Learn Interval Scheduling in Greedy with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interval Scheduling lesson for Greedy, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Greedy: Interval Scheduling. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "greedy",
+        "lessonSlug": "interval-scheduling",
+        "topic": "Greedy",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "greedy.interval-scheduling",
+        "tags": [
+          "optimization",
+          "strategy",
+          "interval-scheduling"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "greedy/introduction"
+      ],
+      "futureQuizId": "quiz-greedy-interval-scheduling",
+      "futureFlashcardId": "flashcards-greedy-interval-scheduling",
+      "futureProjectId": "project-greedy-interval-scheduling",
+      "images": [
+        "content/greedy/images/interval-scheduling.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interval Scheduling from scratch.",
+        "Dry-run Interval Scheduling on two edge cases.",
+        "Explain Interval Scheduling complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "greedy-interval-scheduling.py",
+          "code": "def greedy_interval_scheduling(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(greedy_interval_scheduling([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "huffman-coding": {
+      "lessonId": "greedy.huffman-coding",
+      "chapter": "Greedy",
+      "title": "Huffman Coding",
+      "summary": "Learn Huffman Coding in Greedy with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "optimization",
+        "strategy",
+        "huffman-coding"
+      ],
+      "learningObjectives": [
+        "Explain Greedy: Huffman Coding clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "greedy-huffman-coding",
+      "animationComponent": "GreedyHuffmanCodingAnimation",
+      "aiContext": "Greedy / Huffman Coding: Learn Huffman Coding in Greedy with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Huffman Coding lesson for Greedy, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Greedy: Huffman Coding. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "greedy",
+        "lessonSlug": "huffman-coding",
+        "topic": "Greedy",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "greedy.huffman-coding",
+        "tags": [
+          "optimization",
+          "strategy",
+          "huffman-coding"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "greedy/introduction"
+      ],
+      "futureQuizId": "quiz-greedy-huffman-coding",
+      "futureFlashcardId": "flashcards-greedy-huffman-coding",
+      "futureProjectId": "project-greedy-huffman-coding",
+      "images": [
+        "content/greedy/images/huffman-coding.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Huffman Coding from scratch.",
+        "Dry-run Huffman Coding on two edge cases.",
+        "Explain Huffman Coding complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "greedy-huffman-coding.py",
+          "code": "def greedy_huffman_coding(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(greedy_huffman_coding([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "proof-strategy": {
+      "lessonId": "greedy.proof-strategy",
+      "chapter": "Greedy",
+      "title": "Proof Strategy",
+      "summary": "Learn Proof Strategy in Greedy with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "optimization",
+        "strategy",
+        "proof-strategy"
+      ],
+      "learningObjectives": [
+        "Explain Greedy: Proof Strategy clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "greedy-proof-strategy",
+      "animationComponent": "GreedyProofStrategyAnimation",
+      "aiContext": "Greedy / Proof Strategy: Learn Proof Strategy in Greedy with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Proof Strategy lesson for Greedy, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Greedy: Proof Strategy. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "greedy",
+        "lessonSlug": "proof-strategy",
+        "topic": "Greedy",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "greedy.proof-strategy",
+        "tags": [
+          "optimization",
+          "strategy",
+          "proof-strategy"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "greedy/introduction"
+      ],
+      "futureQuizId": "quiz-greedy-proof-strategy",
+      "futureFlashcardId": "flashcards-greedy-proof-strategy",
+      "futureProjectId": "project-greedy-proof-strategy",
+      "images": [
+        "content/greedy/images/proof-strategy.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Proof Strategy from scratch.",
+        "Dry-run Proof Strategy on two edge cases.",
+        "Explain Proof Strategy complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "greedy-proof-strategy.py",
+          "code": "def greedy_proof_strategy(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(greedy_proof_strategy([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "greedy.practice",
+      "chapter": "Greedy",
+      "title": "Practice",
+      "summary": "Learn Practice in Greedy with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "optimization",
+        "strategy",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Greedy: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "greedy-practice",
+      "animationComponent": "GreedyPracticeAnimation",
+      "aiContext": "Greedy / Practice: Learn Practice in Greedy with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Greedy, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Greedy: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "greedy",
+        "lessonSlug": "practice",
+        "topic": "Greedy",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "greedy.practice",
+        "tags": [
+          "optimization",
+          "strategy",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "greedy/introduction"
+      ],
+      "futureQuizId": "quiz-greedy-practice",
+      "futureFlashcardId": "flashcards-greedy-practice",
+      "futureProjectId": "project-greedy-practice",
+      "images": [
+        "content/greedy/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "greedy-practice.py",
+          "code": "def greedy_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(greedy_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "greedy.interview-questions",
+      "chapter": "Greedy",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Greedy with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "optimization",
+        "strategy",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Greedy: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "greedy-interview-questions",
+      "animationComponent": "GreedyInterviewQuestionsAnimation",
+      "aiContext": "Greedy / Interview Questions: Learn Interview Questions in Greedy with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Greedy, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Greedy: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "greedy",
+        "lessonSlug": "interview-questions",
+        "topic": "Greedy",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "greedy.interview-questions",
+        "tags": [
+          "optimization",
+          "strategy",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "greedy/introduction"
+      ],
+      "futureQuizId": "quiz-greedy-interview-questions",
+      "futureFlashcardId": "flashcards-greedy-interview-questions",
+      "futureProjectId": "project-greedy-interview-questions",
+      "images": [
+        "content/greedy/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "greedy-interview-questions.py",
+          "code": "def greedy_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(greedy_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "greedy.revision-summary",
+      "chapter": "Greedy",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Greedy with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "optimization",
+        "strategy",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Greedy: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "greedy-revision-summary",
+      "animationComponent": "GreedyRevisionSummaryAnimation",
+      "aiContext": "Greedy / Revision Summary: Learn Revision Summary in Greedy with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Greedy, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Greedy: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "greedy",
+        "lessonSlug": "revision-summary",
+        "topic": "Greedy",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "greedy.revision-summary",
+        "tags": [
+          "optimization",
+          "strategy",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "greedy/introduction"
+      ],
+      "futureQuizId": "quiz-greedy-revision-summary",
+      "futureFlashcardId": "flashcards-greedy-revision-summary",
+      "futureProjectId": "project-greedy-revision-summary",
+      "images": [
+        "content/greedy/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "greedy-revision-summary.py",
+          "code": "def greedy_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(greedy_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,744 @@
+{
+  "chapterId": "big-theta",
+  "title": "Big Theta",
+  "description": "Big Theta topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Beginner",
+  "estimatedHours": 4,
+  "tags": [
+    "asymptotic-analysis",
+    "tight-bound"
+  ],
+  "animationNamespace": "BigTheta",
+  "aiContext": "Big Theta chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "big-theta-introduction",
+      "component": "BigThetaIntroductionAnimation",
+      "status": "planned"
+    },
+    "definition": {
+      "animationId": "big-theta-definition",
+      "component": "BigThetaDefinitionAnimation",
+      "status": "planned"
+    },
+    "tight-bound": {
+      "animationId": "big-theta-tight-bound",
+      "component": "BigThetaTightBoundAnimation",
+      "status": "planned"
+    },
+    "sandwich-rule": {
+      "animationId": "big-theta-sandwich-rule",
+      "component": "BigThetaSandwichRuleAnimation",
+      "status": "planned"
+    },
+    "examples": {
+      "animationId": "big-theta-examples",
+      "component": "BigThetaExamplesAnimation",
+      "status": "planned"
+    },
+    "choosing-notation": {
+      "animationId": "big-theta-choosing-notation",
+      "component": "BigThetaChoosingNotationAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "big-theta-practice",
+      "component": "BigThetaPracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "big-theta-interview-questions",
+      "component": "BigThetaInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "big-theta-revision-summary",
+      "component": "BigThetaRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "big-theta.introduction",
+      "chapter": "Big Theta",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "asymptotic-analysis",
+        "tight-bound",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Big Theta: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "big-theta-introduction",
+      "animationComponent": "BigThetaIntroductionAnimation",
+      "aiContext": "Big Theta / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Big Theta, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Big Theta: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "big-theta",
+        "lessonSlug": "introduction",
+        "topic": "Big Theta",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "big-theta.introduction",
+        "tags": [
+          "asymptotic-analysis",
+          "tight-bound",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "big-theta/introduction"
+      ],
+      "futureQuizId": "quiz-big-theta-introduction",
+      "futureFlashcardId": "flashcards-big-theta-introduction",
+      "futureProjectId": "project-big-theta-introduction",
+      "images": [
+        "content/big-theta/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "big-theta-introduction.py",
+          "code": "def big_theta_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(big_theta_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "definition": {
+      "lessonId": "big-theta.definition",
+      "chapter": "Big Theta",
+      "title": "Definition",
+      "summary": "Learn Definition in Big Theta with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "asymptotic-analysis",
+        "tight-bound",
+        "definition"
+      ],
+      "learningObjectives": [
+        "Explain Big Theta: Definition clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "big-theta-definition",
+      "animationComponent": "BigThetaDefinitionAnimation",
+      "aiContext": "Big Theta / Definition: Learn Definition in Big Theta with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Definition lesson for Big Theta, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Big Theta: Definition. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "big-theta",
+        "lessonSlug": "definition",
+        "topic": "Big Theta",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "big-theta.definition",
+        "tags": [
+          "asymptotic-analysis",
+          "tight-bound",
+          "definition"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "big-theta/introduction"
+      ],
+      "futureQuizId": "quiz-big-theta-definition",
+      "futureFlashcardId": "flashcards-big-theta-definition",
+      "futureProjectId": "project-big-theta-definition",
+      "images": [
+        "content/big-theta/images/definition.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Definition from scratch.",
+        "Dry-run Definition on two edge cases.",
+        "Explain Definition complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "big-theta-definition.py",
+          "code": "def big_theta_definition(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(big_theta_definition([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "tight-bound": {
+      "lessonId": "big-theta.tight-bound",
+      "chapter": "Big Theta",
+      "title": "Tight Bound",
+      "summary": "Learn Tight Bound in Big Theta with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "asymptotic-analysis",
+        "tight-bound"
+      ],
+      "learningObjectives": [
+        "Explain Big Theta: Tight Bound clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "big-theta-tight-bound",
+      "animationComponent": "BigThetaTightBoundAnimation",
+      "aiContext": "Big Theta / Tight Bound: Learn Tight Bound in Big Theta with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Tight Bound lesson for Big Theta, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Big Theta: Tight Bound. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "big-theta",
+        "lessonSlug": "tight-bound",
+        "topic": "Big Theta",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "big-theta.tight-bound",
+        "tags": [
+          "asymptotic-analysis",
+          "tight-bound"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "big-theta/introduction"
+      ],
+      "futureQuizId": "quiz-big-theta-tight-bound",
+      "futureFlashcardId": "flashcards-big-theta-tight-bound",
+      "futureProjectId": "project-big-theta-tight-bound",
+      "images": [
+        "content/big-theta/images/tight-bound.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Tight Bound from scratch.",
+        "Dry-run Tight Bound on two edge cases.",
+        "Explain Tight Bound complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "big-theta-tight-bound.py",
+          "code": "def big_theta_tight_bound(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(big_theta_tight_bound([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "sandwich-rule": {
+      "lessonId": "big-theta.sandwich-rule",
+      "chapter": "Big Theta",
+      "title": "Sandwich Rule",
+      "summary": "Learn Sandwich Rule in Big Theta with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "asymptotic-analysis",
+        "tight-bound",
+        "sandwich-rule"
+      ],
+      "learningObjectives": [
+        "Explain Big Theta: Sandwich Rule clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "big-theta-sandwich-rule",
+      "animationComponent": "BigThetaSandwichRuleAnimation",
+      "aiContext": "Big Theta / Sandwich Rule: Learn Sandwich Rule in Big Theta with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Sandwich Rule lesson for Big Theta, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Big Theta: Sandwich Rule. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "big-theta",
+        "lessonSlug": "sandwich-rule",
+        "topic": "Big Theta",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "big-theta.sandwich-rule",
+        "tags": [
+          "asymptotic-analysis",
+          "tight-bound",
+          "sandwich-rule"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "big-theta/introduction"
+      ],
+      "futureQuizId": "quiz-big-theta-sandwich-rule",
+      "futureFlashcardId": "flashcards-big-theta-sandwich-rule",
+      "futureProjectId": "project-big-theta-sandwich-rule",
+      "images": [
+        "content/big-theta/images/sandwich-rule.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Sandwich Rule from scratch.",
+        "Dry-run Sandwich Rule on two edge cases.",
+        "Explain Sandwich Rule complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "big-theta-sandwich-rule.py",
+          "code": "def big_theta_sandwich_rule(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(big_theta_sandwich_rule([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "examples": {
+      "lessonId": "big-theta.examples",
+      "chapter": "Big Theta",
+      "title": "Examples",
+      "summary": "Learn Examples in Big Theta with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "asymptotic-analysis",
+        "tight-bound",
+        "examples"
+      ],
+      "learningObjectives": [
+        "Explain Big Theta: Examples clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "big-theta-examples",
+      "animationComponent": "BigThetaExamplesAnimation",
+      "aiContext": "Big Theta / Examples: Learn Examples in Big Theta with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Examples lesson for Big Theta, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Big Theta: Examples. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "big-theta",
+        "lessonSlug": "examples",
+        "topic": "Big Theta",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "big-theta.examples",
+        "tags": [
+          "asymptotic-analysis",
+          "tight-bound",
+          "examples"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "big-theta/introduction"
+      ],
+      "futureQuizId": "quiz-big-theta-examples",
+      "futureFlashcardId": "flashcards-big-theta-examples",
+      "futureProjectId": "project-big-theta-examples",
+      "images": [
+        "content/big-theta/images/examples.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Examples from scratch.",
+        "Dry-run Examples on two edge cases.",
+        "Explain Examples complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "big-theta-examples.py",
+          "code": "def big_theta_examples(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(big_theta_examples([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "choosing-notation": {
+      "lessonId": "big-theta.choosing-notation",
+      "chapter": "Big Theta",
+      "title": "Choosing Notation",
+      "summary": "Learn Choosing Notation in Big Theta with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "asymptotic-analysis",
+        "tight-bound",
+        "choosing-notation"
+      ],
+      "learningObjectives": [
+        "Explain Big Theta: Choosing Notation clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "big-theta-choosing-notation",
+      "animationComponent": "BigThetaChoosingNotationAnimation",
+      "aiContext": "Big Theta / Choosing Notation: Learn Choosing Notation in Big Theta with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Choosing Notation lesson for Big Theta, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Big Theta: Choosing Notation. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "big-theta",
+        "lessonSlug": "choosing-notation",
+        "topic": "Big Theta",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "big-theta.choosing-notation",
+        "tags": [
+          "asymptotic-analysis",
+          "tight-bound",
+          "choosing-notation"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "big-theta/introduction"
+      ],
+      "futureQuizId": "quiz-big-theta-choosing-notation",
+      "futureFlashcardId": "flashcards-big-theta-choosing-notation",
+      "futureProjectId": "project-big-theta-choosing-notation",
+      "images": [
+        "content/big-theta/images/choosing-notation.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Choosing Notation from scratch.",
+        "Dry-run Choosing Notation on two edge cases.",
+        "Explain Choosing Notation complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "big-theta-choosing-notation.py",
+          "code": "def big_theta_choosing_notation(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(big_theta_choosing_notation([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "big-theta.practice",
+      "chapter": "Big Theta",
+      "title": "Practice",
+      "summary": "Learn Practice in Big Theta with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "asymptotic-analysis",
+        "tight-bound",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Big Theta: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "big-theta-practice",
+      "animationComponent": "BigThetaPracticeAnimation",
+      "aiContext": "Big Theta / Practice: Learn Practice in Big Theta with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Big Theta, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Big Theta: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "big-theta",
+        "lessonSlug": "practice",
+        "topic": "Big Theta",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "big-theta.practice",
+        "tags": [
+          "asymptotic-analysis",
+          "tight-bound",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "big-theta/introduction"
+      ],
+      "futureQuizId": "quiz-big-theta-practice",
+      "futureFlashcardId": "flashcards-big-theta-practice",
+      "futureProjectId": "project-big-theta-practice",
+      "images": [
+        "content/big-theta/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "big-theta-practice.py",
+          "code": "def big_theta_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(big_theta_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "big-theta.interview-questions",
+      "chapter": "Big Theta",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Big Theta with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "asymptotic-analysis",
+        "tight-bound",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Big Theta: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "big-theta-interview-questions",
+      "animationComponent": "BigThetaInterviewQuestionsAnimation",
+      "aiContext": "Big Theta / Interview Questions: Learn Interview Questions in Big Theta with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Big Theta, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Big Theta: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "big-theta",
+        "lessonSlug": "interview-questions",
+        "topic": "Big Theta",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "big-theta.interview-questions",
+        "tags": [
+          "asymptotic-analysis",
+          "tight-bound",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "big-theta/introduction"
+      ],
+      "futureQuizId": "quiz-big-theta-interview-questions",
+      "futureFlashcardId": "flashcards-big-theta-interview-questions",
+      "futureProjectId": "project-big-theta-interview-questions",
+      "images": [
+        "content/big-theta/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "big-theta-interview-questions.py",
+          "code": "def big_theta_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(big_theta_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "big-theta.revision-summary",
+      "chapter": "Big Theta",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Big Theta with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "asymptotic-analysis",
+        "tight-bound",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Big Theta: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "big-theta-revision-summary",
+      "animationComponent": "BigThetaRevisionSummaryAnimation",
+      "aiContext": "Big Theta / Revision Summary: Learn Revision Summary in Big Theta with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Big Theta, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Big Theta: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "big-theta",
+        "lessonSlug": "revision-summary",
+        "topic": "Big Theta",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "big-theta.revision-summary",
+        "tags": [
+          "asymptotic-analysis",
+          "tight-bound",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "big-theta/introduction"
+      ],
+      "futureQuizId": "quiz-big-theta-revision-summary",
+      "futureFlashcardId": "flashcards-big-theta-revision-summary",
+      "futureProjectId": "project-big-theta-revision-summary",
+      "images": [
+        "content/big-theta/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "big-theta-revision-summary.py",
+          "code": "def big_theta_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(big_theta_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

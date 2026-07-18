@@ -1,0 +1,908 @@
+{
+  "chapterId": "dynamic-programming",
+  "title": "Dynamic Programming",
+  "description": "Dynamic Programming topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Intermediate",
+  "estimatedHours": 5,
+  "tags": [
+    "dp",
+    "optimization"
+  ],
+  "animationNamespace": "DynamicProgramming",
+  "aiContext": "Dynamic Programming chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "dynamic-programming-introduction",
+      "component": "DynamicProgrammingIntroductionAnimation",
+      "status": "planned"
+    },
+    "overlapping-subproblems": {
+      "animationId": "dynamic-programming-overlapping-subproblems",
+      "component": "DynamicProgrammingOverlappingSubproblemsAnimation",
+      "status": "planned"
+    },
+    "optimal-substructure": {
+      "animationId": "dynamic-programming-optimal-substructure",
+      "component": "DynamicProgrammingOptimalSubstructureAnimation",
+      "status": "planned"
+    },
+    "memoization": {
+      "animationId": "dynamic-programming-memoization",
+      "component": "DynamicProgrammingMemoizationAnimation",
+      "status": "planned"
+    },
+    "tabulation": {
+      "animationId": "dynamic-programming-tabulation",
+      "component": "DynamicProgrammingTabulationAnimation",
+      "status": "planned"
+    },
+    "knapsack": {
+      "animationId": "dynamic-programming-knapsack",
+      "component": "DynamicProgrammingKnapsackAnimation",
+      "status": "planned"
+    },
+    "lcs": {
+      "animationId": "dynamic-programming-lcs",
+      "component": "DynamicProgrammingLCSAnimation",
+      "status": "planned"
+    },
+    "lis": {
+      "animationId": "dynamic-programming-lis",
+      "component": "DynamicProgrammingLISAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "dynamic-programming-practice",
+      "component": "DynamicProgrammingPracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "dynamic-programming-interview-questions",
+      "component": "DynamicProgrammingInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "dynamic-programming-revision-summary",
+      "component": "DynamicProgrammingRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "dynamic-programming.introduction",
+      "chapter": "Dynamic Programming",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "dp",
+        "optimization",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Dynamic Programming: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "dynamic-programming-introduction",
+      "animationComponent": "DynamicProgrammingIntroductionAnimation",
+      "aiContext": "Dynamic Programming / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Dynamic Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Dynamic Programming: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "dynamic-programming",
+        "lessonSlug": "introduction",
+        "topic": "Dynamic Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "dynamic-programming.introduction",
+        "tags": [
+          "dp",
+          "optimization",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "dynamic-programming/introduction"
+      ],
+      "futureQuizId": "quiz-dynamic-programming-introduction",
+      "futureFlashcardId": "flashcards-dynamic-programming-introduction",
+      "futureProjectId": "project-dynamic-programming-introduction",
+      "images": [
+        "content/dynamic-programming/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "dynamic-programming-introduction.py",
+          "code": "def dynamic_programming_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(dynamic_programming_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "overlapping-subproblems": {
+      "lessonId": "dynamic-programming.overlapping-subproblems",
+      "chapter": "Dynamic Programming",
+      "title": "Overlapping Subproblems",
+      "summary": "Learn Overlapping Subproblems in Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "dp",
+        "optimization",
+        "overlapping-subproblems"
+      ],
+      "learningObjectives": [
+        "Explain Dynamic Programming: Overlapping Subproblems clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "dynamic-programming-overlapping-subproblems",
+      "animationComponent": "DynamicProgrammingOverlappingSubproblemsAnimation",
+      "aiContext": "Dynamic Programming / Overlapping Subproblems: Learn Overlapping Subproblems in Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Overlapping Subproblems lesson for Dynamic Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Dynamic Programming: Overlapping Subproblems. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "dynamic-programming",
+        "lessonSlug": "overlapping-subproblems",
+        "topic": "Dynamic Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "dynamic-programming.overlapping-subproblems",
+        "tags": [
+          "dp",
+          "optimization",
+          "overlapping-subproblems"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "dynamic-programming/introduction"
+      ],
+      "futureQuizId": "quiz-dynamic-programming-overlapping-subproblems",
+      "futureFlashcardId": "flashcards-dynamic-programming-overlapping-subproblems",
+      "futureProjectId": "project-dynamic-programming-overlapping-subproblems",
+      "images": [
+        "content/dynamic-programming/images/overlapping-subproblems.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Overlapping Subproblems from scratch.",
+        "Dry-run Overlapping Subproblems on two edge cases.",
+        "Explain Overlapping Subproblems complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "dynamic-programming-overlapping-subproblems.py",
+          "code": "def dynamic_programming_overlapping_subproblems(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(dynamic_programming_overlapping_subproblems([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "optimal-substructure": {
+      "lessonId": "dynamic-programming.optimal-substructure",
+      "chapter": "Dynamic Programming",
+      "title": "Optimal Substructure",
+      "summary": "Learn Optimal Substructure in Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "dp",
+        "optimization",
+        "optimal-substructure"
+      ],
+      "learningObjectives": [
+        "Explain Dynamic Programming: Optimal Substructure clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "dynamic-programming-optimal-substructure",
+      "animationComponent": "DynamicProgrammingOptimalSubstructureAnimation",
+      "aiContext": "Dynamic Programming / Optimal Substructure: Learn Optimal Substructure in Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Optimal Substructure lesson for Dynamic Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Dynamic Programming: Optimal Substructure. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "dynamic-programming",
+        "lessonSlug": "optimal-substructure",
+        "topic": "Dynamic Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "dynamic-programming.optimal-substructure",
+        "tags": [
+          "dp",
+          "optimization",
+          "optimal-substructure"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "dynamic-programming/introduction"
+      ],
+      "futureQuizId": "quiz-dynamic-programming-optimal-substructure",
+      "futureFlashcardId": "flashcards-dynamic-programming-optimal-substructure",
+      "futureProjectId": "project-dynamic-programming-optimal-substructure",
+      "images": [
+        "content/dynamic-programming/images/optimal-substructure.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Optimal Substructure from scratch.",
+        "Dry-run Optimal Substructure on two edge cases.",
+        "Explain Optimal Substructure complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "dynamic-programming-optimal-substructure.py",
+          "code": "def dynamic_programming_optimal_substructure(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(dynamic_programming_optimal_substructure([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "memoization": {
+      "lessonId": "dynamic-programming.memoization",
+      "chapter": "Dynamic Programming",
+      "title": "Memoization",
+      "summary": "Learn Memoization in Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "dp",
+        "optimization",
+        "memoization"
+      ],
+      "learningObjectives": [
+        "Explain Dynamic Programming: Memoization clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "dynamic-programming-memoization",
+      "animationComponent": "DynamicProgrammingMemoizationAnimation",
+      "aiContext": "Dynamic Programming / Memoization: Learn Memoization in Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Memoization lesson for Dynamic Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Dynamic Programming: Memoization. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "dynamic-programming",
+        "lessonSlug": "memoization",
+        "topic": "Dynamic Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "dynamic-programming.memoization",
+        "tags": [
+          "dp",
+          "optimization",
+          "memoization"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "dynamic-programming/introduction"
+      ],
+      "futureQuizId": "quiz-dynamic-programming-memoization",
+      "futureFlashcardId": "flashcards-dynamic-programming-memoization",
+      "futureProjectId": "project-dynamic-programming-memoization",
+      "images": [
+        "content/dynamic-programming/images/memoization.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Memoization from scratch.",
+        "Dry-run Memoization on two edge cases.",
+        "Explain Memoization complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "dynamic-programming-memoization.py",
+          "code": "def dynamic_programming_memoization(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(dynamic_programming_memoization([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "tabulation": {
+      "lessonId": "dynamic-programming.tabulation",
+      "chapter": "Dynamic Programming",
+      "title": "Tabulation",
+      "summary": "Learn Tabulation in Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "dp",
+        "optimization",
+        "tabulation"
+      ],
+      "learningObjectives": [
+        "Explain Dynamic Programming: Tabulation clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "dynamic-programming-tabulation",
+      "animationComponent": "DynamicProgrammingTabulationAnimation",
+      "aiContext": "Dynamic Programming / Tabulation: Learn Tabulation in Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Tabulation lesson for Dynamic Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Dynamic Programming: Tabulation. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "dynamic-programming",
+        "lessonSlug": "tabulation",
+        "topic": "Dynamic Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "dynamic-programming.tabulation",
+        "tags": [
+          "dp",
+          "optimization",
+          "tabulation"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "dynamic-programming/introduction"
+      ],
+      "futureQuizId": "quiz-dynamic-programming-tabulation",
+      "futureFlashcardId": "flashcards-dynamic-programming-tabulation",
+      "futureProjectId": "project-dynamic-programming-tabulation",
+      "images": [
+        "content/dynamic-programming/images/tabulation.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Tabulation from scratch.",
+        "Dry-run Tabulation on two edge cases.",
+        "Explain Tabulation complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "dynamic-programming-tabulation.py",
+          "code": "def dynamic_programming_tabulation(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(dynamic_programming_tabulation([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "knapsack": {
+      "lessonId": "dynamic-programming.knapsack",
+      "chapter": "Dynamic Programming",
+      "title": "Knapsack",
+      "summary": "Learn Knapsack in Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "dp",
+        "optimization",
+        "knapsack"
+      ],
+      "learningObjectives": [
+        "Explain Dynamic Programming: Knapsack clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "dynamic-programming-knapsack",
+      "animationComponent": "DynamicProgrammingKnapsackAnimation",
+      "aiContext": "Dynamic Programming / Knapsack: Learn Knapsack in Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Knapsack lesson for Dynamic Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Dynamic Programming: Knapsack. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "dynamic-programming",
+        "lessonSlug": "knapsack",
+        "topic": "Dynamic Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "dynamic-programming.knapsack",
+        "tags": [
+          "dp",
+          "optimization",
+          "knapsack"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "dynamic-programming/introduction"
+      ],
+      "futureQuizId": "quiz-dynamic-programming-knapsack",
+      "futureFlashcardId": "flashcards-dynamic-programming-knapsack",
+      "futureProjectId": "project-dynamic-programming-knapsack",
+      "images": [
+        "content/dynamic-programming/images/knapsack.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Knapsack from scratch.",
+        "Dry-run Knapsack on two edge cases.",
+        "Explain Knapsack complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "dynamic-programming-knapsack.py",
+          "code": "def dynamic_programming_knapsack(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(dynamic_programming_knapsack([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "lcs": {
+      "lessonId": "dynamic-programming.lcs",
+      "chapter": "Dynamic Programming",
+      "title": "LCS",
+      "summary": "Learn LCS in Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "dp",
+        "optimization",
+        "lcs"
+      ],
+      "learningObjectives": [
+        "Explain Dynamic Programming: LCS clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "dynamic-programming-lcs",
+      "animationComponent": "DynamicProgrammingLCSAnimation",
+      "aiContext": "Dynamic Programming / LCS: Learn LCS in Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "LCS lesson for Dynamic Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Dynamic Programming: LCS. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "dynamic-programming",
+        "lessonSlug": "lcs",
+        "topic": "Dynamic Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "dynamic-programming.lcs",
+        "tags": [
+          "dp",
+          "optimization",
+          "lcs"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "dynamic-programming/introduction"
+      ],
+      "futureQuizId": "quiz-dynamic-programming-lcs",
+      "futureFlashcardId": "flashcards-dynamic-programming-lcs",
+      "futureProjectId": "project-dynamic-programming-lcs",
+      "images": [
+        "content/dynamic-programming/images/lcs.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement LCS from scratch.",
+        "Dry-run LCS on two edge cases.",
+        "Explain LCS complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "dynamic-programming-lcs.py",
+          "code": "def dynamic_programming_lcs(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(dynamic_programming_lcs([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "lis": {
+      "lessonId": "dynamic-programming.lis",
+      "chapter": "Dynamic Programming",
+      "title": "LIS",
+      "summary": "Learn LIS in Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "dp",
+        "optimization",
+        "lis"
+      ],
+      "learningObjectives": [
+        "Explain Dynamic Programming: LIS clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "dynamic-programming-lis",
+      "animationComponent": "DynamicProgrammingLISAnimation",
+      "aiContext": "Dynamic Programming / LIS: Learn LIS in Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "LIS lesson for Dynamic Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Dynamic Programming: LIS. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "dynamic-programming",
+        "lessonSlug": "lis",
+        "topic": "Dynamic Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "dynamic-programming.lis",
+        "tags": [
+          "dp",
+          "optimization",
+          "lis"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "dynamic-programming/introduction"
+      ],
+      "futureQuizId": "quiz-dynamic-programming-lis",
+      "futureFlashcardId": "flashcards-dynamic-programming-lis",
+      "futureProjectId": "project-dynamic-programming-lis",
+      "images": [
+        "content/dynamic-programming/images/lis.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement LIS from scratch.",
+        "Dry-run LIS on two edge cases.",
+        "Explain LIS complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "dynamic-programming-lis.py",
+          "code": "def dynamic_programming_lis(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(dynamic_programming_lis([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "dynamic-programming.practice",
+      "chapter": "Dynamic Programming",
+      "title": "Practice",
+      "summary": "Learn Practice in Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "dp",
+        "optimization",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Dynamic Programming: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "dynamic-programming-practice",
+      "animationComponent": "DynamicProgrammingPracticeAnimation",
+      "aiContext": "Dynamic Programming / Practice: Learn Practice in Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Dynamic Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Dynamic Programming: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "dynamic-programming",
+        "lessonSlug": "practice",
+        "topic": "Dynamic Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "dynamic-programming.practice",
+        "tags": [
+          "dp",
+          "optimization",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "dynamic-programming/introduction"
+      ],
+      "futureQuizId": "quiz-dynamic-programming-practice",
+      "futureFlashcardId": "flashcards-dynamic-programming-practice",
+      "futureProjectId": "project-dynamic-programming-practice",
+      "images": [
+        "content/dynamic-programming/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "dynamic-programming-practice.py",
+          "code": "def dynamic_programming_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(dynamic_programming_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "dynamic-programming.interview-questions",
+      "chapter": "Dynamic Programming",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "dp",
+        "optimization",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Dynamic Programming: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "dynamic-programming-interview-questions",
+      "animationComponent": "DynamicProgrammingInterviewQuestionsAnimation",
+      "aiContext": "Dynamic Programming / Interview Questions: Learn Interview Questions in Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Dynamic Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Dynamic Programming: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "dynamic-programming",
+        "lessonSlug": "interview-questions",
+        "topic": "Dynamic Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "dynamic-programming.interview-questions",
+        "tags": [
+          "dp",
+          "optimization",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "dynamic-programming/introduction"
+      ],
+      "futureQuizId": "quiz-dynamic-programming-interview-questions",
+      "futureFlashcardId": "flashcards-dynamic-programming-interview-questions",
+      "futureProjectId": "project-dynamic-programming-interview-questions",
+      "images": [
+        "content/dynamic-programming/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "dynamic-programming-interview-questions.py",
+          "code": "def dynamic_programming_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(dynamic_programming_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "dynamic-programming.revision-summary",
+      "chapter": "Dynamic Programming",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "dp",
+        "optimization",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Dynamic Programming: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "dynamic-programming-revision-summary",
+      "animationComponent": "DynamicProgrammingRevisionSummaryAnimation",
+      "aiContext": "Dynamic Programming / Revision Summary: Learn Revision Summary in Dynamic Programming with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Dynamic Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Dynamic Programming: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "dynamic-programming",
+        "lessonSlug": "revision-summary",
+        "topic": "Dynamic Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "dynamic-programming.revision-summary",
+        "tags": [
+          "dp",
+          "optimization",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "dynamic-programming/introduction"
+      ],
+      "futureQuizId": "quiz-dynamic-programming-revision-summary",
+      "futureFlashcardId": "flashcards-dynamic-programming-revision-summary",
+      "futureProjectId": "project-dynamic-programming-revision-summary",
+      "images": [
+        "content/dynamic-programming/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "dynamic-programming-revision-summary.py",
+          "code": "def dynamic_programming_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(dynamic_programming_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

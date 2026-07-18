@@ -1,0 +1,1497 @@
+{
+  "introduction.introduction": {
+    "animationId": "introduction-introduction",
+    "component": "IntroductionIntroductionAnimation",
+    "status": "planned"
+  },
+  "introduction.theory": {
+    "animationId": "introduction-theory",
+    "component": "IntroductionTheoryAnimation",
+    "status": "planned"
+  },
+  "introduction.operations": {
+    "animationId": "introduction-operations",
+    "component": "IntroductionOperationsAnimation",
+    "status": "planned"
+  },
+  "introduction.applications": {
+    "animationId": "introduction-applications",
+    "component": "IntroductionApplicationsAnimation",
+    "status": "planned"
+  },
+  "introduction.practice": {
+    "animationId": "introduction-practice",
+    "component": "IntroductionPracticeAnimation",
+    "status": "planned"
+  },
+  "introduction.interview-questions": {
+    "animationId": "introduction-interview-questions",
+    "component": "IntroductionInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "introduction.animation-ai-mapping": {
+    "animationId": "introduction-animation-ai-mapping",
+    "component": "IntroductionAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "introduction.revision-summary": {
+    "animationId": "introduction-revision-summary",
+    "component": "IntroductionRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "algorithm-analysis.introduction": {
+    "animationId": "algorithm-analysis-introduction",
+    "component": "AlgorithmAnalysisIntroductionAnimation",
+    "status": "planned"
+  },
+  "algorithm-analysis.theory": {
+    "animationId": "algorithm-analysis-theory",
+    "component": "AlgorithmAnalysisTheoryAnimation",
+    "status": "planned"
+  },
+  "algorithm-analysis.operations": {
+    "animationId": "algorithm-analysis-operations",
+    "component": "AlgorithmAnalysisOperationsAnimation",
+    "status": "planned"
+  },
+  "algorithm-analysis.applications": {
+    "animationId": "algorithm-analysis-applications",
+    "component": "AlgorithmAnalysisApplicationsAnimation",
+    "status": "planned"
+  },
+  "algorithm-analysis.practice": {
+    "animationId": "algorithm-analysis-practice",
+    "component": "AlgorithmAnalysisPracticeAnimation",
+    "status": "planned"
+  },
+  "algorithm-analysis.interview-questions": {
+    "animationId": "algorithm-analysis-interview-questions",
+    "component": "AlgorithmAnalysisInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "algorithm-analysis.animation-ai-mapping": {
+    "animationId": "algorithm-analysis-animation-ai-mapping",
+    "component": "AlgorithmAnalysisAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "algorithm-analysis.revision-summary": {
+    "animationId": "algorithm-analysis-revision-summary",
+    "component": "AlgorithmAnalysisRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "time-complexity.introduction": {
+    "animationId": "time-complexity-introduction",
+    "component": "TimeComplexityIntroductionAnimation",
+    "status": "planned"
+  },
+  "time-complexity.theory": {
+    "animationId": "time-complexity-theory",
+    "component": "TimeComplexityTheoryAnimation",
+    "status": "planned"
+  },
+  "time-complexity.operations": {
+    "animationId": "time-complexity-operations",
+    "component": "TimeComplexityOperationsAnimation",
+    "status": "planned"
+  },
+  "time-complexity.applications": {
+    "animationId": "time-complexity-applications",
+    "component": "TimeComplexityApplicationsAnimation",
+    "status": "planned"
+  },
+  "time-complexity.practice": {
+    "animationId": "time-complexity-practice",
+    "component": "TimeComplexityPracticeAnimation",
+    "status": "planned"
+  },
+  "time-complexity.interview-questions": {
+    "animationId": "time-complexity-interview-questions",
+    "component": "TimeComplexityInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "time-complexity.animation-ai-mapping": {
+    "animationId": "time-complexity-animation-ai-mapping",
+    "component": "TimeComplexityAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "time-complexity.revision-summary": {
+    "animationId": "time-complexity-revision-summary",
+    "component": "TimeComplexityRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "space-complexity.introduction": {
+    "animationId": "space-complexity-introduction",
+    "component": "SpaceComplexityIntroductionAnimation",
+    "status": "planned"
+  },
+  "space-complexity.theory": {
+    "animationId": "space-complexity-theory",
+    "component": "SpaceComplexityTheoryAnimation",
+    "status": "planned"
+  },
+  "space-complexity.operations": {
+    "animationId": "space-complexity-operations",
+    "component": "SpaceComplexityOperationsAnimation",
+    "status": "planned"
+  },
+  "space-complexity.applications": {
+    "animationId": "space-complexity-applications",
+    "component": "SpaceComplexityApplicationsAnimation",
+    "status": "planned"
+  },
+  "space-complexity.practice": {
+    "animationId": "space-complexity-practice",
+    "component": "SpaceComplexityPracticeAnimation",
+    "status": "planned"
+  },
+  "space-complexity.interview-questions": {
+    "animationId": "space-complexity-interview-questions",
+    "component": "SpaceComplexityInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "space-complexity.animation-ai-mapping": {
+    "animationId": "space-complexity-animation-ai-mapping",
+    "component": "SpaceComplexityAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "space-complexity.revision-summary": {
+    "animationId": "space-complexity-revision-summary",
+    "component": "SpaceComplexityRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "big-o.introduction": {
+    "animationId": "big-o-introduction",
+    "component": "BigOIntroductionAnimation",
+    "status": "planned"
+  },
+  "big-o.theory": {
+    "animationId": "big-o-theory",
+    "component": "BigOTheoryAnimation",
+    "status": "planned"
+  },
+  "big-o.operations": {
+    "animationId": "big-o-operations",
+    "component": "BigOOperationsAnimation",
+    "status": "planned"
+  },
+  "big-o.applications": {
+    "animationId": "big-o-applications",
+    "component": "BigOApplicationsAnimation",
+    "status": "planned"
+  },
+  "big-o.practice": {
+    "animationId": "big-o-practice",
+    "component": "BigOPracticeAnimation",
+    "status": "planned"
+  },
+  "big-o.interview-questions": {
+    "animationId": "big-o-interview-questions",
+    "component": "BigOInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "big-o.animation-ai-mapping": {
+    "animationId": "big-o-animation-ai-mapping",
+    "component": "BigOAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "big-o.revision-summary": {
+    "animationId": "big-o-revision-summary",
+    "component": "BigORevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "big-omega.introduction": {
+    "animationId": "big-omega-introduction",
+    "component": "BigOmegaIntroductionAnimation",
+    "status": "planned"
+  },
+  "big-omega.theory": {
+    "animationId": "big-omega-theory",
+    "component": "BigOmegaTheoryAnimation",
+    "status": "planned"
+  },
+  "big-omega.operations": {
+    "animationId": "big-omega-operations",
+    "component": "BigOmegaOperationsAnimation",
+    "status": "planned"
+  },
+  "big-omega.applications": {
+    "animationId": "big-omega-applications",
+    "component": "BigOmegaApplicationsAnimation",
+    "status": "planned"
+  },
+  "big-omega.practice": {
+    "animationId": "big-omega-practice",
+    "component": "BigOmegaPracticeAnimation",
+    "status": "planned"
+  },
+  "big-omega.interview-questions": {
+    "animationId": "big-omega-interview-questions",
+    "component": "BigOmegaInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "big-omega.animation-ai-mapping": {
+    "animationId": "big-omega-animation-ai-mapping",
+    "component": "BigOmegaAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "big-omega.revision-summary": {
+    "animationId": "big-omega-revision-summary",
+    "component": "BigOmegaRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "big-theta.introduction": {
+    "animationId": "big-theta-introduction",
+    "component": "BigThetaIntroductionAnimation",
+    "status": "planned"
+  },
+  "big-theta.theory": {
+    "animationId": "big-theta-theory",
+    "component": "BigThetaTheoryAnimation",
+    "status": "planned"
+  },
+  "big-theta.operations": {
+    "animationId": "big-theta-operations",
+    "component": "BigThetaOperationsAnimation",
+    "status": "planned"
+  },
+  "big-theta.applications": {
+    "animationId": "big-theta-applications",
+    "component": "BigThetaApplicationsAnimation",
+    "status": "planned"
+  },
+  "big-theta.practice": {
+    "animationId": "big-theta-practice",
+    "component": "BigThetaPracticeAnimation",
+    "status": "planned"
+  },
+  "big-theta.interview-questions": {
+    "animationId": "big-theta-interview-questions",
+    "component": "BigThetaInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "big-theta.animation-ai-mapping": {
+    "animationId": "big-theta-animation-ai-mapping",
+    "component": "BigThetaAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "big-theta.revision-summary": {
+    "animationId": "big-theta-revision-summary",
+    "component": "BigThetaRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "arrays.introduction": {
+    "animationId": "arrays-introduction",
+    "component": "ArraysIntroductionAnimation",
+    "status": "planned"
+  },
+  "arrays.theory": {
+    "animationId": "arrays-theory",
+    "component": "ArraysTheoryAnimation",
+    "status": "planned"
+  },
+  "arrays.operations": {
+    "animationId": "arrays-operations",
+    "component": "ArraysOperationsAnimation",
+    "status": "planned"
+  },
+  "arrays.applications": {
+    "animationId": "arrays-applications",
+    "component": "ArraysApplicationsAnimation",
+    "status": "planned"
+  },
+  "arrays.practice": {
+    "animationId": "arrays-practice",
+    "component": "ArraysPracticeAnimation",
+    "status": "planned"
+  },
+  "arrays.interview-questions": {
+    "animationId": "arrays-interview-questions",
+    "component": "ArraysInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "arrays.animation-ai-mapping": {
+    "animationId": "arrays-animation-ai-mapping",
+    "component": "ArraysAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "arrays.revision-summary": {
+    "animationId": "arrays-revision-summary",
+    "component": "ArraysRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "strings.introduction": {
+    "animationId": "strings-introduction",
+    "component": "StringsIntroductionAnimation",
+    "status": "planned"
+  },
+  "strings.theory": {
+    "animationId": "strings-theory",
+    "component": "StringsTheoryAnimation",
+    "status": "planned"
+  },
+  "strings.operations": {
+    "animationId": "strings-operations",
+    "component": "StringsOperationsAnimation",
+    "status": "planned"
+  },
+  "strings.applications": {
+    "animationId": "strings-applications",
+    "component": "StringsApplicationsAnimation",
+    "status": "planned"
+  },
+  "strings.practice": {
+    "animationId": "strings-practice",
+    "component": "StringsPracticeAnimation",
+    "status": "planned"
+  },
+  "strings.interview-questions": {
+    "animationId": "strings-interview-questions",
+    "component": "StringsInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "strings.animation-ai-mapping": {
+    "animationId": "strings-animation-ai-mapping",
+    "component": "StringsAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "strings.revision-summary": {
+    "animationId": "strings-revision-summary",
+    "component": "StringsRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "searching.introduction": {
+    "animationId": "searching-introduction",
+    "component": "SearchingIntroductionAnimation",
+    "status": "planned"
+  },
+  "searching.theory": {
+    "animationId": "searching-theory",
+    "component": "SearchingTheoryAnimation",
+    "status": "planned"
+  },
+  "searching.operations": {
+    "animationId": "searching-operations",
+    "component": "SearchingOperationsAnimation",
+    "status": "planned"
+  },
+  "searching.applications": {
+    "animationId": "searching-applications",
+    "component": "SearchingApplicationsAnimation",
+    "status": "planned"
+  },
+  "searching.practice": {
+    "animationId": "searching-practice",
+    "component": "SearchingPracticeAnimation",
+    "status": "planned"
+  },
+  "searching.interview-questions": {
+    "animationId": "searching-interview-questions",
+    "component": "SearchingInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "searching.animation-ai-mapping": {
+    "animationId": "searching-animation-ai-mapping",
+    "component": "SearchingAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "searching.revision-summary": {
+    "animationId": "searching-revision-summary",
+    "component": "SearchingRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "sorting.introduction": {
+    "animationId": "sorting-introduction",
+    "component": "SortingIntroductionAnimation",
+    "status": "planned"
+  },
+  "sorting.theory": {
+    "animationId": "sorting-theory",
+    "component": "SortingTheoryAnimation",
+    "status": "planned"
+  },
+  "sorting.operations": {
+    "animationId": "sorting-operations",
+    "component": "SortingOperationsAnimation",
+    "status": "planned"
+  },
+  "sorting.applications": {
+    "animationId": "sorting-applications",
+    "component": "SortingApplicationsAnimation",
+    "status": "planned"
+  },
+  "sorting.practice": {
+    "animationId": "sorting-practice",
+    "component": "SortingPracticeAnimation",
+    "status": "planned"
+  },
+  "sorting.interview-questions": {
+    "animationId": "sorting-interview-questions",
+    "component": "SortingInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "sorting.animation-ai-mapping": {
+    "animationId": "sorting-animation-ai-mapping",
+    "component": "SortingAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "sorting.revision-summary": {
+    "animationId": "sorting-revision-summary",
+    "component": "SortingRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "recursion.introduction": {
+    "animationId": "recursion-introduction",
+    "component": "RecursionIntroductionAnimation",
+    "status": "planned"
+  },
+  "recursion.theory": {
+    "animationId": "recursion-theory",
+    "component": "RecursionTheoryAnimation",
+    "status": "planned"
+  },
+  "recursion.operations": {
+    "animationId": "recursion-operations",
+    "component": "RecursionOperationsAnimation",
+    "status": "planned"
+  },
+  "recursion.applications": {
+    "animationId": "recursion-applications",
+    "component": "RecursionApplicationsAnimation",
+    "status": "planned"
+  },
+  "recursion.practice": {
+    "animationId": "recursion-practice",
+    "component": "RecursionPracticeAnimation",
+    "status": "planned"
+  },
+  "recursion.interview-questions": {
+    "animationId": "recursion-interview-questions",
+    "component": "RecursionInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "recursion.animation-ai-mapping": {
+    "animationId": "recursion-animation-ai-mapping",
+    "component": "RecursionAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "recursion.revision-summary": {
+    "animationId": "recursion-revision-summary",
+    "component": "RecursionRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "backtracking.introduction": {
+    "animationId": "backtracking-introduction",
+    "component": "BacktrackingIntroductionAnimation",
+    "status": "planned"
+  },
+  "backtracking.theory": {
+    "animationId": "backtracking-theory",
+    "component": "BacktrackingTheoryAnimation",
+    "status": "planned"
+  },
+  "backtracking.operations": {
+    "animationId": "backtracking-operations",
+    "component": "BacktrackingOperationsAnimation",
+    "status": "planned"
+  },
+  "backtracking.applications": {
+    "animationId": "backtracking-applications",
+    "component": "BacktrackingApplicationsAnimation",
+    "status": "planned"
+  },
+  "backtracking.practice": {
+    "animationId": "backtracking-practice",
+    "component": "BacktrackingPracticeAnimation",
+    "status": "planned"
+  },
+  "backtracking.interview-questions": {
+    "animationId": "backtracking-interview-questions",
+    "component": "BacktrackingInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "backtracking.animation-ai-mapping": {
+    "animationId": "backtracking-animation-ai-mapping",
+    "component": "BacktrackingAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "backtracking.revision-summary": {
+    "animationId": "backtracking-revision-summary",
+    "component": "BacktrackingRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "stack.introduction": {
+    "animationId": "stack-introduction",
+    "component": "StackIntroductionAnimation",
+    "status": "planned"
+  },
+  "stack.theory": {
+    "animationId": "stack-theory",
+    "component": "StackTheoryAnimation",
+    "status": "planned"
+  },
+  "stack.operations": {
+    "animationId": "stack-operations",
+    "component": "StackOperationsAnimation",
+    "status": "planned"
+  },
+  "stack.applications": {
+    "animationId": "stack-applications",
+    "component": "StackApplicationsAnimation",
+    "status": "planned"
+  },
+  "stack.practice": {
+    "animationId": "stack-practice",
+    "component": "StackPracticeAnimation",
+    "status": "planned"
+  },
+  "stack.interview-questions": {
+    "animationId": "stack-interview-questions",
+    "component": "StackInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "stack.animation-ai-mapping": {
+    "animationId": "stack-animation-ai-mapping",
+    "component": "StackAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "stack.revision-summary": {
+    "animationId": "stack-revision-summary",
+    "component": "StackRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "queue.introduction": {
+    "animationId": "queue-introduction",
+    "component": "QueueIntroductionAnimation",
+    "status": "planned"
+  },
+  "queue.theory": {
+    "animationId": "queue-theory",
+    "component": "QueueTheoryAnimation",
+    "status": "planned"
+  },
+  "queue.operations": {
+    "animationId": "queue-operations",
+    "component": "QueueOperationsAnimation",
+    "status": "planned"
+  },
+  "queue.applications": {
+    "animationId": "queue-applications",
+    "component": "QueueApplicationsAnimation",
+    "status": "planned"
+  },
+  "queue.practice": {
+    "animationId": "queue-practice",
+    "component": "QueuePracticeAnimation",
+    "status": "planned"
+  },
+  "queue.interview-questions": {
+    "animationId": "queue-interview-questions",
+    "component": "QueueInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "queue.animation-ai-mapping": {
+    "animationId": "queue-animation-ai-mapping",
+    "component": "QueueAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "queue.revision-summary": {
+    "animationId": "queue-revision-summary",
+    "component": "QueueRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "deque.introduction": {
+    "animationId": "deque-introduction",
+    "component": "DequeIntroductionAnimation",
+    "status": "planned"
+  },
+  "deque.theory": {
+    "animationId": "deque-theory",
+    "component": "DequeTheoryAnimation",
+    "status": "planned"
+  },
+  "deque.operations": {
+    "animationId": "deque-operations",
+    "component": "DequeOperationsAnimation",
+    "status": "planned"
+  },
+  "deque.applications": {
+    "animationId": "deque-applications",
+    "component": "DequeApplicationsAnimation",
+    "status": "planned"
+  },
+  "deque.practice": {
+    "animationId": "deque-practice",
+    "component": "DequePracticeAnimation",
+    "status": "planned"
+  },
+  "deque.interview-questions": {
+    "animationId": "deque-interview-questions",
+    "component": "DequeInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "deque.animation-ai-mapping": {
+    "animationId": "deque-animation-ai-mapping",
+    "component": "DequeAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "deque.revision-summary": {
+    "animationId": "deque-revision-summary",
+    "component": "DequeRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "linked-list.introduction": {
+    "animationId": "linked-list-introduction",
+    "component": "LinkedListIntroductionAnimation",
+    "status": "planned"
+  },
+  "linked-list.theory": {
+    "animationId": "linked-list-theory",
+    "component": "LinkedListTheoryAnimation",
+    "status": "planned"
+  },
+  "linked-list.operations": {
+    "animationId": "linked-list-operations",
+    "component": "LinkedListOperationsAnimation",
+    "status": "planned"
+  },
+  "linked-list.applications": {
+    "animationId": "linked-list-applications",
+    "component": "LinkedListApplicationsAnimation",
+    "status": "planned"
+  },
+  "linked-list.practice": {
+    "animationId": "linked-list-practice",
+    "component": "LinkedListPracticeAnimation",
+    "status": "planned"
+  },
+  "linked-list.interview-questions": {
+    "animationId": "linked-list-interview-questions",
+    "component": "LinkedListInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "linked-list.animation-ai-mapping": {
+    "animationId": "linked-list-animation-ai-mapping",
+    "component": "LinkedListAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "linked-list.revision-summary": {
+    "animationId": "linked-list-revision-summary",
+    "component": "LinkedListRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "hashing.introduction": {
+    "animationId": "hashing-introduction",
+    "component": "HashingIntroductionAnimation",
+    "status": "planned"
+  },
+  "hashing.theory": {
+    "animationId": "hashing-theory",
+    "component": "HashingTheoryAnimation",
+    "status": "planned"
+  },
+  "hashing.operations": {
+    "animationId": "hashing-operations",
+    "component": "HashingOperationsAnimation",
+    "status": "planned"
+  },
+  "hashing.applications": {
+    "animationId": "hashing-applications",
+    "component": "HashingApplicationsAnimation",
+    "status": "planned"
+  },
+  "hashing.practice": {
+    "animationId": "hashing-practice",
+    "component": "HashingPracticeAnimation",
+    "status": "planned"
+  },
+  "hashing.interview-questions": {
+    "animationId": "hashing-interview-questions",
+    "component": "HashingInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "hashing.animation-ai-mapping": {
+    "animationId": "hashing-animation-ai-mapping",
+    "component": "HashingAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "hashing.revision-summary": {
+    "animationId": "hashing-revision-summary",
+    "component": "HashingRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "tree.introduction": {
+    "animationId": "tree-introduction",
+    "component": "TreeIntroductionAnimation",
+    "status": "planned"
+  },
+  "tree.theory": {
+    "animationId": "tree-theory",
+    "component": "TreeTheoryAnimation",
+    "status": "planned"
+  },
+  "tree.operations": {
+    "animationId": "tree-operations",
+    "component": "TreeOperationsAnimation",
+    "status": "planned"
+  },
+  "tree.applications": {
+    "animationId": "tree-applications",
+    "component": "TreeApplicationsAnimation",
+    "status": "planned"
+  },
+  "tree.practice": {
+    "animationId": "tree-practice",
+    "component": "TreePracticeAnimation",
+    "status": "planned"
+  },
+  "tree.interview-questions": {
+    "animationId": "tree-interview-questions",
+    "component": "TreeInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "tree.animation-ai-mapping": {
+    "animationId": "tree-animation-ai-mapping",
+    "component": "TreeAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "tree.revision-summary": {
+    "animationId": "tree-revision-summary",
+    "component": "TreeRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "tree.terminology": {
+    "animationId": "tree-terminology",
+    "component": "TreeTerminologyAnimation",
+    "status": "planned"
+  },
+  "tree.traversals": {
+    "animationId": "tree-traversals",
+    "component": "TreeTraversalsAnimation",
+    "status": "planned"
+  },
+  "tree.binary-tree": {
+    "animationId": "tree-binary-tree",
+    "component": "TreeBinaryTreeAnimation",
+    "status": "planned"
+  },
+  "binary-tree.introduction": {
+    "animationId": "binary-tree-introduction",
+    "component": "BinaryTreeIntroductionAnimation",
+    "status": "planned"
+  },
+  "binary-tree.theory": {
+    "animationId": "binary-tree-theory",
+    "component": "BinaryTreeTheoryAnimation",
+    "status": "planned"
+  },
+  "binary-tree.operations": {
+    "animationId": "binary-tree-operations",
+    "component": "BinaryTreeOperationsAnimation",
+    "status": "planned"
+  },
+  "binary-tree.applications": {
+    "animationId": "binary-tree-applications",
+    "component": "BinaryTreeApplicationsAnimation",
+    "status": "planned"
+  },
+  "binary-tree.practice": {
+    "animationId": "binary-tree-practice",
+    "component": "BinaryTreePracticeAnimation",
+    "status": "planned"
+  },
+  "binary-tree.interview-questions": {
+    "animationId": "binary-tree-interview-questions",
+    "component": "BinaryTreeInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "binary-tree.animation-ai-mapping": {
+    "animationId": "binary-tree-animation-ai-mapping",
+    "component": "BinaryTreeAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "binary-tree.revision-summary": {
+    "animationId": "binary-tree-revision-summary",
+    "component": "BinaryTreeRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "binary-search-tree.introduction": {
+    "animationId": "binary-search-tree-introduction",
+    "component": "BinarySearchTreeIntroductionAnimation",
+    "status": "planned"
+  },
+  "binary-search-tree.theory": {
+    "animationId": "binary-search-tree-theory",
+    "component": "BinarySearchTreeTheoryAnimation",
+    "status": "planned"
+  },
+  "binary-search-tree.operations": {
+    "animationId": "binary-search-tree-operations",
+    "component": "BinarySearchTreeOperationsAnimation",
+    "status": "planned"
+  },
+  "binary-search-tree.applications": {
+    "animationId": "binary-search-tree-applications",
+    "component": "BinarySearchTreeApplicationsAnimation",
+    "status": "planned"
+  },
+  "binary-search-tree.practice": {
+    "animationId": "binary-search-tree-practice",
+    "component": "BinarySearchTreePracticeAnimation",
+    "status": "planned"
+  },
+  "binary-search-tree.interview-questions": {
+    "animationId": "binary-search-tree-interview-questions",
+    "component": "BinarySearchTreeInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "binary-search-tree.animation-ai-mapping": {
+    "animationId": "binary-search-tree-animation-ai-mapping",
+    "component": "BinarySearchTreeAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "binary-search-tree.revision-summary": {
+    "animationId": "binary-search-tree-revision-summary",
+    "component": "BinarySearchTreeRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "avl-tree.introduction": {
+    "animationId": "avl-tree-introduction",
+    "component": "AvlTreeIntroductionAnimation",
+    "status": "planned"
+  },
+  "avl-tree.theory": {
+    "animationId": "avl-tree-theory",
+    "component": "AvlTreeTheoryAnimation",
+    "status": "planned"
+  },
+  "avl-tree.operations": {
+    "animationId": "avl-tree-operations",
+    "component": "AvlTreeOperationsAnimation",
+    "status": "planned"
+  },
+  "avl-tree.applications": {
+    "animationId": "avl-tree-applications",
+    "component": "AvlTreeApplicationsAnimation",
+    "status": "planned"
+  },
+  "avl-tree.practice": {
+    "animationId": "avl-tree-practice",
+    "component": "AvlTreePracticeAnimation",
+    "status": "planned"
+  },
+  "avl-tree.interview-questions": {
+    "animationId": "avl-tree-interview-questions",
+    "component": "AvlTreeInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "avl-tree.animation-ai-mapping": {
+    "animationId": "avl-tree-animation-ai-mapping",
+    "component": "AvlTreeAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "avl-tree.revision-summary": {
+    "animationId": "avl-tree-revision-summary",
+    "component": "AvlTreeRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "heap.introduction": {
+    "animationId": "heap-introduction",
+    "component": "HeapIntroductionAnimation",
+    "status": "planned"
+  },
+  "heap.theory": {
+    "animationId": "heap-theory",
+    "component": "HeapTheoryAnimation",
+    "status": "planned"
+  },
+  "heap.operations": {
+    "animationId": "heap-operations",
+    "component": "HeapOperationsAnimation",
+    "status": "planned"
+  },
+  "heap.applications": {
+    "animationId": "heap-applications",
+    "component": "HeapApplicationsAnimation",
+    "status": "planned"
+  },
+  "heap.practice": {
+    "animationId": "heap-practice",
+    "component": "HeapPracticeAnimation",
+    "status": "planned"
+  },
+  "heap.interview-questions": {
+    "animationId": "heap-interview-questions",
+    "component": "HeapInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "heap.animation-ai-mapping": {
+    "animationId": "heap-animation-ai-mapping",
+    "component": "HeapAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "heap.revision-summary": {
+    "animationId": "heap-revision-summary",
+    "component": "HeapRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "trie.introduction": {
+    "animationId": "trie-introduction",
+    "component": "TrieIntroductionAnimation",
+    "status": "planned"
+  },
+  "trie.theory": {
+    "animationId": "trie-theory",
+    "component": "TrieTheoryAnimation",
+    "status": "planned"
+  },
+  "trie.operations": {
+    "animationId": "trie-operations",
+    "component": "TrieOperationsAnimation",
+    "status": "planned"
+  },
+  "trie.applications": {
+    "animationId": "trie-applications",
+    "component": "TrieApplicationsAnimation",
+    "status": "planned"
+  },
+  "trie.practice": {
+    "animationId": "trie-practice",
+    "component": "TriePracticeAnimation",
+    "status": "planned"
+  },
+  "trie.interview-questions": {
+    "animationId": "trie-interview-questions",
+    "component": "TrieInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "trie.animation-ai-mapping": {
+    "animationId": "trie-animation-ai-mapping",
+    "component": "TrieAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "trie.revision-summary": {
+    "animationId": "trie-revision-summary",
+    "component": "TrieRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "graph.introduction": {
+    "animationId": "graph-introduction",
+    "component": "GraphIntroductionAnimation",
+    "status": "planned"
+  },
+  "graph.theory": {
+    "animationId": "graph-theory",
+    "component": "GraphTheoryAnimation",
+    "status": "planned"
+  },
+  "graph.operations": {
+    "animationId": "graph-operations",
+    "component": "GraphOperationsAnimation",
+    "status": "planned"
+  },
+  "graph.applications": {
+    "animationId": "graph-applications",
+    "component": "GraphApplicationsAnimation",
+    "status": "planned"
+  },
+  "graph.practice": {
+    "animationId": "graph-practice",
+    "component": "GraphPracticeAnimation",
+    "status": "planned"
+  },
+  "graph.interview-questions": {
+    "animationId": "graph-interview-questions",
+    "component": "GraphInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "graph.animation-ai-mapping": {
+    "animationId": "graph-animation-ai-mapping",
+    "component": "GraphAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "graph.revision-summary": {
+    "animationId": "graph-revision-summary",
+    "component": "GraphRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "greedy.introduction": {
+    "animationId": "greedy-introduction",
+    "component": "GreedyIntroductionAnimation",
+    "status": "planned"
+  },
+  "greedy.theory": {
+    "animationId": "greedy-theory",
+    "component": "GreedyTheoryAnimation",
+    "status": "planned"
+  },
+  "greedy.operations": {
+    "animationId": "greedy-operations",
+    "component": "GreedyOperationsAnimation",
+    "status": "planned"
+  },
+  "greedy.applications": {
+    "animationId": "greedy-applications",
+    "component": "GreedyApplicationsAnimation",
+    "status": "planned"
+  },
+  "greedy.practice": {
+    "animationId": "greedy-practice",
+    "component": "GreedyPracticeAnimation",
+    "status": "planned"
+  },
+  "greedy.interview-questions": {
+    "animationId": "greedy-interview-questions",
+    "component": "GreedyInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "greedy.animation-ai-mapping": {
+    "animationId": "greedy-animation-ai-mapping",
+    "component": "GreedyAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "greedy.revision-summary": {
+    "animationId": "greedy-revision-summary",
+    "component": "GreedyRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "dynamic-programming.introduction": {
+    "animationId": "dynamic-programming-introduction",
+    "component": "DynamicProgrammingIntroductionAnimation",
+    "status": "planned"
+  },
+  "dynamic-programming.theory": {
+    "animationId": "dynamic-programming-theory",
+    "component": "DynamicProgrammingTheoryAnimation",
+    "status": "planned"
+  },
+  "dynamic-programming.operations": {
+    "animationId": "dynamic-programming-operations",
+    "component": "DynamicProgrammingOperationsAnimation",
+    "status": "planned"
+  },
+  "dynamic-programming.applications": {
+    "animationId": "dynamic-programming-applications",
+    "component": "DynamicProgrammingApplicationsAnimation",
+    "status": "planned"
+  },
+  "dynamic-programming.practice": {
+    "animationId": "dynamic-programming-practice",
+    "component": "DynamicProgrammingPracticeAnimation",
+    "status": "planned"
+  },
+  "dynamic-programming.interview-questions": {
+    "animationId": "dynamic-programming-interview-questions",
+    "component": "DynamicProgrammingInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "dynamic-programming.animation-ai-mapping": {
+    "animationId": "dynamic-programming-animation-ai-mapping",
+    "component": "DynamicProgrammingAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "dynamic-programming.revision-summary": {
+    "animationId": "dynamic-programming-revision-summary",
+    "component": "DynamicProgrammingRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "bit-manipulation.introduction": {
+    "animationId": "bit-manipulation-introduction",
+    "component": "BitManipulationIntroductionAnimation",
+    "status": "planned"
+  },
+  "bit-manipulation.theory": {
+    "animationId": "bit-manipulation-theory",
+    "component": "BitManipulationTheoryAnimation",
+    "status": "planned"
+  },
+  "bit-manipulation.operations": {
+    "animationId": "bit-manipulation-operations",
+    "component": "BitManipulationOperationsAnimation",
+    "status": "planned"
+  },
+  "bit-manipulation.applications": {
+    "animationId": "bit-manipulation-applications",
+    "component": "BitManipulationApplicationsAnimation",
+    "status": "planned"
+  },
+  "bit-manipulation.practice": {
+    "animationId": "bit-manipulation-practice",
+    "component": "BitManipulationPracticeAnimation",
+    "status": "planned"
+  },
+  "bit-manipulation.interview-questions": {
+    "animationId": "bit-manipulation-interview-questions",
+    "component": "BitManipulationInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "bit-manipulation.animation-ai-mapping": {
+    "animationId": "bit-manipulation-animation-ai-mapping",
+    "component": "BitManipulationAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "bit-manipulation.revision-summary": {
+    "animationId": "bit-manipulation-revision-summary",
+    "component": "BitManipulationRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "segment-tree.introduction": {
+    "animationId": "segment-tree-introduction",
+    "component": "SegmentTreeIntroductionAnimation",
+    "status": "planned"
+  },
+  "segment-tree.theory": {
+    "animationId": "segment-tree-theory",
+    "component": "SegmentTreeTheoryAnimation",
+    "status": "planned"
+  },
+  "segment-tree.operations": {
+    "animationId": "segment-tree-operations",
+    "component": "SegmentTreeOperationsAnimation",
+    "status": "planned"
+  },
+  "segment-tree.applications": {
+    "animationId": "segment-tree-applications",
+    "component": "SegmentTreeApplicationsAnimation",
+    "status": "planned"
+  },
+  "segment-tree.practice": {
+    "animationId": "segment-tree-practice",
+    "component": "SegmentTreePracticeAnimation",
+    "status": "planned"
+  },
+  "segment-tree.interview-questions": {
+    "animationId": "segment-tree-interview-questions",
+    "component": "SegmentTreeInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "segment-tree.animation-ai-mapping": {
+    "animationId": "segment-tree-animation-ai-mapping",
+    "component": "SegmentTreeAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "segment-tree.revision-summary": {
+    "animationId": "segment-tree-revision-summary",
+    "component": "SegmentTreeRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "fenwick-tree.introduction": {
+    "animationId": "fenwick-tree-introduction",
+    "component": "FenwickTreeIntroductionAnimation",
+    "status": "planned"
+  },
+  "fenwick-tree.theory": {
+    "animationId": "fenwick-tree-theory",
+    "component": "FenwickTreeTheoryAnimation",
+    "status": "planned"
+  },
+  "fenwick-tree.operations": {
+    "animationId": "fenwick-tree-operations",
+    "component": "FenwickTreeOperationsAnimation",
+    "status": "planned"
+  },
+  "fenwick-tree.applications": {
+    "animationId": "fenwick-tree-applications",
+    "component": "FenwickTreeApplicationsAnimation",
+    "status": "planned"
+  },
+  "fenwick-tree.practice": {
+    "animationId": "fenwick-tree-practice",
+    "component": "FenwickTreePracticeAnimation",
+    "status": "planned"
+  },
+  "fenwick-tree.interview-questions": {
+    "animationId": "fenwick-tree-interview-questions",
+    "component": "FenwickTreeInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "fenwick-tree.animation-ai-mapping": {
+    "animationId": "fenwick-tree-animation-ai-mapping",
+    "component": "FenwickTreeAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "fenwick-tree.revision-summary": {
+    "animationId": "fenwick-tree-revision-summary",
+    "component": "FenwickTreeRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "disjoint-set-union.introduction": {
+    "animationId": "disjoint-set-union-introduction",
+    "component": "DisjointSetUnionIntroductionAnimation",
+    "status": "planned"
+  },
+  "disjoint-set-union.theory": {
+    "animationId": "disjoint-set-union-theory",
+    "component": "DisjointSetUnionTheoryAnimation",
+    "status": "planned"
+  },
+  "disjoint-set-union.operations": {
+    "animationId": "disjoint-set-union-operations",
+    "component": "DisjointSetUnionOperationsAnimation",
+    "status": "planned"
+  },
+  "disjoint-set-union.applications": {
+    "animationId": "disjoint-set-union-applications",
+    "component": "DisjointSetUnionApplicationsAnimation",
+    "status": "planned"
+  },
+  "disjoint-set-union.practice": {
+    "animationId": "disjoint-set-union-practice",
+    "component": "DisjointSetUnionPracticeAnimation",
+    "status": "planned"
+  },
+  "disjoint-set-union.interview-questions": {
+    "animationId": "disjoint-set-union-interview-questions",
+    "component": "DisjointSetUnionInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "disjoint-set-union.animation-ai-mapping": {
+    "animationId": "disjoint-set-union-animation-ai-mapping",
+    "component": "DisjointSetUnionAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "disjoint-set-union.revision-summary": {
+    "animationId": "disjoint-set-union-revision-summary",
+    "component": "DisjointSetUnionRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "mathematics.introduction": {
+    "animationId": "mathematics-introduction",
+    "component": "MathematicsIntroductionAnimation",
+    "status": "planned"
+  },
+  "mathematics.theory": {
+    "animationId": "mathematics-theory",
+    "component": "MathematicsTheoryAnimation",
+    "status": "planned"
+  },
+  "mathematics.operations": {
+    "animationId": "mathematics-operations",
+    "component": "MathematicsOperationsAnimation",
+    "status": "planned"
+  },
+  "mathematics.applications": {
+    "animationId": "mathematics-applications",
+    "component": "MathematicsApplicationsAnimation",
+    "status": "planned"
+  },
+  "mathematics.practice": {
+    "animationId": "mathematics-practice",
+    "component": "MathematicsPracticeAnimation",
+    "status": "planned"
+  },
+  "mathematics.interview-questions": {
+    "animationId": "mathematics-interview-questions",
+    "component": "MathematicsInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "mathematics.animation-ai-mapping": {
+    "animationId": "mathematics-animation-ai-mapping",
+    "component": "MathematicsAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "mathematics.revision-summary": {
+    "animationId": "mathematics-revision-summary",
+    "component": "MathematicsRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "number-theory.introduction": {
+    "animationId": "number-theory-introduction",
+    "component": "NumberTheoryIntroductionAnimation",
+    "status": "planned"
+  },
+  "number-theory.theory": {
+    "animationId": "number-theory-theory",
+    "component": "NumberTheoryTheoryAnimation",
+    "status": "planned"
+  },
+  "number-theory.operations": {
+    "animationId": "number-theory-operations",
+    "component": "NumberTheoryOperationsAnimation",
+    "status": "planned"
+  },
+  "number-theory.applications": {
+    "animationId": "number-theory-applications",
+    "component": "NumberTheoryApplicationsAnimation",
+    "status": "planned"
+  },
+  "number-theory.practice": {
+    "animationId": "number-theory-practice",
+    "component": "NumberTheoryPracticeAnimation",
+    "status": "planned"
+  },
+  "number-theory.interview-questions": {
+    "animationId": "number-theory-interview-questions",
+    "component": "NumberTheoryInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "number-theory.animation-ai-mapping": {
+    "animationId": "number-theory-animation-ai-mapping",
+    "component": "NumberTheoryAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "number-theory.revision-summary": {
+    "animationId": "number-theory-revision-summary",
+    "component": "NumberTheoryRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "competitive-programming.introduction": {
+    "animationId": "competitive-programming-introduction",
+    "component": "CompetitiveProgrammingIntroductionAnimation",
+    "status": "planned"
+  },
+  "competitive-programming.theory": {
+    "animationId": "competitive-programming-theory",
+    "component": "CompetitiveProgrammingTheoryAnimation",
+    "status": "planned"
+  },
+  "competitive-programming.operations": {
+    "animationId": "competitive-programming-operations",
+    "component": "CompetitiveProgrammingOperationsAnimation",
+    "status": "planned"
+  },
+  "competitive-programming.applications": {
+    "animationId": "competitive-programming-applications",
+    "component": "CompetitiveProgrammingApplicationsAnimation",
+    "status": "planned"
+  },
+  "competitive-programming.practice": {
+    "animationId": "competitive-programming-practice",
+    "component": "CompetitiveProgrammingPracticeAnimation",
+    "status": "planned"
+  },
+  "competitive-programming.interview-questions": {
+    "animationId": "competitive-programming-interview-questions",
+    "component": "CompetitiveProgrammingInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "competitive-programming.animation-ai-mapping": {
+    "animationId": "competitive-programming-animation-ai-mapping",
+    "component": "CompetitiveProgrammingAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "competitive-programming.revision-summary": {
+    "animationId": "competitive-programming-revision-summary",
+    "component": "CompetitiveProgrammingRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "interview-preparation.introduction": {
+    "animationId": "interview-preparation-introduction",
+    "component": "InterviewPreparationIntroductionAnimation",
+    "status": "planned"
+  },
+  "interview-preparation.theory": {
+    "animationId": "interview-preparation-theory",
+    "component": "InterviewPreparationTheoryAnimation",
+    "status": "planned"
+  },
+  "interview-preparation.operations": {
+    "animationId": "interview-preparation-operations",
+    "component": "InterviewPreparationOperationsAnimation",
+    "status": "planned"
+  },
+  "interview-preparation.applications": {
+    "animationId": "interview-preparation-applications",
+    "component": "InterviewPreparationApplicationsAnimation",
+    "status": "planned"
+  },
+  "interview-preparation.practice": {
+    "animationId": "interview-preparation-practice",
+    "component": "InterviewPreparationPracticeAnimation",
+    "status": "planned"
+  },
+  "interview-preparation.interview-questions": {
+    "animationId": "interview-preparation-interview-questions",
+    "component": "InterviewPreparationInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "interview-preparation.animation-ai-mapping": {
+    "animationId": "interview-preparation-animation-ai-mapping",
+    "component": "InterviewPreparationAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "interview-preparation.revision-summary": {
+    "animationId": "interview-preparation-revision-summary",
+    "component": "InterviewPreparationRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "advanced-graph-algorithms.introduction": {
+    "animationId": "advanced-graph-algorithms-introduction",
+    "component": "AdvancedGraphAlgorithmsIntroductionAnimation",
+    "status": "planned"
+  },
+  "advanced-graph-algorithms.theory": {
+    "animationId": "advanced-graph-algorithms-theory",
+    "component": "AdvancedGraphAlgorithmsTheoryAnimation",
+    "status": "planned"
+  },
+  "advanced-graph-algorithms.operations": {
+    "animationId": "advanced-graph-algorithms-operations",
+    "component": "AdvancedGraphAlgorithmsOperationsAnimation",
+    "status": "planned"
+  },
+  "advanced-graph-algorithms.applications": {
+    "animationId": "advanced-graph-algorithms-applications",
+    "component": "AdvancedGraphAlgorithmsApplicationsAnimation",
+    "status": "planned"
+  },
+  "advanced-graph-algorithms.practice": {
+    "animationId": "advanced-graph-algorithms-practice",
+    "component": "AdvancedGraphAlgorithmsPracticeAnimation",
+    "status": "planned"
+  },
+  "advanced-graph-algorithms.interview-questions": {
+    "animationId": "advanced-graph-algorithms-interview-questions",
+    "component": "AdvancedGraphAlgorithmsInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "advanced-graph-algorithms.animation-ai-mapping": {
+    "animationId": "advanced-graph-algorithms-animation-ai-mapping",
+    "component": "AdvancedGraphAlgorithmsAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "advanced-graph-algorithms.revision-summary": {
+    "animationId": "advanced-graph-algorithms-revision-summary",
+    "component": "AdvancedGraphAlgorithmsRevisionSummaryAnimation",
+    "status": "planned"
+  },
+  "advanced-dynamic-programming.introduction": {
+    "animationId": "advanced-dynamic-programming-introduction",
+    "component": "AdvancedDynamicProgrammingIntroductionAnimation",
+    "status": "planned"
+  },
+  "advanced-dynamic-programming.theory": {
+    "animationId": "advanced-dynamic-programming-theory",
+    "component": "AdvancedDynamicProgrammingTheoryAnimation",
+    "status": "planned"
+  },
+  "advanced-dynamic-programming.operations": {
+    "animationId": "advanced-dynamic-programming-operations",
+    "component": "AdvancedDynamicProgrammingOperationsAnimation",
+    "status": "planned"
+  },
+  "advanced-dynamic-programming.applications": {
+    "animationId": "advanced-dynamic-programming-applications",
+    "component": "AdvancedDynamicProgrammingApplicationsAnimation",
+    "status": "planned"
+  },
+  "advanced-dynamic-programming.practice": {
+    "animationId": "advanced-dynamic-programming-practice",
+    "component": "AdvancedDynamicProgrammingPracticeAnimation",
+    "status": "planned"
+  },
+  "advanced-dynamic-programming.interview-questions": {
+    "animationId": "advanced-dynamic-programming-interview-questions",
+    "component": "AdvancedDynamicProgrammingInterviewQuestionsAnimation",
+    "status": "planned"
+  },
+  "advanced-dynamic-programming.animation-ai-mapping": {
+    "animationId": "advanced-dynamic-programming-animation-ai-mapping",
+    "component": "AdvancedDynamicProgrammingAnimationAiMappingAnimation",
+    "status": "planned"
+  },
+  "advanced-dynamic-programming.revision-summary": {
+    "animationId": "advanced-dynamic-programming-revision-summary",
+    "component": "AdvancedDynamicProgrammingRevisionSummaryAnimation",
+    "status": "planned"
+  }
+}

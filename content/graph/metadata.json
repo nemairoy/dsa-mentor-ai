@@ -1,0 +1,908 @@
+{
+  "chapterId": "graph",
+  "title": "Graph",
+  "description": "Graph topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Intermediate",
+  "estimatedHours": 5,
+  "tags": [
+    "graph",
+    "traversal"
+  ],
+  "animationNamespace": "Graph",
+  "aiContext": "Graph chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "graph-introduction",
+      "component": "GraphIntroductionAnimation",
+      "status": "planned"
+    },
+    "representation": {
+      "animationId": "graph-representation",
+      "component": "GraphRepresentationAnimation",
+      "status": "planned"
+    },
+    "bfs": {
+      "animationId": "graph-bfs",
+      "component": "GraphBFSAnimation",
+      "status": "planned"
+    },
+    "dfs": {
+      "animationId": "graph-dfs",
+      "component": "GraphDFSAnimation",
+      "status": "planned"
+    },
+    "connected-components": {
+      "animationId": "graph-connected-components",
+      "component": "GraphConnectedComponentsAnimation",
+      "status": "planned"
+    },
+    "cycle-detection": {
+      "animationId": "graph-cycle-detection",
+      "component": "GraphCycleDetectionAnimation",
+      "status": "planned"
+    },
+    "topological-sort": {
+      "animationId": "graph-topological-sort",
+      "component": "GraphTopologicalSortAnimation",
+      "status": "planned"
+    },
+    "shortest-path-unweighted": {
+      "animationId": "graph-shortest-path-unweighted",
+      "component": "GraphShortestPathUnweightedAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "graph-practice",
+      "component": "GraphPracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "graph-interview-questions",
+      "component": "GraphInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "graph-revision-summary",
+      "component": "GraphRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "graph.introduction",
+      "chapter": "Graph",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "graph",
+        "traversal",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Graph: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "graph-introduction",
+      "animationComponent": "GraphIntroductionAnimation",
+      "aiContext": "Graph / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Graph, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Graph: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "graph",
+        "lessonSlug": "introduction",
+        "topic": "Graph",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "graph.introduction",
+        "tags": [
+          "graph",
+          "traversal",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "graph/introduction"
+      ],
+      "futureQuizId": "quiz-graph-introduction",
+      "futureFlashcardId": "flashcards-graph-introduction",
+      "futureProjectId": "project-graph-introduction",
+      "images": [
+        "content/graph/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "graph-introduction.py",
+          "code": "def graph_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(graph_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "representation": {
+      "lessonId": "graph.representation",
+      "chapter": "Graph",
+      "title": "Representation",
+      "summary": "Learn Representation in Graph with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "graph",
+        "traversal",
+        "representation"
+      ],
+      "learningObjectives": [
+        "Explain Graph: Representation clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "graph-representation",
+      "animationComponent": "GraphRepresentationAnimation",
+      "aiContext": "Graph / Representation: Learn Representation in Graph with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Representation lesson for Graph, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Graph: Representation. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "graph",
+        "lessonSlug": "representation",
+        "topic": "Graph",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "graph.representation",
+        "tags": [
+          "graph",
+          "traversal",
+          "representation"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "graph/introduction"
+      ],
+      "futureQuizId": "quiz-graph-representation",
+      "futureFlashcardId": "flashcards-graph-representation",
+      "futureProjectId": "project-graph-representation",
+      "images": [
+        "content/graph/images/representation.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Representation from scratch.",
+        "Dry-run Representation on two edge cases.",
+        "Explain Representation complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "graph-representation.py",
+          "code": "def graph_representation(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(graph_representation([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "bfs": {
+      "lessonId": "graph.bfs",
+      "chapter": "Graph",
+      "title": "BFS",
+      "summary": "Learn BFS in Graph with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "graph",
+        "traversal",
+        "bfs"
+      ],
+      "learningObjectives": [
+        "Explain Graph: BFS clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "graph-bfs",
+      "animationComponent": "GraphBFSAnimation",
+      "aiContext": "Graph / BFS: Learn BFS in Graph with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "BFS lesson for Graph, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Graph: BFS. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "graph",
+        "lessonSlug": "bfs",
+        "topic": "Graph",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "graph.bfs",
+        "tags": [
+          "graph",
+          "traversal",
+          "bfs"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "graph/introduction"
+      ],
+      "futureQuizId": "quiz-graph-bfs",
+      "futureFlashcardId": "flashcards-graph-bfs",
+      "futureProjectId": "project-graph-bfs",
+      "images": [
+        "content/graph/images/bfs.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement BFS from scratch.",
+        "Dry-run BFS on two edge cases.",
+        "Explain BFS complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "graph-bfs.py",
+          "code": "def graph_bfs(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(graph_bfs([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "dfs": {
+      "lessonId": "graph.dfs",
+      "chapter": "Graph",
+      "title": "DFS",
+      "summary": "Learn DFS in Graph with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "graph",
+        "traversal",
+        "dfs"
+      ],
+      "learningObjectives": [
+        "Explain Graph: DFS clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "graph-dfs",
+      "animationComponent": "GraphDFSAnimation",
+      "aiContext": "Graph / DFS: Learn DFS in Graph with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "DFS lesson for Graph, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Graph: DFS. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "graph",
+        "lessonSlug": "dfs",
+        "topic": "Graph",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "graph.dfs",
+        "tags": [
+          "graph",
+          "traversal",
+          "dfs"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "graph/introduction"
+      ],
+      "futureQuizId": "quiz-graph-dfs",
+      "futureFlashcardId": "flashcards-graph-dfs",
+      "futureProjectId": "project-graph-dfs",
+      "images": [
+        "content/graph/images/dfs.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement DFS from scratch.",
+        "Dry-run DFS on two edge cases.",
+        "Explain DFS complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "graph-dfs.py",
+          "code": "def graph_dfs(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(graph_dfs([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "connected-components": {
+      "lessonId": "graph.connected-components",
+      "chapter": "Graph",
+      "title": "Connected Components",
+      "summary": "Learn Connected Components in Graph with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "graph",
+        "traversal",
+        "connected-components"
+      ],
+      "learningObjectives": [
+        "Explain Graph: Connected Components clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "graph-connected-components",
+      "animationComponent": "GraphConnectedComponentsAnimation",
+      "aiContext": "Graph / Connected Components: Learn Connected Components in Graph with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Connected Components lesson for Graph, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Graph: Connected Components. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "graph",
+        "lessonSlug": "connected-components",
+        "topic": "Graph",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "graph.connected-components",
+        "tags": [
+          "graph",
+          "traversal",
+          "connected-components"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "graph/introduction"
+      ],
+      "futureQuizId": "quiz-graph-connected-components",
+      "futureFlashcardId": "flashcards-graph-connected-components",
+      "futureProjectId": "project-graph-connected-components",
+      "images": [
+        "content/graph/images/connected-components.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Connected Components from scratch.",
+        "Dry-run Connected Components on two edge cases.",
+        "Explain Connected Components complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "graph-connected-components.py",
+          "code": "def graph_connected_components(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(graph_connected_components([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "cycle-detection": {
+      "lessonId": "graph.cycle-detection",
+      "chapter": "Graph",
+      "title": "Cycle Detection",
+      "summary": "Learn Cycle Detection in Graph with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "graph",
+        "traversal",
+        "cycle-detection"
+      ],
+      "learningObjectives": [
+        "Explain Graph: Cycle Detection clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "graph-cycle-detection",
+      "animationComponent": "GraphCycleDetectionAnimation",
+      "aiContext": "Graph / Cycle Detection: Learn Cycle Detection in Graph with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Cycle Detection lesson for Graph, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Graph: Cycle Detection. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "graph",
+        "lessonSlug": "cycle-detection",
+        "topic": "Graph",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "graph.cycle-detection",
+        "tags": [
+          "graph",
+          "traversal",
+          "cycle-detection"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "graph/introduction"
+      ],
+      "futureQuizId": "quiz-graph-cycle-detection",
+      "futureFlashcardId": "flashcards-graph-cycle-detection",
+      "futureProjectId": "project-graph-cycle-detection",
+      "images": [
+        "content/graph/images/cycle-detection.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Cycle Detection from scratch.",
+        "Dry-run Cycle Detection on two edge cases.",
+        "Explain Cycle Detection complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "graph-cycle-detection.py",
+          "code": "def graph_cycle_detection(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(graph_cycle_detection([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "topological-sort": {
+      "lessonId": "graph.topological-sort",
+      "chapter": "Graph",
+      "title": "Topological Sort",
+      "summary": "Learn Topological Sort in Graph with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "graph",
+        "traversal",
+        "topological-sort"
+      ],
+      "learningObjectives": [
+        "Explain Graph: Topological Sort clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "graph-topological-sort",
+      "animationComponent": "GraphTopologicalSortAnimation",
+      "aiContext": "Graph / Topological Sort: Learn Topological Sort in Graph with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Topological Sort lesson for Graph, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Graph: Topological Sort. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "graph",
+        "lessonSlug": "topological-sort",
+        "topic": "Graph",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "graph.topological-sort",
+        "tags": [
+          "graph",
+          "traversal",
+          "topological-sort"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "graph/introduction"
+      ],
+      "futureQuizId": "quiz-graph-topological-sort",
+      "futureFlashcardId": "flashcards-graph-topological-sort",
+      "futureProjectId": "project-graph-topological-sort",
+      "images": [
+        "content/graph/images/topological-sort.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Topological Sort from scratch.",
+        "Dry-run Topological Sort on two edge cases.",
+        "Explain Topological Sort complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "graph-topological-sort.py",
+          "code": "def graph_topological_sort(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(graph_topological_sort([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "shortest-path-unweighted": {
+      "lessonId": "graph.shortest-path-unweighted",
+      "chapter": "Graph",
+      "title": "Shortest Path Unweighted",
+      "summary": "Learn Shortest Path Unweighted in Graph with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "graph",
+        "traversal",
+        "shortest-path-unweighted"
+      ],
+      "learningObjectives": [
+        "Explain Graph: Shortest Path Unweighted clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "graph-shortest-path-unweighted",
+      "animationComponent": "GraphShortestPathUnweightedAnimation",
+      "aiContext": "Graph / Shortest Path Unweighted: Learn Shortest Path Unweighted in Graph with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Shortest Path Unweighted lesson for Graph, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Graph: Shortest Path Unweighted. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "graph",
+        "lessonSlug": "shortest-path-unweighted",
+        "topic": "Graph",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "graph.shortest-path-unweighted",
+        "tags": [
+          "graph",
+          "traversal",
+          "shortest-path-unweighted"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "graph/introduction"
+      ],
+      "futureQuizId": "quiz-graph-shortest-path-unweighted",
+      "futureFlashcardId": "flashcards-graph-shortest-path-unweighted",
+      "futureProjectId": "project-graph-shortest-path-unweighted",
+      "images": [
+        "content/graph/images/shortest-path-unweighted.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Shortest Path Unweighted from scratch.",
+        "Dry-run Shortest Path Unweighted on two edge cases.",
+        "Explain Shortest Path Unweighted complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "graph-shortest-path-unweighted.py",
+          "code": "def graph_shortest_path_unweighted(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(graph_shortest_path_unweighted([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "graph.practice",
+      "chapter": "Graph",
+      "title": "Practice",
+      "summary": "Learn Practice in Graph with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "graph",
+        "traversal",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Graph: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "graph-practice",
+      "animationComponent": "GraphPracticeAnimation",
+      "aiContext": "Graph / Practice: Learn Practice in Graph with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Graph, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Graph: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "graph",
+        "lessonSlug": "practice",
+        "topic": "Graph",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "graph.practice",
+        "tags": [
+          "graph",
+          "traversal",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "graph/introduction"
+      ],
+      "futureQuizId": "quiz-graph-practice",
+      "futureFlashcardId": "flashcards-graph-practice",
+      "futureProjectId": "project-graph-practice",
+      "images": [
+        "content/graph/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "graph-practice.py",
+          "code": "def graph_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(graph_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "graph.interview-questions",
+      "chapter": "Graph",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Graph with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "graph",
+        "traversal",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Graph: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "graph-interview-questions",
+      "animationComponent": "GraphInterviewQuestionsAnimation",
+      "aiContext": "Graph / Interview Questions: Learn Interview Questions in Graph with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Graph, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Graph: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "graph",
+        "lessonSlug": "interview-questions",
+        "topic": "Graph",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "graph.interview-questions",
+        "tags": [
+          "graph",
+          "traversal",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "graph/introduction"
+      ],
+      "futureQuizId": "quiz-graph-interview-questions",
+      "futureFlashcardId": "flashcards-graph-interview-questions",
+      "futureProjectId": "project-graph-interview-questions",
+      "images": [
+        "content/graph/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "graph-interview-questions.py",
+          "code": "def graph_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(graph_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "graph.revision-summary",
+      "chapter": "Graph",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Graph with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "graph",
+        "traversal",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Graph: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "graph-revision-summary",
+      "animationComponent": "GraphRevisionSummaryAnimation",
+      "aiContext": "Graph / Revision Summary: Learn Revision Summary in Graph with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Graph, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Graph: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "graph",
+        "lessonSlug": "revision-summary",
+        "topic": "Graph",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "graph.revision-summary",
+        "tags": [
+          "graph",
+          "traversal",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "graph/introduction"
+      ],
+      "futureQuizId": "quiz-graph-revision-summary",
+      "futureFlashcardId": "flashcards-graph-revision-summary",
+      "futureProjectId": "project-graph-revision-summary",
+      "images": [
+        "content/graph/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "graph-revision-summary.py",
+          "code": "def graph_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(graph_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

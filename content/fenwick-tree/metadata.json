@@ -1,0 +1,827 @@
+{
+  "chapterId": "fenwick-tree",
+  "title": "Fenwick Tree",
+  "description": "Fenwick Tree topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Advanced",
+  "estimatedHours": 5,
+  "tags": [
+    "range-query",
+    "binary-indexed-tree"
+  ],
+  "animationNamespace": "FenwickTree",
+  "aiContext": "Fenwick Tree chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "fenwick-tree-introduction",
+      "component": "FenwickTreeIntroductionAnimation",
+      "status": "planned"
+    },
+    "binary-indexed-tree-model": {
+      "animationId": "fenwick-tree-binary-indexed-tree-model",
+      "component": "FenwickTreeBinaryIndexedTreeModelAnimation",
+      "status": "planned"
+    },
+    "lsb": {
+      "animationId": "fenwick-tree-lsb",
+      "component": "FenwickTreeLsbAnimation",
+      "status": "planned"
+    },
+    "prefix-sum-query": {
+      "animationId": "fenwick-tree-prefix-sum-query",
+      "component": "FenwickTreePrefixSumQueryAnimation",
+      "status": "planned"
+    },
+    "point-update": {
+      "animationId": "fenwick-tree-point-update",
+      "component": "FenwickTreePointUpdateAnimation",
+      "status": "planned"
+    },
+    "range-sum-query": {
+      "animationId": "fenwick-tree-range-sum-query",
+      "component": "FenwickTreeRangeSumQueryAnimation",
+      "status": "planned"
+    },
+    "fenwick-vs-segment-tree": {
+      "animationId": "fenwick-tree-fenwick-vs-segment-tree",
+      "component": "FenwickTreeFenwickVsSegmentTreeAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "fenwick-tree-practice",
+      "component": "FenwickTreePracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "fenwick-tree-interview-questions",
+      "component": "FenwickTreeInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "fenwick-tree-revision-summary",
+      "component": "FenwickTreeRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "fenwick-tree.introduction",
+      "chapter": "Fenwick Tree",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "range-query",
+        "binary-indexed-tree",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Fenwick Tree: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "fenwick-tree-introduction",
+      "animationComponent": "FenwickTreeIntroductionAnimation",
+      "aiContext": "Fenwick Tree / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Fenwick Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Fenwick Tree: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "fenwick-tree",
+        "lessonSlug": "introduction",
+        "topic": "Fenwick Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "fenwick-tree.introduction",
+        "tags": [
+          "range-query",
+          "binary-indexed-tree",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "fenwick-tree/introduction"
+      ],
+      "futureQuizId": "quiz-fenwick-tree-introduction",
+      "futureFlashcardId": "flashcards-fenwick-tree-introduction",
+      "futureProjectId": "project-fenwick-tree-introduction",
+      "images": [
+        "content/fenwick-tree/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "fenwick-tree-introduction.py",
+          "code": "def fenwick_tree_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(fenwick_tree_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "binary-indexed-tree-model": {
+      "lessonId": "fenwick-tree.binary-indexed-tree-model",
+      "chapter": "Fenwick Tree",
+      "title": "Binary Indexed Tree Model",
+      "summary": "Learn Binary Indexed Tree Model in Fenwick Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "range-query",
+        "binary-indexed-tree",
+        "binary-indexed-tree-model"
+      ],
+      "learningObjectives": [
+        "Explain Fenwick Tree: Binary Indexed Tree Model clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "fenwick-tree-binary-indexed-tree-model",
+      "animationComponent": "FenwickTreeBinaryIndexedTreeModelAnimation",
+      "aiContext": "Fenwick Tree / Binary Indexed Tree Model: Learn Binary Indexed Tree Model in Fenwick Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Binary Indexed Tree Model lesson for Fenwick Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Fenwick Tree: Binary Indexed Tree Model. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "fenwick-tree",
+        "lessonSlug": "binary-indexed-tree-model",
+        "topic": "Fenwick Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "fenwick-tree.binary-indexed-tree-model",
+        "tags": [
+          "range-query",
+          "binary-indexed-tree",
+          "binary-indexed-tree-model"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "fenwick-tree/introduction"
+      ],
+      "futureQuizId": "quiz-fenwick-tree-binary-indexed-tree-model",
+      "futureFlashcardId": "flashcards-fenwick-tree-binary-indexed-tree-model",
+      "futureProjectId": "project-fenwick-tree-binary-indexed-tree-model",
+      "images": [
+        "content/fenwick-tree/images/binary-indexed-tree-model.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Binary Indexed Tree Model from scratch.",
+        "Dry-run Binary Indexed Tree Model on two edge cases.",
+        "Explain Binary Indexed Tree Model complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "fenwick-tree-binary-indexed-tree-model.py",
+          "code": "def fenwick_tree_binary_indexed_tree_model(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(fenwick_tree_binary_indexed_tree_model([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "lsb": {
+      "lessonId": "fenwick-tree.lsb",
+      "chapter": "Fenwick Tree",
+      "title": "Lsb",
+      "summary": "Learn Lsb in Fenwick Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "range-query",
+        "binary-indexed-tree",
+        "lsb"
+      ],
+      "learningObjectives": [
+        "Explain Fenwick Tree: Lsb clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "fenwick-tree-lsb",
+      "animationComponent": "FenwickTreeLsbAnimation",
+      "aiContext": "Fenwick Tree / Lsb: Learn Lsb in Fenwick Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Lsb lesson for Fenwick Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Fenwick Tree: Lsb. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "fenwick-tree",
+        "lessonSlug": "lsb",
+        "topic": "Fenwick Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "fenwick-tree.lsb",
+        "tags": [
+          "range-query",
+          "binary-indexed-tree",
+          "lsb"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "fenwick-tree/introduction"
+      ],
+      "futureQuizId": "quiz-fenwick-tree-lsb",
+      "futureFlashcardId": "flashcards-fenwick-tree-lsb",
+      "futureProjectId": "project-fenwick-tree-lsb",
+      "images": [
+        "content/fenwick-tree/images/lsb.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Lsb from scratch.",
+        "Dry-run Lsb on two edge cases.",
+        "Explain Lsb complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "fenwick-tree-lsb.py",
+          "code": "def fenwick_tree_lsb(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(fenwick_tree_lsb([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "prefix-sum-query": {
+      "lessonId": "fenwick-tree.prefix-sum-query",
+      "chapter": "Fenwick Tree",
+      "title": "Prefix Sum Query",
+      "summary": "Learn Prefix Sum Query in Fenwick Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "range-query",
+        "binary-indexed-tree",
+        "prefix-sum-query"
+      ],
+      "learningObjectives": [
+        "Explain Fenwick Tree: Prefix Sum Query clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "fenwick-tree-prefix-sum-query",
+      "animationComponent": "FenwickTreePrefixSumQueryAnimation",
+      "aiContext": "Fenwick Tree / Prefix Sum Query: Learn Prefix Sum Query in Fenwick Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Prefix Sum Query lesson for Fenwick Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Fenwick Tree: Prefix Sum Query. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "fenwick-tree",
+        "lessonSlug": "prefix-sum-query",
+        "topic": "Fenwick Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "fenwick-tree.prefix-sum-query",
+        "tags": [
+          "range-query",
+          "binary-indexed-tree",
+          "prefix-sum-query"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "fenwick-tree/introduction"
+      ],
+      "futureQuizId": "quiz-fenwick-tree-prefix-sum-query",
+      "futureFlashcardId": "flashcards-fenwick-tree-prefix-sum-query",
+      "futureProjectId": "project-fenwick-tree-prefix-sum-query",
+      "images": [
+        "content/fenwick-tree/images/prefix-sum-query.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Prefix Sum Query from scratch.",
+        "Dry-run Prefix Sum Query on two edge cases.",
+        "Explain Prefix Sum Query complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "fenwick-tree-prefix-sum-query.py",
+          "code": "def fenwick_tree_prefix_sum_query(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(fenwick_tree_prefix_sum_query([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "point-update": {
+      "lessonId": "fenwick-tree.point-update",
+      "chapter": "Fenwick Tree",
+      "title": "Point Update",
+      "summary": "Learn Point Update in Fenwick Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "range-query",
+        "binary-indexed-tree",
+        "point-update"
+      ],
+      "learningObjectives": [
+        "Explain Fenwick Tree: Point Update clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "fenwick-tree-point-update",
+      "animationComponent": "FenwickTreePointUpdateAnimation",
+      "aiContext": "Fenwick Tree / Point Update: Learn Point Update in Fenwick Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Point Update lesson for Fenwick Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Fenwick Tree: Point Update. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "fenwick-tree",
+        "lessonSlug": "point-update",
+        "topic": "Fenwick Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "fenwick-tree.point-update",
+        "tags": [
+          "range-query",
+          "binary-indexed-tree",
+          "point-update"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "fenwick-tree/introduction"
+      ],
+      "futureQuizId": "quiz-fenwick-tree-point-update",
+      "futureFlashcardId": "flashcards-fenwick-tree-point-update",
+      "futureProjectId": "project-fenwick-tree-point-update",
+      "images": [
+        "content/fenwick-tree/images/point-update.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Point Update from scratch.",
+        "Dry-run Point Update on two edge cases.",
+        "Explain Point Update complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "fenwick-tree-point-update.py",
+          "code": "def fenwick_tree_point_update(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(fenwick_tree_point_update([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "range-sum-query": {
+      "lessonId": "fenwick-tree.range-sum-query",
+      "chapter": "Fenwick Tree",
+      "title": "Range Sum Query",
+      "summary": "Learn Range Sum Query in Fenwick Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "range-query",
+        "binary-indexed-tree",
+        "range-sum-query"
+      ],
+      "learningObjectives": [
+        "Explain Fenwick Tree: Range Sum Query clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "fenwick-tree-range-sum-query",
+      "animationComponent": "FenwickTreeRangeSumQueryAnimation",
+      "aiContext": "Fenwick Tree / Range Sum Query: Learn Range Sum Query in Fenwick Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Range Sum Query lesson for Fenwick Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Fenwick Tree: Range Sum Query. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "fenwick-tree",
+        "lessonSlug": "range-sum-query",
+        "topic": "Fenwick Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "fenwick-tree.range-sum-query",
+        "tags": [
+          "range-query",
+          "binary-indexed-tree",
+          "range-sum-query"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "fenwick-tree/introduction"
+      ],
+      "futureQuizId": "quiz-fenwick-tree-range-sum-query",
+      "futureFlashcardId": "flashcards-fenwick-tree-range-sum-query",
+      "futureProjectId": "project-fenwick-tree-range-sum-query",
+      "images": [
+        "content/fenwick-tree/images/range-sum-query.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Range Sum Query from scratch.",
+        "Dry-run Range Sum Query on two edge cases.",
+        "Explain Range Sum Query complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "fenwick-tree-range-sum-query.py",
+          "code": "def fenwick_tree_range_sum_query(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(fenwick_tree_range_sum_query([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "fenwick-vs-segment-tree": {
+      "lessonId": "fenwick-tree.fenwick-vs-segment-tree",
+      "chapter": "Fenwick Tree",
+      "title": "Fenwick Vs Segment Tree",
+      "summary": "Learn Fenwick Vs Segment Tree in Fenwick Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "range-query",
+        "binary-indexed-tree",
+        "fenwick-vs-segment-tree"
+      ],
+      "learningObjectives": [
+        "Explain Fenwick Tree: Fenwick Vs Segment Tree clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "fenwick-tree-fenwick-vs-segment-tree",
+      "animationComponent": "FenwickTreeFenwickVsSegmentTreeAnimation",
+      "aiContext": "Fenwick Tree / Fenwick Vs Segment Tree: Learn Fenwick Vs Segment Tree in Fenwick Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Fenwick Vs Segment Tree lesson for Fenwick Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Fenwick Tree: Fenwick Vs Segment Tree. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "fenwick-tree",
+        "lessonSlug": "fenwick-vs-segment-tree",
+        "topic": "Fenwick Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "fenwick-tree.fenwick-vs-segment-tree",
+        "tags": [
+          "range-query",
+          "binary-indexed-tree",
+          "fenwick-vs-segment-tree"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "fenwick-tree/introduction"
+      ],
+      "futureQuizId": "quiz-fenwick-tree-fenwick-vs-segment-tree",
+      "futureFlashcardId": "flashcards-fenwick-tree-fenwick-vs-segment-tree",
+      "futureProjectId": "project-fenwick-tree-fenwick-vs-segment-tree",
+      "images": [
+        "content/fenwick-tree/images/fenwick-vs-segment-tree.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Fenwick Vs Segment Tree from scratch.",
+        "Dry-run Fenwick Vs Segment Tree on two edge cases.",
+        "Explain Fenwick Vs Segment Tree complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "fenwick-tree-fenwick-vs-segment-tree.py",
+          "code": "def fenwick_tree_fenwick_vs_segment_tree(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(fenwick_tree_fenwick_vs_segment_tree([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "fenwick-tree.practice",
+      "chapter": "Fenwick Tree",
+      "title": "Practice",
+      "summary": "Learn Practice in Fenwick Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "range-query",
+        "binary-indexed-tree",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Fenwick Tree: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "fenwick-tree-practice",
+      "animationComponent": "FenwickTreePracticeAnimation",
+      "aiContext": "Fenwick Tree / Practice: Learn Practice in Fenwick Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Fenwick Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Fenwick Tree: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "fenwick-tree",
+        "lessonSlug": "practice",
+        "topic": "Fenwick Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "fenwick-tree.practice",
+        "tags": [
+          "range-query",
+          "binary-indexed-tree",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "fenwick-tree/introduction"
+      ],
+      "futureQuizId": "quiz-fenwick-tree-practice",
+      "futureFlashcardId": "flashcards-fenwick-tree-practice",
+      "futureProjectId": "project-fenwick-tree-practice",
+      "images": [
+        "content/fenwick-tree/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "fenwick-tree-practice.py",
+          "code": "def fenwick_tree_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(fenwick_tree_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "fenwick-tree.interview-questions",
+      "chapter": "Fenwick Tree",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Fenwick Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "range-query",
+        "binary-indexed-tree",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Fenwick Tree: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "fenwick-tree-interview-questions",
+      "animationComponent": "FenwickTreeInterviewQuestionsAnimation",
+      "aiContext": "Fenwick Tree / Interview Questions: Learn Interview Questions in Fenwick Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Fenwick Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Fenwick Tree: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "fenwick-tree",
+        "lessonSlug": "interview-questions",
+        "topic": "Fenwick Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "fenwick-tree.interview-questions",
+        "tags": [
+          "range-query",
+          "binary-indexed-tree",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "fenwick-tree/introduction"
+      ],
+      "futureQuizId": "quiz-fenwick-tree-interview-questions",
+      "futureFlashcardId": "flashcards-fenwick-tree-interview-questions",
+      "futureProjectId": "project-fenwick-tree-interview-questions",
+      "images": [
+        "content/fenwick-tree/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "fenwick-tree-interview-questions.py",
+          "code": "def fenwick_tree_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(fenwick_tree_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "fenwick-tree.revision-summary",
+      "chapter": "Fenwick Tree",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Fenwick Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "range-query",
+        "binary-indexed-tree",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Fenwick Tree: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "fenwick-tree-revision-summary",
+      "animationComponent": "FenwickTreeRevisionSummaryAnimation",
+      "aiContext": "Fenwick Tree / Revision Summary: Learn Revision Summary in Fenwick Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Fenwick Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Fenwick Tree: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "fenwick-tree",
+        "lessonSlug": "revision-summary",
+        "topic": "Fenwick Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "fenwick-tree.revision-summary",
+        "tags": [
+          "range-query",
+          "binary-indexed-tree",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "fenwick-tree/introduction"
+      ],
+      "futureQuizId": "quiz-fenwick-tree-revision-summary",
+      "futureFlashcardId": "flashcards-fenwick-tree-revision-summary",
+      "futureProjectId": "project-fenwick-tree-revision-summary",
+      "images": [
+        "content/fenwick-tree/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "fenwick-tree-revision-summary.py",
+          "code": "def fenwick_tree_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(fenwick_tree_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

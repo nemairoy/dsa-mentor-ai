@@ -1,0 +1,1768 @@
+{
+  "version": 2,
+  "generatedAt": "2026-07-09T08:17:51.832Z",
+  "chapters": [
+    {
+      "slug": "introduction",
+      "order": 1,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "what-is-dsa",
+          "order": 2
+        },
+        {
+          "slug": "problem-solving-process",
+          "order": 3
+        },
+        {
+          "slug": "pseudocode",
+          "order": 4
+        },
+        {
+          "slug": "dry-run",
+          "order": 5
+        },
+        {
+          "slug": "complexity-preview",
+          "order": 6
+        },
+        {
+          "slug": "practice",
+          "order": 7
+        },
+        {
+          "slug": "interview-questions",
+          "order": 8
+        },
+        {
+          "slug": "revision-summary",
+          "order": 9
+        }
+      ]
+    },
+    {
+      "slug": "algorithm-analysis",
+      "order": 2,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "input-size",
+          "order": 2
+        },
+        {
+          "slug": "operation-counting",
+          "order": 3
+        },
+        {
+          "slug": "best-average-worst-case",
+          "order": 4
+        },
+        {
+          "slug": "asymptotic-notation",
+          "order": 5
+        },
+        {
+          "slug": "recurrence-basics",
+          "order": 6
+        },
+        {
+          "slug": "practice",
+          "order": 7
+        },
+        {
+          "slug": "interview-questions",
+          "order": 8
+        },
+        {
+          "slug": "revision-summary",
+          "order": 9
+        }
+      ]
+    },
+    {
+      "slug": "time-complexity",
+      "order": 3,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "constant-time",
+          "order": 2
+        },
+        {
+          "slug": "linear-time",
+          "order": 3
+        },
+        {
+          "slug": "logarithmic-time",
+          "order": 4
+        },
+        {
+          "slug": "quadratic-time",
+          "order": 5
+        },
+        {
+          "slug": "n-log-n-time",
+          "order": 6
+        },
+        {
+          "slug": "amortized-time",
+          "order": 7
+        },
+        {
+          "slug": "practice",
+          "order": 8
+        },
+        {
+          "slug": "interview-questions",
+          "order": 9
+        },
+        {
+          "slug": "revision-summary",
+          "order": 10
+        }
+      ]
+    },
+    {
+      "slug": "space-complexity",
+      "order": 4,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "auxiliary-space",
+          "order": 2
+        },
+        {
+          "slug": "input-space",
+          "order": 3
+        },
+        {
+          "slug": "recursion-stack",
+          "order": 4
+        },
+        {
+          "slug": "in-place-algorithms",
+          "order": 5
+        },
+        {
+          "slug": "space-time-tradeoff",
+          "order": 6
+        },
+        {
+          "slug": "practice",
+          "order": 7
+        },
+        {
+          "slug": "interview-questions",
+          "order": 8
+        },
+        {
+          "slug": "revision-summary",
+          "order": 9
+        }
+      ]
+    },
+    {
+      "slug": "big-o",
+      "order": 5,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "definition",
+          "order": 2
+        },
+        {
+          "slug": "drop-constants",
+          "order": 3
+        },
+        {
+          "slug": "dominant-term",
+          "order": 4
+        },
+        {
+          "slug": "common-classes",
+          "order": 5
+        },
+        {
+          "slug": "examples",
+          "order": 6
+        },
+        {
+          "slug": "practice",
+          "order": 7
+        },
+        {
+          "slug": "interview-questions",
+          "order": 8
+        },
+        {
+          "slug": "revision-summary",
+          "order": 9
+        }
+      ]
+    },
+    {
+      "slug": "big-omega",
+      "order": 6,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "definition",
+          "order": 2
+        },
+        {
+          "slug": "lower-bound",
+          "order": 3
+        },
+        {
+          "slug": "best-case-analysis",
+          "order": 4
+        },
+        {
+          "slug": "examples",
+          "order": 5
+        },
+        {
+          "slug": "big-o-vs-big-omega",
+          "order": 6
+        },
+        {
+          "slug": "practice",
+          "order": 7
+        },
+        {
+          "slug": "interview-questions",
+          "order": 8
+        },
+        {
+          "slug": "revision-summary",
+          "order": 9
+        }
+      ]
+    },
+    {
+      "slug": "big-theta",
+      "order": 7,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "definition",
+          "order": 2
+        },
+        {
+          "slug": "tight-bound",
+          "order": 3
+        },
+        {
+          "slug": "sandwich-rule",
+          "order": 4
+        },
+        {
+          "slug": "examples",
+          "order": 5
+        },
+        {
+          "slug": "choosing-notation",
+          "order": 6
+        },
+        {
+          "slug": "practice",
+          "order": 7
+        },
+        {
+          "slug": "interview-questions",
+          "order": 8
+        },
+        {
+          "slug": "revision-summary",
+          "order": 9
+        }
+      ]
+    },
+    {
+      "slug": "arrays",
+      "order": 8,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "memory-layout",
+          "order": 2
+        },
+        {
+          "slug": "indexing",
+          "order": 3
+        },
+        {
+          "slug": "traversal",
+          "order": 4
+        },
+        {
+          "slug": "insertion",
+          "order": 5
+        },
+        {
+          "slug": "deletion",
+          "order": 6
+        },
+        {
+          "slug": "search",
+          "order": 7
+        },
+        {
+          "slug": "two-pointer",
+          "order": 8
+        },
+        {
+          "slug": "prefix-sum",
+          "order": 9
+        },
+        {
+          "slug": "sliding-window",
+          "order": 10
+        },
+        {
+          "slug": "practice",
+          "order": 11
+        },
+        {
+          "slug": "interview-questions",
+          "order": 12
+        },
+        {
+          "slug": "revision-summary",
+          "order": 13
+        }
+      ]
+    },
+    {
+      "slug": "strings",
+      "order": 9,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "character-arrays",
+          "order": 2
+        },
+        {
+          "slug": "traversal",
+          "order": 3
+        },
+        {
+          "slug": "frequency-counting",
+          "order": 4
+        },
+        {
+          "slug": "two-pointer",
+          "order": 5
+        },
+        {
+          "slug": "sliding-window",
+          "order": 6
+        },
+        {
+          "slug": "palindrome",
+          "order": 7
+        },
+        {
+          "slug": "pattern-matching",
+          "order": 8
+        },
+        {
+          "slug": "practice",
+          "order": 9
+        },
+        {
+          "slug": "interview-questions",
+          "order": 10
+        },
+        {
+          "slug": "revision-summary",
+          "order": 11
+        }
+      ]
+    },
+    {
+      "slug": "searching",
+      "order": 10,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "linear-search",
+          "order": 2
+        },
+        {
+          "slug": "binary-search",
+          "order": 3
+        },
+        {
+          "slug": "lower-bound",
+          "order": 4
+        },
+        {
+          "slug": "upper-bound",
+          "order": 5
+        },
+        {
+          "slug": "search-in-rotated-array",
+          "order": 6
+        },
+        {
+          "slug": "binary-search-on-answer",
+          "order": 7
+        },
+        {
+          "slug": "practice",
+          "order": 8
+        },
+        {
+          "slug": "interview-questions",
+          "order": 9
+        },
+        {
+          "slug": "revision-summary",
+          "order": 10
+        }
+      ]
+    },
+    {
+      "slug": "sorting",
+      "order": 11,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "bubble-sort",
+          "order": 2
+        },
+        {
+          "slug": "selection-sort",
+          "order": 3
+        },
+        {
+          "slug": "insertion-sort",
+          "order": 4
+        },
+        {
+          "slug": "merge-sort",
+          "order": 5
+        },
+        {
+          "slug": "quick-sort",
+          "order": 6
+        },
+        {
+          "slug": "heap-sort",
+          "order": 7
+        },
+        {
+          "slug": "counting-sort",
+          "order": 8
+        },
+        {
+          "slug": "radix-sort",
+          "order": 9
+        },
+        {
+          "slug": "stability-and-in-place",
+          "order": 10
+        },
+        {
+          "slug": "practice",
+          "order": 11
+        },
+        {
+          "slug": "interview-questions",
+          "order": 12
+        },
+        {
+          "slug": "revision-summary",
+          "order": 13
+        }
+      ]
+    },
+    {
+      "slug": "recursion",
+      "order": 12,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "call-stack",
+          "order": 2
+        },
+        {
+          "slug": "base-case",
+          "order": 3
+        },
+        {
+          "slug": "recursive-case",
+          "order": 4
+        },
+        {
+          "slug": "tree-recursion",
+          "order": 5
+        },
+        {
+          "slug": "tail-recursion",
+          "order": 6
+        },
+        {
+          "slug": "recursion-vs-iteration",
+          "order": 7
+        },
+        {
+          "slug": "practice",
+          "order": 8
+        },
+        {
+          "slug": "interview-questions",
+          "order": 9
+        },
+        {
+          "slug": "revision-summary",
+          "order": 10
+        }
+      ]
+    },
+    {
+      "slug": "backtracking",
+      "order": 13,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "choice-constraint-goal",
+          "order": 2
+        },
+        {
+          "slug": "subsets",
+          "order": 3
+        },
+        {
+          "slug": "permutations",
+          "order": 4
+        },
+        {
+          "slug": "combination-sum",
+          "order": 5
+        },
+        {
+          "slug": "n-queens",
+          "order": 6
+        },
+        {
+          "slug": "sudoku-solver",
+          "order": 7
+        },
+        {
+          "slug": "pruning",
+          "order": 8
+        },
+        {
+          "slug": "practice",
+          "order": 9
+        },
+        {
+          "slug": "interview-questions",
+          "order": 10
+        },
+        {
+          "slug": "revision-summary",
+          "order": 11
+        }
+      ]
+    },
+    {
+      "slug": "stack",
+      "order": 14,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "lifo-model",
+          "order": 2
+        },
+        {
+          "slug": "push",
+          "order": 3
+        },
+        {
+          "slug": "pop",
+          "order": 4
+        },
+        {
+          "slug": "peek",
+          "order": 5
+        },
+        {
+          "slug": "is-empty",
+          "order": 6
+        },
+        {
+          "slug": "implementation-array",
+          "order": 7
+        },
+        {
+          "slug": "implementation-linked-list",
+          "order": 8
+        },
+        {
+          "slug": "monotonic-stack",
+          "order": 9
+        },
+        {
+          "slug": "practice",
+          "order": 10
+        },
+        {
+          "slug": "interview-questions",
+          "order": 11
+        },
+        {
+          "slug": "revision-summary",
+          "order": 12
+        }
+      ]
+    },
+    {
+      "slug": "queue",
+      "order": 15,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "fifo-model",
+          "order": 2
+        },
+        {
+          "slug": "enqueue",
+          "order": 3
+        },
+        {
+          "slug": "dequeue",
+          "order": 4
+        },
+        {
+          "slug": "front-rear",
+          "order": 5
+        },
+        {
+          "slug": "circular-queue",
+          "order": 6
+        },
+        {
+          "slug": "implementation-array",
+          "order": 7
+        },
+        {
+          "slug": "implementation-linked-list",
+          "order": 8
+        },
+        {
+          "slug": "practice",
+          "order": 9
+        },
+        {
+          "slug": "interview-questions",
+          "order": 10
+        },
+        {
+          "slug": "revision-summary",
+          "order": 11
+        }
+      ]
+    },
+    {
+      "slug": "deque",
+      "order": 16,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "double-ended-model",
+          "order": 2
+        },
+        {
+          "slug": "push-front",
+          "order": 3
+        },
+        {
+          "slug": "push-back",
+          "order": 4
+        },
+        {
+          "slug": "pop-front",
+          "order": 5
+        },
+        {
+          "slug": "pop-back",
+          "order": 6
+        },
+        {
+          "slug": "sliding-window-maximum",
+          "order": 7
+        },
+        {
+          "slug": "practice",
+          "order": 8
+        },
+        {
+          "slug": "interview-questions",
+          "order": 9
+        },
+        {
+          "slug": "revision-summary",
+          "order": 10
+        }
+      ]
+    },
+    {
+      "slug": "linked-list",
+      "order": 17,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "node-structure",
+          "order": 2
+        },
+        {
+          "slug": "traversal",
+          "order": 3
+        },
+        {
+          "slug": "insertion",
+          "order": 4
+        },
+        {
+          "slug": "deletion",
+          "order": 5
+        },
+        {
+          "slug": "search",
+          "order": 6
+        },
+        {
+          "slug": "reverse-list",
+          "order": 7
+        },
+        {
+          "slug": "slow-fast-pointer",
+          "order": 8
+        },
+        {
+          "slug": "cycle-detection",
+          "order": 9
+        },
+        {
+          "slug": "practice",
+          "order": 10
+        },
+        {
+          "slug": "interview-questions",
+          "order": 11
+        },
+        {
+          "slug": "revision-summary",
+          "order": 12
+        }
+      ]
+    },
+    {
+      "slug": "hashing",
+      "order": 18,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "hash-function",
+          "order": 2
+        },
+        {
+          "slug": "hash-table",
+          "order": 3
+        },
+        {
+          "slug": "collision-handling",
+          "order": 4
+        },
+        {
+          "slug": "chaining",
+          "order": 5
+        },
+        {
+          "slug": "open-addressing",
+          "order": 6
+        },
+        {
+          "slug": "frequency-map",
+          "order": 7
+        },
+        {
+          "slug": "set-usage",
+          "order": 8
+        },
+        {
+          "slug": "practice",
+          "order": 9
+        },
+        {
+          "slug": "interview-questions",
+          "order": 10
+        },
+        {
+          "slug": "revision-summary",
+          "order": 11
+        }
+      ]
+    },
+    {
+      "slug": "tree",
+      "order": 19,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "terminology",
+          "order": 2
+        },
+        {
+          "slug": "node-depth-height",
+          "order": 3
+        },
+        {
+          "slug": "traversals",
+          "order": 4
+        },
+        {
+          "slug": "level-order",
+          "order": 5
+        },
+        {
+          "slug": "binary-tree",
+          "order": 6
+        },
+        {
+          "slug": "tree-recursion",
+          "order": 7
+        },
+        {
+          "slug": "practice",
+          "order": 8
+        },
+        {
+          "slug": "interview-questions",
+          "order": 9
+        },
+        {
+          "slug": "revision-summary",
+          "order": 10
+        }
+      ]
+    },
+    {
+      "slug": "binary-tree",
+      "order": 20,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "node-structure",
+          "order": 2
+        },
+        {
+          "slug": "preorder",
+          "order": 3
+        },
+        {
+          "slug": "inorder",
+          "order": 4
+        },
+        {
+          "slug": "postorder",
+          "order": 5
+        },
+        {
+          "slug": "level-order",
+          "order": 6
+        },
+        {
+          "slug": "height-diameter",
+          "order": 7
+        },
+        {
+          "slug": "lowest-common-ancestor",
+          "order": 8
+        },
+        {
+          "slug": "practice",
+          "order": 9
+        },
+        {
+          "slug": "interview-questions",
+          "order": 10
+        },
+        {
+          "slug": "revision-summary",
+          "order": 11
+        }
+      ]
+    },
+    {
+      "slug": "binary-search-tree",
+      "order": 21,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "bst-property",
+          "order": 2
+        },
+        {
+          "slug": "search",
+          "order": 3
+        },
+        {
+          "slug": "insertion",
+          "order": 4
+        },
+        {
+          "slug": "deletion",
+          "order": 5
+        },
+        {
+          "slug": "inorder-sorted-order",
+          "order": 6
+        },
+        {
+          "slug": "floor-ceil",
+          "order": 7
+        },
+        {
+          "slug": "validation",
+          "order": 8
+        },
+        {
+          "slug": "practice",
+          "order": 9
+        },
+        {
+          "slug": "interview-questions",
+          "order": 10
+        },
+        {
+          "slug": "revision-summary",
+          "order": 11
+        }
+      ]
+    },
+    {
+      "slug": "avl-tree",
+      "order": 22,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "balance-factor",
+          "order": 2
+        },
+        {
+          "slug": "rotations",
+          "order": 3
+        },
+        {
+          "slug": "ll-rr-cases",
+          "order": 4
+        },
+        {
+          "slug": "lr-rl-cases",
+          "order": 5
+        },
+        {
+          "slug": "insertion",
+          "order": 6
+        },
+        {
+          "slug": "deletion",
+          "order": 7
+        },
+        {
+          "slug": "practice",
+          "order": 8
+        },
+        {
+          "slug": "interview-questions",
+          "order": 9
+        },
+        {
+          "slug": "revision-summary",
+          "order": 10
+        }
+      ]
+    },
+    {
+      "slug": "heap",
+      "order": 23,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "heap-property",
+          "order": 2
+        },
+        {
+          "slug": "array-representation",
+          "order": 3
+        },
+        {
+          "slug": "insert",
+          "order": 4
+        },
+        {
+          "slug": "extract-min-max",
+          "order": 5
+        },
+        {
+          "slug": "heapify",
+          "order": 6
+        },
+        {
+          "slug": "priority-queue",
+          "order": 7
+        },
+        {
+          "slug": "heap-sort",
+          "order": 8
+        },
+        {
+          "slug": "practice",
+          "order": 9
+        },
+        {
+          "slug": "interview-questions",
+          "order": 10
+        },
+        {
+          "slug": "revision-summary",
+          "order": 11
+        }
+      ]
+    },
+    {
+      "slug": "trie",
+      "order": 24,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "node-structure",
+          "order": 2
+        },
+        {
+          "slug": "insert",
+          "order": 3
+        },
+        {
+          "slug": "search",
+          "order": 4
+        },
+        {
+          "slug": "starts-with",
+          "order": 5
+        },
+        {
+          "slug": "delete-word",
+          "order": 6
+        },
+        {
+          "slug": "autocomplete",
+          "order": 7
+        },
+        {
+          "slug": "word-break",
+          "order": 8
+        },
+        {
+          "slug": "practice",
+          "order": 9
+        },
+        {
+          "slug": "interview-questions",
+          "order": 10
+        },
+        {
+          "slug": "revision-summary",
+          "order": 11
+        }
+      ]
+    },
+    {
+      "slug": "graph",
+      "order": 25,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "representation",
+          "order": 2
+        },
+        {
+          "slug": "bfs",
+          "order": 3
+        },
+        {
+          "slug": "dfs",
+          "order": 4
+        },
+        {
+          "slug": "connected-components",
+          "order": 5
+        },
+        {
+          "slug": "cycle-detection",
+          "order": 6
+        },
+        {
+          "slug": "topological-sort",
+          "order": 7
+        },
+        {
+          "slug": "shortest-path-unweighted",
+          "order": 8
+        },
+        {
+          "slug": "practice",
+          "order": 9
+        },
+        {
+          "slug": "interview-questions",
+          "order": 10
+        },
+        {
+          "slug": "revision-summary",
+          "order": 11
+        }
+      ]
+    },
+    {
+      "slug": "greedy",
+      "order": 26,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "greedy-choice-property",
+          "order": 2
+        },
+        {
+          "slug": "activity-selection",
+          "order": 3
+        },
+        {
+          "slug": "fractional-knapsack",
+          "order": 4
+        },
+        {
+          "slug": "interval-scheduling",
+          "order": 5
+        },
+        {
+          "slug": "huffman-coding",
+          "order": 6
+        },
+        {
+          "slug": "proof-strategy",
+          "order": 7
+        },
+        {
+          "slug": "practice",
+          "order": 8
+        },
+        {
+          "slug": "interview-questions",
+          "order": 9
+        },
+        {
+          "slug": "revision-summary",
+          "order": 10
+        }
+      ]
+    },
+    {
+      "slug": "dynamic-programming",
+      "order": 27,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "overlapping-subproblems",
+          "order": 2
+        },
+        {
+          "slug": "optimal-substructure",
+          "order": 3
+        },
+        {
+          "slug": "memoization",
+          "order": 4
+        },
+        {
+          "slug": "tabulation",
+          "order": 5
+        },
+        {
+          "slug": "knapsack",
+          "order": 6
+        },
+        {
+          "slug": "lcs",
+          "order": 7
+        },
+        {
+          "slug": "lis",
+          "order": 8
+        },
+        {
+          "slug": "practice",
+          "order": 9
+        },
+        {
+          "slug": "interview-questions",
+          "order": 10
+        },
+        {
+          "slug": "revision-summary",
+          "order": 11
+        }
+      ]
+    },
+    {
+      "slug": "bit-manipulation",
+      "order": 28,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "binary-representation",
+          "order": 2
+        },
+        {
+          "slug": "and-or-xor",
+          "order": 3
+        },
+        {
+          "slug": "shifts",
+          "order": 4
+        },
+        {
+          "slug": "set-clear-toggle-bit",
+          "order": 5
+        },
+        {
+          "slug": "check-power-of-two",
+          "order": 6
+        },
+        {
+          "slug": "bitmasking",
+          "order": 7
+        },
+        {
+          "slug": "practice",
+          "order": 8
+        },
+        {
+          "slug": "interview-questions",
+          "order": 9
+        },
+        {
+          "slug": "revision-summary",
+          "order": 10
+        }
+      ]
+    },
+    {
+      "slug": "segment-tree",
+      "order": 29,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "range-query-model",
+          "order": 2
+        },
+        {
+          "slug": "build",
+          "order": 3
+        },
+        {
+          "slug": "range-query",
+          "order": 4
+        },
+        {
+          "slug": "point-update",
+          "order": 5
+        },
+        {
+          "slug": "lazy-propagation",
+          "order": 6
+        },
+        {
+          "slug": "min-max-sum-queries",
+          "order": 7
+        },
+        {
+          "slug": "practice",
+          "order": 8
+        },
+        {
+          "slug": "interview-questions",
+          "order": 9
+        },
+        {
+          "slug": "revision-summary",
+          "order": 10
+        }
+      ]
+    },
+    {
+      "slug": "fenwick-tree",
+      "order": 30,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "binary-indexed-tree-model",
+          "order": 2
+        },
+        {
+          "slug": "lsb",
+          "order": 3
+        },
+        {
+          "slug": "prefix-sum-query",
+          "order": 4
+        },
+        {
+          "slug": "point-update",
+          "order": 5
+        },
+        {
+          "slug": "range-sum-query",
+          "order": 6
+        },
+        {
+          "slug": "fenwick-vs-segment-tree",
+          "order": 7
+        },
+        {
+          "slug": "practice",
+          "order": 8
+        },
+        {
+          "slug": "interview-questions",
+          "order": 9
+        },
+        {
+          "slug": "revision-summary",
+          "order": 10
+        }
+      ]
+    },
+    {
+      "slug": "disjoint-set-union",
+      "order": 31,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "make-set",
+          "order": 2
+        },
+        {
+          "slug": "find",
+          "order": 3
+        },
+        {
+          "slug": "union",
+          "order": 4
+        },
+        {
+          "slug": "path-compression",
+          "order": 5
+        },
+        {
+          "slug": "union-by-rank",
+          "order": 6
+        },
+        {
+          "slug": "cycle-detection",
+          "order": 7
+        },
+        {
+          "slug": "kruskal-algorithm",
+          "order": 8
+        },
+        {
+          "slug": "practice",
+          "order": 9
+        },
+        {
+          "slug": "interview-questions",
+          "order": 10
+        },
+        {
+          "slug": "revision-summary",
+          "order": 11
+        }
+      ]
+    },
+    {
+      "slug": "mathematics",
+      "order": 32,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "gcd-lcm",
+          "order": 2
+        },
+        {
+          "slug": "modular-arithmetic",
+          "order": 3
+        },
+        {
+          "slug": "prime-checking",
+          "order": 4
+        },
+        {
+          "slug": "sieve-of-eratosthenes",
+          "order": 5
+        },
+        {
+          "slug": "combinatorics",
+          "order": 6
+        },
+        {
+          "slug": "fast-exponentiation",
+          "order": 7
+        },
+        {
+          "slug": "practice",
+          "order": 8
+        },
+        {
+          "slug": "interview-questions",
+          "order": 9
+        },
+        {
+          "slug": "revision-summary",
+          "order": 10
+        }
+      ]
+    },
+    {
+      "slug": "number-theory",
+      "order": 33,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "divisibility",
+          "order": 2
+        },
+        {
+          "slug": "gcd-euclid",
+          "order": 3
+        },
+        {
+          "slug": "sieve",
+          "order": 4
+        },
+        {
+          "slug": "prime-factorization",
+          "order": 5
+        },
+        {
+          "slug": "modular-inverse",
+          "order": 6
+        },
+        {
+          "slug": "chinese-remainder-theorem",
+          "order": 7
+        },
+        {
+          "slug": "practice",
+          "order": 8
+        },
+        {
+          "slug": "interview-questions",
+          "order": 9
+        },
+        {
+          "slug": "revision-summary",
+          "order": 10
+        }
+      ]
+    },
+    {
+      "slug": "competitive-programming",
+      "order": 34,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "input-output",
+          "order": 2
+        },
+        {
+          "slug": "constraints-analysis",
+          "order": 3
+        },
+        {
+          "slug": "common-patterns",
+          "order": 4
+        },
+        {
+          "slug": "debugging-strategy",
+          "order": 5
+        },
+        {
+          "slug": "contest-template",
+          "order": 6
+        },
+        {
+          "slug": "practice-plan",
+          "order": 7
+        },
+        {
+          "slug": "practice",
+          "order": 8
+        },
+        {
+          "slug": "interview-questions",
+          "order": 9
+        },
+        {
+          "slug": "revision-summary",
+          "order": 10
+        }
+      ]
+    },
+    {
+      "slug": "interview-preparation",
+      "order": 35,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "problem-clarification",
+          "order": 2
+        },
+        {
+          "slug": "brute-force-to-optimal",
+          "order": 3
+        },
+        {
+          "slug": "communication",
+          "order": 4
+        },
+        {
+          "slug": "dry-run",
+          "order": 5
+        },
+        {
+          "slug": "edge-cases",
+          "order": 6
+        },
+        {
+          "slug": "mock-interview-flow",
+          "order": 7
+        },
+        {
+          "slug": "practice",
+          "order": 8
+        },
+        {
+          "slug": "interview-questions",
+          "order": 9
+        },
+        {
+          "slug": "revision-summary",
+          "order": 10
+        }
+      ]
+    },
+    {
+      "slug": "advanced-graph-algorithms",
+      "order": 36,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "dijkstra",
+          "order": 2
+        },
+        {
+          "slug": "bellman-ford",
+          "order": 3
+        },
+        {
+          "slug": "floyd-warshall",
+          "order": 4
+        },
+        {
+          "slug": "minimum-spanning-tree",
+          "order": 5
+        },
+        {
+          "slug": "strongly-connected-components",
+          "order": 6
+        },
+        {
+          "slug": "bridges-and-articulation-points",
+          "order": 7
+        },
+        {
+          "slug": "practice",
+          "order": 8
+        },
+        {
+          "slug": "interview-questions",
+          "order": 9
+        },
+        {
+          "slug": "revision-summary",
+          "order": 10
+        }
+      ]
+    },
+    {
+      "slug": "advanced-dynamic-programming",
+      "order": 37,
+      "lessons": [
+        {
+          "slug": "introduction",
+          "order": 1
+        },
+        {
+          "slug": "state-design",
+          "order": 2
+        },
+        {
+          "slug": "transition-design",
+          "order": 3
+        },
+        {
+          "slug": "space-optimization",
+          "order": 4
+        },
+        {
+          "slug": "dp-on-trees",
+          "order": 5
+        },
+        {
+          "slug": "dp-on-bitmasks",
+          "order": 6
+        },
+        {
+          "slug": "digit-dp",
+          "order": 7
+        },
+        {
+          "slug": "practice",
+          "order": 8
+        },
+        {
+          "slug": "interview-questions",
+          "order": 9
+        },
+        {
+          "slug": "revision-summary",
+          "order": 10
+        }
+      ]
+    }
+  ]
+}

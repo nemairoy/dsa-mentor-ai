@@ -1,0 +1,989 @@
+{
+  "chapterId": "linked-list",
+  "title": "Linked List",
+  "description": "Linked List topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Beginner",
+  "estimatedHours": 5,
+  "tags": [
+    "nodes",
+    "pointers"
+  ],
+  "animationNamespace": "LinkedList",
+  "aiContext": "Linked List chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "linked-list-introduction",
+      "component": "LinkedListIntroductionAnimation",
+      "status": "planned"
+    },
+    "node-structure": {
+      "animationId": "linked-list-node-structure",
+      "component": "LinkedListNodeStructureAnimation",
+      "status": "planned"
+    },
+    "traversal": {
+      "animationId": "linked-list-traversal",
+      "component": "LinkedListTraversalAnimation",
+      "status": "planned"
+    },
+    "insertion": {
+      "animationId": "linked-list-insertion",
+      "component": "LinkedListInsertionAnimation",
+      "status": "planned"
+    },
+    "deletion": {
+      "animationId": "linked-list-deletion",
+      "component": "LinkedListDeletionAnimation",
+      "status": "planned"
+    },
+    "search": {
+      "animationId": "linked-list-search",
+      "component": "LinkedListSearchAnimation",
+      "status": "planned"
+    },
+    "reverse-list": {
+      "animationId": "linked-list-reverse-list",
+      "component": "LinkedListReverseListAnimation",
+      "status": "planned"
+    },
+    "slow-fast-pointer": {
+      "animationId": "linked-list-slow-fast-pointer",
+      "component": "LinkedListSlowFastPointerAnimation",
+      "status": "planned"
+    },
+    "cycle-detection": {
+      "animationId": "linked-list-cycle-detection",
+      "component": "LinkedListCycleDetectionAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "linked-list-practice",
+      "component": "LinkedListPracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "linked-list-interview-questions",
+      "component": "LinkedListInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "linked-list-revision-summary",
+      "component": "LinkedListRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "linked-list.introduction",
+      "chapter": "Linked List",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "nodes",
+        "pointers",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Linked List: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "linked-list-introduction",
+      "animationComponent": "LinkedListIntroductionAnimation",
+      "aiContext": "Linked List / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Linked List, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Linked List: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "linked-list",
+        "lessonSlug": "introduction",
+        "topic": "Linked List",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "linked-list.introduction",
+        "tags": [
+          "nodes",
+          "pointers",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "linked-list/introduction"
+      ],
+      "futureQuizId": "quiz-linked-list-introduction",
+      "futureFlashcardId": "flashcards-linked-list-introduction",
+      "futureProjectId": "project-linked-list-introduction",
+      "images": [
+        "content/linked-list/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "linked-list-introduction.py",
+          "code": "def linked_list_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(linked_list_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "node-structure": {
+      "lessonId": "linked-list.node-structure",
+      "chapter": "Linked List",
+      "title": "Node Structure",
+      "summary": "Learn Node Structure in Linked List with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "nodes",
+        "pointers",
+        "node-structure"
+      ],
+      "learningObjectives": [
+        "Explain Linked List: Node Structure clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "linked-list-node-structure",
+      "animationComponent": "LinkedListNodeStructureAnimation",
+      "aiContext": "Linked List / Node Structure: Learn Node Structure in Linked List with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Node Structure lesson for Linked List, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Linked List: Node Structure. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "linked-list",
+        "lessonSlug": "node-structure",
+        "topic": "Linked List",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "linked-list.node-structure",
+        "tags": [
+          "nodes",
+          "pointers",
+          "node-structure"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "linked-list/introduction"
+      ],
+      "futureQuizId": "quiz-linked-list-node-structure",
+      "futureFlashcardId": "flashcards-linked-list-node-structure",
+      "futureProjectId": "project-linked-list-node-structure",
+      "images": [
+        "content/linked-list/images/node-structure.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Node Structure from scratch.",
+        "Dry-run Node Structure on two edge cases.",
+        "Explain Node Structure complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "linked-list-node-structure.py",
+          "code": "def linked_list_node_structure(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(linked_list_node_structure([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "traversal": {
+      "lessonId": "linked-list.traversal",
+      "chapter": "Linked List",
+      "title": "Traversal",
+      "summary": "Learn Traversal in Linked List with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "nodes",
+        "pointers",
+        "traversal"
+      ],
+      "learningObjectives": [
+        "Explain Linked List: Traversal clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "linked-list-traversal",
+      "animationComponent": "LinkedListTraversalAnimation",
+      "aiContext": "Linked List / Traversal: Learn Traversal in Linked List with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Traversal lesson for Linked List, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Linked List: Traversal. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "linked-list",
+        "lessonSlug": "traversal",
+        "topic": "Linked List",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "linked-list.traversal",
+        "tags": [
+          "nodes",
+          "pointers",
+          "traversal"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "linked-list/introduction"
+      ],
+      "futureQuizId": "quiz-linked-list-traversal",
+      "futureFlashcardId": "flashcards-linked-list-traversal",
+      "futureProjectId": "project-linked-list-traversal",
+      "images": [
+        "content/linked-list/images/traversal.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Traversal from scratch.",
+        "Dry-run Traversal on two edge cases.",
+        "Explain Traversal complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "linked-list-traversal.py",
+          "code": "def linked_list_traversal(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(linked_list_traversal([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "insertion": {
+      "lessonId": "linked-list.insertion",
+      "chapter": "Linked List",
+      "title": "Insertion",
+      "summary": "Learn Insertion in Linked List with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "nodes",
+        "pointers",
+        "insertion"
+      ],
+      "learningObjectives": [
+        "Explain Linked List: Insertion clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "linked-list-insertion",
+      "animationComponent": "LinkedListInsertionAnimation",
+      "aiContext": "Linked List / Insertion: Learn Insertion in Linked List with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Insertion lesson for Linked List, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Linked List: Insertion. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "linked-list",
+        "lessonSlug": "insertion",
+        "topic": "Linked List",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "linked-list.insertion",
+        "tags": [
+          "nodes",
+          "pointers",
+          "insertion"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "linked-list/introduction"
+      ],
+      "futureQuizId": "quiz-linked-list-insertion",
+      "futureFlashcardId": "flashcards-linked-list-insertion",
+      "futureProjectId": "project-linked-list-insertion",
+      "images": [
+        "content/linked-list/images/insertion.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Insertion from scratch.",
+        "Dry-run Insertion on two edge cases.",
+        "Explain Insertion complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "linked-list-insertion.py",
+          "code": "def linked_list_insertion(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(linked_list_insertion([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "deletion": {
+      "lessonId": "linked-list.deletion",
+      "chapter": "Linked List",
+      "title": "Deletion",
+      "summary": "Learn Deletion in Linked List with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "nodes",
+        "pointers",
+        "deletion"
+      ],
+      "learningObjectives": [
+        "Explain Linked List: Deletion clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "linked-list-deletion",
+      "animationComponent": "LinkedListDeletionAnimation",
+      "aiContext": "Linked List / Deletion: Learn Deletion in Linked List with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Deletion lesson for Linked List, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Linked List: Deletion. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "linked-list",
+        "lessonSlug": "deletion",
+        "topic": "Linked List",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "linked-list.deletion",
+        "tags": [
+          "nodes",
+          "pointers",
+          "deletion"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "linked-list/introduction"
+      ],
+      "futureQuizId": "quiz-linked-list-deletion",
+      "futureFlashcardId": "flashcards-linked-list-deletion",
+      "futureProjectId": "project-linked-list-deletion",
+      "images": [
+        "content/linked-list/images/deletion.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Deletion from scratch.",
+        "Dry-run Deletion on two edge cases.",
+        "Explain Deletion complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "linked-list-deletion.py",
+          "code": "def linked_list_deletion(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(linked_list_deletion([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "search": {
+      "lessonId": "linked-list.search",
+      "chapter": "Linked List",
+      "title": "Search",
+      "summary": "Learn Search in Linked List with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "nodes",
+        "pointers",
+        "search"
+      ],
+      "learningObjectives": [
+        "Explain Linked List: Search clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "linked-list-search",
+      "animationComponent": "LinkedListSearchAnimation",
+      "aiContext": "Linked List / Search: Learn Search in Linked List with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Search lesson for Linked List, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Linked List: Search. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "linked-list",
+        "lessonSlug": "search",
+        "topic": "Linked List",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "linked-list.search",
+        "tags": [
+          "nodes",
+          "pointers",
+          "search"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "linked-list/introduction"
+      ],
+      "futureQuizId": "quiz-linked-list-search",
+      "futureFlashcardId": "flashcards-linked-list-search",
+      "futureProjectId": "project-linked-list-search",
+      "images": [
+        "content/linked-list/images/search.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Search from scratch.",
+        "Dry-run Search on two edge cases.",
+        "Explain Search complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "linked-list-search.py",
+          "code": "def linked_list_search(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(linked_list_search([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "reverse-list": {
+      "lessonId": "linked-list.reverse-list",
+      "chapter": "Linked List",
+      "title": "Reverse List",
+      "summary": "Learn Reverse List in Linked List with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "nodes",
+        "pointers",
+        "reverse-list"
+      ],
+      "learningObjectives": [
+        "Explain Linked List: Reverse List clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "linked-list-reverse-list",
+      "animationComponent": "LinkedListReverseListAnimation",
+      "aiContext": "Linked List / Reverse List: Learn Reverse List in Linked List with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Reverse List lesson for Linked List, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Linked List: Reverse List. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "linked-list",
+        "lessonSlug": "reverse-list",
+        "topic": "Linked List",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "linked-list.reverse-list",
+        "tags": [
+          "nodes",
+          "pointers",
+          "reverse-list"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "linked-list/introduction"
+      ],
+      "futureQuizId": "quiz-linked-list-reverse-list",
+      "futureFlashcardId": "flashcards-linked-list-reverse-list",
+      "futureProjectId": "project-linked-list-reverse-list",
+      "images": [
+        "content/linked-list/images/reverse-list.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Reverse List from scratch.",
+        "Dry-run Reverse List on two edge cases.",
+        "Explain Reverse List complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "linked-list-reverse-list.py",
+          "code": "def linked_list_reverse_list(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(linked_list_reverse_list([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "slow-fast-pointer": {
+      "lessonId": "linked-list.slow-fast-pointer",
+      "chapter": "Linked List",
+      "title": "Slow Fast Pointer",
+      "summary": "Learn Slow Fast Pointer in Linked List with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "nodes",
+        "pointers",
+        "slow-fast-pointer"
+      ],
+      "learningObjectives": [
+        "Explain Linked List: Slow Fast Pointer clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "linked-list-slow-fast-pointer",
+      "animationComponent": "LinkedListSlowFastPointerAnimation",
+      "aiContext": "Linked List / Slow Fast Pointer: Learn Slow Fast Pointer in Linked List with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Slow Fast Pointer lesson for Linked List, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Linked List: Slow Fast Pointer. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "linked-list",
+        "lessonSlug": "slow-fast-pointer",
+        "topic": "Linked List",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "linked-list.slow-fast-pointer",
+        "tags": [
+          "nodes",
+          "pointers",
+          "slow-fast-pointer"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "linked-list/introduction"
+      ],
+      "futureQuizId": "quiz-linked-list-slow-fast-pointer",
+      "futureFlashcardId": "flashcards-linked-list-slow-fast-pointer",
+      "futureProjectId": "project-linked-list-slow-fast-pointer",
+      "images": [
+        "content/linked-list/images/slow-fast-pointer.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Slow Fast Pointer from scratch.",
+        "Dry-run Slow Fast Pointer on two edge cases.",
+        "Explain Slow Fast Pointer complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "linked-list-slow-fast-pointer.py",
+          "code": "def linked_list_slow_fast_pointer(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(linked_list_slow_fast_pointer([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "cycle-detection": {
+      "lessonId": "linked-list.cycle-detection",
+      "chapter": "Linked List",
+      "title": "Cycle Detection",
+      "summary": "Learn Cycle Detection in Linked List with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "nodes",
+        "pointers",
+        "cycle-detection"
+      ],
+      "learningObjectives": [
+        "Explain Linked List: Cycle Detection clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "linked-list-cycle-detection",
+      "animationComponent": "LinkedListCycleDetectionAnimation",
+      "aiContext": "Linked List / Cycle Detection: Learn Cycle Detection in Linked List with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Cycle Detection lesson for Linked List, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Linked List: Cycle Detection. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "linked-list",
+        "lessonSlug": "cycle-detection",
+        "topic": "Linked List",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "linked-list.cycle-detection",
+        "tags": [
+          "nodes",
+          "pointers",
+          "cycle-detection"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "linked-list/introduction"
+      ],
+      "futureQuizId": "quiz-linked-list-cycle-detection",
+      "futureFlashcardId": "flashcards-linked-list-cycle-detection",
+      "futureProjectId": "project-linked-list-cycle-detection",
+      "images": [
+        "content/linked-list/images/cycle-detection.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Cycle Detection from scratch.",
+        "Dry-run Cycle Detection on two edge cases.",
+        "Explain Cycle Detection complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "linked-list-cycle-detection.py",
+          "code": "def linked_list_cycle_detection(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(linked_list_cycle_detection([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "linked-list.practice",
+      "chapter": "Linked List",
+      "title": "Practice",
+      "summary": "Learn Practice in Linked List with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "nodes",
+        "pointers",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Linked List: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "linked-list-practice",
+      "animationComponent": "LinkedListPracticeAnimation",
+      "aiContext": "Linked List / Practice: Learn Practice in Linked List with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Linked List, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Linked List: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "linked-list",
+        "lessonSlug": "practice",
+        "topic": "Linked List",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "linked-list.practice",
+        "tags": [
+          "nodes",
+          "pointers",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "linked-list/introduction"
+      ],
+      "futureQuizId": "quiz-linked-list-practice",
+      "futureFlashcardId": "flashcards-linked-list-practice",
+      "futureProjectId": "project-linked-list-practice",
+      "images": [
+        "content/linked-list/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "linked-list-practice.py",
+          "code": "def linked_list_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(linked_list_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "linked-list.interview-questions",
+      "chapter": "Linked List",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Linked List with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "nodes",
+        "pointers",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Linked List: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "linked-list-interview-questions",
+      "animationComponent": "LinkedListInterviewQuestionsAnimation",
+      "aiContext": "Linked List / Interview Questions: Learn Interview Questions in Linked List with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Linked List, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Linked List: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "linked-list",
+        "lessonSlug": "interview-questions",
+        "topic": "Linked List",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "linked-list.interview-questions",
+        "tags": [
+          "nodes",
+          "pointers",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "linked-list/introduction"
+      ],
+      "futureQuizId": "quiz-linked-list-interview-questions",
+      "futureFlashcardId": "flashcards-linked-list-interview-questions",
+      "futureProjectId": "project-linked-list-interview-questions",
+      "images": [
+        "content/linked-list/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "linked-list-interview-questions.py",
+          "code": "def linked_list_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(linked_list_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "linked-list.revision-summary",
+      "chapter": "Linked List",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Linked List with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "nodes",
+        "pointers",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Linked List: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "linked-list-revision-summary",
+      "animationComponent": "LinkedListRevisionSummaryAnimation",
+      "aiContext": "Linked List / Revision Summary: Learn Revision Summary in Linked List with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Linked List, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Linked List: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "linked-list",
+        "lessonSlug": "revision-summary",
+        "topic": "Linked List",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "linked-list.revision-summary",
+        "tags": [
+          "nodes",
+          "pointers",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "linked-list/introduction"
+      ],
+      "futureQuizId": "quiz-linked-list-revision-summary",
+      "futureFlashcardId": "flashcards-linked-list-revision-summary",
+      "futureProjectId": "project-linked-list-revision-summary",
+      "images": [
+        "content/linked-list/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "linked-list-revision-summary.py",
+          "code": "def linked_list_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(linked_list_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

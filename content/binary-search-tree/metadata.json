@@ -1,0 +1,908 @@
+{
+  "chapterId": "binary-search-tree",
+  "title": "Binary Search Tree",
+  "description": "Binary Search Tree topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Intermediate",
+  "estimatedHours": 5,
+  "tags": [
+    "tree",
+    "ordered-data"
+  ],
+  "animationNamespace": "BinarySearchTree",
+  "aiContext": "Binary Search Tree chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "binary-search-tree-introduction",
+      "component": "BinarySearchTreeIntroductionAnimation",
+      "status": "planned"
+    },
+    "bst-property": {
+      "animationId": "binary-search-tree-bst-property",
+      "component": "BinarySearchTreeBSTPropertyAnimation",
+      "status": "planned"
+    },
+    "search": {
+      "animationId": "binary-search-tree-search",
+      "component": "BinarySearchTreeSearchAnimation",
+      "status": "planned"
+    },
+    "insertion": {
+      "animationId": "binary-search-tree-insertion",
+      "component": "BinarySearchTreeInsertionAnimation",
+      "status": "planned"
+    },
+    "deletion": {
+      "animationId": "binary-search-tree-deletion",
+      "component": "BinarySearchTreeDeletionAnimation",
+      "status": "planned"
+    },
+    "inorder-sorted-order": {
+      "animationId": "binary-search-tree-inorder-sorted-order",
+      "component": "BinarySearchTreeInorderSortedOrderAnimation",
+      "status": "planned"
+    },
+    "floor-ceil": {
+      "animationId": "binary-search-tree-floor-ceil",
+      "component": "BinarySearchTreeFloorCeilAnimation",
+      "status": "planned"
+    },
+    "validation": {
+      "animationId": "binary-search-tree-validation",
+      "component": "BinarySearchTreeValidationAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "binary-search-tree-practice",
+      "component": "BinarySearchTreePracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "binary-search-tree-interview-questions",
+      "component": "BinarySearchTreeInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "binary-search-tree-revision-summary",
+      "component": "BinarySearchTreeRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "binary-search-tree.introduction",
+      "chapter": "Binary Search Tree",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "tree",
+        "ordered-data",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Binary Search Tree: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "binary-search-tree-introduction",
+      "animationComponent": "BinarySearchTreeIntroductionAnimation",
+      "aiContext": "Binary Search Tree / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Binary Search Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Binary Search Tree: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "binary-search-tree",
+        "lessonSlug": "introduction",
+        "topic": "Binary Search Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "binary-search-tree.introduction",
+        "tags": [
+          "tree",
+          "ordered-data",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "binary-search-tree/introduction"
+      ],
+      "futureQuizId": "quiz-binary-search-tree-introduction",
+      "futureFlashcardId": "flashcards-binary-search-tree-introduction",
+      "futureProjectId": "project-binary-search-tree-introduction",
+      "images": [
+        "content/binary-search-tree/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "binary-search-tree-introduction.py",
+          "code": "def binary_search_tree_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(binary_search_tree_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "bst-property": {
+      "lessonId": "binary-search-tree.bst-property",
+      "chapter": "Binary Search Tree",
+      "title": "BST Property",
+      "summary": "Learn BST Property in Binary Search Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "tree",
+        "ordered-data",
+        "bst-property"
+      ],
+      "learningObjectives": [
+        "Explain Binary Search Tree: BST Property clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "binary-search-tree-bst-property",
+      "animationComponent": "BinarySearchTreeBSTPropertyAnimation",
+      "aiContext": "Binary Search Tree / BST Property: Learn BST Property in Binary Search Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "BST Property lesson for Binary Search Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Binary Search Tree: BST Property. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "binary-search-tree",
+        "lessonSlug": "bst-property",
+        "topic": "Binary Search Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "binary-search-tree.bst-property",
+        "tags": [
+          "tree",
+          "ordered-data",
+          "bst-property"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "binary-search-tree/introduction"
+      ],
+      "futureQuizId": "quiz-binary-search-tree-bst-property",
+      "futureFlashcardId": "flashcards-binary-search-tree-bst-property",
+      "futureProjectId": "project-binary-search-tree-bst-property",
+      "images": [
+        "content/binary-search-tree/images/bst-property.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement BST Property from scratch.",
+        "Dry-run BST Property on two edge cases.",
+        "Explain BST Property complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "binary-search-tree-bst-property.py",
+          "code": "def binary_search_tree_bst_property(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(binary_search_tree_bst_property([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "search": {
+      "lessonId": "binary-search-tree.search",
+      "chapter": "Binary Search Tree",
+      "title": "Search",
+      "summary": "Learn Search in Binary Search Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "tree",
+        "ordered-data",
+        "search"
+      ],
+      "learningObjectives": [
+        "Explain Binary Search Tree: Search clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "binary-search-tree-search",
+      "animationComponent": "BinarySearchTreeSearchAnimation",
+      "aiContext": "Binary Search Tree / Search: Learn Search in Binary Search Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Search lesson for Binary Search Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Binary Search Tree: Search. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "binary-search-tree",
+        "lessonSlug": "search",
+        "topic": "Binary Search Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "binary-search-tree.search",
+        "tags": [
+          "tree",
+          "ordered-data",
+          "search"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "binary-search-tree/introduction"
+      ],
+      "futureQuizId": "quiz-binary-search-tree-search",
+      "futureFlashcardId": "flashcards-binary-search-tree-search",
+      "futureProjectId": "project-binary-search-tree-search",
+      "images": [
+        "content/binary-search-tree/images/search.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Search from scratch.",
+        "Dry-run Search on two edge cases.",
+        "Explain Search complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "binary-search-tree-search.py",
+          "code": "def binary_search_tree_search(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(binary_search_tree_search([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "insertion": {
+      "lessonId": "binary-search-tree.insertion",
+      "chapter": "Binary Search Tree",
+      "title": "Insertion",
+      "summary": "Learn Insertion in Binary Search Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "tree",
+        "ordered-data",
+        "insertion"
+      ],
+      "learningObjectives": [
+        "Explain Binary Search Tree: Insertion clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "binary-search-tree-insertion",
+      "animationComponent": "BinarySearchTreeInsertionAnimation",
+      "aiContext": "Binary Search Tree / Insertion: Learn Insertion in Binary Search Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Insertion lesson for Binary Search Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Binary Search Tree: Insertion. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "binary-search-tree",
+        "lessonSlug": "insertion",
+        "topic": "Binary Search Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "binary-search-tree.insertion",
+        "tags": [
+          "tree",
+          "ordered-data",
+          "insertion"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "binary-search-tree/introduction"
+      ],
+      "futureQuizId": "quiz-binary-search-tree-insertion",
+      "futureFlashcardId": "flashcards-binary-search-tree-insertion",
+      "futureProjectId": "project-binary-search-tree-insertion",
+      "images": [
+        "content/binary-search-tree/images/insertion.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Insertion from scratch.",
+        "Dry-run Insertion on two edge cases.",
+        "Explain Insertion complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "binary-search-tree-insertion.py",
+          "code": "def binary_search_tree_insertion(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(binary_search_tree_insertion([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "deletion": {
+      "lessonId": "binary-search-tree.deletion",
+      "chapter": "Binary Search Tree",
+      "title": "Deletion",
+      "summary": "Learn Deletion in Binary Search Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "tree",
+        "ordered-data",
+        "deletion"
+      ],
+      "learningObjectives": [
+        "Explain Binary Search Tree: Deletion clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "binary-search-tree-deletion",
+      "animationComponent": "BinarySearchTreeDeletionAnimation",
+      "aiContext": "Binary Search Tree / Deletion: Learn Deletion in Binary Search Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Deletion lesson for Binary Search Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Binary Search Tree: Deletion. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "binary-search-tree",
+        "lessonSlug": "deletion",
+        "topic": "Binary Search Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "binary-search-tree.deletion",
+        "tags": [
+          "tree",
+          "ordered-data",
+          "deletion"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "binary-search-tree/introduction"
+      ],
+      "futureQuizId": "quiz-binary-search-tree-deletion",
+      "futureFlashcardId": "flashcards-binary-search-tree-deletion",
+      "futureProjectId": "project-binary-search-tree-deletion",
+      "images": [
+        "content/binary-search-tree/images/deletion.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Deletion from scratch.",
+        "Dry-run Deletion on two edge cases.",
+        "Explain Deletion complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "binary-search-tree-deletion.py",
+          "code": "def binary_search_tree_deletion(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(binary_search_tree_deletion([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "inorder-sorted-order": {
+      "lessonId": "binary-search-tree.inorder-sorted-order",
+      "chapter": "Binary Search Tree",
+      "title": "Inorder Sorted Order",
+      "summary": "Learn Inorder Sorted Order in Binary Search Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "tree",
+        "ordered-data",
+        "inorder-sorted-order"
+      ],
+      "learningObjectives": [
+        "Explain Binary Search Tree: Inorder Sorted Order clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "binary-search-tree-inorder-sorted-order",
+      "animationComponent": "BinarySearchTreeInorderSortedOrderAnimation",
+      "aiContext": "Binary Search Tree / Inorder Sorted Order: Learn Inorder Sorted Order in Binary Search Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Inorder Sorted Order lesson for Binary Search Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Binary Search Tree: Inorder Sorted Order. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "binary-search-tree",
+        "lessonSlug": "inorder-sorted-order",
+        "topic": "Binary Search Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "binary-search-tree.inorder-sorted-order",
+        "tags": [
+          "tree",
+          "ordered-data",
+          "inorder-sorted-order"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "binary-search-tree/introduction"
+      ],
+      "futureQuizId": "quiz-binary-search-tree-inorder-sorted-order",
+      "futureFlashcardId": "flashcards-binary-search-tree-inorder-sorted-order",
+      "futureProjectId": "project-binary-search-tree-inorder-sorted-order",
+      "images": [
+        "content/binary-search-tree/images/inorder-sorted-order.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Inorder Sorted Order from scratch.",
+        "Dry-run Inorder Sorted Order on two edge cases.",
+        "Explain Inorder Sorted Order complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "binary-search-tree-inorder-sorted-order.py",
+          "code": "def binary_search_tree_inorder_sorted_order(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(binary_search_tree_inorder_sorted_order([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "floor-ceil": {
+      "lessonId": "binary-search-tree.floor-ceil",
+      "chapter": "Binary Search Tree",
+      "title": "Floor Ceil",
+      "summary": "Learn Floor Ceil in Binary Search Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "tree",
+        "ordered-data",
+        "floor-ceil"
+      ],
+      "learningObjectives": [
+        "Explain Binary Search Tree: Floor Ceil clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "binary-search-tree-floor-ceil",
+      "animationComponent": "BinarySearchTreeFloorCeilAnimation",
+      "aiContext": "Binary Search Tree / Floor Ceil: Learn Floor Ceil in Binary Search Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Floor Ceil lesson for Binary Search Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Binary Search Tree: Floor Ceil. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "binary-search-tree",
+        "lessonSlug": "floor-ceil",
+        "topic": "Binary Search Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "binary-search-tree.floor-ceil",
+        "tags": [
+          "tree",
+          "ordered-data",
+          "floor-ceil"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "binary-search-tree/introduction"
+      ],
+      "futureQuizId": "quiz-binary-search-tree-floor-ceil",
+      "futureFlashcardId": "flashcards-binary-search-tree-floor-ceil",
+      "futureProjectId": "project-binary-search-tree-floor-ceil",
+      "images": [
+        "content/binary-search-tree/images/floor-ceil.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Floor Ceil from scratch.",
+        "Dry-run Floor Ceil on two edge cases.",
+        "Explain Floor Ceil complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "binary-search-tree-floor-ceil.py",
+          "code": "def binary_search_tree_floor_ceil(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(binary_search_tree_floor_ceil([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "validation": {
+      "lessonId": "binary-search-tree.validation",
+      "chapter": "Binary Search Tree",
+      "title": "Validation",
+      "summary": "Learn Validation in Binary Search Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "tree",
+        "ordered-data",
+        "validation"
+      ],
+      "learningObjectives": [
+        "Explain Binary Search Tree: Validation clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "binary-search-tree-validation",
+      "animationComponent": "BinarySearchTreeValidationAnimation",
+      "aiContext": "Binary Search Tree / Validation: Learn Validation in Binary Search Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Validation lesson for Binary Search Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Binary Search Tree: Validation. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "binary-search-tree",
+        "lessonSlug": "validation",
+        "topic": "Binary Search Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "binary-search-tree.validation",
+        "tags": [
+          "tree",
+          "ordered-data",
+          "validation"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "binary-search-tree/introduction"
+      ],
+      "futureQuizId": "quiz-binary-search-tree-validation",
+      "futureFlashcardId": "flashcards-binary-search-tree-validation",
+      "futureProjectId": "project-binary-search-tree-validation",
+      "images": [
+        "content/binary-search-tree/images/validation.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Validation from scratch.",
+        "Dry-run Validation on two edge cases.",
+        "Explain Validation complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "binary-search-tree-validation.py",
+          "code": "def binary_search_tree_validation(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(binary_search_tree_validation([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "binary-search-tree.practice",
+      "chapter": "Binary Search Tree",
+      "title": "Practice",
+      "summary": "Learn Practice in Binary Search Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "tree",
+        "ordered-data",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Binary Search Tree: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "binary-search-tree-practice",
+      "animationComponent": "BinarySearchTreePracticeAnimation",
+      "aiContext": "Binary Search Tree / Practice: Learn Practice in Binary Search Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Binary Search Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Binary Search Tree: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "binary-search-tree",
+        "lessonSlug": "practice",
+        "topic": "Binary Search Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "binary-search-tree.practice",
+        "tags": [
+          "tree",
+          "ordered-data",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "binary-search-tree/introduction"
+      ],
+      "futureQuizId": "quiz-binary-search-tree-practice",
+      "futureFlashcardId": "flashcards-binary-search-tree-practice",
+      "futureProjectId": "project-binary-search-tree-practice",
+      "images": [
+        "content/binary-search-tree/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "binary-search-tree-practice.py",
+          "code": "def binary_search_tree_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(binary_search_tree_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "binary-search-tree.interview-questions",
+      "chapter": "Binary Search Tree",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Binary Search Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "tree",
+        "ordered-data",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Binary Search Tree: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "binary-search-tree-interview-questions",
+      "animationComponent": "BinarySearchTreeInterviewQuestionsAnimation",
+      "aiContext": "Binary Search Tree / Interview Questions: Learn Interview Questions in Binary Search Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Binary Search Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Binary Search Tree: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "binary-search-tree",
+        "lessonSlug": "interview-questions",
+        "topic": "Binary Search Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "binary-search-tree.interview-questions",
+        "tags": [
+          "tree",
+          "ordered-data",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "binary-search-tree/introduction"
+      ],
+      "futureQuizId": "quiz-binary-search-tree-interview-questions",
+      "futureFlashcardId": "flashcards-binary-search-tree-interview-questions",
+      "futureProjectId": "project-binary-search-tree-interview-questions",
+      "images": [
+        "content/binary-search-tree/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "binary-search-tree-interview-questions.py",
+          "code": "def binary_search_tree_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(binary_search_tree_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "binary-search-tree.revision-summary",
+      "chapter": "Binary Search Tree",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Binary Search Tree with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "tree",
+        "ordered-data",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Binary Search Tree: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "binary-search-tree-revision-summary",
+      "animationComponent": "BinarySearchTreeRevisionSummaryAnimation",
+      "aiContext": "Binary Search Tree / Revision Summary: Learn Revision Summary in Binary Search Tree with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Binary Search Tree, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Binary Search Tree: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "binary-search-tree",
+        "lessonSlug": "revision-summary",
+        "topic": "Binary Search Tree",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "binary-search-tree.revision-summary",
+        "tags": [
+          "tree",
+          "ordered-data",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "binary-search-tree/introduction"
+      ],
+      "futureQuizId": "quiz-binary-search-tree-revision-summary",
+      "futureFlashcardId": "flashcards-binary-search-tree-revision-summary",
+      "futureProjectId": "project-binary-search-tree-revision-summary",
+      "images": [
+        "content/binary-search-tree/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "binary-search-tree-revision-summary.py",
+          "code": "def binary_search_tree_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(binary_search_tree_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,906 @@
+{
+  "chapterId": "hashing",
+  "title": "Hashing",
+  "description": "Hashing topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Intermediate",
+  "estimatedHours": 5,
+  "tags": [
+    "hash-table",
+    "lookup"
+  ],
+  "animationNamespace": "Hashing",
+  "aiContext": "Hashing chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "hashing-introduction",
+      "component": "HashingIntroductionAnimation",
+      "status": "planned"
+    },
+    "hash-function": {
+      "animationId": "hashing-hash-function",
+      "component": "HashingHashFunctionAnimation",
+      "status": "planned"
+    },
+    "hash-table": {
+      "animationId": "hashing-hash-table",
+      "component": "HashingHashTableAnimation",
+      "status": "planned"
+    },
+    "collision-handling": {
+      "animationId": "hashing-collision-handling",
+      "component": "HashingCollisionHandlingAnimation",
+      "status": "planned"
+    },
+    "chaining": {
+      "animationId": "hashing-chaining",
+      "component": "HashingChainingAnimation",
+      "status": "planned"
+    },
+    "open-addressing": {
+      "animationId": "hashing-open-addressing",
+      "component": "HashingOpenAddressingAnimation",
+      "status": "planned"
+    },
+    "frequency-map": {
+      "animationId": "hashing-frequency-map",
+      "component": "HashingFrequencyMapAnimation",
+      "status": "planned"
+    },
+    "set-usage": {
+      "animationId": "hashing-set-usage",
+      "component": "HashingSetUsageAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "hashing-practice",
+      "component": "HashingPracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "hashing-interview-questions",
+      "component": "HashingInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "hashing-revision-summary",
+      "component": "HashingRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "hashing.introduction",
+      "chapter": "Hashing",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "hash-table",
+        "lookup",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Hashing: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "hashing-introduction",
+      "animationComponent": "HashingIntroductionAnimation",
+      "aiContext": "Hashing / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Hashing, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Hashing: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "hashing",
+        "lessonSlug": "introduction",
+        "topic": "Hashing",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "hashing.introduction",
+        "tags": [
+          "hash-table",
+          "lookup",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "hashing/introduction"
+      ],
+      "futureQuizId": "quiz-hashing-introduction",
+      "futureFlashcardId": "flashcards-hashing-introduction",
+      "futureProjectId": "project-hashing-introduction",
+      "images": [
+        "content/hashing/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "hashing-introduction.py",
+          "code": "def hashing_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(hashing_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "hash-function": {
+      "lessonId": "hashing.hash-function",
+      "chapter": "Hashing",
+      "title": "Hash Function",
+      "summary": "Learn Hash Function in Hashing with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "hash-table",
+        "lookup",
+        "hash-function"
+      ],
+      "learningObjectives": [
+        "Explain Hashing: Hash Function clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "hashing-hash-function",
+      "animationComponent": "HashingHashFunctionAnimation",
+      "aiContext": "Hashing / Hash Function: Learn Hash Function in Hashing with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Hash Function lesson for Hashing, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Hashing: Hash Function. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "hashing",
+        "lessonSlug": "hash-function",
+        "topic": "Hashing",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "hashing.hash-function",
+        "tags": [
+          "hash-table",
+          "lookup",
+          "hash-function"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "hashing/introduction"
+      ],
+      "futureQuizId": "quiz-hashing-hash-function",
+      "futureFlashcardId": "flashcards-hashing-hash-function",
+      "futureProjectId": "project-hashing-hash-function",
+      "images": [
+        "content/hashing/images/hash-function.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Hash Function from scratch.",
+        "Dry-run Hash Function on two edge cases.",
+        "Explain Hash Function complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "hashing-hash-function.py",
+          "code": "def hashing_hash_function(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(hashing_hash_function([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "hash-table": {
+      "lessonId": "hashing.hash-table",
+      "chapter": "Hashing",
+      "title": "Hash Table",
+      "summary": "Learn Hash Table in Hashing with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "hash-table",
+        "lookup"
+      ],
+      "learningObjectives": [
+        "Explain Hashing: Hash Table clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "hashing-hash-table",
+      "animationComponent": "HashingHashTableAnimation",
+      "aiContext": "Hashing / Hash Table: Learn Hash Table in Hashing with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Hash Table lesson for Hashing, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Hashing: Hash Table. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "hashing",
+        "lessonSlug": "hash-table",
+        "topic": "Hashing",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "hashing.hash-table",
+        "tags": [
+          "hash-table",
+          "lookup"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "hashing/introduction"
+      ],
+      "futureQuizId": "quiz-hashing-hash-table",
+      "futureFlashcardId": "flashcards-hashing-hash-table",
+      "futureProjectId": "project-hashing-hash-table",
+      "images": [
+        "content/hashing/images/hash-table.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Hash Table from scratch.",
+        "Dry-run Hash Table on two edge cases.",
+        "Explain Hash Table complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "hashing-hash-table.py",
+          "code": "def hashing_hash_table(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(hashing_hash_table([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "collision-handling": {
+      "lessonId": "hashing.collision-handling",
+      "chapter": "Hashing",
+      "title": "Collision Handling",
+      "summary": "Learn Collision Handling in Hashing with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "hash-table",
+        "lookup",
+        "collision-handling"
+      ],
+      "learningObjectives": [
+        "Explain Hashing: Collision Handling clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "hashing-collision-handling",
+      "animationComponent": "HashingCollisionHandlingAnimation",
+      "aiContext": "Hashing / Collision Handling: Learn Collision Handling in Hashing with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Collision Handling lesson for Hashing, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Hashing: Collision Handling. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "hashing",
+        "lessonSlug": "collision-handling",
+        "topic": "Hashing",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "hashing.collision-handling",
+        "tags": [
+          "hash-table",
+          "lookup",
+          "collision-handling"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "hashing/introduction"
+      ],
+      "futureQuizId": "quiz-hashing-collision-handling",
+      "futureFlashcardId": "flashcards-hashing-collision-handling",
+      "futureProjectId": "project-hashing-collision-handling",
+      "images": [
+        "content/hashing/images/collision-handling.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Collision Handling from scratch.",
+        "Dry-run Collision Handling on two edge cases.",
+        "Explain Collision Handling complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "hashing-collision-handling.py",
+          "code": "def hashing_collision_handling(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(hashing_collision_handling([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "chaining": {
+      "lessonId": "hashing.chaining",
+      "chapter": "Hashing",
+      "title": "Chaining",
+      "summary": "Learn Chaining in Hashing with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "hash-table",
+        "lookup",
+        "chaining"
+      ],
+      "learningObjectives": [
+        "Explain Hashing: Chaining clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "hashing-chaining",
+      "animationComponent": "HashingChainingAnimation",
+      "aiContext": "Hashing / Chaining: Learn Chaining in Hashing with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Chaining lesson for Hashing, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Hashing: Chaining. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "hashing",
+        "lessonSlug": "chaining",
+        "topic": "Hashing",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "hashing.chaining",
+        "tags": [
+          "hash-table",
+          "lookup",
+          "chaining"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "hashing/introduction"
+      ],
+      "futureQuizId": "quiz-hashing-chaining",
+      "futureFlashcardId": "flashcards-hashing-chaining",
+      "futureProjectId": "project-hashing-chaining",
+      "images": [
+        "content/hashing/images/chaining.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Chaining from scratch.",
+        "Dry-run Chaining on two edge cases.",
+        "Explain Chaining complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "hashing-chaining.py",
+          "code": "def hashing_chaining(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(hashing_chaining([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "open-addressing": {
+      "lessonId": "hashing.open-addressing",
+      "chapter": "Hashing",
+      "title": "Open Addressing",
+      "summary": "Learn Open Addressing in Hashing with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "hash-table",
+        "lookup",
+        "open-addressing"
+      ],
+      "learningObjectives": [
+        "Explain Hashing: Open Addressing clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "hashing-open-addressing",
+      "animationComponent": "HashingOpenAddressingAnimation",
+      "aiContext": "Hashing / Open Addressing: Learn Open Addressing in Hashing with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Open Addressing lesson for Hashing, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Hashing: Open Addressing. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "hashing",
+        "lessonSlug": "open-addressing",
+        "topic": "Hashing",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "hashing.open-addressing",
+        "tags": [
+          "hash-table",
+          "lookup",
+          "open-addressing"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "hashing/introduction"
+      ],
+      "futureQuizId": "quiz-hashing-open-addressing",
+      "futureFlashcardId": "flashcards-hashing-open-addressing",
+      "futureProjectId": "project-hashing-open-addressing",
+      "images": [
+        "content/hashing/images/open-addressing.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Open Addressing from scratch.",
+        "Dry-run Open Addressing on two edge cases.",
+        "Explain Open Addressing complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "hashing-open-addressing.py",
+          "code": "def hashing_open_addressing(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(hashing_open_addressing([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "frequency-map": {
+      "lessonId": "hashing.frequency-map",
+      "chapter": "Hashing",
+      "title": "Frequency Map",
+      "summary": "Learn Frequency Map in Hashing with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "hash-table",
+        "lookup",
+        "frequency-map"
+      ],
+      "learningObjectives": [
+        "Explain Hashing: Frequency Map clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "hashing-frequency-map",
+      "animationComponent": "HashingFrequencyMapAnimation",
+      "aiContext": "Hashing / Frequency Map: Learn Frequency Map in Hashing with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Frequency Map lesson for Hashing, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Hashing: Frequency Map. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "hashing",
+        "lessonSlug": "frequency-map",
+        "topic": "Hashing",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "hashing.frequency-map",
+        "tags": [
+          "hash-table",
+          "lookup",
+          "frequency-map"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "hashing/introduction"
+      ],
+      "futureQuizId": "quiz-hashing-frequency-map",
+      "futureFlashcardId": "flashcards-hashing-frequency-map",
+      "futureProjectId": "project-hashing-frequency-map",
+      "images": [
+        "content/hashing/images/frequency-map.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Frequency Map from scratch.",
+        "Dry-run Frequency Map on two edge cases.",
+        "Explain Frequency Map complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "hashing-frequency-map.py",
+          "code": "def hashing_frequency_map(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(hashing_frequency_map([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "set-usage": {
+      "lessonId": "hashing.set-usage",
+      "chapter": "Hashing",
+      "title": "Set Usage",
+      "summary": "Learn Set Usage in Hashing with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "hash-table",
+        "lookup",
+        "set-usage"
+      ],
+      "learningObjectives": [
+        "Explain Hashing: Set Usage clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "hashing-set-usage",
+      "animationComponent": "HashingSetUsageAnimation",
+      "aiContext": "Hashing / Set Usage: Learn Set Usage in Hashing with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Set Usage lesson for Hashing, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Hashing: Set Usage. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "hashing",
+        "lessonSlug": "set-usage",
+        "topic": "Hashing",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "hashing.set-usage",
+        "tags": [
+          "hash-table",
+          "lookup",
+          "set-usage"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "hashing/introduction"
+      ],
+      "futureQuizId": "quiz-hashing-set-usage",
+      "futureFlashcardId": "flashcards-hashing-set-usage",
+      "futureProjectId": "project-hashing-set-usage",
+      "images": [
+        "content/hashing/images/set-usage.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Set Usage from scratch.",
+        "Dry-run Set Usage on two edge cases.",
+        "Explain Set Usage complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "hashing-set-usage.py",
+          "code": "def hashing_set_usage(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(hashing_set_usage([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "hashing.practice",
+      "chapter": "Hashing",
+      "title": "Practice",
+      "summary": "Learn Practice in Hashing with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "hash-table",
+        "lookup",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Hashing: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "hashing-practice",
+      "animationComponent": "HashingPracticeAnimation",
+      "aiContext": "Hashing / Practice: Learn Practice in Hashing with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Hashing, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Hashing: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "hashing",
+        "lessonSlug": "practice",
+        "topic": "Hashing",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "hashing.practice",
+        "tags": [
+          "hash-table",
+          "lookup",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "hashing/introduction"
+      ],
+      "futureQuizId": "quiz-hashing-practice",
+      "futureFlashcardId": "flashcards-hashing-practice",
+      "futureProjectId": "project-hashing-practice",
+      "images": [
+        "content/hashing/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "hashing-practice.py",
+          "code": "def hashing_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(hashing_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "hashing.interview-questions",
+      "chapter": "Hashing",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Hashing with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "hash-table",
+        "lookup",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Hashing: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "hashing-interview-questions",
+      "animationComponent": "HashingInterviewQuestionsAnimation",
+      "aiContext": "Hashing / Interview Questions: Learn Interview Questions in Hashing with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Hashing, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Hashing: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "hashing",
+        "lessonSlug": "interview-questions",
+        "topic": "Hashing",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "hashing.interview-questions",
+        "tags": [
+          "hash-table",
+          "lookup",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "hashing/introduction"
+      ],
+      "futureQuizId": "quiz-hashing-interview-questions",
+      "futureFlashcardId": "flashcards-hashing-interview-questions",
+      "futureProjectId": "project-hashing-interview-questions",
+      "images": [
+        "content/hashing/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "hashing-interview-questions.py",
+          "code": "def hashing_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(hashing_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "hashing.revision-summary",
+      "chapter": "Hashing",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Hashing with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "hash-table",
+        "lookup",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Hashing: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "hashing-revision-summary",
+      "animationComponent": "HashingRevisionSummaryAnimation",
+      "aiContext": "Hashing / Revision Summary: Learn Revision Summary in Hashing with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Hashing, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Hashing: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "hashing",
+        "lessonSlug": "revision-summary",
+        "topic": "Hashing",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "hashing.revision-summary",
+        "tags": [
+          "hash-table",
+          "lookup",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "hashing/introduction"
+      ],
+      "futureQuizId": "quiz-hashing-revision-summary",
+      "futureFlashcardId": "flashcards-hashing-revision-summary",
+      "futureProjectId": "project-hashing-revision-summary",
+      "images": [
+        "content/hashing/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "hashing-revision-summary.py",
+          "code": "def hashing_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(hashing_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1068 @@
+{
+  "chapterId": "arrays",
+  "title": "Arrays",
+  "description": "Arrays topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Beginner",
+  "estimatedHours": 6,
+  "tags": [
+    "linear-data-structure",
+    "indexing"
+  ],
+  "animationNamespace": "Arrays",
+  "aiContext": "Arrays chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "arrays-introduction",
+      "component": "ArraysIntroductionAnimation",
+      "status": "planned"
+    },
+    "memory-layout": {
+      "animationId": "arrays-memory-layout",
+      "component": "ArraysMemoryLayoutAnimation",
+      "status": "planned"
+    },
+    "indexing": {
+      "animationId": "arrays-indexing",
+      "component": "ArraysIndexingAnimation",
+      "status": "planned"
+    },
+    "traversal": {
+      "animationId": "arrays-traversal",
+      "component": "ArraysTraversalAnimation",
+      "status": "planned"
+    },
+    "insertion": {
+      "animationId": "arrays-insertion",
+      "component": "ArraysInsertionAnimation",
+      "status": "planned"
+    },
+    "deletion": {
+      "animationId": "arrays-deletion",
+      "component": "ArraysDeletionAnimation",
+      "status": "planned"
+    },
+    "search": {
+      "animationId": "arrays-search",
+      "component": "ArraysSearchAnimation",
+      "status": "planned"
+    },
+    "two-pointer": {
+      "animationId": "arrays-two-pointer",
+      "component": "ArraysTwoPointerAnimation",
+      "status": "planned"
+    },
+    "prefix-sum": {
+      "animationId": "arrays-prefix-sum",
+      "component": "ArraysPrefixSumAnimation",
+      "status": "planned"
+    },
+    "sliding-window": {
+      "animationId": "arrays-sliding-window",
+      "component": "ArraysSlidingWindowAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "arrays-practice",
+      "component": "ArraysPracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "arrays-interview-questions",
+      "component": "ArraysInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "arrays-revision-summary",
+      "component": "ArraysRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "arrays.introduction",
+      "chapter": "Arrays",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "indexing",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Arrays: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "arrays-introduction",
+      "animationComponent": "ArraysIntroductionAnimation",
+      "aiContext": "Arrays / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Arrays, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Arrays: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "arrays",
+        "lessonSlug": "introduction",
+        "topic": "Arrays",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "arrays.introduction",
+        "tags": [
+          "linear-data-structure",
+          "indexing",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "arrays/introduction"
+      ],
+      "futureQuizId": "quiz-arrays-introduction",
+      "futureFlashcardId": "flashcards-arrays-introduction",
+      "futureProjectId": "project-arrays-introduction",
+      "images": [
+        "content/arrays/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "arrays-introduction.py",
+          "code": "def arrays_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(arrays_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "memory-layout": {
+      "lessonId": "arrays.memory-layout",
+      "chapter": "Arrays",
+      "title": "Memory Layout",
+      "summary": "Learn Memory Layout in Arrays with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "indexing",
+        "memory-layout"
+      ],
+      "learningObjectives": [
+        "Explain Arrays: Memory Layout clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "arrays-memory-layout",
+      "animationComponent": "ArraysMemoryLayoutAnimation",
+      "aiContext": "Arrays / Memory Layout: Learn Memory Layout in Arrays with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Memory Layout lesson for Arrays, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Arrays: Memory Layout. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "arrays",
+        "lessonSlug": "memory-layout",
+        "topic": "Arrays",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "arrays.memory-layout",
+        "tags": [
+          "linear-data-structure",
+          "indexing",
+          "memory-layout"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "arrays/introduction"
+      ],
+      "futureQuizId": "quiz-arrays-memory-layout",
+      "futureFlashcardId": "flashcards-arrays-memory-layout",
+      "futureProjectId": "project-arrays-memory-layout",
+      "images": [
+        "content/arrays/images/memory-layout.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Memory Layout from scratch.",
+        "Dry-run Memory Layout on two edge cases.",
+        "Explain Memory Layout complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "arrays-memory-layout.py",
+          "code": "def arrays_memory_layout(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(arrays_memory_layout([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "indexing": {
+      "lessonId": "arrays.indexing",
+      "chapter": "Arrays",
+      "title": "Indexing",
+      "summary": "Learn Indexing in Arrays with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "indexing"
+      ],
+      "learningObjectives": [
+        "Explain Arrays: Indexing clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "arrays-indexing",
+      "animationComponent": "ArraysIndexingAnimation",
+      "aiContext": "Arrays / Indexing: Learn Indexing in Arrays with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Indexing lesson for Arrays, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Arrays: Indexing. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "arrays",
+        "lessonSlug": "indexing",
+        "topic": "Arrays",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "arrays.indexing",
+        "tags": [
+          "linear-data-structure",
+          "indexing"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "arrays/introduction"
+      ],
+      "futureQuizId": "quiz-arrays-indexing",
+      "futureFlashcardId": "flashcards-arrays-indexing",
+      "futureProjectId": "project-arrays-indexing",
+      "images": [
+        "content/arrays/images/indexing.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Indexing from scratch.",
+        "Dry-run Indexing on two edge cases.",
+        "Explain Indexing complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "arrays-indexing.py",
+          "code": "def arrays_indexing(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(arrays_indexing([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "traversal": {
+      "lessonId": "arrays.traversal",
+      "chapter": "Arrays",
+      "title": "Traversal",
+      "summary": "Learn Traversal in Arrays with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "indexing",
+        "traversal"
+      ],
+      "learningObjectives": [
+        "Explain Arrays: Traversal clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "arrays-traversal",
+      "animationComponent": "ArraysTraversalAnimation",
+      "aiContext": "Arrays / Traversal: Learn Traversal in Arrays with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Traversal lesson for Arrays, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Arrays: Traversal. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "arrays",
+        "lessonSlug": "traversal",
+        "topic": "Arrays",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "arrays.traversal",
+        "tags": [
+          "linear-data-structure",
+          "indexing",
+          "traversal"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "arrays/introduction"
+      ],
+      "futureQuizId": "quiz-arrays-traversal",
+      "futureFlashcardId": "flashcards-arrays-traversal",
+      "futureProjectId": "project-arrays-traversal",
+      "images": [
+        "content/arrays/images/traversal.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Traversal from scratch.",
+        "Dry-run Traversal on two edge cases.",
+        "Explain Traversal complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "arrays-traversal.py",
+          "code": "def arrays_traversal(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(arrays_traversal([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "insertion": {
+      "lessonId": "arrays.insertion",
+      "chapter": "Arrays",
+      "title": "Insertion",
+      "summary": "Learn Insertion in Arrays with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "indexing",
+        "insertion"
+      ],
+      "learningObjectives": [
+        "Explain Arrays: Insertion clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "arrays-insertion",
+      "animationComponent": "ArraysInsertionAnimation",
+      "aiContext": "Arrays / Insertion: Learn Insertion in Arrays with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Insertion lesson for Arrays, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Arrays: Insertion. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "arrays",
+        "lessonSlug": "insertion",
+        "topic": "Arrays",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "arrays.insertion",
+        "tags": [
+          "linear-data-structure",
+          "indexing",
+          "insertion"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "arrays/introduction"
+      ],
+      "futureQuizId": "quiz-arrays-insertion",
+      "futureFlashcardId": "flashcards-arrays-insertion",
+      "futureProjectId": "project-arrays-insertion",
+      "images": [
+        "content/arrays/images/insertion.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Insertion from scratch.",
+        "Dry-run Insertion on two edge cases.",
+        "Explain Insertion complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "arrays-insertion.py",
+          "code": "def arrays_insertion(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(arrays_insertion([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "deletion": {
+      "lessonId": "arrays.deletion",
+      "chapter": "Arrays",
+      "title": "Deletion",
+      "summary": "Learn Deletion in Arrays with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "indexing",
+        "deletion"
+      ],
+      "learningObjectives": [
+        "Explain Arrays: Deletion clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "arrays-deletion",
+      "animationComponent": "ArraysDeletionAnimation",
+      "aiContext": "Arrays / Deletion: Learn Deletion in Arrays with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Deletion lesson for Arrays, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Arrays: Deletion. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "arrays",
+        "lessonSlug": "deletion",
+        "topic": "Arrays",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "arrays.deletion",
+        "tags": [
+          "linear-data-structure",
+          "indexing",
+          "deletion"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "arrays/introduction"
+      ],
+      "futureQuizId": "quiz-arrays-deletion",
+      "futureFlashcardId": "flashcards-arrays-deletion",
+      "futureProjectId": "project-arrays-deletion",
+      "images": [
+        "content/arrays/images/deletion.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Deletion from scratch.",
+        "Dry-run Deletion on two edge cases.",
+        "Explain Deletion complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "arrays-deletion.py",
+          "code": "def arrays_deletion(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(arrays_deletion([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "search": {
+      "lessonId": "arrays.search",
+      "chapter": "Arrays",
+      "title": "Search",
+      "summary": "Learn Search in Arrays with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "indexing",
+        "search"
+      ],
+      "learningObjectives": [
+        "Explain Arrays: Search clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "arrays-search",
+      "animationComponent": "ArraysSearchAnimation",
+      "aiContext": "Arrays / Search: Learn Search in Arrays with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Search lesson for Arrays, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Arrays: Search. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "arrays",
+        "lessonSlug": "search",
+        "topic": "Arrays",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "arrays.search",
+        "tags": [
+          "linear-data-structure",
+          "indexing",
+          "search"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "arrays/introduction"
+      ],
+      "futureQuizId": "quiz-arrays-search",
+      "futureFlashcardId": "flashcards-arrays-search",
+      "futureProjectId": "project-arrays-search",
+      "images": [
+        "content/arrays/images/search.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Search from scratch.",
+        "Dry-run Search on two edge cases.",
+        "Explain Search complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "arrays-search.py",
+          "code": "def arrays_search(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(arrays_search([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "two-pointer": {
+      "lessonId": "arrays.two-pointer",
+      "chapter": "Arrays",
+      "title": "Two Pointer",
+      "summary": "Learn Two Pointer in Arrays with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "indexing",
+        "two-pointer"
+      ],
+      "learningObjectives": [
+        "Explain Arrays: Two Pointer clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "arrays-two-pointer",
+      "animationComponent": "ArraysTwoPointerAnimation",
+      "aiContext": "Arrays / Two Pointer: Learn Two Pointer in Arrays with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Two Pointer lesson for Arrays, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Arrays: Two Pointer. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "arrays",
+        "lessonSlug": "two-pointer",
+        "topic": "Arrays",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "arrays.two-pointer",
+        "tags": [
+          "linear-data-structure",
+          "indexing",
+          "two-pointer"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "arrays/introduction"
+      ],
+      "futureQuizId": "quiz-arrays-two-pointer",
+      "futureFlashcardId": "flashcards-arrays-two-pointer",
+      "futureProjectId": "project-arrays-two-pointer",
+      "images": [
+        "content/arrays/images/two-pointer.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Two Pointer from scratch.",
+        "Dry-run Two Pointer on two edge cases.",
+        "Explain Two Pointer complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "arrays-two-pointer.py",
+          "code": "def arrays_two_pointer(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(arrays_two_pointer([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "prefix-sum": {
+      "lessonId": "arrays.prefix-sum",
+      "chapter": "Arrays",
+      "title": "Prefix Sum",
+      "summary": "Learn Prefix Sum in Arrays with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "indexing",
+        "prefix-sum"
+      ],
+      "learningObjectives": [
+        "Explain Arrays: Prefix Sum clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "arrays-prefix-sum",
+      "animationComponent": "ArraysPrefixSumAnimation",
+      "aiContext": "Arrays / Prefix Sum: Learn Prefix Sum in Arrays with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Prefix Sum lesson for Arrays, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Arrays: Prefix Sum. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "arrays",
+        "lessonSlug": "prefix-sum",
+        "topic": "Arrays",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "arrays.prefix-sum",
+        "tags": [
+          "linear-data-structure",
+          "indexing",
+          "prefix-sum"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "arrays/introduction"
+      ],
+      "futureQuizId": "quiz-arrays-prefix-sum",
+      "futureFlashcardId": "flashcards-arrays-prefix-sum",
+      "futureProjectId": "project-arrays-prefix-sum",
+      "images": [
+        "content/arrays/images/prefix-sum.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Prefix Sum from scratch.",
+        "Dry-run Prefix Sum on two edge cases.",
+        "Explain Prefix Sum complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "arrays-prefix-sum.py",
+          "code": "def arrays_prefix_sum(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(arrays_prefix_sum([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "sliding-window": {
+      "lessonId": "arrays.sliding-window",
+      "chapter": "Arrays",
+      "title": "Sliding Window",
+      "summary": "Learn Sliding Window in Arrays with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "indexing",
+        "sliding-window"
+      ],
+      "learningObjectives": [
+        "Explain Arrays: Sliding Window clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "arrays-sliding-window",
+      "animationComponent": "ArraysSlidingWindowAnimation",
+      "aiContext": "Arrays / Sliding Window: Learn Sliding Window in Arrays with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Sliding Window lesson for Arrays, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Arrays: Sliding Window. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "arrays",
+        "lessonSlug": "sliding-window",
+        "topic": "Arrays",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "arrays.sliding-window",
+        "tags": [
+          "linear-data-structure",
+          "indexing",
+          "sliding-window"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "arrays/introduction"
+      ],
+      "futureQuizId": "quiz-arrays-sliding-window",
+      "futureFlashcardId": "flashcards-arrays-sliding-window",
+      "futureProjectId": "project-arrays-sliding-window",
+      "images": [
+        "content/arrays/images/sliding-window.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Sliding Window from scratch.",
+        "Dry-run Sliding Window on two edge cases.",
+        "Explain Sliding Window complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "arrays-sliding-window.py",
+          "code": "def arrays_sliding_window(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(arrays_sliding_window([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "arrays.practice",
+      "chapter": "Arrays",
+      "title": "Practice",
+      "summary": "Learn Practice in Arrays with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "indexing",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Arrays: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "arrays-practice",
+      "animationComponent": "ArraysPracticeAnimation",
+      "aiContext": "Arrays / Practice: Learn Practice in Arrays with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Arrays, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Arrays: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "arrays",
+        "lessonSlug": "practice",
+        "topic": "Arrays",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "arrays.practice",
+        "tags": [
+          "linear-data-structure",
+          "indexing",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "arrays/introduction"
+      ],
+      "futureQuizId": "quiz-arrays-practice",
+      "futureFlashcardId": "flashcards-arrays-practice",
+      "futureProjectId": "project-arrays-practice",
+      "images": [
+        "content/arrays/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "arrays-practice.py",
+          "code": "def arrays_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(arrays_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "arrays.interview-questions",
+      "chapter": "Arrays",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Arrays with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "indexing",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Arrays: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "arrays-interview-questions",
+      "animationComponent": "ArraysInterviewQuestionsAnimation",
+      "aiContext": "Arrays / Interview Questions: Learn Interview Questions in Arrays with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Arrays, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Arrays: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "arrays",
+        "lessonSlug": "interview-questions",
+        "topic": "Arrays",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "arrays.interview-questions",
+        "tags": [
+          "linear-data-structure",
+          "indexing",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "arrays/introduction"
+      ],
+      "futureQuizId": "quiz-arrays-interview-questions",
+      "futureFlashcardId": "flashcards-arrays-interview-questions",
+      "futureProjectId": "project-arrays-interview-questions",
+      "images": [
+        "content/arrays/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "arrays-interview-questions.py",
+          "code": "def arrays_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(arrays_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "arrays.revision-summary",
+      "chapter": "Arrays",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Arrays with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "indexing",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Arrays: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "arrays-revision-summary",
+      "animationComponent": "ArraysRevisionSummaryAnimation",
+      "aiContext": "Arrays / Revision Summary: Learn Revision Summary in Arrays with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Arrays, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Arrays: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "arrays",
+        "lessonSlug": "revision-summary",
+        "topic": "Arrays",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "arrays.revision-summary",
+        "tags": [
+          "linear-data-structure",
+          "indexing",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "arrays/introduction"
+      ],
+      "futureQuizId": "quiz-arrays-revision-summary",
+      "futureFlashcardId": "flashcards-arrays-revision-summary",
+      "futureProjectId": "project-arrays-revision-summary",
+      "images": [
+        "content/arrays/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "arrays-revision-summary.py",
+          "code": "def arrays_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(arrays_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

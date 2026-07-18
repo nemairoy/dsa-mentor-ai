@@ -1,0 +1,827 @@
+{
+  "chapterId": "number-theory",
+  "title": "Number Theory",
+  "description": "Number Theory topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Intermediate",
+  "estimatedHours": 5,
+  "tags": [
+    "math",
+    "modular-arithmetic"
+  ],
+  "animationNamespace": "NumberTheory",
+  "aiContext": "Number Theory chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "number-theory-introduction",
+      "component": "NumberTheoryIntroductionAnimation",
+      "status": "planned"
+    },
+    "divisibility": {
+      "animationId": "number-theory-divisibility",
+      "component": "NumberTheoryDivisibilityAnimation",
+      "status": "planned"
+    },
+    "gcd-euclid": {
+      "animationId": "number-theory-gcd-euclid",
+      "component": "NumberTheoryGcdEuclidAnimation",
+      "status": "planned"
+    },
+    "sieve": {
+      "animationId": "number-theory-sieve",
+      "component": "NumberTheorySieveAnimation",
+      "status": "planned"
+    },
+    "prime-factorization": {
+      "animationId": "number-theory-prime-factorization",
+      "component": "NumberTheoryPrimeFactorizationAnimation",
+      "status": "planned"
+    },
+    "modular-inverse": {
+      "animationId": "number-theory-modular-inverse",
+      "component": "NumberTheoryModularInverseAnimation",
+      "status": "planned"
+    },
+    "chinese-remainder-theorem": {
+      "animationId": "number-theory-chinese-remainder-theorem",
+      "component": "NumberTheoryChineseRemainderTheoremAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "number-theory-practice",
+      "component": "NumberTheoryPracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "number-theory-interview-questions",
+      "component": "NumberTheoryInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "number-theory-revision-summary",
+      "component": "NumberTheoryRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "number-theory.introduction",
+      "chapter": "Number Theory",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "math",
+        "modular-arithmetic",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Number Theory: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "number-theory-introduction",
+      "animationComponent": "NumberTheoryIntroductionAnimation",
+      "aiContext": "Number Theory / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Number Theory, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Number Theory: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "number-theory",
+        "lessonSlug": "introduction",
+        "topic": "Number Theory",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "number-theory.introduction",
+        "tags": [
+          "math",
+          "modular-arithmetic",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "number-theory/introduction"
+      ],
+      "futureQuizId": "quiz-number-theory-introduction",
+      "futureFlashcardId": "flashcards-number-theory-introduction",
+      "futureProjectId": "project-number-theory-introduction",
+      "images": [
+        "content/number-theory/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "number-theory-introduction.py",
+          "code": "def number_theory_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(number_theory_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "divisibility": {
+      "lessonId": "number-theory.divisibility",
+      "chapter": "Number Theory",
+      "title": "Divisibility",
+      "summary": "Learn Divisibility in Number Theory with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "math",
+        "modular-arithmetic",
+        "divisibility"
+      ],
+      "learningObjectives": [
+        "Explain Number Theory: Divisibility clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "number-theory-divisibility",
+      "animationComponent": "NumberTheoryDivisibilityAnimation",
+      "aiContext": "Number Theory / Divisibility: Learn Divisibility in Number Theory with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Divisibility lesson for Number Theory, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Number Theory: Divisibility. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "number-theory",
+        "lessonSlug": "divisibility",
+        "topic": "Number Theory",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "number-theory.divisibility",
+        "tags": [
+          "math",
+          "modular-arithmetic",
+          "divisibility"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "number-theory/introduction"
+      ],
+      "futureQuizId": "quiz-number-theory-divisibility",
+      "futureFlashcardId": "flashcards-number-theory-divisibility",
+      "futureProjectId": "project-number-theory-divisibility",
+      "images": [
+        "content/number-theory/images/divisibility.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Divisibility from scratch.",
+        "Dry-run Divisibility on two edge cases.",
+        "Explain Divisibility complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "number-theory-divisibility.py",
+          "code": "def number_theory_divisibility(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(number_theory_divisibility([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "gcd-euclid": {
+      "lessonId": "number-theory.gcd-euclid",
+      "chapter": "Number Theory",
+      "title": "Gcd Euclid",
+      "summary": "Learn Gcd Euclid in Number Theory with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "math",
+        "modular-arithmetic",
+        "gcd-euclid"
+      ],
+      "learningObjectives": [
+        "Explain Number Theory: Gcd Euclid clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "number-theory-gcd-euclid",
+      "animationComponent": "NumberTheoryGcdEuclidAnimation",
+      "aiContext": "Number Theory / Gcd Euclid: Learn Gcd Euclid in Number Theory with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Gcd Euclid lesson for Number Theory, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Number Theory: Gcd Euclid. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "number-theory",
+        "lessonSlug": "gcd-euclid",
+        "topic": "Number Theory",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "number-theory.gcd-euclid",
+        "tags": [
+          "math",
+          "modular-arithmetic",
+          "gcd-euclid"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "number-theory/introduction"
+      ],
+      "futureQuizId": "quiz-number-theory-gcd-euclid",
+      "futureFlashcardId": "flashcards-number-theory-gcd-euclid",
+      "futureProjectId": "project-number-theory-gcd-euclid",
+      "images": [
+        "content/number-theory/images/gcd-euclid.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Gcd Euclid from scratch.",
+        "Dry-run Gcd Euclid on two edge cases.",
+        "Explain Gcd Euclid complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "number-theory-gcd-euclid.py",
+          "code": "def number_theory_gcd_euclid(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(number_theory_gcd_euclid([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "sieve": {
+      "lessonId": "number-theory.sieve",
+      "chapter": "Number Theory",
+      "title": "Sieve",
+      "summary": "Learn Sieve in Number Theory with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "math",
+        "modular-arithmetic",
+        "sieve"
+      ],
+      "learningObjectives": [
+        "Explain Number Theory: Sieve clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "number-theory-sieve",
+      "animationComponent": "NumberTheorySieveAnimation",
+      "aiContext": "Number Theory / Sieve: Learn Sieve in Number Theory with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Sieve lesson for Number Theory, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Number Theory: Sieve. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "number-theory",
+        "lessonSlug": "sieve",
+        "topic": "Number Theory",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "number-theory.sieve",
+        "tags": [
+          "math",
+          "modular-arithmetic",
+          "sieve"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "number-theory/introduction"
+      ],
+      "futureQuizId": "quiz-number-theory-sieve",
+      "futureFlashcardId": "flashcards-number-theory-sieve",
+      "futureProjectId": "project-number-theory-sieve",
+      "images": [
+        "content/number-theory/images/sieve.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Sieve from scratch.",
+        "Dry-run Sieve on two edge cases.",
+        "Explain Sieve complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "number-theory-sieve.py",
+          "code": "def number_theory_sieve(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(number_theory_sieve([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "prime-factorization": {
+      "lessonId": "number-theory.prime-factorization",
+      "chapter": "Number Theory",
+      "title": "Prime Factorization",
+      "summary": "Learn Prime Factorization in Number Theory with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "math",
+        "modular-arithmetic",
+        "prime-factorization"
+      ],
+      "learningObjectives": [
+        "Explain Number Theory: Prime Factorization clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "number-theory-prime-factorization",
+      "animationComponent": "NumberTheoryPrimeFactorizationAnimation",
+      "aiContext": "Number Theory / Prime Factorization: Learn Prime Factorization in Number Theory with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Prime Factorization lesson for Number Theory, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Number Theory: Prime Factorization. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "number-theory",
+        "lessonSlug": "prime-factorization",
+        "topic": "Number Theory",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "number-theory.prime-factorization",
+        "tags": [
+          "math",
+          "modular-arithmetic",
+          "prime-factorization"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "number-theory/introduction"
+      ],
+      "futureQuizId": "quiz-number-theory-prime-factorization",
+      "futureFlashcardId": "flashcards-number-theory-prime-factorization",
+      "futureProjectId": "project-number-theory-prime-factorization",
+      "images": [
+        "content/number-theory/images/prime-factorization.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Prime Factorization from scratch.",
+        "Dry-run Prime Factorization on two edge cases.",
+        "Explain Prime Factorization complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "number-theory-prime-factorization.py",
+          "code": "def number_theory_prime_factorization(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(number_theory_prime_factorization([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "modular-inverse": {
+      "lessonId": "number-theory.modular-inverse",
+      "chapter": "Number Theory",
+      "title": "Modular Inverse",
+      "summary": "Learn Modular Inverse in Number Theory with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "math",
+        "modular-arithmetic",
+        "modular-inverse"
+      ],
+      "learningObjectives": [
+        "Explain Number Theory: Modular Inverse clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "number-theory-modular-inverse",
+      "animationComponent": "NumberTheoryModularInverseAnimation",
+      "aiContext": "Number Theory / Modular Inverse: Learn Modular Inverse in Number Theory with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Modular Inverse lesson for Number Theory, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Number Theory: Modular Inverse. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "number-theory",
+        "lessonSlug": "modular-inverse",
+        "topic": "Number Theory",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "number-theory.modular-inverse",
+        "tags": [
+          "math",
+          "modular-arithmetic",
+          "modular-inverse"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "number-theory/introduction"
+      ],
+      "futureQuizId": "quiz-number-theory-modular-inverse",
+      "futureFlashcardId": "flashcards-number-theory-modular-inverse",
+      "futureProjectId": "project-number-theory-modular-inverse",
+      "images": [
+        "content/number-theory/images/modular-inverse.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Modular Inverse from scratch.",
+        "Dry-run Modular Inverse on two edge cases.",
+        "Explain Modular Inverse complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "number-theory-modular-inverse.py",
+          "code": "def number_theory_modular_inverse(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(number_theory_modular_inverse([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "chinese-remainder-theorem": {
+      "lessonId": "number-theory.chinese-remainder-theorem",
+      "chapter": "Number Theory",
+      "title": "Chinese Remainder Theorem",
+      "summary": "Learn Chinese Remainder Theorem in Number Theory with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "math",
+        "modular-arithmetic",
+        "chinese-remainder-theorem"
+      ],
+      "learningObjectives": [
+        "Explain Number Theory: Chinese Remainder Theorem clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "number-theory-chinese-remainder-theorem",
+      "animationComponent": "NumberTheoryChineseRemainderTheoremAnimation",
+      "aiContext": "Number Theory / Chinese Remainder Theorem: Learn Chinese Remainder Theorem in Number Theory with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Chinese Remainder Theorem lesson for Number Theory, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Number Theory: Chinese Remainder Theorem. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "number-theory",
+        "lessonSlug": "chinese-remainder-theorem",
+        "topic": "Number Theory",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "number-theory.chinese-remainder-theorem",
+        "tags": [
+          "math",
+          "modular-arithmetic",
+          "chinese-remainder-theorem"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "number-theory/introduction"
+      ],
+      "futureQuizId": "quiz-number-theory-chinese-remainder-theorem",
+      "futureFlashcardId": "flashcards-number-theory-chinese-remainder-theorem",
+      "futureProjectId": "project-number-theory-chinese-remainder-theorem",
+      "images": [
+        "content/number-theory/images/chinese-remainder-theorem.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Chinese Remainder Theorem from scratch.",
+        "Dry-run Chinese Remainder Theorem on two edge cases.",
+        "Explain Chinese Remainder Theorem complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "number-theory-chinese-remainder-theorem.py",
+          "code": "def number_theory_chinese_remainder_theorem(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(number_theory_chinese_remainder_theorem([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "number-theory.practice",
+      "chapter": "Number Theory",
+      "title": "Practice",
+      "summary": "Learn Practice in Number Theory with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "math",
+        "modular-arithmetic",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Number Theory: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "number-theory-practice",
+      "animationComponent": "NumberTheoryPracticeAnimation",
+      "aiContext": "Number Theory / Practice: Learn Practice in Number Theory with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Number Theory, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Number Theory: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "number-theory",
+        "lessonSlug": "practice",
+        "topic": "Number Theory",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "number-theory.practice",
+        "tags": [
+          "math",
+          "modular-arithmetic",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "number-theory/introduction"
+      ],
+      "futureQuizId": "quiz-number-theory-practice",
+      "futureFlashcardId": "flashcards-number-theory-practice",
+      "futureProjectId": "project-number-theory-practice",
+      "images": [
+        "content/number-theory/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "number-theory-practice.py",
+          "code": "def number_theory_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(number_theory_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "number-theory.interview-questions",
+      "chapter": "Number Theory",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Number Theory with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "math",
+        "modular-arithmetic",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Number Theory: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "number-theory-interview-questions",
+      "animationComponent": "NumberTheoryInterviewQuestionsAnimation",
+      "aiContext": "Number Theory / Interview Questions: Learn Interview Questions in Number Theory with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Number Theory, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Number Theory: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "number-theory",
+        "lessonSlug": "interview-questions",
+        "topic": "Number Theory",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "number-theory.interview-questions",
+        "tags": [
+          "math",
+          "modular-arithmetic",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "number-theory/introduction"
+      ],
+      "futureQuizId": "quiz-number-theory-interview-questions",
+      "futureFlashcardId": "flashcards-number-theory-interview-questions",
+      "futureProjectId": "project-number-theory-interview-questions",
+      "images": [
+        "content/number-theory/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "number-theory-interview-questions.py",
+          "code": "def number_theory_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(number_theory_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "number-theory.revision-summary",
+      "chapter": "Number Theory",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Number Theory with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "math",
+        "modular-arithmetic",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Number Theory: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "number-theory-revision-summary",
+      "animationComponent": "NumberTheoryRevisionSummaryAnimation",
+      "aiContext": "Number Theory / Revision Summary: Learn Revision Summary in Number Theory with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Number Theory, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Number Theory: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "number-theory",
+        "lessonSlug": "revision-summary",
+        "topic": "Number Theory",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "number-theory.revision-summary",
+        "tags": [
+          "math",
+          "modular-arithmetic",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "number-theory/introduction"
+      ],
+      "futureQuizId": "quiz-number-theory-revision-summary",
+      "futureFlashcardId": "flashcards-number-theory-revision-summary",
+      "futureProjectId": "project-number-theory-revision-summary",
+      "images": [
+        "content/number-theory/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "number-theory-revision-summary.py",
+          "code": "def number_theory_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(number_theory_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

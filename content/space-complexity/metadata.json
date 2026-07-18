@@ -1,0 +1,746 @@
+{
+  "chapterId": "space-complexity",
+  "title": "Space Complexity",
+  "description": "Space Complexity topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Beginner",
+  "estimatedHours": 4,
+  "tags": [
+    "complexity",
+    "memory"
+  ],
+  "animationNamespace": "SpaceComplexity",
+  "aiContext": "Space Complexity chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "space-complexity-introduction",
+      "component": "SpaceComplexityIntroductionAnimation",
+      "status": "planned"
+    },
+    "auxiliary-space": {
+      "animationId": "space-complexity-auxiliary-space",
+      "component": "SpaceComplexityAuxiliarySpaceAnimation",
+      "status": "planned"
+    },
+    "input-space": {
+      "animationId": "space-complexity-input-space",
+      "component": "SpaceComplexityInputSpaceAnimation",
+      "status": "planned"
+    },
+    "recursion-stack": {
+      "animationId": "space-complexity-recursion-stack",
+      "component": "SpaceComplexityRecursionStackAnimation",
+      "status": "planned"
+    },
+    "in-place-algorithms": {
+      "animationId": "space-complexity-in-place-algorithms",
+      "component": "SpaceComplexityInPlaceAlgorithmsAnimation",
+      "status": "planned"
+    },
+    "space-time-tradeoff": {
+      "animationId": "space-complexity-space-time-tradeoff",
+      "component": "SpaceComplexitySpaceTimeTradeoffAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "space-complexity-practice",
+      "component": "SpaceComplexityPracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "space-complexity-interview-questions",
+      "component": "SpaceComplexityInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "space-complexity-revision-summary",
+      "component": "SpaceComplexityRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "space-complexity.introduction",
+      "chapter": "Space Complexity",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "complexity",
+        "memory",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Space Complexity: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "space-complexity-introduction",
+      "animationComponent": "SpaceComplexityIntroductionAnimation",
+      "aiContext": "Space Complexity / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Space Complexity, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Space Complexity: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "space-complexity",
+        "lessonSlug": "introduction",
+        "topic": "Space Complexity",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "space-complexity.introduction",
+        "tags": [
+          "complexity",
+          "memory",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "space-complexity/introduction"
+      ],
+      "futureQuizId": "quiz-space-complexity-introduction",
+      "futureFlashcardId": "flashcards-space-complexity-introduction",
+      "futureProjectId": "project-space-complexity-introduction",
+      "images": [
+        "content/space-complexity/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "space-complexity-introduction.py",
+          "code": "def space_complexity_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(space_complexity_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "auxiliary-space": {
+      "lessonId": "space-complexity.auxiliary-space",
+      "chapter": "Space Complexity",
+      "title": "Auxiliary Space",
+      "summary": "Learn Auxiliary Space in Space Complexity with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "complexity",
+        "memory",
+        "auxiliary-space"
+      ],
+      "learningObjectives": [
+        "Explain Space Complexity: Auxiliary Space clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "space-complexity-auxiliary-space",
+      "animationComponent": "SpaceComplexityAuxiliarySpaceAnimation",
+      "aiContext": "Space Complexity / Auxiliary Space: Learn Auxiliary Space in Space Complexity with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Auxiliary Space lesson for Space Complexity, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Space Complexity: Auxiliary Space. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "space-complexity",
+        "lessonSlug": "auxiliary-space",
+        "topic": "Space Complexity",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "space-complexity.auxiliary-space",
+        "tags": [
+          "complexity",
+          "memory",
+          "auxiliary-space"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "space-complexity/introduction"
+      ],
+      "futureQuizId": "quiz-space-complexity-auxiliary-space",
+      "futureFlashcardId": "flashcards-space-complexity-auxiliary-space",
+      "futureProjectId": "project-space-complexity-auxiliary-space",
+      "images": [
+        "content/space-complexity/images/auxiliary-space.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Auxiliary Space from scratch.",
+        "Dry-run Auxiliary Space on two edge cases.",
+        "Explain Auxiliary Space complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "space-complexity-auxiliary-space.py",
+          "code": "def space_complexity_auxiliary_space(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(space_complexity_auxiliary_space([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "input-space": {
+      "lessonId": "space-complexity.input-space",
+      "chapter": "Space Complexity",
+      "title": "Input Space",
+      "summary": "Learn Input Space in Space Complexity with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "complexity",
+        "memory",
+        "input-space"
+      ],
+      "learningObjectives": [
+        "Explain Space Complexity: Input Space clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "space-complexity-input-space",
+      "animationComponent": "SpaceComplexityInputSpaceAnimation",
+      "aiContext": "Space Complexity / Input Space: Learn Input Space in Space Complexity with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Input Space lesson for Space Complexity, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Space Complexity: Input Space. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "space-complexity",
+        "lessonSlug": "input-space",
+        "topic": "Space Complexity",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "space-complexity.input-space",
+        "tags": [
+          "complexity",
+          "memory",
+          "input-space"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "space-complexity/introduction"
+      ],
+      "futureQuizId": "quiz-space-complexity-input-space",
+      "futureFlashcardId": "flashcards-space-complexity-input-space",
+      "futureProjectId": "project-space-complexity-input-space",
+      "images": [
+        "content/space-complexity/images/input-space.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Input Space from scratch.",
+        "Dry-run Input Space on two edge cases.",
+        "Explain Input Space complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "space-complexity-input-space.py",
+          "code": "def space_complexity_input_space(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(space_complexity_input_space([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "recursion-stack": {
+      "lessonId": "space-complexity.recursion-stack",
+      "chapter": "Space Complexity",
+      "title": "Recursion Stack",
+      "summary": "Learn Recursion Stack in Space Complexity with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "complexity",
+        "memory",
+        "recursion-stack"
+      ],
+      "learningObjectives": [
+        "Explain Space Complexity: Recursion Stack clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "space-complexity-recursion-stack",
+      "animationComponent": "SpaceComplexityRecursionStackAnimation",
+      "aiContext": "Space Complexity / Recursion Stack: Learn Recursion Stack in Space Complexity with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Recursion Stack lesson for Space Complexity, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Space Complexity: Recursion Stack. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "space-complexity",
+        "lessonSlug": "recursion-stack",
+        "topic": "Space Complexity",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "space-complexity.recursion-stack",
+        "tags": [
+          "complexity",
+          "memory",
+          "recursion-stack"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "space-complexity/introduction"
+      ],
+      "futureQuizId": "quiz-space-complexity-recursion-stack",
+      "futureFlashcardId": "flashcards-space-complexity-recursion-stack",
+      "futureProjectId": "project-space-complexity-recursion-stack",
+      "images": [
+        "content/space-complexity/images/recursion-stack.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Recursion Stack from scratch.",
+        "Dry-run Recursion Stack on two edge cases.",
+        "Explain Recursion Stack complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "space-complexity-recursion-stack.py",
+          "code": "def space_complexity_recursion_stack(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(space_complexity_recursion_stack([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "in-place-algorithms": {
+      "lessonId": "space-complexity.in-place-algorithms",
+      "chapter": "Space Complexity",
+      "title": "In Place Algorithms",
+      "summary": "Learn In Place Algorithms in Space Complexity with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "complexity",
+        "memory",
+        "in-place-algorithms"
+      ],
+      "learningObjectives": [
+        "Explain Space Complexity: In Place Algorithms clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "space-complexity-in-place-algorithms",
+      "animationComponent": "SpaceComplexityInPlaceAlgorithmsAnimation",
+      "aiContext": "Space Complexity / In Place Algorithms: Learn In Place Algorithms in Space Complexity with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "In Place Algorithms lesson for Space Complexity, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Space Complexity: In Place Algorithms. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "space-complexity",
+        "lessonSlug": "in-place-algorithms",
+        "topic": "Space Complexity",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "space-complexity.in-place-algorithms",
+        "tags": [
+          "complexity",
+          "memory",
+          "in-place-algorithms"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "space-complexity/introduction"
+      ],
+      "futureQuizId": "quiz-space-complexity-in-place-algorithms",
+      "futureFlashcardId": "flashcards-space-complexity-in-place-algorithms",
+      "futureProjectId": "project-space-complexity-in-place-algorithms",
+      "images": [
+        "content/space-complexity/images/in-place-algorithms.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement In Place Algorithms from scratch.",
+        "Dry-run In Place Algorithms on two edge cases.",
+        "Explain In Place Algorithms complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "space-complexity-in-place-algorithms.py",
+          "code": "def space_complexity_in_place_algorithms(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(space_complexity_in_place_algorithms([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "space-time-tradeoff": {
+      "lessonId": "space-complexity.space-time-tradeoff",
+      "chapter": "Space Complexity",
+      "title": "Space Time Tradeoff",
+      "summary": "Learn Space Time Tradeoff in Space Complexity with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "complexity",
+        "memory",
+        "space-time-tradeoff"
+      ],
+      "learningObjectives": [
+        "Explain Space Complexity: Space Time Tradeoff clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "space-complexity-space-time-tradeoff",
+      "animationComponent": "SpaceComplexitySpaceTimeTradeoffAnimation",
+      "aiContext": "Space Complexity / Space Time Tradeoff: Learn Space Time Tradeoff in Space Complexity with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Space Time Tradeoff lesson for Space Complexity, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Space Complexity: Space Time Tradeoff. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "space-complexity",
+        "lessonSlug": "space-time-tradeoff",
+        "topic": "Space Complexity",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "space-complexity.space-time-tradeoff",
+        "tags": [
+          "complexity",
+          "memory",
+          "space-time-tradeoff"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "space-complexity/introduction"
+      ],
+      "futureQuizId": "quiz-space-complexity-space-time-tradeoff",
+      "futureFlashcardId": "flashcards-space-complexity-space-time-tradeoff",
+      "futureProjectId": "project-space-complexity-space-time-tradeoff",
+      "images": [
+        "content/space-complexity/images/space-time-tradeoff.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Space Time Tradeoff from scratch.",
+        "Dry-run Space Time Tradeoff on two edge cases.",
+        "Explain Space Time Tradeoff complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "space-complexity-space-time-tradeoff.py",
+          "code": "def space_complexity_space_time_tradeoff(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(space_complexity_space_time_tradeoff([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "space-complexity.practice",
+      "chapter": "Space Complexity",
+      "title": "Practice",
+      "summary": "Learn Practice in Space Complexity with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "complexity",
+        "memory",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Space Complexity: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "space-complexity-practice",
+      "animationComponent": "SpaceComplexityPracticeAnimation",
+      "aiContext": "Space Complexity / Practice: Learn Practice in Space Complexity with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Space Complexity, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Space Complexity: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "space-complexity",
+        "lessonSlug": "practice",
+        "topic": "Space Complexity",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "space-complexity.practice",
+        "tags": [
+          "complexity",
+          "memory",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "space-complexity/introduction"
+      ],
+      "futureQuizId": "quiz-space-complexity-practice",
+      "futureFlashcardId": "flashcards-space-complexity-practice",
+      "futureProjectId": "project-space-complexity-practice",
+      "images": [
+        "content/space-complexity/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "space-complexity-practice.py",
+          "code": "def space_complexity_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(space_complexity_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "space-complexity.interview-questions",
+      "chapter": "Space Complexity",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Space Complexity with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "complexity",
+        "memory",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Space Complexity: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "space-complexity-interview-questions",
+      "animationComponent": "SpaceComplexityInterviewQuestionsAnimation",
+      "aiContext": "Space Complexity / Interview Questions: Learn Interview Questions in Space Complexity with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Space Complexity, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Space Complexity: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "space-complexity",
+        "lessonSlug": "interview-questions",
+        "topic": "Space Complexity",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "space-complexity.interview-questions",
+        "tags": [
+          "complexity",
+          "memory",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "space-complexity/introduction"
+      ],
+      "futureQuizId": "quiz-space-complexity-interview-questions",
+      "futureFlashcardId": "flashcards-space-complexity-interview-questions",
+      "futureProjectId": "project-space-complexity-interview-questions",
+      "images": [
+        "content/space-complexity/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "space-complexity-interview-questions.py",
+          "code": "def space_complexity_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(space_complexity_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "space-complexity.revision-summary",
+      "chapter": "Space Complexity",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Space Complexity with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "complexity",
+        "memory",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Space Complexity: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "space-complexity-revision-summary",
+      "animationComponent": "SpaceComplexityRevisionSummaryAnimation",
+      "aiContext": "Space Complexity / Revision Summary: Learn Revision Summary in Space Complexity with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Space Complexity, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Space Complexity: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "space-complexity",
+        "lessonSlug": "revision-summary",
+        "topic": "Space Complexity",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "space-complexity.revision-summary",
+        "tags": [
+          "complexity",
+          "memory",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "space-complexity/introduction"
+      ],
+      "futureQuizId": "quiz-space-complexity-revision-summary",
+      "futureFlashcardId": "flashcards-space-complexity-revision-summary",
+      "futureProjectId": "project-space-complexity-revision-summary",
+      "images": [
+        "content/space-complexity/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "space-complexity-revision-summary.py",
+          "code": "def space_complexity_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(space_complexity_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

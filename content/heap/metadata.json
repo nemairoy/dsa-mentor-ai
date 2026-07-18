@@ -1,0 +1,906 @@
+{
+  "chapterId": "heap",
+  "title": "Heap",
+  "description": "Heap topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Intermediate",
+  "estimatedHours": 5,
+  "tags": [
+    "priority-queue",
+    "complete-tree"
+  ],
+  "animationNamespace": "Heap",
+  "aiContext": "Heap chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "heap-introduction",
+      "component": "HeapIntroductionAnimation",
+      "status": "planned"
+    },
+    "heap-property": {
+      "animationId": "heap-heap-property",
+      "component": "HeapHeapPropertyAnimation",
+      "status": "planned"
+    },
+    "array-representation": {
+      "animationId": "heap-array-representation",
+      "component": "HeapArrayRepresentationAnimation",
+      "status": "planned"
+    },
+    "insert": {
+      "animationId": "heap-insert",
+      "component": "HeapInsertAnimation",
+      "status": "planned"
+    },
+    "extract-min-max": {
+      "animationId": "heap-extract-min-max",
+      "component": "HeapExtractMinMaxAnimation",
+      "status": "planned"
+    },
+    "heapify": {
+      "animationId": "heap-heapify",
+      "component": "HeapHeapifyAnimation",
+      "status": "planned"
+    },
+    "priority-queue": {
+      "animationId": "heap-priority-queue",
+      "component": "HeapPriorityQueueAnimation",
+      "status": "planned"
+    },
+    "heap-sort": {
+      "animationId": "heap-heap-sort",
+      "component": "HeapHeapSortAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "heap-practice",
+      "component": "HeapPracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "heap-interview-questions",
+      "component": "HeapInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "heap-revision-summary",
+      "component": "HeapRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "heap.introduction",
+      "chapter": "Heap",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "priority-queue",
+        "complete-tree",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Heap: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "heap-introduction",
+      "animationComponent": "HeapIntroductionAnimation",
+      "aiContext": "Heap / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Heap, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Heap: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "heap",
+        "lessonSlug": "introduction",
+        "topic": "Heap",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "heap.introduction",
+        "tags": [
+          "priority-queue",
+          "complete-tree",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "heap/introduction"
+      ],
+      "futureQuizId": "quiz-heap-introduction",
+      "futureFlashcardId": "flashcards-heap-introduction",
+      "futureProjectId": "project-heap-introduction",
+      "images": [
+        "content/heap/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "heap-introduction.py",
+          "code": "def heap_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(heap_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "heap-property": {
+      "lessonId": "heap.heap-property",
+      "chapter": "Heap",
+      "title": "Heap Property",
+      "summary": "Learn Heap Property in Heap with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "priority-queue",
+        "complete-tree",
+        "heap-property"
+      ],
+      "learningObjectives": [
+        "Explain Heap: Heap Property clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "heap-heap-property",
+      "animationComponent": "HeapHeapPropertyAnimation",
+      "aiContext": "Heap / Heap Property: Learn Heap Property in Heap with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Heap Property lesson for Heap, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Heap: Heap Property. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "heap",
+        "lessonSlug": "heap-property",
+        "topic": "Heap",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "heap.heap-property",
+        "tags": [
+          "priority-queue",
+          "complete-tree",
+          "heap-property"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "heap/introduction"
+      ],
+      "futureQuizId": "quiz-heap-heap-property",
+      "futureFlashcardId": "flashcards-heap-heap-property",
+      "futureProjectId": "project-heap-heap-property",
+      "images": [
+        "content/heap/images/heap-property.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Heap Property from scratch.",
+        "Dry-run Heap Property on two edge cases.",
+        "Explain Heap Property complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "heap-heap-property.py",
+          "code": "def heap_heap_property(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(heap_heap_property([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "array-representation": {
+      "lessonId": "heap.array-representation",
+      "chapter": "Heap",
+      "title": "Array Representation",
+      "summary": "Learn Array Representation in Heap with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "priority-queue",
+        "complete-tree",
+        "array-representation"
+      ],
+      "learningObjectives": [
+        "Explain Heap: Array Representation clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "heap-array-representation",
+      "animationComponent": "HeapArrayRepresentationAnimation",
+      "aiContext": "Heap / Array Representation: Learn Array Representation in Heap with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Array Representation lesson for Heap, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Heap: Array Representation. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "heap",
+        "lessonSlug": "array-representation",
+        "topic": "Heap",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "heap.array-representation",
+        "tags": [
+          "priority-queue",
+          "complete-tree",
+          "array-representation"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "heap/introduction"
+      ],
+      "futureQuizId": "quiz-heap-array-representation",
+      "futureFlashcardId": "flashcards-heap-array-representation",
+      "futureProjectId": "project-heap-array-representation",
+      "images": [
+        "content/heap/images/array-representation.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Array Representation from scratch.",
+        "Dry-run Array Representation on two edge cases.",
+        "Explain Array Representation complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "heap-array-representation.py",
+          "code": "def heap_array_representation(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(heap_array_representation([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "insert": {
+      "lessonId": "heap.insert",
+      "chapter": "Heap",
+      "title": "Insert",
+      "summary": "Learn Insert in Heap with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "priority-queue",
+        "complete-tree",
+        "insert"
+      ],
+      "learningObjectives": [
+        "Explain Heap: Insert clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "heap-insert",
+      "animationComponent": "HeapInsertAnimation",
+      "aiContext": "Heap / Insert: Learn Insert in Heap with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Insert lesson for Heap, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Heap: Insert. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "heap",
+        "lessonSlug": "insert",
+        "topic": "Heap",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "heap.insert",
+        "tags": [
+          "priority-queue",
+          "complete-tree",
+          "insert"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "heap/introduction"
+      ],
+      "futureQuizId": "quiz-heap-insert",
+      "futureFlashcardId": "flashcards-heap-insert",
+      "futureProjectId": "project-heap-insert",
+      "images": [
+        "content/heap/images/insert.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Insert from scratch.",
+        "Dry-run Insert on two edge cases.",
+        "Explain Insert complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "heap-insert.py",
+          "code": "def heap_insert(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(heap_insert([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "extract-min-max": {
+      "lessonId": "heap.extract-min-max",
+      "chapter": "Heap",
+      "title": "Extract Min Max",
+      "summary": "Learn Extract Min Max in Heap with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "priority-queue",
+        "complete-tree",
+        "extract-min-max"
+      ],
+      "learningObjectives": [
+        "Explain Heap: Extract Min Max clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "heap-extract-min-max",
+      "animationComponent": "HeapExtractMinMaxAnimation",
+      "aiContext": "Heap / Extract Min Max: Learn Extract Min Max in Heap with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Extract Min Max lesson for Heap, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Heap: Extract Min Max. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "heap",
+        "lessonSlug": "extract-min-max",
+        "topic": "Heap",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "heap.extract-min-max",
+        "tags": [
+          "priority-queue",
+          "complete-tree",
+          "extract-min-max"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "heap/introduction"
+      ],
+      "futureQuizId": "quiz-heap-extract-min-max",
+      "futureFlashcardId": "flashcards-heap-extract-min-max",
+      "futureProjectId": "project-heap-extract-min-max",
+      "images": [
+        "content/heap/images/extract-min-max.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Extract Min Max from scratch.",
+        "Dry-run Extract Min Max on two edge cases.",
+        "Explain Extract Min Max complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "heap-extract-min-max.py",
+          "code": "def heap_extract_min_max(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(heap_extract_min_max([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "heapify": {
+      "lessonId": "heap.heapify",
+      "chapter": "Heap",
+      "title": "Heapify",
+      "summary": "Learn Heapify in Heap with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "priority-queue",
+        "complete-tree",
+        "heapify"
+      ],
+      "learningObjectives": [
+        "Explain Heap: Heapify clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "heap-heapify",
+      "animationComponent": "HeapHeapifyAnimation",
+      "aiContext": "Heap / Heapify: Learn Heapify in Heap with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Heapify lesson for Heap, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Heap: Heapify. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "heap",
+        "lessonSlug": "heapify",
+        "topic": "Heap",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "heap.heapify",
+        "tags": [
+          "priority-queue",
+          "complete-tree",
+          "heapify"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "heap/introduction"
+      ],
+      "futureQuizId": "quiz-heap-heapify",
+      "futureFlashcardId": "flashcards-heap-heapify",
+      "futureProjectId": "project-heap-heapify",
+      "images": [
+        "content/heap/images/heapify.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Heapify from scratch.",
+        "Dry-run Heapify on two edge cases.",
+        "Explain Heapify complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "heap-heapify.py",
+          "code": "def heap_heapify(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(heap_heapify([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "priority-queue": {
+      "lessonId": "heap.priority-queue",
+      "chapter": "Heap",
+      "title": "Priority Queue",
+      "summary": "Learn Priority Queue in Heap with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "priority-queue",
+        "complete-tree"
+      ],
+      "learningObjectives": [
+        "Explain Heap: Priority Queue clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "heap-priority-queue",
+      "animationComponent": "HeapPriorityQueueAnimation",
+      "aiContext": "Heap / Priority Queue: Learn Priority Queue in Heap with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Priority Queue lesson for Heap, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Heap: Priority Queue. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "heap",
+        "lessonSlug": "priority-queue",
+        "topic": "Heap",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "heap.priority-queue",
+        "tags": [
+          "priority-queue",
+          "complete-tree"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "heap/introduction"
+      ],
+      "futureQuizId": "quiz-heap-priority-queue",
+      "futureFlashcardId": "flashcards-heap-priority-queue",
+      "futureProjectId": "project-heap-priority-queue",
+      "images": [
+        "content/heap/images/priority-queue.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Priority Queue from scratch.",
+        "Dry-run Priority Queue on two edge cases.",
+        "Explain Priority Queue complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "heap-priority-queue.py",
+          "code": "def heap_priority_queue(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(heap_priority_queue([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "heap-sort": {
+      "lessonId": "heap.heap-sort",
+      "chapter": "Heap",
+      "title": "Heap Sort",
+      "summary": "Learn Heap Sort in Heap with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "priority-queue",
+        "complete-tree",
+        "heap-sort"
+      ],
+      "learningObjectives": [
+        "Explain Heap: Heap Sort clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "heap-heap-sort",
+      "animationComponent": "HeapHeapSortAnimation",
+      "aiContext": "Heap / Heap Sort: Learn Heap Sort in Heap with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Heap Sort lesson for Heap, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Heap: Heap Sort. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "heap",
+        "lessonSlug": "heap-sort",
+        "topic": "Heap",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "heap.heap-sort",
+        "tags": [
+          "priority-queue",
+          "complete-tree",
+          "heap-sort"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "heap/introduction"
+      ],
+      "futureQuizId": "quiz-heap-heap-sort",
+      "futureFlashcardId": "flashcards-heap-heap-sort",
+      "futureProjectId": "project-heap-heap-sort",
+      "images": [
+        "content/heap/images/heap-sort.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Heap Sort from scratch.",
+        "Dry-run Heap Sort on two edge cases.",
+        "Explain Heap Sort complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "heap-heap-sort.py",
+          "code": "def heap_heap_sort(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(heap_heap_sort([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "heap.practice",
+      "chapter": "Heap",
+      "title": "Practice",
+      "summary": "Learn Practice in Heap with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "priority-queue",
+        "complete-tree",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Heap: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "heap-practice",
+      "animationComponent": "HeapPracticeAnimation",
+      "aiContext": "Heap / Practice: Learn Practice in Heap with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Heap, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Heap: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "heap",
+        "lessonSlug": "practice",
+        "topic": "Heap",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "heap.practice",
+        "tags": [
+          "priority-queue",
+          "complete-tree",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "heap/introduction"
+      ],
+      "futureQuizId": "quiz-heap-practice",
+      "futureFlashcardId": "flashcards-heap-practice",
+      "futureProjectId": "project-heap-practice",
+      "images": [
+        "content/heap/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "heap-practice.py",
+          "code": "def heap_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(heap_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "heap.interview-questions",
+      "chapter": "Heap",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Heap with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "priority-queue",
+        "complete-tree",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Heap: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "heap-interview-questions",
+      "animationComponent": "HeapInterviewQuestionsAnimation",
+      "aiContext": "Heap / Interview Questions: Learn Interview Questions in Heap with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Heap, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Heap: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "heap",
+        "lessonSlug": "interview-questions",
+        "topic": "Heap",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "heap.interview-questions",
+        "tags": [
+          "priority-queue",
+          "complete-tree",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "heap/introduction"
+      ],
+      "futureQuizId": "quiz-heap-interview-questions",
+      "futureFlashcardId": "flashcards-heap-interview-questions",
+      "futureProjectId": "project-heap-interview-questions",
+      "images": [
+        "content/heap/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "heap-interview-questions.py",
+          "code": "def heap_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(heap_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "heap.revision-summary",
+      "chapter": "Heap",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Heap with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "priority-queue",
+        "complete-tree",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Heap: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "heap-revision-summary",
+      "animationComponent": "HeapRevisionSummaryAnimation",
+      "aiContext": "Heap / Revision Summary: Learn Revision Summary in Heap with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Heap, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Heap: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "heap",
+        "lessonSlug": "revision-summary",
+        "topic": "Heap",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "heap.revision-summary",
+        "tags": [
+          "priority-queue",
+          "complete-tree",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "heap/introduction"
+      ],
+      "futureQuizId": "quiz-heap-revision-summary",
+      "futureFlashcardId": "flashcards-heap-revision-summary",
+      "futureProjectId": "project-heap-revision-summary",
+      "images": [
+        "content/heap/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "heap-revision-summary.py",
+          "code": "def heap_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(heap_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

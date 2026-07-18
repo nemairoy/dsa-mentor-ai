@@ -1,0 +1,908 @@
+{
+  "chapterId": "trie",
+  "title": "Trie",
+  "description": "Trie topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Intermediate",
+  "estimatedHours": 5,
+  "tags": [
+    "prefix-tree",
+    "strings"
+  ],
+  "animationNamespace": "Trie",
+  "aiContext": "Trie chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "trie-introduction",
+      "component": "TrieIntroductionAnimation",
+      "status": "planned"
+    },
+    "node-structure": {
+      "animationId": "trie-node-structure",
+      "component": "TrieNodeStructureAnimation",
+      "status": "planned"
+    },
+    "insert": {
+      "animationId": "trie-insert",
+      "component": "TrieInsertAnimation",
+      "status": "planned"
+    },
+    "search": {
+      "animationId": "trie-search",
+      "component": "TrieSearchAnimation",
+      "status": "planned"
+    },
+    "starts-with": {
+      "animationId": "trie-starts-with",
+      "component": "TrieStartsWithAnimation",
+      "status": "planned"
+    },
+    "delete-word": {
+      "animationId": "trie-delete-word",
+      "component": "TrieDeleteWordAnimation",
+      "status": "planned"
+    },
+    "autocomplete": {
+      "animationId": "trie-autocomplete",
+      "component": "TrieAutocompleteAnimation",
+      "status": "planned"
+    },
+    "word-break": {
+      "animationId": "trie-word-break",
+      "component": "TrieWordBreakAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "trie-practice",
+      "component": "TriePracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "trie-interview-questions",
+      "component": "TrieInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "trie-revision-summary",
+      "component": "TrieRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "trie.introduction",
+      "chapter": "Trie",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "prefix-tree",
+        "strings",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Trie: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "trie-introduction",
+      "animationComponent": "TrieIntroductionAnimation",
+      "aiContext": "Trie / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Trie, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Trie: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "trie",
+        "lessonSlug": "introduction",
+        "topic": "Trie",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "trie.introduction",
+        "tags": [
+          "prefix-tree",
+          "strings",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "trie/introduction"
+      ],
+      "futureQuizId": "quiz-trie-introduction",
+      "futureFlashcardId": "flashcards-trie-introduction",
+      "futureProjectId": "project-trie-introduction",
+      "images": [
+        "content/trie/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "trie-introduction.py",
+          "code": "def trie_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(trie_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "node-structure": {
+      "lessonId": "trie.node-structure",
+      "chapter": "Trie",
+      "title": "Node Structure",
+      "summary": "Learn Node Structure in Trie with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "prefix-tree",
+        "strings",
+        "node-structure"
+      ],
+      "learningObjectives": [
+        "Explain Trie: Node Structure clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "trie-node-structure",
+      "animationComponent": "TrieNodeStructureAnimation",
+      "aiContext": "Trie / Node Structure: Learn Node Structure in Trie with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Node Structure lesson for Trie, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Trie: Node Structure. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "trie",
+        "lessonSlug": "node-structure",
+        "topic": "Trie",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "trie.node-structure",
+        "tags": [
+          "prefix-tree",
+          "strings",
+          "node-structure"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "trie/introduction"
+      ],
+      "futureQuizId": "quiz-trie-node-structure",
+      "futureFlashcardId": "flashcards-trie-node-structure",
+      "futureProjectId": "project-trie-node-structure",
+      "images": [
+        "content/trie/images/node-structure.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Node Structure from scratch.",
+        "Dry-run Node Structure on two edge cases.",
+        "Explain Node Structure complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "trie-node-structure.py",
+          "code": "def trie_node_structure(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(trie_node_structure([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "insert": {
+      "lessonId": "trie.insert",
+      "chapter": "Trie",
+      "title": "Insert",
+      "summary": "Learn Insert in Trie with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "prefix-tree",
+        "strings",
+        "insert"
+      ],
+      "learningObjectives": [
+        "Explain Trie: Insert clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "trie-insert",
+      "animationComponent": "TrieInsertAnimation",
+      "aiContext": "Trie / Insert: Learn Insert in Trie with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Insert lesson for Trie, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Trie: Insert. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "trie",
+        "lessonSlug": "insert",
+        "topic": "Trie",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "trie.insert",
+        "tags": [
+          "prefix-tree",
+          "strings",
+          "insert"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "trie/introduction"
+      ],
+      "futureQuizId": "quiz-trie-insert",
+      "futureFlashcardId": "flashcards-trie-insert",
+      "futureProjectId": "project-trie-insert",
+      "images": [
+        "content/trie/images/insert.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Insert from scratch.",
+        "Dry-run Insert on two edge cases.",
+        "Explain Insert complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "trie-insert.py",
+          "code": "def trie_insert(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(trie_insert([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "search": {
+      "lessonId": "trie.search",
+      "chapter": "Trie",
+      "title": "Search",
+      "summary": "Learn Search in Trie with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "prefix-tree",
+        "strings",
+        "search"
+      ],
+      "learningObjectives": [
+        "Explain Trie: Search clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "trie-search",
+      "animationComponent": "TrieSearchAnimation",
+      "aiContext": "Trie / Search: Learn Search in Trie with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Search lesson for Trie, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Trie: Search. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "trie",
+        "lessonSlug": "search",
+        "topic": "Trie",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "trie.search",
+        "tags": [
+          "prefix-tree",
+          "strings",
+          "search"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "trie/introduction"
+      ],
+      "futureQuizId": "quiz-trie-search",
+      "futureFlashcardId": "flashcards-trie-search",
+      "futureProjectId": "project-trie-search",
+      "images": [
+        "content/trie/images/search.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Search from scratch.",
+        "Dry-run Search on two edge cases.",
+        "Explain Search complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "trie-search.py",
+          "code": "def trie_search(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(trie_search([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "starts-with": {
+      "lessonId": "trie.starts-with",
+      "chapter": "Trie",
+      "title": "Starts With",
+      "summary": "Learn Starts With in Trie with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "prefix-tree",
+        "strings",
+        "starts-with"
+      ],
+      "learningObjectives": [
+        "Explain Trie: Starts With clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "trie-starts-with",
+      "animationComponent": "TrieStartsWithAnimation",
+      "aiContext": "Trie / Starts With: Learn Starts With in Trie with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Starts With lesson for Trie, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Trie: Starts With. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "trie",
+        "lessonSlug": "starts-with",
+        "topic": "Trie",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "trie.starts-with",
+        "tags": [
+          "prefix-tree",
+          "strings",
+          "starts-with"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "trie/introduction"
+      ],
+      "futureQuizId": "quiz-trie-starts-with",
+      "futureFlashcardId": "flashcards-trie-starts-with",
+      "futureProjectId": "project-trie-starts-with",
+      "images": [
+        "content/trie/images/starts-with.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Starts With from scratch.",
+        "Dry-run Starts With on two edge cases.",
+        "Explain Starts With complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "trie-starts-with.py",
+          "code": "def trie_starts_with(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(trie_starts_with([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "delete-word": {
+      "lessonId": "trie.delete-word",
+      "chapter": "Trie",
+      "title": "Delete Word",
+      "summary": "Learn Delete Word in Trie with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "prefix-tree",
+        "strings",
+        "delete-word"
+      ],
+      "learningObjectives": [
+        "Explain Trie: Delete Word clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "trie-delete-word",
+      "animationComponent": "TrieDeleteWordAnimation",
+      "aiContext": "Trie / Delete Word: Learn Delete Word in Trie with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Delete Word lesson for Trie, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Trie: Delete Word. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "trie",
+        "lessonSlug": "delete-word",
+        "topic": "Trie",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "trie.delete-word",
+        "tags": [
+          "prefix-tree",
+          "strings",
+          "delete-word"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "trie/introduction"
+      ],
+      "futureQuizId": "quiz-trie-delete-word",
+      "futureFlashcardId": "flashcards-trie-delete-word",
+      "futureProjectId": "project-trie-delete-word",
+      "images": [
+        "content/trie/images/delete-word.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Delete Word from scratch.",
+        "Dry-run Delete Word on two edge cases.",
+        "Explain Delete Word complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "trie-delete-word.py",
+          "code": "def trie_delete_word(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(trie_delete_word([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "autocomplete": {
+      "lessonId": "trie.autocomplete",
+      "chapter": "Trie",
+      "title": "Autocomplete",
+      "summary": "Learn Autocomplete in Trie with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "prefix-tree",
+        "strings",
+        "autocomplete"
+      ],
+      "learningObjectives": [
+        "Explain Trie: Autocomplete clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "trie-autocomplete",
+      "animationComponent": "TrieAutocompleteAnimation",
+      "aiContext": "Trie / Autocomplete: Learn Autocomplete in Trie with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Autocomplete lesson for Trie, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Trie: Autocomplete. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "trie",
+        "lessonSlug": "autocomplete",
+        "topic": "Trie",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "trie.autocomplete",
+        "tags": [
+          "prefix-tree",
+          "strings",
+          "autocomplete"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "trie/introduction"
+      ],
+      "futureQuizId": "quiz-trie-autocomplete",
+      "futureFlashcardId": "flashcards-trie-autocomplete",
+      "futureProjectId": "project-trie-autocomplete",
+      "images": [
+        "content/trie/images/autocomplete.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Autocomplete from scratch.",
+        "Dry-run Autocomplete on two edge cases.",
+        "Explain Autocomplete complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "trie-autocomplete.py",
+          "code": "def trie_autocomplete(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(trie_autocomplete([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "word-break": {
+      "lessonId": "trie.word-break",
+      "chapter": "Trie",
+      "title": "Word Break",
+      "summary": "Learn Word Break in Trie with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "prefix-tree",
+        "strings",
+        "word-break"
+      ],
+      "learningObjectives": [
+        "Explain Trie: Word Break clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "trie-word-break",
+      "animationComponent": "TrieWordBreakAnimation",
+      "aiContext": "Trie / Word Break: Learn Word Break in Trie with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Word Break lesson for Trie, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Trie: Word Break. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "trie",
+        "lessonSlug": "word-break",
+        "topic": "Trie",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "trie.word-break",
+        "tags": [
+          "prefix-tree",
+          "strings",
+          "word-break"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "trie/introduction"
+      ],
+      "futureQuizId": "quiz-trie-word-break",
+      "futureFlashcardId": "flashcards-trie-word-break",
+      "futureProjectId": "project-trie-word-break",
+      "images": [
+        "content/trie/images/word-break.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Word Break from scratch.",
+        "Dry-run Word Break on two edge cases.",
+        "Explain Word Break complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "trie-word-break.py",
+          "code": "def trie_word_break(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(trie_word_break([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "trie.practice",
+      "chapter": "Trie",
+      "title": "Practice",
+      "summary": "Learn Practice in Trie with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "prefix-tree",
+        "strings",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Trie: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "trie-practice",
+      "animationComponent": "TriePracticeAnimation",
+      "aiContext": "Trie / Practice: Learn Practice in Trie with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Trie, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Trie: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "trie",
+        "lessonSlug": "practice",
+        "topic": "Trie",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "trie.practice",
+        "tags": [
+          "prefix-tree",
+          "strings",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "trie/introduction"
+      ],
+      "futureQuizId": "quiz-trie-practice",
+      "futureFlashcardId": "flashcards-trie-practice",
+      "futureProjectId": "project-trie-practice",
+      "images": [
+        "content/trie/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "trie-practice.py",
+          "code": "def trie_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(trie_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "trie.interview-questions",
+      "chapter": "Trie",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Trie with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "prefix-tree",
+        "strings",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Trie: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "trie-interview-questions",
+      "animationComponent": "TrieInterviewQuestionsAnimation",
+      "aiContext": "Trie / Interview Questions: Learn Interview Questions in Trie with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Trie, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Trie: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "trie",
+        "lessonSlug": "interview-questions",
+        "topic": "Trie",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "trie.interview-questions",
+        "tags": [
+          "prefix-tree",
+          "strings",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "trie/introduction"
+      ],
+      "futureQuizId": "quiz-trie-interview-questions",
+      "futureFlashcardId": "flashcards-trie-interview-questions",
+      "futureProjectId": "project-trie-interview-questions",
+      "images": [
+        "content/trie/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "trie-interview-questions.py",
+          "code": "def trie_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(trie_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "trie.revision-summary",
+      "chapter": "Trie",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Trie with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "prefix-tree",
+        "strings",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Trie: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "trie-revision-summary",
+      "animationComponent": "TrieRevisionSummaryAnimation",
+      "aiContext": "Trie / Revision Summary: Learn Revision Summary in Trie with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Trie, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Trie: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "trie",
+        "lessonSlug": "revision-summary",
+        "topic": "Trie",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "trie.revision-summary",
+        "tags": [
+          "prefix-tree",
+          "strings",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "trie/introduction"
+      ],
+      "futureQuizId": "quiz-trie-revision-summary",
+      "futureFlashcardId": "flashcards-trie-revision-summary",
+      "futureProjectId": "project-trie-revision-summary",
+      "images": [
+        "content/trie/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "trie-revision-summary.py",
+          "code": "def trie_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(trie_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,827 @@
+{
+  "chapterId": "searching",
+  "title": "Searching",
+  "description": "Searching topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Beginner",
+  "estimatedHours": 5,
+  "tags": [
+    "search",
+    "patterns"
+  ],
+  "animationNamespace": "Searching",
+  "aiContext": "Searching chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "searching-introduction",
+      "component": "SearchingIntroductionAnimation",
+      "status": "planned"
+    },
+    "linear-search": {
+      "animationId": "searching-linear-search",
+      "component": "SearchingLinearSearchAnimation",
+      "status": "planned"
+    },
+    "binary-search": {
+      "animationId": "searching-binary-search",
+      "component": "SearchingBinarySearchAnimation",
+      "status": "planned"
+    },
+    "lower-bound": {
+      "animationId": "searching-lower-bound",
+      "component": "SearchingLowerBoundAnimation",
+      "status": "planned"
+    },
+    "upper-bound": {
+      "animationId": "searching-upper-bound",
+      "component": "SearchingUpperBoundAnimation",
+      "status": "planned"
+    },
+    "search-in-rotated-array": {
+      "animationId": "searching-search-in-rotated-array",
+      "component": "SearchingSearchInRotatedArrayAnimation",
+      "status": "planned"
+    },
+    "binary-search-on-answer": {
+      "animationId": "searching-binary-search-on-answer",
+      "component": "SearchingBinarySearchOnAnswerAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "searching-practice",
+      "component": "SearchingPracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "searching-interview-questions",
+      "component": "SearchingInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "searching-revision-summary",
+      "component": "SearchingRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "searching.introduction",
+      "chapter": "Searching",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "search",
+        "patterns",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Searching: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "searching-introduction",
+      "animationComponent": "SearchingIntroductionAnimation",
+      "aiContext": "Searching / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Searching, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Searching: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "searching",
+        "lessonSlug": "introduction",
+        "topic": "Searching",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "searching.introduction",
+        "tags": [
+          "search",
+          "patterns",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "searching/introduction"
+      ],
+      "futureQuizId": "quiz-searching-introduction",
+      "futureFlashcardId": "flashcards-searching-introduction",
+      "futureProjectId": "project-searching-introduction",
+      "images": [
+        "content/searching/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "searching-introduction.py",
+          "code": "def searching_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(searching_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "linear-search": {
+      "lessonId": "searching.linear-search",
+      "chapter": "Searching",
+      "title": "Linear Search",
+      "summary": "Learn Linear Search in Searching with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "search",
+        "patterns",
+        "linear-search"
+      ],
+      "learningObjectives": [
+        "Explain Searching: Linear Search clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "searching-linear-search",
+      "animationComponent": "SearchingLinearSearchAnimation",
+      "aiContext": "Searching / Linear Search: Learn Linear Search in Searching with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Linear Search lesson for Searching, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Searching: Linear Search. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "searching",
+        "lessonSlug": "linear-search",
+        "topic": "Searching",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "searching.linear-search",
+        "tags": [
+          "search",
+          "patterns",
+          "linear-search"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "searching/introduction"
+      ],
+      "futureQuizId": "quiz-searching-linear-search",
+      "futureFlashcardId": "flashcards-searching-linear-search",
+      "futureProjectId": "project-searching-linear-search",
+      "images": [
+        "content/searching/images/linear-search.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Linear Search from scratch.",
+        "Dry-run Linear Search on two edge cases.",
+        "Explain Linear Search complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "searching-linear-search.py",
+          "code": "def searching_linear_search(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(searching_linear_search([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "binary-search": {
+      "lessonId": "searching.binary-search",
+      "chapter": "Searching",
+      "title": "Binary Search",
+      "summary": "Learn Binary Search in Searching with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "search",
+        "patterns",
+        "binary-search"
+      ],
+      "learningObjectives": [
+        "Explain Searching: Binary Search clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "searching-binary-search",
+      "animationComponent": "SearchingBinarySearchAnimation",
+      "aiContext": "Searching / Binary Search: Learn Binary Search in Searching with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Binary Search lesson for Searching, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Searching: Binary Search. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "searching",
+        "lessonSlug": "binary-search",
+        "topic": "Searching",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "searching.binary-search",
+        "tags": [
+          "search",
+          "patterns",
+          "binary-search"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "searching/introduction"
+      ],
+      "futureQuizId": "quiz-searching-binary-search",
+      "futureFlashcardId": "flashcards-searching-binary-search",
+      "futureProjectId": "project-searching-binary-search",
+      "images": [
+        "content/searching/images/binary-search.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Binary Search from scratch.",
+        "Dry-run Binary Search on two edge cases.",
+        "Explain Binary Search complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "searching-binary-search.py",
+          "code": "def searching_binary_search(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(searching_binary_search([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "lower-bound": {
+      "lessonId": "searching.lower-bound",
+      "chapter": "Searching",
+      "title": "Lower Bound",
+      "summary": "Learn Lower Bound in Searching with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "search",
+        "patterns",
+        "lower-bound"
+      ],
+      "learningObjectives": [
+        "Explain Searching: Lower Bound clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "searching-lower-bound",
+      "animationComponent": "SearchingLowerBoundAnimation",
+      "aiContext": "Searching / Lower Bound: Learn Lower Bound in Searching with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Lower Bound lesson for Searching, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Searching: Lower Bound. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "searching",
+        "lessonSlug": "lower-bound",
+        "topic": "Searching",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "searching.lower-bound",
+        "tags": [
+          "search",
+          "patterns",
+          "lower-bound"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "searching/introduction"
+      ],
+      "futureQuizId": "quiz-searching-lower-bound",
+      "futureFlashcardId": "flashcards-searching-lower-bound",
+      "futureProjectId": "project-searching-lower-bound",
+      "images": [
+        "content/searching/images/lower-bound.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Lower Bound from scratch.",
+        "Dry-run Lower Bound on two edge cases.",
+        "Explain Lower Bound complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "searching-lower-bound.py",
+          "code": "def searching_lower_bound(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(searching_lower_bound([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "upper-bound": {
+      "lessonId": "searching.upper-bound",
+      "chapter": "Searching",
+      "title": "Upper Bound",
+      "summary": "Learn Upper Bound in Searching with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "search",
+        "patterns",
+        "upper-bound"
+      ],
+      "learningObjectives": [
+        "Explain Searching: Upper Bound clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "searching-upper-bound",
+      "animationComponent": "SearchingUpperBoundAnimation",
+      "aiContext": "Searching / Upper Bound: Learn Upper Bound in Searching with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Upper Bound lesson for Searching, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Searching: Upper Bound. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "searching",
+        "lessonSlug": "upper-bound",
+        "topic": "Searching",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "searching.upper-bound",
+        "tags": [
+          "search",
+          "patterns",
+          "upper-bound"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "searching/introduction"
+      ],
+      "futureQuizId": "quiz-searching-upper-bound",
+      "futureFlashcardId": "flashcards-searching-upper-bound",
+      "futureProjectId": "project-searching-upper-bound",
+      "images": [
+        "content/searching/images/upper-bound.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Upper Bound from scratch.",
+        "Dry-run Upper Bound on two edge cases.",
+        "Explain Upper Bound complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "searching-upper-bound.py",
+          "code": "def searching_upper_bound(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(searching_upper_bound([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "search-in-rotated-array": {
+      "lessonId": "searching.search-in-rotated-array",
+      "chapter": "Searching",
+      "title": "Search In Rotated Array",
+      "summary": "Learn Search In Rotated Array in Searching with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "search",
+        "patterns",
+        "search-in-rotated-array"
+      ],
+      "learningObjectives": [
+        "Explain Searching: Search In Rotated Array clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "searching-search-in-rotated-array",
+      "animationComponent": "SearchingSearchInRotatedArrayAnimation",
+      "aiContext": "Searching / Search In Rotated Array: Learn Search In Rotated Array in Searching with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Search In Rotated Array lesson for Searching, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Searching: Search In Rotated Array. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "searching",
+        "lessonSlug": "search-in-rotated-array",
+        "topic": "Searching",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "searching.search-in-rotated-array",
+        "tags": [
+          "search",
+          "patterns",
+          "search-in-rotated-array"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "searching/introduction"
+      ],
+      "futureQuizId": "quiz-searching-search-in-rotated-array",
+      "futureFlashcardId": "flashcards-searching-search-in-rotated-array",
+      "futureProjectId": "project-searching-search-in-rotated-array",
+      "images": [
+        "content/searching/images/search-in-rotated-array.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Search In Rotated Array from scratch.",
+        "Dry-run Search In Rotated Array on two edge cases.",
+        "Explain Search In Rotated Array complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "searching-search-in-rotated-array.py",
+          "code": "def searching_search_in_rotated_array(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(searching_search_in_rotated_array([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "binary-search-on-answer": {
+      "lessonId": "searching.binary-search-on-answer",
+      "chapter": "Searching",
+      "title": "Binary Search On Answer",
+      "summary": "Learn Binary Search On Answer in Searching with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "search",
+        "patterns",
+        "binary-search-on-answer"
+      ],
+      "learningObjectives": [
+        "Explain Searching: Binary Search On Answer clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "searching-binary-search-on-answer",
+      "animationComponent": "SearchingBinarySearchOnAnswerAnimation",
+      "aiContext": "Searching / Binary Search On Answer: Learn Binary Search On Answer in Searching with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Binary Search On Answer lesson for Searching, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Searching: Binary Search On Answer. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "searching",
+        "lessonSlug": "binary-search-on-answer",
+        "topic": "Searching",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "searching.binary-search-on-answer",
+        "tags": [
+          "search",
+          "patterns",
+          "binary-search-on-answer"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "searching/introduction"
+      ],
+      "futureQuizId": "quiz-searching-binary-search-on-answer",
+      "futureFlashcardId": "flashcards-searching-binary-search-on-answer",
+      "futureProjectId": "project-searching-binary-search-on-answer",
+      "images": [
+        "content/searching/images/binary-search-on-answer.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Binary Search On Answer from scratch.",
+        "Dry-run Binary Search On Answer on two edge cases.",
+        "Explain Binary Search On Answer complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "searching-binary-search-on-answer.py",
+          "code": "def searching_binary_search_on_answer(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(searching_binary_search_on_answer([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "searching.practice",
+      "chapter": "Searching",
+      "title": "Practice",
+      "summary": "Learn Practice in Searching with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "search",
+        "patterns",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Searching: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "searching-practice",
+      "animationComponent": "SearchingPracticeAnimation",
+      "aiContext": "Searching / Practice: Learn Practice in Searching with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Searching, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Searching: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "searching",
+        "lessonSlug": "practice",
+        "topic": "Searching",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "searching.practice",
+        "tags": [
+          "search",
+          "patterns",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "searching/introduction"
+      ],
+      "futureQuizId": "quiz-searching-practice",
+      "futureFlashcardId": "flashcards-searching-practice",
+      "futureProjectId": "project-searching-practice",
+      "images": [
+        "content/searching/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "searching-practice.py",
+          "code": "def searching_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(searching_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "searching.interview-questions",
+      "chapter": "Searching",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Searching with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "search",
+        "patterns",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Searching: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "searching-interview-questions",
+      "animationComponent": "SearchingInterviewQuestionsAnimation",
+      "aiContext": "Searching / Interview Questions: Learn Interview Questions in Searching with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Searching, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Searching: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "searching",
+        "lessonSlug": "interview-questions",
+        "topic": "Searching",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "searching.interview-questions",
+        "tags": [
+          "search",
+          "patterns",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "searching/introduction"
+      ],
+      "futureQuizId": "quiz-searching-interview-questions",
+      "futureFlashcardId": "flashcards-searching-interview-questions",
+      "futureProjectId": "project-searching-interview-questions",
+      "images": [
+        "content/searching/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "searching-interview-questions.py",
+          "code": "def searching_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(searching_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "searching.revision-summary",
+      "chapter": "Searching",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Searching with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "search",
+        "patterns",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Searching: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "searching-revision-summary",
+      "animationComponent": "SearchingRevisionSummaryAnimation",
+      "aiContext": "Searching / Revision Summary: Learn Revision Summary in Searching with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Searching, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Searching: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "searching",
+        "lessonSlug": "revision-summary",
+        "topic": "Searching",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "searching.revision-summary",
+        "tags": [
+          "search",
+          "patterns",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "searching/introduction"
+      ],
+      "futureQuizId": "quiz-searching-revision-summary",
+      "futureFlashcardId": "flashcards-searching-revision-summary",
+      "futureProjectId": "project-searching-revision-summary",
+      "images": [
+        "content/searching/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "searching-revision-summary.py",
+          "code": "def searching_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(searching_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

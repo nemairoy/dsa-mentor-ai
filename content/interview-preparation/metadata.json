@@ -1,0 +1,825 @@
+{
+  "chapterId": "interview-preparation",
+  "title": "Interview Preparation",
+  "description": "Interview Preparation topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Intermediate",
+  "estimatedHours": 5,
+  "tags": [
+    "interviews",
+    "communication"
+  ],
+  "animationNamespace": "InterviewPreparation",
+  "aiContext": "Interview Preparation chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "interview-preparation-introduction",
+      "component": "InterviewPreparationIntroductionAnimation",
+      "status": "planned"
+    },
+    "problem-clarification": {
+      "animationId": "interview-preparation-problem-clarification",
+      "component": "InterviewPreparationProblemClarificationAnimation",
+      "status": "planned"
+    },
+    "brute-force-to-optimal": {
+      "animationId": "interview-preparation-brute-force-to-optimal",
+      "component": "InterviewPreparationBruteForceToOptimalAnimation",
+      "status": "planned"
+    },
+    "communication": {
+      "animationId": "interview-preparation-communication",
+      "component": "InterviewPreparationCommunicationAnimation",
+      "status": "planned"
+    },
+    "dry-run": {
+      "animationId": "interview-preparation-dry-run",
+      "component": "InterviewPreparationDryRunAnimation",
+      "status": "planned"
+    },
+    "edge-cases": {
+      "animationId": "interview-preparation-edge-cases",
+      "component": "InterviewPreparationEdgeCasesAnimation",
+      "status": "planned"
+    },
+    "mock-interview-flow": {
+      "animationId": "interview-preparation-mock-interview-flow",
+      "component": "InterviewPreparationMockInterviewFlowAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "interview-preparation-practice",
+      "component": "InterviewPreparationPracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "interview-preparation-interview-questions",
+      "component": "InterviewPreparationInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "interview-preparation-revision-summary",
+      "component": "InterviewPreparationRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "interview-preparation.introduction",
+      "chapter": "Interview Preparation",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "interviews",
+        "communication",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Interview Preparation: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "interview-preparation-introduction",
+      "animationComponent": "InterviewPreparationIntroductionAnimation",
+      "aiContext": "Interview Preparation / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Interview Preparation, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Interview Preparation: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "interview-preparation",
+        "lessonSlug": "introduction",
+        "topic": "Interview Preparation",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "interview-preparation.introduction",
+        "tags": [
+          "interviews",
+          "communication",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "interview-preparation/introduction"
+      ],
+      "futureQuizId": "quiz-interview-preparation-introduction",
+      "futureFlashcardId": "flashcards-interview-preparation-introduction",
+      "futureProjectId": "project-interview-preparation-introduction",
+      "images": [
+        "content/interview-preparation/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "interview-preparation-introduction.py",
+          "code": "def interview_preparation_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(interview_preparation_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "problem-clarification": {
+      "lessonId": "interview-preparation.problem-clarification",
+      "chapter": "Interview Preparation",
+      "title": "Problem Clarification",
+      "summary": "Learn Problem Clarification in Interview Preparation with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "interviews",
+        "communication",
+        "problem-clarification"
+      ],
+      "learningObjectives": [
+        "Explain Interview Preparation: Problem Clarification clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "interview-preparation-problem-clarification",
+      "animationComponent": "InterviewPreparationProblemClarificationAnimation",
+      "aiContext": "Interview Preparation / Problem Clarification: Learn Problem Clarification in Interview Preparation with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Problem Clarification lesson for Interview Preparation, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Interview Preparation: Problem Clarification. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "interview-preparation",
+        "lessonSlug": "problem-clarification",
+        "topic": "Interview Preparation",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "interview-preparation.problem-clarification",
+        "tags": [
+          "interviews",
+          "communication",
+          "problem-clarification"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "interview-preparation/introduction"
+      ],
+      "futureQuizId": "quiz-interview-preparation-problem-clarification",
+      "futureFlashcardId": "flashcards-interview-preparation-problem-clarification",
+      "futureProjectId": "project-interview-preparation-problem-clarification",
+      "images": [
+        "content/interview-preparation/images/problem-clarification.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Problem Clarification from scratch.",
+        "Dry-run Problem Clarification on two edge cases.",
+        "Explain Problem Clarification complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "interview-preparation-problem-clarification.py",
+          "code": "def interview_preparation_problem_clarification(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(interview_preparation_problem_clarification([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "brute-force-to-optimal": {
+      "lessonId": "interview-preparation.brute-force-to-optimal",
+      "chapter": "Interview Preparation",
+      "title": "Brute Force To Optimal",
+      "summary": "Learn Brute Force To Optimal in Interview Preparation with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "interviews",
+        "communication",
+        "brute-force-to-optimal"
+      ],
+      "learningObjectives": [
+        "Explain Interview Preparation: Brute Force To Optimal clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "interview-preparation-brute-force-to-optimal",
+      "animationComponent": "InterviewPreparationBruteForceToOptimalAnimation",
+      "aiContext": "Interview Preparation / Brute Force To Optimal: Learn Brute Force To Optimal in Interview Preparation with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Brute Force To Optimal lesson for Interview Preparation, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Interview Preparation: Brute Force To Optimal. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "interview-preparation",
+        "lessonSlug": "brute-force-to-optimal",
+        "topic": "Interview Preparation",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "interview-preparation.brute-force-to-optimal",
+        "tags": [
+          "interviews",
+          "communication",
+          "brute-force-to-optimal"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "interview-preparation/introduction"
+      ],
+      "futureQuizId": "quiz-interview-preparation-brute-force-to-optimal",
+      "futureFlashcardId": "flashcards-interview-preparation-brute-force-to-optimal",
+      "futureProjectId": "project-interview-preparation-brute-force-to-optimal",
+      "images": [
+        "content/interview-preparation/images/brute-force-to-optimal.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Brute Force To Optimal from scratch.",
+        "Dry-run Brute Force To Optimal on two edge cases.",
+        "Explain Brute Force To Optimal complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "interview-preparation-brute-force-to-optimal.py",
+          "code": "def interview_preparation_brute_force_to_optimal(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(interview_preparation_brute_force_to_optimal([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "communication": {
+      "lessonId": "interview-preparation.communication",
+      "chapter": "Interview Preparation",
+      "title": "Communication",
+      "summary": "Learn Communication in Interview Preparation with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "interviews",
+        "communication"
+      ],
+      "learningObjectives": [
+        "Explain Interview Preparation: Communication clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "interview-preparation-communication",
+      "animationComponent": "InterviewPreparationCommunicationAnimation",
+      "aiContext": "Interview Preparation / Communication: Learn Communication in Interview Preparation with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Communication lesson for Interview Preparation, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Interview Preparation: Communication. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "interview-preparation",
+        "lessonSlug": "communication",
+        "topic": "Interview Preparation",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "interview-preparation.communication",
+        "tags": [
+          "interviews",
+          "communication"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "interview-preparation/introduction"
+      ],
+      "futureQuizId": "quiz-interview-preparation-communication",
+      "futureFlashcardId": "flashcards-interview-preparation-communication",
+      "futureProjectId": "project-interview-preparation-communication",
+      "images": [
+        "content/interview-preparation/images/communication.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Communication from scratch.",
+        "Dry-run Communication on two edge cases.",
+        "Explain Communication complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "interview-preparation-communication.py",
+          "code": "def interview_preparation_communication(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(interview_preparation_communication([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "dry-run": {
+      "lessonId": "interview-preparation.dry-run",
+      "chapter": "Interview Preparation",
+      "title": "Dry Run",
+      "summary": "Learn Dry Run in Interview Preparation with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "interviews",
+        "communication",
+        "dry-run"
+      ],
+      "learningObjectives": [
+        "Explain Interview Preparation: Dry Run clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "interview-preparation-dry-run",
+      "animationComponent": "InterviewPreparationDryRunAnimation",
+      "aiContext": "Interview Preparation / Dry Run: Learn Dry Run in Interview Preparation with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Dry Run lesson for Interview Preparation, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Interview Preparation: Dry Run. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "interview-preparation",
+        "lessonSlug": "dry-run",
+        "topic": "Interview Preparation",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "interview-preparation.dry-run",
+        "tags": [
+          "interviews",
+          "communication",
+          "dry-run"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "interview-preparation/introduction"
+      ],
+      "futureQuizId": "quiz-interview-preparation-dry-run",
+      "futureFlashcardId": "flashcards-interview-preparation-dry-run",
+      "futureProjectId": "project-interview-preparation-dry-run",
+      "images": [
+        "content/interview-preparation/images/dry-run.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Dry Run from scratch.",
+        "Dry-run Dry Run on two edge cases.",
+        "Explain Dry Run complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "interview-preparation-dry-run.py",
+          "code": "def interview_preparation_dry_run(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(interview_preparation_dry_run([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "edge-cases": {
+      "lessonId": "interview-preparation.edge-cases",
+      "chapter": "Interview Preparation",
+      "title": "Edge Cases",
+      "summary": "Learn Edge Cases in Interview Preparation with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "interviews",
+        "communication",
+        "edge-cases"
+      ],
+      "learningObjectives": [
+        "Explain Interview Preparation: Edge Cases clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "interview-preparation-edge-cases",
+      "animationComponent": "InterviewPreparationEdgeCasesAnimation",
+      "aiContext": "Interview Preparation / Edge Cases: Learn Edge Cases in Interview Preparation with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Edge Cases lesson for Interview Preparation, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Interview Preparation: Edge Cases. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "interview-preparation",
+        "lessonSlug": "edge-cases",
+        "topic": "Interview Preparation",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "interview-preparation.edge-cases",
+        "tags": [
+          "interviews",
+          "communication",
+          "edge-cases"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "interview-preparation/introduction"
+      ],
+      "futureQuizId": "quiz-interview-preparation-edge-cases",
+      "futureFlashcardId": "flashcards-interview-preparation-edge-cases",
+      "futureProjectId": "project-interview-preparation-edge-cases",
+      "images": [
+        "content/interview-preparation/images/edge-cases.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Edge Cases from scratch.",
+        "Dry-run Edge Cases on two edge cases.",
+        "Explain Edge Cases complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "interview-preparation-edge-cases.py",
+          "code": "def interview_preparation_edge_cases(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(interview_preparation_edge_cases([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "mock-interview-flow": {
+      "lessonId": "interview-preparation.mock-interview-flow",
+      "chapter": "Interview Preparation",
+      "title": "Mock Interview Flow",
+      "summary": "Learn Mock Interview Flow in Interview Preparation with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "interviews",
+        "communication",
+        "mock-interview-flow"
+      ],
+      "learningObjectives": [
+        "Explain Interview Preparation: Mock Interview Flow clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "interview-preparation-mock-interview-flow",
+      "animationComponent": "InterviewPreparationMockInterviewFlowAnimation",
+      "aiContext": "Interview Preparation / Mock Interview Flow: Learn Mock Interview Flow in Interview Preparation with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Mock Interview Flow lesson for Interview Preparation, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Interview Preparation: Mock Interview Flow. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "interview-preparation",
+        "lessonSlug": "mock-interview-flow",
+        "topic": "Interview Preparation",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "interview-preparation.mock-interview-flow",
+        "tags": [
+          "interviews",
+          "communication",
+          "mock-interview-flow"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "interview-preparation/introduction"
+      ],
+      "futureQuizId": "quiz-interview-preparation-mock-interview-flow",
+      "futureFlashcardId": "flashcards-interview-preparation-mock-interview-flow",
+      "futureProjectId": "project-interview-preparation-mock-interview-flow",
+      "images": [
+        "content/interview-preparation/images/mock-interview-flow.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Mock Interview Flow from scratch.",
+        "Dry-run Mock Interview Flow on two edge cases.",
+        "Explain Mock Interview Flow complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "interview-preparation-mock-interview-flow.py",
+          "code": "def interview_preparation_mock_interview_flow(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(interview_preparation_mock_interview_flow([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "interview-preparation.practice",
+      "chapter": "Interview Preparation",
+      "title": "Practice",
+      "summary": "Learn Practice in Interview Preparation with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "interviews",
+        "communication",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Interview Preparation: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "interview-preparation-practice",
+      "animationComponent": "InterviewPreparationPracticeAnimation",
+      "aiContext": "Interview Preparation / Practice: Learn Practice in Interview Preparation with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Interview Preparation, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Interview Preparation: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "interview-preparation",
+        "lessonSlug": "practice",
+        "topic": "Interview Preparation",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "interview-preparation.practice",
+        "tags": [
+          "interviews",
+          "communication",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "interview-preparation/introduction"
+      ],
+      "futureQuizId": "quiz-interview-preparation-practice",
+      "futureFlashcardId": "flashcards-interview-preparation-practice",
+      "futureProjectId": "project-interview-preparation-practice",
+      "images": [
+        "content/interview-preparation/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "interview-preparation-practice.py",
+          "code": "def interview_preparation_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(interview_preparation_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "interview-preparation.interview-questions",
+      "chapter": "Interview Preparation",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Interview Preparation with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "interviews",
+        "communication",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Interview Preparation: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "interview-preparation-interview-questions",
+      "animationComponent": "InterviewPreparationInterviewQuestionsAnimation",
+      "aiContext": "Interview Preparation / Interview Questions: Learn Interview Questions in Interview Preparation with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Interview Preparation, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Interview Preparation: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "interview-preparation",
+        "lessonSlug": "interview-questions",
+        "topic": "Interview Preparation",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "interview-preparation.interview-questions",
+        "tags": [
+          "interviews",
+          "communication",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "interview-preparation/introduction"
+      ],
+      "futureQuizId": "quiz-interview-preparation-interview-questions",
+      "futureFlashcardId": "flashcards-interview-preparation-interview-questions",
+      "futureProjectId": "project-interview-preparation-interview-questions",
+      "images": [
+        "content/interview-preparation/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "interview-preparation-interview-questions.py",
+          "code": "def interview_preparation_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(interview_preparation_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "interview-preparation.revision-summary",
+      "chapter": "Interview Preparation",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Interview Preparation with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "interviews",
+        "communication",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Interview Preparation: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "interview-preparation-revision-summary",
+      "animationComponent": "InterviewPreparationRevisionSummaryAnimation",
+      "aiContext": "Interview Preparation / Revision Summary: Learn Revision Summary in Interview Preparation with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Interview Preparation, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Interview Preparation: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "interview-preparation",
+        "lessonSlug": "revision-summary",
+        "topic": "Interview Preparation",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "interview-preparation.revision-summary",
+        "tags": [
+          "interviews",
+          "communication",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "interview-preparation/introduction"
+      ],
+      "futureQuizId": "quiz-interview-preparation-revision-summary",
+      "futureFlashcardId": "flashcards-interview-preparation-revision-summary",
+      "futureProjectId": "project-interview-preparation-revision-summary",
+      "images": [
+        "content/interview-preparation/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "interview-preparation-revision-summary.py",
+          "code": "def interview_preparation_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(interview_preparation_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

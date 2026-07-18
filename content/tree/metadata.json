@@ -1,0 +1,827 @@
+{
+  "chapterId": "tree",
+  "title": "Tree Fundamentals",
+  "description": "Tree Fundamentals topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Intermediate",
+  "estimatedHours": 5,
+  "tags": [
+    "tree",
+    "hierarchy"
+  ],
+  "animationNamespace": "Tree",
+  "aiContext": "Tree Fundamentals chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "tree-introduction",
+      "component": "TreeIntroductionAnimation",
+      "status": "planned"
+    },
+    "terminology": {
+      "animationId": "tree-terminology",
+      "component": "TreeTerminologyAnimation",
+      "status": "planned"
+    },
+    "node-depth-height": {
+      "animationId": "tree-node-depth-height",
+      "component": "TreeNodeDepthHeightAnimation",
+      "status": "planned"
+    },
+    "traversals": {
+      "animationId": "tree-traversals",
+      "component": "TreeTraversalsAnimation",
+      "status": "planned"
+    },
+    "level-order": {
+      "animationId": "tree-level-order",
+      "component": "TreeLevelOrderAnimation",
+      "status": "planned"
+    },
+    "binary-tree": {
+      "animationId": "tree-binary-tree",
+      "component": "TreeBinaryTreeAnimation",
+      "status": "planned"
+    },
+    "tree-recursion": {
+      "animationId": "tree-tree-recursion",
+      "component": "TreeTreeRecursionAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "tree-practice",
+      "component": "TreePracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "tree-interview-questions",
+      "component": "TreeInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "tree-revision-summary",
+      "component": "TreeRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "tree.introduction",
+      "chapter": "Tree Fundamentals",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "tree",
+        "hierarchy",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Tree Fundamentals: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "tree-introduction",
+      "animationComponent": "TreeIntroductionAnimation",
+      "aiContext": "Tree Fundamentals / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Tree Fundamentals, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Tree Fundamentals: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "tree",
+        "lessonSlug": "introduction",
+        "topic": "Tree Fundamentals",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "tree.introduction",
+        "tags": [
+          "tree",
+          "hierarchy",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "tree/introduction"
+      ],
+      "futureQuizId": "quiz-tree-introduction",
+      "futureFlashcardId": "flashcards-tree-introduction",
+      "futureProjectId": "project-tree-introduction",
+      "images": [
+        "content/tree/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "tree-introduction.py",
+          "code": "def tree_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(tree_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "terminology": {
+      "lessonId": "tree.terminology",
+      "chapter": "Tree Fundamentals",
+      "title": "Terminology",
+      "summary": "Learn Terminology in Tree Fundamentals with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "tree",
+        "hierarchy",
+        "terminology"
+      ],
+      "learningObjectives": [
+        "Explain Tree Fundamentals: Terminology clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "tree-terminology",
+      "animationComponent": "TreeTerminologyAnimation",
+      "aiContext": "Tree Fundamentals / Terminology: Learn Terminology in Tree Fundamentals with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Terminology lesson for Tree Fundamentals, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Tree Fundamentals: Terminology. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "tree",
+        "lessonSlug": "terminology",
+        "topic": "Tree Fundamentals",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "tree.terminology",
+        "tags": [
+          "tree",
+          "hierarchy",
+          "terminology"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "tree/introduction"
+      ],
+      "futureQuizId": "quiz-tree-terminology",
+      "futureFlashcardId": "flashcards-tree-terminology",
+      "futureProjectId": "project-tree-terminology",
+      "images": [
+        "content/tree/images/terminology.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Terminology from scratch.",
+        "Dry-run Terminology on two edge cases.",
+        "Explain Terminology complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "tree-terminology.py",
+          "code": "def tree_terminology(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(tree_terminology([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "node-depth-height": {
+      "lessonId": "tree.node-depth-height",
+      "chapter": "Tree Fundamentals",
+      "title": "Node Depth Height",
+      "summary": "Learn Node Depth Height in Tree Fundamentals with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "tree",
+        "hierarchy",
+        "node-depth-height"
+      ],
+      "learningObjectives": [
+        "Explain Tree Fundamentals: Node Depth Height clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "tree-node-depth-height",
+      "animationComponent": "TreeNodeDepthHeightAnimation",
+      "aiContext": "Tree Fundamentals / Node Depth Height: Learn Node Depth Height in Tree Fundamentals with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Node Depth Height lesson for Tree Fundamentals, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Tree Fundamentals: Node Depth Height. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "tree",
+        "lessonSlug": "node-depth-height",
+        "topic": "Tree Fundamentals",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "tree.node-depth-height",
+        "tags": [
+          "tree",
+          "hierarchy",
+          "node-depth-height"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "tree/introduction"
+      ],
+      "futureQuizId": "quiz-tree-node-depth-height",
+      "futureFlashcardId": "flashcards-tree-node-depth-height",
+      "futureProjectId": "project-tree-node-depth-height",
+      "images": [
+        "content/tree/images/node-depth-height.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Node Depth Height from scratch.",
+        "Dry-run Node Depth Height on two edge cases.",
+        "Explain Node Depth Height complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "tree-node-depth-height.py",
+          "code": "def tree_node_depth_height(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(tree_node_depth_height([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "traversals": {
+      "lessonId": "tree.traversals",
+      "chapter": "Tree Fundamentals",
+      "title": "Traversals",
+      "summary": "Learn Traversals in Tree Fundamentals with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "tree",
+        "hierarchy",
+        "traversals"
+      ],
+      "learningObjectives": [
+        "Explain Tree Fundamentals: Traversals clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "tree-traversals",
+      "animationComponent": "TreeTraversalsAnimation",
+      "aiContext": "Tree Fundamentals / Traversals: Learn Traversals in Tree Fundamentals with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Traversals lesson for Tree Fundamentals, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Tree Fundamentals: Traversals. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "tree",
+        "lessonSlug": "traversals",
+        "topic": "Tree Fundamentals",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "tree.traversals",
+        "tags": [
+          "tree",
+          "hierarchy",
+          "traversals"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "tree/introduction"
+      ],
+      "futureQuizId": "quiz-tree-traversals",
+      "futureFlashcardId": "flashcards-tree-traversals",
+      "futureProjectId": "project-tree-traversals",
+      "images": [
+        "content/tree/images/traversals.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Traversals from scratch.",
+        "Dry-run Traversals on two edge cases.",
+        "Explain Traversals complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "tree-traversals.py",
+          "code": "def tree_traversals(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(tree_traversals([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "level-order": {
+      "lessonId": "tree.level-order",
+      "chapter": "Tree Fundamentals",
+      "title": "Level Order",
+      "summary": "Learn Level Order in Tree Fundamentals with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "tree",
+        "hierarchy",
+        "level-order"
+      ],
+      "learningObjectives": [
+        "Explain Tree Fundamentals: Level Order clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "tree-level-order",
+      "animationComponent": "TreeLevelOrderAnimation",
+      "aiContext": "Tree Fundamentals / Level Order: Learn Level Order in Tree Fundamentals with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Level Order lesson for Tree Fundamentals, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Tree Fundamentals: Level Order. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "tree",
+        "lessonSlug": "level-order",
+        "topic": "Tree Fundamentals",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "tree.level-order",
+        "tags": [
+          "tree",
+          "hierarchy",
+          "level-order"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "tree/introduction"
+      ],
+      "futureQuizId": "quiz-tree-level-order",
+      "futureFlashcardId": "flashcards-tree-level-order",
+      "futureProjectId": "project-tree-level-order",
+      "images": [
+        "content/tree/images/level-order.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Level Order from scratch.",
+        "Dry-run Level Order on two edge cases.",
+        "Explain Level Order complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "tree-level-order.py",
+          "code": "def tree_level_order(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(tree_level_order([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "binary-tree": {
+      "lessonId": "tree.binary-tree",
+      "chapter": "Tree Fundamentals",
+      "title": "Binary Tree",
+      "summary": "Learn Binary Tree in Tree Fundamentals with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "tree",
+        "hierarchy",
+        "binary-tree"
+      ],
+      "learningObjectives": [
+        "Explain Tree Fundamentals: Binary Tree clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "tree-binary-tree",
+      "animationComponent": "TreeBinaryTreeAnimation",
+      "aiContext": "Tree Fundamentals / Binary Tree: Learn Binary Tree in Tree Fundamentals with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Binary Tree lesson for Tree Fundamentals, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Tree Fundamentals: Binary Tree. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "tree",
+        "lessonSlug": "binary-tree",
+        "topic": "Tree Fundamentals",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "tree.binary-tree",
+        "tags": [
+          "tree",
+          "hierarchy",
+          "binary-tree"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "tree/introduction"
+      ],
+      "futureQuizId": "quiz-tree-binary-tree",
+      "futureFlashcardId": "flashcards-tree-binary-tree",
+      "futureProjectId": "project-tree-binary-tree",
+      "images": [
+        "content/tree/images/binary-tree.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Binary Tree from scratch.",
+        "Dry-run Binary Tree on two edge cases.",
+        "Explain Binary Tree complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "tree-binary-tree.py",
+          "code": "def tree_binary_tree(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(tree_binary_tree([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "tree-recursion": {
+      "lessonId": "tree.tree-recursion",
+      "chapter": "Tree Fundamentals",
+      "title": "Tree Recursion",
+      "summary": "Learn Tree Recursion in Tree Fundamentals with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "tree",
+        "hierarchy",
+        "tree-recursion"
+      ],
+      "learningObjectives": [
+        "Explain Tree Fundamentals: Tree Recursion clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "tree-tree-recursion",
+      "animationComponent": "TreeTreeRecursionAnimation",
+      "aiContext": "Tree Fundamentals / Tree Recursion: Learn Tree Recursion in Tree Fundamentals with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Tree Recursion lesson for Tree Fundamentals, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Tree Fundamentals: Tree Recursion. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "tree",
+        "lessonSlug": "tree-recursion",
+        "topic": "Tree Fundamentals",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "tree.tree-recursion",
+        "tags": [
+          "tree",
+          "hierarchy",
+          "tree-recursion"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "tree/introduction"
+      ],
+      "futureQuizId": "quiz-tree-tree-recursion",
+      "futureFlashcardId": "flashcards-tree-tree-recursion",
+      "futureProjectId": "project-tree-tree-recursion",
+      "images": [
+        "content/tree/images/tree-recursion.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Tree Recursion from scratch.",
+        "Dry-run Tree Recursion on two edge cases.",
+        "Explain Tree Recursion complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "tree-tree-recursion.py",
+          "code": "def tree_tree_recursion(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(tree_tree_recursion([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "tree.practice",
+      "chapter": "Tree Fundamentals",
+      "title": "Practice",
+      "summary": "Learn Practice in Tree Fundamentals with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "tree",
+        "hierarchy",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Tree Fundamentals: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "tree-practice",
+      "animationComponent": "TreePracticeAnimation",
+      "aiContext": "Tree Fundamentals / Practice: Learn Practice in Tree Fundamentals with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Tree Fundamentals, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Tree Fundamentals: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "tree",
+        "lessonSlug": "practice",
+        "topic": "Tree Fundamentals",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "tree.practice",
+        "tags": [
+          "tree",
+          "hierarchy",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "tree/introduction"
+      ],
+      "futureQuizId": "quiz-tree-practice",
+      "futureFlashcardId": "flashcards-tree-practice",
+      "futureProjectId": "project-tree-practice",
+      "images": [
+        "content/tree/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "tree-practice.py",
+          "code": "def tree_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(tree_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "tree.interview-questions",
+      "chapter": "Tree Fundamentals",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Tree Fundamentals with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "tree",
+        "hierarchy",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Tree Fundamentals: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "tree-interview-questions",
+      "animationComponent": "TreeInterviewQuestionsAnimation",
+      "aiContext": "Tree Fundamentals / Interview Questions: Learn Interview Questions in Tree Fundamentals with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Tree Fundamentals, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Tree Fundamentals: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "tree",
+        "lessonSlug": "interview-questions",
+        "topic": "Tree Fundamentals",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "tree.interview-questions",
+        "tags": [
+          "tree",
+          "hierarchy",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "tree/introduction"
+      ],
+      "futureQuizId": "quiz-tree-interview-questions",
+      "futureFlashcardId": "flashcards-tree-interview-questions",
+      "futureProjectId": "project-tree-interview-questions",
+      "images": [
+        "content/tree/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "tree-interview-questions.py",
+          "code": "def tree_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(tree_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "tree.revision-summary",
+      "chapter": "Tree Fundamentals",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Tree Fundamentals with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "tree",
+        "hierarchy",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Tree Fundamentals: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "tree-revision-summary",
+      "animationComponent": "TreeRevisionSummaryAnimation",
+      "aiContext": "Tree Fundamentals / Revision Summary: Learn Revision Summary in Tree Fundamentals with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Tree Fundamentals, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Tree Fundamentals: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "tree",
+        "lessonSlug": "revision-summary",
+        "topic": "Tree Fundamentals",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "tree.revision-summary",
+        "tags": [
+          "tree",
+          "hierarchy",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "tree/introduction"
+      ],
+      "futureQuizId": "quiz-tree-revision-summary",
+      "futureFlashcardId": "flashcards-tree-revision-summary",
+      "futureProjectId": "project-tree-revision-summary",
+      "images": [
+        "content/tree/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "tree-revision-summary.py",
+          "code": "def tree_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(tree_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

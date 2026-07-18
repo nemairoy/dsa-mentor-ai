@@ -1,0 +1,827 @@
+{
+  "chapterId": "competitive-programming",
+  "title": "Competitive Programming",
+  "description": "Competitive Programming topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Advanced",
+  "estimatedHours": 5,
+  "tags": [
+    "contest",
+    "patterns"
+  ],
+  "animationNamespace": "CompetitiveProgramming",
+  "aiContext": "Competitive Programming chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "competitive-programming-introduction",
+      "component": "CompetitiveProgrammingIntroductionAnimation",
+      "status": "planned"
+    },
+    "input-output": {
+      "animationId": "competitive-programming-input-output",
+      "component": "CompetitiveProgrammingInputOutputAnimation",
+      "status": "planned"
+    },
+    "constraints-analysis": {
+      "animationId": "competitive-programming-constraints-analysis",
+      "component": "CompetitiveProgrammingConstraintsAnalysisAnimation",
+      "status": "planned"
+    },
+    "common-patterns": {
+      "animationId": "competitive-programming-common-patterns",
+      "component": "CompetitiveProgrammingCommonPatternsAnimation",
+      "status": "planned"
+    },
+    "debugging-strategy": {
+      "animationId": "competitive-programming-debugging-strategy",
+      "component": "CompetitiveProgrammingDebuggingStrategyAnimation",
+      "status": "planned"
+    },
+    "contest-template": {
+      "animationId": "competitive-programming-contest-template",
+      "component": "CompetitiveProgrammingContestTemplateAnimation",
+      "status": "planned"
+    },
+    "practice-plan": {
+      "animationId": "competitive-programming-practice-plan",
+      "component": "CompetitiveProgrammingPracticePlanAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "competitive-programming-practice",
+      "component": "CompetitiveProgrammingPracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "competitive-programming-interview-questions",
+      "component": "CompetitiveProgrammingInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "competitive-programming-revision-summary",
+      "component": "CompetitiveProgrammingRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "competitive-programming.introduction",
+      "chapter": "Competitive Programming",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "contest",
+        "patterns",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Competitive Programming: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "competitive-programming-introduction",
+      "animationComponent": "CompetitiveProgrammingIntroductionAnimation",
+      "aiContext": "Competitive Programming / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Competitive Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Competitive Programming: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "competitive-programming",
+        "lessonSlug": "introduction",
+        "topic": "Competitive Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "competitive-programming.introduction",
+        "tags": [
+          "contest",
+          "patterns",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "competitive-programming/introduction"
+      ],
+      "futureQuizId": "quiz-competitive-programming-introduction",
+      "futureFlashcardId": "flashcards-competitive-programming-introduction",
+      "futureProjectId": "project-competitive-programming-introduction",
+      "images": [
+        "content/competitive-programming/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "competitive-programming-introduction.py",
+          "code": "def competitive_programming_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(competitive_programming_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "input-output": {
+      "lessonId": "competitive-programming.input-output",
+      "chapter": "Competitive Programming",
+      "title": "Input Output",
+      "summary": "Learn Input Output in Competitive Programming with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "contest",
+        "patterns",
+        "input-output"
+      ],
+      "learningObjectives": [
+        "Explain Competitive Programming: Input Output clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "competitive-programming-input-output",
+      "animationComponent": "CompetitiveProgrammingInputOutputAnimation",
+      "aiContext": "Competitive Programming / Input Output: Learn Input Output in Competitive Programming with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Input Output lesson for Competitive Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Competitive Programming: Input Output. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "competitive-programming",
+        "lessonSlug": "input-output",
+        "topic": "Competitive Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "competitive-programming.input-output",
+        "tags": [
+          "contest",
+          "patterns",
+          "input-output"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "competitive-programming/introduction"
+      ],
+      "futureQuizId": "quiz-competitive-programming-input-output",
+      "futureFlashcardId": "flashcards-competitive-programming-input-output",
+      "futureProjectId": "project-competitive-programming-input-output",
+      "images": [
+        "content/competitive-programming/images/input-output.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Input Output from scratch.",
+        "Dry-run Input Output on two edge cases.",
+        "Explain Input Output complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "competitive-programming-input-output.py",
+          "code": "def competitive_programming_input_output(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(competitive_programming_input_output([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "constraints-analysis": {
+      "lessonId": "competitive-programming.constraints-analysis",
+      "chapter": "Competitive Programming",
+      "title": "Constraints Analysis",
+      "summary": "Learn Constraints Analysis in Competitive Programming with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "contest",
+        "patterns",
+        "constraints-analysis"
+      ],
+      "learningObjectives": [
+        "Explain Competitive Programming: Constraints Analysis clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "competitive-programming-constraints-analysis",
+      "animationComponent": "CompetitiveProgrammingConstraintsAnalysisAnimation",
+      "aiContext": "Competitive Programming / Constraints Analysis: Learn Constraints Analysis in Competitive Programming with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Constraints Analysis lesson for Competitive Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Competitive Programming: Constraints Analysis. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "competitive-programming",
+        "lessonSlug": "constraints-analysis",
+        "topic": "Competitive Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "competitive-programming.constraints-analysis",
+        "tags": [
+          "contest",
+          "patterns",
+          "constraints-analysis"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "competitive-programming/introduction"
+      ],
+      "futureQuizId": "quiz-competitive-programming-constraints-analysis",
+      "futureFlashcardId": "flashcards-competitive-programming-constraints-analysis",
+      "futureProjectId": "project-competitive-programming-constraints-analysis",
+      "images": [
+        "content/competitive-programming/images/constraints-analysis.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Constraints Analysis from scratch.",
+        "Dry-run Constraints Analysis on two edge cases.",
+        "Explain Constraints Analysis complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "competitive-programming-constraints-analysis.py",
+          "code": "def competitive_programming_constraints_analysis(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(competitive_programming_constraints_analysis([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "common-patterns": {
+      "lessonId": "competitive-programming.common-patterns",
+      "chapter": "Competitive Programming",
+      "title": "Common Patterns",
+      "summary": "Learn Common Patterns in Competitive Programming with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "contest",
+        "patterns",
+        "common-patterns"
+      ],
+      "learningObjectives": [
+        "Explain Competitive Programming: Common Patterns clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "competitive-programming-common-patterns",
+      "animationComponent": "CompetitiveProgrammingCommonPatternsAnimation",
+      "aiContext": "Competitive Programming / Common Patterns: Learn Common Patterns in Competitive Programming with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Common Patterns lesson for Competitive Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Competitive Programming: Common Patterns. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "competitive-programming",
+        "lessonSlug": "common-patterns",
+        "topic": "Competitive Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "competitive-programming.common-patterns",
+        "tags": [
+          "contest",
+          "patterns",
+          "common-patterns"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "competitive-programming/introduction"
+      ],
+      "futureQuizId": "quiz-competitive-programming-common-patterns",
+      "futureFlashcardId": "flashcards-competitive-programming-common-patterns",
+      "futureProjectId": "project-competitive-programming-common-patterns",
+      "images": [
+        "content/competitive-programming/images/common-patterns.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Common Patterns from scratch.",
+        "Dry-run Common Patterns on two edge cases.",
+        "Explain Common Patterns complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "competitive-programming-common-patterns.py",
+          "code": "def competitive_programming_common_patterns(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(competitive_programming_common_patterns([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "debugging-strategy": {
+      "lessonId": "competitive-programming.debugging-strategy",
+      "chapter": "Competitive Programming",
+      "title": "Debugging Strategy",
+      "summary": "Learn Debugging Strategy in Competitive Programming with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "contest",
+        "patterns",
+        "debugging-strategy"
+      ],
+      "learningObjectives": [
+        "Explain Competitive Programming: Debugging Strategy clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "competitive-programming-debugging-strategy",
+      "animationComponent": "CompetitiveProgrammingDebuggingStrategyAnimation",
+      "aiContext": "Competitive Programming / Debugging Strategy: Learn Debugging Strategy in Competitive Programming with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Debugging Strategy lesson for Competitive Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Competitive Programming: Debugging Strategy. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "competitive-programming",
+        "lessonSlug": "debugging-strategy",
+        "topic": "Competitive Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "competitive-programming.debugging-strategy",
+        "tags": [
+          "contest",
+          "patterns",
+          "debugging-strategy"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "competitive-programming/introduction"
+      ],
+      "futureQuizId": "quiz-competitive-programming-debugging-strategy",
+      "futureFlashcardId": "flashcards-competitive-programming-debugging-strategy",
+      "futureProjectId": "project-competitive-programming-debugging-strategy",
+      "images": [
+        "content/competitive-programming/images/debugging-strategy.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Debugging Strategy from scratch.",
+        "Dry-run Debugging Strategy on two edge cases.",
+        "Explain Debugging Strategy complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "competitive-programming-debugging-strategy.py",
+          "code": "def competitive_programming_debugging_strategy(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(competitive_programming_debugging_strategy([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "contest-template": {
+      "lessonId": "competitive-programming.contest-template",
+      "chapter": "Competitive Programming",
+      "title": "Contest Template",
+      "summary": "Learn Contest Template in Competitive Programming with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "contest",
+        "patterns",
+        "contest-template"
+      ],
+      "learningObjectives": [
+        "Explain Competitive Programming: Contest Template clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "competitive-programming-contest-template",
+      "animationComponent": "CompetitiveProgrammingContestTemplateAnimation",
+      "aiContext": "Competitive Programming / Contest Template: Learn Contest Template in Competitive Programming with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Contest Template lesson for Competitive Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Competitive Programming: Contest Template. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "competitive-programming",
+        "lessonSlug": "contest-template",
+        "topic": "Competitive Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "competitive-programming.contest-template",
+        "tags": [
+          "contest",
+          "patterns",
+          "contest-template"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "competitive-programming/introduction"
+      ],
+      "futureQuizId": "quiz-competitive-programming-contest-template",
+      "futureFlashcardId": "flashcards-competitive-programming-contest-template",
+      "futureProjectId": "project-competitive-programming-contest-template",
+      "images": [
+        "content/competitive-programming/images/contest-template.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Contest Template from scratch.",
+        "Dry-run Contest Template on two edge cases.",
+        "Explain Contest Template complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "competitive-programming-contest-template.py",
+          "code": "def competitive_programming_contest_template(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(competitive_programming_contest_template([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice-plan": {
+      "lessonId": "competitive-programming.practice-plan",
+      "chapter": "Competitive Programming",
+      "title": "Practice Plan",
+      "summary": "Learn Practice Plan in Competitive Programming with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "contest",
+        "patterns",
+        "practice-plan"
+      ],
+      "learningObjectives": [
+        "Explain Competitive Programming: Practice Plan clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "competitive-programming-practice-plan",
+      "animationComponent": "CompetitiveProgrammingPracticePlanAnimation",
+      "aiContext": "Competitive Programming / Practice Plan: Learn Practice Plan in Competitive Programming with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice Plan lesson for Competitive Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Competitive Programming: Practice Plan. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "competitive-programming",
+        "lessonSlug": "practice-plan",
+        "topic": "Competitive Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "competitive-programming.practice-plan",
+        "tags": [
+          "contest",
+          "patterns",
+          "practice-plan"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "competitive-programming/introduction"
+      ],
+      "futureQuizId": "quiz-competitive-programming-practice-plan",
+      "futureFlashcardId": "flashcards-competitive-programming-practice-plan",
+      "futureProjectId": "project-competitive-programming-practice-plan",
+      "images": [
+        "content/competitive-programming/images/practice-plan.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice Plan from scratch.",
+        "Dry-run Practice Plan on two edge cases.",
+        "Explain Practice Plan complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "competitive-programming-practice-plan.py",
+          "code": "def competitive_programming_practice_plan(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(competitive_programming_practice_plan([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "competitive-programming.practice",
+      "chapter": "Competitive Programming",
+      "title": "Practice",
+      "summary": "Learn Practice in Competitive Programming with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "contest",
+        "patterns",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Competitive Programming: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "competitive-programming-practice",
+      "animationComponent": "CompetitiveProgrammingPracticeAnimation",
+      "aiContext": "Competitive Programming / Practice: Learn Practice in Competitive Programming with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Competitive Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Competitive Programming: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "competitive-programming",
+        "lessonSlug": "practice",
+        "topic": "Competitive Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "competitive-programming.practice",
+        "tags": [
+          "contest",
+          "patterns",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "competitive-programming/introduction"
+      ],
+      "futureQuizId": "quiz-competitive-programming-practice",
+      "futureFlashcardId": "flashcards-competitive-programming-practice",
+      "futureProjectId": "project-competitive-programming-practice",
+      "images": [
+        "content/competitive-programming/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "competitive-programming-practice.py",
+          "code": "def competitive_programming_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(competitive_programming_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "competitive-programming.interview-questions",
+      "chapter": "Competitive Programming",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Competitive Programming with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "contest",
+        "patterns",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Competitive Programming: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "competitive-programming-interview-questions",
+      "animationComponent": "CompetitiveProgrammingInterviewQuestionsAnimation",
+      "aiContext": "Competitive Programming / Interview Questions: Learn Interview Questions in Competitive Programming with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Competitive Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Competitive Programming: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "competitive-programming",
+        "lessonSlug": "interview-questions",
+        "topic": "Competitive Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "competitive-programming.interview-questions",
+        "tags": [
+          "contest",
+          "patterns",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "competitive-programming/introduction"
+      ],
+      "futureQuizId": "quiz-competitive-programming-interview-questions",
+      "futureFlashcardId": "flashcards-competitive-programming-interview-questions",
+      "futureProjectId": "project-competitive-programming-interview-questions",
+      "images": [
+        "content/competitive-programming/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "competitive-programming-interview-questions.py",
+          "code": "def competitive_programming_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(competitive_programming_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "competitive-programming.revision-summary",
+      "chapter": "Competitive Programming",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Competitive Programming with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Advanced",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "contest",
+        "patterns",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Competitive Programming: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "competitive-programming-revision-summary",
+      "animationComponent": "CompetitiveProgrammingRevisionSummaryAnimation",
+      "aiContext": "Competitive Programming / Revision Summary: Learn Revision Summary in Competitive Programming with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Competitive Programming, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Competitive Programming: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "competitive-programming",
+        "lessonSlug": "revision-summary",
+        "topic": "Competitive Programming",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "competitive-programming.revision-summary",
+        "tags": [
+          "contest",
+          "patterns",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "competitive-programming/introduction"
+      ],
+      "futureQuizId": "quiz-competitive-programming-revision-summary",
+      "futureFlashcardId": "flashcards-competitive-programming-revision-summary",
+      "futureProjectId": "project-competitive-programming-revision-summary",
+      "images": [
+        "content/competitive-programming/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "competitive-programming-revision-summary.py",
+          "code": "def competitive_programming_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(competitive_programming_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

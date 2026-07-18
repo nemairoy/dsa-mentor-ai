@@ -1,0 +1,827 @@
+{
+  "chapterId": "deque",
+  "title": "Deque",
+  "description": "Deque topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Beginner",
+  "estimatedHours": 5,
+  "tags": [
+    "linear-data-structure",
+    "double-ended"
+  ],
+  "animationNamespace": "Deque",
+  "aiContext": "Deque chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "deque-introduction",
+      "component": "DequeIntroductionAnimation",
+      "status": "planned"
+    },
+    "double-ended-model": {
+      "animationId": "deque-double-ended-model",
+      "component": "DequeDoubleEndedModelAnimation",
+      "status": "planned"
+    },
+    "push-front": {
+      "animationId": "deque-push-front",
+      "component": "DequePushFrontAnimation",
+      "status": "planned"
+    },
+    "push-back": {
+      "animationId": "deque-push-back",
+      "component": "DequePushBackAnimation",
+      "status": "planned"
+    },
+    "pop-front": {
+      "animationId": "deque-pop-front",
+      "component": "DequePopFrontAnimation",
+      "status": "planned"
+    },
+    "pop-back": {
+      "animationId": "deque-pop-back",
+      "component": "DequePopBackAnimation",
+      "status": "planned"
+    },
+    "sliding-window-maximum": {
+      "animationId": "deque-sliding-window-maximum",
+      "component": "DequeSlidingWindowMaximumAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "deque-practice",
+      "component": "DequePracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "deque-interview-questions",
+      "component": "DequeInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "deque-revision-summary",
+      "component": "DequeRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "deque.introduction",
+      "chapter": "Deque",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "double-ended",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Deque: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "deque-introduction",
+      "animationComponent": "DequeIntroductionAnimation",
+      "aiContext": "Deque / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Deque, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Deque: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "deque",
+        "lessonSlug": "introduction",
+        "topic": "Deque",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "deque.introduction",
+        "tags": [
+          "linear-data-structure",
+          "double-ended",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "deque/introduction"
+      ],
+      "futureQuizId": "quiz-deque-introduction",
+      "futureFlashcardId": "flashcards-deque-introduction",
+      "futureProjectId": "project-deque-introduction",
+      "images": [
+        "content/deque/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "deque-introduction.py",
+          "code": "def deque_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(deque_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "double-ended-model": {
+      "lessonId": "deque.double-ended-model",
+      "chapter": "Deque",
+      "title": "Double Ended Model",
+      "summary": "Learn Double Ended Model in Deque with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "double-ended",
+        "double-ended-model"
+      ],
+      "learningObjectives": [
+        "Explain Deque: Double Ended Model clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "deque-double-ended-model",
+      "animationComponent": "DequeDoubleEndedModelAnimation",
+      "aiContext": "Deque / Double Ended Model: Learn Double Ended Model in Deque with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Double Ended Model lesson for Deque, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Deque: Double Ended Model. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "deque",
+        "lessonSlug": "double-ended-model",
+        "topic": "Deque",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "deque.double-ended-model",
+        "tags": [
+          "linear-data-structure",
+          "double-ended",
+          "double-ended-model"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "deque/introduction"
+      ],
+      "futureQuizId": "quiz-deque-double-ended-model",
+      "futureFlashcardId": "flashcards-deque-double-ended-model",
+      "futureProjectId": "project-deque-double-ended-model",
+      "images": [
+        "content/deque/images/double-ended-model.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Double Ended Model from scratch.",
+        "Dry-run Double Ended Model on two edge cases.",
+        "Explain Double Ended Model complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "deque-double-ended-model.py",
+          "code": "def deque_double_ended_model(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(deque_double_ended_model([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "push-front": {
+      "lessonId": "deque.push-front",
+      "chapter": "Deque",
+      "title": "Push Front",
+      "summary": "Learn Push Front in Deque with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "double-ended",
+        "push-front"
+      ],
+      "learningObjectives": [
+        "Explain Deque: Push Front clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "deque-push-front",
+      "animationComponent": "DequePushFrontAnimation",
+      "aiContext": "Deque / Push Front: Learn Push Front in Deque with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Push Front lesson for Deque, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Deque: Push Front. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "deque",
+        "lessonSlug": "push-front",
+        "topic": "Deque",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "deque.push-front",
+        "tags": [
+          "linear-data-structure",
+          "double-ended",
+          "push-front"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "deque/introduction"
+      ],
+      "futureQuizId": "quiz-deque-push-front",
+      "futureFlashcardId": "flashcards-deque-push-front",
+      "futureProjectId": "project-deque-push-front",
+      "images": [
+        "content/deque/images/push-front.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Push Front from scratch.",
+        "Dry-run Push Front on two edge cases.",
+        "Explain Push Front complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "deque-push-front.py",
+          "code": "def deque_push_front(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(deque_push_front([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "push-back": {
+      "lessonId": "deque.push-back",
+      "chapter": "Deque",
+      "title": "Push Back",
+      "summary": "Learn Push Back in Deque with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "double-ended",
+        "push-back"
+      ],
+      "learningObjectives": [
+        "Explain Deque: Push Back clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "deque-push-back",
+      "animationComponent": "DequePushBackAnimation",
+      "aiContext": "Deque / Push Back: Learn Push Back in Deque with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Push Back lesson for Deque, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Deque: Push Back. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "deque",
+        "lessonSlug": "push-back",
+        "topic": "Deque",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "deque.push-back",
+        "tags": [
+          "linear-data-structure",
+          "double-ended",
+          "push-back"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "deque/introduction"
+      ],
+      "futureQuizId": "quiz-deque-push-back",
+      "futureFlashcardId": "flashcards-deque-push-back",
+      "futureProjectId": "project-deque-push-back",
+      "images": [
+        "content/deque/images/push-back.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Push Back from scratch.",
+        "Dry-run Push Back on two edge cases.",
+        "Explain Push Back complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "deque-push-back.py",
+          "code": "def deque_push_back(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(deque_push_back([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "pop-front": {
+      "lessonId": "deque.pop-front",
+      "chapter": "Deque",
+      "title": "Pop Front",
+      "summary": "Learn Pop Front in Deque with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "double-ended",
+        "pop-front"
+      ],
+      "learningObjectives": [
+        "Explain Deque: Pop Front clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "deque-pop-front",
+      "animationComponent": "DequePopFrontAnimation",
+      "aiContext": "Deque / Pop Front: Learn Pop Front in Deque with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Pop Front lesson for Deque, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Deque: Pop Front. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "deque",
+        "lessonSlug": "pop-front",
+        "topic": "Deque",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "deque.pop-front",
+        "tags": [
+          "linear-data-structure",
+          "double-ended",
+          "pop-front"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "deque/introduction"
+      ],
+      "futureQuizId": "quiz-deque-pop-front",
+      "futureFlashcardId": "flashcards-deque-pop-front",
+      "futureProjectId": "project-deque-pop-front",
+      "images": [
+        "content/deque/images/pop-front.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Pop Front from scratch.",
+        "Dry-run Pop Front on two edge cases.",
+        "Explain Pop Front complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "deque-pop-front.py",
+          "code": "def deque_pop_front(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(deque_pop_front([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "pop-back": {
+      "lessonId": "deque.pop-back",
+      "chapter": "Deque",
+      "title": "Pop Back",
+      "summary": "Learn Pop Back in Deque with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "double-ended",
+        "pop-back"
+      ],
+      "learningObjectives": [
+        "Explain Deque: Pop Back clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "deque-pop-back",
+      "animationComponent": "DequePopBackAnimation",
+      "aiContext": "Deque / Pop Back: Learn Pop Back in Deque with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Pop Back lesson for Deque, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Deque: Pop Back. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "deque",
+        "lessonSlug": "pop-back",
+        "topic": "Deque",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "deque.pop-back",
+        "tags": [
+          "linear-data-structure",
+          "double-ended",
+          "pop-back"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "deque/introduction"
+      ],
+      "futureQuizId": "quiz-deque-pop-back",
+      "futureFlashcardId": "flashcards-deque-pop-back",
+      "futureProjectId": "project-deque-pop-back",
+      "images": [
+        "content/deque/images/pop-back.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Pop Back from scratch.",
+        "Dry-run Pop Back on two edge cases.",
+        "Explain Pop Back complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "deque-pop-back.py",
+          "code": "def deque_pop_back(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(deque_pop_back([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "sliding-window-maximum": {
+      "lessonId": "deque.sliding-window-maximum",
+      "chapter": "Deque",
+      "title": "Sliding Window Maximum",
+      "summary": "Learn Sliding Window Maximum in Deque with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "double-ended",
+        "sliding-window-maximum"
+      ],
+      "learningObjectives": [
+        "Explain Deque: Sliding Window Maximum clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "deque-sliding-window-maximum",
+      "animationComponent": "DequeSlidingWindowMaximumAnimation",
+      "aiContext": "Deque / Sliding Window Maximum: Learn Sliding Window Maximum in Deque with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Sliding Window Maximum lesson for Deque, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Deque: Sliding Window Maximum. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "deque",
+        "lessonSlug": "sliding-window-maximum",
+        "topic": "Deque",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "deque.sliding-window-maximum",
+        "tags": [
+          "linear-data-structure",
+          "double-ended",
+          "sliding-window-maximum"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "deque/introduction"
+      ],
+      "futureQuizId": "quiz-deque-sliding-window-maximum",
+      "futureFlashcardId": "flashcards-deque-sliding-window-maximum",
+      "futureProjectId": "project-deque-sliding-window-maximum",
+      "images": [
+        "content/deque/images/sliding-window-maximum.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Sliding Window Maximum from scratch.",
+        "Dry-run Sliding Window Maximum on two edge cases.",
+        "Explain Sliding Window Maximum complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "deque-sliding-window-maximum.py",
+          "code": "def deque_sliding_window_maximum(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(deque_sliding_window_maximum([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "deque.practice",
+      "chapter": "Deque",
+      "title": "Practice",
+      "summary": "Learn Practice in Deque with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "double-ended",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Deque: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "deque-practice",
+      "animationComponent": "DequePracticeAnimation",
+      "aiContext": "Deque / Practice: Learn Practice in Deque with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Deque, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Deque: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "deque",
+        "lessonSlug": "practice",
+        "topic": "Deque",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "deque.practice",
+        "tags": [
+          "linear-data-structure",
+          "double-ended",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "deque/introduction"
+      ],
+      "futureQuizId": "quiz-deque-practice",
+      "futureFlashcardId": "flashcards-deque-practice",
+      "futureProjectId": "project-deque-practice",
+      "images": [
+        "content/deque/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "deque-practice.py",
+          "code": "def deque_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(deque_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "deque.interview-questions",
+      "chapter": "Deque",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Deque with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "double-ended",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Deque: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "deque-interview-questions",
+      "animationComponent": "DequeInterviewQuestionsAnimation",
+      "aiContext": "Deque / Interview Questions: Learn Interview Questions in Deque with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Deque, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Deque: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "deque",
+        "lessonSlug": "interview-questions",
+        "topic": "Deque",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "deque.interview-questions",
+        "tags": [
+          "linear-data-structure",
+          "double-ended",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "deque/introduction"
+      ],
+      "futureQuizId": "quiz-deque-interview-questions",
+      "futureFlashcardId": "flashcards-deque-interview-questions",
+      "futureProjectId": "project-deque-interview-questions",
+      "images": [
+        "content/deque/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "deque-interview-questions.py",
+          "code": "def deque_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(deque_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "deque.revision-summary",
+      "chapter": "Deque",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Deque with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Beginner",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "linear-data-structure",
+        "double-ended",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Deque: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "deque-revision-summary",
+      "animationComponent": "DequeRevisionSummaryAnimation",
+      "aiContext": "Deque / Revision Summary: Learn Revision Summary in Deque with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Deque, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Deque: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "deque",
+        "lessonSlug": "revision-summary",
+        "topic": "Deque",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "deque.revision-summary",
+        "tags": [
+          "linear-data-structure",
+          "double-ended",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "deque/introduction"
+      ],
+      "futureQuizId": "quiz-deque-revision-summary",
+      "futureFlashcardId": "flashcards-deque-revision-summary",
+      "futureProjectId": "project-deque-revision-summary",
+      "images": [
+        "content/deque/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "deque-revision-summary.py",
+          "code": "def deque_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(deque_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}

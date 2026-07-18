@@ -1,0 +1,908 @@
+{
+  "chapterId": "disjoint-set-union",
+  "title": "Disjoint Set Union",
+  "description": "Disjoint Set Union topic with focused parts, examples, code, explanations, complexity analysis, practice, interview preparation, and revision.",
+  "difficulty": "Intermediate",
+  "estimatedHours": 5,
+  "tags": [
+    "union-find",
+    "graph"
+  ],
+  "animationNamespace": "DisjointSetUnion",
+  "aiContext": "Disjoint Set Union chapter in the DSA Mentor AI syllabus.",
+  "animationMappings": {
+    "introduction": {
+      "animationId": "disjoint-set-union-introduction",
+      "component": "DisjointSetUnionIntroductionAnimation",
+      "status": "planned"
+    },
+    "make-set": {
+      "animationId": "disjoint-set-union-make-set",
+      "component": "DisjointSetUnionMakeSetAnimation",
+      "status": "planned"
+    },
+    "find": {
+      "animationId": "disjoint-set-union-find",
+      "component": "DisjointSetUnionFindAnimation",
+      "status": "planned"
+    },
+    "union": {
+      "animationId": "disjoint-set-union-union",
+      "component": "DisjointSetUnionUnionAnimation",
+      "status": "planned"
+    },
+    "path-compression": {
+      "animationId": "disjoint-set-union-path-compression",
+      "component": "DisjointSetUnionPathCompressionAnimation",
+      "status": "planned"
+    },
+    "union-by-rank": {
+      "animationId": "disjoint-set-union-union-by-rank",
+      "component": "DisjointSetUnionUnionByRankAnimation",
+      "status": "planned"
+    },
+    "cycle-detection": {
+      "animationId": "disjoint-set-union-cycle-detection",
+      "component": "DisjointSetUnionCycleDetectionAnimation",
+      "status": "planned"
+    },
+    "kruskal-algorithm": {
+      "animationId": "disjoint-set-union-kruskal-algorithm",
+      "component": "DisjointSetUnionKruskalAlgorithmAnimation",
+      "status": "planned"
+    },
+    "practice": {
+      "animationId": "disjoint-set-union-practice",
+      "component": "DisjointSetUnionPracticeAnimation",
+      "status": "planned"
+    },
+    "interview-questions": {
+      "animationId": "disjoint-set-union-interview-questions",
+      "component": "DisjointSetUnionInterviewQuestionsAnimation",
+      "status": "planned"
+    },
+    "revision-summary": {
+      "animationId": "disjoint-set-union-revision-summary",
+      "component": "DisjointSetUnionRevisionSummaryAnimation",
+      "status": "planned"
+    }
+  },
+  "lessons": {
+    "introduction": {
+      "lessonId": "disjoint-set-union.introduction",
+      "chapter": "Disjoint Set Union",
+      "title": "Introduction",
+      "summary": "Build the mental model, vocabulary, and why this topic matters.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Start this topic from the beginning."
+      ],
+      "tags": [
+        "union-find",
+        "graph",
+        "introduction"
+      ],
+      "learningObjectives": [
+        "Explain Disjoint Set Union: Introduction clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "disjoint-set-union-introduction",
+      "animationComponent": "DisjointSetUnionIntroductionAnimation",
+      "aiContext": "Disjoint Set Union / Introduction: Build the mental model, vocabulary, and why this topic matters.",
+      "aiSummary": "Introduction lesson for Disjoint Set Union, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Disjoint Set Union: Introduction. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "disjoint-set-union",
+        "lessonSlug": "introduction",
+        "topic": "Disjoint Set Union",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "disjoint-set-union.introduction",
+        "tags": [
+          "union-find",
+          "graph",
+          "introduction"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "disjoint-set-union/introduction"
+      ],
+      "futureQuizId": "quiz-disjoint-set-union-introduction",
+      "futureFlashcardId": "flashcards-disjoint-set-union-introduction",
+      "futureProjectId": "project-disjoint-set-union-introduction",
+      "images": [
+        "content/disjoint-set-union/images/introduction.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Introduction from scratch.",
+        "Dry-run Introduction on two edge cases.",
+        "Explain Introduction complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "disjoint-set-union-introduction.py",
+          "code": "def disjoint_set_union_introduction(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(disjoint_set_union_introduction([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "make-set": {
+      "lessonId": "disjoint-set-union.make-set",
+      "chapter": "Disjoint Set Union",
+      "title": "Make Set",
+      "summary": "Learn Make Set in Disjoint Set Union with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "union-find",
+        "graph",
+        "make-set"
+      ],
+      "learningObjectives": [
+        "Explain Disjoint Set Union: Make Set clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "disjoint-set-union-make-set",
+      "animationComponent": "DisjointSetUnionMakeSetAnimation",
+      "aiContext": "Disjoint Set Union / Make Set: Learn Make Set in Disjoint Set Union with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Make Set lesson for Disjoint Set Union, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Disjoint Set Union: Make Set. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "disjoint-set-union",
+        "lessonSlug": "make-set",
+        "topic": "Disjoint Set Union",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "disjoint-set-union.make-set",
+        "tags": [
+          "union-find",
+          "graph",
+          "make-set"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "disjoint-set-union/introduction"
+      ],
+      "futureQuizId": "quiz-disjoint-set-union-make-set",
+      "futureFlashcardId": "flashcards-disjoint-set-union-make-set",
+      "futureProjectId": "project-disjoint-set-union-make-set",
+      "images": [
+        "content/disjoint-set-union/images/make-set.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Make Set from scratch.",
+        "Dry-run Make Set on two edge cases.",
+        "Explain Make Set complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "disjoint-set-union-make-set.py",
+          "code": "def disjoint_set_union_make_set(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(disjoint_set_union_make_set([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "find": {
+      "lessonId": "disjoint-set-union.find",
+      "chapter": "Disjoint Set Union",
+      "title": "Find",
+      "summary": "Learn Find in Disjoint Set Union with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "union-find",
+        "graph",
+        "find"
+      ],
+      "learningObjectives": [
+        "Explain Disjoint Set Union: Find clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "disjoint-set-union-find",
+      "animationComponent": "DisjointSetUnionFindAnimation",
+      "aiContext": "Disjoint Set Union / Find: Learn Find in Disjoint Set Union with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Find lesson for Disjoint Set Union, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Disjoint Set Union: Find. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "disjoint-set-union",
+        "lessonSlug": "find",
+        "topic": "Disjoint Set Union",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "disjoint-set-union.find",
+        "tags": [
+          "union-find",
+          "graph",
+          "find"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "disjoint-set-union/introduction"
+      ],
+      "futureQuizId": "quiz-disjoint-set-union-find",
+      "futureFlashcardId": "flashcards-disjoint-set-union-find",
+      "futureProjectId": "project-disjoint-set-union-find",
+      "images": [
+        "content/disjoint-set-union/images/find.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Find from scratch.",
+        "Dry-run Find on two edge cases.",
+        "Explain Find complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "disjoint-set-union-find.py",
+          "code": "def disjoint_set_union_find(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(disjoint_set_union_find([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "union": {
+      "lessonId": "disjoint-set-union.union",
+      "chapter": "Disjoint Set Union",
+      "title": "Union",
+      "summary": "Learn Union in Disjoint Set Union with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "union-find",
+        "graph",
+        "union"
+      ],
+      "learningObjectives": [
+        "Explain Disjoint Set Union: Union clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "disjoint-set-union-union",
+      "animationComponent": "DisjointSetUnionUnionAnimation",
+      "aiContext": "Disjoint Set Union / Union: Learn Union in Disjoint Set Union with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Union lesson for Disjoint Set Union, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Disjoint Set Union: Union. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "disjoint-set-union",
+        "lessonSlug": "union",
+        "topic": "Disjoint Set Union",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "disjoint-set-union.union",
+        "tags": [
+          "union-find",
+          "graph",
+          "union"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "disjoint-set-union/introduction"
+      ],
+      "futureQuizId": "quiz-disjoint-set-union-union",
+      "futureFlashcardId": "flashcards-disjoint-set-union-union",
+      "futureProjectId": "project-disjoint-set-union-union",
+      "images": [
+        "content/disjoint-set-union/images/union.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Union from scratch.",
+        "Dry-run Union on two edge cases.",
+        "Explain Union complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "disjoint-set-union-union.py",
+          "code": "def disjoint_set_union_union(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(disjoint_set_union_union([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "path-compression": {
+      "lessonId": "disjoint-set-union.path-compression",
+      "chapter": "Disjoint Set Union",
+      "title": "Path Compression",
+      "summary": "Learn Path Compression in Disjoint Set Union with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "union-find",
+        "graph",
+        "path-compression"
+      ],
+      "learningObjectives": [
+        "Explain Disjoint Set Union: Path Compression clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "disjoint-set-union-path-compression",
+      "animationComponent": "DisjointSetUnionPathCompressionAnimation",
+      "aiContext": "Disjoint Set Union / Path Compression: Learn Path Compression in Disjoint Set Union with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Path Compression lesson for Disjoint Set Union, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Disjoint Set Union: Path Compression. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "disjoint-set-union",
+        "lessonSlug": "path-compression",
+        "topic": "Disjoint Set Union",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "disjoint-set-union.path-compression",
+        "tags": [
+          "union-find",
+          "graph",
+          "path-compression"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "disjoint-set-union/introduction"
+      ],
+      "futureQuizId": "quiz-disjoint-set-union-path-compression",
+      "futureFlashcardId": "flashcards-disjoint-set-union-path-compression",
+      "futureProjectId": "project-disjoint-set-union-path-compression",
+      "images": [
+        "content/disjoint-set-union/images/path-compression.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Path Compression from scratch.",
+        "Dry-run Path Compression on two edge cases.",
+        "Explain Path Compression complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "disjoint-set-union-path-compression.py",
+          "code": "def disjoint_set_union_path_compression(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(disjoint_set_union_path_compression([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "union-by-rank": {
+      "lessonId": "disjoint-set-union.union-by-rank",
+      "chapter": "Disjoint Set Union",
+      "title": "Union By Rank",
+      "summary": "Learn Union By Rank in Disjoint Set Union with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "union-find",
+        "graph",
+        "union-by-rank"
+      ],
+      "learningObjectives": [
+        "Explain Disjoint Set Union: Union By Rank clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "disjoint-set-union-union-by-rank",
+      "animationComponent": "DisjointSetUnionUnionByRankAnimation",
+      "aiContext": "Disjoint Set Union / Union By Rank: Learn Union By Rank in Disjoint Set Union with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Union By Rank lesson for Disjoint Set Union, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Disjoint Set Union: Union By Rank. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "disjoint-set-union",
+        "lessonSlug": "union-by-rank",
+        "topic": "Disjoint Set Union",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "disjoint-set-union.union-by-rank",
+        "tags": [
+          "union-find",
+          "graph",
+          "union-by-rank"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "disjoint-set-union/introduction"
+      ],
+      "futureQuizId": "quiz-disjoint-set-union-union-by-rank",
+      "futureFlashcardId": "flashcards-disjoint-set-union-union-by-rank",
+      "futureProjectId": "project-disjoint-set-union-union-by-rank",
+      "images": [
+        "content/disjoint-set-union/images/union-by-rank.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Union By Rank from scratch.",
+        "Dry-run Union By Rank on two edge cases.",
+        "Explain Union By Rank complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "disjoint-set-union-union-by-rank.py",
+          "code": "def disjoint_set_union_union_by_rank(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(disjoint_set_union_union_by_rank([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "cycle-detection": {
+      "lessonId": "disjoint-set-union.cycle-detection",
+      "chapter": "Disjoint Set Union",
+      "title": "Cycle Detection",
+      "summary": "Learn Cycle Detection in Disjoint Set Union with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "union-find",
+        "graph",
+        "cycle-detection"
+      ],
+      "learningObjectives": [
+        "Explain Disjoint Set Union: Cycle Detection clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "disjoint-set-union-cycle-detection",
+      "animationComponent": "DisjointSetUnionCycleDetectionAnimation",
+      "aiContext": "Disjoint Set Union / Cycle Detection: Learn Cycle Detection in Disjoint Set Union with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Cycle Detection lesson for Disjoint Set Union, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Disjoint Set Union: Cycle Detection. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "disjoint-set-union",
+        "lessonSlug": "cycle-detection",
+        "topic": "Disjoint Set Union",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "disjoint-set-union.cycle-detection",
+        "tags": [
+          "union-find",
+          "graph",
+          "cycle-detection"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "disjoint-set-union/introduction"
+      ],
+      "futureQuizId": "quiz-disjoint-set-union-cycle-detection",
+      "futureFlashcardId": "flashcards-disjoint-set-union-cycle-detection",
+      "futureProjectId": "project-disjoint-set-union-cycle-detection",
+      "images": [
+        "content/disjoint-set-union/images/cycle-detection.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Cycle Detection from scratch.",
+        "Dry-run Cycle Detection on two edge cases.",
+        "Explain Cycle Detection complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "disjoint-set-union-cycle-detection.py",
+          "code": "def disjoint_set_union_cycle_detection(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(disjoint_set_union_cycle_detection([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "kruskal-algorithm": {
+      "lessonId": "disjoint-set-union.kruskal-algorithm",
+      "chapter": "Disjoint Set Union",
+      "title": "Kruskal Algorithm",
+      "summary": "Learn Kruskal Algorithm in Disjoint Set Union with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "union-find",
+        "graph",
+        "kruskal-algorithm"
+      ],
+      "learningObjectives": [
+        "Explain Disjoint Set Union: Kruskal Algorithm clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "disjoint-set-union-kruskal-algorithm",
+      "animationComponent": "DisjointSetUnionKruskalAlgorithmAnimation",
+      "aiContext": "Disjoint Set Union / Kruskal Algorithm: Learn Kruskal Algorithm in Disjoint Set Union with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Kruskal Algorithm lesson for Disjoint Set Union, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Disjoint Set Union: Kruskal Algorithm. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "disjoint-set-union",
+        "lessonSlug": "kruskal-algorithm",
+        "topic": "Disjoint Set Union",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "disjoint-set-union.kruskal-algorithm",
+        "tags": [
+          "union-find",
+          "graph",
+          "kruskal-algorithm"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "disjoint-set-union/introduction"
+      ],
+      "futureQuizId": "quiz-disjoint-set-union-kruskal-algorithm",
+      "futureFlashcardId": "flashcards-disjoint-set-union-kruskal-algorithm",
+      "futureProjectId": "project-disjoint-set-union-kruskal-algorithm",
+      "images": [
+        "content/disjoint-set-union/images/kruskal-algorithm.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Kruskal Algorithm from scratch.",
+        "Dry-run Kruskal Algorithm on two edge cases.",
+        "Explain Kruskal Algorithm complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "disjoint-set-union-kruskal-algorithm.py",
+          "code": "def disjoint_set_union_kruskal_algorithm(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(disjoint_set_union_kruskal_algorithm([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "practice": {
+      "lessonId": "disjoint-set-union.practice",
+      "chapter": "Disjoint Set Union",
+      "title": "Practice",
+      "summary": "Learn Practice in Disjoint Set Union with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "union-find",
+        "graph",
+        "practice"
+      ],
+      "learningObjectives": [
+        "Explain Disjoint Set Union: Practice clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "disjoint-set-union-practice",
+      "animationComponent": "DisjointSetUnionPracticeAnimation",
+      "aiContext": "Disjoint Set Union / Practice: Learn Practice in Disjoint Set Union with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Practice lesson for Disjoint Set Union, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Disjoint Set Union: Practice. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "disjoint-set-union",
+        "lessonSlug": "practice",
+        "topic": "Disjoint Set Union",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "disjoint-set-union.practice",
+        "tags": [
+          "union-find",
+          "graph",
+          "practice"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "disjoint-set-union/introduction"
+      ],
+      "futureQuizId": "quiz-disjoint-set-union-practice",
+      "futureFlashcardId": "flashcards-disjoint-set-union-practice",
+      "futureProjectId": "project-disjoint-set-union-practice",
+      "images": [
+        "content/disjoint-set-union/images/practice.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Practice from scratch.",
+        "Dry-run Practice on two edge cases.",
+        "Explain Practice complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "disjoint-set-union-practice.py",
+          "code": "def disjoint_set_union_practice(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(disjoint_set_union_practice([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "interview-questions": {
+      "lessonId": "disjoint-set-union.interview-questions",
+      "chapter": "Disjoint Set Union",
+      "title": "Interview Questions",
+      "summary": "Learn Interview Questions in Disjoint Set Union with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "union-find",
+        "graph",
+        "interview-questions"
+      ],
+      "learningObjectives": [
+        "Explain Disjoint Set Union: Interview Questions clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "disjoint-set-union-interview-questions",
+      "animationComponent": "DisjointSetUnionInterviewQuestionsAnimation",
+      "aiContext": "Disjoint Set Union / Interview Questions: Learn Interview Questions in Disjoint Set Union with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Interview Questions lesson for Disjoint Set Union, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Disjoint Set Union: Interview Questions. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "disjoint-set-union",
+        "lessonSlug": "interview-questions",
+        "topic": "Disjoint Set Union",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "disjoint-set-union.interview-questions",
+        "tags": [
+          "union-find",
+          "graph",
+          "interview-questions"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "disjoint-set-union/introduction"
+      ],
+      "futureQuizId": "quiz-disjoint-set-union-interview-questions",
+      "futureFlashcardId": "flashcards-disjoint-set-union-interview-questions",
+      "futureProjectId": "project-disjoint-set-union-interview-questions",
+      "images": [
+        "content/disjoint-set-union/images/interview-questions.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Interview Questions from scratch.",
+        "Dry-run Interview Questions on two edge cases.",
+        "Explain Interview Questions complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "disjoint-set-union-interview-questions.py",
+          "code": "def disjoint_set_union_interview_questions(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(disjoint_set_union_interview_questions([3, 1, 4, 1, 5]))"
+        }
+      ]
+    },
+    "revision-summary": {
+      "lessonId": "disjoint-set-union.revision-summary",
+      "chapter": "Disjoint Set Union",
+      "title": "Revision Summary",
+      "summary": "Learn Revision Summary in Disjoint Set Union with theory, example, code, explanation, complexity, and practice.",
+      "difficulty": "Intermediate",
+      "estimatedTimeMinutes": 25,
+      "durationMinutes": 25,
+      "prerequisites": [
+        "Complete the previous part in this topic."
+      ],
+      "tags": [
+        "union-find",
+        "graph",
+        "revision-summary"
+      ],
+      "learningObjectives": [
+        "Explain Disjoint Set Union: Revision Summary clearly.",
+        "Dry-run the idea on a small example.",
+        "Write code and analyze time and space complexity."
+      ],
+      "animationId": "disjoint-set-union-revision-summary",
+      "animationComponent": "DisjointSetUnionRevisionSummaryAnimation",
+      "aiContext": "Disjoint Set Union / Revision Summary: Learn Revision Summary in Disjoint Set Union with theory, example, code, explanation, complexity, and practice.",
+      "aiSummary": "Revision Summary lesson for Disjoint Set Union, including theory, examples, code, explanation, complexity, and practice.",
+      "aiPromptContext": "Act as a DSA mentor teaching Disjoint Set Union: Revision Summary. Use concise explanations, examples, code, and complexity analysis.",
+      "ragMetadata": {
+        "chapterSlug": "disjoint-set-union",
+        "lessonSlug": "revision-summary",
+        "topic": "Disjoint Set Union",
+        "contentType": "lesson",
+        "phase": 4
+      },
+      "embeddingMetadata": {
+        "namespace": "dsa-knowledge-base",
+        "documentId": "disjoint-set-union.revision-summary",
+        "tags": [
+          "union-find",
+          "graph",
+          "revision-summary"
+        ]
+      },
+      "timeComplexity": "Depends on the dominant loop, recursion, or data-structure operation.",
+      "spaceComplexity": "Count auxiliary structures and recursion stack separately.",
+      "relatedLessons": [
+        "disjoint-set-union/introduction"
+      ],
+      "futureQuizId": "quiz-disjoint-set-union-revision-summary",
+      "futureFlashcardId": "flashcards-disjoint-set-union-revision-summary",
+      "futureProjectId": "project-disjoint-set-union-revision-summary",
+      "images": [
+        "content/disjoint-set-union/images/revision-summary.png"
+      ],
+      "commonMistakes": [
+        "Skipping edge cases before coding.",
+        "Mixing up indexes, boundaries, or state updates.",
+        "Stating complexity without identifying the dominant operation."
+      ],
+      "interviewTips": [
+        "State the invariant before coding.",
+        "Dry-run on a small input.",
+        "Discuss tradeoffs and when this part should be used."
+      ],
+      "practiceProblems": [
+        "Implement Revision Summary from scratch.",
+        "Dry-run Revision Summary on two edge cases.",
+        "Explain Revision Summary complexity in one minute."
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "filename": "disjoint-set-union-revision-summary.py",
+          "code": "def disjoint_set_union_revision_summary(items):\n    result = []\n    for index, value in enumerate(items):\n        result.append((index, value))\n    return result\n\nprint(disjoint_set_union_revision_summary([3, 1, 4, 1, 5]))"
+        }
+      ]
+    }
+  }
+}
