@@ -1,0 +1,108 @@
+services:
+  - type: web
+    name: dsa-mentor-ai-api
+    runtime: python
+    plan: starter
+    region: oregon
+    branch: main
+    buildCommand: pip install -r apps/api/requirements.txt
+    startCommand: python -m uvicorn app.main:app --app-dir apps/api --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    autoDeployTrigger: commit
+    disk:
+      name: chroma-data
+      mountPath: /opt/render/project/src/data
+      sizeGB: 1
+    envVars:
+      - key: APP_NAME
+        value: DSA Mentor AI API
+      - key: APP_ENV
+        value: production
+      - key: BACKEND_CORS_ORIGINS
+        value: https://dsa-mentor-ai-web.onrender.com
+      - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_SSL
+        value: true
+      - key: GEMINI_MODEL
+        value: gemini-2.5-flash-lite
+      - key: GEMINI_API_KEY_1
+        sync: false
+      - key: GEMINI_API_KEY_2
+        sync: false
+      - key: GEMINI_API_KEY_3
+        sync: false
+      - key: GEMINI_API_KEY_4
+        sync: false
+      - key: AI_TIMEOUT_SECONDS
+        value: 30
+      - key: AI_MAX_RETRIES
+        value: 2
+      - key: CONTENT_ROOT
+        value: content
+      - key: CHROMA_PERSIST_DIR
+        value: data/chroma
+      - key: CHROMA_COLLECTION
+        value: dsa_knowledge_base
+      - key: RAG_CHUNK_SIZE
+        value: 1400
+      - key: RAG_CHUNK_OVERLAP
+        value: 180
+      - key: RAG_TOP_K
+        value: 6
+      - key: RAG_SCORE_THRESHOLD
+        value: 0.25
+      - key: EMBEDDING_MODEL_NAME
+        value: sentence-transformers/all-MiniLM-L6-v2
+
+  - type: web
+    name: dsa-mentor-ai-web
+    runtime: node
+    plan: starter
+    region: oregon
+    branch: main
+    buildCommand: npm ci && npm run build:web
+    startCommand: npm --workspace apps/web run start -- -p $PORT
+    healthCheckPath: /
+    autoDeployTrigger: commit
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_APP_URL
+        value: https://dsa-mentor-ai-web.onrender.com
+      - key: BETTER_AUTH_URL
+        value: https://dsa-mentor-ai-web.onrender.com
+      - key: BETTER_AUTH_SECRET
+        generateValue: true
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_SSL
+        value: true
+      - key: API_BASE_URL
+        value: https://dsa-mentor-ai-api.onrender.com
+      - key: CODE_EXECUTION_PROVIDER
+        value: judge0
+      - key: JUDGE0_BASE_URL
+        value: https://ce.judge0.com
+      - key: JUDGE0_API_KEY
+        sync: false
+      - key: JUDGE0_RAPIDAPI_HOST
+        sync: false
+      - key: JUDGE0_PYTHON_LANGUAGE_ID
+        value: 71
+      - key: JUDGE0_JAVA_LANGUAGE_ID
+        value: 62
+      - key: JUDGE0_CPP_LANGUAGE_ID
+        value: 54
+      - key: JUDGE0_CPU_TIME_LIMIT
+        value: 3
+      - key: JUDGE0_WALL_TIME_LIMIT
+        value: 6
+      - key: JUDGE0_MEMORY_LIMIT_KB
+        value: 128000
+      - key: JUDGE0_REQUEST_TIMEOUT_MS
+        value: 15000
