@@ -104,7 +104,15 @@ export class PostgresProgressRepository implements ProgressRepository {
 
     try {
       await client.query("BEGIN");
-      await client.query(`UPDATE lesson_progress SET current_lesson = FALSE WHERE user_id = $1`, [userId]);
+      await client.query(`SELECT pg_advisory_xact_lock(hashtext($1))`, [userId]);
+      await client.query(
+        `UPDATE lesson_progress
+         SET current_lesson = FALSE
+         WHERE user_id = $1
+         AND current_lesson = TRUE
+         AND NOT (chapter_slug = $2 AND lesson_slug = $3)`,
+        [userId, input.chapterSlug, input.lessonSlug],
+      );
 
       const result = await client.query(
         `INSERT INTO lesson_progress (
@@ -160,4 +168,3 @@ export class PostgresNotesRepository implements NotesRepository {
     return mapNote(result.rows[0]);
   }
 }
-
