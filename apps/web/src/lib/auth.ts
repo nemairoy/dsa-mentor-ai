@@ -6,7 +6,17 @@ import { env } from "@/infrastructure/config/env";
 
 export const auth = betterAuth({
   secret: env.BETTER_AUTH_SECRET,
-  baseURL: env.BETTER_AUTH_URL,
+  baseURL: {
+    allowedHosts: [
+      "localhost:3000",
+      "127.0.0.1:3000",
+      "dsamentor-ai.vercel.app",
+      "dsamentorai.vercel.app",
+      "*.vercel.app",
+    ],
+    fallback: env.BETTER_AUTH_URL,
+    protocol: "auto",
+  },
   database: new Pool({
     connectionString: env.DATABASE_URL,
     ssl: env.DATABASE_SSL ? { rejectUnauthorized: false } : undefined,

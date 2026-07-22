@@ -17,6 +17,10 @@ export async function GET() {
   const env = Object.fromEntries(
     requiredEnv.map((name) => [name, Boolean(process.env[name])]),
   );
+  const authUrl = process.env.BETTER_AUTH_URL ?? null;
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? null;
+  const authOrigin = authUrl ? new URL(authUrl).origin : null;
+  const appOrigin = appUrl ? new URL(appUrl).origin : null;
 
   try {
     const result = await pool.query<{ table_name: string }>(
@@ -33,6 +37,11 @@ export async function GET() {
     return NextResponse.json({
       ok: requiredEnv.every((name) => env[name]) && tables.size === 4,
       env,
+      urls: {
+        authUrl,
+        appUrl,
+        sameOrigin: Boolean(authOrigin && appOrigin && authOrigin === appOrigin),
+      },
       database: "connected",
       authTables: {
         user: tables.has("user"),
