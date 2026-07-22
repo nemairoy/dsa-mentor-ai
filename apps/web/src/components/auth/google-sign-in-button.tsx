@@ -20,13 +20,18 @@ export function GoogleSignInButton() {
           setIsLoading(true);
           setError(null);
 
-          const result = await authClient.signIn.social({
-            provider: "google",
-            callbackURL: "/dashboard",
-          });
+          try {
+            const result = await authClient.signIn.social({
+              provider: "google",
+              callbackURL: "/dashboard",
+            });
 
-          if (result.error) {
-            setError(result.error.message ?? "Google sign in failed");
+            if (result.error) {
+              setError(result.error.message ?? "Google sign in failed");
+              setIsLoading(false);
+            }
+          } catch {
+            setError("Google sign in could not start. Check the production auth environment.");
             setIsLoading(false);
           }
         }}
