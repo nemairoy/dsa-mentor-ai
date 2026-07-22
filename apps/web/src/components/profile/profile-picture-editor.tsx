@@ -11,6 +11,10 @@ type ProfilePictureEditorProps = {
   currentProfilePictureUrl?: string | null;
 };
 
+const maxOriginalSize = 2 * 1024 * 1024;
+const maxUploadSize = 750 * 1024;
+const avatarSize = 512;
+
 export function ProfilePictureEditor({ fullName, currentProfilePictureUrl }: ProfilePictureEditorProps) {
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
@@ -21,6 +25,7 @@ export function ProfilePictureEditor({ fullName, currentProfilePictureUrl }: Pro
   const [serverError, setServerError] = useState<string | null>(null);
   const [savedMessage, setSavedMessage] = useState<string | null>(null);
   const [isSaving, setIsSaving] = useState(false);
+  const [isPreparing, setIsPreparing] = useState(false);
 
   const initials = useMemo(
     () =>
@@ -43,7 +48,7 @@ export function ProfilePictureEditor({ fullName, currentProfilePictureUrl }: Pro
     inputRef.current?.click();
   }
 
-  function handleFileChange(event: React.ChangeEvent<HTMLInputElement>) {
+  async function handleFileChange(event: React.ChangeEvent<HTMLInputElement>) {
     const file = event.target.files?.[0] ?? null;
     setServerError(null);
     setSavedMessage(null);
@@ -60,7 +65,7 @@ export function ProfilePictureEditor({ fullName, currentProfilePictureUrl }: Pro
       return;
     }
 
-    if (file.size > 2 * 1024 * 1024) {
+    if (file.size > maxOriginalSize) {
       setServerError("Image must be 2 MB or smaller");
       event.target.value = "";
       return;
@@ -70,11 +75,27 @@ export function ProfilePictureEditor({ fullName, currentProfilePictureUrl }: Pro
       URL.revokeObjectURL(objectUrlRef.current);
     }
 
-    const objectUrl = URL.createObjectURL(file);
-    objectUrlRef.current = objectUrl;
-    setSelectedFile(file);
-    setSelectedPreviewUrl(objectUrl);
-    setPreviewFailed(false);
+    setIsPreparing(true);
+
+    try {
+      const compressedFile = await compressProfilePhoto(file);
+      if (compressedFile.size > maxUploadSize) {
+        setServerError("Image could not be compressed enough. Choose a smaller photo.");
+        event.target.value = "";
+        return;
+      }
+
+      const objectUrl = URL.createObjectURL(compressedFile);
+      objectUrlRef.current = objectUrl;
+      setSelectedFile(compressedFile);
+      setSelectedPreviewUrl(objectUrl);
+      setPreviewFailed(false);
+    } catch {
+      setServerError("Unable to prepare this image. Try another JPG, PNG, or WebP photo.");
+      event.target.value = "";
+    } finally {
+      setIsPreparing(false);
+    }
   }
 
   async function savePhoto() {
@@ -171,16 +192,16 @@ export function ProfilePictureEditor({ fullName, currentProfilePictureUrl }: Pro
         </div>
 
         <div className="flex flex-wrap gap-2">
-          <input ref={inputRef} type="file" accept="image/jpeg,image/png,image/webp" className="hidden" onChange={handleFileChange} />
-          <Button type="button" variant="outline" size="sm" onClick={chooseFile} disabled={isSaving}>
+          <input ref={inputRef} type="file" accept="image/jpeg,image/png,image/webp" className="hidden" onChange={(event) => void handleFileChange(event)} />
+          <Button type="button" variant="outline" size="sm" onClick={chooseFile} disabled={isSaving || isPreparing}>
             <Upload aria-hidden={true} size={14} />
-            Edit profile photo
+            {isPreparing ? "Preparing..." : "Edit profile photo"}
           </Button>
-          <Button type="button" size="sm" onClick={() => void savePhoto()} disabled={isSaving || !selectedFile}>
+          <Button type="button" size="sm" onClick={() => void savePhoto()} disabled={isSaving || isPreparing || !selectedFile}>
             <Save aria-hidden={true} size={14} />
             {isSaving ? "Saving..." : "Save photo"}
           </Button>
-          <Button type="button" variant="outline" size="sm" onClick={() => void removePhoto()} disabled={isSaving || (!currentProfilePictureUrl && !selectedFile)}>
+          <Button type="button" variant="outline" size="sm" onClick={() => void removePhoto()} disabled={isSaving || isPreparing || (!currentProfilePictureUrl && !selectedFile)}>
             <Trash2 aria-hidden={true} size={14} />
             Remove
           </Button>
@@ -191,4 +212,34 @@ export function ProfilePictureEditor({ fullName, currentProfilePictureUrl }: Pro
       {savedMessage ? <p className="mt-3 text-xs text-emerald-700 dark:text-emerald-300">{savedMessage}</p> : null}
     </div>
   );
+}
+
+async function compressProfilePhoto(file: File): Promise<File> {
+  const bitmap = await createImageBitmap(file);
+  const scale = Math.min(1, avatarSize / Math.max(bitmap.width, bitmap.height));
+  const width = Math.max(1, Math.round(bitmap.width * scale));
+  const height = Math.max(1, Math.round(bitmap.height * scale));
+  const canvas = document.createElement("canvas");
+  canvas.width = width;
+  canvas.height = height;
+
+  const context = canvas.getContext("2d");
+  if (!context) throw new Error("Canvas is not available");
+
+  context.drawImage(bitmap, 0, 0, width, height);
+  bitmap.close();
+
+  const preferredType = file.type === "image/png" ? "image/png" : "image/webp";
+  const blob = await new Promise<Blob | null>((resolve) => {
+    canvas.toBlob(resolve, preferredType, 0.82);
+  });
+
+  if (!blob) throw new Error("Image compression failed");
+
+  const extension = preferredType === "image/png" ? "png" : "webp";
+  const baseName = file.name.replace(/\.[^.]+$/, "") || "profile-photo";
+  return new File([blob], `${baseName}.${extension}`, {
+    type: preferredType,
+    lastModified: Date.now(),
+  });
 }

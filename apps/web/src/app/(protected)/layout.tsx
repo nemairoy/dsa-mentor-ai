@@ -5,8 +5,10 @@ import { requireSession } from "@/lib/session";
 
 export default async function ProtectedLayout({ children }: { children: React.ReactNode }) {
   const session = await requireSession();
-  const principal = await adminService.getPrincipal(session.user.id);
-  const profile = await profileService.getByUserId(session.user.id);
+  const [principal, profile] = await Promise.all([
+    adminService.getPrincipal(session.user.id),
+    profileService.getByUserId(session.user.id),
+  ]);
 
   return (
     <AppShell

@@ -1,6 +1,3 @@
-import { createHash, randomUUID } from "crypto";
-import { mkdir, unlink, writeFile } from "fs/promises";
-import path from "path";
 import { NextResponse } from "next/server";
 
 import { profileService } from "@/core/profile/profile-container";
@@ -8,38 +5,12 @@ import { AppError, NotFoundError, UnauthorizedError } from "@/core/shared/errors
 import { logger } from "@/infrastructure/logging/logger";
 import { getCurrentSession } from "@/lib/session";
 
-const maxUploadSize = 2 * 1024 * 1024;
+const maxUploadSize = 750 * 1024;
 const allowedTypes = new Map([
-  ["image/jpeg", "jpg"],
+  ["image/jpeg", "jpeg"],
   ["image/png", "png"],
   ["image/webp", "webp"],
 ]);
-
-function uploadDir() {
-  return path.join(process.cwd(), "public", "uploads", "profile-pictures");
-}
-
-function publicPathFor(fileName: string) {
-  return `/uploads/profile-pictures/${fileName}`;
-}
-
-function fileNameFor(userId: string, extension: string) {
-  const userHash = createHash("sha256").update(userId).digest("hex").slice(0, 16);
-  return `${userHash}-${randomUUID()}.${extension}`;
-}
-
-async function removeLocalProfilePicture(profilePictureUrl: string | null) {
-  if (!profilePictureUrl?.startsWith("/uploads/profile-pictures/")) return;
-
-  const fileName = path.basename(profilePictureUrl);
-  const targetPath = path.join(uploadDir(), fileName);
-
-  try {
-    await unlink(targetPath);
-  } catch {
-    // Missing old files should not block profile updates.
-  }
-}
 
 export async function POST(request: Request) {
   try {
@@ -60,29 +31,22 @@ export async function POST(request: Request) {
       return NextResponse.json({ detail: "Choose an image file" }, { status: 422 });
     }
 
-    const extension = allowedTypes.get(photo.type);
-    if (!extension) {
+    const imageType = allowedTypes.get(photo.type);
+    if (!imageType) {
       return NextResponse.json({ detail: "Upload a JPG, PNG, or WebP image" }, { status: 422 });
     }
 
     if (photo.size > maxUploadSize) {
-      return NextResponse.json({ detail: "Image must be 2 MB or smaller" }, { status: 422 });
+      return NextResponse.json({ detail: "Image must be 750 KB or smaller after compression" }, { status: 422 });
     }
 
-    const directory = uploadDir();
-    await mkdir(directory, { recursive: true });
-
-    const fileName = fileNameFor(session.user.id, extension);
-    const targetPath = path.join(directory, fileName);
     const bytes = Buffer.from(await photo.arrayBuffer());
-
-    await writeFile(targetPath, bytes);
-    await removeLocalProfilePicture(profile.profilePictureUrl);
+    const profilePictureUrl = `data:image/${imageType};base64,${bytes.toString("base64")}`;
 
     const updatedProfile = await profileService.save(session.user.id, {
       fullName: profile.fullName,
       age: profile.age,
-      profilePictureUrl: publicPathFor(fileName),
+      profilePictureUrl,
     });
 
     return NextResponse.json({ profile: updatedProfile });
@@ -103,7 +67,6 @@ export async function DELETE() {
       throw new NotFoundError("Profile not found");
     }
 
-    await removeLocalProfilePicture(profile.profilePictureUrl);
     const updatedProfile = await profileService.save(session.user.id, {
       fullName: profile.fullName,
       age: profile.age,

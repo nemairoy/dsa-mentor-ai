@@ -7,10 +7,14 @@ export const profileSchema = z.object({
     .string()
     .trim()
     .refine(
-      (value) => value === "" || value.startsWith("/uploads/profile-pictures/") || /^https?:\/\//i.test(value),
+      (value) =>
+        value === "" ||
+        value.startsWith("/uploads/profile-pictures/") ||
+        /^https?:\/\//i.test(value) ||
+        /^data:image\/(jpeg|png|webp);base64,/i.test(value),
       "Enter a valid image URL",
     )
-    .max(500)
+    .max(1_100_000)
     .optional()
     .or(z.literal("").transform(() => undefined)),
 });

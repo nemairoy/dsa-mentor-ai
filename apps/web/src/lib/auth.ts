@@ -19,6 +19,9 @@ export const auth = betterAuth({
   database: new Pool({
     connectionString: env.DATABASE_URL,
     ssl: env.DATABASE_SSL ? { rejectUnauthorized: false } : undefined,
+    max: Number(process.env.PG_POOL_MAX ?? 3),
+    connectionTimeoutMillis: 5_000,
+    idleTimeoutMillis: 10_000,
   }),
   trustedOrigins: Array.from(new Set([env.NEXT_PUBLIC_APP_URL, env.BETTER_AUTH_URL])),
   emailAndPassword: {

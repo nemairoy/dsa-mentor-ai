@@ -220,14 +220,21 @@ function UserAvatar({
   userImage?: string | null;
   size: "sm" | "md";
 }) {
+  const [imageFailed, setImageFailed] = useState(false);
   const initial = (userName ?? "S").charAt(0).toUpperCase();
   const dimensions = size === "sm" ? "h-8 w-8 text-xs" : "h-9 w-9 text-sm";
+  const showImage = Boolean(userImage && !imageFailed);
 
   return (
     <span className={cn("flex shrink-0 items-center justify-center overflow-hidden rounded-full bg-muted font-semibold text-foreground", dimensions)}>
-      {userImage ? (
+      {showImage ? (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={userImage} alt={userName ? `${userName} profile photo` : "Profile photo"} className="h-full w-full object-cover" />
+        <img
+          src={userImage ?? ""}
+          alt={userName ? `${userName} profile photo` : "Profile photo"}
+          className="h-full w-full object-cover"
+          onError={() => setImageFailed(true)}
+        />
       ) : (
         initial
       )}
