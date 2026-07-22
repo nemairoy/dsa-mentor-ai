@@ -19,7 +19,7 @@ services:
       - key: APP_ENV
         value: production
       - key: BACKEND_CORS_ORIGINS
-        value: https://dsa-mentor-ai-web.onrender.com
+        value: https://dsamentor-ai.vercel.app
       - key: DATABASE_URL
         sync: false
       - key: DATABASE_SSL
@@ -69,9 +69,9 @@ services:
       - key: NODE_ENV
         value: production
       - key: NEXT_PUBLIC_APP_URL
-        value: https://dsa-mentor-ai-web.onrender.com
+        value: https://dsamentor-ai.vercel.app
       - key: BETTER_AUTH_URL
-        value: https://dsa-mentor-ai-web.onrender.com
+        value: https://dsamentor-ai.vercel.app
       - key: BETTER_AUTH_SECRET
         generateValue: true
       - key: GOOGLE_CLIENT_ID
@@ -83,15 +83,11 @@ services:
       - key: DATABASE_SSL
         value: true
       - key: API_BASE_URL
-        value: https://dsa-mentor-ai-api.onrender.com
+        value: https://dsa-mentor-ai-api-l97r.onrender.com
       - key: CODE_EXECUTION_PROVIDER
         value: judge0
       - key: JUDGE0_BASE_URL
         value: https://ce.judge0.com
-      - key: JUDGE0_API_KEY
-        sync: false
-      - key: JUDGE0_RAPIDAPI_HOST
-        sync: false
       - key: JUDGE0_PYTHON_LANGUAGE_ID
         value: 71
       - key: JUDGE0_JAVA_LANGUAGE_ID

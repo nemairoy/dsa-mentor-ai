@@ -40,6 +40,11 @@ Default local URLs:
 - Web: `http://localhost:3000`
 - API: `http://127.0.0.1:8000`
 
+Current production URLs:
+
+- Web: `https://dsamentor-ai.vercel.app`
+- API health: `https://dsa-mentor-ai-api-l97r.onrender.com/health`
+
 Production-style start commands:
 
 ```powershell
@@ -68,11 +73,13 @@ Required web env:
 ```env
 CODE_EXECUTION_PROVIDER=judge0
 JUDGE0_BASE_URL=https://ce.judge0.com
-JUDGE0_API_KEY=
-JUDGE0_RAPIDAPI_HOST=
 JUDGE0_PYTHON_LANGUAGE_ID=71
 JUDGE0_JAVA_LANGUAGE_ID=62
 JUDGE0_CPP_LANGUAGE_ID=54
+JUDGE0_CPU_TIME_LIMIT=3
+JUDGE0_WALL_TIME_LIMIT=6
+JUDGE0_MEMORY_LIMIT_KB=128000
+JUDGE0_REQUEST_TIMEOUT_MS=15000
 ```
 
 For serious production use, prefer a self-hosted Judge0 instance or a paid managed Judge0 endpoint instead of relying on the public CE endpoint.
