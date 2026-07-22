@@ -215,6 +215,19 @@ string dsaFormat(const vector<T>& values) {
   return output;
 }
 
+template <typename T>
+string dsaFormat(const map<string, T>& values) {
+  string output = "{ ";
+  bool first = true;
+  for (const auto& item : values) {
+    if (!first) output += ", ";
+    output += item.first + ": " + dsaFormat(item.second);
+    first = false;
+  }
+  output += " }";
+  return output;
+}
+
 int main() {
   auto result = ${functionName}(${args});
   cout << "__RESULT__" << dsaFormat(result) << endl;
@@ -363,11 +376,56 @@ function toCppLiteral(value: string): string {
   return trimmed;
 }
 
-function normalizeValue(value: string) {
-  return value
+function normalizeValue(value: string): string {
+  const trimmed = value.trim();
+  if (trimmed.startsWith("{") && trimmed.endsWith("}")) {
+    return normalizeObjectLike(trimmed);
+  }
+  if (trimmed.startsWith("[") && trimmed.endsWith("]")) {
+    return `[${splitTopLevel(trimmed.slice(1, -1)).map(normalizeValue).join(",")}]`;
+  }
+  return trimmed
     .replace(/\btrue\b/g, "True")
     .replace(/\bfalse\b/g, "False")
     .replace(/\bnull\b/g, "None")
+    .replace(/^['"]|['"]$/g, "")
     .replace(/\s+/g, "")
     .trim();
+}
+
+function normalizeObjectLike(value: string): string {
+  const inner = value.slice(1, -1).trim();
+  if (!inner) return "{}";
+
+  const entries = splitTopLevel(inner).map((part) => {
+    const separator = findTopLevelKeyValueSeparator(part);
+    if (separator === -1) return normalizeValue(part);
+    const key = part.slice(0, separator).trim().replace(/^['"]|['"]$/g, "");
+    const itemValue = part.slice(separator + 1).trim();
+    return `${key}:${normalizeValue(itemValue)}`;
+  });
+
+  return `{${entries.sort().join(",")}}`;
+}
+
+function findTopLevelKeyValueSeparator(value: string): number {
+  let depth = 0;
+  let quote: string | null = null;
+
+  for (let index = 0; index < value.length; index += 1) {
+    const char = value[index];
+    if (quote) {
+      if (char === quote && value[index - 1] !== "\\") quote = null;
+      continue;
+    }
+    if (char === "'" || char === "\"") {
+      quote = char;
+      continue;
+    }
+    if (char === "[" || char === "{" || char === "(") depth += 1;
+    if (char === "]" || char === "}" || char === ")") depth -= 1;
+    if ((char === ":" || char === "=") && depth === 0) return index;
+  }
+
+  return -1;
 }
