@@ -94,6 +94,11 @@ npx auth@latest migrate
 ```
 
 Project migrations live in `db/migrations`.
+For production, apply all SQL files in `db/migrations` to the Supabase database used by both Vercel and Render. After deploying the web app, verify auth readiness at:
+
+```text
+https://dsamentor-ai.vercel.app/api/auth/diagnostics
+```
 
 ## Environment
 
