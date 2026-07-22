@@ -8,6 +8,17 @@ on:
 jobs:
   web:
     runs-on: ubuntu-latest
+    env:
+      BETTER_AUTH_SECRET: ci-only-better-auth-secret-32-chars
+      BETTER_AUTH_URL: http://localhost:3000
+      NEXT_PUBLIC_APP_URL: http://localhost:3000
+      GOOGLE_CLIENT_ID: ci-google-client-id
+      GOOGLE_CLIENT_SECRET: ci-google-client-secret
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
+      DATABASE_SSL: "false"
+      API_BASE_URL: http://localhost:8000
+      CODE_EXECUTION_PROVIDER: judge0
+      JUDGE0_BASE_URL: https://ce.judge0.com
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -30,4 +41,3 @@ jobs:
       - run: python -m venv .venv
       - run: . .venv/bin/activate && pip install -r apps/api/requirements.txt
       - run: . .venv/bin/activate && PYTHONPATH=apps/api python -m compileall apps/api/app
-
