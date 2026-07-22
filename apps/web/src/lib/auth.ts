@@ -11,7 +11,6 @@ export const auth = betterAuth({
       "localhost:3000",
       "127.0.0.1:3000",
       "dsamentor-ai.vercel.app",
-      "dsamentorai.vercel.app",
       "*.vercel.app",
     ],
     fallback: env.BETTER_AUTH_URL,
