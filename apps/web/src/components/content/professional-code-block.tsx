@@ -2,8 +2,6 @@
 
 import { Check, Clipboard, Download, Maximize2, Minimize2 } from "lucide-react";
 import { useMemo, useState } from "react";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 import { Button } from "@/components/ui/button";
 
@@ -16,7 +14,8 @@ type ProfessionalCodeBlockProps = {
 export function ProfessionalCodeBlock({ code, language, filename = `example.${language}` }: ProfessionalCodeBlockProps) {
   const [copied, setCopied] = useState(false);
   const [expanded, setExpanded] = useState(false);
-  const lineCount = useMemo(() => code.split("\n").length, [code]);
+  const lines = useMemo(() => code.split("\n"), [code]);
+  const lineCount = lines.length;
 
   async function copyCode() {
     await navigator.clipboard.writeText(code);
@@ -57,20 +56,17 @@ export function ProfessionalCodeBlock({ code, language, filename = `example.${la
           </Button>
         </div>
       </div>
-      <div className={expanded ? "max-h-none" : "max-h-96 overflow-auto"}>
-        <SyntaxHighlighter
-          language={language}
-          style={atomOneDark}
-          showLineNumbers
-          customStyle={{
-            margin: 0,
-            padding: "1rem",
-            background: "transparent",
-            fontSize: "0.875rem",
-          }}
-        >
-          {code}
-        </SyntaxHighlighter>
+      <div className={expanded ? "max-h-none overflow-auto" : "max-h-96 overflow-auto"}>
+        <pre className="m-0 min-w-full p-4 text-[13px] leading-6">
+          <code>
+            {lines.map((line, index) => (
+              <span key={`${filename}-line-${index}`} className="grid grid-cols-[2.75rem_1fr] gap-3">
+                <span className="select-none text-right text-slate-500">{index + 1}</span>
+                <span className="whitespace-pre text-slate-100">{line || " "}</span>
+              </span>
+            ))}
+          </code>
+        </pre>
       </div>
     </figure>
   );

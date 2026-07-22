@@ -2,15 +2,27 @@
 
 import Link from "next/link";
 import { BookOpen, Bot, Code2 } from "lucide-react";
+import dynamic from "next/dynamic";
 import { useState } from "react";
 
-import { PracticeAiHelper } from "@/components/practice/practice-ai-helper";
 import { PracticeCodeRunner } from "@/components/practice/practice-code-runner";
 import { PremiumCard } from "@/components/shared/premium-card";
 import type { PracticeProblem } from "@/core/intelligence/domain/intelligence";
 import { cn } from "@/lib/utils";
 
 type PanelMode = "executor" | "ai";
+
+const PracticeAiHelper = dynamic(
+  () => import("@/components/practice/practice-ai-helper").then((module) => module.PracticeAiHelper),
+  {
+    ssr: false,
+    loading: () => (
+      <section className="rounded-xl border border-border bg-card p-4 text-sm text-muted-foreground shadow-sm">
+        Loading AI help...
+      </section>
+    ),
+  },
+);
 
 export function PracticeWorkspacePanel({ problem }: { problem: PracticeProblem }) {
   const [mode, setMode] = useState<PanelMode>("executor");

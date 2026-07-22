@@ -2,7 +2,7 @@ import { notFound, redirect } from "next/navigation";
 
 import Link from "next/link";
 
-import { AiAssistantPanel } from "@/components/content/ai-assistant-panel";
+import { AiAssistantLazyPanel } from "@/components/content/ai-assistant-lazy-panel";
 import { LessonCompletionGate } from "@/components/content/lesson-completion-gate";
 import { LessonActions } from "@/components/content/lesson-actions";
 import { LessonPartBar } from "@/components/content/lesson-part-bar";
@@ -114,7 +114,7 @@ export default async function LessonPage({ params }: LessonPageProps) {
           />
         </main>
         <aside className="space-y-3 xl:sticky xl:top-20 xl:self-start">
-          <AiAssistantPanel
+          <AiAssistantLazyPanel
             chapterSlug={chapterSlug}
             lessonSlug={lessonSlug}
             lessonTitle={lesson.lesson.title}

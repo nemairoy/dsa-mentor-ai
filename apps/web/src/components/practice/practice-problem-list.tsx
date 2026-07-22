@@ -10,21 +10,29 @@ import type { PracticeProblem } from "@/core/intelligence/domain/intelligence";
 export function PracticeProblemList({ problems }: { problems: PracticeProblem[] }) {
   const initialCompleted = useMemo(() => new Set(problems.filter((problem) => problem.solved).map((problem) => problem.id)), [problems]);
   const [completed, setCompleted] = useState<Set<string>>(initialCompleted);
+  const [savingProblemId, setSavingProblemId] = useState<string | null>(null);
 
   async function markSolved(problemId: string) {
-    const response = await fetch("/api/practice/attempts", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        problemId,
-        status: "solved",
-        timeSpentSeconds: 900,
-        mistakes: [],
-      }),
-    });
+    if (savingProblemId || completed.has(problemId)) return;
+    setSavingProblemId(problemId);
 
-    if (response.ok) {
-      setCompleted((current) => new Set([...current, problemId]));
+    try {
+      const response = await fetch("/api/practice/attempts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          problemId,
+          status: "solved",
+          timeSpentSeconds: 900,
+          mistakes: [],
+        }),
+      });
+
+      if (response.ok) {
+        setCompleted((current) => new Set([...current, problemId]));
+      }
+    } finally {
+      setSavingProblemId(null);
     }
   }
 
@@ -85,13 +93,13 @@ export function PracticeProblemList({ problems }: { problems: PracticeProblem[] 
               </div>
               <div className="flex gap-2 lg:flex-col">
                 <Button asChild type="button" size="sm">
-                  <Link href={`/practice/${problem.id}`}>
+                  <Link href={`/practice/${problem.id}`} prefetch={false}>
                     Open problem
                     <ArrowRight aria-hidden={true} size={16} />
                   </Link>
                 </Button>
-                <Button type="button" size="sm" disabled={solved} onClick={() => markSolved(problem.id)}>
-                  {solved ? "Solved" : "Mark solved"}
+                <Button type="button" size="sm" disabled={solved || savingProblemId === problem.id} onClick={() => markSolved(problem.id)}>
+                  {solved ? "Solved" : savingProblemId === problem.id ? "Saving..." : "Mark solved"}
                 </Button>
                 <Button type="button" size="sm" variant="outline">
                   <Bookmark aria-hidden={true} size={16} />
