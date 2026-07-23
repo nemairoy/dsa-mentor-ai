@@ -123,6 +123,21 @@ details > summary::-webkit-details-marker {
 
 .landing-visual {
   background:
+    linear-gradient(rgba(100, 116, 139, 0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 116, 139, 0.14) 1px, transparent 1px),
+    radial-gradient(circle at 18% 12%, rgba(20, 184, 166, 0.18), transparent 28%),
+    radial-gradient(circle at 84% 20%, rgba(37, 99, 235, 0.14), transparent 30%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(239, 246, 255, 0.88));
+  background-size:
+    34px 34px,
+    34px 34px,
+    auto,
+    auto,
+    auto;
+}
+
+.dark .landing-visual {
+  background:
     linear-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px),
     linear-gradient(90deg, rgba(148, 163, 184, 0.07) 1px, transparent 1px),
     radial-gradient(circle at 18% 12%, rgba(45, 212, 191, 0.2), transparent 28%),
