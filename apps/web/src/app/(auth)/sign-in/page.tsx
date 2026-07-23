@@ -4,14 +4,13 @@ import {
   Bot,
   Code2,
   LineChart,
-  Play,
   ShieldCheck,
   Sparkles,
   Target,
-  Zap,
 } from "lucide-react";
 
 import { GoogleSignInButton } from "@/components/auth/google-sign-in-button";
+import { LandingPrimaryActions, SignInCallout } from "@/components/auth/landing-auth-guide";
 import { BrandLockup } from "@/components/brand/brand-logo";
 import { getCurrentSession } from "@/lib/session";
 
@@ -43,16 +42,7 @@ export default async function SignInPage() {
           <p className="mt-4 max-w-2xl text-sm leading-6 text-muted-foreground">
             Follow structured topics, understand concepts visually, and practice with focused AI support.
           </p>
-          <div className="mt-6 flex flex-wrap items-center gap-3">
-            <div className="flex items-center gap-2 rounded-full bg-foreground px-4 py-2 text-xs font-semibold text-background shadow-lg shadow-slate-950/15 dark:shadow-black/30 sm:text-sm">
-              <Play aria-hidden={true} size={14} />
-              Start learning
-            </div>
-            <div className="flex items-center gap-2 rounded-full border border-border bg-card/75 px-4 py-2 text-xs font-semibold text-foreground shadow-sm shadow-slate-200/60 backdrop-blur dark:bg-white/7 dark:shadow-none sm:text-sm">
-              <Zap aria-hidden={true} size={14} className="text-amber-500" />
-              Practice with AI
-            </div>
-          </div>
+          <LandingPrimaryActions />
           <div className="mt-7 grid min-w-0 gap-3 sm:grid-cols-3">
             {[
               { icon: BookOpen, label: "Structured roadmap", value: "Topic-based flow" },
@@ -130,9 +120,11 @@ export default async function SignInPage() {
                 <p className="mt-3 max-w-xs text-sm leading-6 text-muted-foreground">
                   Continue with Google to access lessons, practice, notes, and AI tutor tools.
                 </p>
-                <div className="mt-6 rounded-2xl border border-border bg-muted/45 p-3 dark:border-white/10 dark:bg-white/5">
-                  <GoogleSignInButton />
-                </div>
+                <SignInCallout>
+                  <div className="mt-6 rounded-2xl border border-border bg-muted/45 p-3 dark:border-white/10 dark:bg-white/5">
+                    <GoogleSignInButton />
+                  </div>
+                </SignInCallout>
               </div>
               <div className="mt-6 flex items-start gap-2 text-[11px] leading-5 text-muted-foreground">
                 <ShieldCheck aria-hidden={true} size={15} className="mt-0.5 shrink-0 text-teal-500" />
