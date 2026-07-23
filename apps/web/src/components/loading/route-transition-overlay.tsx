@@ -53,7 +53,7 @@ export function RouteTransitionOverlay() {
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-background/72 px-4 backdrop-blur-sm">
-      <PageLoader compact label="Opening the next lesson" />
+      <PageLoader compact />
     </div>
   );
 }
