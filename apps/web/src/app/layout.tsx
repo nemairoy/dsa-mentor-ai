@@ -40,6 +40,14 @@ export const metadata: Metadata = {
   description: "AI-powered DSA learning platform with lessons, RAG, visualizations, practice, and learning intelligence.",
   applicationName: "DSA Mentor AI",
   manifest: "/manifest.webmanifest",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icons/icon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/icon.svg",
+    apple: "/icons/icon.svg",
+  },
   alternates: {
     canonical: "/",
   },
