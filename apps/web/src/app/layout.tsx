@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 
+import { RouteTransitionOverlay } from "@/components/loading/route-transition-overlay";
 import { ServiceWorkerRegistration } from "@/components/pwa/service-worker-registration";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import "./globals.css";
@@ -64,6 +66,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} suppressHydrationWarning>
         <ThemeProvider>
           {children}
+          <Suspense fallback={null}>
+            <RouteTransitionOverlay />
+          </Suspense>
           <ServiceWorkerRegistration />
         </ThemeProvider>
       </body>
