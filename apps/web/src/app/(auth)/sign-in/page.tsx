@@ -13,7 +13,6 @@ import {
 
 import { GoogleSignInButton } from "@/components/auth/google-sign-in-button";
 import { BrandLockup } from "@/components/brand/brand-logo";
-import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { getCurrentSession } from "@/lib/session";
 
 export default async function SignInPage() {
@@ -30,9 +29,6 @@ export default async function SignInPage() {
 
       <div className="relative z-10 mx-auto flex max-w-7xl items-center justify-between">
         <BrandLockup />
-        <div className="rounded-full border border-border bg-card/80 p-1 shadow-sm shadow-slate-200/70 backdrop-blur dark:bg-white/5 dark:shadow-none">
-          <ThemeToggle />
-        </div>
       </div>
 
       <section className="relative z-10 mx-auto grid w-full min-w-0 max-w-full items-center gap-8 py-7 lg:min-h-[calc(100vh-82px)] lg:max-w-7xl lg:grid-cols-[0.86fr_1.14fr] lg:py-8">
