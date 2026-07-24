@@ -11,11 +11,12 @@ import {
   Bot,
   ChartNoAxesCombined,
   ChevronRight,
-  PanelLeftClose,
-  PanelLeftOpen,
   Dumbbell,
   FileText,
+  FlaskConical,
   LayoutDashboard,
+  PanelLeftClose,
+  PanelLeftOpen,
   Settings,
   Shield,
   User,
@@ -140,7 +141,10 @@ export function AppShell({ children, userName, userImage, showAdmin = false }: A
             DSA Mentor AI
           </Link>
           <div className="hidden min-w-0 flex-1 lg:block">
-            <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Workspace</p>
+            <div className="flex items-center gap-2">
+              <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Workspace</p>
+              <BetaBadge />
+            </div>
             <p className="mt-1 truncate text-sm capitalize text-muted-foreground">
               {breadcrumbs.length ? breadcrumbs.join(" / ") : "Dashboard"}
             </p>
@@ -149,6 +153,9 @@ export function AppShell({ children, userName, userImage, showAdmin = false }: A
             <GlobalSearch />
           </div>
           <div className="ml-auto flex items-center gap-1">
+            <div className="hidden sm:block lg:hidden">
+              <BetaBadge />
+            </div>
             <button
               type="button"
               aria-label="Notifications"
@@ -208,6 +215,15 @@ export function AppShell({ children, userName, userImage, showAdmin = false }: A
         </div>
       </main>
     </div>
+  );
+}
+
+function BetaBadge() {
+  return (
+    <span className="inline-flex shrink-0 items-center gap-1 rounded-full border border-amber-400/35 bg-amber-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-amber-800 shadow-sm dark:bg-amber-400/10 dark:text-amber-200">
+      <FlaskConical aria-hidden={true} size={11} />
+      Beta
+    </span>
   );
 }
 
