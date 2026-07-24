@@ -4,6 +4,14 @@ import { Pool } from "pg";
 
 import { env } from "@/infrastructure/config/env";
 
+const authPool = new Pool({
+  connectionString: env.DATABASE_URL,
+  ssl: env.DATABASE_SSL ? { rejectUnauthorized: false } : undefined,
+  max: Number(process.env.PG_POOL_MAX ?? 3),
+  connectionTimeoutMillis: 5_000,
+  idleTimeoutMillis: 10_000,
+});
+
 export const auth = betterAuth({
   secret: env.BETTER_AUTH_SECRET,
   baseURL: {
@@ -16,13 +24,26 @@ export const auth = betterAuth({
     fallback: env.BETTER_AUTH_URL,
     protocol: "auto",
   },
-  database: new Pool({
-    connectionString: env.DATABASE_URL,
-    ssl: env.DATABASE_SSL ? { rejectUnauthorized: false } : undefined,
-    max: Number(process.env.PG_POOL_MAX ?? 3),
-    connectionTimeoutMillis: 5_000,
-    idleTimeoutMillis: 10_000,
-  }),
+  database: authPool,
+  databaseHooks: {
+    session: {
+      create: {
+        async after(session) {
+          try {
+            await authPool.query(
+              `DELETE FROM "session"
+               WHERE "userId" = $1
+                 AND "token" <> $2
+                 AND "createdAt" <= $3`,
+              [session.userId, session.token, session.createdAt],
+            );
+          } catch (error) {
+            console.error("[auth] Failed to revoke older sessions", error);
+          }
+        },
+      },
+    },
+  },
   trustedOrigins: Array.from(new Set([env.NEXT_PUBLIC_APP_URL, env.BETTER_AUTH_URL])),
   emailAndPassword: {
     enabled: false,
