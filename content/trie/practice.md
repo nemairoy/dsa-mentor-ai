@@ -7,12 +7,15 @@ Learn Practice in Trie with theory, example, code, explanation, complexity, and 
 Practice is a focused part of Trie. Learn the rule, the state it changes, and the invariant that makes the operation correct.
 
 ## Step-by-step example
-Input: `[3, 1, 4, 1, 5]`
+Use this trace to understand Trie: Practice before writing code.
 
-1. Identify the current state.
-2. Apply Practice.
-3. Check empty input, one item, duplicates, and boundary cases.
-4. Explain why the final state is correct.
+Input: `words = ["cat", "car"]`
+
+1. Start at the root node with no character selected.
+2. Insert c, then a; both words share this prefix.
+3. For cat, create or follow t and mark word end.
+4. For car, return to c -> a, then create or follow r and mark word end.
+5. The shared path saves space and makes prefix lookup fast.
 
 ## Python code
 
@@ -27,7 +30,9 @@ print(trie_practice([3, 1, 4, 1, 5]))
 ```
 
 ## Explanation
-Track each variable or data-structure change after every step. The important part is not only the final answer, but why each update preserves the intended invariant.
+A trie stores words as character paths. Prefixes are shared, but full words need an end marker. That is why ca can be a prefix even if it is not a complete word.
+
+For Trie: Practice, focus on the state before and after each step. A correct explanation should say what changed, why it changed, and why the final answer follows from the rule.
 
 ## Complexity
 - Time: Depends on the dominant loop, recursion, or data-structure operation.

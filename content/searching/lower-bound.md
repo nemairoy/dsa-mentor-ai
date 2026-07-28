@@ -7,12 +7,15 @@ Learn Lower Bound in Searching with theory, example, code, explanation, complexi
 Lower Bound is a focused part of Searching. Learn the rule, the state it changes, and the invariant that makes the operation correct.
 
 ## Step-by-step example
-Input: `[3, 1, 4, 1, 5]`
+Use this trace to understand searching: lower bound before writing code.
 
-1. Identify the current state.
-2. Apply Lower Bound.
-3. Check empty input, one item, duplicates, and boundary cases.
-4. Explain why the final state is correct.
+Input: `items = [1, 3, 3, 5, 8], target = 3`
+
+1. Lower bound means the first index where value is greater than or equal to target.
+2. Check the middle. If value is >= target, keep it as a possible answer and search left.
+3. If value is smaller than target, discard left side including middle.
+4. For target 3, the first valid position is index 1.
+5. Even though another 3 exists later, lower bound must return the first valid index.
 
 ## Python code
 
@@ -27,7 +30,9 @@ print(searching_lower_bound([3, 1, 4, 1, 5]))
 ```
 
 ## Explanation
-Track each variable or data-structure change after every step. The important part is not only the final answer, but why each update preserves the intended invariant.
+Lower bound is a binary search variant where equality does not stop immediately. Equality means this position may be the answer, but there might be an earlier equal value. So the search continues left while preserving the current candidate.
+
+For searching: lower bound, focus on the state before and after each step. A correct explanation should say what changed, why it changed, and why the final answer follows from the rule.
 
 ## Complexity
 - Time: Depends on the dominant loop, recursion, or data-structure operation.

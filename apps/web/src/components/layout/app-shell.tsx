@@ -53,6 +53,7 @@ const primaryLinks = [
 export function AppShell({ children, userName, userImage, showAdmin = false }: AppShellProps) {
   const pathname = usePathname();
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const isDashboard = pathname === "/dashboard";
   const breadcrumbs = pathname
     .split("/")
     .filter(Boolean)
@@ -68,16 +69,30 @@ export function AppShell({ children, userName, userImage, showAdmin = false }: A
         )}
       >
         <div className="flex items-center justify-between gap-1.5">
-          <Link
-            href="/dashboard"
-            className={cn(
-              "flex min-w-0 items-center rounded-xl py-2",
-              sidebarCollapsed ? "justify-center px-0" : "gap-3 px-2",
-            )}
-            title="DSA Mentor AI"
-          >
-            {sidebarCollapsed ? <BrandLogo size="sm" /> : <BrandLockup size="sm" subtitle="Personal learning studio" compact className="gap-2" />}
-          </Link>
+          {isDashboard ? (
+            <button
+              type="button"
+              aria-current="page"
+              className={cn(
+                "flex min-w-0 cursor-default items-center rounded-xl py-2 text-left",
+                sidebarCollapsed ? "justify-center px-0" : "gap-3 px-2",
+              )}
+              title="DSA Mentor AI"
+            >
+              {sidebarCollapsed ? <BrandLogo size="sm" /> : <BrandLockup size="sm" subtitle="Personal learning studio" compact className="gap-2" />}
+            </button>
+          ) : (
+            <Link
+              href="/dashboard"
+              className={cn(
+                "flex min-w-0 items-center rounded-xl py-2",
+                sidebarCollapsed ? "justify-center px-0" : "gap-3 px-2",
+              )}
+              title="DSA Mentor AI"
+            >
+              {sidebarCollapsed ? <BrandLogo size="sm" /> : <BrandLockup size="sm" subtitle="Personal learning studio" compact className="gap-2" />}
+            </Link>
+          )}
           {!sidebarCollapsed ? (
             <button
               type="button"
@@ -109,10 +124,11 @@ export function AppShell({ children, userName, userImage, showAdmin = false }: A
               key={item.href}
               {...item}
               active={pathname === item.href || pathname.startsWith(`${item.href}/`)}
+              current={pathname === item.href}
               collapsed={sidebarCollapsed}
             />
           ))}
-          {showAdmin ? <SidebarLink href="/admin" label="Admin Studio" icon={Shield} active={pathname.startsWith("/admin")} collapsed={sidebarCollapsed} /> : null}
+          {showAdmin ? <SidebarLink href="/admin" label="Admin Studio" icon={Shield} active={pathname.startsWith("/admin")} current={pathname === "/admin"} collapsed={sidebarCollapsed} /> : null}
         </nav>
 
         <div className={cn("mt-4 rounded-2xl border border-border bg-muted/50 p-3", sidebarCollapsed && "flex justify-center p-2")}>
@@ -136,10 +152,17 @@ export function AppShell({ children, userName, userImage, showAdmin = false }: A
         )}
       >
         <div className="flex items-center gap-4">
-          <Link href="/dashboard" className="flex shrink-0 items-center gap-2 font-semibold lg:hidden">
-            <BrandLogo size="sm" />
-            DSA Mentor AI
-          </Link>
+          {isDashboard ? (
+            <button type="button" aria-current="page" className="flex shrink-0 cursor-default items-center gap-2 font-semibold lg:hidden">
+              <BrandLogo size="sm" />
+              DSA Mentor AI
+            </button>
+          ) : (
+            <Link href="/dashboard" className="flex shrink-0 items-center gap-2 font-semibold lg:hidden">
+              <BrandLogo size="sm" />
+              DSA Mentor AI
+            </Link>
+          )}
           <div className="hidden min-w-0 flex-1 lg:block">
             <div className="flex items-center gap-2">
               <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Workspace</p>
@@ -186,18 +209,25 @@ export function AppShell({ children, userName, userImage, showAdmin = false }: A
           <GlobalSearch />
         </div>
         <nav className="mt-3 flex gap-2 overflow-x-auto pb-1 lg:hidden" aria-label="Mobile navigation">
-          {primaryLinks.slice(0, 6).map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={cn(
-                "shrink-0 rounded-full border border-border px-3 py-1.5 text-xs",
-                pathname === item.href ? "border-emerald-500 bg-emerald-50 text-emerald-800 dark:bg-emerald-400/10 dark:text-emerald-300" : "",
-              )}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {primaryLinks.slice(0, 6).map((item) => {
+            const current = pathname === item.href;
+            const className = cn(
+              "shrink-0 rounded-full border border-border px-3 py-1.5 text-xs transition-colors",
+              current
+                ? "cursor-default border-emerald-500 bg-emerald-50 text-emerald-800 dark:bg-emerald-400/10 dark:text-emerald-300"
+                : "hover:bg-muted hover:text-foreground",
+            );
+
+            return current ? (
+              <button key={item.href} type="button" aria-current="page" className={className}>
+                {item.label}
+              </button>
+            ) : (
+              <Link key={item.href} href={item.href} className={className}>
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
       </header>
 
@@ -263,30 +293,44 @@ function SidebarLink({
   label,
   icon: Icon,
   active,
+  current,
   collapsed = false,
 }: {
   href: string;
   label: string;
   icon: React.ComponentType<{ size?: number; className?: string; "aria-hidden"?: boolean }>;
   active?: boolean;
+  current?: boolean;
   collapsed?: boolean;
 }) {
-  return (
-    <Link
-      href={href}
-      title={collapsed ? label : undefined}
-      className={cn(
-        "group relative flex min-h-9 items-center rounded-lg text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-        collapsed ? "justify-center px-2 py-1.5" : "justify-between px-2.5 py-1.5",
-        active && "bg-emerald-100 text-emerald-950 dark:bg-emerald-400/10 dark:text-emerald-200",
-      )}
-    >
+  const className = cn(
+    "group relative flex min-h-9 w-full items-center rounded-lg text-sm font-medium text-muted-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+    collapsed ? "justify-center px-2 py-1.5" : "justify-between px-2.5 py-1.5",
+    current ? "cursor-default" : "hover:bg-muted hover:text-foreground",
+    active && "bg-emerald-100 text-emerald-950 dark:bg-emerald-400/10 dark:text-emerald-200",
+  );
+  const content = (
+    <>
       {active ? <span className="absolute left-0 top-1/2 h-5 w-1 -translate-y-1/2 rounded-r-full bg-emerald-600 dark:bg-emerald-500" aria-hidden={true} /> : null}
       <span className={cn("flex items-center", collapsed ? "justify-center" : "gap-3")}>
         <Icon aria-hidden={true} size={18} className={cn("text-muted-foreground group-hover:text-emerald-700 dark:group-hover:text-emerald-300", active && "text-emerald-700 dark:text-emerald-300")} />
         {collapsed ? <span className="sr-only">{label}</span> : label}
       </span>
       {collapsed ? null : <ChevronRight aria-hidden={true} size={14} className="opacity-0 transition-opacity group-hover:opacity-100" />}
+    </>
+  );
+
+  if (current) {
+    return (
+      <button type="button" title={collapsed ? label : undefined} aria-current="page" className={className}>
+        {content}
+      </button>
+    );
+  }
+
+  return (
+    <Link href={href} title={collapsed ? label : undefined} className={className}>
+      {content}
     </Link>
   );
 }

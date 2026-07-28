@@ -7,12 +7,15 @@ Learn Practice in Interview Preparation with theory, example, code, explanation,
 Practice is a focused part of Interview Preparation. Learn the rule, the state it changes, and the invariant that makes the operation correct.
 
 ## Step-by-step example
-Input: `[3, 1, 4, 1, 5]`
+Use this trace to understand Interview Preparation: Practice before writing code.
 
-1. Identify the current state.
-2. Apply Practice.
-3. Check empty input, one item, duplicates, and boundary cases.
-4. Explain why the final state is correct.
+Input: `problem statement with constraints`
+
+1. Clarify input size, empty input, duplicates, and expected output.
+2. Explain the brute-force approach briefly.
+3. Improve the approach using the relevant DSA pattern.
+4. Dry-run with a small sample so the interviewer can follow the state.
+5. Finish with time and space complexity.
 
 ## Python code
 
@@ -27,7 +30,9 @@ print(interview_preparation_practice([3, 1, 4, 1, 5]))
 ```
 
 ## Explanation
-Track each variable or data-structure change after every step. The important part is not only the final answer, but why each update preserves the intended invariant.
+Interview performance is not only about the final code. A strong answer shows assumptions, approach, dry-run, correctness, and complexity. Speak in a structured way so the interviewer can follow your decisions.
+
+For Interview Preparation: Practice, focus on the state before and after each step. A correct explanation should say what changed, why it changed, and why the final answer follows from the rule.
 
 ## Complexity
 - Time: Depends on the dominant loop, recursion, or data-structure operation.

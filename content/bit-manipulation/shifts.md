@@ -7,12 +7,15 @@ Learn Shifts in Bit Manipulation with theory, example, code, explanation, comple
 Shifts is a focused part of Bit Manipulation. Learn the rule, the state it changes, and the invariant that makes the operation correct.
 
 ## Step-by-step example
-Input: `[3, 1, 4, 1, 5]`
+Use this trace to understand Bit Manipulation: Shifts before writing code.
 
-1. Identify the current state.
-2. Apply Shifts.
-3. Check empty input, one item, duplicates, and boundary cases.
-4. Explain why the final state is correct.
+Input: `x = 10 (binary 1010), k = 1`
+
+1. Build a mask using 1 << k.
+2. For k = 1, mask is binary 0010.
+3. Use x & mask to check whether bit k is on.
+4. Use x | mask to set, x & ~mask to clear, and x ^ mask to toggle.
+5. Only the selected bit should change unless the operation says otherwise.
 
 ## Python code
 
@@ -27,7 +30,9 @@ print(bit_manipulation_shifts([3, 1, 4, 1, 5]))
 ```
 
 ## Explanation
-Track each variable or data-structure change after every step. The important part is not only the final answer, but why each update preserves the intended invariant.
+Bit manipulation is easier when you name the exact bit position. A mask selects that bit. AND checks, OR sets, XOR toggles, and shift moves bit positions.
+
+For Bit Manipulation: Shifts, focus on the state before and after each step. A correct explanation should say what changed, why it changed, and why the final answer follows from the rule.
 
 ## Complexity
 - Time: Depends on the dominant loop, recursion, or data-structure operation.

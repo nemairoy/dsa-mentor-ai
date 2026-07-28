@@ -7,12 +7,15 @@ Learn Binary Search On Answer in Searching with theory, example, code, explanati
 Binary Search On Answer is a focused part of Searching. Learn the rule, the state it changes, and the invariant that makes the operation correct.
 
 ## Step-by-step example
-Input: `[3, 1, 4, 1, 5]`
+Use this trace to understand searching: binary search on answer before writing code.
 
-1. Identify the current state.
-2. Apply Binary Search On Answer.
-3. Check empty input, one item, duplicates, and boundary cases.
-4. Explain why the final state is correct.
+Input: `possible answer range = 1..10`
+
+1. Define a yes/no condition that says whether a candidate answer is feasible.
+2. Check the middle candidate.
+3. If middle is feasible, keep it and try to improve in one direction.
+4. If middle is not feasible, discard the impossible direction.
+5. The final candidate is the best answer that satisfies the condition.
 
 ## Python code
 
@@ -27,7 +30,9 @@ print(searching_binary_search_on_answer([3, 1, 4, 1, 5]))
 ```
 
 ## Explanation
-Track each variable or data-structure change after every step. The important part is not only the final answer, but why each update preserves the intended invariant.
+Binary search on answer is used when the answer is not an array index but the answer space is ordered. The key is a monotonic condition: after some point answers are possible, or after some point they become impossible. Without that monotonic rule, binary search is not valid.
+
+For searching: binary search on answer, focus on the state before and after each step. A correct explanation should say what changed, why it changed, and why the final answer follows from the rule.
 
 ## Complexity
 - Time: Depends on the dominant loop, recursion, or data-structure operation.

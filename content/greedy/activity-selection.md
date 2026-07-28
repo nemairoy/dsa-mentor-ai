@@ -7,12 +7,15 @@ Learn Activity Selection in Greedy with theory, example, code, explanation, comp
 Activity Selection is a focused part of Greedy. Learn the rule, the state it changes, and the invariant that makes the operation correct.
 
 ## Step-by-step example
-Input: `[3, 1, 4, 1, 5]`
+Use this trace to understand Greedy: Activity Selection before writing code.
 
-1. Identify the current state.
-2. Apply Activity Selection.
-3. Check empty input, one item, duplicates, and boundary cases.
-4. Explain why the final state is correct.
+Input: `[3, 1, 4]`
+
+1. Read the problem and identify the expected output.
+2. Write the state you need to track before coding.
+3. Process one value at a time using the lesson rule.
+4. Update the state after every step.
+5. Compare the final state with the expected answer and test edge cases.
 
 ## Python code
 
@@ -27,7 +30,9 @@ print(greedy_activity_selection([3, 1, 4, 1, 5]))
 ```
 
 ## Explanation
-Track each variable or data-structure change after every step. The important part is not only the final answer, but why each update preserves the intended invariant.
+Every DSA lesson should be learned by dry-running a small input. The final answer matters, but the reason behind each state update matters more. If you can explain the state before and after every step, you are ready to code it.
+
+For Greedy: Activity Selection, focus on the state before and after each step. A correct explanation should say what changed, why it changed, and why the final answer follows from the rule.
 
 ## Complexity
 - Time: Depends on the dominant loop, recursion, or data-structure operation.

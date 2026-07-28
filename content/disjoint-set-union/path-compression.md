@@ -7,12 +7,15 @@ Learn Path Compression in Disjoint Set Union with theory, example, code, explana
 Path Compression is a focused part of Disjoint Set Union. Learn the rule, the state it changes, and the invariant that makes the operation correct.
 
 ## Step-by-step example
-Input: `[3, 1, 4, 1, 5]`
+Use this trace to understand Disjoint Set Union: Path Compression before writing code.
 
-1. Identify the current state.
-2. Apply Path Compression.
-3. Check empty input, one item, duplicates, and boundary cases.
-4. Explain why the final state is correct.
+Input: `[4, 2, 7, 2]`
+
+1. Start with an empty seen set.
+2. Read 4: it is not in seen, so add it.
+3. Read 2: it is not in seen, so add it.
+4. Read 7: it is not in seen, so add it.
+5. Read the second 2: it is already in seen, so duplicate is found.
 
 ## Python code
 
@@ -27,7 +30,9 @@ print(disjoint_set_union_path_compression([3, 1, 4, 1, 5]))
 ```
 
 ## Explanation
-Track each variable or data-structure change after every step. The important part is not only the final answer, but why each update preserves the intended invariant.
+Hashing stores information from previous steps so the current step can ask a fast question: have I seen this before, what is its count, or what value maps to it? Update the map/set at the correct time to avoid counting the current value incorrectly.
+
+For Disjoint Set Union: Path Compression, focus on the state before and after each step. A correct explanation should say what changed, why it changed, and why the final answer follows from the rule.
 
 ## Complexity
 - Time: Depends on the dominant loop, recursion, or data-structure operation.

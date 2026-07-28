@@ -7,12 +7,15 @@ Build the mental model, vocabulary, and why this topic matters.
 Introduction is a focused part of Recursion. Learn the rule, the state it changes, and the invariant that makes the operation correct.
 
 ## Step-by-step example
-Input: `[3, 1, 4, 1, 5]`
+Use this trace to understand Recursion: Introduction before writing code.
 
-1. Identify the current state.
-2. Apply Introduction.
-3. Check empty input, one item, duplicates, and boundary cases.
-4. Explain why the final state is correct.
+Input: `nums = [1, 2]`
+
+1. At each value, make a choice: include it or skip it.
+2. For value 1, branch into paths with 1 and without 1.
+3. For value 2, again branch into include and skip.
+4. When index reaches the end, store the current path as one answer.
+5. The generated subsets are [], [1], [2], and [1, 2].
 
 ## Python code
 
@@ -27,7 +30,9 @@ print(recursion_introduction([3, 1, 4, 1, 5]))
 ```
 
 ## Explanation
-Track each variable or data-structure change after every step. The important part is not only the final answer, but why each update preserves the intended invariant.
+Recursion is a chain of smaller pending calls. Backtracking adds one more idea: after exploring one choice, undo it before trying the next choice. The base case tells when a complete answer is ready.
+
+For Recursion: Introduction, focus on the state before and after each step. A correct explanation should say what changed, why it changed, and why the final answer follows from the rule.
 
 ## Complexity
 - Time: Depends on the dominant loop, recursion, or data-structure operation.

@@ -8,8 +8,10 @@ const authPool = new Pool({
   connectionString: env.DATABASE_URL,
   ssl: env.DATABASE_SSL ? { rejectUnauthorized: false } : undefined,
   max: Number(process.env.PG_POOL_MAX ?? 3),
-  connectionTimeoutMillis: 5_000,
+  connectionTimeoutMillis: 3_000,
   idleTimeoutMillis: 10_000,
+  statement_timeout: 5_000,
+  query_timeout: 5_000,
 });
 
 export const auth = betterAuth({

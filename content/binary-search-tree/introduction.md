@@ -7,12 +7,15 @@ Build the mental model, vocabulary, and why this topic matters.
 Introduction is a focused part of Binary Search Tree. Learn the rule, the state it changes, and the invariant that makes the operation correct.
 
 ## Step-by-step example
-Input: `[3, 1, 4, 1, 5]`
+Use this trace to understand Binary Search Tree: Introduction before writing code.
 
-1. Identify the current state.
-2. Apply Introduction.
-3. Check empty input, one item, duplicates, and boundary cases.
-4. Explain why the final state is correct.
+Input: `items = [4, 2, 7, 9], target = 7`
+
+1. Start at the first valid candidate position.
+2. Check 4: it is not equal to target 7, so continue searching.
+3. Check 2: it is also not equal to 7, so continue.
+4. Check 7: it matches the target, so the search can stop successfully.
+5. The answer is the position or value where the target was found, depending on the problem statement.
 
 ## Python code
 
@@ -27,7 +30,9 @@ print(binary_search_tree_introduction([3, 1, 4, 1, 5]))
 ```
 
 ## Explanation
-Track each variable or data-structure change after every step. The important part is not only the final answer, but why each update preserves the intended invariant.
+Search problems are about proving one of two things: either the target exists at a valid position, or every possible position has been checked or safely discarded. In linear search, we check one value after another. In binary search, we can discard half only because sorted order proves the target cannot be there. Never skip a candidate unless the rule proves it is impossible.
+
+For Binary Search Tree: Introduction, focus on the state before and after each step. A correct explanation should say what changed, why it changed, and why the final answer follows from the rule.
 
 ## Complexity
 - Time: Depends on the dominant loop, recursion, or data-structure operation.

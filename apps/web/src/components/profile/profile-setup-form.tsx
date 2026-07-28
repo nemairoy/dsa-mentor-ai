@@ -10,6 +10,7 @@ import { profileSchema, type ProfileFormValues, type ProfileInput } from "@/core
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { announceRouteTransition } from "@/components/loading/route-transition";
 
 type ProfileSetupFormProps = {
   defaultFullName?: string | null;
@@ -49,6 +50,7 @@ export function ProfileSetupForm({ defaultFullName, defaultProfilePictureUrl }: 
       return;
     }
 
+    announceRouteTransition();
     router.push("/dashboard");
     router.refresh();
   }

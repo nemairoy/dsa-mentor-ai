@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 
 import { PageLoader } from "@/components/loading/page-loader";
+import { routeTransitionStartEvent } from "@/components/loading/route-transition";
 
 function shouldHandleLinkClick(event: MouseEvent) {
   if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
@@ -26,6 +27,12 @@ export function RouteTransitionOverlay() {
   const [pending, setPending] = useState(false);
   const timeoutRef = useRef<number | null>(null);
 
+  function showPending() {
+    setPending(true);
+    if (timeoutRef.current) window.clearTimeout(timeoutRef.current);
+    timeoutRef.current = window.setTimeout(() => setPending(false), 10_000);
+  }
+
   useEffect(() => {
     window.queueMicrotask(() => setPending(false));
     if (timeoutRef.current) {
@@ -37,14 +44,18 @@ export function RouteTransitionOverlay() {
   useEffect(() => {
     function onClick(event: MouseEvent) {
       if (!shouldHandleLinkClick(event)) return;
-      setPending(true);
-      if (timeoutRef.current) window.clearTimeout(timeoutRef.current);
-      timeoutRef.current = window.setTimeout(() => setPending(false), 10_000);
+      showPending();
+    }
+
+    function onProgrammaticTransition() {
+      showPending();
     }
 
     document.addEventListener("click", onClick, true);
+    window.addEventListener(routeTransitionStartEvent, onProgrammaticTransition);
     return () => {
       document.removeEventListener("click", onClick, true);
+      window.removeEventListener(routeTransitionStartEvent, onProgrammaticTransition);
       if (timeoutRef.current) window.clearTimeout(timeoutRef.current);
     };
   }, []);

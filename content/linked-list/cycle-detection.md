@@ -7,12 +7,15 @@ Learn Cycle Detection in Linked List with theory, example, code, explanation, co
 Cycle Detection is a focused part of Linked List. Learn the rule, the state it changes, and the invariant that makes the operation correct.
 
 ## Step-by-step example
-Input: `[3, 1, 4, 1, 5]`
+Use this trace to understand Linked List: Cycle Detection before writing code.
 
-1. Identify the current state.
-2. Apply Cycle Detection.
-3. Check empty input, one item, duplicates, and boundary cases.
-4. Explain why the final state is correct.
+Input: `3 -> 1 -> 4 -> null`
+
+1. Start at the head node containing 3.
+2. Visit the current node, then follow its next pointer.
+3. Move from 3 to 1, then from 1 to 4.
+4. When next becomes null, traversal is finished.
+5. For insertion or deletion, save next before changing links.
 
 ## Python code
 
@@ -27,7 +30,9 @@ print(linked_list_cycle_detection([3, 1, 4, 1, 5]))
 ```
 
 ## Explanation
-Track each variable or data-structure change after every step. The important part is not only the final answer, but why each update preserves the intended invariant.
+A linked list is controlled by pointers, not indexes. Each node only knows the next node. That means every update must preserve the chain. Before changing a link, identify current, previous, and next; otherwise part of the list can be lost.
+
+For Linked List: Cycle Detection, focus on the state before and after each step. A correct explanation should say what changed, why it changed, and why the final answer follows from the rule.
 
 ## Complexity
 - Time: Depends on the dominant loop, recursion, or data-structure operation.

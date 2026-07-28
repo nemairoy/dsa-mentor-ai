@@ -7,12 +7,15 @@ Learn Cycle Detection in Disjoint Set Union with theory, example, code, explanat
 Cycle Detection is a focused part of Disjoint Set Union. Learn the rule, the state it changes, and the invariant that makes the operation correct.
 
 ## Step-by-step example
-Input: `[3, 1, 4, 1, 5]`
+Use this trace to understand Disjoint Set Union: Cycle Detection before writing code.
 
-1. Identify the current state.
-2. Apply Cycle Detection.
-3. Check empty input, one item, duplicates, and boundary cases.
-4. Explain why the final state is correct.
+Input: `A connected to B and C; B connected to D`
+
+1. Start from source node A and mark it visited.
+2. Add safe unvisited neighbors B and C to the frontier.
+3. Process B, then discover D through B.
+4. Do not add a node twice after it is visited.
+5. Stop when the frontier is empty or the target condition is met.
 
 ## Python code
 
@@ -27,7 +30,9 @@ print(disjoint_set_union_cycle_detection([3, 1, 4, 1, 5]))
 ```
 
 ## Explanation
-Track each variable or data-structure change after every step. The important part is not only the final answer, but why each update preserves the intended invariant.
+Graph problems are about relationships. The visited set is important because the same node can be reached through multiple paths. BFS explores nearest nodes first, DFS explores deep paths first, and shortest-path algorithms also track distance.
+
+For Disjoint Set Union: Cycle Detection, focus on the state before and after each step. A correct explanation should say what changed, why it changed, and why the final answer follows from the rule.
 
 ## Complexity
 - Time: Depends on the dominant loop, recursion, or data-structure operation.

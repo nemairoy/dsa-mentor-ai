@@ -7,12 +7,15 @@ Learn Interview Questions in Heap with theory, example, code, explanation, compl
 Interview Questions is a focused part of Heap. Learn the rule, the state it changes, and the invariant that makes the operation correct.
 
 ## Step-by-step example
-Input: `[3, 1, 4, 1, 5]`
+Use this trace to understand Heap: Interview Questions before writing code.
 
-1. Identify the current state.
-2. Apply Interview Questions.
-3. Check empty input, one item, duplicates, and boundary cases.
-4. Explain why the final state is correct.
+Input: `insert 2 into heap [3, 5, 7]`
+
+1. Put the new value in the next open position to keep the tree complete.
+2. Compare the new value with its parent.
+3. If heap property is broken, swap upward.
+4. Continue until parent order is correct or the value reaches root.
+5. Now both complete-tree shape and heap property are valid.
 
 ## Python code
 
@@ -27,7 +30,9 @@ print(heap_interview_questions([3, 1, 4, 1, 5]))
 ```
 
 ## Explanation
-Track each variable or data-structure change after every step. The important part is not only the final answer, but why each update preserves the intended invariant.
+A heap has two rules at the same time: shape and priority. The shape says the tree must stay complete. The priority says the smallest or largest value must stay near the root. Insert fixes priority by bubbling the value upward.
+
+For Heap: Interview Questions, focus on the state before and after each step. A correct explanation should say what changed, why it changed, and why the final answer follows from the rule.
 
 ## Complexity
 - Time: Depends on the dominant loop, recursion, or data-structure operation.

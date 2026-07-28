@@ -7,12 +7,15 @@ Learn Input Size in Algorithm Analysis with theory, example, code, explanation, 
 Input Size is a focused part of Algorithm Analysis. Learn the rule, the state it changes, and the invariant that makes the operation correct.
 
 ## Step-by-step example
-Input: `[3, 1, 4, 1, 5]`
+Use this trace to understand Algorithm Analysis: Input Size before writing code.
 
-1. Identify the current state.
-2. Apply Input Size.
-3. Check empty input, one item, duplicates, and boundary cases.
-4. Explain why the final state is correct.
+Input: `n = number of items`
+
+1. Identify the operation that dominates runtime.
+2. Count how many times that operation runs as n grows.
+3. One loop over n items gives O(n).
+4. A nested loop that scans n items for each item gives O(n^2).
+5. Drop constants and smaller terms only after explaining the count.
 
 ## Python code
 
@@ -27,7 +30,9 @@ print(algorithm_analysis_input_size([3, 1, 4, 1, 5]))
 ```
 
 ## Explanation
-Track each variable or data-structure change after every step. The important part is not only the final answer, but why each update preserves the intended invariant.
+Complexity explains scaling, not exact stopwatch time. Count the dominant operation, express it using input size, and then simplify. If code has a loop and a nested loop, the nested loop usually dominates.
+
+For Algorithm Analysis: Input Size, focus on the state before and after each step. A correct explanation should say what changed, why it changed, and why the final answer follows from the rule.
 
 ## Complexity
 - Time: Depends on the dominant loop, recursion, or data-structure operation.

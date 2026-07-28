@@ -7,12 +7,15 @@ Learn Search In Rotated Array in Searching with theory, example, code, explanati
 Search In Rotated Array is a focused part of Searching. Learn the rule, the state it changes, and the invariant that makes the operation correct.
 
 ## Step-by-step example
-Input: `[3, 1, 4, 1, 5]`
+Use this trace to understand searching: search in rotated array before writing code.
 
-1. Identify the current state.
-2. Apply Search In Rotated Array.
-3. Check empty input, one item, duplicates, and boundary cases.
-4. Explain why the final state is correct.
+Input: `items = [6, 7, 1, 2, 3, 4, 5], target = 3`
+
+1. Check the middle value to decide which half is normally sorted.
+2. One side of a rotated sorted array is always sorted.
+3. If target lies inside the sorted side range, keep that side.
+4. Otherwise discard the sorted side and search the other side.
+5. Continue until target 3 is found or the range becomes empty.
 
 ## Python code
 
@@ -27,7 +30,9 @@ print(searching_search_in_rotated_array([3, 1, 4, 1, 5]))
 ```
 
 ## Explanation
-Track each variable or data-structure change after every step. The important part is not only the final answer, but why each update preserves the intended invariant.
+Rotated search still uses binary-search thinking, but the decision is two-level: first find which side is sorted, then check whether the target belongs inside that side. Only discard a side after this proof.
+
+For searching: search in rotated array, focus on the state before and after each step. A correct explanation should say what changed, why it changed, and why the final answer follows from the rule.
 
 ## Complexity
 - Time: Depends on the dominant loop, recursion, or data-structure operation.

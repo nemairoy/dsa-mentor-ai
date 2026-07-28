@@ -7,12 +7,15 @@ Build the mental model, vocabulary, and why this topic matters.
 Introduction is a focused part of Advanced Graph Algorithms. Learn the rule, the state it changes, and the invariant that makes the operation correct.
 
 ## Step-by-step example
-Input: `[3, 1, 4, 1, 5]`
+Use this trace to understand Advanced Graph Algorithms: Introduction before writing code.
 
-1. Identify the current state.
-2. Apply Introduction.
-3. Check empty input, one item, duplicates, and boundary cases.
-4. Explain why the final state is correct.
+Input: `A connected to B and C; B connected to D`
+
+1. Start from source node A and mark it visited.
+2. Add safe unvisited neighbors B and C to the frontier.
+3. Process B, then discover D through B.
+4. Do not add a node twice after it is visited.
+5. Stop when the frontier is empty or the target condition is met.
 
 ## Python code
 
@@ -27,7 +30,9 @@ print(advanced_graph_algorithms_introduction([3, 1, 4, 1, 5]))
 ```
 
 ## Explanation
-Track each variable or data-structure change after every step. The important part is not only the final answer, but why each update preserves the intended invariant.
+Graph problems are about relationships. The visited set is important because the same node can be reached through multiple paths. BFS explores nearest nodes first, DFS explores deep paths first, and shortest-path algorithms also track distance.
+
+For Advanced Graph Algorithms: Introduction, focus on the state before and after each step. A correct explanation should say what changed, why it changed, and why the final answer follows from the rule.
 
 ## Complexity
 - Time: Depends on the dominant loop, recursion, or data-structure operation.

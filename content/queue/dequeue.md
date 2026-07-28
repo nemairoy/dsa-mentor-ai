@@ -7,12 +7,15 @@ Learn Dequeue in Queue with theory, example, code, explanation, complexity, and 
 Dequeue is a focused part of Queue. Learn the rule, the state it changes, and the invariant that makes the operation correct.
 
 ## Step-by-step example
+Use this trace to understand Queue: Dequeue before writing code.
+
 Input: `[3, 1, 4, 1, 5]`
 
-1. Identify the current state.
-2. Apply Dequeue.
-3. Check empty input, one item, duplicates, and boundary cases.
-4. Explain why the final state is correct.
+1. Start with an empty queue: [].
+2. Enqueue 3 first, so 3 becomes the front because it arrived first.
+3. Enqueue 1, 4, 1, and 5 at the rear without moving the front.
+4. After all inserts the queue is [3, 1, 4, 1, 5], front is 3 and rear is 5.
+5. Because queue follows FIFO, dequeue returns 3 first, then 1, 4, 1, and 5.
 
 ## Python code
 
@@ -27,7 +30,9 @@ print(queue_dequeue([3, 1, 4, 1, 5]))
 ```
 
 ## Explanation
-Track each variable or data-structure change after every step. The important part is not only the final answer, but why each update preserves the intended invariant.
+A queue works like a line of students waiting for service. The first student who enters the line is served first. In this example, 3 enters before every other value, so 3 must leave first. New values are added at the rear, and removal always happens from the front. This is the FIFO rule: first in, first out.
+
+For Queue: Dequeue, focus on the state before and after each step. A correct explanation should say what changed, why it changed, and why the final answer follows from the rule.
 
 ## Complexity
 - Time: Depends on the dominant loop, recursion, or data-structure operation.

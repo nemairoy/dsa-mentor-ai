@@ -7,12 +7,15 @@ Learn Practice in Strings with theory, example, code, explanation, complexity, a
 Practice is a focused part of Strings. Learn the rule, the state it changes, and the invariant that makes the operation correct.
 
 ## Step-by-step example
-Input: `[3, 1, 4, 1, 5]`
+Use this trace to understand Strings: Practice before writing code.
 
-1. Identify the current state.
-2. Apply Practice.
-3. Check empty input, one item, duplicates, and boundary cases.
-4. Explain why the final state is correct.
+Input: `s = "racecar"`
+
+1. Treat the string as characters stored by index.
+2. Compare the leftmost and rightmost characters: r and r match.
+3. Move both pointers inward: a and a match, then c and c match.
+4. The middle character does not need a pair.
+5. All required pairs matched, so the string is a palindrome.
 
 ## Python code
 
@@ -27,7 +30,9 @@ print(strings_practice([3, 1, 4, 1, 5]))
 ```
 
 ## Explanation
-Track each variable or data-structure change after every step. The important part is not only the final answer, but why each update preserves the intended invariant.
+String logic is usually pointer or frequency logic. In pointer problems, clearly define what left and right mean. In frequency problems, clearly define what each count means. Without that state, off-by-one mistakes become very common.
+
+For Strings: Practice, focus on the state before and after each step. A correct explanation should say what changed, why it changed, and why the final answer follows from the rule.
 
 ## Complexity
 - Time: Depends on the dominant loop, recursion, or data-structure operation.

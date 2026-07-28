@@ -7,12 +7,15 @@ Learn Selection Sort in Sorting with theory, example, code, explanation, complex
 Selection Sort is a focused part of Sorting. Learn the rule, the state it changes, and the invariant that makes the operation correct.
 
 ## Step-by-step example
-Input: `[3, 1, 4, 1, 5]`
+Use this trace to understand Sorting: Selection Sort before writing code.
 
-1. Identify the current state.
-2. Apply Selection Sort.
-3. Check empty input, one item, duplicates, and boundary cases.
-4. Explain why the final state is correct.
+Input: `[5, 2, 4, 1]`
+
+1. Separate the array into a sorted part and an unsorted part.
+2. Find or move the next correct value using the sorting rule.
+3. For this input, 1 is the smallest value, so it belongs at the front.
+4. After placing 1, the sorted part has grown and the remaining values are handled the same way.
+5. Continue until every position is fixed in sorted order.
 
 ## Python code
 
@@ -27,7 +30,9 @@ print(sorting_selection_sort([3, 1, 4, 1, 5]))
 ```
 
 ## Explanation
-Track each variable or data-structure change after every step. The important part is not only the final answer, but why each update preserves the intended invariant.
+Sorting is not just swapping randomly. At every step, you must know which region is already correct and which region still needs work. A professional dry-run explains why a value moves, which part becomes sorted, and why the final array is ordered.
+
+For Sorting: Selection Sort, focus on the state before and after each step. A correct explanation should say what changed, why it changed, and why the final answer follows from the rule.
 
 ## Complexity
 - Time: O(n^2) for elementary comparison sorts unless noted.

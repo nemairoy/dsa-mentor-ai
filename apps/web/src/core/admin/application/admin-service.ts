@@ -43,6 +43,16 @@ export class AdminService {
     return value;
   }
 
+  async getPrincipalSafe(userId: string): Promise<AdminPrincipal | null> {
+    try {
+      return await withTimeout(this.getPrincipal(userId), 2_500);
+    } catch (error) {
+      console.warn("[AdminService] Failed to resolve admin principal", error);
+      this.principalCache.delete(userId);
+      return null;
+    }
+  }
+
   async overview(ragStats: { chunks: number; indexedLessons: number }) {
     const roadmap = await this.contentService.getRoadmap();
     return this.repository.overview(
@@ -84,4 +94,21 @@ export class AdminService {
       principal.permissions.some((item) => item.endsWith(":*") && permission.startsWith(item.replace("*", "")))
     );
   }
+}
+
+function withTimeout<T>(promise: Promise<T>, timeoutMs: number): Promise<T> {
+  return new Promise((resolve, reject) => {
+    const timeout = setTimeout(() => reject(new Error(`Operation timed out after ${timeoutMs}ms`)), timeoutMs);
+
+    promise.then(
+      (value) => {
+        clearTimeout(timeout);
+        resolve(value);
+      },
+      (error) => {
+        clearTimeout(timeout);
+        reject(error);
+      },
+    );
+  });
 }

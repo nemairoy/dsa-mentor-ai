@@ -7,12 +7,15 @@ Build the mental model, vocabulary, and why this topic matters.
 Introduction is a focused part of Number Theory. Learn the rule, the state it changes, and the invariant that makes the operation correct.
 
 ## Step-by-step example
-Input: `[3, 1, 4, 1, 5]`
+Use this trace to understand Number Theory: Introduction before writing code.
 
-1. Identify the current state.
-2. Apply Introduction.
-3. Check empty input, one item, duplicates, and boundary cases.
-4. Explain why the final state is correct.
+Input: `gcd(18, 12)`
+
+1. Use the property gcd(a, b) = gcd(b, a % b).
+2. gcd(18, 12) becomes gcd(12, 6).
+3. gcd(12, 6) becomes gcd(6, 0).
+4. When remainder becomes 0, the current non-zero value is the answer.
+5. So gcd(18, 12) = 6.
 
 ## Python code
 
@@ -27,7 +30,9 @@ print(number_theory_introduction([3, 1, 4, 1, 5]))
 ```
 
 ## Explanation
-Track each variable or data-structure change after every step. The important part is not only the final answer, but why each update preserves the intended invariant.
+Mathematical DSA topics rely on properties. The formula is useful only when you can explain why it preserves the answer. Always test the property on one small example before using it in code.
+
+For Number Theory: Introduction, focus on the state before and after each step. A correct explanation should say what changed, why it changed, and why the final answer follows from the rule.
 
 ## Complexity
 - Time: Depends on the dominant loop, recursion, or data-structure operation.

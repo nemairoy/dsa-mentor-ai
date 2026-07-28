@@ -7,8 +7,6 @@ import { LessonCompletionGate } from "@/components/content/lesson-completion-gat
 import { LessonActions } from "@/components/content/lesson-actions";
 import { LessonPartBar } from "@/components/content/lesson-part-bar";
 import { NotesPanel } from "@/components/content/notes-panel";
-import { ReadingProgressTracker } from "@/components/content/reading-progress-tracker";
-import { LessonSideNav } from "@/components/content/lesson-side-nav";
 import { LessonStudySections } from "@/components/content/lesson-study-sections";
 import { LessonTheoryPreview } from "@/components/content/lesson-theory-preview";
 import { LessonVisualizationPanel } from "@/components/content/lesson-visualization-panel";
@@ -60,11 +58,6 @@ export default async function LessonPage({ params }: LessonPageProps) {
   return (
     <div className="space-y-4">
       <section className="rounded-xl border border-border bg-card p-3 shadow-sm">
-        <ReadingProgressTracker
-          chapterSlug={chapterSlug}
-          lessonSlug={lessonSlug}
-          initialProgress={progress?.progressPercent ?? 0}
-        />
         <nav className="mb-3 text-xs text-muted-foreground" aria-label="Breadcrumb">
           <Link href="/dashboard" className="hover:text-foreground">
             Dashboard
@@ -93,15 +86,12 @@ export default async function LessonPage({ params }: LessonPageProps) {
         </div>
       </section>
 
-      <LessonPartBar
-        lessons={lesson.chapter.lessons}
-        currentLessonSlug={lessonSlug}
-        currentTitle={lesson.lesson.title}
-      />
-
-      <div className="grid gap-3 xl:grid-cols-[200px_minmax(0,1fr)_300px]">
-        <div className="hidden xl:block">
-          <LessonSideNav progress={progress?.progressPercent ?? 0} />
+      <div className="grid gap-3 xl:grid-cols-[260px_minmax(0,1fr)_300px]">
+        <div className="xl:sticky xl:top-20 xl:self-start">
+          <LessonPartBar
+            lessons={lesson.chapter.lessons}
+            currentLessonSlug={lessonSlug}
+          />
         </div>
         <main className="min-w-0 space-y-3">
           <LessonTheoryPreview lesson={lesson} />
@@ -110,7 +100,6 @@ export default async function LessonPage({ params }: LessonPageProps) {
           <LessonCompletionGate
             previousLesson={lesson.previousLesson}
             nextLesson={lesson.nextLesson}
-            currentTitle={lesson.lesson.title}
           />
         </main>
         <aside className="space-y-3 xl:sticky xl:top-20 xl:self-start">

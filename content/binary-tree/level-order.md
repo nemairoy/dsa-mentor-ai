@@ -7,12 +7,15 @@ Learn Level Order in Binary Tree with theory, example, code, explanation, comple
 Level Order is a focused part of Binary Tree. Learn the rule, the state it changes, and the invariant that makes the operation correct.
 
 ## Step-by-step example
-Input: `[3, 1, 4, 1, 5]`
+Use this trace to understand Binary Tree: Level Order before writing code.
 
-1. Identify the current state.
-2. Apply Level Order.
-3. Check empty input, one item, duplicates, and boundary cases.
-4. Explain why the final state is correct.
+Input: `root with left child and right child`
+
+1. Decide what one node should return.
+2. Solve the left child using the same rule.
+3. Solve the right child using the same rule.
+4. Combine left result, right result, and current node value.
+5. Return the combined result to the parent.
 
 ## Python code
 
@@ -27,7 +30,9 @@ print(binary_tree_level_order([3, 1, 4, 1, 5]))
 ```
 
 ## Explanation
-Track each variable or data-structure change after every step. The important part is not only the final answer, but why each update preserves the intended invariant.
+Tree problems repeat the same rule at every node. The key is to define what a single node returns. For height, a node returns 1 plus the larger child height. For traversal, order decides when the current node is processed.
+
+For Binary Tree: Level Order, focus on the state before and after each step. A correct explanation should say what changed, why it changed, and why the final answer follows from the rule.
 
 ## Complexity
 - Time: Depends on the dominant loop, recursion, or data-structure operation.

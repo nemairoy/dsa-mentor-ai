@@ -7,12 +7,15 @@ Build the mental model, vocabulary, and why this topic matters.
 Introduction is a focused part of Advanced Dynamic Programming. Learn the rule, the state it changes, and the invariant that makes the operation correct.
 
 ## Step-by-step example
-Input: `[3, 1, 4, 1, 5]`
+Use this trace to understand Advanced Dynamic Programming: Introduction before writing code.
 
-1. Identify the current state.
-2. Apply Introduction.
-3. Check empty input, one item, duplicates, and boundary cases.
-4. Explain why the final state is correct.
+Input: `nums = [2, 7, 9, 3], choose non-adjacent max sum`
+
+1. Define the state: best answer up to the current index.
+2. Base cases handle the first one or two values.
+3. At each index, choose between taking current value or skipping it.
+4. Taking current means adding it to the best answer two positions back.
+5. The final state contains the best answer for the whole input.
 
 ## Python code
 
@@ -27,7 +30,9 @@ print(advanced_dynamic_programming_introduction([3, 1, 4, 1, 5]))
 ```
 
 ## Explanation
-Track each variable or data-structure change after every step. The important part is not only the final answer, but why each update preserves the intended invariant.
+Dynamic programming works when a problem has repeated subproblems and a clear state. Do not start by writing code. First define what dp[i] means, then define base cases, then write the transition. If the state is wrong, the whole solution becomes confusing.
+
+For Advanced Dynamic Programming: Introduction, focus on the state before and after each step. A correct explanation should say what changed, why it changed, and why the final answer follows from the rule.
 
 ## Complexity
 - Time: Depends on the dominant loop, recursion, or data-structure operation.
