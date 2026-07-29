@@ -19,7 +19,14 @@ async def connect_database() -> None:
         ssl_context.check_hostname = False
         ssl_context.verify_mode = ssl.CERT_NONE
 
-    _pool = await asyncpg.create_pool(dsn=settings.database_url, ssl=ssl_context, min_size=1, max_size=5)
+    _pool = await asyncpg.create_pool(
+        dsn=settings.database_url,
+        ssl=ssl_context,
+        min_size=0,
+        max_size=5,
+        timeout=10,
+        command_timeout=30,
+    )
     logger.info("Connected to PostgreSQL")
 
 
@@ -36,9 +43,13 @@ async def database_status() -> str:
     if _pool is None:
         return "not_connected"
 
-    async with _pool.acquire() as connection:
-        await connection.execute("SELECT 1")
-    return "connected"
+    try:
+        async with _pool.acquire(timeout=5) as connection:
+            await connection.execute("SELECT 1")
+        return "connected"
+    except Exception:
+        logger.exception("Database health check failed")
+        return "unavailable"
 
 
 def get_pool() -> asyncpg.Pool:
