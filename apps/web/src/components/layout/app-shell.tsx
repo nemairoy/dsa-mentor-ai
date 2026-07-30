@@ -54,6 +54,7 @@ export function AppShell({ children, userName, userImage, showAdmin = false }: A
   const pathname = usePathname();
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const isDashboard = pathname === "/dashboard";
+  const isProfileSetup = pathname === "/profile-setup";
   const breadcrumbs = pathname
     .split("/")
     .filter(Boolean)
@@ -69,7 +70,7 @@ export function AppShell({ children, userName, userImage, showAdmin = false }: A
         )}
       >
         <div className="flex items-center justify-between gap-1.5">
-          {isDashboard ? (
+          {isDashboard || isProfileSetup ? (
             <button
               type="button"
               aria-current="page"
@@ -125,10 +126,11 @@ export function AppShell({ children, userName, userImage, showAdmin = false }: A
               {...item}
               active={pathname === item.href || pathname.startsWith(`${item.href}/`)}
               current={pathname === item.href}
+              disabled={isProfileSetup}
               collapsed={sidebarCollapsed}
             />
           ))}
-          {showAdmin ? <SidebarLink href="/admin" label="Admin Studio" icon={Shield} active={pathname.startsWith("/admin")} current={pathname === "/admin"} collapsed={sidebarCollapsed} /> : null}
+          {showAdmin ? <SidebarLink href="/admin" label="Admin Studio" icon={Shield} active={pathname.startsWith("/admin")} current={pathname === "/admin"} disabled={isProfileSetup} collapsed={sidebarCollapsed} /> : null}
         </nav>
 
         <div className={cn("mt-4 rounded-2xl border border-border bg-muted/50 p-3", sidebarCollapsed && "flex justify-center p-2")}>
@@ -152,7 +154,7 @@ export function AppShell({ children, userName, userImage, showAdmin = false }: A
         )}
       >
         <div className="flex items-center gap-4">
-          {isDashboard ? (
+          {isDashboard || isProfileSetup ? (
             <button type="button" aria-current="page" className="flex shrink-0 cursor-default items-center gap-2 font-semibold lg:hidden">
               <BrandLogo size="sm" />
               DSA Mentor AI
@@ -211,15 +213,18 @@ export function AppShell({ children, userName, userImage, showAdmin = false }: A
         <nav className="mt-3 flex gap-2 overflow-x-auto pb-1 lg:hidden" aria-label="Mobile navigation">
           {primaryLinks.slice(0, 6).map((item) => {
             const current = pathname === item.href;
+            const disabled = isProfileSetup;
             const className = cn(
               "shrink-0 rounded-full border border-border px-3 py-1.5 text-xs transition-colors",
               current
                 ? "cursor-default border-emerald-500 bg-emerald-50 text-emerald-800 dark:bg-emerald-400/10 dark:text-emerald-300"
-                : "hover:bg-muted hover:text-foreground",
+                : disabled
+                  ? "cursor-not-allowed opacity-45"
+                  : "hover:bg-muted hover:text-foreground",
             );
 
-            return current ? (
-              <button key={item.href} type="button" aria-current="page" className={className}>
+            return current || disabled ? (
+              <button key={item.href} type="button" aria-current={current ? "page" : undefined} disabled={disabled && !current} className={className}>
                 {item.label}
               </button>
             ) : (
@@ -294,6 +299,7 @@ function SidebarLink({
   icon: Icon,
   active,
   current,
+  disabled,
   collapsed = false,
 }: {
   href: string;
@@ -301,12 +307,13 @@ function SidebarLink({
   icon: React.ComponentType<{ size?: number; className?: string; "aria-hidden"?: boolean }>;
   active?: boolean;
   current?: boolean;
+  disabled?: boolean;
   collapsed?: boolean;
 }) {
   const className = cn(
     "group relative flex min-h-9 w-full items-center rounded-lg text-sm font-medium text-muted-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
     collapsed ? "justify-center px-2 py-1.5" : "justify-between px-2.5 py-1.5",
-    current ? "cursor-default" : "hover:bg-muted hover:text-foreground",
+    current ? "cursor-default" : disabled ? "cursor-not-allowed opacity-45" : "hover:bg-muted hover:text-foreground",
     active && "bg-emerald-100 text-emerald-950 dark:bg-emerald-400/10 dark:text-emerald-200",
   );
   const content = (
@@ -320,9 +327,9 @@ function SidebarLink({
     </>
   );
 
-  if (current) {
+  if (current || disabled) {
     return (
-      <button type="button" title={collapsed ? label : undefined} aria-current="page" className={className}>
+      <button type="button" title={collapsed ? label : undefined} aria-current={current ? "page" : undefined} disabled={disabled && !current} className={className}>
         {content}
       </button>
     );

@@ -11,9 +11,9 @@ type ProfilePictureEditorProps = {
   currentProfilePictureUrl?: string | null;
 };
 
-const maxOriginalSize = 2 * 1024 * 1024;
-const maxUploadSize = 750 * 1024;
-const avatarSize = 512;
+export const maxOriginalProfilePhotoSize = 2 * 1024 * 1024;
+export const maxCompressedProfilePhotoSize = 750 * 1024;
+export const profilePhotoAvatarSize = 512;
 
 export function ProfilePictureEditor({ fullName, currentProfilePictureUrl }: ProfilePictureEditorProps) {
   const router = useRouter();
@@ -65,7 +65,7 @@ export function ProfilePictureEditor({ fullName, currentProfilePictureUrl }: Pro
       return;
     }
 
-    if (file.size > maxOriginalSize) {
+    if (file.size > maxOriginalProfilePhotoSize) {
       setServerError("Image must be 2 MB or smaller");
       event.target.value = "";
       return;
@@ -79,7 +79,7 @@ export function ProfilePictureEditor({ fullName, currentProfilePictureUrl }: Pro
 
     try {
       const compressedFile = await compressProfilePhoto(file);
-      if (compressedFile.size > maxUploadSize) {
+      if (compressedFile.size > maxCompressedProfilePhotoSize) {
         setServerError("Image could not be compressed enough. Choose a smaller photo.");
         event.target.value = "";
         return;
@@ -214,9 +214,9 @@ export function ProfilePictureEditor({ fullName, currentProfilePictureUrl }: Pro
   );
 }
 
-async function compressProfilePhoto(file: File): Promise<File> {
+export async function compressProfilePhoto(file: File): Promise<File> {
   const bitmap = await createImageBitmap(file);
-  const scale = Math.min(1, avatarSize / Math.max(bitmap.width, bitmap.height));
+  const scale = Math.min(1, profilePhotoAvatarSize / Math.max(bitmap.width, bitmap.height));
   const width = Math.max(1, Math.round(bitmap.width * scale));
   const height = Math.max(1, Math.round(bitmap.height * scale));
   const canvas = document.createElement("canvas");
