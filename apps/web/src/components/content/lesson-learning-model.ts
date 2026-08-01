@@ -68,11 +68,53 @@ export function buildLearningModel(lesson: Lesson): LearningModel {
 }
 
 export function translateModel(model: LearningModel, language: LanguageKey) {
-  if (model.topic === bubbleSortModel.topic) {
-    return bubbleSortCopy[language];
+  const englishCopy = model.topic === bubbleSortModel.topic ? bubbleSortCopy.en : buildGenericLessonCopy(model, "en");
+
+  if (language === "en") {
+    return englishCopy;
   }
 
-  return buildGenericLessonCopy(model, language);
+  return buildReadableLocalizedCopy(englishCopy, language);
+}
+
+function buildReadableLocalizedCopy(copy: ReturnType<typeof buildGenericLessonCopy>, language: Exclude<LanguageKey, "en">) {
+  const isBangla = language === "bn";
+  const prefix = isBangla ? "Bangla guide" : "Hindi guide";
+  const intro = isBangla
+    ? "Ei example-ta beginner-friendly vabe bujhanor jonno sajano. Prothome input dekho, tarpor prottek step-e state ki bhabe change hocche seta follow koro. Final answer keno correct, seta dry-run diye verify koro."
+    : "Yeh example beginner-friendly tareeke se samjhaya gaya hai. Pehle input dekho, phir har step mein state kaise change ho raha hai usko follow karo. Final answer kyon correct hai, dry-run se verify karo.";
+  const goalLead = isBangla
+    ? "Mukhyo lokkho holo concept bujha, mukhosto kora noy."
+    : "Main goal concept samajhna hai, memorize karna nahi.";
+  const rememberLead = isBangla
+    ? "Mone rakho:"
+    : "Yaad rakho:";
+
+  return {
+    ...copy,
+    title: `${copy.title} (${prefix})`,
+    intro,
+    goalLabel: isBangla ? "Learning goal" : "Learning goal",
+    goal: `${goalLead} ${copy.goal}`,
+    stateLabel: isBangla ? "Track korar state" : "Track karne wali state",
+    ruleLabel: isBangla ? "Rule" : "Rule",
+    rememberLabel: isBangla ? "Mone rakho" : "Yaad rakho",
+    remember: `${rememberLead} ${copy.remember}`,
+    examples: copy.examples.map((example, index) => ({
+      ...example,
+      title: `${isBangla ? "Udahoron" : "Example"} ${index + 1}: ${example.title.replace(/^Example \d+:\s*/, "")}`,
+      body: isBangla
+        ? `${example.body} Ei trace porar somoy sudhu final answer dekho na; kon value, pointer, range, ba state change holo seta line by line bujho.`
+        : `${example.body} Trace padhte waqt sirf final answer mat dekho; kaunsi value, pointer, range, ya state change hui, use line by line samjho.`,
+    })),
+    steps: copy.steps.map((step, index) => ({
+      ...step,
+      title: `${index + 1}. ${step.title}`,
+      body: isBangla
+        ? `${step.body} Ei step-er por state note korle next step bujhte onek easy hoy.`
+        : `${step.body} Is step ke baad state note karne se next step samajhna easy hota hai.`,
+    })),
+  };
 }
 export function buildTeachingCodeExample(lesson: Lesson) {
   if (isBubbleSortLesson(lesson)) {

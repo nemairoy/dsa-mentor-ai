@@ -3,7 +3,6 @@ import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 
 import { AiAssistantLazyPanel } from "@/components/content/ai-assistant-lazy-panel";
-import { LessonCompletionGate } from "@/components/content/lesson-completion-gate";
 import { LessonActions } from "@/components/content/lesson-actions";
 import { LessonPartBar } from "@/components/content/lesson-part-bar";
 import { NotesPanel } from "@/components/content/notes-panel";
@@ -97,10 +96,6 @@ export default async function LessonPage({ params }: LessonPageProps) {
           <LessonTheoryPreview lesson={lesson} />
           <LessonVisualizationPanel lesson={lesson} />
           <LessonStudySections lesson={lesson} />
-          <LessonCompletionGate
-            previousLesson={lesson.previousLesson}
-            nextLesson={lesson.nextLesson}
-          />
         </main>
         <aside className="space-y-3 xl:sticky xl:top-20 xl:self-start">
           <AiAssistantLazyPanel

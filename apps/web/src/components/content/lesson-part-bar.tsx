@@ -36,6 +36,7 @@ export function LessonPartBar({ lessons, currentLessonSlug }: LessonPartBarProps
       <div className="flex gap-2 overflow-x-auto pb-1 xl:max-h-[calc(100vh-180px)] xl:flex-col xl:overflow-y-auto xl:overflow-x-hidden xl:pr-1">
         {visibleLessons.map((lesson) => {
           const active = lesson.slug === currentLessonSlug;
+          const title = lesson.title.replace(`${lesson.chapter}: `, "");
 
           return (
             <button
@@ -43,14 +44,15 @@ export function LessonPartBar({ lessons, currentLessonSlug }: LessonPartBarProps
               type="button"
               onClick={() => openLesson(lesson)}
               disabled={active}
-              className={`min-h-9 shrink-0 rounded-lg border px-3 py-2 text-left text-xs font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-default xl:w-full ${
+              title={title}
+              className={`min-h-10 shrink-0 rounded-lg border px-3 py-2 text-left text-xs font-semibold leading-5 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-default xl:w-full ${
                 active
                   ? "border-emerald-500 bg-emerald-50 text-emerald-800 shadow-sm dark:bg-emerald-400/10 dark:text-emerald-200"
                   : "border-border bg-background text-foreground hover:border-emerald-300 hover:bg-muted"
               }`}
               aria-current={active ? "page" : undefined}
             >
-              {lesson.title.replace(`${lesson.chapter}: `, "")}
+              <span className="line-clamp-2">{title}</span>
             </button>
           );
         })}

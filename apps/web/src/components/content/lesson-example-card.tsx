@@ -54,18 +54,18 @@ export function LessonExampleCard({ lesson }: { lesson: Lesson }) {
       </div>
 
       <div className="space-y-3 p-4">
-        <div className="grid gap-3 xl:grid-cols-[280px_minmax(0,1fr)]">
+        <div className="grid gap-3 2xl:grid-cols-[320px_minmax(0,1fr)]">
           <div className="rounded-xl border border-border bg-card p-4">
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">{copy.goalLabel}</p>
             <p className="mt-2 text-sm leading-6">{copy.goal}</p>
 
-            <div className="mt-4 space-y-3">
+            <div className="mt-4 grid gap-3 sm:grid-cols-2 2xl:grid-cols-1">
               <InfoBlock label={copy.stateLabel} value={copy.state} />
               <InfoBlock label={copy.ruleLabel} value={copy.rule} />
             </div>
           </div>
 
-          <div className="grid gap-3 lg:grid-cols-2">
+          <div className="grid gap-3 xl:grid-cols-2">
             {copy.examples.map((example) => (
               <div key={example.title} className="rounded-xl border border-border bg-card p-4">
                 <p className="text-sm font-semibold">{example.title}</p>
@@ -78,26 +78,26 @@ export function LessonExampleCard({ lesson }: { lesson: Lesson }) {
           </div>
         </div>
 
-        <div className="grid gap-3 xl:grid-cols-2">
+        <div className="grid gap-3">
           {copy.steps.map((step, index) => (
-            <div key={step.title} className="rounded-xl border border-border bg-card p-3">
+            <div key={step.title} className="rounded-xl border border-border bg-card p-4">
               <div className="flex gap-3">
-                <div className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-primary text-xs font-bold text-primary-foreground">
+                <div className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-primary text-sm font-bold text-primary-foreground">
                   {index + 1}
                 </div>
                 <div className="min-w-0">
                   <h4 className="text-sm font-semibold">{step.title}</h4>
                   <p className="mt-1 text-xs leading-5 text-muted-foreground">{step.body}</p>
-                  <div className="mt-2 inline-flex max-w-full items-center gap-2 rounded-lg border border-border bg-background px-2.5 py-1.5 text-xs">
+                  <div className="mt-3 flex max-w-full items-start gap-2 rounded-lg border border-border bg-background px-3 py-2 text-xs">
                     <ArrowRight aria-hidden={true} size={13} className="shrink-0 text-emerald-700 dark:text-emerald-300" />
-                    <span className="truncate">{step.state}</span>
+                    <span className="min-w-0 whitespace-pre-wrap break-words leading-5">{step.state}</span>
                   </div>
                 </div>
               </div>
             </div>
           ))}
 
-          <div className="rounded-xl border border-emerald-500/25 bg-emerald-50 p-3 text-emerald-950 dark:bg-emerald-400/10 dark:text-emerald-100">
+          <div className="rounded-xl border border-emerald-500/25 bg-emerald-50 p-4 text-emerald-950 dark:bg-emerald-400/10 dark:text-emerald-100">
             <div className="flex gap-3">
               <CheckCircle2 aria-hidden={true} size={18} className="mt-0.5 shrink-0" />
               <div>
