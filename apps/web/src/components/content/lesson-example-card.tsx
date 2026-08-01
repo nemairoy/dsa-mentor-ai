@@ -54,22 +54,22 @@ export function LessonExampleCard({ lesson }: { lesson: Lesson }) {
       </div>
 
       <div className="space-y-3 p-4">
-        <div className="grid gap-3 2xl:grid-cols-[320px_minmax(0,1fr)]">
+        <div className="grid gap-3">
           <div className="rounded-xl border border-border bg-card p-4">
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">{copy.goalLabel}</p>
             <p className="mt-2 text-sm leading-6">{copy.goal}</p>
 
-            <div className="mt-4 grid gap-3 sm:grid-cols-2 2xl:grid-cols-1">
+            <div className="mt-4 grid gap-3 md:grid-cols-2">
               <InfoBlock label={copy.stateLabel} value={copy.state} />
               <InfoBlock label={copy.ruleLabel} value={copy.rule} />
             </div>
           </div>
 
-          <div className="grid gap-3 xl:grid-cols-2">
+          <div className="grid gap-3">
             {copy.examples.map((example) => (
-              <div key={example.title} className="rounded-xl border border-border bg-card p-4">
-                <p className="text-sm font-semibold">{example.title}</p>
-                <p className="mt-2 text-xs leading-5 text-muted-foreground">{example.body}</p>
+              <div key={example.title} className="rounded-xl border border-border bg-card p-3 sm:p-4">
+                <p className="text-sm font-semibold leading-5">{example.title}</p>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">{example.body}</p>
                 <code className="mt-3 block whitespace-pre-wrap rounded-lg bg-background px-3 py-2 text-xs font-semibold leading-5">
                   {example.trace}
                 </code>
@@ -80,14 +80,14 @@ export function LessonExampleCard({ lesson }: { lesson: Lesson }) {
 
         <div className="grid gap-3">
           {copy.steps.map((step, index) => (
-            <div key={step.title} className="rounded-xl border border-border bg-card p-4">
+            <div key={step.title} className="rounded-xl border border-border bg-card p-3 sm:p-4">
               <div className="flex gap-3">
                 <div className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-primary text-sm font-bold text-primary-foreground">
                   {index + 1}
                 </div>
                 <div className="min-w-0">
                   <h4 className="text-sm font-semibold">{step.title}</h4>
-                  <p className="mt-1 text-xs leading-5 text-muted-foreground">{step.body}</p>
+                  <p className="mt-1 text-sm leading-6 text-muted-foreground">{step.body}</p>
                   <div className="mt-3 flex max-w-full items-start gap-2 rounded-lg border border-border bg-background px-3 py-2 text-xs">
                     <ArrowRight aria-hidden={true} size={13} className="shrink-0 text-emerald-700 dark:text-emerald-300" />
                     <span className="min-w-0 whitespace-pre-wrap break-words leading-5">{step.state}</span>

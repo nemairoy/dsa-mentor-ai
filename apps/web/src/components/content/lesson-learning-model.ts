@@ -79,42 +79,61 @@ export function translateModel(model: LearningModel, language: LanguageKey) {
 
 function buildReadableLocalizedCopy(copy: ReturnType<typeof buildGenericLessonCopy>, language: Exclude<LanguageKey, "en">) {
   const isBangla = language === "bn";
-  const prefix = isBangla ? "Bangla guide" : "Hindi guide";
-  const intro = isBangla
-    ? "Ei example-ta beginner-friendly vabe bujhanor jonno sajano. Prothome input dekho, tarpor prottek step-e state ki bhabe change hocche seta follow koro. Final answer keno correct, seta dry-run diye verify koro."
-    : "Yeh example beginner-friendly tareeke se samjhaya gaya hai. Pehle input dekho, phir har step mein state kaise change ho raha hai usko follow karo. Final answer kyon correct hai, dry-run se verify karo.";
-  const goalLead = isBangla
-    ? "Mukhyo lokkho holo concept bujha, mukhosto kora noy."
-    : "Main goal concept samajhna hai, memorize karna nahi.";
-  const rememberLead = isBangla
-    ? "Mone rakho:"
-    : "Yaad rakho:";
+  const topic = copy.title.replace(": guided example", "");
 
   return {
     ...copy,
-    title: `${copy.title} (${prefix})`,
-    intro,
-    goalLabel: isBangla ? "Learning goal" : "Learning goal",
-    goal: `${goalLead} ${copy.goal}`,
-    stateLabel: isBangla ? "Track korar state" : "Track karne wali state",
-    ruleLabel: isBangla ? "Rule" : "Rule",
-    rememberLabel: isBangla ? "Mone rakho" : "Yaad rakho",
-    remember: `${rememberLead} ${copy.remember}`,
+    title: isBangla ? `${topic}: সহজ উদাহরণ` : `${topic}: आसान उदाहरण`,
+    intro: isBangla
+      ? "এই কার্ডে ছোট একটি উদাহরণ দিয়ে পুরো ধারণাটি বোঝানো হয়েছে। আগে input দেখুন, তারপর কোন state বদলাচ্ছে এবং কোন rule বারবার লাগছে সেটি মিলিয়ে পড়ুন।"
+      : "इस कार्ड में छोटे उदाहरण से पूरा idea समझाया गया है। पहले input देखिए, फिर कौन-सी state बदल रही है और कौन-सा rule बार-बार लग रहा है, उसे follow कीजिए।",
+    goalLabel: isBangla ? "শেখার লক্ষ্য" : "सीखने का लक्ष्य",
+    goal: isBangla
+      ? "শেষ output মুখস্থ করা নয়। input থেকে step-by-step answer কীভাবে তৈরি হচ্ছে সেটি বোঝাই মূল লক্ষ্য।"
+      : "Final output याद करना लक्ष्य नहीं है। Input से answer step-by-step कैसे बनता है, यही समझना जरूरी है।",
+    stateLabel: isBangla ? "যে state দেখবেন" : "जिस state को देखना है",
+    ruleLabel: isBangla ? "মূল rule" : "मुख्य rule",
+    rememberLabel: isBangla ? "মনে রাখবেন" : "याद रखें",
+    remember: isBangla
+      ? "প্রতিটি step শেষে নিজেকে জিজ্ঞেস করুন: এখন কী বদলালো, আর কেন বদলালো?"
+      : "हर step के बाद खुद से पूछिए: अभी क्या बदला, और क्यों बदला?",
     examples: copy.examples.map((example, index) => ({
       ...example,
-      title: `${isBangla ? "Udahoron" : "Example"} ${index + 1}: ${example.title.replace(/^Example \d+:\s*/, "")}`,
+      title: isBangla ? `উদাহরণ ${index + 1}` : `उदाहरण ${index + 1}`,
       body: isBangla
-        ? `${example.body} Ei trace porar somoy sudhu final answer dekho na; kon value, pointer, range, ba state change holo seta line by line bujho.`
-        : `${example.body} Trace padhte waqt sirf final answer mat dekho; kaunsi value, pointer, range, ya state change hui, use line by line samjho.`,
+        ? `এই trace-এ একবারে একটি ছোট কাজ হচ্ছে। শুরু থেকে পড়ুন: কোন value বা position দেখা হলো, rule লাগানোর পর state কী হলো, এবং সেই পরিবর্তন final answer-এর দিকে কীভাবে এগিয়ে দিল।`
+        : `इस trace में एक बार में एक छोटा काम हो रहा है। शुरू से पढ़िए: कौन-सी value या position देखी गई, rule लगाने के बाद state क्या बनी, और वह final answer की तरफ कैसे बढ़ी।`,
     })),
     steps: copy.steps.map((step, index) => ({
       ...step,
-      title: `${index + 1}. ${step.title}`,
+      title: isBangla ? localizedStepTitle(index, "bn") : localizedStepTitle(index, "hi"),
       body: isBangla
-        ? `${step.body} Ei step-er por state note korle next step bujhte onek easy hoy.`
-        : `${step.body} Is step ke baad state note karne se next step samajhna easy hota hai.`,
+        ? localizedStepBody(index, "bn")
+        : localizedStepBody(index, "hi"),
     })),
   };
+}
+
+function localizedStepTitle(index: number, language: Exclude<LanguageKey, "en">) {
+  const bangla = ["Input ভালো করে পড়ুন", "State লিখে রাখুন", "একই rule প্রয়োগ করুন", "Final answer যাচাই করুন"];
+  const hindi = ["Input ध्यान से पढ़ें", "State लिखकर रखें", "Same rule apply करें", "Final answer verify करें"];
+  return (language === "bn" ? bangla : hindi)[index] ?? (language === "bn" ? "Step বুঝুন" : "Step समझें");
+}
+
+function localizedStepBody(index: number, language: Exclude<LanguageKey, "en">) {
+  const bangla = [
+    "প্রথমে problem কী চাইছে সেটি বুঝুন। Input কী, output কী, এবং কোন condition মানতে হবে - এই তিনটি জিনিস পরিষ্কার না হলে code লেখা কঠিন হবে।",
+    "প্রতিটি step-এর পরে current state লিখুন। এতে previous state থেকে next state কীভাবে তৈরি হলো সেটি চোখে দেখা যায়।",
+    "Algorithm মাঝপথে rule বদলায় না। একই decision rule প্রতিটি value, node, range বা subproblem-এর উপর ব্যবহার করুন।",
+    "শুধু normal input নয়; empty input, one item, duplicate value, boundary case এবং already solved input দিয়েও ভাবুন।",
+  ];
+  const hindi = [
+    "सबसे पहले problem क्या मांग रही है यह समझिए। Input क्या है, output क्या है, और कौन-सी condition follow करनी है - ये तीन बातें clear होनी चाहिए।",
+    "हर step के बाद current state लिखिए। इससे previous state से next state कैसे बनी, यह साफ दिखता है।",
+    "Algorithm बीच में rule नहीं बदलता। Same decision rule हर value, node, range या subproblem पर apply कीजिए।",
+    "सिर्फ normal input नहीं; empty input, one item, duplicate value, boundary case और already solved input भी सोचिए।",
+  ];
+  return (language === "bn" ? bangla : hindi)[index] ?? "";
 }
 export function buildTeachingCodeExample(lesson: Lesson) {
   if (isBubbleSortLesson(lesson)) {
