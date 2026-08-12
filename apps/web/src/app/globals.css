@@ -126,6 +126,15 @@ details > summary::-webkit-details-marker {
   display: none;
 }
 
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
 .landing-visual {
   background:
     linear-gradient(rgba(100, 116, 139, 0.14) 1px, transparent 1px),
