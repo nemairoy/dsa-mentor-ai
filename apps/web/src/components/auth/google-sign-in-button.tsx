@@ -5,6 +5,7 @@ import { LogIn } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { authClient } from "@/lib/auth-client";
+import { markSessionActivity } from "@/lib/session-activity";
 
 export function GoogleSignInButton() {
   const [isLoading, setIsLoading] = useState(false);
@@ -21,6 +22,7 @@ export function GoogleSignInButton() {
           setError(null);
 
           try {
+            markSessionActivity();
             const result = await authClient.signIn.social({
               provider: "google",
               callbackURL: "/dashboard",

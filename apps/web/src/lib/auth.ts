@@ -27,6 +27,10 @@ export const auth = betterAuth({
     protocol: "auto",
   },
   database: authPool,
+  session: {
+    expiresIn: 60 * 60 * 8,
+    updateAge: 60 * 60,
+  },
   databaseHooks: {
     session: {
       create: {
