@@ -11,7 +11,7 @@ export function ThemeToggle() {
   const label = theme === "dark" ? "Switch to light theme" : theme === "light" ? "Use system theme" : "Switch to dark theme";
 
   return (
-    <Button type="button" variant="ghost" size="icon" aria-label={label} title={label} onClick={() => setTheme(nextTheme)}>
+    <Button type="button" variant="ghost" size="icon" className="h-10 w-10" aria-label={label} title={label} onClick={() => setTheme(nextTheme)}>
       {theme === "dark" ? <Moon aria-hidden={true} size={18} /> : theme === "light" ? <Sun aria-hidden={true} size={18} /> : <Monitor aria-hidden={true} size={18} />}
     </Button>
   );

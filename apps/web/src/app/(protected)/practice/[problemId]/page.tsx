@@ -43,7 +43,7 @@ export default async function PracticeProblemPage({ params }: PracticeProblemPag
               <h1 className="mt-1 max-w-4xl text-xl font-semibold tracking-normal text-foreground md:text-2xl">{problem.title}</h1>
               <p className="mt-1.5 max-w-4xl text-xs leading-5 text-muted-foreground md:text-sm">{problem.explanation}</p>
             </div>
-            <div className="grid min-w-[260px] grid-cols-3 gap-2">
+            <div className="grid w-full min-w-0 grid-cols-3 gap-2 sm:min-w-[260px] lg:w-auto">
               <HeaderMetric icon={Code2} label="Function" value={problem.judgeMetadata.functionName ?? "solve"} />
               <HeaderMetric icon={Clock} label="Time" value={`${problem.judgeMetadata.timeLimitMs ?? 1000} ms`} />
               <HeaderMetric icon={TestTube2} label="Samples" value={`${problem.testCases.length}`} />

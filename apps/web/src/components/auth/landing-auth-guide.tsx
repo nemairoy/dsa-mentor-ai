@@ -15,7 +15,7 @@ export function LandingPrimaryActions() {
       <button
         type="button"
         onClick={showAuthCue}
-        className="group flex items-center gap-2 rounded-full bg-foreground px-4 py-2 text-xs font-semibold text-background shadow-lg shadow-slate-950/15 transition hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring dark:shadow-black/30 sm:text-sm"
+        className="group flex min-h-11 w-full items-center justify-center gap-2 rounded-full bg-foreground px-4 py-2 text-xs font-semibold text-background shadow-lg shadow-slate-950/15 transition hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring dark:shadow-black/30 min-[360px]:w-auto sm:text-sm"
       >
         <Play aria-hidden={true} size={14} />
         Start learning
@@ -24,7 +24,7 @@ export function LandingPrimaryActions() {
       <button
         type="button"
         onClick={showAuthCue}
-        className="flex items-center gap-2 rounded-full border border-border bg-card/75 px-4 py-2 text-xs font-semibold text-foreground shadow-sm shadow-slate-200/60 backdrop-blur transition hover:-translate-y-0.5 hover:bg-muted dark:bg-white/7 dark:shadow-none sm:text-sm"
+        className="flex min-h-11 w-full items-center justify-center gap-2 rounded-full border border-border bg-card/75 px-4 py-2 text-xs font-semibold text-foreground shadow-sm shadow-slate-200/60 backdrop-blur transition hover:-translate-y-0.5 hover:bg-muted dark:bg-white/7 dark:shadow-none min-[360px]:w-auto sm:text-sm"
       >
         <Zap aria-hidden={true} size={14} className="text-amber-500" />
         Practice with AI
