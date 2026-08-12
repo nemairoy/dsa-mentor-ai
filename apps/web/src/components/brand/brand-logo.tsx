@@ -12,21 +12,24 @@ type BrandLockupProps = BrandLogoProps & {
 
 export function BrandLogo({ size = "md", className }: BrandLogoProps) {
   return (
-    <div
+    <svg
+      viewBox="0 0 128 128"
       className={cn(
-        "relative flex shrink-0 items-center justify-center rounded-2xl bg-slate-950 shadow-[0_18px_45px_rgba(13,148,136,0.24)] ring-1 ring-white/15",
+        "shrink-0 rounded-2xl shadow-[0_12px_30px_rgba(2,6,23,0.18)]",
         size === "sm" ? "h-9 w-9 rounded-xl" : "h-12 w-12",
         className,
       )}
-      aria-hidden={true}
+      role="img"
+      aria-label="DSA Mentor AI"
     >
-      <div className={cn("absolute inset-0 rounded-2xl bg-[linear-gradient(135deg,rgba(20,184,166,0.95),rgba(37,99,235,0.9))]", size === "sm" && "rounded-xl")} />
-      <div className={cn("absolute bg-slate-950/92", size === "sm" ? "inset-[2px] rounded-[10px]" : "inset-[3px] rounded-[14px]")} />
-      <div className="relative flex flex-col items-center leading-none">
-        <span className={cn("font-black tracking-normal text-white", size === "sm" ? "text-[11px]" : "text-[15px]")}>DSA</span>
-        <span className={cn("mt-0.5 rounded-full bg-gradient-to-r from-emerald-300 to-cyan-300", size === "sm" ? "h-0.5 w-5" : "h-1 w-7")} />
-      </div>
-    </div>
+      <rect width="128" height="128" rx="30" fill="#fff" />
+      <rect x="5" y="5" width="118" height="118" rx="25" fill="none" stroke="#09090b" strokeWidth="10" />
+      <path d="M49 32 25 64l24 32M79 32l24 32-24 32" fill="none" stroke="#09090b" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M64 39v50" fill="none" stroke="#09090b" strokeWidth="9" strokeLinecap="round" />
+      <circle cx="64" cy="31" r="9" fill="#09090b" />
+      <circle cx="64" cy="64" r="9" fill="#fff" stroke="#09090b" strokeWidth="7" />
+      <circle cx="64" cy="97" r="9" fill="#09090b" />
+    </svg>
   );
 }
 

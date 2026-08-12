@@ -4,15 +4,14 @@
   "description": "AI-powered DSA learning platform",
   "start_url": "/dashboard",
   "display": "standalone",
-  "background_color": "#f8fafc",
-  "theme_color": "#166534",
+  "background_color": "#ffffff",
+  "theme_color": "#09090b",
   "icons": [
     {
-      "src": "/icons/icon.svg",
+      "src": "/icons/icon.svg?v=2",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
     }
   ]
 }
-

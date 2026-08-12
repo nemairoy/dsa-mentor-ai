@@ -31,11 +31,11 @@ export const metadata: Metadata = {
   manifest: "/manifest.webmanifest",
   icons: {
     icon: [
-      { url: "/icon.svg", type: "image/svg+xml" },
-      { url: "/icons/icon.svg", type: "image/svg+xml" },
+      { url: "/icon.svg?v=2", type: "image/svg+xml" },
+      { url: "/icons/icon.svg?v=2", type: "image/svg+xml" },
     ],
-    shortcut: "/icon.svg",
-    apple: "/icons/icon.svg",
+    shortcut: "/icon.svg?v=2",
+    apple: "/icons/icon.svg?v=2",
   },
   alternates: {
     canonical: "/",
