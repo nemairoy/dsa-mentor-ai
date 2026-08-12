@@ -210,7 +210,7 @@ export function AppShell({ children, userName, userImage, showAdmin = false }: A
         <div className="mt-3 md:hidden">
           <GlobalSearch />
         </div>
-        <nav className="mt-3 flex gap-2 overflow-x-auto pb-1 lg:hidden" aria-label="Mobile navigation">
+        <nav className="scrollbar-hidden mt-3 flex gap-2 overflow-x-auto pb-2 lg:hidden" aria-label="Mobile navigation">
           {[
             ...primaryLinks,
             ...(showAdmin ? [{ href: "/admin", label: "Admin Studio", icon: Shield }] : []),
