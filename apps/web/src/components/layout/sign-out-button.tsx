@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { announceRouteTransition } from "@/components/loading/route-transition";
 import { authClient } from "@/lib/auth-client";
+import { clearSessionActivity } from "@/lib/session-activity";
 
 export function SignOutButton() {
   const router = useRouter();
@@ -19,6 +20,7 @@ export function SignOutButton() {
         await authClient.signOut({
           fetchOptions: {
             onSuccess: () => {
+              clearSessionActivity();
               announceRouteTransition();
               router.push("/sign-in");
             },
