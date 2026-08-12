@@ -157,12 +157,12 @@ export function AppShell({ children, userName, userImage, showAdmin = false }: A
           {isDashboard || isProfileSetup ? (
             <button type="button" aria-current="page" className="flex shrink-0 cursor-default items-center gap-2 font-semibold lg:hidden">
               <BrandLogo size="sm" />
-              DSA Mentor AI
+              <span className="hidden min-[380px]:inline">DSA Mentor AI</span>
             </button>
           ) : (
             <Link href="/dashboard" className="flex shrink-0 items-center gap-2 font-semibold lg:hidden">
               <BrandLogo size="sm" />
-              DSA Mentor AI
+              <span className="hidden min-[380px]:inline">DSA Mentor AI</span>
             </Link>
           )}
           <div className="hidden min-w-0 flex-1 lg:block">
@@ -185,13 +185,13 @@ export function AppShell({ children, userName, userImage, showAdmin = false }: A
               type="button"
               aria-label="Notifications"
               title="Notifications"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-md text-muted-foreground transition hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-md text-muted-foreground transition hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               <Bell aria-hidden={true} size={18} />
             </button>
             <ThemeToggle />
             <details className="relative">
-              <summary className="flex h-9 w-9 cursor-pointer list-none items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+              <summary className="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
                 <UserAvatar userName={userName} userImage={userImage} size="md" />
               </summary>
               <div className="absolute right-0 top-12 z-50 w-64 rounded-2xl border border-border bg-popover p-3 shadow-xl">
@@ -211,11 +211,14 @@ export function AppShell({ children, userName, userImage, showAdmin = false }: A
           <GlobalSearch />
         </div>
         <nav className="mt-3 flex gap-2 overflow-x-auto pb-1 lg:hidden" aria-label="Mobile navigation">
-          {primaryLinks.slice(0, 6).map((item) => {
+          {[
+            ...primaryLinks,
+            ...(showAdmin ? [{ href: "/admin", label: "Admin Studio", icon: Shield }] : []),
+          ].map((item) => {
             const current = pathname === item.href;
             const disabled = isProfileSetup;
             const className = cn(
-              "shrink-0 rounded-full border border-border px-3 py-1.5 text-xs transition-colors",
+              "flex min-h-11 shrink-0 items-center rounded-full border border-border px-3 py-1.5 text-xs transition-colors",
               current
                 ? "cursor-default border-emerald-500 bg-emerald-50 text-emerald-800 dark:bg-emerald-400/10 dark:text-emerald-300"
                 : disabled
