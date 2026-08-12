@@ -22,7 +22,7 @@ export default async function SignInPage() {
   }
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-background px-4 py-5 text-foreground">
+    <main className="dark relative min-h-screen overflow-hidden bg-background px-4 py-5 text-foreground [color-scheme:dark]">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_16%_18%,rgba(20,184,166,0.18),transparent_30%),radial-gradient(circle_at_84%_14%,rgba(37,99,235,0.14),transparent_28%),linear-gradient(135deg,#f8fafc,#eef7f4_45%,#eaf1ff)] dark:bg-[radial-gradient(circle_at_18%_18%,rgba(20,184,166,0.18),transparent_30%),radial-gradient(circle_at_82%_12%,rgba(96,165,250,0.16),transparent_28%),linear-gradient(135deg,#050914,#09111f_48%,#071523)]" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 
