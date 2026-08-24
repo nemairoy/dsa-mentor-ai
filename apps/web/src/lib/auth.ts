@@ -6,7 +6,7 @@ import { env } from "@/infrastructure/config/env";
 
 const authPool = new Pool({
   connectionString: env.DATABASE_URL,
-  ssl: env.DATABASE_SSL ? { rejectUnauthorized: false } : undefined,
+  ssl: env.DATABASE_SSL ? { rejectUnauthorized: env.DATABASE_SSL_VERIFY } : undefined,
   max: Number(process.env.PG_POOL_MAX ?? 3),
   connectionTimeoutMillis: 3_000,
   idleTimeoutMillis: 10_000,

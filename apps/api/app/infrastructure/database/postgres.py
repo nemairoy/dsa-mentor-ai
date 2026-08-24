@@ -16,8 +16,9 @@ async def connect_database() -> None:
     ssl_context = None
     if settings.database_ssl:
         ssl_context = ssl.create_default_context()
-        ssl_context.check_hostname = False
-        ssl_context.verify_mode = ssl.CERT_NONE
+        if not settings.database_ssl_verify:
+            ssl_context.check_hostname = False
+            ssl_context.verify_mode = ssl.CERT_NONE
 
     _pool = await asyncpg.create_pool(
         dsn=settings.database_url,

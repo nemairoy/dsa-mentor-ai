@@ -12,6 +12,10 @@ Required external services:
 - Judge0-compatible code execution service
 - Persistent disk for ChromaDB
 
+Set the same strong `INTERNAL_API_SECRET` in both Vercel and Render. Until it is
+configured, the services derive an internal credential from their shared,
+server-only `DATABASE_URL` so direct public access remains blocked.
+
 ## Startup Checks
 
 1. Generate production env files from the secret manager.

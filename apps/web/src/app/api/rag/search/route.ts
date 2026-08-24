@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 
 import { ragSearchSchema } from "@/core/rag/domain/rag";
-import { env } from "@/infrastructure/config/env";
 import { logger } from "@/infrastructure/logging/logger";
+import { internalApiFetch } from "@/lib/internal-api";
 import { rateLimit } from "@/lib/rate-limit";
 import { getCurrentSession } from "@/lib/session";
 
@@ -19,7 +19,7 @@ export async function POST(request: Request) {
   }
 
   try {
-    const response = await fetch(`${env.API_BASE_URL}/api/v1/rag/search`, {
+    const response = await internalApiFetch("/api/v1/rag/search", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
