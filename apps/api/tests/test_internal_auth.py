@@ -1,5 +1,6 @@
 import hashlib
 import unittest
+from unittest.mock import patch
 
 from app.core.config import settings
 from app.core.errors import ApplicationError
@@ -24,3 +25,10 @@ class InternalApiAuthTests(unittest.IsolatedAsyncioTestCase):
         key = hashlib.sha256(f"dsa-mentor-ai-internal-api:{secret}".encode()).hexdigest()
 
         self.assertIsNone(await require_internal_api(key))
+
+    async def test_accepts_shared_gemini_server_key(self) -> None:
+        secret = "shared-gemini-server-secret"
+        key = hashlib.sha256(f"dsa-mentor-ai-internal-api:{secret}".encode()).hexdigest()
+
+        with patch.object(settings, "gemini_api_key_1", secret):
+            self.assertIsNone(await require_internal_api(key))
