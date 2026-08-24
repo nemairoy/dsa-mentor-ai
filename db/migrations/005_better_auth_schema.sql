@@ -25,6 +25,7 @@ CREATE INDEX IF NOT EXISTS "idx_session_expiresAt" ON "session"("expiresAt");
 CREATE TABLE IF NOT EXISTS "account" (
     "id" TEXT PRIMARY KEY,
     "accountId" TEXT NOT NULL,
+    "issuer" TEXT NOT NULL,
     "providerId" TEXT NOT NULL,
     "userId" TEXT NOT NULL REFERENCES "user"("id") ON DELETE CASCADE,
     "accessToken" TEXT,
@@ -39,8 +40,8 @@ CREATE TABLE IF NOT EXISTS "account" (
 );
 
 CREATE INDEX IF NOT EXISTS "idx_account_userId" ON "account"("userId");
-CREATE UNIQUE INDEX IF NOT EXISTS "idx_account_provider_account"
-ON "account"("providerId", "accountId");
+CREATE UNIQUE INDEX IF NOT EXISTS "account_issuer_accountId_uidx"
+ON "account"("issuer", "accountId");
 
 CREATE TABLE IF NOT EXISTS "verification" (
     "id" TEXT PRIMARY KEY,
