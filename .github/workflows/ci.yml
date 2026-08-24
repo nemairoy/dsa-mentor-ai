@@ -26,6 +26,7 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - run: npm audit --audit-level=high
       - run: npm run validate:content
       - run: npm run validate:production
       - run: npm run lint:web
@@ -33,6 +34,9 @@ jobs:
 
   api:
     runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
+      DATABASE_SSL: "false"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -41,3 +45,4 @@ jobs:
       - run: python -m venv .venv
       - run: . .venv/bin/activate && pip install -r apps/api/requirements.txt
       - run: . .venv/bin/activate && PYTHONPATH=apps/api python -m compileall apps/api/app
+      - run: . .venv/bin/activate && PYTHONPATH=apps/api python -m unittest discover -s apps/api/tests -v

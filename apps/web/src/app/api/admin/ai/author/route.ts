@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 import { adminService } from "@/core/admin/admin-container";
 import { aiAuthoringSchema } from "@/core/admin/domain/admin";
-import { env } from "@/infrastructure/config/env";
+import { internalApiFetch } from "@/lib/internal-api";
 import { validatePromptSafety } from "@/lib/prompt-guard";
 import { rateLimit } from "@/lib/rate-limit";
 import { getCurrentSession } from "@/lib/session";
@@ -21,7 +21,7 @@ export async function POST(request: Request) {
   if (!safety.safe) {
     return NextResponse.json({ detail: safety.reason }, { status: 400 });
   }
-  const response = await fetch(`${env.API_BASE_URL}/api/v1/ai/generate`, {
+  const response = await internalApiFetch("/api/v1/ai/generate", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

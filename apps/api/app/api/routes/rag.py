@@ -1,6 +1,7 @@
-from fastapi import APIRouter, Header
+from fastapi import APIRouter, Depends, Header
 
 from app.core.errors import ApplicationError
+from app.core.internal_auth import require_internal_api
 from app.core.rag.container import rag_indexing_service, rag_qa_service, retrieval_service
 from app.core.rag.schemas import (
     IndexStatus,
@@ -11,7 +12,7 @@ from app.core.rag.schemas import (
     SearchResponse,
 )
 
-router = APIRouter()
+router = APIRouter(dependencies=[Depends(require_internal_api)])
 
 
 @router.post("/index/rebuild")

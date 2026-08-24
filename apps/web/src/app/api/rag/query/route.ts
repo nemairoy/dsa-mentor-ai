@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 
 import { ragQuerySchema } from "@/core/rag/domain/rag";
-import { env } from "@/infrastructure/config/env";
 import { logger } from "@/infrastructure/logging/logger";
+import { internalApiFetch } from "@/lib/internal-api";
 import { validatePromptSafety } from "@/lib/prompt-guard";
 import { rateLimit } from "@/lib/rate-limit";
 import { getCurrentSession } from "@/lib/session";
@@ -24,7 +24,7 @@ export async function POST(request: Request) {
   }
 
   try {
-    const response = await fetch(`${env.API_BASE_URL}/api/v1/rag/query`, {
+    const response = await internalApiFetch("/api/v1/rag/query", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

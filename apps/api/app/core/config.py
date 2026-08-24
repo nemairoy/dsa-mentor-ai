@@ -18,6 +18,8 @@ class Settings(BaseSettings):
     backend_cors_origins: str = Field(default="http://localhost:3000")
     database_url: str
     database_ssl: bool = True
+    database_ssl_verify: bool = True
+    internal_api_secret: str | None = None
     gemini_api_key_1: str | None = None
     gemini_api_key_2: str | None = None
     gemini_api_key_3: str | None = None

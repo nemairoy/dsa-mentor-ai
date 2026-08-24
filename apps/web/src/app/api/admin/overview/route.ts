@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 import { adminService } from "@/core/admin/admin-container";
-import { env } from "@/infrastructure/config/env";
+import { internalApiFetch } from "@/lib/internal-api";
 import { getCurrentSession } from "@/lib/session";
 
 export async function GET() {
@@ -9,7 +9,7 @@ export async function GET() {
   if (!session) return NextResponse.json({ detail: "Authentication is required" }, { status: 401 });
 
   await adminService.requireAdmin(session.user.id, "analytics:read");
-  const ragResponse = await fetch(`${env.API_BASE_URL}/api/v1/rag/index/status`).catch(() => null);
+  const ragResponse = await internalApiFetch("/api/v1/rag/index/status").catch(() => null);
   const rag = ragResponse?.ok ? await ragResponse.json() : { chunks: 0, indexed_lessons: 0 };
   const overview = await adminService.overview({
     chunks: rag.chunks ?? 0,
@@ -17,4 +17,3 @@ export async function GET() {
   });
   return NextResponse.json({ overview });
 }
-

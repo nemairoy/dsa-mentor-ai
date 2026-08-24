@@ -14,6 +14,10 @@ const requiredEnv = [
 ] as const;
 
 export async function GET() {
+  if (process.env.NODE_ENV === "production") {
+    return NextResponse.json({ ok: true });
+  }
+
   const env = Object.fromEntries(
     requiredEnv.map((name) => [name, Boolean(process.env[name])]),
   );
