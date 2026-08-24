@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, Header
+from fastapi import APIRouter, BackgroundTasks, Depends, Header
 
 from app.core.ai.container import ai_service
 from app.core.ai.schemas import AiRequest, AiResponse
@@ -11,9 +11,12 @@ router = APIRouter(dependencies=[Depends(require_internal_api)])
 @router.post("/generate", response_model=AiResponse)
 async def generate_ai_response(
     request: AiRequest,
+    background_tasks: BackgroundTasks,
     x_student_id: str | None = Header(default=None),
 ) -> AiResponse:
     if not x_student_id:
         raise ApplicationError("Student identity is required", status_code=401)
 
-    return await ai_service.generate(x_student_id, request)
+    response = await ai_service.generate(x_student_id, request)
+    background_tasks.add_task(ai_service.save_history, x_student_id, request, response.answer)
+    return response
