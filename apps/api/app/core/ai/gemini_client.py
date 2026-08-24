@@ -8,6 +8,25 @@ from app.core.config import settings
 from app.core.errors import ApplicationError
 from app.core.logging import logger
 
+_http_client: httpx.AsyncClient | None = None
+
+
+def _shared_http_client() -> httpx.AsyncClient:
+    global _http_client
+    if _http_client is None:
+        _http_client = httpx.AsyncClient(
+            limits=httpx.Limits(max_connections=20, max_keepalive_connections=10),
+            timeout=settings.ai_timeout_seconds,
+        )
+    return _http_client
+
+
+async def close_gemini_http_client() -> None:
+    global _http_client
+    if _http_client is not None:
+        await _http_client.aclose()
+        _http_client = None
+
 
 class GeminiClient:
     def __init__(self) -> None:
@@ -19,24 +38,37 @@ class GeminiClient:
             raise ApplicationError("Gemini API keys are not configured", status_code=503)
 
         last_error: Exception | None = None
-        attempts = max(1, len(self._keys) * (settings.ai_max_retries + 1))
+        try:
+            async with asyncio.timeout(settings.ai_total_timeout_seconds):
+                for retry_round in range(settings.ai_max_retries + 1):
+                    for key_index in range(len(self._keys)):
+                        api_key = next(self._key_cycle)
+                        try:
+                            return await self._generate_with_key(prompt, api_key)
+                        except httpx.HTTPStatusError as error:
+                            status = error.response.status_code
+                            last_error = error
+                            if status not in {429, 500, 502, 503, 504}:
+                                raise ApplicationError("AI request was rejected by Gemini", status_code=502) from error
+                            logger.warning(
+                                "Gemini retryable failure: status=%s round=%s key=%s",
+                                status,
+                                retry_round + 1,
+                                key_index + 1,
+                            )
+                        except (httpx.TimeoutException, httpx.TransportError) as error:
+                            last_error = error
+                            logger.warning(
+                                "Gemini transport failure: round=%s key=%s",
+                                retry_round + 1,
+                                key_index + 1,
+                            )
 
-        for attempt in range(attempts):
-            api_key = next(self._key_cycle)
-            try:
-                return await self._generate_with_key(prompt, api_key)
-            except httpx.HTTPStatusError as error:
-                status = error.response.status_code
-                last_error = error
-                if status in {429, 500, 502, 503, 504}:
-                    logger.warn("Gemini retryable failure", {"status": status, "attempt": attempt + 1})
-                    await asyncio.sleep(min(2**attempt, 8))
-                    continue
-                raise ApplicationError("AI request was rejected by Gemini", status_code=502) from error
-            except (httpx.TimeoutException, httpx.TransportError) as error:
-                last_error = error
-                logger.warn("Gemini transport failure", {"attempt": attempt + 1})
-                await asyncio.sleep(min(2**attempt, 8))
+                    if retry_round < settings.ai_max_retries:
+                        await asyncio.sleep(min(0.5 * (2**retry_round), 2))
+        except TimeoutError as error:
+            last_error = error
+            logger.warning("Gemini request exceeded the %.1fs total budget", settings.ai_total_timeout_seconds)
 
         raise ApplicationError("AI service is temporarily unavailable", status_code=503) from last_error
 
@@ -47,10 +79,9 @@ class GeminiClient:
             "generationConfig": {"temperature": 0.4, "maxOutputTokens": 2048},
         }
 
-        async with httpx.AsyncClient(timeout=settings.ai_timeout_seconds) as client:
-            response = await client.post(url, params={"key": api_key}, json=payload)
-            response.raise_for_status()
-            data = response.json()
+        response = await _shared_http_client().post(url, params={"key": api_key}, json=payload)
+        response.raise_for_status()
+        data = response.json()
 
         candidates = data.get("candidates") or []
         parts = candidates[0].get("content", {}).get("parts", []) if candidates else []
@@ -60,4 +91,3 @@ class GeminiClient:
             raise ApplicationError("Gemini returned an empty response", status_code=502)
 
         return text
-

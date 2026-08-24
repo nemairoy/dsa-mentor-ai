@@ -26,6 +26,7 @@ class Settings(BaseSettings):
     gemini_api_key_4: str | None = None
     gemini_model: str = "gemini-2.5-flash-lite"
     ai_timeout_seconds: float = 30.0
+    ai_total_timeout_seconds: float = 18.0
     ai_max_retries: int = 2
     content_root: str = "content"
     chroma_persist_dir: str = "data/chroma"

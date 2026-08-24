@@ -12,6 +12,7 @@ from app.core.config import settings
 from app.core.errors import register_exception_handlers
 from app.core.logging import configure_logging, logger
 from app.infrastructure.database.postgres import close_database, connect_database
+from app.core.ai.gemini_client import close_gemini_http_client
 
 
 @asynccontextmanager
@@ -20,6 +21,7 @@ async def lifespan(app: FastAPI):
     logger.info("Starting %s in %s", settings.app_name, settings.app_env)
     await connect_database()
     yield
+    await close_gemini_http_client()
     await close_database()
     logger.info("Stopped %s", settings.app_name)
 

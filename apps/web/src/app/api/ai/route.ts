@@ -77,8 +77,12 @@ async function generateWithGeminiFallback(request: AiRequest) {
 
   const model = process.env.GEMINI_MODEL ?? "gemini-2.5-flash-lite";
   let lastError: unknown;
+  const deadline = Date.now() + 18_000;
 
   for (const apiKey of keys) {
+    const remainingMs = deadline - Date.now();
+    if (remainingMs <= 0) break;
+
     try {
       const url = new URL(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`);
       url.searchParams.set("key", apiKey);
@@ -90,7 +94,7 @@ async function generateWithGeminiFallback(request: AiRequest) {
           contents: [{ role: "user", parts: [{ text: prompt }] }],
           generationConfig: { temperature: 0.4, maxOutputTokens: 2048 },
         }),
-        signal: AbortSignal.timeout(30_000),
+        signal: AbortSignal.timeout(Math.min(10_000, remainingMs)),
       });
 
       if (!response.ok) {
