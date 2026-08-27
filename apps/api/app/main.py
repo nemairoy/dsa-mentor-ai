@@ -1,4 +1,5 @@
-from contextlib import asynccontextmanager
+import asyncio
+from contextlib import asynccontextmanager, suppress
 import time
 import uuid
 
@@ -13,6 +14,17 @@ from app.core.errors import register_exception_handlers
 from app.core.logging import configure_logging, logger
 from app.infrastructure.database.postgres import close_database, connect_database
 from app.core.ai.gemini_client import close_gemini_http_client
+from app.core.rag.container import rag_indexing_service
+
+
+async def bootstrap_rag_index() -> None:
+    try:
+        status = await asyncio.to_thread(rag_indexing_service.status)
+        if int(status["chunks"]) == 0:
+            result = await asyncio.to_thread(rag_indexing_service.rebuild)
+            logger.info("Bootstrapped RAG index: %s", result)
+    except Exception:
+        logger.exception("RAG index bootstrap failed")
 
 
 @asynccontextmanager
@@ -20,7 +32,12 @@ async def lifespan(app: FastAPI):
     configure_logging()
     logger.info("Starting %s in %s", settings.app_name, settings.app_env)
     await connect_database()
+    rag_bootstrap_task = asyncio.create_task(bootstrap_rag_index())
     yield
+    if not rag_bootstrap_task.done():
+        rag_bootstrap_task.cancel()
+    with suppress(asyncio.CancelledError):
+        await rag_bootstrap_task
     await close_gemini_http_client()
     await close_database()
     logger.info("Stopped %s", settings.app_name)

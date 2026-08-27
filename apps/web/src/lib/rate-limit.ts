@@ -1,24 +1,46 @@
-type RateLimitEntry = {
-  count: number;
-  resetAt: number;
+import "server-only";
+
+import { createHash } from "node:crypto";
+
+import { logger } from "@/infrastructure/logging/logger";
+import { pool } from "@/infrastructure/database/postgres";
+
+type RateLimitResult = {
+  allowed: boolean;
+  remaining: number;
+  retryAfterSeconds?: number;
 };
 
-const buckets = new Map<string, RateLimitEntry>();
+export async function rateLimit(key: string, limit: number, windowMs: number): Promise<RateLimitResult> {
+  const bucketKey = createHash("sha256").update(key).digest("hex");
+  const windowStart = new Date(Math.floor(Date.now() / windowMs) * windowMs);
+  const resetAt = new Date(windowStart.getTime() + windowMs);
 
-export function rateLimit(key: string, limit: number, windowMs: number) {
-  const now = Date.now();
-  const current = buckets.get(key);
+  try {
+    const result = await pool.query<{ count: number }>(
+      `INSERT INTO api_rate_limit (key, "windowStart", count, "expiresAt")
+       VALUES ($1, $2, 1, $3)
+       ON CONFLICT (key, "windowStart")
+       DO UPDATE SET count = api_rate_limit.count + 1
+       RETURNING count`,
+      [bucketKey, windowStart, resetAt],
+    );
 
-  if (!current || current.resetAt <= now) {
-    buckets.set(key, { count: 1, resetAt: now + windowMs });
-    return { allowed: true, remaining: limit - 1 };
+    if (Math.random() < 0.01) {
+      void pool.query(`DELETE FROM api_rate_limit WHERE "expiresAt" < NOW()`).catch((error) => {
+        logger.warn("Expired rate-limit cleanup failed", { error });
+      });
+    }
+
+    const count = result.rows[0]?.count ?? limit + 1;
+    const allowed = count <= limit;
+    return {
+      allowed,
+      remaining: Math.max(0, limit - count),
+      ...(allowed ? {} : { retryAfterSeconds: Math.max(1, Math.ceil((resetAt.getTime() - Date.now()) / 1000)) }),
+    };
+  } catch (error) {
+    logger.error("Distributed rate limiter failed closed", { error });
+    return { allowed: false, remaining: 0, retryAfterSeconds: Math.ceil(windowMs / 1000) };
   }
-
-  if (current.count >= limit) {
-    return { allowed: false, remaining: 0, retryAfterSeconds: Math.ceil((current.resetAt - now) / 1000) };
-  }
-
-  current.count += 1;
-  return { allowed: true, remaining: limit - current.count };
 }
-

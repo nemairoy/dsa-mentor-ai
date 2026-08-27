@@ -11,6 +11,11 @@ const serverEnvSchema = z.object({
   DATABASE_URL: z.string().min(1),
   DATABASE_SSL: booleanEnv,
   DATABASE_SSL_VERIFY: booleanEnv,
+  DATABASE_POOLER_HOST: z.preprocess(
+    (value) => (value === "" ? undefined : value),
+    z.string().min(1).optional(),
+  ),
+  DATABASE_POOLER_PORT: z.coerce.number().int().positive().default(5432),
   API_BASE_URL: z.string().url().default("http://localhost:8000"),
 });
 

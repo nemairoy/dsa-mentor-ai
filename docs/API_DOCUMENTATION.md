@@ -18,7 +18,8 @@
 
 ## FastAPI APIs
 
-- `GET /health`
+- `GET /health` (dependency readiness; returns 503 when PostgreSQL is unavailable)
+- `GET /health/live` (process liveness for the hosting platform)
 - `POST /api/v1/ai/generate`
 - `POST /api/v1/rag/query`
 - `POST /api/v1/rag/search`
@@ -26,4 +27,3 @@
 - `GET /api/v1/rag/index/status`
 - `POST /api/v1/rag/index/incremental`
 - `POST /api/v1/rag/index/rebuild`
-

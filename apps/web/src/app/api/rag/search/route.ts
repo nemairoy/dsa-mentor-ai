@@ -13,7 +13,7 @@ export async function POST(request: Request) {
   }
 
   const body = ragSearchSchema.parse(await request.json());
-  const limit = rateLimit(`rag-search:${session.user.id}`, 120, 60_000);
+  const limit = await rateLimit(`rag-search:${session.user.id}`, 120, 60_000);
   if (!limit.allowed) {
     return NextResponse.json({ detail: "Rate limit exceeded" }, { status: 429 });
   }

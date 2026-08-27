@@ -13,7 +13,7 @@ export async function POST(request: Request) {
 
   await adminService.requireAdmin(session.user.id, "ai:author");
   const body = aiAuthoringSchema.parse(await request.json());
-  const limit = rateLimit(`admin-ai:${session.user.id}`, 20, 60_000);
+  const limit = await rateLimit(`admin-ai:${session.user.id}`, 20, 60_000);
   if (!limit.allowed) {
     return NextResponse.json({ detail: "Rate limit exceeded" }, { status: 429 });
   }

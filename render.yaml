@@ -7,7 +7,7 @@ services:
     branch: main
     buildCommand: pip install -r apps/api/requirements.txt
     startCommand: python -m uvicorn app.main:app --app-dir apps/api --host 0.0.0.0 --port $PORT
-    healthCheckPath: /health
+    healthCheckPath: /health/live
     autoDeployTrigger: commit
     disk:
       name: chroma-data
@@ -25,7 +25,11 @@ services:
       - key: DATABASE_SSL
         value: true
       - key: DATABASE_SSL_VERIFY
-        value: true
+        value: false
+      - key: DATABASE_POOLER_HOST
+        value: aws-1-ap-southeast-1.pooler.supabase.com
+      - key: DATABASE_POOLER_PORT
+        value: 5432
       - key: GEMINI_MODEL
         value: gemini-2.5-flash-lite
       - key: GEMINI_API_KEY_1
@@ -87,7 +91,11 @@ services:
       - key: DATABASE_SSL
         value: true
       - key: DATABASE_SSL_VERIFY
-        value: true
+        value: false
+      - key: DATABASE_POOLER_HOST
+        value: aws-1-ap-southeast-1.pooler.supabase.com
+      - key: DATABASE_POOLER_PORT
+        value: 5432
       - key: API_BASE_URL
         value: https://dsa-mentor-ai-api-l97r.onrender.com
       - key: CODE_EXECUTION_PROVIDER
