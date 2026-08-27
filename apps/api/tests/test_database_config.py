@@ -28,3 +28,14 @@ class DatabaseConfigTests(unittest.TestCase):
                 resolved_database_url(),
                 "postgresql://postgres.projectref:p%40ss@aws-1-region.pooler.supabase.com:5432/postgres",
             )
+
+    def test_uses_known_project_pooler_without_render_environment_sync(self) -> None:
+        with (
+            patch.object(
+                settings,
+                "database_url",
+                "postgresql://postgres:password@db.vjwyvogyvhysqjjnuwww.supabase.co:5432/postgres",
+            ),
+            patch.object(settings, "database_pooler_host", None),
+        ):
+            self.assertIn("aws-1-ap-southeast-1.pooler.supabase.com", resolved_database_url())
