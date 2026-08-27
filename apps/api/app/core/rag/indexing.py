@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 
 from app.core.config import settings
-from app.core.rag.chunking import SemanticMarkdownChunker
+from app.core.rag.chunking import ContentChunk, SemanticMarkdownChunker
 from app.core.rag.document_loader import ContentDocumentLoader, LessonDocument
 from app.core.rag.embeddings import EmbeddingService
 from app.core.rag.vector_store import ChromaVectorRepository
@@ -27,14 +27,20 @@ class RagIndexingService:
         documents = self._loader.load()
         self._vector_store.rebuild()
         manifest: dict[str, str] = {}
-        chunks_indexed = 0
+        chunks: list[ContentChunk] = []
 
         for document in documents:
-            chunks_indexed += self._index_document(document)
+            chunks.extend(self._chunker.chunk(document))
             manifest[document.lesson_id] = self._fingerprint(document)
 
+        batch_size = 256
+        for offset in range(0, len(chunks), batch_size):
+            batch = chunks[offset : offset + batch_size]
+            embeddings = self._embeddings.embed_documents([chunk.text for chunk in batch])
+            self._vector_store.upsert(batch, embeddings)
+
         self._write_manifest(manifest)
-        return {"lessons": len(documents), "chunks": chunks_indexed}
+        return {"lessons": len(documents), "chunks": len(chunks)}
 
     def incremental_update(self) -> dict[str, int]:
         documents = self._loader.load()
@@ -85,4 +91,3 @@ class RagIndexingService:
     def _write_manifest(self, manifest: dict[str, str]) -> None:
         self._manifest_path.parent.mkdir(parents=True, exist_ok=True)
         self._manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
-

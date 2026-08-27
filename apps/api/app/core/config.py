@@ -19,6 +19,8 @@ class Settings(BaseSettings):
     database_url: str
     database_ssl: bool = True
     database_ssl_verify: bool = True
+    database_pooler_host: str | None = None
+    database_pooler_port: int = 5432
     internal_api_secret: str | None = None
     gemini_api_key_1: str | None = None
     gemini_api_key_2: str | None = None

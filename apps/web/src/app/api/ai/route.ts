@@ -14,7 +14,7 @@ export async function POST(request: Request) {
   }
 
   const body = aiRequestSchema.parse(await request.json());
-  const limit = rateLimit(`ai:${session.user.id}`, 30, 60_000);
+  const limit = await rateLimit(`ai:${session.user.id}`, 30, 60_000);
   if (!limit.allowed) {
     return NextResponse.json({ detail: "Rate limit exceeded" }, { status: 429 });
   }
