@@ -6,6 +6,7 @@ import remarkGfm from "remark-gfm";
 import { useCallback, useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
+import { ProfessionalCodeBlock } from "@/components/content/professional-code-block";
 import type { PracticeProblem } from "@/core/intelligence/domain/intelligence";
 import { cn } from "@/lib/utils";
 
@@ -138,11 +139,7 @@ function AiMarkdown({ markdown }: { markdown: string }) {
         code: ({ className, children, ...props }) => {
           const language = className?.startsWith("language-") ? className.slice("language-".length) : "";
           if (language) {
-            return (
-              <pre className="my-2 max-w-full overflow-x-auto rounded-lg border border-border bg-muted p-3 text-[11px] leading-5">
-                <code className={className} {...props}>{children}</code>
-              </pre>
-            );
+            return <ProfessionalCodeBlock code={String(children).replace(/\n$/, "")} language={language} filename={`solution.${fileExtension(language)}`} />;
           }
           return <code className="break-words rounded bg-muted px-1 py-0.5 text-[11px]" {...props}>{children}</code>;
         },
@@ -163,4 +160,8 @@ function normalizeAiMarkdown(value: string) {
     .replace(/([^\n])```/g, "$1\n```")
     .replace(/\n{3,}/g, "\n\n")
     .trim();
+}
+
+function fileExtension(language: string) {
+  return ({ python: "py", py: "py", java: "java", cpp: "cpp", c: "c", javascript: "js", js: "js", typescript: "ts", ts: "ts" } as Record<string, string>)[language.toLowerCase()] ?? "txt";
 }

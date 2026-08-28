@@ -1,12 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { BookOpen, Bookmark, Bot, Dumbbell, Search, Sparkles } from "lucide-react";
+import { BookOpen, Bookmark, Bot, Dumbbell, Search, Sparkles, TimerReset } from "lucide-react";
 import { useMemo, useState } from "react";
 
 const searchableItems = [
   { href: "/learn", title: "Learn DSA with AI", type: "Lessons", icon: BookOpen },
   { href: "/practice", title: "Practice problems", type: "Practice", icon: Dumbbell },
+  { href: "/marathon", title: "Coding Marathon", type: "AI + Compiler", icon: TimerReset },
   { href: "/ai-tutor", title: "AI Tutor", type: "AI", icon: Bot },
   { href: "/bookmarks", title: "Bookmarks", type: "Saved", icon: Bookmark },
   { href: "/visualizations", title: "Visualizations", type: "Visual", icon: Sparkles },
