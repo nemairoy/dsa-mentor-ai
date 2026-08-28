@@ -5,6 +5,9 @@ import Link from "next/link";
 import { AiAssistantLazyPanel } from "@/components/content/ai-assistant-lazy-panel";
 import { LessonActions } from "@/components/content/lesson-actions";
 import { LessonPartBar } from "@/components/content/lesson-part-bar";
+import { LessonProgressControls } from "@/components/content/lesson-progress-controls";
+import { LessonSectionNav } from "@/components/content/lesson-section-nav";
+import { LessonNavigation } from "@/components/content/lesson-navigation";
 import { NotesPanel } from "@/components/content/notes-panel";
 import { LessonStudySections } from "@/components/content/lesson-study-sections";
 import { LessonTheoryPreview } from "@/components/content/lesson-theory-preview";
@@ -55,7 +58,7 @@ export default async function LessonPage({ params }: LessonPageProps) {
   ]);
 
   return (
-    <div className="space-y-4">
+    <div className="lesson-print space-y-4">
       <section className="rounded-xl border border-border bg-card p-3 shadow-sm">
         <nav className="mb-3 text-xs text-muted-foreground" aria-label="Breadcrumb">
           <Link href="/dashboard" className="hover:text-foreground">
@@ -81,21 +84,32 @@ export default async function LessonPage({ params }: LessonPageProps) {
               <span>Last read: {progress?.lastReadAt ? new Date(progress.lastReadAt).toLocaleString() : "Not started"}</span>
             </div>
           </div>
-          <LessonActions chapterSlug={chapterSlug} lessonSlug={lessonSlug} initialBookmarked={bookmarked} />
+          <div className="flex w-full flex-col items-start gap-3 lg:w-auto lg:items-end">
+            <LessonActions chapterSlug={chapterSlug} lessonSlug={lessonSlug} initialBookmarked={bookmarked} />
+            <LessonProgressControls
+              chapterSlug={chapterSlug}
+              lessonSlug={lessonSlug}
+              initialProgress={progress?.progressPercent ?? 0}
+              initialStatus={progress?.status ?? "not_started"}
+              nextLesson={lesson.nextLesson ? { href: lesson.nextLesson.href, title: lesson.nextLesson.title } : null}
+            />
+          </div>
         </div>
       </section>
 
       <div className="grid gap-3 xl:grid-cols-[260px_minmax(0,1fr)_300px]">
-        <div className="xl:sticky xl:top-20 xl:self-start">
+        <div className="space-y-3 xl:sticky xl:top-20 xl:self-start">
           <LessonPartBar
             lessons={lesson.chapter.lessons}
             currentLessonSlug={lessonSlug}
           />
+          <LessonSectionNav />
         </div>
         <main className="min-w-0 space-y-3">
           <LessonTheoryPreview lesson={lesson} />
           <LessonVisualizationPanel lesson={lesson} />
           <LessonStudySections lesson={lesson} />
+          <LessonNavigation previousLesson={lesson.previousLesson} nextLesson={lesson.nextLesson} />
         </main>
         <aside className="space-y-3 xl:sticky xl:top-20 xl:self-start">
           <AiAssistantLazyPanel
@@ -106,10 +120,10 @@ export default async function LessonPage({ params }: LessonPageProps) {
           />
           <NotesPanel chapterSlug={chapterSlug} lessonSlug={lessonSlug} initialNote={note?.body ?? ""} />
           <section className="rounded-xl border border-border bg-card p-3 shadow-sm">
-            <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">Bookmark</p>
-            <p className="mt-1.5 text-xs leading-5 text-muted-foreground">
-              Save this lesson from the header actions and return from Bookmarks when revising.
-            </p>
+            <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">Learning objectives</p>
+            <ul className="mt-2 list-disc space-y-1.5 pl-4 text-xs leading-5 text-muted-foreground">
+              {lesson.lesson.learningObjectives.map((objective) => <li key={objective}>{objective}</li>)}
+            </ul>
           </section>
         </aside>
       </div>

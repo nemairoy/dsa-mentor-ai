@@ -129,7 +129,7 @@ function BubbleSortCodeIntro() {
 
 function GenericCodeIntro({ model }: { model: ReturnType<typeof buildLearningModel> }) {
   return (
-    <div className="mb-3 rounded-xl border border-border bg-background p-3 text-xs leading-5 text-muted-foreground">
+    <div className="mb-3 rounded-xl border border-border bg-background p-3 text-sm leading-6 text-muted-foreground">
       <p className="font-semibold text-foreground">Before reading the code</p>
       <p className="mt-1.5">
         First connect the code to the idea. This lesson tracks <span className="font-medium text-foreground">{model.state}</span>. Each line should either read input, update that state, apply the rule, or return the final answer.
@@ -185,9 +185,16 @@ function BubbleSortTimeComplexity() {
 }
 
 function GenericTimeComplexity({ lesson, model }: { lesson: Lesson; model: ReturnType<typeof buildLearningModel> }) {
+  const complexity = lesson.chapter.slug === "searching"
+    ? lesson.lesson.slug === "linear-search" || lesson.lesson.slug === "introduction"
+      ? "O(n): in the worst case, every element must be checked once."
+      : lesson.lesson.slug === "binary-search-on-answer"
+        ? "O(log R × C): R is the size of the answer range and C is the cost of one feasibility check."
+        : "O(log n): every comparison removes roughly half of the remaining candidate range."
+    : lesson.lesson.timeComplexity;
   return (
     <div className="space-y-3">
-      <p className="text-xs leading-5 text-muted-foreground">{lesson.lesson.timeComplexity}</p>
+      <p className="text-sm leading-6 text-muted-foreground">{complexity}</p>
       <div className="rounded-lg border border-border bg-background p-3 text-xs leading-5 text-muted-foreground">
         <p className="font-semibold text-foreground">How to think about it</p>
         <p className="mt-1.5">
@@ -222,9 +229,12 @@ function BubbleSortSpaceComplexity() {
 }
 
 function GenericSpaceComplexity({ lesson, model }: { lesson: Lesson; model: ReturnType<typeof buildLearningModel> }) {
+  const complexity = lesson.chapter.slug === "searching"
+    ? "O(1) auxiliary space for the iterative implementation: only boundaries, middle, target, and an optional candidate are stored."
+    : lesson.lesson.spaceComplexity;
   return (
     <div className="space-y-3">
-      <p className="text-xs leading-5 text-muted-foreground">{lesson.lesson.spaceComplexity}</p>
+      <p className="text-sm leading-6 text-muted-foreground">{complexity}</p>
       <div className="rounded-lg border border-border bg-background p-3 text-xs leading-5 text-muted-foreground">
         <p className="font-semibold text-foreground">Memory picture</p>
         <p className="mt-1.5">
@@ -277,9 +287,9 @@ function ConceptMiniCard({ title, body }: { title: string; body: string }) {
 
 function StudySection({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
-    <section id={id} className="scroll-mt-28 rounded-xl border border-border bg-card p-3 shadow-sm">
-      <h2 className="text-base font-semibold">{title}</h2>
-      <div className="mt-2.5">{children}</div>
+    <section id={id} className="scroll-mt-28 rounded-xl border border-border bg-card p-3 shadow-sm sm:p-4">
+      <h2 className="text-base font-semibold sm:text-lg">{title}</h2>
+      <div className="mt-3">{children}</div>
     </section>
   );
 }
@@ -292,11 +302,11 @@ function IconList({
   items: string[];
 }) {
   return (
-    <ul className="space-y-2.5 text-xs text-muted-foreground">
+    <ul className="space-y-2.5 text-sm text-muted-foreground">
       {items.map((item) => (
         <li key={item} className="flex gap-3">
           <Icon aria-hidden={true} size={17} className="mt-0.5 shrink-0 text-emerald-700 dark:text-emerald-300" />
-          <span className="leading-5">{item}</span>
+          <span className="leading-6">{item}</span>
         </li>
       ))}
     </ul>

@@ -55,7 +55,10 @@ export function buildLearningModel(lesson: Lesson): LearningModel {
 
   const pattern = detectPattern(lesson);
   const topic = displayTopic(lesson);
-  const base = models[pattern] ?? models.generic;
+  const base = {
+    ...(models[pattern] ?? models.generic),
+    ...(lesson.chapter.slug === "searching" ? searchingLessonModels[lesson.lesson.slug] : undefined),
+  };
 
   return {
     ...base,
@@ -74,7 +77,10 @@ export function translateModel(model: LearningModel, language: LanguageKey) {
     return englishCopy;
   }
 
-  return buildReadableLocalizedCopy(englishCopy, language);
+  // Keep the old converter referenced while localized copy is sourced from the
+  // reviewed UTF-8 templates below. This avoids displaying mojibake in Bangla/Hindi.
+  void buildReadableLocalizedCopy;
+  return buildGenericLessonCopy(model, language);
 }
 
 function buildReadableLocalizedCopy(copy: ReturnType<typeof buildGenericLessonCopy>, language: Exclude<LanguageKey, "en">) {
@@ -168,6 +174,10 @@ export function buildTeachingCodeExample(lesson: Lesson) {
     };
   }
 
+  if (lesson.chapter.slug === "searching") {
+    return buildSearchingCodeExample(lesson.lesson.slug);
+  }
+
   const model = buildLearningModel(lesson);
   const functionName = `${lesson.chapter.slug}_${lesson.lesson.slug}`.replace(/-/g, "_");
   const code = codeByPattern[model.pattern]?.(functionName) ?? codeByPattern.generic(functionName);
@@ -179,9 +189,97 @@ export function buildTeachingCodeExample(lesson: Lesson) {
   };
 }
 
+function buildSearchingCodeExample(lessonSlug: string) {
+  const examples: Record<string, string> = {
+    introduction: `def find_target(items, target):
+    """Return the first target index, or -1 when it is absent."""
+    for index, value in enumerate(items):
+        if value == target:
+            return index
+    return -1`,
+    "linear-search": `def linear_search(items, target):
+    for index, value in enumerate(items):
+        if value == target:
+            return index
+    return -1`,
+    "binary-search": `def binary_search(items, target):
+    left, right = 0, len(items) - 1
+
+    while left <= right:
+        middle = left + (right - left) // 2
+        if items[middle] == target:
+            return middle
+        if items[middle] < target:
+            left = middle + 1
+        else:
+            right = middle - 1
+
+    return -1`,
+    "lower-bound": `def lower_bound(items, target):
+    """First index whose value is greater than or equal to target."""
+    left, right = 0, len(items)
+
+    while left < right:
+        middle = left + (right - left) // 2
+        if items[middle] < target:
+            left = middle + 1
+        else:
+            right = middle
+
+    return left`,
+    "upper-bound": `def upper_bound(items, target):
+    """First index whose value is strictly greater than target."""
+    left, right = 0, len(items)
+
+    while left < right:
+        middle = left + (right - left) // 2
+        if items[middle] <= target:
+            left = middle + 1
+        else:
+            right = middle
+
+    return left`,
+    "search-in-rotated-array": `def search_rotated(items, target):
+    left, right = 0, len(items) - 1
+
+    while left <= right:
+        middle = left + (right - left) // 2
+        if items[middle] == target:
+            return middle
+
+        if items[left] <= items[middle]:  # left half is sorted
+            if items[left] <= target < items[middle]:
+                right = middle - 1
+            else:
+                left = middle + 1
+        else:  # right half is sorted
+            if items[middle] < target <= items[right]:
+                left = middle + 1
+            else:
+                right = middle - 1
+
+    return -1`,
+    "binary-search-on-answer": `def minimum_feasible(low, high, is_feasible):
+    """Return the smallest value in [low, high] that passes is_feasible."""
+    answer = None
+
+    while low <= high:
+        middle = low + (high - low) // 2
+        if is_feasible(middle):
+            answer = middle
+            high = middle - 1
+        else:
+            low = middle + 1
+
+    return answer`,
+  };
+  const code = examples[lessonSlug] ?? examples.introduction;
+  return { language: "python", filename: `searching-${lessonSlug}.py`, code };
+}
+
 function detectPattern(lesson: Lesson): PatternKey {
   const text = `${lesson.chapter.slug} ${lesson.chapter.title} ${lesson.lesson.slug} ${lesson.lesson.title}`.toLowerCase();
-  if (/\b(search|bound|binary-search)\b/.test(text)) return "search";
+  if (/\b(search|searching|bound|binary-search)\b/.test(text)) return "search";
   if (text.includes("sort")) return "sort";
   if (/\b(array|arrays|prefix-sum|two-pointer|sliding-window)\b/.test(text)) return "array";
   if (/\b(string|strings|palindrome|pattern-matching|character)\b/.test(text)) return "string";
@@ -746,6 +844,62 @@ const models: Record<PatternKey, Omit<LearningModel, "pattern" | "topic">> = {
       { title: "Small input", body: "Use a tiny input so each state change is visible.", trace: "[3,1,4] -> step 1 -> step 2" },
       { title: "State update", body: "Track only what affects the next decision.", trace: "state -> rule -> new state" },
     ],
+  },
+};
+
+const searchingLessonModels: Record<string, Partial<Omit<LearningModel, "pattern" | "topic">>> = {
+  "linear-search": {
+    definition: "Linear Search checks candidates from left to right and returns the first position whose value equals the target.",
+    mentalModel: "Keep one index. Everything before it has already been checked; the current value is the next candidate.",
+    state: "current index, current value, target",
+    rule: "Compare items[index] with target. Return the index on equality; otherwise advance exactly one position.",
+    invariant: "Before checking index i, no position from 0 through i - 1 contains the target.",
+    pitfalls: ["Stopping before the last index.", "Returning the value instead of its index.", "Forgetting the -1 not-found result."],
+  },
+  "binary-search": {
+    definition: "Binary Search finds a target in sorted data by comparing the middle value and discarding one proven-impossible half.",
+    mentalModel: "The target, if present, must remain inside the inclusive candidate interval [left, right].",
+    state: "left boundary, right boundary, middle index, target",
+    rule: "If middle is too small move left to middle + 1; if too large move right to middle - 1; return on equality.",
+    invariant: "Every index outside [left, right] has been proven unable to contain the target.",
+    pitfalls: ["Running binary search on unsorted input.", "Using left < right and skipping the final candidate.", "Updating a boundary to middle instead of moving past middle."],
+    examples: [{ title: "Find 8", body: "In [1, 3, 5, 8, 12], middle 5 is too small, so only the right half can contain 8.", trace: "[0..4] -> mid=2 value=5 -> [3..4] -> 8 found" }],
+  },
+  "lower-bound": {
+    definition: "Lower Bound returns the first index whose value is greater than or equal to the target; it may return len(items).",
+    mentalModel: "Equality is only a candidate, not a stopping condition, because an earlier equal value may exist.",
+    state: "half-open candidate range [left, right), middle, target",
+    rule: "When items[middle] < target discard through middle; otherwise keep middle and search left by setting right = middle.",
+    invariant: "Every index before left is too small, and every index at or after right is already a valid lower-bound candidate.",
+    pitfalls: ["Stopping immediately on equality.", "Using a closed interval with half-open updates.", "Forgetting that len(items) is valid when every value is smaller."],
+    examples: [{ title: "First 3", body: "For [1, 3, 3, 5, 8], both 3 values qualify, but lower bound must keep searching left.", trace: "mid value=3 -> keep candidate -> search left -> index 1" }],
+  },
+  "upper-bound": {
+    definition: "Upper Bound returns the first index whose value is strictly greater than the target; it may return len(items).",
+    mentalModel: "Values equal to the target belong on the discarded left side because the answer must be strictly greater.",
+    state: "half-open candidate range [left, right), middle, target",
+    rule: "When items[middle] <= target move left past middle; otherwise preserve middle with right = middle.",
+    invariant: "Every index before left is less than or equal to target, while right and later contain the remaining answer candidates.",
+    pitfalls: ["Using < instead of <= and accidentally computing lower bound.", "Stopping on equality.", "Treating len(items) as an error."],
+    examples: [{ title: "After the last 3", body: "For [1, 3, 3, 5, 8], both equal values are skipped and the first greater value is 5.", trace: "3 <= target -> move right -> first greater index 3" }],
+  },
+  "search-in-rotated-array": {
+    definition: "Rotated-array search uses binary search after identifying which half is currently sorted.",
+    mentalModel: "At least one half around middle is sorted; use its boundary values to decide whether the target belongs there.",
+    state: "left, middle, right, sorted half, target",
+    rule: "Identify the sorted half, keep it only when its boundary range contains target, otherwise search the other half.",
+    invariant: "The target, if present, remains inside [left, right] after each half is discarded.",
+    pitfalls: ["Assuming the same half is always sorted.", "Using strict boundaries that exclude a valid endpoint.", "Ignoring how duplicates can make the sorted side ambiguous."],
+    examples: [{ title: "Rotated search", body: "In [4, 5, 6, 7, 0, 1, 2], middle 7 shows the left half is sorted, but target 0 is outside it.", trace: "left half [4..7] sorted -> target outside -> search [0,1,2]" }],
+  },
+  "binary-search-on-answer": {
+    definition: "Binary Search on Answer finds the smallest or largest value that satisfies a monotonic feasibility condition.",
+    mentalModel: "Possible answers form an ordered false/true boundary; binary search locates the first true value.",
+    state: "answer range, middle candidate, feasibility result, best candidate",
+    rule: "If middle is feasible, save it and search for a smaller feasible answer; otherwise discard middle and everything smaller.",
+    invariant: "The saved candidate is feasible, and the undiscarded range still contains every potentially better answer.",
+    pitfalls: ["Using it when feasibility is not monotonic.", "Searching input indexes instead of the answer range.", "Returning the last middle value instead of the saved feasible candidate."],
+    examples: [{ title: "Minimum capacity", body: "If capacity 10 works, every larger capacity also works, so search left for the smallest working value.", trace: "feasible(10)=true -> save 10 -> search smaller answers" }],
   },
 };
 
