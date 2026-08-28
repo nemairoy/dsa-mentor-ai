@@ -37,6 +37,8 @@ class Settings(BaseSettings):
     rag_chunk_overlap: int = 180
     rag_top_k: int = 6
     rag_score_threshold: float = 0.25
+    embedding_backend: str = "hashing"
+    hashing_embedding_dimensions: int = 384
     embedding_model_name: str = "sentence-transformers/all-MiniLM-L6-v2"
 
     @property

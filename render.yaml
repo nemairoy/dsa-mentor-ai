@@ -62,6 +62,10 @@ services:
         value: 0.25
       - key: EMBEDDING_MODEL_NAME
         value: sentence-transformers/all-MiniLM-L6-v2
+      - key: EMBEDDING_BACKEND
+        value: hashing
+      - key: HASHING_EMBEDDING_DIMENSIONS
+        value: 384
 
   - type: web
     name: dsa-mentor-ai-web
