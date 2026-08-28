@@ -46,12 +46,9 @@ export async function POST(request: Request) {
   }
 
   const body = executeSchema.parse(await request.json());
-  const results: SampleResult[] = [];
-
-  for (const [index, testCase] of body.testCases.entries()) {
-    const result = await runOneSample(body.language, body.code, body.functionName, testCase.input, testCase.output, index + 1);
-    results.push(result);
-  }
+  const results = await Promise.all(body.testCases.map((testCase, index) =>
+    runOneSample(body.language, body.code, body.functionName, testCase.input, testCase.output, index + 1),
+  ));
 
   return NextResponse.json({
     ok: results.every((result) => result.passed),
@@ -165,35 +162,50 @@ function decodeMaybeBase64(value: string | null | undefined) {
 function buildJudge0Source(language: "python" | "java" | "cpp", code: string, functionName: string, assignments: Array<[string, string]>) {
   if (language === "python") {
     const args = assignments.map(([, value]) => value).join(", ");
+    const call = pythonCallExpression(code, functionName, args);
     return `${code}
 
 if __name__ == "__main__":
-    result = ${functionName}(${args})
+    result = ${call}
     print("__RESULT__" + repr(result))
 `;
   }
 
   if (language === "java") {
-    const args = assignments.map(([, value]) => toJavaLiteral(value)).join(", ");
-    return `${code}
+    const safeCode = code.replace(/public\s+(?:final\s+)?class\s+Solution\b/, "class Solution");
+    const args = javaArguments(safeCode, functionName, assignments);
+    const call = javaCallExpression(safeCode, functionName, args);
+    return `${safeCode}
 
 class Main {
   public static void main(String[] args) {
-    Object result = Solution.${functionName}(${args});
+    Object result = ${call};
     System.out.println("__RESULT__" + format(result));
   }
 
   static String format(Object value) {
     if (value == null) return "None";
     if (value instanceof Boolean) return ((Boolean) value) ? "True" : "False";
+    if (value.getClass().isArray()) {
+      StringBuilder output = new StringBuilder("[");
+      int length = java.lang.reflect.Array.getLength(value);
+      for (int i = 0; i < length; i++) {
+        if (i > 0) output.append(", ");
+        output.append(format(java.lang.reflect.Array.get(value, i)));
+      }
+      return output.append("]").toString();
+    }
     return String.valueOf(value);
   }
 }
 `;
   }
 
-  const args = assignments.map(([, value]) => toCppLiteral(value)).join(", ");
-  return `${code}
+  const declarations = assignments.map(([, value], index) => cppArgumentDeclaration(value, index)).join("\n  ");
+  const args = assignments.map(([,], index) => `__dsaArg${index}`).join(", ");
+  const call = cppCallExpression(code, functionName, args);
+  return `#include <bits/stdc++.h>
+${code}
 
 template <typename T>
 string dsaFormat(const T& value) {
@@ -229,7 +241,8 @@ string dsaFormat(const map<string, T>& values) {
 }
 
 int main() {
-  auto result = ${functionName}(${args});
+  ${declarations}
+  auto result = ${call};
   cout << "__RESULT__" << dsaFormat(result) << endl;
   return 0;
 }
@@ -240,10 +253,11 @@ async function runPython(code: string, functionName: string, assignments: Array<
   const dir = await mkdtemp(path.join(tmpdir(), "dsa-python-"));
   const filePath = path.join(dir, "solution.py");
   const args = assignments.map(([, value]) => value).join(", ");
+  const call = pythonCallExpression(code, functionName, args);
   const source = `${code}
 
 if __name__ == "__main__":
-    result = ${functionName}(${args})
+    result = ${call}
     print("__RESULT__" + repr(result))
 `;
 
@@ -259,18 +273,29 @@ if __name__ == "__main__":
 async function runJava(code: string, functionName: string, assignments: Array<[string, string]>) {
   const dir = await mkdtemp(path.join(tmpdir(), "dsa-java-"));
   const filePath = path.join(dir, "Runner.java");
-  const args = assignments.map(([, value]) => toJavaLiteral(value)).join(", ");
-  const source = `${code}
+  const safeCode = code.replace(/public\s+(?:final\s+)?class\s+Solution\b/, "class Solution");
+  const args = javaArguments(safeCode, functionName, assignments);
+  const call = javaCallExpression(safeCode, functionName, args);
+  const source = `${safeCode}
 
 class Runner {
   public static void main(String[] args) {
-    Object result = Solution.${functionName}(${args});
+    Object result = ${call};
     System.out.println("__RESULT__" + format(result));
   }
 
   static String format(Object value) {
     if (value == null) return "None";
     if (value instanceof Boolean) return ((Boolean) value) ? "True" : "False";
+    if (value.getClass().isArray()) {
+      StringBuilder output = new StringBuilder("[");
+      int length = java.lang.reflect.Array.getLength(value);
+      for (int i = 0; i < length; i++) {
+        if (i > 0) output.append(", ");
+        output.append(format(java.lang.reflect.Array.get(value, i)));
+      }
+      return output.append("]").toString();
+    }
     return String.valueOf(value);
   }
 }
@@ -352,6 +377,43 @@ function toJavaLiteral(value: string): string {
   return trimmed;
 }
 
+function javaArguments(code: string, functionName: string, assignments: Array<[string, string]>) {
+  const escapedName = escapeRegExp(functionName);
+  const parameters = new RegExp(`\\b${escapedName}\\s*\\(([^)]*)\\)`).exec(code)?.[1] ?? "";
+  const types = splitJavaParameters(parameters).map((parameter) => parameter.replace(/\s+[A-Za-z_]\w*\s*$/, "").trim());
+  return assignments.map(([, value], index) => toJavaLiteralForType(value, types[index] ?? "")).join(", ");
+}
+
+function splitJavaParameters(value: string) {
+  const parts: string[] = [];
+  let genericDepth = 0;
+  let start = 0;
+  for (let index = 0; index < value.length; index += 1) {
+    if (value[index] === "<") genericDepth += 1;
+    if (value[index] === ">") genericDepth -= 1;
+    if (value[index] === "," && genericDepth === 0) {
+      parts.push(value.slice(start, index).trim());
+      start = index + 1;
+    }
+  }
+  parts.push(value.slice(start).trim());
+  return parts.filter(Boolean);
+}
+
+function toJavaLiteralForType(value: string, type: string) {
+  const normalizedType = type.replace(/\s+/g, "");
+  if (normalizedType.endsWith("[]") && value.trim().startsWith("[")) {
+    return `new ${normalizedType}${javaArrayInitializer(value.trim())}`;
+  }
+  return toJavaLiteral(value);
+}
+
+function javaArrayInitializer(value: string): string {
+  const inner = value.slice(1, -1).trim();
+  if (!inner) return "{}";
+  return `{${splitTopLevel(inner).map((item) => item.trim().startsWith("[") ? javaArrayInitializer(item.trim()) : toJavaLiteral(item)).join(", ")}}`;
+}
+
 function toJavaArraysAsList(value: string): string {
   const inner = value.slice(1, -1).trim();
   if (!inner) return "java.util.Arrays.asList()";
@@ -376,12 +438,60 @@ function toCppLiteral(value: string): string {
   return trimmed;
 }
 
+function pythonCallExpression(code: string, functionName: string, args: string) {
+  return /class\s+Solution\s*[:(]/.test(code)
+    ? `Solution().${functionName}(${args})`
+    : `${functionName}(${args})`;
+}
+
+function javaCallExpression(code: string, functionName: string, args: string) {
+  const escapedName = escapeRegExp(functionName);
+  const isStatic = new RegExp(`\\bstatic\\b[^{};]*\\b${escapedName}\\s*\\(`).test(code);
+  return isStatic
+    ? `Solution.${functionName}(${args})`
+    : `new Solution().${functionName}(${args})`;
+}
+
+function cppCallExpression(code: string, functionName: string, args: string) {
+  return /class\s+Solution\s*[{:\s]/.test(code)
+    ? `Solution().${functionName}(${args})`
+    : `${functionName}(${args})`;
+}
+
+function cppArgumentDeclaration(value: string, index: number) {
+  return `${cppLiteralType(value)} __dsaArg${index} = ${toCppLiteral(value)};`;
+}
+
+function cppLiteralType(value: string): string {
+  const trimmed = value.trim();
+  if (/^-?\d+$/.test(trimmed)) {
+    const number = Number(trimmed);
+    return Number.isSafeInteger(number) && number >= -2_147_483_648 && number <= 2_147_483_647 ? "int" : "long long";
+  }
+  if (/^-?(?:\d+\.\d*|\d*\.\d+)$/.test(trimmed)) return "double";
+  if (trimmed === "True" || trimmed === "False" || trimmed === "true" || trimmed === "false") return "bool";
+  if ((trimmed.startsWith("\"") && trimmed.endsWith("\"")) || (trimmed.startsWith("'") && trimmed.endsWith("'"))) return "string";
+  if (trimmed.startsWith("[") && trimmed.endsWith("]")) {
+    const items = splitTopLevel(trimmed.slice(1, -1));
+    const itemType = items.length ? cppLiteralType(items[0]) : "int";
+    return `vector<${itemType}>`;
+  }
+  return "long long";
+}
+
+function escapeRegExp(value: string) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 function normalizeValue(value: string): string {
   const trimmed = value.trim();
   if (trimmed.startsWith("{") && trimmed.endsWith("}")) {
     return normalizeObjectLike(trimmed);
   }
   if (trimmed.startsWith("[") && trimmed.endsWith("]")) {
+    return `[${splitTopLevel(trimmed.slice(1, -1)).map(normalizeValue).join(",")}]`;
+  }
+  if (trimmed.startsWith("(") && trimmed.endsWith(")")) {
     return `[${splitTopLevel(trimmed.slice(1, -1)).map(normalizeValue).join(",")}]`;
   }
   return trimmed
