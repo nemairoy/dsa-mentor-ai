@@ -76,7 +76,7 @@ class GeminiClient:
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{settings.gemini_model}:generateContent"
         payload: dict[str, Any] = {
             "contents": [{"role": "user", "parts": [{"text": prompt}]}],
-            "generationConfig": {"temperature": 0.4, "maxOutputTokens": 2048},
+            "generationConfig": {"temperature": 0.35, "maxOutputTokens": 4096},
         }
 
         response = await _shared_http_client().post(url, params={"key": api_key}, json=payload)
