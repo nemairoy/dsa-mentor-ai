@@ -40,6 +40,7 @@ export function MarathonWorkspace() {
     setError("");
     setResults([]);
     setProblem(null);
+    setCode("");
     setShowSolution(false);
     setHintCount(0);
     try {
@@ -51,8 +52,9 @@ export function MarathonWorkspace() {
       const payload = await response.json() as { problem?: MarathonProblem; detail?: string };
       if (!response.ok || !payload.problem) throw new Error(payload.detail ?? "Problem generation failed.");
       setProblem(payload.problem);
-      const nextKey = `marathon:${language}:${payload.problem.functionName}:${payload.problem.title}`;
-      setCode(window.localStorage.getItem(nextKey) ?? payload.problem.starterCode);
+      // A newly generated challenge must always start from its own template. Reusing a
+      // same-title draft (for example, another "Two Sum") silently loads stale code.
+      setCode(payload.problem.starterCode);
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "Problem generation failed.");
     } finally {
@@ -88,6 +90,17 @@ export function MarathonWorkspace() {
     window.setTimeout(() => setCopied(false), 1400);
   }
 
+  function selectLanguage(nextLanguage: MarathonLanguage) {
+    if (nextLanguage === language) return;
+    setLanguage(nextLanguage);
+    setProblem(null);
+    setCode("");
+    setResults([]);
+    setError("");
+    setHintCount(0);
+    setShowSolution(false);
+  }
+
   const allPassed = results.length > 0 && results.every((result) => result.passed);
 
   return (
@@ -99,7 +112,7 @@ export function MarathonWorkspace() {
             <textarea value={request} onChange={(event) => setRequest(event.target.value)} rows={3} maxLength={1200} placeholder="Example: Give me a medium sliding-window problem..." className="w-full resize-y bg-transparent text-sm leading-6 outline-none" />
             <div className="mt-3 flex flex-col gap-3 border-t border-border pt-3 sm:flex-row sm:items-center">
               <div className="flex min-w-0 flex-1 gap-2 overflow-x-auto pb-1">
-                {(["python", "java", "cpp"] as MarathonLanguage[]).map((item) => <Choice key={item} active={language === item} onClick={() => setLanguage(item)}>{languageLabels[item]}</Choice>)}
+                {(["python", "java", "cpp"] as MarathonLanguage[]).map((item) => <Choice key={item} active={language === item} onClick={() => selectLanguage(item)}>{languageLabels[item]}</Choice>)}
               </div>
               <div className="flex min-w-0 gap-2 overflow-x-auto pb-1">
                 {(["easy", "medium", "hard"] as Difficulty[]).map((item) => <Choice key={item} active={difficulty === item} onClick={() => setDifficulty(item)}>{capitalize(item)}</Choice>)}
