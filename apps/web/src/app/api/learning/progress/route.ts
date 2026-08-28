@@ -21,6 +21,6 @@ export async function POST(request: Request) {
       error: error instanceof Error ? error.message : "Unknown progress error",
     });
 
-    return NextResponse.json({ accepted: false }, { status: 202 });
+    return NextResponse.json({ detail: "Progress could not be saved" }, { status: 500 });
   }
 }
