@@ -1,5 +1,10 @@
-const CACHE_NAME = "dsa-mentor-ai-shell-v2";
-const SHELL_ASSETS = ["/offline.html", "/manifest.webmanifest", "/icons/icon.svg?v=2"];
+const CACHE_NAME = "dsa-mentor-ai-shell-v3";
+const SHELL_ASSETS = [
+  "/offline.html",
+  "/manifest.webmanifest",
+  "/icons/icon-192.png?v=3",
+  "/icons/icon-512.png?v=3",
+];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(SHELL_ASSETS)));

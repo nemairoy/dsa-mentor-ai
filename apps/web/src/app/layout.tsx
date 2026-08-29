@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Suspense } from "react";
 
 import { RouteTransitionOverlay } from "@/components/loading/route-transition-overlay";
+import { InstallPrompt } from "@/components/pwa/install-prompt";
 import { ServiceWorkerRegistration } from "@/components/pwa/service-worker-registration";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import "./globals.css";
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
       { url: "/icons/icon.svg?v=2", type: "image/svg+xml" },
     ],
     shortcut: "/icon.svg?v=2",
-    apple: "/icons/icon.svg?v=2",
+    apple: "/icons/apple-touch-icon.png?v=3",
   },
   alternates: {
     canonical: "/",
@@ -74,6 +75,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <RouteTransitionOverlay />
           </Suspense>
           <ServiceWorkerRegistration />
+          <InstallPrompt />
         </ThemeProvider>
       </body>
     </html>
