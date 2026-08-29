@@ -31,6 +31,9 @@ apps/api/data/chroma/
 # User-uploaded local files
 apps/web/public/uploads/
 
+# Owner-only local documents
+mail/
+
 # OS/editor
 .DS_Store
 Thumbs.db

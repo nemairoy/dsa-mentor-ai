@@ -1,5 +1,7 @@
 # Contributing
 
+This is proprietary software owned solely by Nemai Roy, not an open-source project. Unsolicited code contributions are not accepted without prior written agreement from the owner. Opening an issue or pull request does not grant any license or ownership interest in the project.
+
 ## Workflow
 
 1. Create a focused branch from current `main`.
