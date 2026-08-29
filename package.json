@@ -1,6 +1,8 @@
 {
   "name": "dsa-mentor-ai",
   "version": "1.0.0",
+  "author": "Nemai Roy",
+  "license": "UNLICENSED",
   "private": true,
   "workspaces": [
     "apps/web"

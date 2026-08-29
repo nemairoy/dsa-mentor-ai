@@ -5,6 +5,7 @@
 [![API Health](https://img.shields.io/badge/API-Render-46E3B7?logo=render&logoColor=111827)](https://dsa-mentor-ai-api-l97r.onrender.com/health)
 [![Next.js](https://img.shields.io/badge/Next.js-16-000000?logo=next.js)](https://nextjs.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-Python-009688?logo=fastapi)](https://fastapi.tiangolo.com/)
+[![License](https://img.shields.io/badge/license-Proprietary-b91c1c)](LICENSE)
 
 An end-to-end DSA learning platform that combines a structured 385-lesson roadmap, visual explanations, personalized progress, AI tutoring, interview practice, and sandboxed Python/Java/C++ execution.
 
@@ -179,9 +180,16 @@ See [Security Review](docs/SECURITY_REVIEW.md) for threat boundaries and remaini
 - [RAG](docs/RAG_DOCUMENTATION.md)
 - [Testing strategy](docs/TESTING_STRATEGY.md)
 - [Security review](docs/SECURITY_REVIEW.md)
+- [Security policy](.github/SECURITY.md)
 - [Backup and recovery](docs/BACKUP_RECOVERY.md)
 - [Contributing](docs/CONTRIBUTING.md)
 
 ## Repository status
 
 The production web app, API, database readiness, Google OAuth start flow, AI generation, and 385-lesson/3,083-chunk RAG index are actively smoke-tested. Operational limitations and follow-up recommendations are recorded in [Production Readiness](docs/PRODUCTION_READINESS_REPORT.md).
+
+## Ownership and license
+
+Copyright © 2026 **Nemai Roy**. All rights reserved.
+
+Nemai Roy is the sole owner and maintainer of DSA Mentor AI. The repository is publicly visible for portfolio and evaluation purposes, but it is not open-source software. No permission is granted to copy, modify, redistribute, sublicense, sell, or deploy this project without prior written authorization. See [LICENSE](LICENSE).
