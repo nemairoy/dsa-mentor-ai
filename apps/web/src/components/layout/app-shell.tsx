@@ -155,18 +155,21 @@ export function AppShell({ children, userName, userImage, showAdmin = false }: A
           sidebarCollapsed ? "lg:ml-20" : "lg:ml-60",
         )}
       >
-        <div className="flex items-center gap-4">
+        <div className="flex min-w-0 items-center gap-2 sm:gap-4">
           {isDashboard || isProfileSetup ? (
             <button type="button" aria-current="page" className="flex shrink-0 cursor-default items-center gap-2 font-semibold lg:hidden">
               <BrandLogo size="sm" />
-              <span className="hidden min-[380px]:inline">DSA Mentor AI</span>
+              <span className="hidden min-[520px]:inline">DSA Mentor AI</span>
             </button>
           ) : (
             <Link href="/dashboard" className="flex shrink-0 items-center gap-2 font-semibold lg:hidden">
               <BrandLogo size="sm" />
-              <span className="hidden min-[380px]:inline">DSA Mentor AI</span>
+              <span className="hidden min-[520px]:inline">DSA Mentor AI</span>
             </Link>
           )}
+          <div className="shrink-0 lg:hidden">
+            <BetaBadge />
+          </div>
           <div className="hidden min-w-0 flex-1 lg:block">
             <div className="flex items-center gap-2">
               <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Workspace</p>
@@ -180,9 +183,6 @@ export function AppShell({ children, userName, userImage, showAdmin = false }: A
             <GlobalSearch />
           </div>
           <div className="ml-auto flex items-center gap-1">
-            <div className="hidden sm:block lg:hidden">
-              <BetaBadge />
-            </div>
             <button
               type="button"
               aria-label="Notifications"
