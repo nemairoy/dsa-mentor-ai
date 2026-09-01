@@ -61,6 +61,7 @@ export function AiAssistantPanel({ chapterSlug, lessonSlug, lessonTitle, lessonM
           lessonMarkdown,
           question: outgoing,
         }),
+        signal: AbortSignal.timeout(30_000),
       });
       const payload = (await response.json()) as { answer?: string; detail?: string };
       setMessages((current) => [

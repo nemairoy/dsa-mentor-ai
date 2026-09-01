@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 
 import { marathonProblemSchema, marathonRequestSchema } from "@/core/marathon/marathon";
+import { logger } from "@/infrastructure/logging/logger";
+import { generateWithGeminiFallback } from "@/lib/gemini-fallback";
 import { internalApiFetch } from "@/lib/internal-api";
 import { validatePromptSafety } from "@/lib/prompt-guard";
 import { rateLimit } from "@/lib/rate-limit";
@@ -21,31 +23,60 @@ export async function POST(request: Request) {
   const limit = await rateLimit(`marathon:${session.user.id}`, 12, 60_000);
   if (!limit.allowed) return NextResponse.json({ detail: "Please wait briefly before generating another problem." }, { status: 429 });
 
+  let lastFailure = "The AI response was incomplete.";
   for (let attempt = 0; attempt < 2; attempt += 1) {
-    const response = await internalApiFetch("/api/v1/ai/generate", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "X-Student-Id": session.user.id },
-      body: JSON.stringify({
-        feature: "follow_up",
-        chapterSlug: "coding-marathon",
-        lessonSlug: parsed.data.difficulty,
-        lessonTitle: "Coding Marathon problem generator",
-        lessonMarkdown: buildContract(parsed.data.language, parsed.data.difficulty),
-        question: attempt === 0 ? parsed.data.request : `${parsed.data.request}\nYour previous response was invalid. Return a smaller, complete JSON object following every required key exactly.`,
-      }),
-    });
+    const aiRequest = {
+      feature: "follow_up" as const,
+      chapterSlug: "coding-marathon",
+      lessonSlug: parsed.data.difficulty,
+      lessonTitle: "Coding Marathon problem generator",
+      lessonMarkdown: buildContract(parsed.data.language, parsed.data.difficulty),
+      question: attempt === 0
+        ? parsed.data.request
+        : `${parsed.data.request}\nThe previous response did not pass validation. Return a smaller complete JSON object with every required key, valid source strings, and at least two test cases.`,
+    };
 
-    const payload = await response.json() as { answer?: string; detail?: string };
-    if (!response.ok || !payload.answer) {
-      return NextResponse.json({ detail: payload.detail ?? "The AI could not generate a problem right now." }, { status: response.status || 502 });
+    let answer = "";
+    if (attempt === 0) {
+      try {
+        const response = await internalApiFetch("/api/v1/ai/generate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "X-Student-Id": session.user.id },
+          body: JSON.stringify(aiRequest),
+          signal: AbortSignal.timeout(7_000),
+        });
+        const payload = await response.json() as { answer?: string; detail?: string };
+        if (response.ok && payload.answer) answer = payload.answer;
+        else lastFailure = payload.detail ?? `AI API returned ${response.status}.`;
+      } catch (error) {
+        lastFailure = "The AI API timed out during startup.";
+        logger.warn("Marathon AI API unavailable; using direct fallback", { error });
+      }
     }
 
-    const candidate = extractJson(payload.answer);
+    if (!answer) {
+      try {
+        const fallback = await generateWithGeminiFallback(aiRequest, {
+          json: true,
+          maxOutputTokens: 8192,
+          timeoutMs: 16_000,
+        });
+        answer = fallback.answer;
+      } catch (error) {
+        lastFailure = "The AI provider is temporarily unavailable.";
+        logger.error("Marathon direct AI generation failed", { attempt: attempt + 1, error });
+        continue;
+      }
+    }
+
+    const candidate = extractJson(answer);
     const problem = candidate ? marathonProblemSchema.safeParse(normalizeProblem(candidate, parsed.data.language, parsed.data.difficulty)) : null;
     if (problem?.success) return NextResponse.json({ problem: problem.data });
+    lastFailure = problem?.error.issues.map((issue) => `${issue.path.join(".")}: ${issue.message}`).slice(0, 3).join("; ") || "The AI returned malformed JSON.";
+    logger.warn("Marathon AI response failed validation", { attempt: attempt + 1, reason: lastFailure });
   }
 
-  return NextResponse.json({ detail: "The AI response was incomplete. Please generate the challenge again." }, { status: 502 });
+  return NextResponse.json({ detail: `The AI could not create a compiler-ready challenge (${lastFailure}). Please try again.` }, { status: 502 });
 }
 
 function buildContract(language: "python" | "java" | "cpp", difficulty: "easy" | "medium" | "hard") {

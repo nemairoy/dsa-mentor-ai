@@ -60,6 +60,7 @@ export function PracticeAiHelper({ problem, validationPrompt, validationNonce }:
           lessonMarkdown: context,
           question: outgoing,
         }),
+        signal: AbortSignal.timeout(30_000),
       });
       const payload = (await response.json()) as { answer?: string; detail?: string };
       setMessages((current) => [...current, { role: "assistant", body: normalizeAiMarkdown(payload.answer ?? payload.detail ?? "I could not generate help for this problem.") }]);

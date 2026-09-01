@@ -48,6 +48,7 @@ export function MarathonWorkspace() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ request, language, difficulty }),
+        signal: AbortSignal.timeout(45_000),
       });
       const payload = await response.json() as { problem?: MarathonProblem; detail?: string };
       if (!response.ok || !payload.problem) throw new Error(payload.detail ?? "Problem generation failed.");
@@ -56,7 +57,9 @@ export function MarathonWorkspace() {
       // same-title draft (for example, another "Two Sum") silently loads stale code.
       setCode(payload.problem.starterCode);
     } catch (cause) {
-      setError(cause instanceof Error ? cause.message : "Problem generation failed.");
+      setError(cause instanceof DOMException && cause.name === "TimeoutError"
+        ? "Challenge generation took too long. Please try once more."
+        : cause instanceof Error ? cause.message : "Problem generation failed.");
     } finally {
       setGenerating(false);
     }
