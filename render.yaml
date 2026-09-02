@@ -9,6 +9,11 @@ services:
     startCommand: python -m uvicorn app.main:app --app-dir apps/api --host 0.0.0.0 --port $PORT
     healthCheckPath: /health/live
     autoDeployTrigger: commit
+    buildFilter:
+      paths:
+        - apps/api/**
+        - content/**
+        - render.yaml
     disk:
       name: chroma-data
       mountPath: /opt/render/project/src/data
@@ -77,6 +82,14 @@ services:
     startCommand: npm --workspace apps/web run start -- -p $PORT
     healthCheckPath: /
     autoDeployTrigger: commit
+    buildFilter:
+      paths:
+        - apps/web/**
+        - content/**
+        - scripts/**
+        - package.json
+        - package-lock.json
+        - render.yaml
     envVars:
       - key: NODE_ENV
         value: production

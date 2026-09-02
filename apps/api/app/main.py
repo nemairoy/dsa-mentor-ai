@@ -27,17 +27,36 @@ async def bootstrap_rag_index() -> None:
         logger.exception("RAG index bootstrap failed")
 
 
+async def initialize_database() -> None:
+    retry_delay = 2.0
+    while True:
+        try:
+            await asyncio.wait_for(connect_database(), timeout=8.0)
+            return
+        except asyncio.CancelledError:
+            raise
+        except Exception:
+            logger.exception("Database startup failed; retrying in %.1fs", retry_delay)
+            await asyncio.sleep(retry_delay)
+            retry_delay = min(retry_delay * 2, 30.0)
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     configure_logging()
     logger.info("Starting %s in %s", settings.app_name, settings.app_env)
-    await connect_database()
+    # Dependency initialization must never prevent Uvicorn from binding Render's
+    # PORT. Readiness stays degraded until PostgreSQL connects, while liveness is
+    # immediately available to the platform during cold starts and DB incidents.
+    database_startup_task = asyncio.create_task(initialize_database())
     rag_bootstrap_task = asyncio.create_task(bootstrap_rag_index())
     yield
-    if not rag_bootstrap_task.done():
-        rag_bootstrap_task.cancel()
-    with suppress(asyncio.CancelledError):
-        await rag_bootstrap_task
+    for task in (database_startup_task, rag_bootstrap_task):
+        if not task.done():
+            task.cancel()
+    for task in (database_startup_task, rag_bootstrap_task):
+        with suppress(asyncio.CancelledError):
+            await task
     await close_gemini_http_client()
     await close_database()
     logger.info("Stopped %s", settings.app_name)

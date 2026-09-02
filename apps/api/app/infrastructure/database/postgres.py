@@ -48,7 +48,7 @@ async def connect_database() -> None:
     _pool = await asyncpg.create_pool(
         dsn=database_url,
         ssl=ssl_context,
-        min_size=0,
+        min_size=1,
         max_size=5,
         timeout=10,
         command_timeout=30,

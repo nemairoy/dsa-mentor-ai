@@ -1,10 +1,11 @@
+import asyncio
 import json
 import unittest
 from unittest.mock import AsyncMock, patch
 
 from app.api.routes.health import health_check, liveness_check
 from app.core.rag.container import rag_indexing_service
-from app.main import bootstrap_rag_index
+from app.main import bootstrap_rag_index, lifespan
 
 
 class ProductionHealthTests(unittest.IsolatedAsyncioTestCase):
@@ -42,3 +43,15 @@ class ProductionHealthTests(unittest.IsolatedAsyncioTestCase):
             await bootstrap_rag_index()
 
         rebuild.assert_not_called()
+
+    async def test_slow_database_does_not_block_application_startup(self) -> None:
+        database_never_connects = asyncio.Event()
+        with (
+            patch("app.main.connect_database", AsyncMock(side_effect=database_never_connects.wait)),
+            patch("app.main.bootstrap_rag_index", AsyncMock(side_effect=database_never_connects.wait)),
+            patch("app.main.close_database", AsyncMock()),
+            patch("app.main.close_gemini_http_client", AsyncMock()),
+        ):
+            async with asyncio.timeout(0.25):
+                async with lifespan(None):  # type: ignore[arg-type]
+                    self.assertTrue(True)
