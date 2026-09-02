@@ -1,7 +1,7 @@
 "use client";
 
 import { Bot, Check, CheckCircle2, Clipboard, Code2, Lightbulb, Loader2, Play, RotateCcw, Send, Sparkles, XCircle } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { languageLabels, type MarathonLanguage, type MarathonProblem } from "@/core/marathon/marathon";
@@ -25,6 +25,7 @@ export function MarathonWorkspace() {
   const [hintCount, setHintCount] = useState(0);
   const [showSolution, setShowSolution] = useState(false);
   const [copied, setCopied] = useState(false);
+  const codeEditorRef = useRef<HTMLTextAreaElement>(null);
 
   const storageKey = useMemo(() => problem ? `marathon:${language}:${problem.functionName}:${problem.title}` : "", [language, problem]);
 
@@ -75,6 +76,7 @@ export function MarathonWorkspace() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ language, code, functionName: problem.functionName, testCases: problem.testCases }),
+        signal: AbortSignal.timeout(25_000),
       });
       const payload = await response.json() as { results?: ExecutionResult[]; detail?: string };
       if (!response.ok || !payload.results) throw new Error(payload.detail ?? "Execution failed.");
@@ -88,9 +90,23 @@ export function MarathonWorkspace() {
 
   async function copySolution() {
     if (!problem) return;
-    await navigator.clipboard.writeText(problem.solutionCode);
-    setCopied(true);
-    window.setTimeout(() => setCopied(false), 1400);
+    try {
+      await navigator.clipboard.writeText(problem.solutionCode);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1400);
+    } catch {
+      setError("The browser blocked clipboard access. Use Load in compiler, then select the code manually.");
+    }
+  }
+
+  function loadInCompiler(nextCode: string) {
+    setCode(nextCode);
+    setResults([]);
+    setError("");
+    window.requestAnimationFrame(() => {
+      codeEditorRef.current?.focus({ preventScroll: false });
+      codeEditorRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
   }
 
   function selectLanguage(nextLanguage: MarathonLanguage) {
@@ -150,7 +166,7 @@ export function MarathonWorkspace() {
                 <Button type="button" variant="outline" onClick={() => setShowSolution((value) => !value)}><Code2 aria-hidden size={15} />{showSolution ? "Hide solution" : "Show solution"}</Button>
               </div>
               {hintCount ? <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 p-3"><ol className="list-decimal space-y-2 pl-5 text-sm leading-6">{problem.hints.slice(0, hintCount).map((hint) => <li key={hint}>{hint}</li>)}</ol></div> : null}
-              {showSolution ? <div className="space-y-3 rounded-xl border border-emerald-500/30 bg-emerald-500/5 p-3"><div><h3 className="font-semibold">Professional approach</h3><p className="mt-1 whitespace-pre-wrap text-sm leading-6 text-muted-foreground">{problem.approach}</p><p className="mt-2 text-xs font-medium">Time: {problem.complexity.time} · Space: {problem.complexity.space}</p></div><div className="grid gap-2 sm:grid-cols-2"><Button type="button" onClick={() => { setCode(problem.solutionCode); setResults([]); }}><Code2 aria-hidden size={15} />Load in compiler</Button><Button type="button" variant="outline" onClick={() => void copySolution()}>{copied ? <Check aria-hidden size={15} /> : <Clipboard aria-hidden size={15} />}{copied ? "Copied" : "Copy full solution"}</Button></div></div> : null}
+              {showSolution ? <div className="space-y-3 rounded-xl border border-emerald-500/30 bg-emerald-500/5 p-3"><div><h3 className="font-semibold">Professional approach</h3><p className="mt-1 whitespace-pre-wrap text-sm leading-6 text-muted-foreground">{problem.approach}</p><p className="mt-2 text-xs font-medium">Time: {problem.complexity.time} · Space: {problem.complexity.space}</p></div><div className="grid gap-2 sm:grid-cols-2"><Button type="button" onClick={() => loadInCompiler(problem.solutionCode)}><Code2 aria-hidden size={15} />Load in compiler</Button><Button type="button" variant="outline" onClick={() => void copySolution()}>{copied ? <Check aria-hidden size={15} /> : <Clipboard aria-hidden size={15} />}{copied ? "Copied" : "Copy full solution"}</Button></div></div> : null}
             </div>
           ) : null}
         </div>
@@ -159,8 +175,8 @@ export function MarathonWorkspace() {
       <section className="min-w-0 overflow-hidden rounded-2xl border border-border bg-card shadow-sm 2xl:sticky 2xl:top-24 2xl:self-start">
         <PanelHeader icon={Code2} title={`${languageLabels[language]} Compiler`} subtitle={problem ? `Function: ${problem.functionName}` : "Generate a problem to begin"} tone="sky" />
         <div className="space-y-3 p-3 sm:p-4">
-          <div className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-border bg-background px-3 py-2 text-xs text-muted-foreground"><span>Autosaves on this device</span><button type="button" disabled={!problem} onClick={() => { if (problem) { setCode(problem.starterCode); setResults([]); } }} className="inline-flex items-center gap-1.5 font-medium hover:text-foreground disabled:opacity-40"><RotateCcw aria-hidden size={13} />Reset starter</button></div>
-          <textarea value={code} onChange={(event) => setCode(event.target.value)} disabled={!problem} spellCheck={false} aria-label="Code editor" placeholder="Your generated starter code will appear here..." className="min-h-[430px] w-full resize-y rounded-xl border border-slate-700 bg-[#0b1220] p-4 font-mono text-[13px] leading-6 text-slate-100 outline-none placeholder:text-slate-500 focus:ring-2 focus:ring-emerald-500 disabled:cursor-not-allowed sm:min-h-[520px]" />
+          <div className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-border bg-background px-3 py-2 text-xs text-muted-foreground"><span>Autosaves on this device</span><button type="button" disabled={!problem} onClick={() => { if (problem) loadInCompiler(problem.starterCode); }} className="inline-flex min-h-8 items-center gap-1.5 font-medium hover:text-foreground disabled:opacity-40"><RotateCcw aria-hidden size={13} />Reset starter</button></div>
+          <textarea ref={codeEditorRef} value={code} onChange={(event) => setCode(event.target.value)} disabled={!problem} spellCheck={false} aria-label="Code editor" placeholder="Your generated starter code will appear here..." className="min-h-[430px] w-full resize-y rounded-xl border border-slate-700 bg-[#0b1220] p-4 font-mono text-[13px] leading-6 text-slate-100 outline-none placeholder:text-slate-500 focus:ring-2 focus:ring-emerald-500 disabled:cursor-not-allowed sm:min-h-[520px]" />
           <Button type="button" className="w-full" disabled={!problem || running || !code.trim()} onClick={() => void runCode()}>{running ? <Loader2 aria-hidden className="animate-spin" size={16} /> : <Play aria-hidden size={16} />}{running ? "Running samples..." : "Run all test cases"}</Button>
           {error ? <p role="alert" className="rounded-xl border border-destructive/30 bg-destructive/10 p-3 text-sm text-destructive">{error}</p> : null}
           {results.length ? <div className="space-y-2"><div className={cn("rounded-xl border p-3 text-sm font-semibold", allPassed ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-700 dark:text-emerald-200" : "border-amber-500/40 bg-amber-500/10 text-amber-700 dark:text-amber-200")}>{allPassed ? "Excellent — all test cases passed." : "Some test cases failed. Review the results below."}</div>{results.map((result) => <div key={result.sample} className="rounded-xl border border-border bg-background p-3 text-xs"><div className="flex items-center justify-between"><strong>Test {result.sample}</strong><span className={cn("inline-flex items-center gap-1 font-semibold", result.passed ? "text-emerald-600" : "text-destructive")}>{result.passed ? <CheckCircle2 aria-hidden size={14} /> : <XCircle aria-hidden size={14} />}{result.passed ? "Passed" : "Failed"}</span></div><CodeLine label="Expected" value={result.expected} /><CodeLine label="Actual" value={result.actual || result.error || "No output"} /></div>)}</div> : null}

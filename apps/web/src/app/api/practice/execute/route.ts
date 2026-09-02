@@ -173,32 +173,7 @@ if __name__ == "__main__":
 
   if (language === "java") {
     const safeCode = code.replace(/public\s+(?:final\s+)?class\s+Solution\b/, "class Solution");
-    const args = javaArguments(safeCode, functionName, assignments);
-    const call = javaCallExpression(safeCode, functionName, args);
-    return `${safeCode}
-
-class Main {
-  public static void main(String[] args) {
-    Object result = ${call};
-    System.out.println("__RESULT__" + format(result));
-  }
-
-  static String format(Object value) {
-    if (value == null) return "None";
-    if (value instanceof Boolean) return ((Boolean) value) ? "True" : "False";
-    if (value.getClass().isArray()) {
-      StringBuilder output = new StringBuilder("[");
-      int length = java.lang.reflect.Array.getLength(value);
-      for (int i = 0; i < length; i++) {
-        if (i > 0) output.append(", ");
-        output.append(format(java.lang.reflect.Array.get(value, i)));
-      }
-      return output.append("]").toString();
-    }
-    return String.valueOf(value);
-  }
-}
-`;
+    return `${safeCode}\n\n${javaRunnerSource("Main", functionName, assignments)}`;
   }
 
   const declarations = assignments.map(([, value], index) => cppArgumentDeclaration(value, index)).join("\n  ");
@@ -274,32 +249,7 @@ async function runJava(code: string, functionName: string, assignments: Array<[s
   const dir = await mkdtemp(path.join(tmpdir(), "dsa-java-"));
   const filePath = path.join(dir, "Runner.java");
   const safeCode = code.replace(/public\s+(?:final\s+)?class\s+Solution\b/, "class Solution");
-  const args = javaArguments(safeCode, functionName, assignments);
-  const call = javaCallExpression(safeCode, functionName, args);
-  const source = `${safeCode}
-
-class Runner {
-  public static void main(String[] args) {
-    Object result = ${call};
-    System.out.println("__RESULT__" + format(result));
-  }
-
-  static String format(Object value) {
-    if (value == null) return "None";
-    if (value instanceof Boolean) return ((Boolean) value) ? "True" : "False";
-    if (value.getClass().isArray()) {
-      StringBuilder output = new StringBuilder("[");
-      int length = java.lang.reflect.Array.getLength(value);
-      for (int i = 0; i < length; i++) {
-        if (i > 0) output.append(", ");
-        output.append(format(java.lang.reflect.Array.get(value, i)));
-      }
-      return output.append("]").toString();
-    }
-    return String.valueOf(value);
-  }
-}
-`;
+  const source = `${safeCode}\n\n${javaRunnerSource("Runner", functionName, assignments)}`;
 
   try {
     await writeFile(filePath, source, "utf8");
@@ -362,63 +312,201 @@ function splitTopLevel(value: string) {
   return parts.filter(Boolean);
 }
 
-function toJavaLiteral(value: string): string {
+function toJavaRawLiteral(value: string): string {
   const trimmed = value.trim();
-  if (/^-?\d+$/.test(trimmed)) return trimmed;
-  if (trimmed === "True") return "true";
-  if (trimmed === "False") return "false";
-  if (trimmed === "None" || trimmed === "null") return "null";
+  if (/^-?\d+$/.test(trimmed)) return `Long.valueOf(${JSON.stringify(trimmed)})`;
+  if (/^-?(?:\d+\.\d*|\d*\.\d+)$/.test(trimmed)) return `Double.valueOf(${JSON.stringify(trimmed)})`;
+  if (/^(?:True|true)$/.test(trimmed)) return "Boolean.TRUE";
+  if (/^(?:False|false)$/.test(trimmed)) return "Boolean.FALSE";
+  if (/^(?:None|null)$/.test(trimmed)) return "null";
   if ((trimmed.startsWith("\"") && trimmed.endsWith("\"")) || (trimmed.startsWith("'") && trimmed.endsWith("'"))) {
     return JSON.stringify(trimmed.slice(1, -1));
   }
   if (trimmed.startsWith("[") && trimmed.endsWith("]")) {
-    return `new java.util.ArrayList<>(${toJavaArraysAsList(trimmed)})`;
+    const inner = trimmed.slice(1, -1).trim();
+    if (!inner) return "new java.util.ArrayList<Object>()";
+    return `java.util.Arrays.<Object>asList(${splitTopLevel(inner).map(toJavaRawLiteral).join(", ")})`;
   }
-  return trimmed;
+  return JSON.stringify(trimmed);
 }
 
-function javaArguments(code: string, functionName: string, assignments: Array<[string, string]>) {
-  const escapedName = escapeRegExp(functionName);
-  const parameters = new RegExp(`\\b${escapedName}\\s*\\(([^)]*)\\)`).exec(code)?.[1] ?? "";
-  const types = splitJavaParameters(parameters).map((parameter) => parameter.replace(/\s+[A-Za-z_]\w*\s*$/, "").trim());
-  return assignments.map(([, value], index) => toJavaLiteralForType(value, types[index] ?? "")).join(", ");
-}
-
-function splitJavaParameters(value: string) {
-  const parts: string[] = [];
-  let genericDepth = 0;
-  let start = 0;
-  for (let index = 0; index < value.length; index += 1) {
-    if (value[index] === "<") genericDepth += 1;
-    if (value[index] === ">") genericDepth -= 1;
-    if (value[index] === "," && genericDepth === 0) {
-      parts.push(value.slice(start, index).trim());
-      start = index + 1;
+function javaRunnerSource(className: "Main" | "Runner", functionName: string, assignments: Array<[string, string]>) {
+  const rawArguments = assignments.map(([, value]) => toJavaRawLiteral(value)).join(", ");
+  return `class ${className} {
+  public static void main(String[] args) throws Exception {
+    Object[] raw = new Object[]{${rawArguments}};
+    java.lang.reflect.Method target = null;
+    for (java.lang.reflect.Method method : Solution.class.getDeclaredMethods()) {
+      if (method.getName().equals(${JSON.stringify(functionName)}) && method.getParameterCount() == raw.length) {
+        target = method;
+        break;
+      }
     }
+    if (target == null) throw new IllegalArgumentException("Function ${functionName} with " + raw.length + " parameters was not found");
+    target.setAccessible(true);
+    Class<?>[] parameterTypes = target.getParameterTypes();
+    java.lang.reflect.Type[] genericTypes = target.getGenericParameterTypes();
+    Object[] converted = new Object[raw.length];
+    for (int i = 0; i < raw.length; i++) converted[i] = convert(raw[i], parameterTypes[i], genericTypes[i]);
+    Object instance = java.lang.reflect.Modifier.isStatic(target.getModifiers()) ? null : Solution.class.getDeclaredConstructor().newInstance();
+    Object result;
+    try {
+      result = target.invoke(instance, converted);
+    } catch (java.lang.reflect.InvocationTargetException error) {
+      Throwable cause = error.getCause();
+      throw new RuntimeException(cause == null ? error.getMessage() : cause.toString(), cause);
+    }
+    System.out.println("__RESULT__" + format(result));
   }
-  parts.push(value.slice(start).trim());
-  return parts.filter(Boolean);
-}
 
-function toJavaLiteralForType(value: string, type: string) {
-  const normalizedType = type.replace(/\s+/g, "");
-  if (normalizedType.endsWith("[]") && value.trim().startsWith("[")) {
-    return `new ${normalizedType}${javaArrayInitializer(value.trim())}`;
+  static Object convert(Object value, Class<?> type, java.lang.reflect.Type genericType) throws Exception {
+    if (value == null) return null;
+    if (type == Object.class) return value;
+    if (type == int.class || type == Integer.class) return ((Number) value).intValue();
+    if (type == long.class || type == Long.class) return ((Number) value).longValue();
+    if (type == double.class || type == Double.class) return ((Number) value).doubleValue();
+    if (type == float.class || type == Float.class) return ((Number) value).floatValue();
+    if (type == short.class || type == Short.class) return ((Number) value).shortValue();
+    if (type == byte.class || type == Byte.class) return ((Number) value).byteValue();
+    if (type == boolean.class || type == Boolean.class) return value;
+    if (type == String.class) return String.valueOf(value);
+    if (type == char.class || type == Character.class) return String.valueOf(value).charAt(0);
+    if (type.isArray() && value instanceof java.util.List) {
+      java.util.List<?> source = (java.util.List<?>) value;
+      Object array = java.lang.reflect.Array.newInstance(type.getComponentType(), source.size());
+      for (int i = 0; i < source.size(); i++) {
+        java.lang.reflect.Array.set(array, i, convert(source.get(i), type.getComponentType(), type.getComponentType()));
+      }
+      return array;
+    }
+    if (java.util.Collection.class.isAssignableFrom(type) && value instanceof java.util.List) {
+      java.lang.reflect.Type itemType = Object.class;
+      if (genericType instanceof java.lang.reflect.ParameterizedType) {
+        itemType = ((java.lang.reflect.ParameterizedType) genericType).getActualTypeArguments()[0];
+      }
+      Class<?> itemClass = rawClass(itemType);
+      java.util.List<Object> output = new java.util.ArrayList<>();
+      for (Object item : (java.util.List<?>) value) output.add(convert(item, itemClass, itemType));
+      return output;
+    }
+    if (type.getSimpleName().equals("TreeNode") && value instanceof java.util.List) return buildTree((java.util.List<?>) value, type);
+    if (type.getSimpleName().equals("ListNode") && value instanceof java.util.List) return buildList((java.util.List<?>) value, type);
+    if (type.isInstance(value)) return value;
+    throw new IllegalArgumentException("Unsupported input conversion to " + type.getTypeName());
   }
-  return toJavaLiteral(value);
-}
 
-function javaArrayInitializer(value: string): string {
-  const inner = value.slice(1, -1).trim();
-  if (!inner) return "{}";
-  return `{${splitTopLevel(inner).map((item) => item.trim().startsWith("[") ? javaArrayInitializer(item.trim()) : toJavaLiteral(item)).join(", ")}}`;
-}
+  static Class<?> rawClass(java.lang.reflect.Type type) {
+    if (type instanceof Class) return (Class<?>) type;
+    if (type instanceof java.lang.reflect.ParameterizedType) {
+      java.lang.reflect.Type raw = ((java.lang.reflect.ParameterizedType) type).getRawType();
+      if (raw instanceof Class) return (Class<?>) raw;
+    }
+    return Object.class;
+  }
 
-function toJavaArraysAsList(value: string): string {
-  const inner = value.slice(1, -1).trim();
-  if (!inner) return "java.util.Arrays.asList()";
-  const values = splitTopLevel(inner).map(toJavaLiteral);
-  return `java.util.Arrays.asList(${values.join(", ")})`;
+  static Object buildTree(java.util.List<?> values, Class<?> type) throws Exception {
+    if (values.isEmpty() || values.get(0) == null) return null;
+    Object root = newNode(type, values.get(0));
+    java.util.ArrayDeque<Object> queue = new java.util.ArrayDeque<>();
+    queue.add(root);
+    int index = 1;
+    while (!queue.isEmpty() && index < values.size()) {
+      Object parent = queue.remove();
+      for (String fieldName : new String[]{"left", "right"}) {
+        if (index >= values.size()) break;
+        Object item = values.get(index++);
+        if (item != null) {
+          Object child = newNode(type, item);
+          field(type, fieldName).set(parent, child);
+          queue.add(child);
+        }
+      }
+    }
+    return root;
+  }
+
+  static Object buildList(java.util.List<?> values, Class<?> type) throws Exception {
+    Object head = null;
+    Object tail = null;
+    for (Object value : values) {
+      Object node = newNode(type, value);
+      if (head == null) head = node;
+      else field(type, "next").set(tail, node);
+      tail = node;
+    }
+    return head;
+  }
+
+  static Object newNode(Class<?> type, Object value) throws Exception {
+    Object node;
+    try {
+      java.lang.reflect.Constructor<?> constructor = type.getDeclaredConstructor(int.class);
+      constructor.setAccessible(true);
+      node = constructor.newInstance(((Number) value).intValue());
+    } catch (NoSuchMethodException missingIntConstructor) {
+      try {
+        java.lang.reflect.Constructor<?> constructor = type.getDeclaredConstructor(Integer.class);
+        constructor.setAccessible(true);
+        node = constructor.newInstance(((Number) value).intValue());
+      } catch (NoSuchMethodException missingIntegerConstructor) {
+        java.lang.reflect.Constructor<?> constructor = type.getDeclaredConstructor();
+        constructor.setAccessible(true);
+        node = constructor.newInstance();
+        java.lang.reflect.Field valueField;
+        try { valueField = field(type, "val"); } catch (NoSuchFieldException missingVal) { valueField = field(type, "value"); }
+        valueField.set(node, convert(value, valueField.getType(), valueField.getGenericType()));
+      }
+    }
+    return node;
+  }
+
+  static java.lang.reflect.Field field(Class<?> type, String name) throws Exception {
+    java.lang.reflect.Field result = type.getDeclaredField(name);
+    result.setAccessible(true);
+    return result;
+  }
+
+  static String format(Object value) throws Exception {
+    if (value == null) return "None";
+    if (value instanceof Boolean) return ((Boolean) value) ? "True" : "False";
+    if (value.getClass().isArray()) {
+      java.util.List<Object> items = new java.util.ArrayList<>();
+      for (int i = 0; i < java.lang.reflect.Array.getLength(value); i++) items.add(java.lang.reflect.Array.get(value, i));
+      return format(items);
+    }
+    if (value instanceof java.lang.Iterable) {
+      StringBuilder output = new StringBuilder("[");
+      for (Object item : (java.lang.Iterable<?>) value) {
+        if (output.length() > 1) output.append(", ");
+        output.append(format(item));
+      }
+      return output.append("]").toString();
+    }
+    if (value instanceof java.util.Map) {
+      java.util.List<String> entries = new java.util.ArrayList<>();
+      for (Object entryObject : ((java.util.Map<?, ?>) value).entrySet()) {
+        java.util.Map.Entry<?, ?> entry = (java.util.Map.Entry<?, ?>) entryObject;
+        entries.add(format(entry.getKey()) + ": " + format(entry.getValue()));
+      }
+      java.util.Collections.sort(entries);
+      return "{" + String.join(", ", entries) + "}";
+    }
+    if (value.getClass().getSimpleName().equals("ListNode")) {
+      java.util.List<Object> items = new java.util.ArrayList<>();
+      Object current = value;
+      int guard = 0;
+      while (current != null && guard++ < 10000) {
+        java.lang.reflect.Field valueField;
+        try { valueField = field(current.getClass(), "val"); } catch (NoSuchFieldException missingVal) { valueField = field(current.getClass(), "value"); }
+        items.add(valueField.get(current));
+        current = field(current.getClass(), "next").get(current);
+      }
+      return format(items);
+    }
+    return String.valueOf(value);
+  }
+}
+`;
 }
 
 function toCppLiteral(value: string): string {
@@ -442,14 +530,6 @@ function pythonCallExpression(code: string, functionName: string, args: string) 
   return /class\s+Solution\s*[:(]/.test(code)
     ? `Solution().${functionName}(${args})`
     : `${functionName}(${args})`;
-}
-
-function javaCallExpression(code: string, functionName: string, args: string) {
-  const escapedName = escapeRegExp(functionName);
-  const isStatic = new RegExp(`\\bstatic\\b[^{};]*\\b${escapedName}\\s*\\(`).test(code);
-  return isStatic
-    ? `Solution.${functionName}(${args})`
-    : `new Solution().${functionName}(${args})`;
 }
 
 function cppCallExpression(code: string, functionName: string, args: string) {
@@ -477,10 +557,6 @@ function cppLiteralType(value: string): string {
     return `vector<${itemType}>`;
   }
   return "long long";
-}
-
-function escapeRegExp(value: string) {
-  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 function normalizeValue(value: string): string {

@@ -71,7 +71,14 @@ export async function POST(request: Request) {
 
     const candidate = extractJson(answer);
     const problem = candidate ? marathonProblemSchema.safeParse(normalizeProblem(candidate, parsed.data.language, parsed.data.difficulty)) : null;
-    if (problem?.success) return NextResponse.json({ problem: problem.data });
+    if (problem?.success && isJudgeCompatible(problem.data, parsed.data.language)) {
+      return NextResponse.json({ problem: problem.data });
+    }
+    if (problem?.success) {
+      lastFailure = "The generated function used a type or program structure that the function-based judge does not accept.";
+      logger.warn("Marathon AI response violated judge contract", { attempt: attempt + 1, language: parsed.data.language });
+      continue;
+    }
     lastFailure = problem?.error.issues.map((issue) => `${issue.path.join(".")}: ${issue.message}`).slice(0, 3).join("; ") || "The AI returned malformed JSON.";
     logger.warn("Marathon AI response failed validation", { attempt: attempt + 1, reason: lastFailure });
   }
@@ -92,13 +99,38 @@ function buildContract(language: "python" | "java" | "cpp", difficulty: "easy" |
     "Required JSON keys: title, difficulty, topic, statement, inputFormat, outputFormat, constraints, functionName, testCases, hints, approach, complexity, starterCode, solutionCode.",
     "difficulty must be exactly Easy, Medium, or Hard. complexity must be {\"time\": string, \"space\": string}.",
     "Each test case must be {input, output, explanation}. Provide 3 to 5 diverse deterministic tests including edge cases.",
-    "Every test input MUST use comma-separated named assignments such as `nums=[2, 7, 11], target=9`. Values must be valid Python literals because the judge parses them.",
+    "Every test input MUST use comma-separated named assignments such as `nums=[2, 7, 11], target=9`. Values are restricted to numbers, booleans, strings, arrays, and nested arrays written as valid Python literals.",
     "The function parameters and their order MUST exactly match those named assignments in every test.",
+    "Never use TreeNode, ListNode, Node, custom classes, maps, sets, tuples, or console/stdin input. Represent trees and linked lists as arrays; use -1 as the missing-node sentinel and explain it in the input format.",
     "Outputs must match the function return value; never use console input/output.",
     `${languageRules}`,
     "starterCode and solutionCode must both be complete compiler-ready source strings for that contract. solutionCode must be correct for every stated constraint, not just samples.",
     "Use JSON escape sequences correctly inside source strings. Keep the statement precise and the solution professional.",
   ].join("\n");
+}
+
+function isJudgeCompatible(problem: { functionName: string; starterCode: string; solutionCode: string; testCases: Array<{ input: string }> }, language: "python" | "java" | "cpp") {
+  const combinedCode = `${problem.starterCode}\n${problem.solutionCode}`;
+  if (/\b(?:TreeNode|ListNode)\b|\bNode\s*[*&]?\s+[A-Za-z_]/.test(combinedCode)) return false;
+  if (language === "java" && /\b(?:Map|HashMap|Set|HashSet)\s*</.test(combinedCode)) return false;
+  if (language === "python" && (/\binput\s*\(/.test(combinedCode) || /if\s+__name__\s*==/.test(combinedCode))) return false;
+  if (language === "java" && /\bclass\s+Main\b|\bstatic\s+void\s+main\s*\(/.test(combinedCode)) return false;
+  if (language === "cpp" && /\bint\s+main\s*\(/.test(combinedCode)) return false;
+  const functionPattern = new RegExp(`\\b${escapeRegExp(problem.functionName)}\\s*\\(`);
+  if (!functionPattern.test(problem.starterCode) || !functionPattern.test(problem.solutionCode)) return false;
+  return problem.testCases.every((test) => hasNamedAssignments(test.input));
+}
+
+function hasNamedAssignments(input: string) {
+  let depth = 0;
+  let hasEquals = false;
+  for (const character of input) {
+    if (character === "[" || character === "(" || character === "{") depth += 1;
+    if (character === "]" || character === ")" || character === "}") depth -= 1;
+    if (character === "=" && depth === 0) hasEquals = true;
+    if (depth < 0) return false;
+  }
+  return depth === 0 && hasEquals;
 }
 
 function extractJson(answer: string): unknown | null {
@@ -212,4 +244,8 @@ function readString(source: Record<string, unknown> | null, ...keys: string[]) {
 
 function capitalize(value: string) {
   return value.charAt(0).toUpperCase() + value.slice(1);
+}
+
+function escapeRegExp(value: string) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
