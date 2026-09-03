@@ -8,11 +8,18 @@ import {
   Sparkles,
   Target,
 } from "lucide-react";
+import type { Metadata } from "next";
 
 import { GoogleSignInButton } from "@/components/auth/google-sign-in-button";
 import { LandingPrimaryActions, SignInCallout } from "@/components/auth/landing-auth-guide";
 import { BrandLockup } from "@/components/brand/brand-logo";
 import { getCurrentSession } from "@/lib/session";
+
+export const metadata: Metadata = {
+  title: "Sign in",
+  alternates: { canonical: "/sign-in" },
+  robots: { index: false, follow: false },
+};
 
 export default async function SignInPage() {
   const session = await getCurrentSession();
@@ -82,7 +89,7 @@ export default async function SignInPage() {
                   <div className="rounded-3xl border border-border bg-card/58 p-5 shadow-xl shadow-slate-900/8 dark:border-white/10 dark:bg-white/[0.06] dark:shadow-black/10">
                     <div className="mb-5 max-w-md">
                       <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-cyan-700 dark:text-cyan-200">Learning flow</p>
-                      <h3 className="mt-1 text-base font-black leading-snug tracking-normal sm:text-lg">From concept to confident practice</h3>
+                      <h2 className="mt-1 text-base font-black leading-snug tracking-normal sm:text-lg">From concept to confident practice</h2>
                     </div>
                     <div className="relative grid gap-2 sm:grid-cols-5">
                       <div className="absolute left-10 right-10 top-[1.55rem] hidden h-0.5 bg-gradient-to-r from-teal-500 via-cyan-500 to-violet-500 dark:from-teal-300 dark:via-cyan-300 dark:to-violet-300 sm:block" />
