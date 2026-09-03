@@ -47,8 +47,9 @@ export async function generateWithGeminiFallback(request: AiRequest, options: Ge
 
       if (!response.ok) {
         lastError = new Error(`Gemini fallback failed with ${response.status}`);
-        if ([429, 500, 502, 503, 504].includes(response.status)) continue;
-        break;
+        // A key can be expired, restricted, or misconfigured independently of
+        // the others. Always rotate before declaring the provider unavailable.
+        continue;
       }
 
       const data = (await response.json()) as {

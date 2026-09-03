@@ -48,10 +48,8 @@ class GeminiClient:
                         except httpx.HTTPStatusError as error:
                             status = error.response.status_code
                             last_error = error
-                            if status not in {429, 500, 502, 503, 504}:
-                                raise ApplicationError("AI request was rejected by Gemini", status_code=502) from error
                             logger.warning(
-                                "Gemini retryable failure: status=%s round=%s key=%s",
+                                "Gemini key failure: status=%s round=%s key=%s",
                                 status,
                                 retry_round + 1,
                                 key_index + 1,
