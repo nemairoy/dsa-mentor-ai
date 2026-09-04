@@ -1,5 +1,6 @@
 import { betterAuth } from "better-auth";
 import { nextCookies } from "better-auth/next-js";
+import { admin } from "better-auth/plugins";
 import { Pool } from "pg";
 
 import { env } from "@/infrastructure/config/env";
@@ -31,12 +32,6 @@ export const auth = betterAuth({
   session: {
     expiresIn: 60 * 60 * 8,
     updateAge: 60 * 60,
-    cookieCache: {
-      enabled: true,
-      // Avoid a database round-trip on every server-rendered page while keeping
-      // revocation and profile changes short-lived across devices.
-      maxAge: 2 * 60,
-    },
   },
   databaseHooks: {
     session: {
@@ -67,7 +62,7 @@ export const auth = betterAuth({
       clientSecret: env.GOOGLE_CLIENT_SECRET,
     },
   },
-  plugins: [nextCookies()],
+  plugins: [admin({ bannedUserMessage: "This account has been blocked. Please contact the administrator." }), nextCookies()],
 });
 
 export type Session = typeof auth.$Infer.Session;
