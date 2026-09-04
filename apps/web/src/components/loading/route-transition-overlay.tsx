@@ -25,16 +25,30 @@ export function RouteTransitionOverlay() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [pending, setPending] = useState(false);
+  const delayRef = useRef<number | null>(null);
   const timeoutRef = useRef<number | null>(null);
 
   function showPending() {
-    setPending(true);
+    if (delayRef.current) window.clearTimeout(delayRef.current);
     if (timeoutRef.current) window.clearTimeout(timeoutRef.current);
-    timeoutRef.current = window.setTimeout(() => setPending(false), 10_000);
+    // Fast prefetched navigations should feel instant instead of flashing a
+    // full-screen loader. Slow transitions still receive clear feedback.
+    delayRef.current = window.setTimeout(() => {
+      setPending(true);
+      delayRef.current = null;
+    }, 180);
+    timeoutRef.current = window.setTimeout(() => {
+      setPending(false);
+      timeoutRef.current = null;
+    }, 10_000);
   }
 
   useEffect(() => {
     window.queueMicrotask(() => setPending(false));
+    if (delayRef.current) {
+      window.clearTimeout(delayRef.current);
+      delayRef.current = null;
+    }
     if (timeoutRef.current) {
       window.clearTimeout(timeoutRef.current);
       timeoutRef.current = null;
@@ -56,6 +70,7 @@ export function RouteTransitionOverlay() {
     return () => {
       document.removeEventListener("click", onClick, true);
       window.removeEventListener(routeTransitionStartEvent, onProgrammaticTransition);
+      if (delayRef.current) window.clearTimeout(delayRef.current);
       if (timeoutRef.current) window.clearTimeout(timeoutRef.current);
     };
   }, []);

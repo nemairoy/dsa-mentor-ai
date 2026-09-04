@@ -36,9 +36,11 @@ export class AdminService {
     if (cached && cached.expiresAt > Date.now()) {
       return cached.value;
     }
+    if (cached) this.principalCache.delete(userId);
+    this.prunePrincipalCache();
 
     const value = this.repository.getPrincipal(userId);
-    this.principalCache.set(userId, { expiresAt: Date.now() + 10_000, value });
+    this.principalCache.set(userId, { expiresAt: Date.now() + 60_000, value });
     value.catch(() => this.principalCache.delete(userId));
     return value;
   }
@@ -93,6 +95,18 @@ export class AdminService {
       principal.permissions.includes(permission) ||
       principal.permissions.some((item) => item.endsWith(":*") && permission.startsWith(item.replace("*", "")))
     );
+  }
+
+  private prunePrincipalCache() {
+    const now = Date.now();
+    for (const [key, entry] of this.principalCache) {
+      if (entry.expiresAt <= now) this.principalCache.delete(key);
+    }
+    while (this.principalCache.size >= 250) {
+      const oldestKey = this.principalCache.keys().next().value as string | undefined;
+      if (!oldestKey) break;
+      this.principalCache.delete(oldestKey);
+    }
   }
 }
 
