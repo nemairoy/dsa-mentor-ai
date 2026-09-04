@@ -17,6 +17,9 @@ const serverEnvSchema = z.object({
   ),
   DATABASE_POOLER_PORT: z.coerce.number().int().positive().default(5432),
   API_BASE_URL: z.string().url().default("http://localhost:8000"),
+  ADMIN_EMAIL: z.string().email().optional(),
+  ADMIN_PASSWORD_HASH: z.string().min(1).optional(),
+  ADMIN_SESSION_SECRET: z.string().min(32).optional(),
 });
 
 export const env = serverEnvSchema.parse(process.env);

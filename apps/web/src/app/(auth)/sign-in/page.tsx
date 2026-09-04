@@ -9,6 +9,7 @@ import {
   Target,
 } from "lucide-react";
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import { GoogleSignInButton } from "@/components/auth/google-sign-in-button";
 import { LandingPrimaryActions, SignInCallout } from "@/components/auth/landing-auth-guide";
@@ -33,8 +34,9 @@ export default async function SignInPage() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_16%_18%,rgba(20,184,166,0.18),transparent_30%),radial-gradient(circle_at_84%_14%,rgba(37,99,235,0.14),transparent_28%),linear-gradient(135deg,#f8fafc,#eef7f4_45%,#eaf1ff)] dark:bg-[radial-gradient(circle_at_18%_18%,rgba(20,184,166,0.18),transparent_30%),radial-gradient(circle_at_82%_12%,rgba(96,165,250,0.16),transparent_28%),linear-gradient(135deg,#050914,#09111f_48%,#071523)]" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 
-      <div className="relative z-10 mx-auto flex max-w-7xl items-center justify-between">
+      <div className="relative z-10 mx-auto flex max-w-7xl items-center justify-between gap-3">
         <BrandLockup />
+        <Link href="/admin-login" className="shrink-0 rounded-lg border border-border bg-card/70 px-3 py-2 text-xs font-semibold text-muted-foreground backdrop-blur hover:text-foreground">Admin login</Link>
       </div>
 
       <section className="relative z-10 mx-auto grid w-full min-w-0 max-w-full items-center gap-8 py-7 lg:min-h-[calc(100vh-82px)] lg:max-w-7xl lg:grid-cols-[0.86fr_1.14fr] lg:py-8">
