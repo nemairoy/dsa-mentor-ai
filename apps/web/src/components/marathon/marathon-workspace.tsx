@@ -1,8 +1,9 @@
 "use client";
 
 import { Bot, Check, CheckCircle2, Clipboard, Code2, Lightbulb, Loader2, Play, RotateCcw, Send, Sparkles, XCircle } from "lucide-react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
+import { SmartCodeEditor } from "@/components/code-editor/smart-code-editor";
 import { Button } from "@/components/ui/button";
 import { languageLabels, type MarathonLanguage, type MarathonProblem } from "@/core/marathon/marathon";
 import { cn } from "@/lib/utils";
@@ -25,7 +26,6 @@ export function MarathonWorkspace() {
   const [hintCount, setHintCount] = useState(0);
   const [showSolution, setShowSolution] = useState(false);
   const [copied, setCopied] = useState(false);
-  const codeEditorRef = useRef<HTMLTextAreaElement>(null);
 
   const storageKey = useMemo(() => problem ? `marathon:${language}:${problem.functionName}:${problem.title}` : "", [language, problem]);
 
@@ -104,8 +104,9 @@ export function MarathonWorkspace() {
     setResults([]);
     setError("");
     window.requestAnimationFrame(() => {
-      codeEditorRef.current?.focus({ preventScroll: false });
-      codeEditorRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+      const editor = document.getElementById("marathon-code-editor");
+      editor?.scrollIntoView({ behavior: "smooth", block: "center" });
+      editor?.querySelector<HTMLElement>(".cm-content")?.focus({ preventScroll: true });
     });
   }
 
@@ -176,7 +177,7 @@ export function MarathonWorkspace() {
         <PanelHeader icon={Code2} title={`${languageLabels[language]} Compiler`} subtitle={problem ? `Function: ${problem.functionName}` : "Generate a problem to begin"} tone="sky" />
         <div className="space-y-3 p-3 sm:p-4">
           <div className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-border bg-background px-3 py-2 text-xs text-muted-foreground"><span>Autosaves on this device</span><button type="button" disabled={!problem} onClick={() => { if (problem) loadInCompiler(problem.starterCode); }} className="inline-flex min-h-8 items-center gap-1.5 font-medium hover:text-foreground disabled:opacity-40"><RotateCcw aria-hidden size={13} />Reset starter</button></div>
-          <textarea ref={codeEditorRef} value={code} onChange={(event) => setCode(event.target.value)} disabled={!problem} spellCheck={false} aria-label="Code editor" placeholder="Your generated starter code will appear here..." className="min-h-[430px] w-full resize-y rounded-xl border border-slate-700 bg-[#0b1220] p-4 font-mono text-[13px] leading-6 text-slate-100 outline-none placeholder:text-slate-500 focus:ring-2 focus:ring-emerald-500 disabled:cursor-not-allowed sm:min-h-[520px]" />
+          <SmartCodeEditor id="marathon-code-editor" value={code} language={language} onChange={setCode} disabled={!problem} ariaLabel={`${languageLabels[language]} code editor`} placeholder="Your generated starter code will appear here..." minHeight="min(520px, 58vh)" />
           <Button type="button" className="w-full" disabled={!problem || running || !code.trim()} onClick={() => void runCode()}>{running ? <Loader2 aria-hidden className="animate-spin" size={16} /> : <Play aria-hidden size={16} />}{running ? "Running samples..." : "Run all test cases"}</Button>
           {error ? <p role="alert" className="rounded-xl border border-destructive/30 bg-destructive/10 p-3 text-sm text-destructive">{error}</p> : null}
           {results.length ? <div className="space-y-2"><div className={cn("rounded-xl border p-3 text-sm font-semibold", allPassed ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-700 dark:text-emerald-200" : "border-amber-500/40 bg-amber-500/10 text-amber-700 dark:text-amber-200")}>{allPassed ? "Excellent — all test cases passed." : "Some test cases failed. Review the results below."}</div>{results.map((result) => <div key={result.sample} className="rounded-xl border border-border bg-background p-3 text-xs"><div className="flex items-center justify-between"><strong>Test {result.sample}</strong><span className={cn("inline-flex items-center gap-1 font-semibold", result.passed ? "text-emerald-600" : "text-destructive")}>{result.passed ? <CheckCircle2 aria-hidden size={14} /> : <XCircle aria-hidden size={14} />}{result.passed ? "Passed" : "Failed"}</span></div><CodeLine label="Expected" value={result.expected} /><CodeLine label="Actual" value={result.actual || result.error || "No output"} /></div>)}</div> : null}

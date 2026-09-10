@@ -4,6 +4,7 @@ import { Bot, CheckCircle2, Code2, Loader2, Play, Save, XCircle } from "lucide-r
 import { useEffect, useMemo, useState } from "react";
 
 import { Button } from "@/components/ui/button";
+import { SmartCodeEditor } from "@/components/code-editor/smart-code-editor";
 import type { PracticeProblem } from "@/core/intelligence/domain/intelligence";
 import { cn } from "@/lib/utils";
 
@@ -180,12 +181,7 @@ export function PracticeCodeRunner({ problem, onValidateWithAi }: PracticeCodeRu
           <span>{problem.testCases.length} samples</span>
         </div>
 
-        <textarea
-          value={code}
-          onChange={(event) => setCode(event.target.value)}
-          spellCheck={false}
-          className="min-h-[360px] w-full resize-y rounded-xl border border-border bg-background p-3 font-mono text-xs leading-5 outline-none focus:ring-2 focus:ring-ring xl:min-h-[420px]"
-        />
+        <SmartCodeEditor value={code} language={language} onChange={setCode} ariaLabel={`${languages.find((item) => item.id === language)?.label} practice code editor`} minHeight="min(420px, 55vh)" />
 
         <div className="grid gap-2 sm:grid-cols-2">
           <Button type="button" variant="outline" disabled={running} onClick={() => void runSamples()}>
