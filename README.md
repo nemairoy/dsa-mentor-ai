@@ -18,6 +18,7 @@ An end-to-end DSA learning platform that combines a structured 385-lesson roadma
 ## Product highlights
 
 - **Structured curriculum:** 37 chapters and 385 lessons with theory, diagrams, guided examples, code, complexity analysis, quizzes, revision, and related practice.
+- **Public learning library:** crawlable topic and lesson pages with unique metadata, canonical URLs, structured data, and a generated sitemap.
 - **Coding Marathon:** an AI problem setter beside a Judge0-backed compiler, with validated test cases, hints, autosaved drafts, and copy-ready solutions.
 - **AI tutor:** lesson-aware explanations, follow-up help, code review, complete fenced solutions, and retrieval from the indexed knowledge base.
 - **Practice workspace:** Python, Java, and C++ execution with per-test results and AI-assisted validation.
@@ -31,7 +32,7 @@ An end-to-end DSA learning platform that combines a structured 385-lesson roadma
 | --- | --- |
 | ![DSA Mentor AI desktop sign-in](docs/screenshots/sign-in-desktop.png) | ![DSA Mentor AI mobile sign-in](docs/screenshots/sign-in-mobile.png) |
 
-Authenticated product screens contain personal data, so the public repository only includes the sign-in experience. Use the live application with Google OAuth to review the full workspace.
+Authenticated product screens contain personal data, so screenshots are limited to the sign-in experience. The public learning library can be reviewed without an account; use Google OAuth to review the private workspace.
 
 ## Architecture
 
@@ -156,6 +157,7 @@ CI runs on every pull request and every push to `main`.
 - Both services share the PostgreSQL database and internal API credential.
 - RAG indexing starts automatically and uses a low-memory embedding backend suitable for the deployed API instance.
 - Judge0 executes untrusted student code outside the web/API processes.
+- The web app publishes `/robots.txt`, `/sitemap.xml`, and public `/topics/...` lesson URLs. Set the optional `GOOGLE_SITE_VERIFICATION` Vercel environment variable when using Google Search Console HTML-tag verification, then submit `/sitemap.xml` in Search Console.
 
 Follow the [Deployment Guide](docs/DEPLOYMENT_GUIDE.md) for environment variables, migrations, health checks, and rollback verification.
 

@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 import { AppShell } from "@/components/layout/app-shell";
 import { IdleSessionGuard } from "@/components/auth/idle-session-guard";
 import { adminService } from "@/core/admin/admin-container";
@@ -5,6 +7,10 @@ import { profileService } from "@/core/profile/profile-container";
 import { requireSession } from "@/lib/session";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
 
 export default async function ProtectedLayout({ children }: { children: React.ReactNode }) {
   const session = await requireSession();

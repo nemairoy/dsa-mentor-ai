@@ -29,6 +29,9 @@ export const metadata: Metadata = {
   },
   description: "AI-powered DSA learning platform with lessons, RAG, visualizations, practice, and learning intelligence.",
   applicationName: "DSA Mentor AI",
+  authors: [{ name: "Nemai Roy" }],
+  creator: "Nemai Roy",
+  publisher: "Nemai Roy",
   manifest: "/manifest.webmanifest",
   icons: {
     icon: [
@@ -38,13 +41,9 @@ export const metadata: Metadata = {
     shortcut: "/icon.svg?v=2",
     apple: "/icons/apple-touch-icon.png?v=3",
   },
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     title: "DSA Mentor AI",
     description: "AI-powered DSA learning platform.",
-    url: "/",
     siteName: "DSA Mentor AI",
     type: "website",
   },
@@ -53,6 +52,9 @@ export const metadata: Metadata = {
     title: "DSA Mentor AI",
     description: "AI-powered DSA learning platform.",
   },
+  verification: process.env.GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.GOOGLE_SITE_VERIFICATION }
+    : undefined,
 };
 
 export const viewport: Viewport = {
