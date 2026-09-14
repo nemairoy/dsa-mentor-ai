@@ -52,6 +52,13 @@ export default async function SignInPage() {
             Follow structured topics, understand concepts visually, and practice with focused AI support.
           </p>
           <LandingPrimaryActions />
+          <Link
+            href="/topics"
+            className="mt-4 inline-flex items-center gap-2 text-xs font-semibold text-teal-300 transition hover:text-teal-200 hover:underline sm:text-sm"
+          >
+            <BookOpen aria-hidden={true} size={15} />
+            Explore free DSA topics without signing in
+          </Link>
           <div className="mt-7 grid min-w-0 gap-3 sm:grid-cols-3">
             {[
               { icon: BookOpen, label: "Structured roadmap", value: "Topic-based flow" },
