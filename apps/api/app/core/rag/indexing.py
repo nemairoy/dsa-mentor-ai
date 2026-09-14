@@ -1,6 +1,7 @@
 import hashlib
 import json
 from pathlib import Path
+from threading import RLock
 
 from app.core.config import settings
 from app.core.rag.chunking import ContentChunk, SemanticMarkdownChunker
@@ -22,8 +23,13 @@ class RagIndexingService:
         self._embeddings = embeddings
         self._vector_store = vector_store
         self._manifest_path = Path(settings.chroma_persist_dir) / "index_manifest.json"
+        self._lock = RLock()
 
     def rebuild(self) -> dict[str, int]:
+        with self._lock:
+            return self._rebuild()
+
+    def _rebuild(self) -> dict[str, int]:
         documents = self._loader.load()
         self._vector_store.rebuild()
         manifest: dict[str, str] = {}
@@ -43,6 +49,10 @@ class RagIndexingService:
         return {"lessons": len(documents), "chunks": len(chunks)}
 
     def incremental_update(self) -> dict[str, int]:
+        with self._lock:
+            return self._incremental_update()
+
+    def _incremental_update(self) -> dict[str, int]:
         documents = self._loader.load()
         manifest = self._read_manifest()
         next_manifest: dict[str, str] = {}
@@ -66,12 +76,13 @@ class RagIndexingService:
         return {"lessons": lessons_updated, "chunks": chunks_indexed, "removed": len(removed_lessons)}
 
     def status(self) -> dict[str, int | str]:
-        manifest = self._read_manifest()
-        return {
-            "collection": settings.chroma_collection,
-            "chunks": self._vector_store.count(),
-            "indexed_lessons": len(manifest),
-        }
+        with self._lock:
+            manifest = self._read_manifest()
+            return {
+                "collection": settings.chroma_collection,
+                "chunks": self._vector_store.count(),
+                "indexed_lessons": len(manifest),
+            }
 
     def _index_document(self, document: LessonDocument) -> int:
         chunks = self._chunker.chunk(document)

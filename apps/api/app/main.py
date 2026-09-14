@@ -19,10 +19,13 @@ from app.core.rag.container import rag_indexing_service
 
 async def bootstrap_rag_index() -> None:
     try:
+        # Keep filesystem and Chroma work off the event loop and out of the
+        # request path. Rebuild a missing collection; otherwise synchronize
+        # content changes once during startup.
         status = await asyncio.to_thread(rag_indexing_service.status)
-        if int(status["chunks"]) == 0:
-            result = await asyncio.to_thread(rag_indexing_service.rebuild)
-            logger.info("Bootstrapped RAG index: %s", result)
+        operation = rag_indexing_service.rebuild if int(status["chunks"]) == 0 else rag_indexing_service.incremental_update
+        result = await asyncio.to_thread(operation)
+        logger.info("Synchronized RAG index: %s", result)
     except Exception:
         logger.exception("RAG index bootstrap failed")
 

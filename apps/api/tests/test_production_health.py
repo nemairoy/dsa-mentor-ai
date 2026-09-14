@@ -26,7 +26,7 @@ class ProductionHealthTests(unittest.IsolatedAsyncioTestCase):
     async def test_liveness_does_not_depend_on_database(self) -> None:
         self.assertEqual((await liveness_check())["status"], "ok")
 
-    async def test_empty_rag_index_is_bootstrapped(self) -> None:
+    async def test_empty_rag_index_is_rebuilt_at_startup(self) -> None:
         with (
             patch.object(rag_indexing_service, "status", return_value={"chunks": 0}),
             patch.object(rag_indexing_service, "rebuild", return_value={"lessons": 385, "chunks": 900}) as rebuild,
@@ -35,14 +35,18 @@ class ProductionHealthTests(unittest.IsolatedAsyncioTestCase):
 
         rebuild.assert_called_once_with()
 
-    async def test_populated_rag_index_is_not_rebuilt(self) -> None:
+    async def test_existing_rag_index_is_synchronized_at_startup(self) -> None:
         with (
             patch.object(rag_indexing_service, "status", return_value={"chunks": 900}),
-            patch.object(rag_indexing_service, "rebuild") as rebuild,
+            patch.object(
+                rag_indexing_service,
+                "incremental_update",
+                return_value={"lessons": 0, "chunks": 0, "removed": 0},
+            ) as synchronize,
         ):
             await bootstrap_rag_index()
 
-        rebuild.assert_not_called()
+        synchronize.assert_called_once_with()
 
     async def test_slow_database_does_not_block_application_startup(self) -> None:
         database_never_connects = asyncio.Event()

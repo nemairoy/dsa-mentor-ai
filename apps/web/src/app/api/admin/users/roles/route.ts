@@ -14,9 +14,19 @@ export async function POST(request: Request) {
   const session = await getCurrentSession();
   if (!session) return NextResponse.json({ detail: "Authentication is required" }, { status: 401 });
 
-  await adminService.requireAdmin(session.user.id, "users:read");
-  const body = bodySchema.parse(await request.json());
+  const principal = await adminService.getPrincipal(session.user.id);
+  if (!principal || principal.role !== "super_administrator") {
+    return NextResponse.json({ detail: "Only a super administrator can change user roles" }, { status: 403 });
+  }
+
+  const parsed = bodySchema.safeParse(await request.json().catch(() => null));
+  if (!parsed.success) {
+    return NextResponse.json({ detail: "Enter a valid user and role" }, { status: 400 });
+  }
+  const body = parsed.data;
+  if (body.userId === session.user.id) {
+    return NextResponse.json({ detail: "You cannot change your own administrator role" }, { status: 400 });
+  }
   await adminService.assignRole(session.user.id, body.userId, body.roleId);
   return NextResponse.json({ ok: true });
 }
-

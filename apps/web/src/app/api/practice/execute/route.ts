@@ -7,6 +7,8 @@ import { promisify } from "node:util";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
+import { parseJsonRequest } from "@/lib/parse-json-request";
+import { rateLimit } from "@/lib/rate-limit";
 import { getCurrentSession } from "@/lib/session";
 
 export const runtime = "nodejs";
@@ -45,7 +47,17 @@ export async function POST(request: Request) {
     return NextResponse.json({ detail: "Authentication is required" }, { status: 401 });
   }
 
-  const body = executeSchema.parse(await request.json());
+  const parsed = await parseJsonRequest(request, executeSchema, "Enter valid code and test cases");
+  if (!parsed.success) return parsed.response;
+  const body = parsed.data;
+
+  const limit = await rateLimit(`code-execution:${session.user.id}`, 10, 60_000);
+  if (!limit.allowed) {
+    return NextResponse.json(
+      { detail: "Too many code executions. Please wait briefly and try again." },
+      { status: 429, headers: { "Retry-After": String(limit.retryAfterSeconds ?? 60) } },
+    );
+  }
   const results = await Promise.all(body.testCases.map((testCase, index) =>
     runOneSample(body.language, body.code, body.functionName, testCase.input, testCase.output, index + 1),
   ));
@@ -83,7 +95,7 @@ async function runOneSample(language: "python" | "java" | "cpp", code: string, f
 }
 
 function shouldUseLocalRunner() {
-  return process.env.CODE_EXECUTION_PROVIDER === "local";
+  return process.env.NODE_ENV !== "production" && process.env.CODE_EXECUTION_PROVIDER === "local";
 }
 
 async function runWithLocalRunner(language: "python" | "java" | "cpp", code: string, functionName: string, assignments: Array<[string, string]>) {

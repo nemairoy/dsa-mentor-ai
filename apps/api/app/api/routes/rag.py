@@ -1,3 +1,5 @@
+import asyncio
+
 from fastapi import APIRouter, Depends, Header
 
 from app.core.errors import ApplicationError
@@ -17,17 +19,17 @@ router = APIRouter(dependencies=[Depends(require_internal_api)])
 
 @router.post("/index/rebuild")
 async def rebuild_index() -> dict[str, int]:
-    return rag_indexing_service.rebuild()
+    return await asyncio.to_thread(rag_indexing_service.rebuild)
 
 
 @router.post("/index/incremental")
 async def incremental_index() -> dict[str, int]:
-    return rag_indexing_service.incremental_update()
+    return await asyncio.to_thread(rag_indexing_service.incremental_update)
 
 
 @router.get("/index/status", response_model=IndexStatus)
 async def index_status() -> dict[str, int | str]:
-    return rag_indexing_service.status()
+    return await asyncio.to_thread(rag_indexing_service.status)
 
 
 @router.post("/query", response_model=RagQueryResponse)
@@ -43,11 +45,11 @@ async def answer_question(
 
 @router.post("/search", response_model=SearchResponse)
 async def search(request: SearchRequest) -> SearchResponse:
-    rag_indexing_service.incremental_update()
-    return SearchResponse(results=retrieval_service.search(request))
+    results = await asyncio.to_thread(retrieval_service.search, request)
+    return SearchResponse(results=results)
 
 
 @router.post("/related", response_model=RelatedContentResponse)
 async def related_content(request: SearchRequest) -> RelatedContentResponse:
-    rag_indexing_service.incremental_update()
-    return RelatedContentResponse(related=retrieval_service.search(request))
+    related = await asyncio.to_thread(retrieval_service.search, request)
+    return RelatedContentResponse(related=related)

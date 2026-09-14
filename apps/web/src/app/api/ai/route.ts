@@ -4,6 +4,7 @@ import { aiRequestSchema } from "@/core/ai/domain/ai";
 import { logger } from "@/infrastructure/logging/logger";
 import { generateWithGeminiFallback } from "@/lib/gemini-fallback";
 import { internalApiFetch } from "@/lib/internal-api";
+import { parseJsonRequest } from "@/lib/parse-json-request";
 import { validatePromptSafety } from "@/lib/prompt-guard";
 import { rateLimit } from "@/lib/rate-limit";
 import { getCurrentSession } from "@/lib/session";
@@ -14,7 +15,9 @@ export async function POST(request: Request) {
     return NextResponse.json({ detail: "Authentication is required" }, { status: 401 });
   }
 
-  const body = aiRequestSchema.parse(await request.json());
+  const parsed = await parseJsonRequest(request, aiRequestSchema);
+  if (!parsed.success) return parsed.response;
+  const body = parsed.data;
   const limit = await rateLimit(`ai:${session.user.id}`, 30, 60_000);
   if (!limit.allowed) {
     return NextResponse.json({ detail: "Rate limit exceeded" }, { status: 429 });

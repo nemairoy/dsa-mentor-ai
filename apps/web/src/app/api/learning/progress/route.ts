@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { progressInputSchema } from "@/core/learning/domain/learning";
 import { learningService } from "@/core/learning/learning-container";
 import { logger } from "@/infrastructure/logging/logger";
+import { parseJsonRequest } from "@/lib/parse-json-request";
 import { getCurrentSession } from "@/lib/session";
 
 export async function POST(request: Request) {
@@ -12,7 +13,9 @@ export async function POST(request: Request) {
       return NextResponse.json({ detail: "Authentication is required" }, { status: 401 });
     }
 
-    const body = progressInputSchema.parse(await request.json());
+    const parsed = await parseJsonRequest(request, progressInputSchema);
+    if (!parsed.success) return parsed.response;
+    const body = parsed.data;
     const progress = await learningService.updateProgress(session.user.id, body);
 
     return NextResponse.json({ progress });

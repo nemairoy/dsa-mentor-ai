@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { ragSearchSchema } from "@/core/rag/domain/rag";
 import { logger } from "@/infrastructure/logging/logger";
 import { internalApiFetch } from "@/lib/internal-api";
+import { parseJsonRequest } from "@/lib/parse-json-request";
 import { rateLimit } from "@/lib/rate-limit";
 import { getCurrentSession } from "@/lib/session";
 
@@ -12,7 +13,9 @@ export async function POST(request: Request) {
     return NextResponse.json({ detail: "Authentication is required" }, { status: 401 });
   }
 
-  const body = ragSearchSchema.parse(await request.json());
+  const parsed = await parseJsonRequest(request, ragSearchSchema);
+  if (!parsed.success) return parsed.response;
+  const body = parsed.data;
   const limit = await rateLimit(`rag-search:${session.user.id}`, 120, 60_000);
   if (!limit.allowed) {
     return NextResponse.json({ detail: "Rate limit exceeded" }, { status: 429 });

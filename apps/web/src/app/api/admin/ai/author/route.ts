@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { adminService } from "@/core/admin/admin-container";
 import { aiAuthoringSchema } from "@/core/admin/domain/admin";
 import { internalApiFetch } from "@/lib/internal-api";
+import { parseJsonRequest } from "@/lib/parse-json-request";
 import { validatePromptSafety } from "@/lib/prompt-guard";
 import { rateLimit } from "@/lib/rate-limit";
 import { getCurrentSession } from "@/lib/session";
@@ -12,7 +13,9 @@ export async function POST(request: Request) {
   if (!session) return NextResponse.json({ detail: "Authentication is required" }, { status: 401 });
 
   await adminService.requireAdmin(session.user.id, "ai:author");
-  const body = aiAuthoringSchema.parse(await request.json());
+  const parsed = await parseJsonRequest(request, aiAuthoringSchema);
+  if (!parsed.success) return parsed.response;
+  const body = parsed.data;
   const limit = await rateLimit(`admin-ai:${session.user.id}`, 20, 60_000);
   if (!limit.allowed) {
     return NextResponse.json({ detail: "Rate limit exceeded" }, { status: 429 });

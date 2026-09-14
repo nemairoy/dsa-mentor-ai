@@ -14,7 +14,7 @@ export async function POST(request: Request) {
   const session = await getCurrentSession();
   if (!session) return NextResponse.json({ detail: "Authentication is required" }, { status: 401 });
 
-  const parsed = marathonRequestSchema.safeParse(await request.json());
+  const parsed = marathonRequestSchema.safeParse(await request.json().catch(() => null));
   if (!parsed.success) return NextResponse.json({ detail: "Choose a language, difficulty, and describe the problem you want." }, { status: 400 });
 
   const safety = validatePromptSafety(parsed.data.request);

@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 
 import { animationIntentResolver } from "@/core/visualization/ai/animation-intent-resolver";
+import { parseJsonRequest } from "@/lib/parse-json-request";
 import { getCurrentSession } from "@/lib/session";
 
 const bodySchema = z.object({
@@ -14,7 +15,9 @@ export async function POST(request: Request) {
     return NextResponse.json({ detail: "Authentication is required" }, { status: 401 });
   }
 
-  const body = bodySchema.parse(await request.json());
+  const parsed = await parseJsonRequest(request, bodySchema);
+  if (!parsed.success) return parsed.response;
+  const body = parsed.data;
   const animation = animationIntentResolver.resolve(body.query);
 
   if (!animation) {
@@ -28,4 +31,3 @@ export async function POST(request: Request) {
     },
   });
 }
-

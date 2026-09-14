@@ -1,3 +1,5 @@
+import asyncio
+
 from app.core.ai.gemini_client import GeminiClient
 from app.core.chat.repository import ChatHistoryRepository
 from app.core.config import settings
@@ -23,8 +25,8 @@ class RagQuestionAnsweringService:
         self._chat_history = chat_history
 
     async def answer(self, user_id: str, request: RagQueryRequest) -> RagQueryResponse:
-        self._indexing.incremental_update()
-        rows = self._retrieval.retrieve_for_question(
+        rows = await asyncio.to_thread(
+            self._retrieval.retrieve_for_question,
             question=request.question,
             chapter_slug=request.chapter_slug,
             lesson_slug=request.lesson_slug,
