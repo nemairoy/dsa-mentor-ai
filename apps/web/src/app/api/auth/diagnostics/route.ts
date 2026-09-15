@@ -51,12 +51,13 @@ export async function GET() {
       },
     });
   } catch (error) {
+    console.error("Auth diagnostics database check failed", error);
     return NextResponse.json(
       {
         ok: false,
         env,
         database: "error",
-        error: error instanceof Error ? error.message : "Unknown database error",
+        error: "Database health check failed",
       },
       { status: 500 },
     );
