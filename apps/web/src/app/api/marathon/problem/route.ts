@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+import { executeCodeSamples } from "@/app/api/practice/execute/route";
 import { marathonProblemSchema, marathonRequestSchema } from "@/core/marathon/marathon";
 import { logger } from "@/infrastructure/logging/logger";
 import { generateWithGeminiFallback } from "@/lib/gemini-fallback";
@@ -72,7 +73,16 @@ export async function POST(request: Request) {
     const candidate = extractJson(answer);
     const problem = candidate ? marathonProblemSchema.safeParse(normalizeProblem(candidate, parsed.data.language, parsed.data.difficulty)) : null;
     if (problem?.success && isJudgeCompatible(problem.data, parsed.data.language)) {
-      return NextResponse.json({ problem: problem.data });
+      const verification = await executeCodeSamples(parsed.data.language, problem.data.solutionCode, problem.data.functionName, problem.data.testCases);
+      if (verification.ok) return NextResponse.json({ problem: problem.data });
+
+      const failedSamples = verification.results
+        .filter((result) => !result.passed)
+        .map((result) => `test ${result.sample}: expected ${result.expected}, got ${result.actual || result.error || "no output"}`)
+        .join("; ");
+      lastFailure = `The reference solution did not match its generated tests (${failedSamples}).`;
+      logger.warn("Marathon reference solution failed generated tests", { attempt: attempt + 1, language: parsed.data.language, failedSamples });
+      continue;
     }
     if (problem?.success) {
       lastFailure = "The generated function used a type or program structure that the function-based judge does not accept.";
@@ -104,7 +114,7 @@ function buildContract(language: "python" | "java" | "cpp", difficulty: "easy" |
     "Never use TreeNode, ListNode, Node, custom classes, maps, sets, tuples, or console/stdin input. Represent trees and linked lists as arrays; use -1 as the missing-node sentinel and explain it in the input format.",
     "Outputs must match the function return value; never use console input/output.",
     `${languageRules}`,
-    "starterCode and solutionCode must both be complete compiler-ready source strings for that contract. solutionCode must be correct for every stated constraint, not just samples.",
+    "starterCode and solutionCode must both be complete compiler-ready source strings for that contract. Manually execute or trace solutionCode against EVERY test case before returning; expected outputs must be the exact outputs produced by solutionCode. Never guess or copy an expected output.",
     "Use JSON escape sequences correctly inside source strings. Keep the statement precise and the solution professional.",
   ].join("\n");
 }

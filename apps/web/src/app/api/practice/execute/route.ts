@@ -35,6 +35,12 @@ type SampleResult = {
   error?: string;
 };
 
+export type ExecutionSample = {
+  input: string;
+  output: string;
+  explanation?: string;
+};
+
 const judge0LanguageIds = {
   cpp: envNumber("JUDGE0_CPP_LANGUAGE_ID", 54),
   java: envNumber("JUDGE0_JAVA_LANGUAGE_ID", 62),
@@ -66,6 +72,18 @@ export async function POST(request: Request) {
     ok: results.every((result) => result.passed),
     results,
   });
+}
+
+export async function executeCodeSamples(
+  language: "python" | "java" | "cpp",
+  code: string,
+  functionName: string,
+  testCases: ExecutionSample[],
+) {
+  const results = await Promise.all(testCases.map((testCase, index) =>
+    runOneSample(language, code, functionName, testCase.input, testCase.output, index + 1),
+  ));
+  return { ok: results.every((result) => result.passed), results };
 }
 
 async function runOneSample(language: "python" | "java" | "cpp", code: string, functionName: string, input: string, expected: string, sample: number): Promise<SampleResult> {

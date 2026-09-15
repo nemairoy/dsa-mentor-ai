@@ -15,9 +15,9 @@ const languageExtensions = {
 
 const editorTheme = EditorView.theme({
   "&": {
-    backgroundColor: "#0b1220",
-    color: "#e2e8f0",
-    fontSize: "13px",
+    backgroundColor: "#091321",
+    color: "#f1f5f9",
+    fontSize: "14px",
   },
   "&.cm-focused": {
     outline: "2px solid rgb(16 185 129)",
@@ -25,18 +25,19 @@ const editorTheme = EditorView.theme({
   },
   ".cm-scroller": {
     fontFamily: "var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
-    lineHeight: "1.5rem",
+    lineHeight: "1.65rem",
     overflow: "auto",
   },
   ".cm-content": {
     caretColor: "#34d399",
-    padding: "0.75rem 0",
+    padding: "1rem 0",
   },
+  ".cm-line": { padding: "0 0.75rem" },
   ".cm-cursor, .cm-dropCursor": { borderLeftColor: "#34d399" },
   ".cm-gutters": {
-    backgroundColor: "#0f172a",
-    borderRight: "1px solid #334155",
-    color: "#64748b",
+    backgroundColor: "#111d30",
+    borderRight: "1px solid #3b4b63",
+    color: "#94a3b8",
   },
   ".cm-activeLine, .cm-activeLineGutter": { backgroundColor: "#172033" },
   ".cm-selectionBackground, &.cm-focused .cm-selectionBackground, ::selection": { backgroundColor: "#155e75" },
