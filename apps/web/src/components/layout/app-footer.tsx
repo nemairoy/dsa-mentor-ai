@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { BrandLockup } from "@/components/brand/brand-logo";
+import { APP_VERSION } from "@/lib/app-meta";
 
 export function AppFooter() {
   return (
@@ -18,7 +19,7 @@ export function AppFooter() {
           >
             Developer portfolio
           </a>
-          <span>v1.0.0</span>
+          <span>{APP_VERSION}</span>
           <span>Copyright 2026</span>
           <Link href="/settings" className="hover:text-foreground">Settings</Link>
         </div>

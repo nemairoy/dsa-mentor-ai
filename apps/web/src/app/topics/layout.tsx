@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { GoogleSignInButton } from "@/components/auth/google-sign-in-button";
 import { BrandLockup } from "@/components/brand/brand-logo";
+import { APP_VERSION } from "@/lib/app-meta";
 
 export default function TopicsLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -18,7 +19,7 @@ export default function TopicsLayout({ children }: { children: React.ReactNode }
       {children}
       <footer className="mt-16 border-t border-border bg-card">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-8 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
-          <p>© {new Date().getFullYear()} Nemai Roy. DSA Mentor AI.</p>
+          <p>© {new Date().getFullYear()} Nemai Roy. DSA Mentor AI · {APP_VERSION}</p>
           <div className="flex gap-4"><Link href="/" className="hover:text-foreground">Home</Link><Link href="/sign-in" className="hover:text-foreground">Sign in</Link></div>
         </div>
       </footer>
