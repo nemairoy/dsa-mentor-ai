@@ -36,11 +36,11 @@ export default async function HomePage() {
           </nav>
         </header>
 
-        <section className="mx-auto grid max-w-7xl items-center gap-12 px-4 pb-16 pt-12 sm:px-6 sm:pb-24 sm:pt-16 lg:grid-cols-[0.92fr_1.08fr] lg:px-8 lg:pb-28 lg:pt-24">
+        <section className="mx-auto grid max-w-7xl items-start gap-8 px-4 pb-16 pt-8 sm:px-6 sm:pb-20 sm:pt-10 lg:grid-cols-[0.92fr_1.08fr] lg:px-8 lg:pb-24 lg:pt-12">
           <div className="relative z-10">
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-300/20 bg-emerald-300/10 px-3 py-1.5 text-xs font-bold text-emerald-200"><span className="landing-status-dot h-1.5 w-1.5 rounded-full bg-emerald-300" />A calmer way to master algorithms</div>
-            <h1 className="mt-6 max-w-2xl text-4xl font-black leading-[1.03] tracking-[-0.045em] text-white sm:text-5xl lg:text-[3.85rem]">Think in patterns.<br /><span className="landing-gradient-text">Code with confidence.</span></h1>
-            <p className="mt-6 max-w-xl text-base leading-7 text-slate-300 sm:text-lg">A focused learning studio for data structures and algorithms—where every concept becomes a visual model, a runnable idea, and a skill you can explain.</p>
+            <h1 className="mt-5 max-w-2xl text-4xl font-black leading-[1.04] tracking-[-0.04em] text-white sm:text-5xl lg:text-[3.55rem]">Think in patterns.<br /><span className="landing-gradient-text">Code with confidence.</span></h1>
+            <p className="mt-5 max-w-xl text-sm leading-6 text-slate-300 sm:text-base">A focused learning studio for data structures and algorithms—where every concept becomes a visual model, a runnable idea, and a skill you can explain.</p>
             <div className="mt-8 flex flex-col gap-3 min-[420px]:flex-row">
               <Link href="/topics" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-emerald-300 px-5 py-3 text-sm font-black text-slate-950 shadow-xl shadow-emerald-950/30 transition hover:-translate-y-1 hover:bg-emerald-200">Start with a lesson <ArrowRight size={17} aria-hidden="true" /></Link>
               <GoogleSignInButton className="min-h-12 rounded-xl border border-white/15 bg-white/6 px-5 py-3 text-sm font-bold text-white hover:bg-white/12" />
@@ -48,7 +48,7 @@ export default async function HomePage() {
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-xs font-semibold text-slate-400"><span className="inline-flex items-center gap-2"><Check size={14} className="text-emerald-300" aria-hidden="true" />No paywall for lessons</span><span className="inline-flex items-center gap-2"><Check size={14} className="text-emerald-300" aria-hidden="true" />Built by Nemai Roy</span></div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-[650px] lg:ml-auto">
+          <div className="relative mx-auto w-full max-w-[610px] lg:ml-auto">
             <div className="landing-orb landing-orb-one" /><div className="landing-orb landing-orb-two" />
             <div className="relative rounded-[2rem] border border-white/12 bg-[#0d1a2c]/90 p-3 shadow-2xl shadow-black/35 backdrop-blur-xl sm:p-4">
               <div className="flex items-center justify-between rounded-t-[1.35rem] border border-white/8 bg-[#101f33] px-4 py-3"><div className="flex items-center gap-2"><span className="h-2.5 w-2.5 rounded-full bg-rose-400" /><span className="h-2.5 w-2.5 rounded-full bg-amber-300" /><span className="h-2.5 w-2.5 rounded-full bg-emerald-300" /></div><span className="font-mono text-[10px] text-slate-500">dsa-mentor / learning-loop</span><Terminal size={15} className="text-slate-500" aria-hidden="true" /></div>
