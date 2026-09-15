@@ -225,23 +225,25 @@ if __name__ == "__main__":
 
   if (language === "java") {
     const safeCode = code.replace(/public\s+(?:final\s+)?class\s+Solution\b/, "class Solution");
-    return `${safeCode}\n\n${javaRunnerSource("Main", functionName, assignments)}`;
+    const imports = /import\s+java\.util\./.test(safeCode) ? "" : "import java.util.*;\n";
+    return `${imports}${safeCode}\n\n${javaRunnerSource("Main", functionName, assignments)}`;
   }
 
   const declarations = assignments.map(([, value], index) => cppArgumentDeclaration(value, index)).join("\n  ");
   const args = assignments.map(([,], index) => `__dsaArg${index}`).join(", ");
   const call = cppCallExpression(code, functionName, args);
   return `#include <bits/stdc++.h>
+using namespace std;
 ${code}
+
+string dsaFormat(bool value) { return value ? "True" : "False"; }
+string dsaFormat(const string& value) { return value; }
+string dsaFormat(const char* value) { return string(value); }
 
 template <typename T>
 string dsaFormat(const T& value) {
   return to_string(value);
 }
-
-string dsaFormat(bool value) { return value ? "True" : "False"; }
-string dsaFormat(const string& value) { return value; }
-string dsaFormat(const char* value) { return string(value); }
 
 template <typename T>
 string dsaFormat(const vector<T>& values) {
@@ -254,17 +256,61 @@ string dsaFormat(const vector<T>& values) {
   return output;
 }
 
-template <typename T>
-string dsaFormat(const map<string, T>& values) {
+template <typename K, typename V>
+string dsaFormat(const map<K, V>& values) {
   string output = "{ ";
   bool first = true;
   for (const auto& item : values) {
     if (!first) output += ", ";
-    output += item.first + ": " + dsaFormat(item.second);
+    output += dsaFormat(item.first) + ": " + dsaFormat(item.second);
     first = false;
   }
   output += " }";
   return output;
+}
+
+template <typename K, typename V>
+string dsaFormat(const unordered_map<K, V>& values) {
+  string output = "{ ";
+  bool first = true;
+  for (const auto& item : values) {
+    if (!first) output += ", ";
+    output += dsaFormat(item.first) + ": " + dsaFormat(item.second);
+    first = false;
+  }
+  output += " }";
+  return output;
+}
+
+template <typename T>
+string dsaFormat(const set<T>& values) {
+  string output = "[";
+  bool first = true;
+  for (const auto& item : values) {
+    if (!first) output += ", ";
+    output += dsaFormat(item);
+    first = false;
+  }
+  output += "]";
+  return output;
+}
+
+template <typename T>
+string dsaFormat(const unordered_set<T>& values) {
+  string output = "[";
+  bool first = true;
+  for (const auto& item : values) {
+    if (!first) output += ", ";
+    output += dsaFormat(item);
+    first = false;
+  }
+  output += "]";
+  return output;
+}
+
+template <typename A, typename B>
+string dsaFormat(const pair<A, B>& value) {
+  return "[" + dsaFormat(value.first) + ", " + dsaFormat(value.second) + "]";
 }
 
 int main() {
@@ -301,7 +347,8 @@ async function runJava(code: string, functionName: string, assignments: Array<[s
   const dir = await mkdtemp(path.join(tmpdir(), "dsa-java-"));
   const filePath = path.join(dir, "Runner.java");
   const safeCode = code.replace(/public\s+(?:final\s+)?class\s+Solution\b/, "class Solution");
-  const source = `${safeCode}\n\n${javaRunnerSource("Runner", functionName, assignments)}`;
+  const imports = /import\s+java\.util\./.test(safeCode) ? "" : "import java.util.*;\n";
+  const source = `${imports}${safeCode}\n\n${javaRunnerSource("Runner", functionName, assignments)}`;
 
   try {
     await writeFile(filePath, source, "utf8");
