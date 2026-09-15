@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 };
 
 export default async function HomePage() {
-  const roadmap = await contentService.getRoadmap();
+  const roadmap = await contentService.getRoadmap().catch(() => []);
   const structuredData = { "@context": "https://schema.org", "@type": "WebSite", name: "DSA Mentor AI", url: process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000", description, creator: { "@type": "Person", name: "Nemai Roy" } };
 
   return (
