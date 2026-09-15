@@ -52,7 +52,11 @@ export const auth = betterAuth({
       },
     },
   },
-  trustedOrigins: Array.from(new Set([env.NEXT_PUBLIC_APP_URL, env.BETTER_AUTH_URL])),
+  trustedOrigins: Array.from(new Set([
+    env.NEXT_PUBLIC_APP_URL,
+    env.BETTER_AUTH_URL,
+    "https://dsamentor-ai.vercel.app",
+  ])),
   emailAndPassword: {
     enabled: false,
   },

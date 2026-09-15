@@ -30,11 +30,11 @@ export function GoogleSignInButton({ className }: GoogleSignInButtonProps) {
             markSessionActivity();
             const result = await authClient.signIn.social({
               provider: "google",
-              callbackURL: "/dashboard",
+              callbackURL: new URL("/dashboard", window.location.origin).toString(),
             });
 
             if (result.error) {
-              setError(result.error.message ?? "Google sign in failed");
+              setError(result.error.message ?? "Google sign in failed. Please check the OAuth configuration.");
               setIsLoading(false);
             }
           } catch {
