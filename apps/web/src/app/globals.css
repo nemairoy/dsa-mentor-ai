@@ -194,6 +194,16 @@ details > summary::-webkit-details-marker {
   animation: landing-float 5.8s ease-in-out infinite;
 }
 
+@media (max-width: 639px) {
+  .landing-float {
+    display: grid;
+    grid-template-columns: 2.5rem auto;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+}
+
 .landing-node {
   display: flex;
   height: 3.25rem;
