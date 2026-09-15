@@ -23,17 +23,17 @@ export default async function HomePage() {
   const structuredData = { "@context": "https://schema.org", "@type": "WebSite", name: "DSA Mentor AI", url: process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000", description, creator: { "@type": "Person", name: "Nemai Roy" } };
 
   return (
-    <main className="sign-in-shell dark relative min-h-screen overflow-x-hidden bg-background px-4 py-5 text-foreground [color-scheme:dark]">
+    <main className="sign-in-shell dark relative min-h-screen overflow-x-hidden bg-background px-4 pb-5 pt-24 text-foreground [color-scheme:dark]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_16%_18%,rgba(20,184,166,0.18),transparent_30%),radial-gradient(circle_at_84%_14%,rgba(37,99,235,0.14),transparent_28%),linear-gradient(135deg,#050914,#09111f_48%,#071523)]" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 
-      <div className="sticky top-0 z-50 -mx-4 border-b border-white/10 bg-[#07111f]/90 px-4 py-3 backdrop-blur-xl">
+      <div className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#07111f]/95 px-4 py-3 backdrop-blur-xl">
         <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between gap-3">
           <Link href="/" aria-label="DSA Mentor AI home"><BrandLockup /></Link>
           <nav className="flex items-center gap-2" aria-label="Main navigation">
             <Link href="/admin-login" className="shrink-0 rounded-lg border border-white/15 bg-white/5 px-3 py-2 text-xs font-semibold text-slate-300 backdrop-blur hover:text-white">Admin login</Link>
-            <GoogleSignInButton className="h-9 rounded-lg bg-white px-3 text-[11px] font-black text-slate-950 hover:bg-slate-100 sm:px-4 sm:text-sm" />
+            <GoogleSignInButton className="h-10 rounded-lg bg-white px-4 text-xs font-black text-slate-950 hover:bg-slate-100 sm:text-sm" />
           </nav>
         </header>
       </div>
@@ -58,6 +58,8 @@ export default async function HomePage() {
       </section>
 
       <section id="topics" className="relative z-10 mx-auto max-w-7xl scroll-mt-24 pb-16 pt-6 lg:pb-24" aria-labelledby="topics-heading"><div className="border-t border-white/10 pt-8"><p className="text-[11px] font-bold uppercase tracking-[0.18em] text-teal-300">Free learning library</p><h2 id="topics-heading" className="mt-2 text-2xl font-black text-white sm:text-3xl">Explore DSA topics</h2><p className="mt-2 max-w-2xl text-sm leading-6 text-slate-400">Open any topic to load its lessons. AI tutor and coding practice require Google sign in.</p><div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{roadmap.map((chapter, index) => <Link key={chapter.slug} prefetch={false} href={`/topics/${chapter.slug}`} className="landing-topic-card group rounded-2xl border border-white/10 bg-white/[0.045] p-5"><div className="flex items-center justify-between"><span className="font-mono text-xs text-teal-300/80">{String(index + 1).padStart(2, "0")}</span><ArrowRight size={16} className="text-slate-500 transition group-hover:translate-x-1 group-hover:text-teal-300" aria-hidden="true" /></div><h3 className="mt-5 font-bold text-white group-hover:text-teal-200">{chapter.title}</h3><p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-400">{chapter.description}</p><p className="mt-4 text-xs font-semibold text-slate-500">{chapter.lessons.length} lessons · {chapter.difficulty}</p></Link>)}</div></div></section>
+
+      <footer className="relative z-10 border-t border-white/10 pt-7 text-sm text-slate-400"><div className="mx-auto flex max-w-7xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"><p>© {new Date().getFullYear()} Nemai Roy · DSA Mentor AI</p><nav className="flex gap-5" aria-label="Footer navigation"><Link href="#topics" className="hover:text-white">Topics</Link><Link href="/" className="hover:text-white">Back to home</Link></nav></div></footer>
     </main>
   );
 }
