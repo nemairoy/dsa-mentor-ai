@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { GoogleSignInButton } from "@/components/auth/google-sign-in-button";
 import { BrandLockup } from "@/components/brand/brand-logo";
 
 export default function TopicsLayout({ children }: { children: React.ReactNode }) {
@@ -10,7 +11,7 @@ export default function TopicsLayout({ children }: { children: React.ReactNode }
           <Link href="/" aria-label="DSA Mentor AI home"><BrandLockup size="sm" compact /></Link>
           <nav className="flex items-center gap-1 sm:gap-2" aria-label="Public lessons navigation">
             <Link href="/topics" className="rounded-lg px-3 py-2 text-xs font-semibold text-muted-foreground hover:bg-muted hover:text-foreground sm:text-sm">All topics</Link>
-            <Link href="/sign-in" className="rounded-lg bg-foreground px-3 py-2 text-xs font-semibold text-background hover:opacity-90 sm:px-4 sm:text-sm">Open workspace</Link>
+            <GoogleSignInButton className="h-9 rounded-lg bg-foreground px-3 text-xs font-bold text-background hover:opacity-90 sm:px-4 sm:text-sm" />
           </nav>
         </div>
       </header>

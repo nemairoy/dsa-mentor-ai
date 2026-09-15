@@ -6,8 +6,13 @@ import { LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { authClient } from "@/lib/auth-client";
 import { markSessionActivity } from "@/lib/session-activity";
+import { cn } from "@/lib/utils";
 
-export function GoogleSignInButton() {
+type GoogleSignInButtonProps = {
+  className?: string;
+};
+
+export function GoogleSignInButton({ className }: GoogleSignInButtonProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -15,7 +20,7 @@ export function GoogleSignInButton() {
     <div className="space-y-3">
       <Button
         type="button"
-        className="w-full"
+        className={cn("w-full", className)}
         disabled={isLoading}
         onClick={async () => {
           setIsLoading(true);

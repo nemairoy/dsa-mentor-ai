@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, BookOpen, Bot, Check, ChevronRight, Code2, Layers3, Sparkles, Terminal } from "lucide-react";
 
 import { BrandLockup } from "@/components/brand/brand-logo";
+import { GoogleSignInButton } from "@/components/auth/google-sign-in-button";
 import { contentService } from "@/core/content/content-container";
 
 const description = "Learn data structures and algorithms through a structured roadmap, visual explanations, coding practice, and focused AI guidance.";
@@ -28,21 +29,21 @@ export default async function HomePage() {
       <div className="landing-grid pointer-events-none fixed inset-0 opacity-45" />
       <div className="relative">
         <header className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-5 sm:px-6 lg:px-8">
-          <Link href="/" aria-label="DSA Mentor AI home"><BrandLockup subtitle="Learn / Build / Master" className="[&_*]:text-slate-100" /></Link>
+          <Link href="/" aria-label="DSA Mentor AI home"><BrandLockup size="sm" compact subtitle="Learn / Build / Master" className="[&_*]:text-slate-100" /></Link>
           <nav className="flex items-center gap-1 sm:gap-3" aria-label="Main navigation">
             <Link href="/topics" className="hidden rounded-lg px-3 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/8 hover:text-white sm:block">Explore lessons</Link>
-            <Link href="/sign-in" className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/8 px-3.5 py-2.5 text-xs font-bold text-white shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:bg-white/14 sm:px-4 sm:text-sm">Open workspace <ArrowRight size={15} aria-hidden="true" /></Link>
+            <GoogleSignInButton className="h-10 rounded-xl border border-white/15 bg-white px-2.5 text-[11px] font-black text-slate-950 shadow-lg shadow-black/10 hover:bg-slate-100 sm:px-4 sm:text-sm" />
           </nav>
         </header>
 
         <section className="mx-auto grid max-w-7xl items-center gap-12 px-4 pb-16 pt-12 sm:px-6 sm:pb-24 sm:pt-16 lg:grid-cols-[0.92fr_1.08fr] lg:px-8 lg:pb-28 lg:pt-24">
           <div className="relative z-10">
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-300/20 bg-emerald-300/10 px-3 py-1.5 text-xs font-bold text-emerald-200"><span className="landing-status-dot h-1.5 w-1.5 rounded-full bg-emerald-300" />A calmer way to master algorithms</div>
-            <h1 className="mt-6 max-w-2xl text-4xl font-black leading-[1.03] tracking-[-0.045em] text-white sm:text-6xl lg:text-[4.35rem]">Think in patterns.<br /><span className="landing-gradient-text">Code with confidence.</span></h1>
+            <h1 className="mt-6 max-w-2xl text-4xl font-black leading-[1.03] tracking-[-0.045em] text-white sm:text-5xl lg:text-[3.85rem]">Think in patterns.<br /><span className="landing-gradient-text">Code with confidence.</span></h1>
             <p className="mt-6 max-w-xl text-base leading-7 text-slate-300 sm:text-lg">A focused learning studio for data structures and algorithms—where every concept becomes a visual model, a runnable idea, and a skill you can explain.</p>
             <div className="mt-8 flex flex-col gap-3 min-[420px]:flex-row">
               <Link href="/topics" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-emerald-300 px-5 py-3 text-sm font-black text-slate-950 shadow-xl shadow-emerald-950/30 transition hover:-translate-y-1 hover:bg-emerald-200">Start with a lesson <ArrowRight size={17} aria-hidden="true" /></Link>
-              <Link href="/sign-in" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/6 px-5 py-3 text-sm font-bold text-white transition hover:-translate-y-1 hover:bg-white/12"><Sparkles size={16} aria-hidden="true" className="text-amber-300" />Try the AI workspace</Link>
+              <GoogleSignInButton className="min-h-12 rounded-xl border border-white/15 bg-white/6 px-5 py-3 text-sm font-bold text-white hover:bg-white/12" />
             </div>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-xs font-semibold text-slate-400"><span className="inline-flex items-center gap-2"><Check size={14} className="text-emerald-300" aria-hidden="true" />No paywall for lessons</span><span className="inline-flex items-center gap-2"><Check size={14} className="text-emerald-300" aria-hidden="true" />Built by Nemai Roy</span></div>
           </div>
