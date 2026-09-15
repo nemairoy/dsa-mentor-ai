@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, BookOpen, Bot, Check, Code2, Layers3, Sparkles, Terminal } from "lucide-react";
+import { ArrowRight, BookOpen, Bot, Code2, LineChart, ShieldCheck, Sparkles, Target } from "lucide-react";
 
-import { BrandLockup } from "@/components/brand/brand-logo";
 import { GoogleSignInButton } from "@/components/auth/google-sign-in-button";
+import { LandingPrimaryActions, SignInCallout } from "@/components/auth/landing-auth-guide";
+import { BrandLockup } from "@/components/brand/brand-logo";
 import { contentService } from "@/core/content/content-container";
 
-const description = "Learn data structures and algorithms through a structured roadmap, visual explanations, coding practice, and focused AI guidance.";
+const description = "Learn data structures and algorithms through visual lessons, structured topics, coding practice, and focused AI guidance.";
 
 export const metadata: Metadata = {
   title: { absolute: "DSA Mentor AI — Learn Data Structures and Algorithms" },
@@ -14,62 +15,49 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   keywords: ["data structures and algorithms", "DSA lessons", "coding interview preparation", "algorithm practice", "AI coding tutor"],
   openGraph: { title: "DSA Mentor AI — Learn Data Structures and Algorithms", description, url: "/", siteName: "DSA Mentor AI", type: "website" },
-  twitter: { card: "summary", title: "DSA Mentor AI — Learn Data Structures and Algorithms", description },
+  twitter: { card: "summary", title: "DSA Mentor AI", description },
 };
 
 export default async function HomePage() {
   const roadmap = await contentService.getRoadmap();
-  const lessonCount = roadmap.reduce((total, chapter) => total + chapter.lessons.length, 0);
   const structuredData = { "@context": "https://schema.org", "@type": "WebSite", name: "DSA Mentor AI", url: process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000", description, creator: { "@type": "Person", name: "Nemai Roy" } };
 
   return (
-    <main className="landing-page min-h-screen overflow-hidden bg-[#07111f] text-slate-100">
+    <main className="sign-in-shell dark relative min-h-screen overflow-x-hidden bg-background px-4 py-5 text-foreground [color-scheme:dark]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
-      <div className="landing-grid pointer-events-none fixed inset-0 opacity-45" />
-      <div className="relative">
-        <header className="sticky top-0 z-50 border-b border-white/8 bg-[#07111f]/88 backdrop-blur-xl">
-          <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-          <Link href="/" aria-label="DSA Mentor AI home"><BrandLockup size="sm" compact subtitle="Learn / Build / Master" className="[&_*]:text-slate-100" /></Link>
-          <nav className="flex items-center gap-1 sm:gap-3" aria-label="Main navigation">
-            <Link href="#topics" className="hidden rounded-lg px-3 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/8 hover:text-white sm:block">Explore topics</Link>
-            <GoogleSignInButton className="h-10 rounded-xl border border-white/15 bg-white px-2.5 text-[11px] font-black text-slate-950 shadow-lg shadow-black/10 hover:bg-slate-100 sm:px-4 sm:text-sm" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_16%_18%,rgba(20,184,166,0.18),transparent_30%),radial-gradient(circle_at_84%_14%,rgba(37,99,235,0.14),transparent_28%),linear-gradient(135deg,#050914,#09111f_48%,#071523)]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+
+      <div className="sticky top-0 z-50 -mx-4 border-b border-white/10 bg-[#07111f]/90 px-4 py-3 backdrop-blur-xl">
+        <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between gap-3">
+          <Link href="/" aria-label="DSA Mentor AI home"><BrandLockup /></Link>
+          <nav className="flex items-center gap-2" aria-label="Main navigation">
+            <Link href="/admin-login" className="shrink-0 rounded-lg border border-white/15 bg-white/5 px-3 py-2 text-xs font-semibold text-slate-300 backdrop-blur hover:text-white">Admin login</Link>
+            <GoogleSignInButton className="h-9 rounded-lg bg-white px-3 text-[11px] font-black text-slate-950 hover:bg-slate-100 sm:px-4 sm:text-sm" />
           </nav>
-          </div>
         </header>
-
-        <section className="mx-auto grid max-w-7xl items-start gap-8 px-4 pb-16 pt-8 sm:px-6 sm:pb-20 sm:pt-10 lg:grid-cols-[0.92fr_1.08fr] lg:px-8 lg:pb-24 lg:pt-12">
-          <div className="relative z-10">
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-300/20 bg-emerald-300/10 px-3 py-1.5 text-xs font-bold text-emerald-200"><span className="landing-status-dot h-1.5 w-1.5 rounded-full bg-emerald-300" />A calmer way to master algorithms</div>
-            <h1 className="mt-5 max-w-2xl text-4xl font-black leading-[1.04] tracking-[-0.04em] text-white sm:text-5xl lg:text-[3.55rem]">Think in patterns.<br /><span className="landing-gradient-text">Code with confidence.</span></h1>
-            <p className="mt-5 max-w-xl text-sm leading-6 text-slate-300 sm:text-base">A focused learning studio for data structures and algorithms—where every concept becomes a visual model, a runnable idea, and a skill you can explain.</p>
-            <div className="mt-8 flex flex-col gap-3 min-[420px]:flex-row">
-              <Link href="#topics" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-emerald-300 px-5 py-3 text-sm font-black text-slate-950 shadow-xl shadow-emerald-950/30 transition hover:-translate-y-1 hover:bg-emerald-200">Start with a lesson <ArrowRight size={17} aria-hidden="true" /></Link>
-              <GoogleSignInButton className="min-h-12 rounded-xl border border-white/15 bg-white/6 px-5 py-3 text-sm font-bold text-white hover:bg-white/12" />
-            </div>
-            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-xs font-semibold text-slate-400"><span className="inline-flex items-center gap-2"><Check size={14} className="text-emerald-300" aria-hidden="true" />No paywall for lessons</span><span className="inline-flex items-center gap-2"><Check size={14} className="text-emerald-300" aria-hidden="true" />Built by Nemai Roy</span></div>
-          </div>
-
-          <div className="relative mx-auto w-full max-w-[610px] lg:ml-auto">
-            <div className="landing-orb landing-orb-one" /><div className="landing-orb landing-orb-two" />
-            <div className="relative rounded-[2rem] border border-white/12 bg-[#0d1a2c]/90 p-3 shadow-2xl shadow-black/35 backdrop-blur-xl sm:p-4">
-              <div className="flex items-center justify-between rounded-t-[1.35rem] border border-white/8 bg-[#101f33] px-4 py-3"><div className="flex items-center gap-2"><span className="h-2.5 w-2.5 rounded-full bg-rose-400" /><span className="h-2.5 w-2.5 rounded-full bg-amber-300" /><span className="h-2.5 w-2.5 rounded-full bg-emerald-300" /></div><span className="font-mono text-[10px] text-slate-500">dsa-mentor / learning-loop</span><Terminal size={15} className="text-slate-500" aria-hidden="true" /></div>
-              <div className="grid gap-4 p-4 sm:grid-cols-[1.12fr_0.88fr] sm:p-6">
-                <div className="landing-code-panel rounded-2xl border border-white/8 bg-[#081321] p-4 font-mono text-[11px] leading-6 shadow-inner shadow-black/30 sm:text-xs"><p className="text-slate-500">{"// find the pattern, then make it yours"}</p><p><span className="text-violet-300">function</span> <span className="text-sky-300">binarySearch</span>(items, target) {"{"}</p><p className="pl-4"><span className="text-violet-300">let</span> left = <span className="text-amber-200">0</span>;</p><p className="pl-4"><span className="text-violet-300">let</span> right = items.length - <span className="text-amber-200">1</span>;</p><p className="pl-4"><span className="text-violet-300">while</span> (left &lt;= right) {"{"}</p><p className="pl-8"><span className="text-violet-300">const</span> mid = ...;</p><p className="pl-8 text-emerald-300">{"// invariant stays visible"}</p><p className="pl-4">{"}"}</p><p>{"}"}</p><div className="mt-4 flex items-center gap-2 border-t border-white/8 pt-3 text-[10px] text-emerald-300"><span className="landing-cursor h-3 w-1 bg-emerald-300" />ready to reason</div></div>
-                <div className="relative flex min-h-[230px] items-center justify-center overflow-hidden rounded-2xl border border-white/8 bg-gradient-to-br from-emerald-300/10 via-sky-300/5 to-violet-300/10"><div className="landing-mascot" aria-hidden="true"><div className="landing-mascot-antenna" /><div className="landing-mascot-face"><span className="landing-eye landing-eye-left" /><span className="landing-eye landing-eye-right" /><span className="landing-smile" /></div><div className="landing-mascot-body"><span className="landing-mascot-badge"><Code2 size={16} /></span></div><span className="landing-arm landing-arm-left" /><span className="landing-arm landing-arm-right" /></div><span className="landing-chip landing-chip-top">visualize</span><span className="landing-chip landing-chip-bottom">ship insight</span><span className="absolute inset-x-8 bottom-7 h-px bg-gradient-to-r from-transparent via-emerald-300/40 to-transparent" /></div>
-              </div>
-              <div className="flex flex-wrap items-center justify-between gap-3 rounded-b-[1.35rem] border-t border-white/8 bg-[#0b1728] px-4 py-3 text-[11px] text-slate-400 sm:px-6"><span className="inline-flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-emerald-300" />Concept model loaded</span><span className="font-mono text-slate-500">01 / 06 · arrays</span></div>
-            </div>
-          </div>
-        </section>
-
-        <section className="border-y border-white/8 bg-white/[0.025]" aria-label="Platform highlights"><div className="mx-auto grid max-w-7xl gap-px px-4 sm:grid-cols-3 sm:px-6 lg:px-8">{[{ icon: Layers3, value: roadmap.length, label: "connected topics" }, { icon: BookOpen, value: lessonCount, label: "focused lessons" }, { icon: Bot, value: "24/7", label: "AI study support" }].map((item) => <div key={item.label} className="flex items-center gap-3 border-white/8 py-5 sm:border-r sm:px-6 sm:first:border-l"><item.icon size={18} className="text-emerald-300" aria-hidden="true" /><div><p className="text-lg font-black text-white">{item.value}</p><p className="text-xs font-semibold text-slate-500">{item.label}</p></div></div>)}</div></section>
-
-        <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8" aria-labelledby="how-it-works"><div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:items-start"><div><p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">A better learning loop</p><h2 id="how-it-works" className="mt-3 max-w-md text-3xl font-black tracking-tight text-white sm:text-4xl">Less memorizing.<br />More understanding.</h2><p className="mt-4 max-w-md text-sm leading-6 text-slate-400">Move from intuition to implementation with a workflow designed for the way developers actually learn.</p></div><div className="grid gap-3 sm:grid-cols-3">{[{ number: "01", icon: BookOpen, title: "Learn the idea", text: "Short theory and a clear mental model." }, { number: "02", icon: Code2, title: "See it in motion", text: "Trace states, edges, and invariants." }, { number: "03", icon: Sparkles, title: "Practice deeply", text: "Use code, tests, and AI feedback." }].map((step) => <article key={step.number} className="landing-step-card rounded-2xl border border-white/10 bg-white/[0.045] p-5"><div className="flex items-center justify-between"><step.icon size={19} className="text-emerald-300" aria-hidden="true" /><span className="font-mono text-xs text-slate-600">{step.number}</span></div><h3 className="mt-7 font-bold text-white">{step.title}</h3><p className="mt-2 text-sm leading-6 text-slate-400">{step.text}</p></article>)}</div></div></section>
-
-        <section id="topics" className="scroll-mt-24 mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8" aria-labelledby="all-topics"><div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end"><div><p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Free learning library</p><h2 id="all-topics" className="mt-3 text-2xl font-black text-white sm:text-3xl">Explore every DSA topic</h2><p className="mt-2 max-w-xl text-sm leading-6 text-slate-400">Choose a topic to open its lessons. Content loads only when you enter a topic, keeping this page fast.</p></div></div><div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{roadmap.map((chapter, index) => <Link key={chapter.slug} prefetch={false} href={"/topics/" + chapter.slug} className="landing-topic-card group rounded-2xl border border-white/10 bg-white/[0.045] p-5"><div className="flex items-center justify-between"><span className="font-mono text-xs text-emerald-300/80">{String(index + 1).padStart(2, "0")}</span><ArrowRight size={16} className="text-slate-600 transition group-hover:translate-x-1 group-hover:text-emerald-300" aria-hidden="true" /></div><h3 className="mt-6 font-bold text-white group-hover:text-emerald-200">{chapter.title}</h3><p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-400">{chapter.description}</p><p className="mt-4 text-xs font-semibold text-slate-500">{chapter.lessons.length} lessons · {chapter.difficulty}</p></Link>)}</div></section>
-
-        <footer className="border-t border-white/8"><div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-8 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8"><p>© {new Date().getFullYear()} Nemai Roy · DSA Mentor AI</p><div className="flex gap-5"><Link href="#topics" className="hover:text-white">Lessons</Link><Link href="/sign-in" className="hover:text-white">Sign in</Link></div></div></footer>
       </div>
+
+      <section className="relative z-10 mx-auto grid w-full min-w-0 max-w-full items-center gap-8 py-7 lg:min-h-[calc(100vh-82px)] lg:max-w-7xl lg:grid-cols-[0.86fr_1.14fr] lg:py-8">
+        <div className="min-w-0">
+          <div className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/7 px-3 py-1.5 text-[11px] font-medium text-slate-300 shadow-sm backdrop-blur"><Sparkles aria-hidden={true} size={13} /><span className="truncate">AI-powered DSA learning studio</span></div>
+          <h1 className="max-w-2xl break-words text-[2.05rem] font-black leading-[1.08] tracking-normal text-white sm:text-[2.55rem] lg:text-[2.95rem] xl:text-[3.15rem]">Learn DSA with visual lessons and AI guidance.</h1>
+          <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-300">Follow structured topics, understand concepts visually, and practice with focused AI support.</p>
+          <LandingPrimaryActions />
+          <Link href="#topics" className="sign-in-topic-link group mt-5 flex w-full items-center gap-3 rounded-2xl border border-teal-300/25 bg-teal-300/[0.08] p-3 text-left transition hover:-translate-y-0.5 hover:border-teal-300/50 hover:bg-teal-300/[0.13] min-[420px]:max-w-[25rem]"><span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-teal-300/15 text-teal-200"><BookOpen aria-hidden={true} size={17} /></span><span className="min-w-0 flex-1"><span className="block text-xs font-bold text-teal-100 sm:text-sm">Browse the free curriculum</span><span className="mt-0.5 block text-[11px] leading-4 text-slate-400">Explore every topic without creating an account</span></span><ArrowRight aria-hidden={true} size={16} className="shrink-0 text-teal-200 transition-transform group-hover:translate-x-1" /></Link>
+          <div className="mt-7 grid min-w-0 gap-3 sm:grid-cols-3">{[{ icon: BookOpen, label: "Structured roadmap", value: "Topic-based flow" }, { icon: Bot, label: "AI tutor", value: "Context-aware help" }, { icon: ShieldCheck, label: "Secure access", value: "Google OAuth" }].map((item) => <div key={item.label} className="min-w-0 rounded-2xl border border-white/10 bg-white/8 p-3.5 shadow-sm backdrop-blur transition-transform duration-300 hover:-translate-y-1"><item.icon aria-hidden={true} size={19} className="text-teal-300" /><p className="mt-3 text-xs font-bold sm:text-sm">{item.label}</p><p className="mt-1 text-[11px] font-medium text-slate-400">{item.value}</p></div>)}</div>
+        </div>
+
+        <div className="relative min-w-0">
+          <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-teal-400/20 via-blue-500/16 to-violet-500/18 blur-2xl" />
+          <div className="relative grid items-stretch gap-4 xl:grid-cols-[1.26fr_0.74fr]">
+            <div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#0c1322]/88 p-4 shadow-2xl shadow-black/35 backdrop-blur-xl"><div className="landing-visual min-h-[300px] overflow-hidden rounded-3xl border border-white/10 p-5 text-white shadow-inner shadow-black/20"><div className="mb-4 flex items-center justify-between"><div className="flex items-center gap-2"><span className="h-2.5 w-2.5 rounded-full bg-red-400" /><span className="h-2.5 w-2.5 rounded-full bg-amber-300" /><span className="h-2.5 w-2.5 rounded-full bg-emerald-400" /></div><div className="rounded-full border border-white/10 bg-white/7 px-3 py-1 text-[11px] font-semibold text-cyan-100">learning flow</div></div><div className="rounded-3xl border border-white/10 bg-white/[0.06] p-5 shadow-xl"><div className="mb-5 max-w-md"><p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-cyan-200">Learning flow</p><h2 className="mt-1 text-base font-black leading-snug sm:text-lg">From concept to confident practice</h2></div><div className="relative grid gap-2 sm:grid-cols-5"><div className="absolute left-10 right-10 top-[1.55rem] hidden h-0.5 bg-gradient-to-r from-teal-300 via-cyan-300 to-violet-300 sm:block" />{[{ icon: BookOpen, label: "Learn", tone: "bg-teal-400 text-slate-950" }, { icon: Code2, label: "Visualize", tone: "bg-cyan-400 text-slate-950" }, { icon: Target, label: "Practice", tone: "bg-blue-400 text-slate-950" }, { icon: Bot, label: "Review", tone: "bg-violet-400 text-slate-950" }, { icon: LineChart, label: "Improve", tone: "bg-emerald-400 text-slate-950" }].map((step, index) => <div key={step.label} className="landing-float relative flex min-h-20 items-center justify-center rounded-2xl border border-white/10 bg-slate-950/48 px-2 py-3" style={{ animationDelay: `${index * 0.16}s` }} title={step.label}><div className={`relative z-10 flex h-10 w-10 items-center justify-center rounded-xl ${step.tone}`}><step.icon aria-hidden={true} size={16} /></div><span className="sr-only">{step.label}</span></div>)}</div></div></div></div>
+            <section className="flex min-w-0 flex-col justify-between rounded-[1.5rem] border border-white/10 bg-[#111827] p-6 shadow-2xl shadow-black/30"><div><div className="mb-5 inline-flex rounded-full bg-emerald-300/10 px-3 py-1 text-[11px] font-bold text-emerald-200">Sign in</div><h2 className="max-w-xs text-2xl font-black leading-tight tracking-[-0.02em]">Open your learning workspace</h2><p className="mt-3 max-w-xs text-sm leading-6 text-slate-300">Continue with Google to access lessons, practice, notes, and AI tutor tools.</p><SignInCallout><div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-3"><GoogleSignInButton /></div></SignInCallout></div><div className="mt-6 flex items-start gap-2 text-[11px] leading-5 text-slate-400"><ShieldCheck aria-hidden={true} size={15} className="mt-0.5 shrink-0 text-teal-300" /><span>Authentication uses Google OAuth. Password login is not used for this workspace.</span></div></section>
+          </div>
+        </div>
+      </section>
+
+      <section id="topics" className="relative z-10 mx-auto max-w-7xl scroll-mt-24 pb-16 pt-6 lg:pb-24" aria-labelledby="topics-heading"><div className="border-t border-white/10 pt-8"><p className="text-[11px] font-bold uppercase tracking-[0.18em] text-teal-300">Free learning library</p><h2 id="topics-heading" className="mt-2 text-2xl font-black text-white sm:text-3xl">Explore DSA topics</h2><p className="mt-2 max-w-2xl text-sm leading-6 text-slate-400">Open any topic to load its lessons. AI tutor and coding practice require Google sign in.</p><div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{roadmap.map((chapter, index) => <Link key={chapter.slug} prefetch={false} href={`/topics/${chapter.slug}`} className="landing-topic-card group rounded-2xl border border-white/10 bg-white/[0.045] p-5"><div className="flex items-center justify-between"><span className="font-mono text-xs text-teal-300/80">{String(index + 1).padStart(2, "0")}</span><ArrowRight size={16} className="text-slate-500 transition group-hover:translate-x-1 group-hover:text-teal-300" aria-hidden="true" /></div><h3 className="mt-5 font-bold text-white group-hover:text-teal-200">{chapter.title}</h3><p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-400">{chapter.description}</p><p className="mt-4 text-xs font-semibold text-slate-500">{chapter.lessons.length} lessons · {chapter.difficulty}</p></Link>)}</div></div></section>
     </main>
   );
 }
