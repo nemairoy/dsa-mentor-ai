@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import {
+  ArrowRight,
   BookOpen,
   Bot,
   Code2,
@@ -30,7 +31,7 @@ export default async function SignInPage() {
   }
 
   return (
-    <main className="dark relative min-h-screen overflow-hidden bg-background px-4 py-5 text-foreground [color-scheme:dark]">
+    <main className="sign-in-shell dark relative min-h-screen overflow-hidden bg-background px-4 py-5 text-foreground [color-scheme:dark]">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_16%_18%,rgba(20,184,166,0.18),transparent_30%),radial-gradient(circle_at_84%_14%,rgba(37,99,235,0.14),transparent_28%),linear-gradient(135deg,#f8fafc,#eef7f4_45%,#eaf1ff)] dark:bg-[radial-gradient(circle_at_18%_18%,rgba(20,184,166,0.18),transparent_30%),radial-gradient(circle_at_82%_12%,rgba(96,165,250,0.16),transparent_28%),linear-gradient(135deg,#050914,#09111f_48%,#071523)]" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 
@@ -43,7 +44,7 @@ export default async function SignInPage() {
         <div className="min-w-0">
           <div className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-border bg-card/80 px-3 py-1.5 text-[11px] font-medium text-muted-foreground shadow-sm shadow-slate-200/70 backdrop-blur dark:bg-white/7 dark:shadow-none">
             <Sparkles aria-hidden={true} size={13} />
-            <span className="truncate">AI-powered DSA learning workspace</span>
+            <span className="truncate">AI-powered DSA learning studio</span>
           </div>
           <h1 className="max-w-2xl break-words text-[2.05rem] font-black leading-[1.08] tracking-normal sm:text-[2.55rem] lg:text-[2.95rem] xl:text-[3.15rem]">
             Learn DSA with visual lessons and AI guidance.
@@ -52,12 +53,10 @@ export default async function SignInPage() {
             Follow structured topics, understand concepts visually, and practice with focused AI support.
           </p>
           <LandingPrimaryActions />
-          <Link
-            href="/topics"
-            className="mt-4 inline-flex items-center gap-2 text-xs font-semibold text-teal-300 transition hover:text-teal-200 hover:underline sm:text-sm"
-          >
-            <BookOpen aria-hidden={true} size={15} />
-            Explore free DSA topics without signing in
+          <Link href="/topics" className="sign-in-topic-link group mt-5 flex w-full items-center gap-3 rounded-2xl border border-teal-300/25 bg-teal-300/[0.08] p-3 text-left transition hover:-translate-y-0.5 hover:border-teal-300/50 hover:bg-teal-300/[0.13] min-[420px]:max-w-[25rem]">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-teal-300/15 text-teal-200"><BookOpen aria-hidden={true} size={17} /></span>
+            <span className="min-w-0 flex-1"><span className="block text-xs font-bold text-teal-100 sm:text-sm">Browse the free curriculum</span><span className="mt-0.5 block text-[11px] leading-4 text-slate-400">Explore lessons without creating an account</span></span>
+            <ArrowRight aria-hidden={true} size={16} className="shrink-0 text-teal-200 transition-transform group-hover:translate-x-1" />
           </Link>
           <div className="mt-7 grid min-w-0 gap-3 sm:grid-cols-3">
             {[
@@ -132,7 +131,7 @@ export default async function SignInPage() {
                 <div className="mb-5 inline-flex rounded-full bg-emerald-50 px-3 py-1 text-[11px] font-bold text-emerald-700 dark:bg-emerald-300/10 dark:text-emerald-200">
                   Sign in
                 </div>
-                <h2 className="max-w-xs text-2xl font-black leading-tight tracking-normal">Open your learning workspace</h2>
+                <h2 className="max-w-xs text-2xl font-black leading-tight tracking-[-0.02em]">Open your learning workspace</h2>
                 <p className="mt-3 max-w-xs text-sm leading-6 text-muted-foreground">
                   Continue with Google to access lessons, practice, notes, and AI tutor tools.
                 </p>
