@@ -10,9 +10,10 @@ import { cn } from "@/lib/utils";
 
 type GoogleSignInButtonProps = {
   className?: string;
+  compactOnMobile?: boolean;
 };
 
-export function GoogleSignInButton({ className }: GoogleSignInButtonProps) {
+export function GoogleSignInButton({ className, compactOnMobile = false }: GoogleSignInButtonProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -44,7 +45,7 @@ export function GoogleSignInButton({ className }: GoogleSignInButtonProps) {
         }}
       >
         <LogIn aria-hidden={true} size={18} />
-        {isLoading ? "Opening Google..." : "Continue with Google"}
+        {isLoading ? "Opening Google..." : compactOnMobile ? <><span className="hidden sm:inline">Continue with Google</span><span className="sm:hidden">Sign in</span></> : "Continue with Google"}
       </Button>
       {error ? <p className="text-sm text-destructive">{error}</p> : null}
     </div>

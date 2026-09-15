@@ -12,7 +12,7 @@ export default function TopicsLayout({ children }: { children: React.ReactNode }
           <Link href="/" aria-label="DSA Mentor AI home"><BrandLockup size="sm" compact /></Link>
           <nav className="flex items-center gap-1 sm:gap-2" aria-label="Public lessons navigation">
             <Link href="/" className="rounded-lg px-3 py-2 text-xs font-semibold text-muted-foreground hover:bg-muted hover:text-foreground sm:text-sm">Back to home</Link>
-            <GoogleSignInButton className="h-9 rounded-lg bg-foreground px-3 text-xs font-bold text-background hover:opacity-90 sm:px-4 sm:text-sm" />
+            <GoogleSignInButton compactOnMobile className="h-9 min-w-0 shrink-0 rounded-lg bg-foreground px-3 text-xs font-bold text-background hover:opacity-90 sm:px-4 sm:text-sm" />
           </nav>
         </div>
       </header>

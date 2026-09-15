@@ -31,10 +31,10 @@ export default async function HomePage() {
 
       <div className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#07111f]/95 px-4 py-3 backdrop-blur-xl">
         <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between gap-3">
-          <Link href="/" aria-label="DSA Mentor AI home"><BrandLockup /></Link>
+          <Link href="/" aria-label="DSA Mentor AI home" className="min-w-0"><BrandLockup size="sm" /></Link>
           <nav className="flex items-center gap-2" aria-label="Main navigation">
-            <Link href="/admin-login" className="shrink-0 rounded-lg border border-white/15 bg-white/5 px-3 py-2 text-xs font-semibold text-slate-300 backdrop-blur hover:text-white">Admin login</Link>
-            <GoogleSignInButton className="h-9 rounded-lg bg-white px-2.5 text-[10px] font-black text-slate-950 hover:bg-slate-100 sm:px-3 sm:text-xs [&_svg]:h-4 [&_svg]:w-4" />
+            <Link href="/admin-login" className="hidden shrink-0 rounded-lg border border-white/15 bg-white/5 px-3 py-2 text-xs font-semibold text-slate-300 backdrop-blur hover:text-white sm:inline-flex">Admin login</Link>
+            <GoogleSignInButton compactOnMobile className="h-9 min-w-0 shrink-0 rounded-lg bg-white px-2.5 text-[10px] font-black text-slate-950 hover:bg-slate-100 sm:px-3 sm:text-xs [&_svg]:h-4 [&_svg]:w-4" />
           </nav>
         </header>
       </div>
