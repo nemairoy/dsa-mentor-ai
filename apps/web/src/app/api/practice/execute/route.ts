@@ -106,7 +106,9 @@ async function runWithLocalRunner(language: "python" | "java" | "cpp", code: str
 
 async function runWithJudge0(language: "python" | "java" | "cpp", code: string, functionName: string, assignments: Array<[string, string]>) {
   const sourceCode = buildJudge0Source(language, code, functionName, assignments);
-  const response = await fetch(`${judge0BaseUrl()}/submissions?base64_encoded=true&wait=true`, {
+  const requestTimeoutMs = envNumber("JUDGE0_REQUEST_TIMEOUT_MS", 15000);
+  const deadline = Date.now() + requestTimeoutMs;
+  const response = await fetch(`${judge0BaseUrl()}/submissions?base64_encoded=true&wait=false`, {
     method: "POST",
     headers: judge0Headers(),
     body: JSON.stringify({
@@ -116,10 +118,11 @@ async function runWithJudge0(language: "python" | "java" | "cpp", code: string, 
       wall_time_limit: envNumber("JUDGE0_WALL_TIME_LIMIT", 6),
       memory_limit: envNumber("JUDGE0_MEMORY_LIMIT_KB", 128000),
     }),
-    signal: AbortSignal.timeout(envNumber("JUDGE0_REQUEST_TIMEOUT_MS", 15000)),
+    signal: AbortSignal.timeout(requestTimeoutMs),
   });
 
   const payload = await response.json() as {
+    token?: string;
     stdout?: string | null;
     stderr?: string | null;
     compile_output?: string | null;
@@ -131,11 +134,48 @@ async function runWithJudge0(language: "python" | "java" | "cpp", code: string, 
     throw new Error(payload.message ?? payload.stderr ?? payload.compile_output ?? `Judge0 rejected the execution request (${response.status}).`);
   }
 
-  if (payload.status?.id && payload.status.id > 3) {
-    throw new Error(decodeMaybeBase64(payload.stderr) ?? decodeMaybeBase64(payload.compile_output) ?? payload.message ?? payload.status.description ?? "Execution failed.");
+  if (!payload.token) {
+    throw new Error(payload.message ?? "Judge0 did not return an execution token.");
   }
 
-  return extractResult(decodeMaybeBase64(payload.stdout) ?? "", decodeMaybeBase64(payload.stderr) ?? decodeMaybeBase64(payload.compile_output) ?? "");
+  const result = await waitForJudge0Submission(payload.token, deadline);
+  if (result.status?.id && result.status.id > 3) {
+    throw new Error(decodeMaybeBase64(result.stderr) ?? decodeMaybeBase64(result.compile_output) ?? result.message ?? result.status.description ?? "Execution failed.");
+  }
+
+  return extractResult(decodeMaybeBase64(result.stdout) ?? "", decodeMaybeBase64(result.stderr) ?? decodeMaybeBase64(result.compile_output) ?? "");
+}
+
+type Judge0Submission = {
+  stdout?: string | null;
+  stderr?: string | null;
+  compile_output?: string | null;
+  message?: string | null;
+  status?: { id?: number; description?: string };
+};
+
+async function waitForJudge0Submission(token: string, deadline: number): Promise<Judge0Submission> {
+  while (Date.now() < deadline) {
+    const response = await fetch(
+      `${judge0BaseUrl()}/submissions/${encodeURIComponent(token)}?base64_encoded=true&fields=stdout,stderr,compile_output,message,status`,
+      { headers: judge0Headers(), signal: AbortSignal.timeout(Math.max(1000, Math.min(5000, deadline - Date.now()))) },
+    );
+    const payload = await response.json() as Judge0Submission;
+
+    if (!response.ok) {
+      throw new Error(payload.message ?? `Judge0 could not read the execution result (${response.status}).`);
+    }
+
+    const statusId = payload.status?.id;
+    if (statusId !== 1 && statusId !== 2) return payload;
+    await delay(Math.min(250, Math.max(50, deadline - Date.now())));
+  }
+
+  throw new Error("The execution service timed out before returning a result. Please try again.");
+}
+
+function delay(milliseconds: number) {
+  return new Promise<void>((resolve) => setTimeout(resolve, milliseconds));
 }
 
 function judge0BaseUrl() {
