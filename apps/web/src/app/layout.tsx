@@ -3,7 +3,6 @@ import { Suspense } from "react";
 
 import { RouteTransitionOverlay } from "@/components/loading/route-transition-overlay";
 import { InstallPrompt } from "@/components/pwa/install-prompt";
-import { PwaLaunchScreen } from "@/components/pwa/pwa-launch-screen";
 import { ServiceWorkerRegistration } from "@/components/pwa/service-worker-registration";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import "./globals.css";
@@ -79,7 +78,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </Suspense>
           <ServiceWorkerRegistration />
           <InstallPrompt />
-          <PwaLaunchScreen />
         </ThemeProvider>
       </body>
     </html>
