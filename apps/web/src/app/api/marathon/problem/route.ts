@@ -161,7 +161,7 @@ function normalizeProblem(candidate: unknown, language: "python" | "java" | "cpp
   const source = asRecord(outer.problem) ?? outer;
 
   const solutionCode = cleanCode(readString(source, "solutionCode", "solution_code", "solution", "completeSolution", "referenceSolution"));
-  const starterCode = cleanCode(readString(source, "starterCode", "starter_code", "template", "codeTemplate"));
+  const providedStarterCode = cleanCode(readString(source, "starterCode", "starter_code", "template", "codeTemplate"));
   const testsValue = readValue(source, "testCases", "test_cases", "samples", "examples");
   const tests = Array.isArray(testsValue) ? testsValue.map(normalizeTestCase).filter(Boolean) : [];
   const difficultyValue = readString(source, "difficulty").toLowerCase();
@@ -169,6 +169,9 @@ function normalizeProblem(candidate: unknown, language: "python" | "java" | "cpp
   const complexitySource = asRecord(readValue(source, "complexity"));
   const constraints = stringArray(readValue(source, "constraints", "constraint"));
   const hints = stringArray(readValue(source, "hints", "hint"));
+
+  const functionName = readString(source, "functionName", "function_name") || inferFunctionName(solutionCode || providedStarterCode, language);
+  const starterCode = createStarterCode(solutionCode, language, functionName) || providedStarterCode;
 
   return {
     title: readString(source, "title", "problemTitle", "name") || "Coding Marathon Challenge",
@@ -178,7 +181,7 @@ function normalizeProblem(candidate: unknown, language: "python" | "java" | "cpp
     inputFormat: readString(source, "inputFormat", "input_format") || "Use the named function parameters shown in each test case.",
     outputFormat: readString(source, "outputFormat", "output_format") || "Return the requested result from the function.",
     constraints: constraints.length ? constraints : ["Use the function signature exactly as provided."],
-    functionName: readString(source, "functionName", "function_name") || inferFunctionName(starterCode || solutionCode, language),
+    functionName,
     testCases: tests,
     hints: hints.length ? hints : ["Start by identifying the input-output relationship and the required data structure."],
     approach: readString(source, "approach", "editorial", "explanation", "solutionExplanation") || "Apply the appropriate data structure while processing each input element once where possible.",
@@ -254,6 +257,33 @@ function readString(source: Record<string, unknown> | null, ...keys: string[]) {
 
 function capitalize(value: string) {
   return value.charAt(0).toUpperCase() + value.slice(1);
+}
+
+function createStarterCode(solution: string, language: "python" | "java" | "cpp", functionName: string) {
+  if (!solution) return "";
+  if (language === "python") {
+    const match = new RegExp(`(^|\\n)([ \\t]*)def\\s+${escapeRegExp(functionName)}\\s*\\([^\\n]*\\):`).exec(solution);
+    if (!match || match.index === undefined) return "";
+    const signatureStart = match.index + match[1].length;
+    const signatureEnd = signatureStart + match[0].length - match[1].length;
+    const indent = `${match[2]}    `;
+    return `${solution.slice(0, signatureStart)}${solution.slice(signatureStart, signatureEnd)}\n${indent}# Write your solution here\n${indent}pass`;
+  }
+  const functionStart = solution.search(new RegExp(`\\b${escapeRegExp(functionName)}\\s*\\(`));
+  const openBrace = functionStart < 0 ? -1 : solution.indexOf("{", functionStart);
+  if (openBrace < 0) return "";
+  let depth = 0;
+  let closeBrace = -1;
+  for (let index = openBrace; index < solution.length; index += 1) {
+    if (solution[index] === "{") depth += 1;
+    if (solution[index] === "}" && --depth === 0) { closeBrace = index; break; }
+  }
+  if (closeBrace < 0) return "";
+  const lineStart = solution.lastIndexOf("\n", openBrace) + 1;
+  const indent = solution.slice(lineStart, openBrace).match(/^\s*/)?.[0] ?? "";
+  const bodyIndent = `${indent}    `;
+  const placeholder = language === "java" ? 'throw new UnsupportedOperationException("Implement this method");' : "return {};";
+  return `${solution.slice(0, openBrace + 1)}\n${bodyIndent}// Write your solution here\n${bodyIndent}${placeholder}\n${indent}}}${solution.slice(closeBrace + 1)}`;
 }
 
 function escapeRegExp(value: string) {

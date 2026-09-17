@@ -124,7 +124,8 @@ export function MarathonWorkspace() {
   const allPassed = results.length > 0 && results.every((result) => result.passed);
 
   return (
-    <div className="grid min-w-0 gap-4 2xl:grid-cols-[minmax(0,0.92fr)_minmax(520px,1.08fr)]">
+    <div className="relative grid min-w-0 gap-4 2xl:grid-cols-[minmax(0,0.92fr)_minmax(520px,1.08fr)]" aria-busy={generating}>
+      {generating ? <div className="absolute inset-0 z-50 flex items-start justify-center rounded-2xl bg-background/70 p-8 backdrop-blur-[2px]" role="status" aria-live="polite"><div className="sticky top-24 flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-3 text-sm font-medium shadow-lg"><Loader2 aria-hidden className="animate-spin text-emerald-500" size={18} />Designing your challenge…</div></div> : null}
       <section className="min-w-0 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
         <PanelHeader icon={Bot} title="AI Problem Setter" subtitle="Describe what you want to practice" tone="emerald" />
         <div className="space-y-4 p-3 sm:p-4">
