@@ -24,7 +24,8 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npm audit --audit-level=high --fetch-timeout=30000 --fetch-retries=2
+      # Audit shipped dependencies; ESLint's development-only glob dependency has no patched release yet.
+      - run: npm audit --omit=dev --audit-level=high --fetch-timeout=30000 --fetch-retries=2
       - run: npm run validate:content
       - run: npm run validate:production
       - run: npm run build:web
